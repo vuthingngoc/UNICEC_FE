@@ -1,0 +1,49 @@
+{
+  "name": "paper-kit-2-pro",
+  "description": "Premium Bootstrap 4 Paper Design",
+  "version": "2.3.1",
+  "main": "index.html",
+  "directories": {
+    "example": "root"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/creativetimofficial/ct-paper-dashboard-2-pro"
+  },
+  "keywords": [
+    "paper design",
+    "bootstrap admin",
+    "bootstrap ui kit",
+    "paper design admin",
+    "paper design",
+    "creative tim",
+    "html ui kit",
+    "html css ui kit",
+    "web ui kit",
+    "freebie",
+    "free bootstrap ui kit",
+    "css3 dashboard",
+    "bootstrap admin",
+    "bootstrap dashboard",
+    "frontend",
+    "responsive bootstrap dashboard"
+  ],
+  "license": "Creative Tim License <www.creative-tim.com/license>",
+  "author": "Creative Tim <hello@creative-tim.com> (https://www.creative-tim.com/)",
+  "bugs": {
+    "url": "https://github.com/creativetimofficial/ct-paper-dashboard-2-pro/issues"
+  },
+  "devDependencies": {
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^6.1.0",
+    "gulp-clean": "^0.4.0",
+    "gulp-install": "^1.1.0",
+    "gulp-sass": "^4.0.2",
+    "gulp-sourcemaps": "^2.6.5",
+    "gulp-open": "^3.0.1"
+  },
+  "homepage": "https://demos.creative-tim.com/paper-kit-2-pro/presentation.html"
+}
