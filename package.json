@@ -1,49 +1,55 @@
 {
-  "name": "paper-kit-2-pro",
-  "description": "Premium Bootstrap 4 Paper Design",
-  "version": "2.3.1",
-  "main": "index.html",
-  "directories": {
-    "example": "root"
+  "name": "paper-kit-pro-react",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "bootstrap": "4.6.0",
+    "classnames": "2.2.6",
+    "headroom.js": "0.12.0",
+    "moment": "2.29.1",
+    "node-sass": "5.0.0",
+    "nouislider": "14.6.4",
+    "react": "17.0.2",
+    "react-datetime": "3.0.4",
+    "react-dom": "17.0.2",
+    "react-photoswipe-gallery": "1.3.4",
+    "react-router-dom": "5.2.0",
+    "react-scripts": "4.0.3",
+    "react-select": "4.3.0",
+    "reactstrap": "8.9.0"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "react-scripts start",
+    "build": "react-scripts build && gulp licenses",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "install:clean": "rm -rf node_modules/ && rm -rf package-lock.json && npm install && npm start",
+    "compile-sass": "node-sass src/assets/scss/paper-kit.scss src/assets/css/paper-kit.css",
+    "minify-sass": "node-sass src/assets/scss/paper-kit.scss src/assets/css/paper-kit.min.css --output-style compressed",
+    "map-sass": "node-sass src/assets/scss/paper-kit.scss src/assets/css/paper-kit.css --source-map true"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/creativetimofficial/ct-paper-dashboard-2-pro"
+  "eslintConfig": {
+    "extends": "react-app"
   },
-  "keywords": [
-    "paper design",
-    "bootstrap admin",
-    "bootstrap ui kit",
-    "paper design admin",
-    "paper design",
-    "creative tim",
-    "html ui kit",
-    "html css ui kit",
-    "web ui kit",
-    "freebie",
-    "free bootstrap ui kit",
-    "css3 dashboard",
-    "bootstrap admin",
-    "bootstrap dashboard",
-    "frontend",
-    "responsive bootstrap dashboard"
-  ],
-  "license": "Creative Tim License <www.creative-tim.com/license>",
-  "author": "Creative Tim <hello@creative-tim.com> (https://www.creative-tim.com/)",
-  "bugs": {
-    "url": "https://github.com/creativetimofficial/ct-paper-dashboard-2-pro/issues"
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "optionalDependencies": {
+    "typescript": "4.2.3"
   },
   "devDependencies": {
-    "gulp": "^4.0.2",
-    "gulp-autoprefixer": "^6.1.0",
-    "gulp-clean": "^0.4.0",
-    "gulp-install": "^1.1.0",
-    "gulp-sass": "^4.0.2",
-    "gulp-sourcemaps": "^2.6.5",
-    "gulp-open": "^3.0.1"
-  },
-  "homepage": "https://demos.creative-tim.com/paper-kit-2-pro/presentation.html"
+    "gulp": "4.0.2",
+    "gulp-append-prepend": "1.0.8",
+    "jquery": "3.6.0",
+    "photoswipe": "4.1.3"
+  }
 }
