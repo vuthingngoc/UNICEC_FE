@@ -49,7 +49,7 @@ function RegisterPage() {
                     <i className="fa fa-umbrella" />
                   </div>
                   <div className="description">
-                    <h3>We've got you covered</h3>
+                    <h3>We&apos;ve got you covered</h3>
                     <p>
                       Larger, yet dramatically thinner. More powerful, but
                       remarkably power efficient. Everything you need in a

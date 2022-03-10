@@ -136,7 +136,7 @@ function FooterAboutUs() {
                       </li>
                       <li>
                         <a href="#pablo" onClick={(e) => e.preventDefault()}>
-                          We're Hiring
+                          We&apos;re Hiring
                         </a>
                       </li>
                       <li>

@@ -33,10 +33,10 @@ const items = [
           <Col className="text-left" md="6">
             <h1 className="title">Paper Kit 2 PRO</h1>
             <h5>
-              Now you have no excuses, it's time to surprise your clients, your
-              competitors, and why not, the world. You probably won't have a
-              better chance to show off all your potential if it's not by
-              designing a website for your own agency or web studio.
+              Now you have no excuses, it&apos;s time to surprise your clients,
+              your competitors, and why not, the world. You probably won&apos;t
+              have a better chance to show off all your potential if it&apos;s
+              not by designing a website for your own agency or web studio.
             </h5>
             <br />
             <div className="buttons">
@@ -92,10 +92,10 @@ const items = [
           <Col className="ml-auto mr-auto text-center" md="8">
             <h1 className="title">Awesome Experiences</h1>
             <h5>
-              Now you have no excuses, it's time to surprise your clients, your
-              competitors, and why not, the world. You probably won't have a
-              better chance to show off all your potential if it's not by
-              designing a website for your own agency or web studio.
+              Now you have no excuses, it&apos;s time to surprise your clients,
+              your competitors, and why not, the world. You probably won&apos;t
+              have a better chance to show off all your potential if it&apos;s
+              not by designing a website for your own agency or web studio.
             </h5>
             <br />
             <h6>Connect with us:</h6>
@@ -151,10 +151,10 @@ const items = [
           <Col className="ml-auto text-right" md="7">
             <h2 className="title">Premium Offers for Venice</h2>
             <h5>
-              Now you have no excuses, it's time to surprise your clients, your
-              competitors, and why not, the world. You probably won't have a
-              better chance to show off all your potential if it's not by
-              designing a website for your own agency or web studio.
+              Now you have no excuses, it&apos;s time to surprise your clients,
+              your competitors, and why not, the world. You probably won&apos;t
+              have a better chance to show off all your potential if it&apos;s
+              not by designing a website for your own agency or web studio.
             </h5>
             <br />
             <div className="buttons">
@@ -310,7 +310,7 @@ function SectionHeader() {
                   <Col className="ml-auto" md="6">
                     <h2 className="title">Travel with us</h2>
                     <h5 className="description">
-                      There's no doubt that Tesla is delighted with the
+                      There&apos;s no doubt that Tesla is delighted with the
                       interest, but the data also raises a few questions. How
                       long will it take for Tesla to fulfill all those extra
                       orders?
@@ -403,11 +403,11 @@ function SectionHeader() {
                   <Col className="ml-auto mr-auto text-center" md="8">
                     <h1 className="title">Find your next trip</h1>
                     <h5 className="description">
-                      Now you have no excuses, it's time to surprise your
+                      Now you have no excuses, it&apos;s time to surprise your
                       clients, your competitors, and why not, the world. You
-                      probably won't have a better chance to show off all your
-                      potential if it's not by designing a website for your own
-                      agency or web studio.
+                      probably won&apos;t have a better chance to show off all
+                      your potential if it&apos;s not by designing a website for
+                      your own agency or web studio.
                     </h5>
                     <br />
                   </Col>

@@ -229,9 +229,9 @@ function AboutUs() {
                         </a>
                       </CardTitle>
                       <p className="card-description">
-                        What all of these have in common is that they're pulling
-                        information out of the app or the service and making it
-                        relevant to the moment.
+                        What all of these have in common is that they&apos;re
+                        pulling information out of the app or the service and
+                        making it relevant to the moment.
                       </p>
                     </CardBody>
                   </Card>
@@ -254,9 +254,9 @@ function AboutUs() {
                         </a>
                       </CardTitle>
                       <p className="card-description">
-                        What all of these have in common is that they're pulling
-                        information out of the app or the service and making it
-                        relevant to the moment.
+                        What all of these have in common is that they&apos;re
+                        pulling information out of the app or the service and
+                        making it relevant to the moment.
                       </p>
                     </CardBody>
                   </Card>
@@ -279,9 +279,9 @@ function AboutUs() {
                         </a>
                       </CardTitle>
                       <p className="card-description">
-                        What all of these have in common is that they're pulling
-                        information out of the app or the service and making it
-                        relevant to the moment.
+                        What all of these have in common is that they&apos;re
+                        pulling information out of the app or the service and
+                        making it relevant to the moment.
                       </p>
                     </CardBody>
                   </Card>

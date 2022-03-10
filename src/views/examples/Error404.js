@@ -31,10 +31,12 @@ function Error404() {
         <div className="filter" />
         <Container>
           <Row>
-            <h1 class="title">
+            <h1 className="title">
               404
               <br />
-              <p class="error-msg">The page you requested could not be found</p>
+              <p className="error-msg">
+                The page you requested could not be found
+              </p>
             </h1>
           </Row>
           <div className="container-cards">

@@ -166,7 +166,7 @@ function SectionDescriptionAreas() {
                       <p>
                         It’s one continuous form where hardware and software
                         function in perfect unison, creating a new generation of
-                        phone that's better by any measure.
+                        phone that&apos;s better by any measure.
                       </p>
                     </TabPane>
                     <TabPane tabId="vTabs2">
@@ -186,7 +186,7 @@ function SectionDescriptionAreas() {
                       <p>
                         It’s one continuous form where hardware and software
                         function in perfect unison, creating a new generation of
-                        phone that's better by any measure.
+                        phone that&apos;s better by any measure.
                       </p>
                       <p>
                         Larger, yet dramatically thinner. More powerful, but
@@ -204,14 +204,14 @@ function SectionDescriptionAreas() {
                       <p>
                         It’s one continuous form where hardware and software
                         function in perfect unison, creating a new generation of
-                        phone that's better by any measure.
+                        phone that&apos;s better by any measure.
                       </p>
                     </TabPane>
                     <TabPane tabId="vTabs5">
                       <p>
                         It’s one continuous form where hardware and software
                         function in perfect unison, creating a new generation of
-                        phone that's better by any measure.
+                        phone that&apos;s better by any measure.
                       </p>
                       <p>
                         Larger, yet dramatically thinner. More powerful, but
@@ -242,7 +242,7 @@ function SectionDescriptionAreas() {
                 <div className="description">
                   <h4 className="info-title">Save Time</h4>
                   <p>
-                    Spend your time generating new ideas. You don't have to
+                    Spend your time generating new ideas. You don&apos;t have to
                     think of implementing anymore.
                   </p>
                 </div>
@@ -289,7 +289,7 @@ function SectionDescriptionAreas() {
                 <div className="description">
                   <h4 className="info-title">Beautiful Gallery</h4>
                   <p>
-                    Spend your time generating new ideas. You don't have to
+                    Spend your time generating new ideas. You don&apos;t have to
                     think of implementing anymore.
                   </p>
                 </div>
@@ -336,7 +336,7 @@ function SectionDescriptionAreas() {
                 <div className="description">
                   <h4 className="info-title">Beautiful Gallery</h4>
                   <p>
-                    Spend your time generating new ideas. You don't have to
+                    Spend your time generating new ideas. You don&apos;t have to
                     think of implementing anymore.
                   </p>
                   <Button

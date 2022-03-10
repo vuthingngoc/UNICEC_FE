@@ -622,8 +622,8 @@ function SectionPricing() {
                 <br />
                 <p className="description text-gray">
                   You have Free Unlimited Updates and Premium Support on each
-                  package. You also have 20 days to request a refund if you're
-                  not happy with your purchase.
+                  package. You also have 20 days to request a refund if
+                  you&apos;re not happy with your purchase.
                 </p>
               </Col>
               <Col className="ml-auto" md="7">

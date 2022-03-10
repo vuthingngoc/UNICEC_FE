@@ -111,7 +111,7 @@ function SectionTypography() {
               <h2>
                 <span className="note">Small tag</span>
                 Header with small subtitle <br />
-                <small>".small" is a tag for the headers</small>
+                <small>&quot;.small&quot; is a tag for the headers</small>
               </h2>
             </div>
           </Row>

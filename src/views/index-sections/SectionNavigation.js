@@ -260,7 +260,9 @@ function SectionNavigation() {
                         tag="ul"
                         right
                       >
-                        <li className="no-notification">You're all clear!</li>
+                        <li className="no-notification">
+                          You&apos;re all clear!
+                        </li>
                       </DropdownMenu>
                     </UncontrolledDropdown>
                     <UncontrolledDropdown nav inNavbar>

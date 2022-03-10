@@ -34,8 +34,8 @@ function Error500() {
             <h1 className="title">
                500 <br />
               <p className="error-msg">
-                We're sorry, but something went wrong. We are working an fixing
-                this. <br />
+                We&apos;re sorry, but something went wrong. We are working an
+                fixing this. <br />
                 Please refresh the page in a couple of seconds.
               </p>
             </h1>

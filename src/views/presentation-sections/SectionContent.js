@@ -48,8 +48,8 @@ function SectionContent() {
                     We took into consideration multiple use cases and came up
                     with some specific elements for you. If you need elements
                     such as tables, comments, description areas, tabs and many
-                    others, we've got you covered. They're beautiful and easy to
-                    use for the end user navigating your website.
+                    others, we&apos;ve got you covered. They&apos;re beautiful
+                    and easy to use for the end user navigating your website.
                   </h5>
                 </div>
               </Col>

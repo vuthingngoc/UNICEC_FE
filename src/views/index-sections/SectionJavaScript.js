@@ -345,8 +345,8 @@ function SectionJavaScript() {
                     </Row>
                   </div>
                   <p>
-                    If you have more questions, don't hesitate to contact us or
-                    send us a tweet @creativetim. We{"'"}re here to help!
+                    If you have more questions, don&apos;t hesitate to contact
+                    us or send us a tweet @creativetim. We{"'"}re here to help!
                   </p>
                 </div>
                 <div className="modal-footer">
@@ -565,7 +565,7 @@ function SectionJavaScript() {
                         anderson cred nesciunt sapiente ea proident. Ad vegan
                         excepteur butcher vice lomo. Leggings occaecat craft
                         beer farm-to-table, raw denim aesthetic synth nesciunt
-                        you probably haven't heard of them accusamus labore
+                        you probably haven&apos;t heard of them accusamus labore
                         sustainable VHS.
                       </CardBody>
                     </Collapse>
@@ -604,7 +604,7 @@ function SectionJavaScript() {
                         anderson cred nesciunt sapiente ea proident. Ad vegan
                         excepteur butcher vice lomo. Leggings occaecat craft
                         beer farm-to-table, raw denim aesthetic synth nesciunt
-                        you probably haven't heard of them accusamus labore
+                        you probably haven&apos;t heard of them accusamus labore
                         sustainable VHS.
                       </CardBody>
                     </Collapse>
@@ -643,7 +643,7 @@ function SectionJavaScript() {
                         anderson cred nesciunt sapiente ea proident. Ad vegan
                         excepteur butcher vice lomo. Leggings occaecat craft
                         beer farm-to-table, raw denim aesthetic synth nesciunt
-                        you probably haven't heard of them accusamus labore
+                        you probably haven&apos;t heard of them accusamus labore
                         sustainable VHS.
                       </CardBody>
                     </Collapse>

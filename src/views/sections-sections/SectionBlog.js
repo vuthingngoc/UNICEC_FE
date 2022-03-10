@@ -546,10 +546,10 @@ function SectionBlog() {
                       </a>
                     </CardTitle>
                     <p className="card-description">
-                      Don't be scared of the truth because we need to restart
-                      the human foundation in truth And I love you like Kanye
-                      loves Kanye I love Rick Owens’ bed design but the back is
-                      too high for the beams and angle of the ceiling...
+                      Don&apos;t be scared of the truth because we need to
+                      restart the human foundation in truth And I love you like
+                      Kanye loves Kanye I love Rick Owens’ bed design but the
+                      back is too high for the beams and angle of the ceiling...
                     </p>
                     <br />
                     <Button
@@ -716,11 +716,12 @@ function SectionBlog() {
                       Design
                     </h6>
                     <a href="#pablo" onClick={(e) => e.preventDefault()}>
-                      <CardTitle tag="h3">"Good Design"</CardTitle>
+                      <CardTitle tag="h3">&quot;Good Design&quot;</CardTitle>
                     </a>
                     <p className="card-description">
-                      Don't be scared of the truth because we need to restart
-                      the human foundation in truth And I love you like Jay-z...
+                      Don&apos;t be scared of the truth because we need to
+                      restart the human foundation in truth And I love you like
+                      Jay-z...
                     </p>
                     <CardFooter>
                       <div className="author">
