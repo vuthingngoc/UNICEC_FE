@@ -67,7 +67,7 @@ function SectionComments() {
                       be a lot of great stuff coming soon. We will keep you
                       posted for the latest news.
                     </p>
-                    <p>Don't forget, You're Awesome!</p>
+                    <p>Don&apos;t forget, You&apos;re Awesome!</p>
                     <div className="media-footer">
                       <Button
                         className="btn-link mr-1"
@@ -234,7 +234,7 @@ function SectionComments() {
                           will be a lot of great stuff coming soon. We will keep
                           you posted for the latest news.
                         </p>
-                        <p>Don't forget, You're Awesome!</p>
+                        <p>Don&apos;t forget, You&apos;re Awesome!</p>
                         <div className="media-footer">
                           <Button
                             className="btn-link mr-1"
@@ -308,7 +308,7 @@ function SectionComments() {
                       be a lot of great stuff coming soon. We will keep you
                       posted for the latest news.
                     </p>
-                    <p>Don't forget, You're Awesome!</p>
+                    <p>Don&apos;t forget, You&apos;re Awesome!</p>
                     <div className="media-footer">
                       <Button
                         color="link mr-1"

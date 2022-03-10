@@ -25,8 +25,8 @@ function SectionSharing() {
               <p className="description">
                 You have <b>Free Unlimited Updates</b> and{" "}
                 <b>Premium Support</b> on each package for 6 months. You also
-                have <b>24 hours</b> to request a refund if you're not happy
-                with your purchase.
+                have <b>24 hours</b> to request a refund if you&apos;re not
+                happy with your purchase.
               </p>
               <br />
             </div>

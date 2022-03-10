@@ -27,7 +27,7 @@ function SectionHeader() {
                   This is the paragraph where you can write more details about
                   your product. Keep you user engaged by providing meaningful
                   information. Remember that by this time, the user is curious,
-                  otherwise he wouldn't scroll to get here.
+                  otherwise he wouldn&apos;t scroll to get here.
                 </h5>
               </Col>
             </Row>
@@ -40,8 +40,8 @@ function SectionHeader() {
                   <div className="description">
                     <h4 className="info-title">Beautiful Gallery</h4>
                     <p className="description">
-                      Spend your time generating new ideas. You don't have to
-                      think of implementing.
+                      Spend your time generating new ideas. You don&apos;t have
+                      to think of implementing.
                     </p>
                     <Button
                       className="btn-link"
@@ -134,7 +134,7 @@ function SectionHeader() {
                   This is the paragraph where you can write more details about
                   your product. Keep you user engaged by providing meaningful
                   information. Remember that by this time, the user is curious,
-                  otherwise he wouldn't scroll to get here.
+                  otherwise he wouldn&apos;t scroll to get here.
                 </h5>
                 <br />
               </Col>
@@ -282,8 +282,8 @@ function SectionHeader() {
                       <div className="description">
                         <h4 className="info-title">Beautiful Gallery</h4>
                         <p>
-                          Spend your time generating new ideas. You don't have
-                          to think of implementing anymore.
+                          Spend your time generating new ideas. You don&apos;t
+                          have to think of implementing anymore.
                         </p>
                         <Button
                           color="link"
@@ -380,8 +380,8 @@ function SectionHeader() {
                     <h4 className="info-title">For Developers</h4>
                     <p>
                       The moment you use Paper Kit, you know you’ve never felt
-                      anything like it. With a single use, is's a powerfull UI
-                      Kit
+                      anything like it. With a single use, is&apos;s a powerfull
+                      UI Kit
                     </p>
                   </div>
                 </div>

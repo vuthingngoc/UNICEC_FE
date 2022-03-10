@@ -80,8 +80,8 @@ function SectionNotification() {
                   <i className="nc-icon nc-bell-55" /> This is a notification
                   with close button and icon and have many lines. You can see
                   that the icon and the close button are always vertically
-                  aligned. This is a beautiful notification. So you don't have
-                  to worry about the style.
+                  aligned. This is a beautiful notification. So you don&apos;t
+                  have to worry about the style.
                 </div>
               </div>
             </Container>

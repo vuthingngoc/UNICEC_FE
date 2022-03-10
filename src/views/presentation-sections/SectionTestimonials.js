@@ -29,9 +29,9 @@ const items = [
         </div>
         <CardBody>
           <h5 className=" card-description">
-            "I'm newer to the front-end... With my creative side lacking in
-            experience this really put me in the right spot to speed through the
-            fast lane. I love this Design kit so much!"
+            &quot;I&apos;m newer to the front-end... With my creative side
+            lacking in experience this really put me in the right spot to speed
+            through the fast lane. I love this Design kit so much!&quot;
           </h5>
           <CardFooter>
             <CardTitle tag="h4">Chase Jackson</CardTitle>
@@ -63,8 +63,8 @@ const items = [
         </div>
         <CardBody>
           <h5 className=" card-description">
-            "Love the shapes and color palette on this one! Perfect for one of
-            my pet projects!"
+            &quot;Love the shapes and color palette on this one! Perfect for one
+            of my pet projects!&quot;
           </h5>
           <CardFooter>
             <CardTitle tag="h4">Robin Leysen</CardTitle>
@@ -96,7 +96,8 @@ const items = [
         </div>
         <CardBody>
           <h5 className=" card-description">
-            "Love it. Use it for prototypes and along with Paper Dashboard."
+            &quot;Love it. Use it for prototypes and along with Paper
+            Dashboard.&quot;
           </h5>
           <CardFooter>
             <CardTitle tag="h4">Cristi Jora</CardTitle>
@@ -149,8 +150,8 @@ function SectionTestimonials() {
             <Col className="ml-auto mr-auto text-center" md="8">
               <h2 className="title">Trusted by 790,000+ People</h2>
               <h5 className="description">
-                The UI Kits, Templates and Dashboards that we've created are
-                used by <b>790,000+ web developers</b> in over{" "}
+                The UI Kits, Templates and Dashboards that we&apos;ve created
+                are used by <b>790,000+ web developers</b> in over{" "}
                 <b>1,400,00 Web Projects</b>. This is what some of them think:
               </h5>
             </Col>

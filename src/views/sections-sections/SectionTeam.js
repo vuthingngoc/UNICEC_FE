@@ -514,7 +514,7 @@ function SectionTeam() {
                         <CardTitle tag="h4">Ethan Smith</CardTitle>
                         <h6 className="card-category">Founder</h6>
                         <p className="card-description">
-                          Don't be scared of the truth because we need to
+                          Don&apos;t be scared of the truth because we need to
                           restart the human foundation in truth...
                         </p>
                         <CardFooter className="pull-left">
@@ -570,8 +570,9 @@ function SectionTeam() {
                         <CardTitle tag="h4">Lucas Andrew</CardTitle>
                         <h6 className="card-category">Web Designer</h6>
                         <p className="card-description">
-                          I love you like Kanye loves Kanye. Don't be scared of
-                          the truth. Kanye loves himself like Kanye loves Kanye.
+                          I love you like Kanye loves Kanye. Don&apos;t be
+                          scared of the truth. Kanye loves himself like Kanye
+                          loves Kanye.
                         </p>
                         <CardFooter className="pull-left">
                           <Button
@@ -1056,9 +1057,9 @@ function SectionTeam() {
                         <CardTitle tag="h4">George West</CardTitle>
                         <h6 className="card-category">Backend Hacker</h6>
                         <p className="card-description">
-                          I love you like Kanye loves Kanye. Don't be scared of
-                          the truth because we need to restart the human
-                          foundation.
+                          I love you like Kanye loves Kanye. Don&apos;t be
+                          scared of the truth because we need to restart the
+                          human foundation.
                         </p>
                         <CardFooter>
                           <Button

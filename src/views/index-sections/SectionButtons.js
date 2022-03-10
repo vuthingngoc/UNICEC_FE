@@ -680,7 +680,7 @@ function SectionButtons() {
                     type="text"
                   />
                   <div className="form-control-feedback">
-                    Sorry, that username's taken. Try another?
+                    Sorry, that username&apos;s taken. Try another?
                   </div>
                 </FormGroup>
               </Col>
@@ -693,7 +693,7 @@ function SectionButtons() {
                     type="text"
                   />
                   <div className="form-control-feedback">
-                    Sorry, that username's taken. Try another?
+                    Sorry, that username&apos;s taken. Try another?
                   </div>
                 </FormGroup>
               </Col>

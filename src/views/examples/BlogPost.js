@@ -82,9 +82,9 @@ function BlogPost() {
                     </p>
                     <blockquote className="blockquote">
                       <p>
-                        "Don’t settle: Don’t finish crappy books. If you don’t
-                        like the menu, leave the restaurant. If you’re not on
-                        the right path, get off it."
+                        &quot;Don’t settle: Don’t finish crappy books. If you
+                        don’t like the menu, leave the restaurant. If you’re not
+                        on the right path, get off it.&quot;
                       </p>
                       <footer>
                         - Chris Brogan in{" "}
@@ -252,7 +252,7 @@ function BlogPost() {
                             will be a lot of great stuff coming soon. We will
                             keep you posted for the latest news.
                           </p>
-                          <p>Don't forget, You're Awesome!</p>
+                          <p>Don&apos;t forget, You&apos;re Awesome!</p>
                         </Media>
                       </Media>
                     </Row>
@@ -338,7 +338,7 @@ function BlogPost() {
                                   soon. We will keep you posted for the latest
                                   news.
                                 </p>
-                                <p>Don't forget, You're Awesome!</p>
+                                <p>Don&apos;t forget, You&apos;re Awesome!</p>
                               </Media>
                             </Media>
                             {/* end media */}
@@ -383,7 +383,7 @@ function BlogPost() {
                               There will be a lot of great stuff coming soon. We
                               will keep you posted for the latest news.
                             </p>
-                            <p>Don't forget, You're Awesome!</p>
+                            <p>Don&apos;t forget, You&apos;re Awesome!</p>
                           </Media>
                         </Media>
                         {/* end media */}

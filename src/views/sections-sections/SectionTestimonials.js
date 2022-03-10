@@ -17,14 +17,13 @@ import {
 // core components
 const items = [
   {
-    src:
-      "https://s3.amazonaws.com/creativetim_bucket/photos/110862/thumb.?1482812727",
+    src: "https://s3.amazonaws.com/creativetim_bucket/photos/110862/thumb.?1482812727",
     content: (
       <CardBody>
         <h5 className="card-description">
-          "I'm newer to the front-end... With my creative side lacking in
-          experience this really put me in the right spot to speed through the
-          fast lane. I love this Design kit so much!"
+          &quot;I&apos;m newer to the front-end... With my creative side lacking
+          in experience this really put me in the right spot to speed through
+          the fast lane. I love this Design kit so much!&quot;
         </h5>
         <CardFooter>
           <CardTitle tag="h4">Chase Jackson</CardTitle>
@@ -43,13 +42,12 @@ const items = [
     caption: "",
   },
   {
-    src:
-      "https://s3.amazonaws.com/creativetim_bucket/photos/134607/thumb.?1487680276",
+    src: "https://s3.amazonaws.com/creativetim_bucket/photos/134607/thumb.?1487680276",
     content: (
       <CardBody>
         <h5 className="card-description">
-          "Love the shapes and color palette on this one! Perfect for one of my
-          pet projects!"
+          &quot;Love the shapes and color palette on this one! Perfect for one
+          of my pet projects!&quot;
         </h5>
         <CardFooter>
           <CardTitle tag="h4">Robin Leysen</CardTitle>
@@ -68,12 +66,12 @@ const items = [
     caption: "",
   },
   {
-    src:
-      "https://s3.amazonaws.com/creativetim_bucket/photos/125268/thumb.jpeg?1497799215",
+    src: "https://s3.amazonaws.com/creativetim_bucket/photos/125268/thumb.jpeg?1497799215",
     content: (
       <CardBody>
         <h5 className="card-description">
-          "Love it. Use it for prototypes and along with Paper Dashboard."
+          &quot;Love it. Use it for prototypes and along with Paper
+          Dashboard.&quot;
         </h5>
         <CardFooter>
           <CardTitle tag="h4">Cristi Jora</CardTitle>
@@ -182,10 +180,10 @@ function SectionTestimonials() {
                   </div>
                   <CardBody>
                     <p className="card-description">
-                      "Don't be scared of the truth because we need to restart
-                      the human foundation in truth. That's why I love you like
-                      Kanye loves Kanye I love Rick Owens’ bed design but the
-                      back is not so attractive"
+                      &quot;Don&apos;t be scared of the truth because we need to
+                      restart the human foundation in truth. That&apos;s why I
+                      love you like Kanye loves Kanye I love Rick Owens’ bed
+                      design but the back is not so attractive&quot;
                     </p>
                     <CardFooter>
                       <CardTitle tag="h4">Gina Andrew</CardTitle>
@@ -213,9 +211,10 @@ function SectionTestimonials() {
                   </div>
                   <CardBody>
                     <p className="card-description">
-                      "Your products, all the kits that I have downloaded from
-                      your site and worked with are sooo cool! I love the color
-                      mixtures, cards... everything. Keep up the great work!"
+                      &quot;Your products, all the kits that I have downloaded
+                      from your site and worked with are sooo cool! I love the
+                      color mixtures, cards... everything. Keep up the great
+                      work!&quot;
                     </p>
                     <CardFooter>
                       <CardTitle tag="h4">Joe West</CardTitle>
@@ -425,10 +424,10 @@ function SectionTestimonials() {
                     </span>
                     <div className="clearfix" />
                     <p className="card-description">
-                      "During the first selection of grant winners on the
+                      &quot;During the first selection of grant winners on the
                       essential aspects, and the products are not burdened with
                       non-essentials. Back to purity, back to simplicity. At
-                      best, it is self-explanatory."
+                      best, it is self-explanatory.&quot;
                     </p>
                   </CardBody>
                 </Card>
@@ -454,11 +453,11 @@ function SectionTestimonials() {
                     </span>
                     <div className="clearfix" />
                     <p className="card-description">
-                      "The plan is to add additional flexibility in the future
-                      to allow applicants to make a case for how much money they
-                      actually need. Less, but better – because it concentrates
-                      on the essential aspects, and the products are not
-                      burdened with non-essentials..."
+                      &quot;The plan is to add additional flexibility in the
+                      future to allow applicants to make a case for how much
+                      money they actually need. Less, but better – because it
+                      concentrates on the essential aspects, and the products
+                      are not burdened with non-essentials...&quot;
                     </p>
                   </CardBody>
                 </Card>
@@ -483,10 +482,10 @@ function SectionTestimonials() {
                     </span>
                     <div className="clearfix" />
                     <p className="card-description">
-                      "Simulation of many-body quantum systems with neural
+                      &quot;Simulation of many-body quantum systems with neural
                       networks, and the products are not burdened with
                       non-essentials. Back to purity, back to simplicity. At
-                      best, it is self-explanatory."
+                      best, it is self-explanatory.&quot;
                     </p>
                   </CardBody>
                 </Card>
@@ -514,10 +513,10 @@ function SectionTestimonials() {
                     </span>
                     <div className="clearfix" />
                     <p className="card-description">
-                      "Machine learning for motion recognition and trajectory
-                      generation of human movement for rehabilitation with
-                      non-essentials. Back to purity, back to simplicity. At
-                      best, it is self-explanatory."
+                      &quot;Machine learning for motion recognition and
+                      trajectory generation of human movement for rehabilitation
+                      with non-essentials. Back to purity, back to simplicity.
+                      At best, it is self-explanatory.&quot;
                     </p>
                   </CardBody>
                 </Card>
@@ -543,12 +542,12 @@ function SectionTestimonials() {
                     </span>
                     <div className="clearfix" />
                     <p className="card-description">
-                      "Less, but better – because it concentrates on the
+                      &quot;Less, but better – because it concentrates on the
                       essential aspects, and the products are not burdened with
                       non-essentials. Back to purity, back to simplicity. At
                       best, it is self-explanatory. The entire AI Grant project
                       reminds me of a cross between a Thiel Fellowship and a
-                      Kaggle competition."
+                      Kaggle competition.&quot;
                     </p>
                   </CardBody>
                 </Card>

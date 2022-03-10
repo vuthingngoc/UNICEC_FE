@@ -187,7 +187,7 @@ function SectionCommentsAreaSmall() {
                             Reply
                           </Button>
                         </div>
-                        <p>Don't forget, You're Awesome!</p>
+                        <p>Don&quot;t forget, You&quot;re Awesome!</p>
                         <div className="media-footer">
                           <Button
                             className="btn-link mr-1"
@@ -258,7 +258,7 @@ function SectionCommentsAreaSmall() {
                       be a lot of great stuff coming soon. We will keep you
                       posted for the latest news.
                     </p>
-                    <p>Don't forget, You're Awesome!</p>
+                    <p>Don&quot;t forget, You&quot;re Awesome!</p>
                     <div className="media-footer">
                       <Button
                         color="link mr-1"

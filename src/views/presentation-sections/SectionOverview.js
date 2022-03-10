@@ -42,7 +42,7 @@ function SectionOverview() {
                       <CardTitle tag="h4">Save Time</CardTitle>
                       <p className="card-description">
                         Using the kit will save you large amount of time. You
-                        don't have to worry about customising the basic
+                        don&apos;t have to worry about customising the basic
                         Bootstrap 4 design or its components.
                       </p>
                     </CardBody>

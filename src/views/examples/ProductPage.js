@@ -250,8 +250,8 @@ function ProductPage() {
                   <div className="description">
                     <h4 className="info-title">2 Days Delivery</h4>
                     <p>
-                      Spend your time generating new ideas. You don't have to
-                      think of implementing anymore.
+                      Spend your time generating new ideas. You don&apos;t have
+                      to think of implementing anymore.
                     </p>
                   </div>
                 </div>
@@ -339,7 +339,7 @@ function ProductPage() {
                         anderson cred nesciunt sapiente ea proident. Ad vegan
                         excepteur butcher vice lomo. Leggings occaecat craft
                         beer farm-to-table, raw denim aesthetic synth nesciunt
-                        you probably haven't heard of them accusamus labore
+                        you probably haven&apos;t heard of them accusamus labore
                         sustainable VHS.
                       </CardBody>
                     </UncontrolledCollapse>
@@ -379,7 +379,7 @@ function ProductPage() {
                         anderson cred nesciunt sapiente ea proident. Ad vegan
                         excepteur butcher vice lomo. Leggings occaecat craft
                         beer farm-to-table, raw denim aesthetic synth nesciunt
-                        you probably haven't heard of them accusamus labore
+                        you probably haven&apos;t heard of them accusamus labore
                         sustainable VHS.
                       </CardBody>
                     </UncontrolledCollapse>
@@ -419,7 +419,7 @@ function ProductPage() {
                         anderson cred nesciunt sapiente ea proident. Ad vegan
                         excepteur butcher vice lomo. Leggings occaecat craft
                         beer farm-to-table, raw denim aesthetic synth nesciunt
-                        you probably haven't heard of them accusamus labore
+                        you probably haven&apos;t heard of them accusamus labore
                         sustainable VHS.
                       </CardBody>
                     </UncontrolledCollapse>
@@ -438,9 +438,9 @@ function ProductPage() {
                   <strong>€ 975.00</strong>
                 </p>
                 <p>
-                  Constructed from robust full-grain leather, it's finished with
-                  the label's 'city webbing' - a rich take on the brand's
-                  signature stripes.
+                  Constructed from robust full-grain leather, it&apos;s finished
+                  with the label&apos;s &apos;city webbing&apos; - a rich take
+                  on the brand&apos;s signature stripes.
                 </p>
                 <br />
                 <Button className="btn-round" color="danger">

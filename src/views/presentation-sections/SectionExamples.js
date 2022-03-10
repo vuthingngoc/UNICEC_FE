@@ -17,7 +17,7 @@ function SectionExamples() {
                 Paper Kit 2 Pro comes with a large number of example pages, that
                 give you the option to quickly setup the basic flows for your
                 website. From registering to building your profile or setting a
-                blog, we've got you covered.
+                blog, we&apos;ve got you covered.
               </h5>
             </div>
           </Row>

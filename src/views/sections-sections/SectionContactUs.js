@@ -345,7 +345,7 @@ function SectionContactUs() {
                               <FormGroup check>
                                 <Label check>
                                   <Input defaultValue="" type="checkbox" />
-                                  I'm not a robot !{" "}
+                                  I&apos;m not a robot !{" "}
                                   <span className="form-check-sign" />
                                 </Label>
                               </FormGroup>
@@ -453,7 +453,7 @@ function SectionContactUs() {
                         <FormGroup check>
                           <Label check>
                             <Input defaultValue="" type="checkbox" />
-                            I'm not a robot !{" "}
+                            I&apos;m not a robot !{" "}
                             <span className="form-check-sign" />
                           </Label>
                         </FormGroup>

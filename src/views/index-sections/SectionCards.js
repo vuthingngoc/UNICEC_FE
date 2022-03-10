@@ -46,7 +46,7 @@ function SectionCards() {
                   <div className="card-description">
                     Cards are an interaction model that are spreading pretty
                     widely, in fact. What all of these have in common is that
-                    they're pulling...
+                    they&apos;re pulling...
                   </div>
                   <CardFooter>
                     <Button
@@ -68,7 +68,7 @@ function SectionCards() {
                   </h6>
                   <CardTitle tag="h5">
                     <a href="#pablo" onClick={(e) => e.preventDefault()}>
-                      "Good Design Is as Little Design as Possible"
+                      &quot;Good Design Is as Little Design as Possible&quot;
                     </a>
                   </CardTitle>
                   <p className="card-description">
@@ -111,7 +111,7 @@ function SectionCards() {
                   </span>
                   <div className="clearfix" />
                   <p className="card-description">
-                    {'"'}It clarifies the product's structure. Better still, it
+                    {'"'}It clarifies the product&apos;s structure. Better still, it
                     can make the product clearly express its function by making
                     use of the{" "}
                     <a
@@ -144,7 +144,7 @@ function SectionCards() {
                   <div className="card-description">
                     Cards are an interaction model that are spreading pretty
                     widely, in fact. What all of these have in common is that
-                    they're pulling...
+                    they&apos;re pulling...
                   </div>
                   <hr />
                   <CardFooter>
@@ -183,7 +183,7 @@ function SectionCards() {
                     </CardTitle>
                   </a>
                   <p className="card-description">
-                    Don't be scared of the truth because we need to restart the
+                    Don&apos;t be scared of the truth because we need to restart the
                     human foundation in truth And I love you like Kanye loves
                     Kanye I love Rick Owens{"’ "}bed design but the back is...
                   </p>
@@ -320,7 +320,7 @@ function SectionCards() {
                       </a>
                     </CardTitle>
                     <p className="card-description">
-                      What all of these have in common is that they're pulling
+                      What all of these have in common is that they&apos;re pulling
                       information out of the app or the service and making it
                       relevant to the moment.
                     </p>
@@ -344,7 +344,7 @@ function SectionCards() {
                       </a>
                     </CardTitle>
                     <p className="card-description">
-                      What all of these have in common is that they're pulling
+                      What all of these have in common is that they&apos;re pulling
                       information out of the app or the service and making it
                       relevant to the moment.
                     </p>
@@ -368,7 +368,7 @@ function SectionCards() {
                       </a>
                     </CardTitle>
                     <p className="card-description">
-                      What all of these have in common is that they're pulling
+                      What all of these have in common is that they&apos;re pulling
                       information out of the app or the service and making it
                       relevant to the moment.
                     </p>
@@ -392,7 +392,7 @@ function SectionCards() {
                       </a>
                     </CardTitle>
                     <p className="card-description">
-                      What all of these have in common is that they're pulling
+                      What all of these have in common is that they&apos;re pulling
                       information out of the app or the service and making it
                       relevant to the moment.
                     </p>
@@ -416,7 +416,7 @@ function SectionCards() {
                       </a>
                     </CardTitle>
                     <p className="card-description">
-                      What all of these have in common is that they're pulling
+                      What all of these have in common is that they&apos;re pulling
                       information out of the app or the service and making it
                       relevant to the moment.
                     </p>
@@ -440,7 +440,7 @@ function SectionCards() {
                       </a>
                     </CardTitle>
                     <p className="card-description">
-                      What all of these have in common is that they're pulling
+                      What all of these have in common is that they&apos;re pulling
                       information out of the app or the service and making it
                       relevant to the moment.
                     </p>
@@ -642,7 +642,7 @@ function SectionCards() {
                   </div>
                   <p className="card-description">
                     Unlike fashionable design, it lasts many years – even in
-                    today's throwaway society.
+                    today&apos;s throwaway society.
                   </p>
                   <CardFooter>
                     <Button

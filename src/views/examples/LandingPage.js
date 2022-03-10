@@ -38,13 +38,13 @@ function LandingPage() {
           <Container>
             <Row>
               <Col className="ml-auto mr-auto" md="8">
-                <h2 className="title">Let's talk product</h2>
+                <h2 className="title">Let&apos;s talk product</h2>
                 <h5>
                   This is the paragraph where you can write more details about
                   your product. Keep you user engaged by providing meaningful
                   information. Remember that by this time, the user is curious,
-                  otherwise he wouldn't scroll to get here. Add a button if you
-                  want the user to see more.
+                  otherwise he wouldn&apos;t scroll to get here. Add a button if
+                  you want the user to see more.
                 </h5>
                 <br />
                 <Button
@@ -68,8 +68,8 @@ function LandingPage() {
                   <div className="description">
                     <h4 className="info-title">Beautiful Gallery</h4>
                     <p className="description">
-                      Spend your time generating new ideas. You don't have to
-                      think of implementing.
+                      Spend your time generating new ideas. You don&apos;t have
+                      to think of implementing.
                     </p>
                     <Button
                       className="btn-link"
@@ -153,7 +153,7 @@ function LandingPage() {
         </div>
         <div className="section section-dark text-center landing-section">
           <Container>
-            <h2 className="title">Let's talk about us</h2>
+            <h2 className="title">Let&apos;s talk about us</h2>
             <Row>
               <Col md="4">
                 <Card className="card-profile card-plain">
