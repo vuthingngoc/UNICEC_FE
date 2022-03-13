@@ -15,14 +15,6 @@ module.exports = {
   },
   plugins: ['react', 'prettier'],
   rules: {
-    'import/extensions': [
-      'error',
-      'ignorePackages',
-      {
-        js: 'never',
-        jsx: 'never',
-      },
-    ],
     'react/prop-types': 'off',
     'prettier/prettier': [
       'error',
@@ -32,7 +24,6 @@ module.exports = {
     ],
     'linebreak-style': 0,
     'quote-props': 0,
-    'import/no-extraneous-dependencies': ['error', { devDependencies: true }],
     'comma-dangle': 'off',
     'react/react-in-jsx-scope': 'off',
     'react/no-array-index-key': 'off',
