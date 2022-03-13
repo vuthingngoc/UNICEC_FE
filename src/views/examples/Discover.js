@@ -1,30 +1,20 @@
-import React from "react";
+import React from 'react';
 
 // reactstrap components
-import {
-  Button,
-  Card,
-  CardBody,
-  FormGroup,
-  Form,
-  Input,
-  Container,
-  Row,
-  Col,
-} from "reactstrap";
+import { Button, Card, CardBody, FormGroup, Form, Input, Container, Row, Col } from 'reactstrap';
 
 // core components
-import DangerNavbar from "components/Navbars/DangerNavbar.js";
-import FooterWhite from "components/Footers/FooterWhite.js";
+import DangerNavbar from 'components/Navbars/DangerNavbar.js';
+import FooterWhite from 'components/Footers/FooterWhite.js';
 
 function Discover() {
-  document.documentElement.classList.remove("nav-open");
+  document.documentElement.classList.remove('nav-open');
   React.useEffect(() => {
-    document.body.classList.add("discover");
+    document.body.classList.add('discover');
     window.scrollTo(0, 0);
     document.body.scrollTop = 0;
     return function cleanup() {
-      document.body.classList.remove("discover");
+      document.body.classList.remove('discover');
     };
   });
   return (
@@ -42,18 +32,10 @@ function Discover() {
                     </h2>
                     <Form className="form-inline" role="search">
                       <FormGroup>
-                        <Input
-                          className="border-input"
-                          placeholder="Search..."
-                          type="text"
-                        />
+                        <Input className="border-input" placeholder="Search..." type="text" />
                           
                       </FormGroup>
-                      <Button
-                        className="btn-just-icon"
-                        color="default"
-                        type="submit"
-                      >
+                      <Button className="btn-just-icon" color="default" type="submit">
                         <i className="fa fa-search" />
                       </Button>
                     </Form>
@@ -64,14 +46,7 @@ function Discover() {
                     <Card className="card-plain text-center">
                       <div className="card-image">
                         <a href="#pablo" onClick={(e) => e.preventDefault()}>
-                          <img
-                            alt="..."
-                            className="img-rounded img-responsive"
-                            src={
-                              require("assets/img/sections/pavel-kosov.jpg")
-                                .default
-                            }
-                          />
+                          <img alt="..." className="img-rounded img-responsive" src={require('assets/img/sections/pavel-kosov.jpg').default} />
                         </a>
                         <CardBody className="details-center">
                           <a href="#pablo" onClick={(e) => e.preventDefault()}>
@@ -79,10 +54,7 @@ function Discover() {
                               <img
                                 alt="..."
                                 className="img-circle img-no-padding img-responsive"
-                                src={
-                                  require("assets/img/faces/joe-gardner-2.jpg")
-                                    .default
-                                }
+                                src={require('assets/img/faces/joe-gardner-2.jpg').default}
                               />
                               <div className="text">
                                 <span className="name">Jane Doe</span>
@@ -98,13 +70,7 @@ function Discover() {
                     <Card className="card-plain text-center">
                       <div className="card-image">
                         <a href="#pablo" onClick={(e) => e.preventDefault()}>
-                          <img
-                            alt="..."
-                            className="img-rounded img-responsive"
-                            src={
-                              require("assets/img/sections/por7o.jpg").default
-                            }
-                          />
+                          <img alt="..." className="img-rounded img-responsive" src={require('assets/img/sections/por7o.jpg').default} />
                         </a>
                         <CardBody className="details-center">
                           <a href="#pablo" onClick={(e) => e.preventDefault()}>
@@ -112,10 +78,7 @@ function Discover() {
                               <img
                                 alt="..."
                                 className="img-circle img-no-padding img-responsive"
-                                src={
-                                  require("assets/img/faces/erik-lucatero-2.jpg")
-                                    .default
-                                }
+                                src={require('assets/img/faces/erik-lucatero-2.jpg').default}
                               />
                               <div className="text">
                                 <span className="name">Tom Hanks</span>
@@ -131,14 +94,7 @@ function Discover() {
                     <Card className="card-plain text-center">
                       <div className="card-image">
                         <a href="#pablo" onClick={(e) => e.preventDefault()}>
-                          <img
-                            alt="..."
-                            className="img-rounded img-responsive"
-                            src={
-                              require("assets/img/sections/vincent-versluis.jpg")
-                                .default
-                            }
-                          />
+                          <img alt="..." className="img-rounded img-responsive" src={require('assets/img/sections/vincent-versluis.jpg').default} />
                         </a>
                         <CardBody className="details-center">
                           <a href="#pablo" onClick={(e) => e.preventDefault()}>
@@ -146,9 +102,7 @@ function Discover() {
                               <img
                                 alt="..."
                                 className="img-circle img-no-padding img-responsive"
-                                src={
-                                  require("assets/img/chet_faker_2.jpg").default
-                                }
+                                src={require('assets/img/chet_faker_2.jpg').default}
                               />
                               <div className="text">
                                 <span className="name">Chet Faker</span>
@@ -166,14 +120,7 @@ function Discover() {
                     <Card className="card-plain text-center">
                       <div className="card-image">
                         <a href="#pablo" onClick={(e) => e.preventDefault()}>
-                          <img
-                            alt="..."
-                            className="img-rounded img-responsive"
-                            src={
-                              require("assets/img/sections/ilya-yakover.jpg")
-                                .default
-                            }
-                          />
+                          <img alt="..." className="img-rounded img-responsive" src={require('assets/img/sections/ilya-yakover.jpg').default} />
                         </a>
                         <CardBody className="details-center">
                           <a href="#pablo" onClick={(e) => e.preventDefault()}>
@@ -181,10 +128,7 @@ function Discover() {
                               <img
                                 alt="..."
                                 className="img-circle img-no-padding img-responsive"
-                                src={
-                                  require("assets/img/faces/ayo-ogunseinde-2.jpg")
-                                    .default
-                                }
+                                src={require('assets/img/faces/ayo-ogunseinde-2.jpg').default}
                               />
                               <div className="text">
                                 <span className="name">Tom Hank</span>
@@ -200,14 +144,7 @@ function Discover() {
                     <Card className="card-plain text-center">
                       <div className="card-image">
                         <a href="#pablo" onClick={(e) => e.preventDefault()}>
-                          <img
-                            alt="..."
-                            className="img-rounded img-responsive"
-                            src={
-                              require("assets/img/sections/miguel-perales.jpg")
-                                .default
-                            }
-                          />
+                          <img alt="..." className="img-rounded img-responsive" src={require('assets/img/sections/miguel-perales.jpg').default} />
                         </a>
                         <CardBody className="details-center">
                           <a href="#pablo" onClick={(e) => e.preventDefault()}>
@@ -215,10 +152,7 @@ function Discover() {
                               <img
                                 alt="..."
                                 className="img-circle img-no-padding img-responsive"
-                                src={
-                                  require("assets/img/faces/clem-onojeghuo-2.jpg")
-                                    .default
-                                }
+                                src={require('assets/img/faces/clem-onojeghuo-2.jpg').default}
                               />
                               <div className="text">
                                 <span className="name">Tom Banks</span>
@@ -234,23 +168,12 @@ function Discover() {
                     <Card className="card-plain text-center">
                       <div className="card-image">
                         <a href="#pablo" onClick={(e) => e.preventDefault()}>
-                          <img
-                            alt="..."
-                            className="img-rounded img-responsive"
-                            src={
-                              require("assets/img/sections/neill-kumar.jpg")
-                                .default
-                            }
-                          />
+                          <img alt="..." className="img-rounded img-responsive" src={require('assets/img/sections/neill-kumar.jpg').default} />
                         </a>
                         <CardBody className="details-center">
                           <a href="#pablo" onClick={(e) => e.preventDefault()}>
                             <div className="author">
-                              <img
-                                alt="..."
-                                className="img-circle img-no-padding img-responsive"
-                                src={require("assets/img/flume.jpg").default}
-                              />
+                              <img alt="..." className="img-circle img-no-padding img-responsive" src={require('assets/img/flume.jpg').default} />
                               <div className="text">
                                 <span className="name">Flume</span>
                                 <div className="meta">Drawn on 4 Aug</div>
@@ -267,14 +190,7 @@ function Discover() {
                     <Card className="card-plain text-center">
                       <div className="card-image">
                         <a href="#pablo" onClick={(e) => e.preventDefault()}>
-                          <img
-                            alt="..."
-                            className="img-rounded img-responsive"
-                            src={
-                              require("assets/img/sections/john-towner.jpg")
-                                .default
-                            }
-                          />
+                          <img alt="..." className="img-rounded img-responsive" src={require('assets/img/sections/john-towner.jpg').default} />
                         </a>
                         <CardBody className="details-center">
                           <a href="#pablo" onClick={(e) => e.preventDefault()}>
@@ -282,9 +198,7 @@ function Discover() {
                               <img
                                 alt="..."
                                 className="img-circle img-no-padding img-responsive"
-                                src={
-                                  require("assets/img/placeholder.jpg").default
-                                }
+                                src={require('assets/img/placeholder.jpg').default}
                               />
                               <div className="text">
                                 <span className="name">Tom Hanks</span>
@@ -300,14 +214,7 @@ function Discover() {
                     <Card className="card-plain text-center">
                       <div className="card-image">
                         <a href="#pablo" onClick={(e) => e.preventDefault()}>
-                          <img
-                            alt="..."
-                            className="img-rounded img-responsive"
-                            src={
-                              require("assets/img/sections/leonard-cotte.jpg")
-                                .default
-                            }
-                          />
+                          <img alt="..." className="img-rounded img-responsive" src={require('assets/img/sections/leonard-cotte.jpg').default} />
                         </a>
                         <CardBody className="details-center">
                           <a href="#pablo" onClick={(e) => e.preventDefault()}>
@@ -315,9 +222,7 @@ function Discover() {
                               <img
                                 alt="..."
                                 className="img-circle img-no-padding img-responsive"
-                                src={
-                                  require("assets/img/placeholder.jpg").default
-                                }
+                                src={require('assets/img/placeholder.jpg').default}
                               />
                               <div className="text">
                                 <span className="name">Banks</span>
@@ -333,14 +238,7 @@ function Discover() {
                     <Card className="card-plain text-center">
                       <div className="card-image">
                         <a href="#pablo" onClick={(e) => e.preventDefault()}>
-                          <img
-                            alt="..."
-                            className="img-rounded img-responsive"
-                            src={
-                              require("assets/img/sections/anders-jilden.jpg")
-                                .default
-                            }
-                          />
+                          <img alt="..." className="img-rounded img-responsive" src={require('assets/img/sections/anders-jilden.jpg').default} />
                         </a>
                         <CardBody className="details-center">
                           <a href="#pablo" onClick={(e) => e.preventDefault()}>
@@ -348,10 +246,7 @@ function Discover() {
                               <img
                                 alt="..."
                                 className="img-circle img-no-padding img-responsive"
-                                src={
-                                  require("assets/img/faces/erik-lucatero-2.jpg")
-                                    .default
-                                }
+                                src={require('assets/img/faces/erik-lucatero-2.jpg').default}
                               />
                               <div className="text">
                                 <span className="name">Tom Hanks</span>

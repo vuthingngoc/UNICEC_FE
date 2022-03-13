@@ -1,7 +1,7 @@
-import React from "react";
+import React from 'react';
 
 // reactstrap components
-import { Button, Container } from "reactstrap";
+import { Button, Container } from 'reactstrap';
 
 // core components
 
@@ -12,12 +12,11 @@ function LandingPageHeader() {
     if (window.innerWidth > 991) {
       const updateScroll = () => {
         let windowScrollTop = window.pageYOffset / 3;
-        pageHeader.current.style.transform =
-          "translate3d(0," + windowScrollTop + "px,0)";
+        pageHeader.current.style.transform = 'translate3d(0,' + windowScrollTop + 'px,0)';
       };
-      window.addEventListener("scroll", updateScroll);
+      window.addEventListener('scroll', updateScroll);
       return function cleanup() {
-        window.removeEventListener("scroll", updateScroll);
+        window.removeEventListener('scroll', updateScroll);
       };
     }
   });
@@ -28,10 +27,7 @@ function LandingPageHeader() {
         className="page-header"
         ref={pageHeader}
         style={{
-          backgroundImage:
-            "url(" +
-            require("assets/img/sections/david-marcu.jpg").default +
-            ")",
+          backgroundImage: 'url(' + require('assets/img/sections/david-marcu.jpg').default + ')',
         }}
       >
         <div className="filter" />
@@ -39,25 +35,13 @@ function LandingPageHeader() {
           <Container>
             <div className="motto">
               <h1 className="title">Landing page</h1>
-              <h3 className="description">
-                Start designing your landing page here.
-              </h3>
+              <h3 className="description">Start designing your landing page here.</h3>
               <br />
-              <Button
-                className="btn-round mr-1"
-                color="neutral"
-                href="https://www.youtube.com/watch?v=dQw4w9WgXcQ?ref=creativetim"
-                target="_blank"
-              >
+              <Button className="btn-round mr-1" color="neutral" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ?ref=creativetim" target="_blank">
                 <i className="fa fa-play" />
                 Watch video
               </Button>
-              <Button
-                className="btn-round"
-                color="neutral"
-                type="button"
-                outline
-              >
+              <Button className="btn-round" color="neutral" type="button" outline>
                 Download
               </Button>
             </div>

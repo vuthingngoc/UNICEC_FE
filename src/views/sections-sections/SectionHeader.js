@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 
 // reactstrap components
 import {
@@ -18,59 +18,33 @@ import {
   Carousel,
   CarouselItem,
   CarouselIndicators,
-} from "reactstrap";
+} from 'reactstrap';
 
 // core components
 const items = [
   {
-    src:
-      "url(" +
-      require("assets/img/sections/section-header-1.jpg").default +
-      ")",
+    src: 'url(' + require('assets/img/sections/section-header-1.jpg').default + ')',
     content: (
       <Container>
         <Row>
           <Col className="text-left" md="6">
             <h1 className="title">Paper Kit 2 PRO</h1>
             <h5>
-              Now you have no excuses, it&apos;s time to surprise your clients,
-              your competitors, and why not, the world. You probably won&apos;t
-              have a better chance to show off all your potential if it&apos;s
-              not by designing a website for your own agency or web studio.
+              Now you have no excuses, it&apos;s time to surprise your clients, your competitors, and why not, the world. You probably won&apos;t have
+              a better chance to show off all your potential if it&apos;s not by designing a website for your own agency or web studio.
             </h5>
             <br />
             <div className="buttons">
-              <Button
-                className="btn-round"
-                color="danger"
-                href="#pablo"
-                onClick={(e) => e.preventDefault()}
-                size="lg"
-              >
+              <Button className="btn-round" color="danger" href="#pablo" onClick={(e) => e.preventDefault()} size="lg">
                 Read More
               </Button>
-              <Button
-                className="btn-neutral btn-just-icon"
-                color="link"
-                href="#pablo"
-                onClick={(e) => e.preventDefault()}
-              >
+              <Button className="btn-neutral btn-just-icon" color="link" href="#pablo" onClick={(e) => e.preventDefault()}>
                 <i className="fa fa-twitter" />
               </Button>
-              <Button
-                className="btn-neutral btn-just-icon"
-                color="link"
-                href="#pablo"
-                onClick={(e) => e.preventDefault()}
-              >
+              <Button className="btn-neutral btn-just-icon" color="link" href="#pablo" onClick={(e) => e.preventDefault()}>
                 <i className="fa fa-facebook-square" />
               </Button>
-              <Button
-                className="btn-neutral btn-just-icon"
-                color="link"
-                href="#pablo"
-                onClick={(e) => e.preventDefault()}
-              >
+              <Button className="btn-neutral btn-just-icon" color="link" href="#pablo" onClick={(e) => e.preventDefault()}>
                 <i className="fa fa-get-pocket" />
               </Button>
             </div>
@@ -78,58 +52,33 @@ const items = [
         </Row>
       </Container>
     ),
-    altText: "",
-    caption: "",
+    altText: '',
+    caption: '',
   },
   {
-    src:
-      "url(" +
-      require("assets/img/sections/section-header-2.jpg").default +
-      ")",
+    src: 'url(' + require('assets/img/sections/section-header-2.jpg').default + ')',
     content: (
       <Container>
         <Row>
           <Col className="ml-auto mr-auto text-center" md="8">
             <h1 className="title">Awesome Experiences</h1>
             <h5>
-              Now you have no excuses, it&apos;s time to surprise your clients,
-              your competitors, and why not, the world. You probably won&apos;t
-              have a better chance to show off all your potential if it&apos;s
-              not by designing a website for your own agency or web studio.
+              Now you have no excuses, it&apos;s time to surprise your clients, your competitors, and why not, the world. You probably won&apos;t have
+              a better chance to show off all your potential if it&apos;s not by designing a website for your own agency or web studio.
             </h5>
             <br />
             <h6>Connect with us:</h6>
             <div className="buttons">
-              <Button
-                className="btn-neutral btn-just-icon"
-                color="link"
-                href="#pablo"
-                onClick={(e) => e.preventDefault()}
-              >
+              <Button className="btn-neutral btn-just-icon" color="link" href="#pablo" onClick={(e) => e.preventDefault()}>
                 <i className="fa fa-twitter" />
               </Button>
-              <Button
-                className="btn-neutral btn-just-icon"
-                color="link"
-                href="#pablo"
-                onClick={(e) => e.preventDefault()}
-              >
+              <Button className="btn-neutral btn-just-icon" color="link" href="#pablo" onClick={(e) => e.preventDefault()}>
                 <i className="fa fa-facebook-square" />
               </Button>
-              <Button
-                className="btn-neutral btn-just-icon"
-                color="link"
-                href="#pablo"
-                onClick={(e) => e.preventDefault()}
-              >
+              <Button className="btn-neutral btn-just-icon" color="link" href="#pablo" onClick={(e) => e.preventDefault()}>
                 <i className="fa fa-instagram" />
               </Button>
-              <Button
-                className="btn-neutral btn-just-icon"
-                color="link"
-                href="#pablo"
-                onClick={(e) => e.preventDefault()}
-              >
+              <Button className="btn-neutral btn-just-icon" color="link" href="#pablo" onClick={(e) => e.preventDefault()}>
                 <i className="fa fa-google-plus" />
               </Button>
             </div>
@@ -137,44 +86,27 @@ const items = [
         </Row>
       </Container>
     ),
-    altText: "",
-    caption: "",
+    altText: '',
+    caption: '',
   },
   {
-    src:
-      "url(" +
-      require("assets/img/sections/section-header-3.jpg").default +
-      ")",
+    src: 'url(' + require('assets/img/sections/section-header-3.jpg').default + ')',
     content: (
       <Container>
         <Row>
           <Col className="ml-auto text-right" md="7">
             <h2 className="title">Premium Offers for Venice</h2>
             <h5>
-              Now you have no excuses, it&apos;s time to surprise your clients,
-              your competitors, and why not, the world. You probably won&apos;t
-              have a better chance to show off all your potential if it&apos;s
-              not by designing a website for your own agency or web studio.
+              Now you have no excuses, it&apos;s time to surprise your clients, your competitors, and why not, the world. You probably won&apos;t have
+              a better chance to show off all your potential if it&apos;s not by designing a website for your own agency or web studio.
             </h5>
             <br />
             <div className="buttons">
-              <Button
-                className="btn-neutral"
-                color="link"
-                href="#pablo"
-                onClick={(e) => e.preventDefault()}
-                size="lg"
-              >
+              <Button className="btn-neutral" color="link" href="#pablo" onClick={(e) => e.preventDefault()} size="lg">
                 <i className="fa fa-share-alt" />
                 Share Offer
               </Button>
-              <Button
-                className="btn-round"
-                color="success"
-                href="#pablo"
-                onClick={(e) => e.preventDefault()}
-                size="lg"
-              >
+              <Button className="btn-round" color="success" href="#pablo" onClick={(e) => e.preventDefault()} size="lg">
                 <i className="fa fa-shopping-cart" />
                 Shop Now
               </Button>
@@ -183,8 +115,8 @@ const items = [
         </Row>
       </Container>
     ),
-    altText: "",
-    caption: "",
+    altText: '',
+    caption: '',
   },
 ];
 
@@ -234,49 +166,23 @@ function SectionHeader() {
               <NavbarBrand className="mb-0" href="www.creative-tim.com">
                 Creative Tim
               </NavbarBrand>
-              <button
-                className="navbar-toggler"
-                id="navbarSupportedContent1"
-                type="button"
-              >
+              <button className="navbar-toggler" id="navbarSupportedContent1" type="button">
                 <span className="navbar-toggler-bar" />
                 <span className="navbar-toggler-bar" />
                 <span className="navbar-toggler-bar" />
               </button>
               <UncontrolledCollapse navbar toggler="#navbarSupportedContent1">
                 <Nav className="ml-auto" navbar>
-                  <Button
-                    className="btn-neutral"
-                    color="link"
-                    href="#pablo"
-                    onClick={(e) => e.preventDefault()}
-                  >
+                  <Button className="btn-neutral" color="link" href="#pablo" onClick={(e) => e.preventDefault()}>
                     Components
                   </Button>
-                  <Button
-                    className="btn-neutral"
-                    color="link"
-                    href="#pablo"
-                    onClick={(e) => e.preventDefault()}
-                  >
+                  <Button className="btn-neutral" color="link" href="#pablo" onClick={(e) => e.preventDefault()}>
                     Tutorial
                   </Button>
-                  <Button
-                    className="btn-neutral"
-                    color="link"
-                    href="#pablo"
-                    onClick={(e) => e.preventDefault()}
-                    target="_blank"
-                  >
+                  <Button className="btn-neutral" color="link" href="#pablo" onClick={(e) => e.preventDefault()} target="_blank">
                     <i className="fa fa-twitter" />
                   </Button>
-                  <Button
-                    className="btn-neutral"
-                    color="link"
-                    href="#pablo"
-                    onClick={(e) => e.preventDefault()}
-                    target="_blank"
-                  >
+                  <Button className="btn-neutral" color="link" href="#pablo" onClick={(e) => e.preventDefault()} target="_blank">
                     <i className="fa fa-facebook" />
                   </Button>
                 </Nav>
@@ -286,10 +192,7 @@ function SectionHeader() {
           <div
             className="page-header"
             style={{
-              backgroundImage:
-                "url(" +
-                require("assets/img/sections/header-1.jpg").default +
-                ")",
+              backgroundImage: 'url(' + require('assets/img/sections/header-1.jpg').default + ')',
             }}
           >
             <div className="filter" />
@@ -310,17 +213,11 @@ function SectionHeader() {
                   <Col className="ml-auto" md="6">
                     <h2 className="title">Travel with us</h2>
                     <h5 className="description">
-                      There&apos;s no doubt that Tesla is delighted with the
-                      interest, but the data also raises a few questions. How
-                      long will it take for Tesla to fulfill all those extra
-                      orders?
+                      There&apos;s no doubt that Tesla is delighted with the interest, but the data also raises a few questions. How long will it take
+                      for Tesla to fulfill all those extra orders?
                     </h5>
                     <br />
-                    <Button
-                      color="danger"
-                      href="https://www.youtube.com/watch?v=RcmrbNRK-jY?ref=creativetim"
-                      target="_blank"
-                    >
+                    <Button color="danger" href="https://www.youtube.com/watch?v=RcmrbNRK-jY?ref=creativetim" target="_blank">
                       <i className="nc-icon nc-cart-simple mr-1" />
                       Order Now
                     </Button>
@@ -338,49 +235,23 @@ function SectionHeader() {
               <NavbarBrand className="mb-0" href="www.creative-tim.com">
                 Creative Tim
               </NavbarBrand>
-              <button
-                className="navbar-toggler"
-                id="navbarSupportedContent2"
-                type="button"
-              >
+              <button className="navbar-toggler" id="navbarSupportedContent2" type="button">
                 <span className="navbar-toggler-bar" />
                 <span className="navbar-toggler-bar" />
                 <span className="navbar-toggler-bar" />
               </button>
               <UncontrolledCollapse navbar toggler="#navbarSupportedContent2">
                 <Nav className="ml-auto" navbar>
-                  <Button
-                    className="btn-neutral"
-                    color="link"
-                    href="#pablo"
-                    onClick={(e) => e.preventDefault()}
-                  >
+                  <Button className="btn-neutral" color="link" href="#pablo" onClick={(e) => e.preventDefault()}>
                     Components
                   </Button>
-                  <Button
-                    className="btn-neutral"
-                    color="link"
-                    href="#pablo"
-                    onClick={(e) => e.preventDefault()}
-                  >
+                  <Button className="btn-neutral" color="link" href="#pablo" onClick={(e) => e.preventDefault()}>
                     Tutorial
                   </Button>
-                  <Button
-                    className="btn-neutral"
-                    color="link"
-                    href="#pablo"
-                    onClick={(e) => e.preventDefault()}
-                    target="_blank"
-                  >
+                  <Button className="btn-neutral" color="link" href="#pablo" onClick={(e) => e.preventDefault()} target="_blank">
                     <i className="fa fa-twitter" />
                   </Button>
-                  <Button
-                    className="btn-neutral"
-                    color="link"
-                    href="#pablo"
-                    onClick={(e) => e.preventDefault()}
-                    target="_blank"
-                  >
+                  <Button className="btn-neutral" color="link" href="#pablo" onClick={(e) => e.preventDefault()} target="_blank">
                     <i className="fa fa-facebook" />
                   </Button>
                 </Nav>
@@ -390,10 +261,7 @@ function SectionHeader() {
           <div
             className="page-header"
             style={{
-              backgroundImage:
-                "url(" +
-                require("assets/img/sections/header-2.jpg").default +
-                ")",
+              backgroundImage: 'url(' + require('assets/img/sections/header-2.jpg').default + ')',
             }}
           >
             <div className="filter" />
@@ -403,11 +271,9 @@ function SectionHeader() {
                   <Col className="ml-auto mr-auto text-center" md="8">
                     <h1 className="title">Find your next trip</h1>
                     <h5 className="description">
-                      Now you have no excuses, it&apos;s time to surprise your
-                      clients, your competitors, and why not, the world. You
-                      probably won&apos;t have a better chance to show off all
-                      your potential if it&apos;s not by designing a website for
-                      your own agency or web studio.
+                      Now you have no excuses, it&apos;s time to surprise your clients, your competitors, and why not, the world. You probably
+                      won&apos;t have a better chance to show off all your potential if it&apos;s not by designing a website for your own agency or
+                      web studio.
                     </h5>
                     <br />
                   </Col>
@@ -418,29 +284,17 @@ function SectionHeader() {
                           <Row>
                             <Col md="3">
                               <FormGroup>
-                                <Input
-                                  defaultValue=""
-                                  placeholder="City"
-                                  type="text"
-                                />
+                                <Input defaultValue="" placeholder="City" type="text" />
                               </FormGroup>
                             </Col>
                             <Col md="3">
                               <FormGroup>
-                                <Input
-                                  defaultValue=""
-                                  placeholder="Country"
-                                  type="text"
-                                />
+                                <Input defaultValue="" placeholder="Country" type="text" />
                               </FormGroup>
                             </Col>
                             <Col md="3">
                               <FormGroup>
-                                <Input
-                                  defaultValue=""
-                                  placeholder="Date"
-                                  type="text"
-                                />
+                                <Input defaultValue="" placeholder="Date" type="text" />
                               </FormGroup>
                             </Col>
                             <Col md="3">
@@ -466,49 +320,23 @@ function SectionHeader() {
               <NavbarBrand className="mb-0" href="www.creative-tim.com">
                 Creative Tim
               </NavbarBrand>
-              <button
-                className="navbar-toggler"
-                id="navbarSupportedContent3"
-                type="button"
-              >
+              <button className="navbar-toggler" id="navbarSupportedContent3" type="button">
                 <span className="navbar-toggler-bar" />
                 <span className="navbar-toggler-bar" />
                 <span className="navbar-toggler-bar" />
               </button>
               <UncontrolledCollapse navbar toggler="#navbarSupportedContent3">
                 <Nav className="ml-auto" navbar>
-                  <Button
-                    className="btn-neutral"
-                    color="link"
-                    href="#pablo"
-                    onClick={(e) => e.preventDefault()}
-                  >
+                  <Button className="btn-neutral" color="link" href="#pablo" onClick={(e) => e.preventDefault()}>
                     Components
                   </Button>
-                  <Button
-                    className="btn-neutral"
-                    color="link"
-                    href="#pablo"
-                    onClick={(e) => e.preventDefault()}
-                  >
+                  <Button className="btn-neutral" color="link" href="#pablo" onClick={(e) => e.preventDefault()}>
                     Tutorial
                   </Button>
-                  <Button
-                    className="btn-neutral"
-                    color="link"
-                    href="#pablo"
-                    onClick={(e) => e.preventDefault()}
-                    target="_blank"
-                  >
+                  <Button className="btn-neutral" color="link" href="#pablo" onClick={(e) => e.preventDefault()} target="_blank">
                     <i className="fa fa-twitter" />
                   </Button>
-                  <Button
-                    className="btn-neutral"
-                    color="link"
-                    href="#pablo"
-                    onClick={(e) => e.preventDefault()}
-                    target="_blank"
-                  >
+                  <Button className="btn-neutral" color="link" href="#pablo" onClick={(e) => e.preventDefault()} target="_blank">
                     <i className="fa fa-facebook" />
                   </Button>
                 </Nav>
@@ -518,22 +346,11 @@ function SectionHeader() {
           <div className="page-carousel">
             <div className="filter" />
             <Carousel activeIndex={activeIndex} next={next} previous={previous}>
-              <CarouselIndicators
-                items={items}
-                activeIndex={activeIndex}
-                onClickHandler={goToIndex}
-              />
+              <CarouselIndicators items={items} activeIndex={activeIndex} onClickHandler={goToIndex} />
               {items.map((item) => {
                 return (
-                  <CarouselItem
-                    onExiting={onExiting}
-                    onExited={onExited}
-                    key={item.src}
-                  >
-                    <div
-                      className="page-header"
-                      style={{ backgroundImage: item.src }}
-                    >
+                  <CarouselItem onExiting={onExiting} onExited={onExited} key={item.src}>
+                    <div className="page-header" style={{ backgroundImage: item.src }}>
                       <div className="filter" />
                       <div className="content-center">{item.content}</div>
                     </div>
@@ -578,49 +395,23 @@ function SectionHeader() {
                 <NavbarBrand className="mb-0" href="www.creative-tim.com">
                   Creative Tim
                 </NavbarBrand>
-                <button
-                  className="navbar-toggler"
-                  id="navbarSupportedContent4"
-                  type="button"
-                >
+                <button className="navbar-toggler" id="navbarSupportedContent4" type="button">
                   <span className="navbar-toggler-bar" />
                   <span className="navbar-toggler-bar" />
                   <span className="navbar-toggler-bar" />
                 </button>
                 <UncontrolledCollapse navbar toggler="#navbarSupportedContent4">
                   <Nav className="ml-auto" navbar>
-                    <Button
-                      className="btn-neutral"
-                      color="link"
-                      href="#pablo"
-                      onClick={(e) => e.preventDefault()}
-                    >
+                    <Button className="btn-neutral" color="link" href="#pablo" onClick={(e) => e.preventDefault()}>
                       Components
                     </Button>
-                    <Button
-                      className="btn-neutral"
-                      color="link"
-                      href="#pablo"
-                      onClick={(e) => e.preventDefault()}
-                    >
+                    <Button className="btn-neutral" color="link" href="#pablo" onClick={(e) => e.preventDefault()}>
                       Tutorial
                     </Button>
-                    <Button
-                      className="btn-neutral"
-                      color="link"
-                      href="#pablo"
-                      onClick={(e) => e.preventDefault()}
-                      target="_blank"
-                    >
+                    <Button className="btn-neutral" color="link" href="#pablo" onClick={(e) => e.preventDefault()} target="_blank">
                       <i className="fa fa-twitter" />
                     </Button>
-                    <Button
-                      className="btn-neutral"
-                      color="link"
-                      href="#pablo"
-                      onClick={(e) => e.preventDefault()}
-                      target="_blank"
-                    >
+                    <Button className="btn-neutral" color="link" href="#pablo" onClick={(e) => e.preventDefault()} target="_blank">
                       <i className="fa fa-facebook" />
                     </Button>
                   </Nav>
@@ -633,48 +424,24 @@ function SectionHeader() {
               <div
                 className="video-image"
                 style={{
-                  backgroundImage:
-                    "url(" +
-                    require("assets/img/video-placeholder.png").default +
-                    ")",
+                  backgroundImage: 'url(' + require('assets/img/video-placeholder.png').default + ')',
                 }}
               />
-              <video
-                id="video-source"
-                loop="loop"
-                muted="muted"
-                preload="auto"
-                volume="0"
-                ref={videoRef}
-              >
-                <source
-                  src={require("assets/video/fireworks.mp4").default}
-                  type="video/mp4"
-                ></source>
+              <video id="video-source" loop="loop" muted="muted" preload="auto" volume="0" ref={videoRef}>
+                <source src={require('assets/video/fireworks.mp4').default} type="video/mp4"></source>
                 Video not supported
               </video>
               <div className="content-center">
                 <Container className="upper-container text-center">
                   <div className="video-text">
                     <h2>Make it</h2>
-                    <h1 className="title-uppercase title-no-upper-margin">
-                      Stand out
-                    </h1>
+                    <h1 className="title-uppercase title-no-upper-margin">Stand out</h1>
                   </div>
                   <br />
                   {/* We hide the play button on small devices */}
-                  <Button
-                    color="neutral"
-                    size="lg"
-                    type="button"
-                    onClick={videoButtonClick}
-                  >
-                    {videoPlaying ? (
-                      <i className="fa fa-pause"></i>
-                    ) : (
-                      <i className="fa fa-play" />
-                    )}
-                    {videoPlaying ? " Pause Video" : " Play Video"}
+                  <Button color="neutral" size="lg" type="button" onClick={videoButtonClick}>
+                    {videoPlaying ? <i className="fa fa-pause"></i> : <i className="fa fa-play" />}
+                    {videoPlaying ? ' Pause Video' : ' Play Video'}
                   </Button>
                 </Container>
               </div>

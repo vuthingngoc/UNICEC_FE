@@ -1,18 +1,18 @@
-import React from "react";
+import React from 'react';
 // reactstrap components
-import { Button, Form, Input, Container, Row, Col } from "reactstrap";
+import { Button, Form, Input, Container, Row, Col } from 'reactstrap';
 
 // core components
-import InfoNavbar from "components/Navbars/InfoNavbar.js";
-import FooterWhite from "components/Footers/FooterWhite.js";
+import InfoNavbar from 'components/Navbars/InfoNavbar.js';
+import FooterWhite from 'components/Footers/FooterWhite.js';
 
 const MapWrapper = () => {
   const mapRef = React.useRef(null);
   React.useEffect(() => {
     let google = window.google;
     let map = mapRef.current;
-    let lat = "44.445248";
-    let lng = "26.099672";
+    let lat = '44.445248';
+    let lng = '26.099672';
     const myLatlng = new google.maps.LatLng(lat, lng);
     const mapOptions = {
       zoom: 14,
@@ -21,11 +21,11 @@ const MapWrapper = () => {
       zoomControl: true,
       styles: [
         {
-          featureType: "water",
-          elementType: "geometry",
+          featureType: 'water',
+          elementType: 'geometry',
           stylers: [
             {
-              color: "#e9e9e9",
+              color: '#e9e9e9',
             },
             {
               lightness: 17,
@@ -33,11 +33,11 @@ const MapWrapper = () => {
           ],
         },
         {
-          featureType: "landscape",
-          elementType: "geometry",
+          featureType: 'landscape',
+          elementType: 'geometry',
           stylers: [
             {
-              color: "#f5f5f5",
+              color: '#f5f5f5',
             },
             {
               lightness: 20,
@@ -45,11 +45,11 @@ const MapWrapper = () => {
           ],
         },
         {
-          featureType: "road.highway",
-          elementType: "geometry.fill",
+          featureType: 'road.highway',
+          elementType: 'geometry.fill',
           stylers: [
             {
-              color: "#ffffff",
+              color: '#ffffff',
             },
             {
               lightness: 17,
@@ -57,11 +57,11 @@ const MapWrapper = () => {
           ],
         },
         {
-          featureType: "road.highway",
-          elementType: "geometry.stroke",
+          featureType: 'road.highway',
+          elementType: 'geometry.stroke',
           stylers: [
             {
-              color: "#ffffff",
+              color: '#ffffff',
             },
             {
               lightness: 29,
@@ -72,11 +72,11 @@ const MapWrapper = () => {
           ],
         },
         {
-          featureType: "road.arterial",
-          elementType: "geometry",
+          featureType: 'road.arterial',
+          elementType: 'geometry',
           stylers: [
             {
-              color: "#ffffff",
+              color: '#ffffff',
             },
             {
               lightness: 18,
@@ -84,11 +84,11 @@ const MapWrapper = () => {
           ],
         },
         {
-          featureType: "road.local",
-          elementType: "geometry",
+          featureType: 'road.local',
+          elementType: 'geometry',
           stylers: [
             {
-              color: "#ffffff",
+              color: '#ffffff',
             },
             {
               lightness: 16,
@@ -96,11 +96,11 @@ const MapWrapper = () => {
           ],
         },
         {
-          featureType: "poi",
-          elementType: "geometry",
+          featureType: 'poi',
+          elementType: 'geometry',
           stylers: [
             {
-              color: "#f5f5f5",
+              color: '#f5f5f5',
             },
             {
               lightness: 21,
@@ -108,11 +108,11 @@ const MapWrapper = () => {
           ],
         },
         {
-          featureType: "poi.park",
-          elementType: "geometry",
+          featureType: 'poi.park',
+          elementType: 'geometry',
           stylers: [
             {
-              color: "#dedede",
+              color: '#dedede',
             },
             {
               lightness: 21,
@@ -120,13 +120,13 @@ const MapWrapper = () => {
           ],
         },
         {
-          elementType: "labels.text.stroke",
+          elementType: 'labels.text.stroke',
           stylers: [
             {
-              visibility: "on",
+              visibility: 'on',
             },
             {
-              color: "#ffffff",
+              color: '#ffffff',
             },
             {
               lightness: 16,
@@ -134,13 +134,13 @@ const MapWrapper = () => {
           ],
         },
         {
-          elementType: "labels.text.fill",
+          elementType: 'labels.text.fill',
           stylers: [
             {
               saturation: 36,
             },
             {
-              color: "#333333",
+              color: '#333333',
             },
             {
               lightness: 40,
@@ -148,19 +148,19 @@ const MapWrapper = () => {
           ],
         },
         {
-          elementType: "labels.icon",
+          elementType: 'labels.icon',
           stylers: [
             {
-              visibility: "off",
+              visibility: 'off',
             },
           ],
         },
         {
-          featureType: "transit",
-          elementType: "geometry",
+          featureType: 'transit',
+          elementType: 'geometry',
           stylers: [
             {
-              color: "#f2f2f2",
+              color: '#f2f2f2',
             },
             {
               lightness: 19,
@@ -168,11 +168,11 @@ const MapWrapper = () => {
           ],
         },
         {
-          featureType: "administrative",
-          elementType: "geometry.fill",
+          featureType: 'administrative',
+          elementType: 'geometry.fill',
           stylers: [
             {
-              color: "#fefefe",
+              color: '#fefefe',
             },
             {
               lightness: 20,
@@ -180,11 +180,11 @@ const MapWrapper = () => {
           ],
         },
         {
-          featureType: "administrative",
-          elementType: "geometry.stroke",
+          featureType: 'administrative',
+          elementType: 'geometry.stroke',
           stylers: [
             {
-              color: "#fefefe",
+              color: '#fefefe',
             },
             {
               lightness: 17,
@@ -203,18 +203,18 @@ const MapWrapper = () => {
       position: myLatlng,
       map: map,
       animation: google.maps.Animation.DROP,
-      title: "Paper Kit PRO React!",
+      title: 'Paper Kit PRO React!',
     });
 
     const contentString =
       '<div class="info-window-content"><h2>Paper Kit PRO React</h2>' +
-      "<p>A premium Admin for Reactstrap, Bootstrap, React, and React Hooks.</p></div>";
+      '<p>A premium Admin for Reactstrap, Bootstrap, React, and React Hooks.</p></div>';
 
     const infowindow = new google.maps.InfoWindow({
       content: contentString,
     });
 
-    google.maps.event.addListener(marker, "click", function () {
+    google.maps.event.addListener(marker, 'click', function () {
       infowindow.open(map, marker);
     });
   });
@@ -226,13 +226,13 @@ const MapWrapper = () => {
 };
 
 function ContactUs() {
-  document.documentElement.classList.remove("nav-open");
+  document.documentElement.classList.remove('nav-open');
   React.useEffect(() => {
-    document.body.classList.add("contact-page");
+    document.body.classList.add('contact-page');
     window.scrollTo(0, 0);
     document.body.scrollTop = 0;
     return function cleanup() {
-      document.body.classList.remove("contact-page");
+      document.body.classList.remove('contact-page');
     };
   });
   return (
@@ -245,10 +245,8 @@ function ContactUs() {
               <Col className="ml-auto mr-auto text-center" md="8">
                 <h2 className="title">Get in touch with us</h2>
                 <p>
-                  Collaboratively administrate empowered markets via
-                  plug-and-play networks. Dynamically procrastinate B2C users
-                  after installed base benefits. Dramatically visualise customer
-                  directed convergence without revolutionary ROI.
+                  Collaboratively administrate empowered markets via plug-and-play networks. Dynamically procrastinate B2C users after installed base
+                  benefits. Dramatically visualise customer directed convergence without revolutionary ROI.
                 </p>
               </Col>
             </Row>

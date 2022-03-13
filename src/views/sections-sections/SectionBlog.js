@@ -1,16 +1,7 @@
-import React from "react";
+import React from 'react';
 
 // reactstrap components
-import {
-  Button,
-  Card,
-  CardBody,
-  CardFooter,
-  CardTitle,
-  Container,
-  Row,
-  Col,
-} from "reactstrap";
+import { Button, Card, CardBody, CardFooter, CardTitle, Container, Row, Col } from 'reactstrap';
 
 // core components
 
@@ -29,14 +20,7 @@ function SectionBlog() {
                   <Row>
                     <Col md="5">
                       <div className="card-image">
-                        <img
-                          alt="..."
-                          className="img"
-                          src={
-                            require("assets/img/sections/stephanie-krist.jpg")
-                              .default
-                          }
-                        />
+                        <img alt="..." className="img" src={require('assets/img/sections/stephanie-krist.jpg').default} />
                       </div>
                     </Col>
                     <Col md="7">
@@ -48,17 +32,14 @@ function SectionBlog() {
                           </a>
                         </CardTitle>
                         <p className="card-description">
-                          Sharing processing, display and sensors across
-                          smartphones and tethered smartglasses gives you two
-                          batteries, each powering fewer individual systems. If
-                          they’re connected by a cable, this could give a
-                          healthy bump to battery life — and…{" "}
+                          Sharing processing, display and sensors across smartphones and tethered smartglasses gives you two batteries, each powering
+                          fewer individual systems. If they’re connected by a cable, this could give a healthy bump to battery life — and…{' '}
                           <a href="#pablo" onClick={(e) => e.preventDefault()}>
                             Read More
                           </a>
                         </p>
                         <p className="author">
-                          by{" "}
+                          by{' '}
                           <a href="#pablo" onClick={(e) => e.preventDefault()}>
                             <b>Tim Merel</b>
                           </a>
@@ -82,17 +63,15 @@ function SectionBlog() {
                           </a>
                         </CardTitle>
                         <p className="card-description">
-                          Okoli is a new service by developer Jack Deneut that
-                          aims to replace those ugly little cards you find in
-                          tourist hotels. The web app, which currently works in
-                          Prague, Budapest, Berlin and Paris, lets you reserve a
-                          nearly private tour with a professional guid — and…{" "}
+                          Okoli is a new service by developer Jack Deneut that aims to replace those ugly little cards you find in tourist hotels. The
+                          web app, which currently works in Prague, Budapest, Berlin and Paris, lets you reserve a nearly private tour with a
+                          professional guid — and…{' '}
                           <a href="#pablo" onClick={(e) => e.preventDefault()}>
                             Read More
                           </a>
                         </p>
                         <p className="author">
-                          by{" "}
+                          by{' '}
                           <a href="#pablo" onClick={(e) => e.preventDefault()}>
                             <b>John Biggs</b>
                           </a>
@@ -102,14 +81,7 @@ function SectionBlog() {
                     </Col>
                     <Col md="5">
                       <div className="card-image">
-                        <img
-                          alt="..."
-                          className="img"
-                          src={
-                            require("assets/img/sections/federico-beccari.jpg")
-                              .default
-                          }
-                        />
+                        <img alt="..." className="img" src={require('assets/img/sections/federico-beccari.jpg').default} />
                       </div>
                     </Col>
                   </Row>
@@ -131,14 +103,7 @@ function SectionBlog() {
                     <Card className="card-blog">
                       <div className="card-image">
                         <a href="#pablo" onClick={(e) => e.preventDefault()}>
-                          <img
-                            alt="..."
-                            className="img img-raised"
-                            src={
-                              require("assets/img/sections/miguel-perales.jpg")
-                                .default
-                            }
-                          />
+                          <img alt="..." className="img img-raised" src={require('assets/img/sections/miguel-perales.jpg').default} />
                         </a>
                       </div>
                       <CardBody>
@@ -149,25 +114,14 @@ function SectionBlog() {
                           </a>
                         </CardTitle>
                         <p className="card-description">
-                          LinkedIn is today launching its official desktop
-                          application for Windows 10, allowing the professional
-                          social networking service to... <br />
+                          LinkedIn is today launching its official desktop application for Windows 10, allowing the professional social networking
+                          service to... <br />
                         </p>
                         <hr />
                         <CardFooter>
                           <div className="author">
-                            <a
-                              href="#pablo"
-                              onClick={(e) => e.preventDefault()}
-                            >
-                              <img
-                                alt="..."
-                                className="avatar img-raised mr-2"
-                                src={
-                                  require("assets/img/faces/ayo-ogunseinde-2.jpg")
-                                    .default
-                                }
-                              />
+                            <a href="#pablo" onClick={(e) => e.preventDefault()}>
+                              <img alt="..." className="avatar img-raised mr-2" src={require('assets/img/faces/ayo-ogunseinde-2.jpg').default} />
                               <span>Mike John</span>
                             </a>
                           </div>
@@ -182,14 +136,7 @@ function SectionBlog() {
                     <Card className="card-blog">
                       <div className="card-image">
                         <a href="#pablo" onClick={(e) => e.preventDefault()}>
-                          <img
-                            alt="..."
-                            className="img img-raised"
-                            src={
-                              require("assets/img/sections/roger-keller.jpg")
-                                .default
-                            }
-                          />
+                          <img alt="..." className="img img-raised" src={require('assets/img/sections/roger-keller.jpg').default} />
                         </a>
                       </div>
                       <CardBody>
@@ -200,25 +147,14 @@ function SectionBlog() {
                           </a>
                         </CardTitle>
                         <p className="card-description">
-                          The latest version of MIT’s Cheetah robot made its
-                          stage debut today at TC Sessions: Robotics in
-                          Cambridge, Mass. It’s a familiar project... <br />
+                          The latest version of MIT’s Cheetah robot made its stage debut today at TC Sessions: Robotics in Cambridge, Mass. It’s a
+                          familiar project... <br />
                         </p>
                         <hr />
                         <CardFooter>
                           <div className="author">
-                            <a
-                              href="#pablo"
-                              onClick={(e) => e.preventDefault()}
-                            >
-                              <img
-                                alt="..."
-                                className="avatar img-raised mr-2"
-                                src={
-                                  require("assets/img/faces/kaci-baum-2.jpg")
-                                    .default
-                                }
-                              />
+                            <a href="#pablo" onClick={(e) => e.preventDefault()}>
+                              <img alt="..." className="avatar img-raised mr-2" src={require('assets/img/faces/kaci-baum-2.jpg').default} />
                               <span>Nickie Kelly</span>
                             </a>
                           </div>
@@ -233,14 +169,7 @@ function SectionBlog() {
                     <Card className="card-blog">
                       <div className="card-image">
                         <a href="#pablo" onClick={(e) => e.preventDefault()}>
-                          <img
-                            alt="..."
-                            className="img img-raised"
-                            src={
-                              require("assets/img/sections/joshua-earlesz.jpg")
-                                .default
-                            }
-                          />
+                          <img alt="..." className="img img-raised" src={require('assets/img/sections/joshua-earlesz.jpg').default} />
                         </a>
                       </div>
                       <CardBody>
@@ -254,25 +183,14 @@ function SectionBlog() {
                           </a>
                         </CardTitle>
                         <p className="card-description">
-                          Because developing a doctor-on-demand service that
-                          would allow personalized medical visits, booked
-                          through an app on a user’s phone is... <br />
+                          Because developing a doctor-on-demand service that would allow personalized medical visits, booked through an app on a
+                          user’s phone is... <br />
                         </p>
                         <hr />
                         <CardFooter>
                           <div className="author">
-                            <a
-                              href="#pablo"
-                              onClick={(e) => e.preventDefault()}
-                            >
-                              <img
-                                alt="..."
-                                className="avatar img-raised mr-2"
-                                src={
-                                  require("assets/img/faces/erik-lucatero-2.jpg")
-                                    .default
-                                }
-                              />
+                            <a href="#pablo" onClick={(e) => e.preventDefault()}>
+                              <img alt="..." className="avatar img-raised mr-2" src={require('assets/img/faces/erik-lucatero-2.jpg').default} />
                               <span>Mike John</span>
                             </a>
                           </div>
@@ -300,14 +218,7 @@ function SectionBlog() {
                   <Row>
                     <Col md="4">
                       <div className="card-image">
-                        <img
-                          alt="..."
-                          className="img"
-                          src={
-                            require("assets/img/sections/jeff-sheldon.jpg")
-                              .default
-                          }
-                        />
+                        <img alt="..." className="img" src={require('assets/img/sections/jeff-sheldon.jpg').default} />
                       </div>
                     </Col>
                     <Col md="8">
@@ -319,17 +230,14 @@ function SectionBlog() {
                           </a>
                         </CardTitle>
                         <p className="card-description">
-                          No matter what happens — funding versus acquisition
-                          versus who knows what — Ljung says SoundCloud is not
-                          going away “anytime in the foreseeable future.” I hope
-                          that’s true, but I can’t help but feel a bit
-                          skeptical. — and…{" "}
+                          No matter what happens — funding versus acquisition versus who knows what — Ljung says SoundCloud is not going away “anytime
+                          in the foreseeable future.” I hope that’s true, but I can’t help but feel a bit skeptical. — and…{' '}
                           <a href="#pablo" onClick={(e) => e.preventDefault()}>
                             Read More
                           </a>
                         </p>
                         <p className="author">
-                          by{" "}
+                          by{' '}
                           <a href="#pablo" onClick={(e) => e.preventDefault()}>
                             <b>Megan Rose Dickey</b>
                           </a>
@@ -353,17 +261,14 @@ function SectionBlog() {
                           </a>
                         </CardTitle>
                         <p className="card-description">
-                          These issues might be making it a bit harder for Uber
-                          to hire right now in the competitive Silicon Valley
-                          job market. Acqui-hiring companies like it’s doing
-                          here with Swipe Labs lets it roll up a bunch of good
-                          talent — and…{" "}
+                          These issues might be making it a bit harder for Uber to hire right now in the competitive Silicon Valley job market.
+                          Acqui-hiring companies like it’s doing here with Swipe Labs lets it roll up a bunch of good talent — and…{' '}
                           <a href="#pablo" onClick={(e) => e.preventDefault()}>
                             Read More
                           </a>
                         </p>
                         <p className="author">
-                          by{" "}
+                          by{' '}
                           <a href="#pablo" onClick={(e) => e.preventDefault()}>
                             <b>Josh Constine</b>
                           </a>
@@ -374,14 +279,7 @@ function SectionBlog() {
                     <Col md="4">
                       <div className="card-image">
                         <a href="#pablo" onClick={(e) => e.preventDefault()}>
-                          <img
-                            alt="..."
-                            className="img"
-                            src={
-                              require("assets/img/sections/rawpixel-comm.jpg")
-                                .default
-                            }
-                          />
+                          <img alt="..." className="img" src={require('assets/img/sections/rawpixel-comm.jpg').default} />
                         </a>
                       </div>
                     </Col>
@@ -392,14 +290,7 @@ function SectionBlog() {
                     <Col md="4">
                       <div className="card-image">
                         <a href="#pablo" onClick={(e) => e.preventDefault()}>
-                          <img
-                            alt="..."
-                            className="img"
-                            src={
-                              require("assets/img/sections/jeremy-yap.jpg")
-                                .default
-                            }
-                          />
+                          <img alt="..." className="img" src={require('assets/img/sections/jeremy-yap.jpg').default} />
                         </a>
                       </div>
                     </Col>
@@ -412,16 +303,14 @@ function SectionBlog() {
                           </a>
                         </CardTitle>
                         <p className="card-description">
-                          Streaming services once again top the list of this
-                          year’s Emmy nominations – another indicator of the
-                          shift in how today’s consumers are watching TV. HBO,
-                          which has been available.{" "}
+                          Streaming services once again top the list of this year’s Emmy nominations – another indicator of the shift in how today’s
+                          consumers are watching TV. HBO, which has been available.{' '}
                           <a href="#pablo" onClick={(e) => e.preventDefault()}>
                             Read More
                           </a>
                         </p>
                         <p className="author">
-                          by{" "}
+                          by{' '}
                           <a href="#pablo" onClick={(e) => e.preventDefault()}>
                             <b>Sarah Perez</b>
                           </a>
@@ -449,13 +338,7 @@ function SectionBlog() {
                 <Card className="card-plain card-blog text-center">
                   <div className="card-image">
                     <a href="#pablo" onClick={(e) => e.preventDefault()}>
-                      <img
-                        alt="..."
-                        className="img img-raised"
-                        src={
-                          require("assets/img/sections/val-vesa.jpg").default
-                        }
-                      />
+                      <img alt="..." className="img img-raised" src={require('assets/img/sections/val-vesa.jpg').default} />
                     </a>
                   </div>
                   <CardBody>
@@ -466,18 +349,11 @@ function SectionBlog() {
                       </a>
                     </CardTitle>
                     <p className="card-description">
-                      A wonderful serenity has taken possession of my entire
-                      soul, like these sweet mornings of spring which I enjoy
-                      with my whole heart. I am alone, and feel the charm of
-                      existence in this spot.
+                      A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole
+                      heart. I am alone, and feel the charm of existence in this spot.
                     </p>
                     <br />
-                    <Button
-                      className="btn-round"
-                      color="warning"
-                      href="#pablo"
-                      onClick={(e) => e.preventDefault()}
-                    >
+                    <Button className="btn-round" color="warning" href="#pablo" onClick={(e) => e.preventDefault()}>
                       Read More
                     </Button>
                   </CardBody>
@@ -487,14 +363,7 @@ function SectionBlog() {
                 <Card className="card-plain card-blog text-center">
                   <div className="card-image">
                     <a href="#pablo" onClick={(e) => e.preventDefault()}>
-                      <img
-                        alt="..."
-                        className="img img-raised"
-                        src={
-                          require("assets/img/sections/rodrigo-ardilha.jpg")
-                            .default
-                        }
-                      />
+                      <img alt="..." className="img img-raised" src={require('assets/img/sections/rodrigo-ardilha.jpg').default} />
                     </a>
                   </div>
                   <CardBody>
@@ -505,18 +374,11 @@ function SectionBlog() {
                       </a>
                     </CardTitle>
                     <p className="card-description">
-                      In the end, the judge ruled that Levandowski could be
-                      brought in and examined, but that each question asked to
-                      him would be vetted in advance and should have some basis
-                      in evidence.
+                      In the end, the judge ruled that Levandowski could be brought in and examined, but that each question asked to him would be
+                      vetted in advance and should have some basis in evidence.
                     </p>
                     <br />
-                    <Button
-                      className="btn-round"
-                      color="primary"
-                      href="#pablo"
-                      onClick={(e) => e.preventDefault()}
-                    >
+                    <Button className="btn-round" color="primary" href="#pablo" onClick={(e) => e.preventDefault()}>
                       Read More
                     </Button>
                   </CardBody>
@@ -528,14 +390,7 @@ function SectionBlog() {
                 <Card className="card-plain card-blog text-center">
                   <div className="card-image">
                     <a href="#pablo" onClick={(e) => e.preventDefault()}>
-                      <img
-                        alt="..."
-                        className="img img-raised"
-                        src={
-                          require("assets/img/sections/federico-beccari.jpg")
-                            .default
-                        }
-                      />
+                      <img alt="..." className="img img-raised" src={require('assets/img/sections/federico-beccari.jpg').default} />
                     </a>
                   </div>
                   <CardBody>
@@ -546,18 +401,11 @@ function SectionBlog() {
                       </a>
                     </CardTitle>
                     <p className="card-description">
-                      Don&apos;t be scared of the truth because we need to
-                      restart the human foundation in truth And I love you like
-                      Kanye loves Kanye I love Rick Owens’ bed design but the
-                      back is too high for the beams and angle of the ceiling...
+                      Don&apos;t be scared of the truth because we need to restart the human foundation in truth And I love you like Kanye loves Kanye
+                      I love Rick Owens’ bed design but the back is too high for the beams and angle of the ceiling...
                     </p>
                     <br />
-                    <Button
-                      className="btn-round"
-                      color="danger"
-                      href="#pablo"
-                      onClick={(e) => e.preventDefault()}
-                    >
+                    <Button className="btn-round" color="danger" href="#pablo" onClick={(e) => e.preventDefault()}>
                       Read More
                     </Button>
                   </CardBody>
@@ -567,14 +415,7 @@ function SectionBlog() {
                 <Card className="card-plain card-blog text-center">
                   <div className="card-image">
                     <a href="#pablo" onClick={(e) => e.preventDefault()}>
-                      <img
-                        alt="..."
-                        className="img img-raised"
-                        src={
-                          require("assets/img/sections/pedro-lastra.jpg")
-                            .default
-                        }
-                      />
+                      <img alt="..." className="img img-raised" src={require('assets/img/sections/pedro-lastra.jpg').default} />
                     </a>
                   </div>
                   <CardBody>
@@ -585,18 +426,11 @@ function SectionBlog() {
                       </a>
                     </CardTitle>
                     <p className="card-description">
-                      “Raising equity is very expensive” In essence, it lets new
-                      consumer businesses apply to raise funding on its
-                      platform, and gives investors a new way to find and back
-                      those tricks to finance their growing businesses.
+                      “Raising equity is very expensive” In essence, it lets new consumer businesses apply to raise funding on its platform, and gives
+                      investors a new way to find and back those tricks to finance their growing businesses.
                     </p>
                     <br />
-                    <Button
-                      className="btn-round"
-                      color="success"
-                      href="#pablo"
-                      onClick={(e) => e.preventDefault()}
-                    >
+                    <Button className="btn-round" color="success" href="#pablo" onClick={(e) => e.preventDefault()}>
                       Read More
                     </Button>
                   </CardBody>
@@ -615,11 +449,7 @@ function SectionBlog() {
                 <Card
                   data-background="image"
                   style={{
-                    backgroundImage:
-                      "url(" +
-                      require("assets/img/sections/uriel-soberanes.jpg")
-                        .default +
-                      ")",
+                    backgroundImage: 'url(' + require('assets/img/sections/uriel-soberanes.jpg').default + ')',
                   }}
                 >
                   <CardBody>
@@ -628,26 +458,16 @@ function SectionBlog() {
                       Lifestyle
                     </h6>
                     <a href="#pablo" onClick={(e) => e.preventDefault()}>
-                      <CardTitle tag="h3">
-                        Twenty-Something Travel - Virtual Wayfarer
-                      </CardTitle>
+                      <CardTitle tag="h3">Twenty-Something Travel - Virtual Wayfarer</CardTitle>
                     </a>
                     <p className="card-description">
-                      As happens in most of these hearings so far, that argument
-                      led to a back-and-forth between Uber and Waymo’s lawyers
-                      over the pre-trial discovery...
+                      As happens in most of these hearings so far, that argument led to a back-and-forth between Uber and Waymo’s lawyers over the
+                      pre-trial discovery...
                     </p>
                     <CardFooter>
                       <div className="author">
                         <a href="#pablo" onClick={(e) => e.preventDefault()}>
-                          <img
-                            alt="..."
-                            className="avatar img-raised mr-2"
-                            src={
-                              require("assets/img/faces/joe-gardner-2.jpg")
-                                .default
-                            }
-                          />
+                          <img alt="..." className="avatar img-raised mr-2" src={require('assets/img/faces/joe-gardner-2.jpg').default} />
                           <span>Lynne Barrett</span>
                         </a>
                       </div>
@@ -659,10 +479,7 @@ function SectionBlog() {
                 <Card
                   data-background="image"
                   style={{
-                    backgroundImage:
-                      "url(" +
-                      require("assets/img/sections/forest-bg.jpg").default +
-                      ")",
+                    backgroundImage: 'url(' + require('assets/img/sections/forest-bg.jpg').default + ')',
                   }}
                 >
                   <CardBody>
@@ -671,26 +488,16 @@ function SectionBlog() {
                       Media
                     </h6>
                     <a href="#pablo" onClick={(e) => e.preventDefault()}>
-                      <CardTitle tag="h3">
-                        The aesthetic quality of a product
-                      </CardTitle>
+                      <CardTitle tag="h3">The aesthetic quality of a product</CardTitle>
                     </a>
                     <p className="card-description">
-                      It clarifies the product’s structure. Better still, it can
-                      make the product clearly express its function by making
-                      use of the user’s intuition.
+                      It clarifies the product’s structure. Better still, it can make the product clearly express its function by making use of the
+                      user’s intuition.
                     </p>
                     <CardFooter>
                       <div className="author">
                         <a href="#pablo" onClick={(e) => e.preventDefault()}>
-                          <img
-                            alt="..."
-                            className="avatar img-raised mr-2"
-                            src={
-                              require("assets/img/faces/erik-lucatero-2.jpg")
-                                .default
-                            }
-                          />
+                          <img alt="..." className="avatar img-raised mr-2" src={require('assets/img/faces/erik-lucatero-2.jpg').default} />
                           <span>Eric J Barnes</span>
                         </a>
                       </div>
@@ -704,10 +511,7 @@ function SectionBlog() {
                 <Card
                   data-background="image"
                   style={{
-                    backgroundImage:
-                      "url(" +
-                      require("assets/img/sections/pavel-kosov.jpg").default +
-                      ")",
+                    backgroundImage: 'url(' + require('assets/img/sections/pavel-kosov.jpg').default + ')',
                   }}
                 >
                   <CardBody>
@@ -719,21 +523,12 @@ function SectionBlog() {
                       <CardTitle tag="h3">&quot;Good Design&quot;</CardTitle>
                     </a>
                     <p className="card-description">
-                      Don&apos;t be scared of the truth because we need to
-                      restart the human foundation in truth And I love you like
-                      Jay-z...
+                      Don&apos;t be scared of the truth because we need to restart the human foundation in truth And I love you like Jay-z...
                     </p>
                     <CardFooter>
                       <div className="author">
                         <a href="#pablo" onClick={(e) => e.preventDefault()}>
-                          <img
-                            alt="..."
-                            className="avatar img-raised mr-2"
-                            src={
-                              require("assets/img/faces/kaci-baum-2.jpg")
-                                .default
-                            }
-                          />
+                          <img alt="..." className="avatar img-raised mr-2" src={require('assets/img/faces/kaci-baum-2.jpg').default} />
                           <span>Patricia Beatty</span>
                         </a>
                       </div>
@@ -745,10 +540,7 @@ function SectionBlog() {
                 <Card
                   data-background="image"
                   style={{
-                    backgroundImage:
-                      "url(" +
-                      require("assets/img/sections/ilya-yakover.jpg").default +
-                      ")",
+                    backgroundImage: 'url(' + require('assets/img/sections/ilya-yakover.jpg').default + ')',
                   }}
                 >
                   <CardBody>
@@ -757,26 +549,16 @@ function SectionBlog() {
                       Development
                     </h6>
                     <a href="#pablo" onClick={(e) => e.preventDefault()}>
-                      <CardTitle tag="h3">
-                        In need of a good development
-                      </CardTitle>
+                      <CardTitle tag="h3">In need of a good development</CardTitle>
                     </a>
                     <p className="card-description">
-                      Speed up your development time or get inspired with the
-                      large number of example pages. You can jump start your
-                      development with our pre-built example pages.
+                      Speed up your development time or get inspired with the large number of example pages. You can jump start your development with
+                      our pre-built example pages.
                     </p>
                     <CardFooter>
                       <div className="author">
                         <a href="#pablo" onClick={(e) => e.preventDefault()}>
-                          <img
-                            alt="..."
-                            className="avatar img-raised mr-2"
-                            src={
-                              require("assets/img/faces/clem-onojeghuo-3.jpg")
-                                .default
-                            }
-                          />
+                          <img alt="..." className="avatar img-raised mr-2" src={require('assets/img/faces/clem-onojeghuo-3.jpg').default} />
                           <span>Robert Brandon</span>
                         </a>
                       </div>
@@ -788,11 +570,7 @@ function SectionBlog() {
                 <Card
                   data-background="image"
                   style={{
-                    backgroundImage:
-                      "url(" +
-                      require("assets/img/sections/vincent-versluis.jpg")
-                        .default +
-                      ")",
+                    backgroundImage: 'url(' + require('assets/img/sections/vincent-versluis.jpg').default + ')',
                   }}
                 >
                   <CardBody>
@@ -804,21 +582,12 @@ function SectionBlog() {
                       <CardTitle tag="h3">A Little Adrift</CardTitle>
                     </a>
                     <p className="card-description">
-                      But from the perspective of founders, there’s bound to be
-                      some confusion. In an ideal world we will see a meeting of
-                      the minds
+                      But from the perspective of founders, there’s bound to be some confusion. In an ideal world we will see a meeting of the minds
                     </p>
                     <CardFooter>
                       <div className="author">
                         <a href="#pablo" onClick={(e) => e.preventDefault()}>
-                          <img
-                            alt="..."
-                            className="avatar img-raised mr-2"
-                            src={
-                              require("assets/img/faces/ayo-ogunseinde-2.jpg")
-                                .default
-                            }
-                          />
+                          <img alt="..." className="avatar img-raised mr-2" src={require('assets/img/faces/ayo-ogunseinde-2.jpg').default} />
                           <span>Ayo Michael</span>
                         </a>
                       </div>

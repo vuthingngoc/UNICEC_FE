@@ -1,30 +1,21 @@
-import React from "react";
+import React from 'react';
 
 // reactstrap components
-import {
-  Button,
-  Card,
-  CardTitle,
-  Form,
-  Input,
-  Container,
-  Row,
-  Col,
-} from "reactstrap";
+import { Button, Card, CardTitle, Form, Input, Container, Row, Col } from 'reactstrap';
 
 // core components
-import ColorNavbar from "components/Navbars/ColorNavbar.js";
+import ColorNavbar from 'components/Navbars/ColorNavbar.js';
 
 function LoginPage() {
-  document.documentElement.classList.remove("nav-open");
+  document.documentElement.classList.remove('nav-open');
   React.useEffect(() => {
-    document.body.classList.add("login-page");
-    document.body.classList.add("full-screen");
+    document.body.classList.add('login-page');
+    document.body.classList.add('full-screen');
     window.scrollTo(0, 0);
     document.body.scrollTop = 0;
     return function cleanup() {
-      document.body.classList.remove("login-page");
-      document.body.classList.remove("full-screen");
+      document.body.classList.remove('login-page');
+      document.body.classList.remove('full-screen');
     };
   });
   return (
@@ -34,10 +25,7 @@ function LoginPage() {
         <div
           className="page-header"
           style={{
-            backgroundImage:
-              "url(" +
-              require("assets/img/sections/bruno-abatti.jpg").default +
-              ")",
+            backgroundImage: 'url(' + require('assets/img/sections/bruno-abatti.jpg').default + ')',
           }}
         >
           <div className="filter" />
@@ -48,28 +36,15 @@ function LoginPage() {
                   <CardTitle tag="h3">Welcome</CardTitle>
                   <Form className="register-form">
                     <label>Email</label>
-                    <Input
-                      className="no-border"
-                      placeholder="Email"
-                      type="email"
-                    />
+                    <Input className="no-border" placeholder="Email" type="email" />
                     <label>Password</label>
-                    <Input
-                      className="no-border"
-                      placeholder="Password"
-                      type="password"
-                    />
+                    <Input className="no-border" placeholder="Password" type="password" />
                     <Button block className="btn-round" color="danger">
                       Register
                     </Button>
                   </Form>
                   <div className="forgot">
-                    <Button
-                      className="btn-link"
-                      color="danger"
-                      href="#pablo"
-                      onClick={(e) => e.preventDefault()}
-                    >
+                    <Button className="btn-link" color="danger" href="#pablo" onClick={(e) => e.preventDefault()}>
                       Forgot password?
                     </Button>
                   </div>
@@ -78,8 +53,7 @@ function LoginPage() {
             </Row>
             <div className="demo-footer text-center">
               <h6>
-                © {new Date().getFullYear()}, made with{" "}
-                <i className="fa fa-heart heart" /> by Creative Tim
+                © {new Date().getFullYear()}, made with <i className="fa fa-heart heart" /> by Creative Tim
               </h6>
             </div>
           </Container>

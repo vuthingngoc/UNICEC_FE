@@ -23,7 +23,7 @@
 .animated.flipOutY,
 .animated.bounceIn,
 .animated.bounceOut {
-  animation-duration: .75s;
+  animation-duration: 0.75s;
 }
 
 @keyframes bounce {
@@ -1558,7 +1558,7 @@
 }
 
 #notifications {
-  background-color: #FFFFFF;
+  background-color: #ffffff;
   display: block;
   width: 100%;
   position: relative;
@@ -1588,7 +1588,7 @@
 }
 
 .txt-white {
-  color: #FFFFFF;
+  color: #ffffff;
 }
 
 .txt-gray {
@@ -1601,7 +1601,7 @@
 }
 
 .social-share a {
-  color: #FFFFFF;
+  color: #ffffff;
 }
 
 .parallax {
@@ -1619,22 +1619,22 @@
 }
 
 .separator {
-  content: "Separator";
-  color: #FFFFFF;
+  content: 'Separator';
+  color: #ffffff;
   display: block;
   width: 100%;
   padding: 20px;
 }
 
 .separator-line {
-  background-color: #EEE;
+  background-color: #eee;
   height: 1px;
   width: 100%;
   display: block;
 }
 
 .separator.separator-gray {
-  background-color: #EEEEEE;
+  background-color: #eeeeee;
 }
 
 .social-buttons-demo .btn {
@@ -1772,7 +1772,7 @@ pre.prettyprint {
 
 .pick-class-label {
   border-radius: 8px;
-  border: 1px solid #E3E3E3;
+  border: 1px solid #e3e3e3;
   color: #ffffff;
   cursor: pointer;
   display: inline-block;
@@ -1791,7 +1791,7 @@ pre.prettyprint {
 }
 
 .navbar-transparent.navbar-small .logo-container .brand {
-  color: #FFFFFF;
+  color: #ffffff;
 }
 
 .navbar-default.navbar-small .logo-container .brand {
@@ -1811,14 +1811,14 @@ pre.prettyprint {
   position: absolute;
   background-color: #ccc;
   width: 1px;
-  content: "";
+  content: '';
   right: -7px;
   top: 0;
 }
 
 .info li {
   padding: 5px 0;
-  border-bottom: 1px solid #E5E5E5;
+  border-bottom: 1px solid #e5e5e5;
   color: #666666;
 }
 
@@ -1875,20 +1875,20 @@ pre.prettyprint {
 
 .container-right-click .card-price#card-price-small {
   margin-top: 70px;
-  -webkit-transition: all .2s;
-  -moz-transition: all .2s;
-  -o-transition: all .2s;
-  transition: all .2s;
+  -webkit-transition: all 0.2s;
+  -moz-transition: all 0.2s;
+  -o-transition: all 0.2s;
+  transition: all 0.2s;
   position: relative;
   z-index: 20003;
 }
 
 .container-right-click .card-price#card-price-big {
   margin-top: 40px;
-  -webkit-transition: all .2s;
-  -moz-transition: all .2s;
-  -o-transition: all .2s;
-  transition: all .2s;
+  -webkit-transition: all 0.2s;
+  -moz-transition: all 0.2s;
+  -o-transition: all 0.2s;
+  transition: all 0.2s;
   position: relative;
   z-index: 20003;
 }
@@ -1987,7 +1987,7 @@ pre.prettyprint {
 }
 
 #notifications {
-  background-color: #F5F2EC;
+  background-color: #f5f2ec;
 }
 
 #demo-navbar {
@@ -2025,11 +2025,11 @@ pre.prettyprint {
 .tag,
 .pln,
 .kwd {
-  color: #7A9E9F;
+  color: #7a9e9f;
 }
 
 .atn {
-  color: #68B3C8;
+  color: #68b3c8;
 }
 
 .pln {
@@ -2070,7 +2070,7 @@ pre.prettyprint {
 
 .wrapper .demo-header .filter::after {
   background-color: rgba(0, 0, 0, 0.5);
-  content: "";
+  content: '';
   display: block;
   height: 600px;
   left: 0;
@@ -2124,8 +2124,8 @@ pre.prettyprint {
   top: 0;
   left: 0;
   background: black;
-  opacity: .66;
-  content: "";
+  opacity: 0.66;
+  content: '';
 }
 
 .presentation-page .section-header {
@@ -2161,7 +2161,7 @@ pre.prettyprint {
   padding: 180px 0;
 }
 
-.presentation-page .section-icons [class*="col-"]:nth-child(2) {
+.presentation-page .section-icons [class*='col-']:nth-child(2) {
   padding: 0 70px;
 }
 
@@ -2500,7 +2500,7 @@ pre.prettyprint {
 
 .presentation-page .section-content .image-container .img {
   width: 75%;
-  transition: transform .6s .9s;
+  transition: transform 0.6s 0.9s;
   z-index: 2;
 }
 
@@ -2594,11 +2594,11 @@ pre.prettyprint {
   display: inline-block;
   margin: 5px 1px 0;
   width: auto;
-  color: #FFFFFF;
+  color: #ffffff;
 }
 
 .presentation-page .section-sharing .text-muted {
-  opacity: .8;
+  opacity: 0.8;
 }
 
 .presentation-page .section-sharing .card-pricing.card-margin {
@@ -2629,7 +2629,7 @@ pre.prettyprint {
   margin: 0 auto;
   position: relative;
   text-align: center;
-  color: #FFFFFF;
+  color: #ffffff;
   display: block;
 }
 
@@ -2649,18 +2649,18 @@ pre.prettyprint {
   font-size: 8em;
   font-weight: 700;
   margin: 0;
-  color: #FFFFFF;
+  color: #ffffff;
   background: #fbf8ec;
-  background: -moz-linear-gradient(top, #FFFFFF 35%, #4e6773 100%);
-  background: -webkit-linear-gradient(top, #FFFFFF 35%, #4e6773 100%);
-  background: linear-gradient(to bottom, #FFFFFF 35%, #4e6773 100%);
+  background: -moz-linear-gradient(top, #ffffff 35%, #4e6773 100%);
+  background: -webkit-linear-gradient(top, #ffffff 35%, #4e6773 100%);
+  background: linear-gradient(to bottom, #ffffff 35%, #4e6773 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 .presentation-page .presentation-subtitle {
   font-size: 1.7em;
-  color: #FFFFFF;
+  color: #ffffff;
 }
 
 .presentation-page .category-absolute {
@@ -2687,7 +2687,7 @@ pre.prettyprint {
   margin-left: -35%;
   margin-bottom: -50px;
   width: 110%;
-  opacity: .85;
+  opacity: 0.85;
 }
 
 .presentation-page .fog-low img {
@@ -2747,7 +2747,7 @@ pre.prettyprint {
   position: relative;
 }
 
-.section-testimonials .testimonials-people>img {
+.section-testimonials .testimonials-people > img {
   position: absolute;
   border-radius: 50%;
   box-shadow: 0 8px 10px 1px rgba(0, 0, 0, 0.14), 0 3px 14px 2px rgba(0, 0, 0, 0.12), 0 5px 5px -3px rgba(0, 0, 0, 0.2);
@@ -3131,7 +3131,7 @@ pre.prettyprint {
 }
 
 .demo-icons a {
-  color: #608CEE;
+  color: #608cee;
   text-decoration: none;
 }
 
@@ -3165,13 +3165,13 @@ pre.prettyprint {
 
 .demo-icons section h2 {
   border-bottom: 1px solid #e2e2e2;
-  padding: 0 0 1em .2em;
+  padding: 0 0 1em 0.2em;
   margin-bottom: 1em;
 }
 
 .demo-icons ul::after {
   clear: both;
-  content: "";
+  content: '';
   display: table;
 }
 
@@ -3180,7 +3180,7 @@ pre.prettyprint {
   float: left;
   padding: 16px 0;
   text-align: center;
-  border-radius: .25em;
+  border-radius: 0.25em;
   -webkit-transition: background 0.2s;
   -moz-transition: background 0.2s;
   transition: background 0.2s;
@@ -3220,7 +3220,7 @@ pre.prettyprint {
 
 .demo-icons ul p::selection,
 .demo-icons ul em::selection {
-  background: #608CEE;
+  background: #608cee;
   color: #efefef;
 }
 

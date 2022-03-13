@@ -1,41 +1,25 @@
-import React from "react";
+import React from 'react';
 
 // reactstrap components
-import {
-  Button,
-  Label,
-  FormGroup,
-  Input,
-  InputGroupAddon,
-  InputGroupText,
-  InputGroup,
-  Container,
-  Row,
-  Col,
-} from "reactstrap";
+import { Button, Label, FormGroup, Input, InputGroupAddon, InputGroupText, InputGroup, Container, Row, Col } from 'reactstrap';
 
 // core components
-import DangerNavbar from "components/Navbars/DangerNavbar.js";
-import FooterBlack from "components/Footers/FooterBlack.js";
-import TagsInput from "components/TagsInput/TagsInput.js";
-import ImageUpload from "components/CustomUpload/ImageUpload.js";
+import DangerNavbar from 'components/Navbars/DangerNavbar.js';
+import FooterBlack from 'components/Footers/FooterBlack.js';
+import TagsInput from 'components/TagsInput/TagsInput.js';
+import ImageUpload from 'components/CustomUpload/ImageUpload.js';
 
 function AddProduct() {
-  const [tags, setTags] = React.useState([
-    "Minimal",
-    " Light",
-    " New",
-    " Friends",
-  ]);
-  const [categories, setCategories] = React.useState(["Food", " Drink"]);
+  const [tags, setTags] = React.useState(['Minimal', ' Light', ' New', ' Friends']);
+  const [categories, setCategories] = React.useState(['Food', ' Drink']);
 
-  document.documentElement.classList.remove("nav-open");
+  document.documentElement.classList.remove('nav-open');
   React.useEffect(() => {
-    document.body.classList.add("add-product");
+    document.body.classList.add('add-product');
     window.scrollTo(0, 0);
     document.body.scrollTop = 0;
     return function cleanup() {
-      document.body.classList.remove("add-product");
+      document.body.classList.remove('add-product');
     };
   });
   return (
@@ -56,7 +40,7 @@ function AddProduct() {
                       onlyUnique
                       onChange={(value) => setTags(value)}
                       tagProps={{
-                        className: "react-tagsinput-tag badge-success",
+                        className: 'react-tagsinput-tag badge-success',
                       }}
                       value={tags}
                     />
@@ -67,7 +51,7 @@ function AddProduct() {
                       onlyUnique
                       onChange={(value) => setCategories(value)}
                       tagProps={{
-                        className: "react-tagsinput-tag badge-success",
+                        className: 'react-tagsinput-tag badge-success',
                       }}
                       value={categories}
                     />
@@ -77,24 +61,13 @@ function AddProduct() {
                   </h6>
                   <div className="form-check-radio">
                     <Label check>
-                      <Input
-                        defaultValue="option1"
-                        id="exampleRadios1"
-                        name="exampleRadios"
-                        type="radio"
-                      />
+                      <Input defaultValue="option1" id="exampleRadios1" name="exampleRadios" type="radio" />
                       Digital <span className="form-check-sign" />
                     </Label>
                   </div>
                   <div className="form-check-radio">
                     <Label check>
-                      <Input
-                        defaultChecked
-                        defaultValue="option2"
-                        id="exampleRadios2"
-                        name="exampleRadios"
-                        type="radio"
-                      />
+                      <Input defaultChecked defaultValue="option2" id="exampleRadios2" name="exampleRadios" type="radio" />
                       Print <span className="form-check-sign" />
                     </Label>
                   </div>
@@ -104,21 +77,13 @@ function AddProduct() {
                     <h6>
                       Name <span className="icon-danger">*</span>
                     </h6>
-                    <Input
-                      className="border-input"
-                      placeholder="enter the product name here..."
-                      type="text"
-                    />
+                    <Input className="border-input" placeholder="enter the product name here..." type="text" />
                   </FormGroup>
                   <FormGroup>
                     <h6>
                       Tagline <span className="icon-danger">*</span>
                     </h6>
-                    <Input
-                      className="border-input"
-                      placeholder="enter the product tagline here..."
-                      type="text"
-                    />
+                    <Input className="border-input" placeholder="enter the product tagline here..." type="text" />
                   </FormGroup>
                   <Row className="price-row">
                     <Col md="6">
@@ -126,12 +91,7 @@ function AddProduct() {
                         Price <span className="icon-danger">*</span>
                       </h6>
                       <InputGroup className="border-input">
-                        <Input
-                          className="border-input"
-                          defaultValue=""
-                          placeholder="enter price"
-                          type="text"
-                        />
+                        <Input className="border-input" defaultValue="" placeholder="enter price" type="text" />
                         <InputGroupAddon addonType="append">
                           <InputGroupText>
                             <i className="fa fa-euro" />
@@ -142,12 +102,7 @@ function AddProduct() {
                     <Col md="6">
                       <h6>Discount</h6>
                       <InputGroup className="border-input">
-                        <Input
-                          className="border-input"
-                          defaultValue=""
-                          placeholder="enter discount"
-                          type="text"
-                        />
+                        <Input className="border-input" defaultValue="" placeholder="enter discount" type="text" />
                         <InputGroupAddon addonType="append">
                           <InputGroupText>%</InputGroupText>
                         </InputGroupAddon>
@@ -165,10 +120,7 @@ function AddProduct() {
                     />
                     <h5>
                       <small>
-                        <span
-                          className="pull-right"
-                          id="textarea-limited-message"
-                        >
+                        <span className="pull-right" id="textarea-limited-message">
                           150 characters left
                         </span>
                       </small>
@@ -177,42 +129,24 @@ function AddProduct() {
                   <FormGroup check>
                     <Label check>
                       <Input defaultValue="" type="checkbox" />
-                      Display on landing page{" "}
-                      <span className="form-check-sign" />
+                      Display on landing page <span className="form-check-sign" />
                     </Label>
                   </FormGroup>
                 </Col>
               </Row>
               <Row className="buttons-row">
                 <Col md="4" sm="4">
-                  <Button
-                    block
-                    className="btn-round"
-                    color="danger"
-                    outline
-                    type="reset"
-                  >
+                  <Button block className="btn-round" color="danger" outline type="reset">
                     Cancel
                   </Button>
                 </Col>
                 <Col md="4" sm="4">
-                  <Button
-                    block
-                    className="btn-round"
-                    color="primary"
-                    outline
-                    type="submit"
-                  >
+                  <Button block className="btn-round" color="primary" outline type="submit">
                     Save
                   </Button>
                 </Col>
                 <Col md="4" sm="4">
-                  <Button
-                    block
-                    className="btn-round"
-                    color="primary"
-                    type="submit"
-                  >
+                  <Button block className="btn-round" color="primary" type="submit">
                     Save &amp; Publish
                   </Button>
                 </Col>

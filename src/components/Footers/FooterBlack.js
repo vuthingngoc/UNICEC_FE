@@ -1,8 +1,8 @@
 /*eslint-disable*/
-import React from "react";
+import React from 'react';
 
 // reactstrap components
-import { Container, Row } from "reactstrap";
+import { Container, Row } from 'reactstrap';
 
 // core components
 
@@ -15,28 +15,17 @@ function FooterBlack() {
             <nav className="footer-nav">
               <ul>
                 <li>
-                  <a
-                    href="https://www.creative-tim.com?ref=pkpr-black-footer"
-                    target="_blank"
-                    className="mr-1"
-                  >
+                  <a href="https://www.creative-tim.com?ref=pkpr-black-footer" target="_blank" className="mr-1">
                     Creative Tim
                   </a>
                 </li>
                 <li>
-                  <a
-                    href="http://blog.creative-tim.com/?ref=pkpr-black-footer"
-                    target="_blank"
-                    className="mr-1"
-                  >
+                  <a href="http://blog.creative-tim.com/?ref=pkpr-black-footer" target="_blank" className="mr-1">
                     Blog
                   </a>
                 </li>
                 <li>
-                  <a
-                    href="https://www.creative-tim.com/license?ref=pkpr-black-footer"
-                    target="_blank"
-                  >
+                  <a href="https://www.creative-tim.com/license?ref=pkpr-black-footer" target="_blank">
                     Licenses
                   </a>
                 </li>

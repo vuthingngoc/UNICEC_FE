@@ -1,7 +1,7 @@
-import React from "react";
+import React from 'react';
 
 // reactstrap components
-import { Container, Row, Col } from "reactstrap";
+import { Container, Row, Col } from 'reactstrap';
 
 // core components
 
@@ -60,52 +60,38 @@ function SectionTypography() {
               <span className="note">Quote</span>
               <blockquote className="blockquote">
                 <p className="mb-0">
-                  Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed
-                  diam nonummy nibh euismod tincidunt ut laoreet dolore magna
-                  aliquam erat volutpat. Ut wisi enim ad minim veniam.
+                  Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam
+                  erat volutpat. Ut wisi enim ad minim veniam.
                 </p>
                 <br />
                 <footer className="blockquote-footer">
-                  Someone famous in{" "}
-                  <cite title="source Title">Source Title</cite>
+                  Someone famous in <cite title="source Title">Source Title</cite>
                 </footer>
               </blockquote>
             </div>
             <div className="typography-line">
               <span className="note">Muted text</span>
-              <p className="text-muted">
-                Fusce dapibus, tellus ac cursus commodo, tortor mauris nibh.
-              </p>
+              <p className="text-muted">Fusce dapibus, tellus ac cursus commodo, tortor mauris nibh.</p>
             </div>
             <div className="typography-line">
               <span className="note">Primary text</span>
-              <p className="text-primary">
-                Nullam id dolor id nibh ultricies vehicula ut id elit.
-              </p>
+              <p className="text-primary">Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
             </div>
             <div className="typography-line">
               <span className="note">Success text</span>
-              <p className="text-success">
-                Duis mollis, est non commodo luctus, nisi erat porttitor ligula.
-              </p>
+              <p className="text-success">Duis mollis, est non commodo luctus, nisi erat porttitor ligula.</p>
             </div>
             <div className="typography-line">
               <span className="note">Info text</span>
-              <p className="text-info">
-                Maecenas sed diam eget risus varius blandit sit amet non magna.
-              </p>
+              <p className="text-info">Maecenas sed diam eget risus varius blandit sit amet non magna.</p>
             </div>
             <div className="typography-line">
               <span className="note">Warning text</span>
-              <p className="text-warning">
-                Etiam porta sem malesuada magna mollis euismod.
-              </p>
+              <p className="text-warning">Etiam porta sem malesuada magna mollis euismod.</p>
             </div>
             <div className="typography-line">
               <span className="note">Danger text</span>
-              <p className="text-danger">
-                Donec ullamcorper nulla non metus auctor fringilla.
-              </p>
+              <p className="text-danger">Donec ullamcorper nulla non metus auctor fringilla.</p>
             </div>
             <div className="typography-line">
               <h2>
@@ -125,40 +111,22 @@ function SectionTypography() {
             <Row>
               <Col md="3" sm="6">
                 <h4 className="images-title">Rounded Image</h4>
-                <img
-                  alt="..."
-                  className="img-rounded img-responsive"
-                  src={require("assets/img/sections/por7o.jpg").default}
-                />
+                <img alt="..." className="img-rounded img-responsive" src={require('assets/img/sections/por7o.jpg').default} />
                 <div className="img-details">
                   <div className="author">
-                    <img
-                      alt="..."
-                      className="img-circle img-no-padding img-responsive"
-                      src={
-                        require("assets/img/faces/joe-gardner-2.jpg").default
-                      }
-                    />
+                    <img alt="..." className="img-circle img-no-padding img-responsive" src={require('assets/img/faces/joe-gardner-2.jpg').default} />
                   </div>
                   <p>Sonia Green</p>
                 </div>
               </Col>
               <Col className="mr-auto ml-auto" md="2" sm="3">
                 <h4 className="images-title">Circle Image</h4>
-                <img
-                  alt="..."
-                  className="img-circle img-no-padding img-responsive"
-                  src={require("assets/img/faces/kaci-baum-2.jpg").default}
-                />
+                <img alt="..." className="img-circle img-no-padding img-responsive" src={require('assets/img/faces/kaci-baum-2.jpg').default} />
                 <p className="text-center">Brigitte Bardot</p>
               </Col>
               <Col className="mr-auto" md="2" sm="3">
                 <h4 className="images-title">Thumbnail</h4>
-                <img
-                  alt="..."
-                  className="img-thumbnail img-responsive"
-                  src={require("assets/img/faces/erik-lucatero-2.jpg").default}
-                />
+                <img alt="..." className="img-thumbnail img-responsive" src={require('assets/img/faces/erik-lucatero-2.jpg').default} />
                 <p className="text-center">John Keynes</p>
               </Col>
             </Row>

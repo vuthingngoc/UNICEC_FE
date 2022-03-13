@@ -1,9 +1,9 @@
 /* eslint-disable react/jsx-no-target-blank*/
-import React from "react";
+import React from 'react';
 // react plugin used to create datetimepicker
-import ReactDatetime from "react-datetime";
+import ReactDatetime from 'react-datetime';
 // react plugin used to create an image gallery
-import { Gallery, Item } from "react-photoswipe-gallery";
+import { Gallery, Item } from 'react-photoswipe-gallery';
 
 // reactstrap components
 import {
@@ -34,78 +34,78 @@ import {
   CarouselIndicators,
   CarouselCaption,
   CustomInput,
-} from "reactstrap";
+} from 'reactstrap';
 
 // core components
-import ImageUpload from "components/CustomUpload/ImageUpload.js";
+import ImageUpload from 'components/CustomUpload/ImageUpload.js';
 
 // PhotoSwipe items
 const photoSwipeItems = [
   {
-    src: require("assets/img/gallery/outfit-gucci.jpg").default,
-    title: "Gucci",
-    w: "750",
-    h: "1002",
+    src: require('assets/img/gallery/outfit-gucci.jpg').default,
+    title: 'Gucci',
+    w: '750',
+    h: '1002',
   },
   {
-    src: require("assets/img/gallery/outfit-paul-smith.jpg").default,
-    title: "Paul Smith",
-    w: "750",
-    h: "1002",
+    src: require('assets/img/gallery/outfit-paul-smith.jpg').default,
+    title: 'Paul Smith',
+    w: '750',
+    h: '1002',
   },
   {
-    src: require("assets/img/gallery/outfit-maison-margiela.jpg").default,
-    title: "Maison Margiela",
-    w: "750",
-    h: "1002",
+    src: require('assets/img/gallery/outfit-maison-margiela.jpg').default,
+    title: 'Maison Margiela',
+    w: '750',
+    h: '1002',
   },
   {
-    src: require("assets/img/gallery/outfit-burberry.jpg").default,
-    title: "Burberry",
-    w: "750",
-    h: "1002",
+    src: require('assets/img/gallery/outfit-burberry.jpg').default,
+    title: 'Burberry',
+    w: '750',
+    h: '1002',
   },
   {
-    src: require("assets/img/gallery/ressence.jpg").default,
-    title: "",
-    w: "960",
-    h: "800",
+    src: require('assets/img/gallery/ressence.jpg').default,
+    title: '',
+    w: '960',
+    h: '800',
   },
   {
-    src: require("assets/img/gallery/gucci-sun.jpg").default,
-    title: "",
-    w: "960",
-    h: "800",
+    src: require('assets/img/gallery/gucci-sun.jpg').default,
+    title: '',
+    w: '960',
+    h: '800',
   },
   {
-    src: require("assets/img/gallery/bottega.jpg").default,
-    title: "",
-    w: "960",
-    h: "800",
+    src: require('assets/img/gallery/bottega.jpg').default,
+    title: '',
+    w: '960',
+    h: '800',
   },
   {
-    src: require("assets/img/gallery/bracelet.jpg").default,
-    title: "",
-    w: "960",
-    h: "800",
+    src: require('assets/img/gallery/bracelet.jpg').default,
+    title: '',
+    w: '960',
+    h: '800',
   },
 ];
 // carousel items
 const carouselItems = [
   {
-    src: require("assets/img/sections/pedro-lastra.jpg").default,
-    altText: "Somewhere",
-    caption: "Somewhere",
+    src: require('assets/img/sections/pedro-lastra.jpg').default,
+    altText: 'Somewhere',
+    caption: 'Somewhere',
   },
   {
-    src: require("assets/img/sections/fabio-mangione.jpg").default,
-    altText: "Somewhere else",
-    caption: "Somewhere else",
+    src: require('assets/img/sections/fabio-mangione.jpg').default,
+    altText: 'Somewhere else',
+    caption: 'Somewhere else',
   },
   {
-    src: require("assets/img/cover.jpg").default,
-    altText: "Here it is",
-    caption: "Here it is",
+    src: require('assets/img/cover.jpg').default,
+    altText: 'Here it is',
+    caption: 'Here it is',
   },
 ];
 
@@ -137,14 +137,12 @@ function SectionJavaScript() {
   };
   const next = () => {
     if (animating) return;
-    const nextIndex =
-      activeIndex === carouselItems.length - 1 ? 0 : activeIndex + 1;
+    const nextIndex = activeIndex === carouselItems.length - 1 ? 0 : activeIndex + 1;
     setActiveIndex(nextIndex);
   };
   const previous = () => {
     if (animating) return;
-    const nextIndex =
-      activeIndex === 0 ? carouselItems.length - 1 : activeIndex - 1;
+    const nextIndex = activeIndex === 0 ? carouselItems.length - 1 : activeIndex - 1;
     setActiveIndex(nextIndex);
   };
   const goToIndex = (newIndex) => {
@@ -165,57 +163,27 @@ function SectionJavaScript() {
               </div>
               <Row>
                 {/* classicModal */}
-                <Button
-                  className="btn-round"
-                  color="default"
-                  type="button"
-                  onClick={() => setClassic(true)}
-                >
+                <Button className="btn-round" color="default" type="button" onClick={() => setClassic(true)}>
                   Classic modal
                 </Button>
                 {/* notice modal */}
-                <Button
-                  className="btn-round"
-                  color="default"
-                  type="button"
-                  onClick={() => setNotice(true)}
-                >
+                <Button className="btn-round" color="default" type="button" onClick={() => setNotice(true)}>
                   Notice modal
                 </Button>
                 {/* small modal */}
-                <Button
-                  className="btn-round"
-                  color="danger"
-                  type="button"
-                  onClick={() => setSmallAlert(true)}
-                >
+                <Button className="btn-round" color="danger" type="button" onClick={() => setSmallAlert(true)}>
                   Small alert modal
                 </Button>
                 {/* small notice modal */}
-                <Button
-                  className="btn-round"
-                  color="danger"
-                  type="button"
-                  onClick={() => setSmallNotice(true)}
-                >
+                <Button className="btn-round" color="danger" type="button" onClick={() => setSmallNotice(true)}>
                   Small norice modal
                 </Button>
                 {/* login modal */}
-                <Button
-                  className="btn-round"
-                  color="primary"
-                  type="button"
-                  onClick={() => setLogin(true)}
-                >
+                <Button className="btn-round" color="primary" type="button" onClick={() => setLogin(true)}>
                   Login modal
                 </Button>
                 {/* register modal */}
-                <Button
-                  className="btn-round"
-                  color="primary"
-                  type="button"
-                  onClick={() => setRegister(true)}
-                >
+                <Button className="btn-round" color="primary" type="button" onClick={() => setRegister(true)}>
                   Register modal
                 </Button>
               </Row>
@@ -223,41 +191,23 @@ function SectionJavaScript() {
               {/* classicModal */}
               <Modal isOpen={classic} toggle={() => setClassic(false)}>
                 <div className="modal-header">
-                  <button
-                    className="close"
-                    type="button"
-                    onClick={() => setClassic(false)}
-                  >
+                  <button className="close" type="button" onClick={() => setClassic(false)}>
                     <span>×</span>
                   </button>
-                  <h5
-                    className="modal-title text-center"
-                    id="exampleModalLabel"
-                  >
+                  <h5 className="modal-title text-center" id="exampleModalLabel">
                     Modal title
                   </h5>
                 </div>
                 <div className="modal-body">
-                  Far far away, behind the word mountains, far from the
-                  countries Vokalia and Consonantia, there live the blind texts.
-                  Separated they live in Bookmarksgrove right at the coast of
-                  the Semantics, a large language ocean. A small river named
-                  Duden flows by their place and supplies it with the necessary
-                  regelialia. It is a paradisematic country, in which roasted
-                  parts of sentences fly into your mouth. Even the all-powerful
-                  Pointing has no control about the blind texts it is an almost
-                  unorthographic life One day however a small line of blind text
-                  by the name of Lorem Ipsum decided to leave for the far World
-                  of Grammar.
+                  Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they
+                  live in Bookmarksgrove right at the coast of the Semantics, a large language ocean. A small river named Duden flows by their place
+                  and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your
+                  mouth. Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a
+                  small line of blind text by the name of Lorem Ipsum decided to leave for the far World of Grammar.
                 </div>
                 <div className="modal-footer">
                   <div className="left-side">
-                    <Button
-                      className="btn-link"
-                      color="default"
-                      type="button"
-                      onClick={() => setClassic(false)}
-                    >
+                    <Button className="btn-link" color="default" type="button" onClick={() => setClassic(false)}>
                       Never mind
                     </Button>
                   </div>
@@ -272,11 +222,7 @@ function SectionJavaScript() {
               {/* notice modal */}
               <Modal isOpen={notice} toggle={() => setNotice(false)}>
                 <div className="modal-header no-border-header">
-                  <button
-                    className="close"
-                    type="button"
-                    onClick={() => setNotice(false)}
-                  >
+                  <button className="close" type="button" onClick={() => setNotice(false)}>
                     ×
                   </button>
                   <h5 className="modal-title" id="myModalLabel">
@@ -288,28 +234,16 @@ function SectionJavaScript() {
                     <Row>
                       <Col md="8">
                         <p>
-                          <strong>1. Register</strong> - the first step is to
-                          create an account at{" "}
-                          <a
-                            href="http://www.creative-tim.com/?ref=pkpr-index-page"
-                            target="_blank"
-                          >
+                          <strong>1. Register</strong> - the first step is to create an account at{' '}
+                          <a href="http://www.creative-tim.com/?ref=pkpr-index-page" target="_blank">
                             Creative Tim
                           </a>
-                          . You can choose a social network or go for the
-                          classic version, whatever works best for you.
+                          . You can choose a social network or go for the classic version, whatever works best for you.
                         </p>
                       </Col>
                       <Col md="4">
                         <div className="picture">
-                          <img
-                            alt="..."
-                            className="img-rounded img-responsive"
-                            src={
-                              require("assets/img/sections/angelo-pantazis.jpg")
-                                .default
-                            }
-                          />
+                          <img alt="..." className="img-rounded img-responsive" src={require('assets/img/sections/angelo-pantazis.jpg').default} />
                         </div>
                       </Col>
                     </Row>
@@ -318,60 +252,32 @@ function SectionJavaScript() {
                     <Row>
                       <Col md="8">
                         <p>
-                          <strong>2. Apply</strong> - the first step is to
-                          create an account at{" "}
-                          <a
-                            href="http://www.creative-tim.com/?ref=pkpr-index-page"
-                            target="_blank"
-                          >
+                          <strong>2. Apply</strong> - the first step is to create an account at{' '}
+                          <a href="http://www.creative-tim.com/?ref=pkpr-index-page" target="_blank">
                             Creative Tim
                           </a>
-                          . You can choose a social network or go for the
-                          classic version, whatever works best for you.
+                          . You can choose a social network or go for the classic version, whatever works best for you.
                         </p>
                       </Col>
                       <Col md="4">
                         <div className="picture">
-                          <img
-                            alt="..."
-                            className="img-rounded img-responsive"
-                            src={
-                              require("assets/img/sections/rawpixel-coms.jpg")
-                                .default
-                            }
-                          />
+                          <img alt="..." className="img-rounded img-responsive" src={require('assets/img/sections/rawpixel-coms.jpg').default} />
                         </div>
                       </Col>
                     </Row>
                   </div>
-                  <p>
-                    If you have more questions, don&apos;t hesitate to contact
-                    us or send us a tweet @creativetim. We{"'"}re here to help!
-                  </p>
+                  <p>If you have more questions, don&apos;t hesitate to contact us or send us a tweet @creativetim. We{"'"}re here to help!</p>
                 </div>
                 <div className="modal-footer">
-                  <Button
-                    className="btn-link"
-                    color="primary"
-                    type="button"
-                    onClick={() => setNotice(false)}
-                  >
+                  <Button className="btn-link" color="primary" type="button" onClick={() => setNotice(false)}>
                     Okay
                   </Button>
                 </div>
               </Modal>
               {/* small modal */}
-              <Modal
-                size="sm"
-                isOpen={smallAlert}
-                toggle={() => setSmallAlert(false)}
-              >
+              <Modal size="sm" isOpen={smallAlert} toggle={() => setSmallAlert(false)}>
                 <div className="modal-header no-border-header">
-                  <button
-                    className="close"
-                    type="button"
-                    onClick={() => setSmallAlert(false)}
-                  >
+                  <button className="close" type="button" onClick={() => setSmallAlert(false)}>
                     ×
                   </button>
                 </div>
@@ -380,12 +286,7 @@ function SectionJavaScript() {
                 </div>
                 <div className="modal-footer">
                   <div className="left-side">
-                    <Button
-                      className="btn-link"
-                      color="default"
-                      type="button"
-                      onClick={() => setSmallAlert(false)}
-                    >
+                    <Button className="btn-link" color="default" type="button" onClick={() => setSmallAlert(false)}>
                       Never mind
                     </Button>
                   </div>
@@ -398,56 +299,30 @@ function SectionJavaScript() {
                 </div>
               </Modal>
               {/* small notice modal */}
-              <Modal
-                size="sm"
-                isOpen={smallNotice}
-                toggle={() => setSmallNotice(false)}
-              >
+              <Modal size="sm" isOpen={smallNotice} toggle={() => setSmallNotice(false)}>
                 <div className="modal-header no-border-header">
-                  <button
-                    className="close"
-                    type="button"
-                    onClick={() => setSmallNotice(false)}
-                  >
+                  <button className="close" type="button" onClick={() => setSmallNotice(false)}>
                     ×
                   </button>
                 </div>
                 <div className="modal-body text-center">
                   <p>
-                    If you want to do this, you need to allow it in{" "}
-                    <strong>Settings</strong>.
+                    If you want to do this, you need to allow it in <strong>Settings</strong>.
                   </p>
-                  <Button
-                    className="btn-link"
-                    color="danger"
-                    href="#pablo"
-                    onClick={(e) => e.preventDefault()}
-                  >
+                  <Button className="btn-link" color="danger" href="#pablo" onClick={(e) => e.preventDefault()}>
                     Learn more
                   </Button>
                 </div>
                 <div className="modal-footer">
-                  <Button
-                    color="link"
-                    type="button"
-                    onClick={() => setSmallNotice(false)}
-                  >
+                  <Button color="link" type="button" onClick={() => setSmallNotice(false)}>
                     Okay
                   </Button>
                 </div>
               </Modal>
               {/* login modal */}
-              <Modal
-                isOpen={login}
-                toggle={() => setLogin(false)}
-                className="modal-register"
-              >
+              <Modal isOpen={login} toggle={() => setLogin(false)} className="modal-register">
                 <div className="modal-header no-border-header text-center">
-                  <button
-                    className="close"
-                    type="button"
-                    onClick={() => setLogin(false)}
-                  >
+                  <button className="close" type="button" onClick={() => setLogin(false)}>
                     <span>×</span>
                   </button>
                   <h6 className="text-muted">Welcome</h6>
@@ -461,11 +336,7 @@ function SectionJavaScript() {
                   </FormGroup>
                   <FormGroup>
                     <label>Password</label>
-                    <Input
-                      defaultValue=""
-                      placeholder="Password"
-                      type="password"
-                    />
+                    <Input defaultValue="" placeholder="Password" type="password" />
                   </FormGroup>
                   <Button block className="btn-round" color="default">
                     Log in
@@ -473,26 +344,18 @@ function SectionJavaScript() {
                 </div>
                 <div className="modal-footer no-border-footer">
                   <span className="text-muted text-center">
-                    Looking{" "}
+                    Looking{' '}
                     <a href="#pablo" onClick={(e) => e.preventDefault()}>
                       create an account
-                    </a>{" "}
+                    </a>{' '}
                     ?
                   </span>
                 </div>
               </Modal>
               {/* register modal */}
-              <Modal
-                isOpen={register}
-                toggle={() => setRegister(false)}
-                className="modal-register"
-              >
+              <Modal isOpen={register} toggle={() => setRegister(false)} className="modal-register">
                 <div className="modal-header no-border-header text-center">
-                  <button
-                    className="close"
-                    type="button"
-                    onClick={() => setRegister(false)}
-                  >
+                  <button className="close" type="button" onClick={() => setRegister(false)}>
                     ×
                   </button>
                   <h6 className="text-muted">Welcome</h6>
@@ -509,12 +372,7 @@ function SectionJavaScript() {
                   <Button block className="btn-round" color="default">
                     Connect with Twitter
                   </Button>
-                  <Button
-                    block
-                    className="btn-round btn-simple"
-                    color="info"
-                    type="button"
-                  >
+                  <Button block className="btn-round btn-simple" color="info" type="button">
                     Sign In with Email
                   </Button>
                 </div>
@@ -531,11 +389,7 @@ function SectionJavaScript() {
               <div id="acordeon">
                 <div aria-multiselectable={true} id="accordion" role="tablist">
                   <Card className="no-transition">
-                    <CardHeader
-                      className="card-collapse"
-                      id="headingOne"
-                      role="tab"
-                    >
+                    <CardHeader className="card-collapse" id="headingOne" role="tab">
                       <h5 className="mb-0 panel-title">
                         <a
                           aria-expanded={collapses.includes(1)}
@@ -548,32 +402,20 @@ function SectionJavaScript() {
                             changeCollapse(1);
                           }}
                         >
-                          Default Collapsible Item 1{" "}
-                          <i className="nc-icon nc-minimal-down" />
+                          Default Collapsible Item 1 <i className="nc-icon nc-minimal-down" />
                         </a>
                       </h5>
                     </CardHeader>
                     <Collapse isOpen={collapses.includes(1)}>
                       <CardBody>
-                        Anim pariatur cliche reprehenderit, enim eiusmod high
-                        life accusamus terry richardson ad squid. 3 wolf moon
-                        officia aute, non cupidatat skateboard dolor brunch.
-                        Food truck quinoa nesciunt laborum eiusmod. Brunch 3
-                        wolf moon tempor, sunt aliqua put a bird on it squid
-                        single-origin coffee nulla assumenda shoreditch et.
-                        Nihil anim keffiyeh helvetica, craft beer labore wes
-                        anderson cred nesciunt sapiente ea proident. Ad vegan
-                        excepteur butcher vice lomo. Leggings occaecat craft
-                        beer farm-to-table, raw denim aesthetic synth nesciunt
-                        you probably haven&apos;t heard of them accusamus labore
-                        sustainable VHS.
+                        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non
+                        cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a
+                        bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes
+                        anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table,
+                        raw denim aesthetic synth nesciunt you probably haven&apos;t heard of them accusamus labore sustainable VHS.
                       </CardBody>
                     </Collapse>
-                    <CardHeader
-                      className="card-collapse"
-                      id="headingTwo"
-                      role="tab"
-                    >
+                    <CardHeader className="card-collapse" id="headingTwo" role="tab">
                       <h5 className="mb-0 panel-title">
                         <a
                           aria-controls="collapseTwo"
@@ -587,32 +429,20 @@ function SectionJavaScript() {
                             changeCollapse(2);
                           }}
                         >
-                          Default Collapsible Item 2{" "}
-                          <i className="nc-icon nc-minimal-down" />
+                          Default Collapsible Item 2 <i className="nc-icon nc-minimal-down" />
                         </a>
                       </h5>
                     </CardHeader>
                     <Collapse isOpen={collapses.includes(2)}>
                       <CardBody>
-                        Anim pariatur cliche reprehenderit, enim eiusmod high
-                        life accusamus terry richardson ad squid. 3 wolf moon
-                        officia aute, non cupidatat skateboard dolor brunch.
-                        Food truck quinoa nesciunt laborum eiusmod. Brunch 3
-                        wolf moon tempor, sunt aliqua put a bird on it squid
-                        single-origin coffee nulla assumenda shoreditch et.
-                        Nihil anim keffiyeh helvetica, craft beer labore wes
-                        anderson cred nesciunt sapiente ea proident. Ad vegan
-                        excepteur butcher vice lomo. Leggings occaecat craft
-                        beer farm-to-table, raw denim aesthetic synth nesciunt
-                        you probably haven&apos;t heard of them accusamus labore
-                        sustainable VHS.
+                        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non
+                        cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a
+                        bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes
+                        anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table,
+                        raw denim aesthetic synth nesciunt you probably haven&apos;t heard of them accusamus labore sustainable VHS.
                       </CardBody>
                     </Collapse>
-                    <CardHeader
-                      className="card-collapse"
-                      id="headingThree"
-                      role="tab"
-                    >
+                    <CardHeader className="card-collapse" id="headingThree" role="tab">
                       <h5 className="mb-0 panel-title">
                         <a
                           aria-controls="collapseThree"
@@ -626,25 +456,17 @@ function SectionJavaScript() {
                             changeCollapse(3);
                           }}
                         >
-                          Default Collapsible Item 3{" "}
-                          <i className="nc-icon nc-minimal-down" />
+                          Default Collapsible Item 3 <i className="nc-icon nc-minimal-down" />
                         </a>
                       </h5>
                     </CardHeader>
                     <Collapse isOpen={collapses.includes(3)}>
                       <CardBody>
-                        Anim pariatur cliche reprehenderit, enim eiusmod high
-                        life accusamus terry richardson ad squid. 3 wolf moon
-                        officia aute, non cupidatat skateboard dolor brunch.
-                        Food truck quinoa nesciunt laborum eiusmod. Brunch 3
-                        wolf moon tempor, sunt aliqua put a bird on it squid
-                        single-origin coffee nulla assumenda shoreditch et.
-                        Nihil anim keffiyeh helvetica, craft beer labore wes
-                        anderson cred nesciunt sapiente ea proident. Ad vegan
-                        excepteur butcher vice lomo. Leggings occaecat craft
-                        beer farm-to-table, raw denim aesthetic synth nesciunt
-                        you probably haven&apos;t heard of them accusamus labore
-                        sustainable VHS.
+                        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non
+                        cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a
+                        bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes
+                        anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table,
+                        raw denim aesthetic synth nesciunt you probably haven&apos;t heard of them accusamus labore sustainable VHS.
                       </CardBody>
                     </Collapse>
                   </Card>
@@ -665,8 +487,8 @@ function SectionJavaScript() {
                     <React.Fragment key={key}>
                       <Item
                         title={prop.title}
-                        original={prop.src + "?image=" + key}
-                        thumbnail={prop.src + "?image=" + key}
+                        original={prop.src + '?image=' + key}
+                        thumbnail={prop.src + '?image=' + key}
                         width={prop.w}
                         height={prop.h}
                       >
@@ -676,14 +498,11 @@ function SectionJavaScript() {
                               <img
                                 ref={ref}
                                 onClick={open}
-                                src={prop.src + "?image=" + key}
+                                src={prop.src + '?image=' + key}
                                 alt={prop.title}
                                 className="vertical-image img-rounded img-responsive"
                               />
-                              <figcaption
-                                className="gallery-caption"
-                                itemProp="caption description"
-                              >
+                              <figcaption className="gallery-caption" itemProp="caption description">
                                 {prop.title}
                               </figcaption>
                             </div>
@@ -701,64 +520,28 @@ function SectionJavaScript() {
             <div className="title">
               <h3>Tooltips</h3>
             </div>
-            <Button
-              className="btn-round mr-1"
-              color="warning"
-              id="tooltip883060620"
-              type="button"
-            >
+            <Button className="btn-round mr-1" color="warning" id="tooltip883060620" type="button">
               On left
             </Button>
-            <UncontrolledTooltip
-              delay={0}
-              placement="left"
-              target="tooltip883060620"
-            >
+            <UncontrolledTooltip delay={0} placement="left" target="tooltip883060620">
               Tooltip on left
             </UncontrolledTooltip>
-            <Button
-              className="btn-round mr-1"
-              color="warning"
-              id="tooltip437036653"
-              type="button"
-            >
+            <Button className="btn-round mr-1" color="warning" id="tooltip437036653" type="button">
               On right
             </Button>
-            <UncontrolledTooltip
-              delay={0}
-              placement="right"
-              target="tooltip437036653"
-            >
+            <UncontrolledTooltip delay={0} placement="right" target="tooltip437036653">
               Tooltip on right
             </UncontrolledTooltip>
-            <Button
-              className="btn-round mr-1"
-              color="warning"
-              id="tooltip611715831"
-              type="button"
-            >
+            <Button className="btn-round mr-1" color="warning" id="tooltip611715831" type="button">
               On top
             </Button>
-            <UncontrolledTooltip
-              delay={0}
-              placement="top"
-              target="tooltip611715831"
-            >
+            <UncontrolledTooltip delay={0} placement="top" target="tooltip611715831">
               Tooltip on top
             </UncontrolledTooltip>
-            <Button
-              className="btn-round"
-              color="warning"
-              id="tooltip45188909"
-              type="button"
-            >
+            <Button className="btn-round" color="warning" id="tooltip45188909" type="button">
               On bottom
             </Button>
-            <UncontrolledTooltip
-              delay={0}
-              placement="bottom"
-              target="tooltip45188909"
-            >
+            <UncontrolledTooltip delay={0} placement="bottom" target="tooltip45188909">
               Tooltip on bottom
             </UncontrolledTooltip>
           </Col>
@@ -766,77 +549,33 @@ function SectionJavaScript() {
             <div className="title">
               <h3>Popovers</h3>
             </div>
-            <Button
-              className="btn-round mr-1"
-              color="default"
-              id="tooltip903164576"
-              type="button"
-            >
+            <Button className="btn-round mr-1" color="default" id="tooltip903164576" type="button">
               Nude on top
             </Button>
-            <UncontrolledPopover
-              trigger="focus"
-              placement="top"
-              target="tooltip903164576"
-            >
+            <UncontrolledPopover trigger="focus" placement="top" target="tooltip903164576">
               <PopoverHeader>Popover on top</PopoverHeader>
-              <PopoverBody>
-                Here will be some very useful information about this popover.
-              </PopoverBody>
+              <PopoverBody>Here will be some very useful information about this popover.</PopoverBody>
             </UncontrolledPopover>
-            <Button
-              className="btn-round mr-1"
-              color="default"
-              id="tooltip65260554"
-              type="button"
-            >
+            <Button className="btn-round mr-1" color="default" id="tooltip65260554" type="button">
               Nude on bottom
             </Button>
-            <UncontrolledPopover
-              trigger="focus"
-              placement="bottom"
-              target="tooltip65260554"
-            >
+            <UncontrolledPopover trigger="focus" placement="bottom" target="tooltip65260554">
               <PopoverHeader>Popover on bottom</PopoverHeader>
-              <PopoverBody>
-                Here will be some very useful information about this popover.
-              </PopoverBody>
+              <PopoverBody>Here will be some very useful information about this popover.</PopoverBody>
             </UncontrolledPopover>
-            <Button
-              className="btn-round mr-1"
-              color="default"
-              id="tooltip445514613"
-              type="button"
-            >
+            <Button className="btn-round mr-1" color="default" id="tooltip445514613" type="button">
               Nude on left
             </Button>
-            <UncontrolledPopover
-              trigger="focus"
-              placement={window.innerWidth < 768 ? "top" : "left"}
-              target="tooltip445514613"
-            >
+            <UncontrolledPopover trigger="focus" placement={window.innerWidth < 768 ? 'top' : 'left'} target="tooltip445514613">
               <PopoverHeader>Popover on left</PopoverHeader>
-              <PopoverBody>
-                Here will be some very useful information about this popover.
-              </PopoverBody>
+              <PopoverBody>Here will be some very useful information about this popover.</PopoverBody>
             </UncontrolledPopover>
-            <Button
-              className="btn-round"
-              color="default"
-              id="tooltip643478596"
-              type="button"
-            >
+            <Button className="btn-round" color="default" id="tooltip643478596" type="button">
               Nude on right
             </Button>
-            <UncontrolledPopover
-              trigger="focus"
-              placement={window.innerWidth < 768 ? "bottom" : "right"}
-              target="tooltip643478596"
-            >
+            <UncontrolledPopover trigger="focus" placement={window.innerWidth < 768 ? 'bottom' : 'right'} target="tooltip643478596">
               <PopoverHeader>Popover on right</PopoverHeader>
-              <PopoverBody>
-                Here will be some very useful information about this popover.
-              </PopoverBody>
+              <PopoverBody>Here will be some very useful information about this popover.</PopoverBody>
             </UncontrolledPopover>
           </Col>
           <Col md="12">
@@ -889,12 +628,7 @@ function SectionJavaScript() {
                             </Col>
                             <Col xs="6">Facebook</Col>
                             <Col xs="4">
-                              <CustomInput
-                                type="switch"
-                                id="exampleCustomSwitch-5"
-                                name="customSwitch-5"
-                                className="custom-switch-success"
-                              />
+                              <CustomInput type="switch" id="exampleCustomSwitch-5" name="customSwitch-5" className="custom-switch-success" />
                             </Col>
                           </Row>
                         </div>
@@ -910,26 +644,14 @@ function SectionJavaScript() {
                             </Col>
                             <Col xs="6">Pinterest</Col>
                             <Col xs="4">
-                              <CustomInput
-                                type="switch"
-                                id="exampleCustomSwitch-6"
-                                name="customSwitch-6"
-                                className="custom-switch-success"
-                              />
+                              <CustomInput type="switch" id="exampleCustomSwitch-6" name="customSwitch-6" className="custom-switch-success" />
                             </Col>
                           </Row>
                         </div>
                       </div>
                       <DropdownItem divider />
-                      <a
-                        className="dropup-item text-center"
-                        href="#pablo"
-                        onClick={(e) => e.preventDefault()}
-                      >
-                        <Button
-                          className="btn-round ml-auto mr-auto"
-                          color="info"
-                        >
+                      <a className="dropup-item text-center" href="#pablo" onClick={(e) => e.preventDefault()}>
+                        <Button className="btn-round ml-auto mr-auto" color="info">
                           Share
                         </Button>
                       </a>
@@ -946,11 +668,7 @@ function SectionJavaScript() {
                     </DropdownToggle>
                     <DropdownMenu aria-labelledby="dLabel" right>
                       <DropdownItem>
-                        <div
-                          className="action-line"
-                          href="#pablo"
-                          onClick={(e) => e.preventDefault()}
-                        >
+                        <div className="action-line" href="#pablo" onClick={(e) => e.preventDefault()}>
                           <Row>
                             <Col sm="2">
                               <span className="icon-simple">
@@ -963,11 +681,7 @@ function SectionJavaScript() {
                       </DropdownItem>
                       <DropdownItem divider />
                       <DropdownItem>
-                        <div
-                          className="action-line"
-                          href="#pablo"
-                          onClick={(e) => e.preventDefault()}
-                        >
+                        <div className="action-line" href="#pablo" onClick={(e) => e.preventDefault()}>
                           <Row>
                             <Col sm="2">
                               <span className="icon-simple">
@@ -980,11 +694,7 @@ function SectionJavaScript() {
                       </DropdownItem>
                       <DropdownItem divider />
                       <DropdownItem>
-                        <div
-                          className="action-line link-danger"
-                          href="#pablo"
-                          onClick={(e) => e.preventDefault()}
-                        >
+                        <div className="action-line link-danger" href="#pablo" onClick={(e) => e.preventDefault()}>
                           <Row>
                             <Col sm="2">
                               <span className="icon-simple">
@@ -1011,8 +721,8 @@ function SectionJavaScript() {
                   <InputGroup className="date" id="datetimepicker">
                     <ReactDatetime
                       inputProps={{
-                        className: "form-control",
-                        placeholder: "Datetime Picker Here",
+                        className: 'form-control',
+                        placeholder: 'Datetime Picker Here',
                       }}
                     />
                     <InputGroupAddon addonType="append">
@@ -1051,28 +761,13 @@ function SectionJavaScript() {
           <Row>
             <Col className="ml-auto mr-auto" md="8">
               <Card className="card-raised page-carousel">
-                <Carousel
-                  activeIndex={activeIndex}
-                  next={next}
-                  previous={previous}
-                >
-                  <CarouselIndicators
-                    items={carouselItems}
-                    activeIndex={activeIndex}
-                    onClickHandler={goToIndex}
-                  />
+                <Carousel activeIndex={activeIndex} next={next} previous={previous}>
+                  <CarouselIndicators items={carouselItems} activeIndex={activeIndex} onClickHandler={goToIndex} />
                   {carouselItems.map((item) => {
                     return (
-                      <CarouselItem
-                        onExiting={onExiting}
-                        onExited={onExited}
-                        key={item.src}
-                      >
+                      <CarouselItem onExiting={onExiting} onExited={onExited} key={item.src}>
                         <img src={item.src} alt={item.altText} />
-                        <CarouselCaption
-                          captionText={item.caption}
-                          captionHeader=""
-                        />
+                        <CarouselCaption captionText={item.caption} captionHeader="" />
                       </CarouselItem>
                     );
                   })}

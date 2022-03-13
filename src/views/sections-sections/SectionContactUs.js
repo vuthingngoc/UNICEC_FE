@@ -1,19 +1,6 @@
-import React from "react";
+import React from 'react';
 // reactstrap components
-import {
-  Button,
-  Card,
-  CardHeader,
-  CardBody,
-  CardTitle,
-  Label,
-  FormGroup,
-  Form,
-  Input,
-  Container,
-  Row,
-  Col,
-} from "reactstrap";
+import { Button, Card, CardHeader, CardBody, CardTitle, Label, FormGroup, Form, Input, Container, Row, Col } from 'reactstrap';
 
 // core components
 const MapWrapper = () => {
@@ -21,8 +8,8 @@ const MapWrapper = () => {
   React.useEffect(() => {
     let google = window.google;
     let map = mapRef.current;
-    let lat = "44.445248";
-    let lng = "26.099672";
+    let lat = '44.445248';
+    let lng = '26.099672';
     const myLatlng = new google.maps.LatLng(lat, lng);
     const mapOptions = {
       zoom: 14,
@@ -31,11 +18,11 @@ const MapWrapper = () => {
       zoomControl: true,
       styles: [
         {
-          featureType: "water",
-          elementType: "geometry",
+          featureType: 'water',
+          elementType: 'geometry',
           stylers: [
             {
-              color: "#e9e9e9",
+              color: '#e9e9e9',
             },
             {
               lightness: 17,
@@ -43,11 +30,11 @@ const MapWrapper = () => {
           ],
         },
         {
-          featureType: "landscape",
-          elementType: "geometry",
+          featureType: 'landscape',
+          elementType: 'geometry',
           stylers: [
             {
-              color: "#f5f5f5",
+              color: '#f5f5f5',
             },
             {
               lightness: 20,
@@ -55,11 +42,11 @@ const MapWrapper = () => {
           ],
         },
         {
-          featureType: "road.highway",
-          elementType: "geometry.fill",
+          featureType: 'road.highway',
+          elementType: 'geometry.fill',
           stylers: [
             {
-              color: "#ffffff",
+              color: '#ffffff',
             },
             {
               lightness: 17,
@@ -67,11 +54,11 @@ const MapWrapper = () => {
           ],
         },
         {
-          featureType: "road.highway",
-          elementType: "geometry.stroke",
+          featureType: 'road.highway',
+          elementType: 'geometry.stroke',
           stylers: [
             {
-              color: "#ffffff",
+              color: '#ffffff',
             },
             {
               lightness: 29,
@@ -82,11 +69,11 @@ const MapWrapper = () => {
           ],
         },
         {
-          featureType: "road.arterial",
-          elementType: "geometry",
+          featureType: 'road.arterial',
+          elementType: 'geometry',
           stylers: [
             {
-              color: "#ffffff",
+              color: '#ffffff',
             },
             {
               lightness: 18,
@@ -94,11 +81,11 @@ const MapWrapper = () => {
           ],
         },
         {
-          featureType: "road.local",
-          elementType: "geometry",
+          featureType: 'road.local',
+          elementType: 'geometry',
           stylers: [
             {
-              color: "#ffffff",
+              color: '#ffffff',
             },
             {
               lightness: 16,
@@ -106,11 +93,11 @@ const MapWrapper = () => {
           ],
         },
         {
-          featureType: "poi",
-          elementType: "geometry",
+          featureType: 'poi',
+          elementType: 'geometry',
           stylers: [
             {
-              color: "#f5f5f5",
+              color: '#f5f5f5',
             },
             {
               lightness: 21,
@@ -118,11 +105,11 @@ const MapWrapper = () => {
           ],
         },
         {
-          featureType: "poi.park",
-          elementType: "geometry",
+          featureType: 'poi.park',
+          elementType: 'geometry',
           stylers: [
             {
-              color: "#dedede",
+              color: '#dedede',
             },
             {
               lightness: 21,
@@ -130,13 +117,13 @@ const MapWrapper = () => {
           ],
         },
         {
-          elementType: "labels.text.stroke",
+          elementType: 'labels.text.stroke',
           stylers: [
             {
-              visibility: "on",
+              visibility: 'on',
             },
             {
-              color: "#ffffff",
+              color: '#ffffff',
             },
             {
               lightness: 16,
@@ -144,13 +131,13 @@ const MapWrapper = () => {
           ],
         },
         {
-          elementType: "labels.text.fill",
+          elementType: 'labels.text.fill',
           stylers: [
             {
               saturation: 36,
             },
             {
-              color: "#333333",
+              color: '#333333',
             },
             {
               lightness: 40,
@@ -158,19 +145,19 @@ const MapWrapper = () => {
           ],
         },
         {
-          elementType: "labels.icon",
+          elementType: 'labels.icon',
           stylers: [
             {
-              visibility: "off",
+              visibility: 'off',
             },
           ],
         },
         {
-          featureType: "transit",
-          elementType: "geometry",
+          featureType: 'transit',
+          elementType: 'geometry',
           stylers: [
             {
-              color: "#f2f2f2",
+              color: '#f2f2f2',
             },
             {
               lightness: 19,
@@ -178,11 +165,11 @@ const MapWrapper = () => {
           ],
         },
         {
-          featureType: "administrative",
-          elementType: "geometry.fill",
+          featureType: 'administrative',
+          elementType: 'geometry.fill',
           stylers: [
             {
-              color: "#fefefe",
+              color: '#fefefe',
             },
             {
               lightness: 20,
@@ -190,11 +177,11 @@ const MapWrapper = () => {
           ],
         },
         {
-          featureType: "administrative",
-          elementType: "geometry.stroke",
+          featureType: 'administrative',
+          elementType: 'geometry.stroke',
           stylers: [
             {
-              color: "#fefefe",
+              color: '#fefefe',
             },
             {
               lightness: 17,
@@ -213,18 +200,18 @@ const MapWrapper = () => {
       position: myLatlng,
       map: map,
       animation: google.maps.Animation.DROP,
-      title: "Paper Kit PRO React!",
+      title: 'Paper Kit PRO React!',
     });
 
     const contentString =
       '<div class="info-window-content"><h2>Paper Kit PRO React</h2>' +
-      "<p>A premium Admin for Reactstrap, Bootstrap, React, and React Hooks.</p></div>";
+      '<p>A premium Admin for Reactstrap, Bootstrap, React, and React Hooks.</p></div>';
 
     const infowindow = new google.maps.InfoWindow({
       content: contentString,
     });
 
-    google.maps.event.addListener(marker, "click", function () {
+    google.maps.event.addListener(marker, 'click', function () {
       infowindow.open(map, marker);
     });
   });
@@ -243,10 +230,7 @@ function SectionContactUs() {
         <div
           className="contactus-1 section-image"
           style={{
-            backgroundImage:
-              "url(" +
-              require("assets/img/sections/soroush-karimi.jpg").default +
-              ")",
+            backgroundImage: 'url(' + require('assets/img/sections/soroush-karimi.jpg').default + ')',
           }}
         >
           <Container>
@@ -264,9 +248,7 @@ function SectionContactUs() {
                             <i className="nc-icon nc-pin-3" />
                           </div>
                           <div className="description">
-                            <h4 className="info-title">
-                              Find us at the office
-                            </h4>
+                            <h4 className="info-title">Find us at the office</h4>
                             <p>
                               Bld Mihail Kogalniceanu, nr. 8, <br />
                               7652 Bucharest, <br />
@@ -295,67 +277,36 @@ function SectionContactUs() {
                           <Row>
                             <Col md="6">
                               <FormGroup className="label-floating">
-                                <label className="control-label">
-                                  First name
-                                </label>
-                                <Input
-                                  name="name"
-                                  placeholder="First Name"
-                                  type="text"
-                                />
+                                <label className="control-label">First name</label>
+                                <Input name="name" placeholder="First Name" type="text" />
                               </FormGroup>
                             </Col>
                             <Col md="6">
                               <FormGroup className="label-floating">
-                                <label className="control-label">
-                                  Last name
-                                </label>
-                                <Input
-                                  name="name"
-                                  placeholder="Last Name"
-                                  type="text"
-                                />
+                                <label className="control-label">Last name</label>
+                                <Input name="name" placeholder="Last Name" type="text" />
                               </FormGroup>
                             </Col>
                           </Row>
                           <FormGroup className="label-floating">
-                            <label className="control-label">
-                              Email address
-                            </label>
-                            <Input
-                              name="email"
-                              placeholder="Email"
-                              type="email"
-                            />
+                            <label className="control-label">Email address</label>
+                            <Input name="email" placeholder="Email" type="email" />
                           </FormGroup>
                           <FormGroup className="label-floating">
-                            <label className="control-label">
-                              Your message
-                            </label>
-                            <Input
-                              id="message"
-                              name="message"
-                              placeholder="Message"
-                              type="textarea"
-                              rows="6"
-                            />
+                            <label className="control-label">Your message</label>
+                            <Input id="message" name="message" placeholder="Message" type="textarea" rows="6" />
                           </FormGroup>
                           <Row>
                             <Col md="6">
                               <FormGroup check>
                                 <Label check>
                                   <Input defaultValue="" type="checkbox" />
-                                  I&apos;m not a robot !{" "}
-                                  <span className="form-check-sign" />
+                                  I&apos;m not a robot ! <span className="form-check-sign" />
                                 </Label>
                               </FormGroup>
                             </Col>
                             <Col md="6">
-                              <Button
-                                className="pull-right"
-                                color="primary"
-                                type="submit"
-                              >
+                              <Button className="pull-right" color="primary" type="submit">
                                 Send Message
                               </Button>
                             </Col>
@@ -405,9 +356,7 @@ function SectionContactUs() {
                             <i className="nc-icon nc-pin-3" />
                           </div>
                           <div className="description">
-                            <h5 className="info-title">
-                              Find us at the office
-                            </h5>
+                            <h5 className="info-title">Find us at the office</h5>
                             <p>
                               Bld Mihail Kogalniceanu <br />
                               7652 Bucharest
@@ -420,50 +369,31 @@ function SectionContactUs() {
                       <Col md="6">
                         <FormGroup>
                           <label className="control-label">Full Name</label>
-                          <Input
-                            name="name"
-                            placeholder="Full name"
-                            type="text"
-                          />
+                          <Input name="name" placeholder="Full name" type="text" />
                         </FormGroup>
                       </Col>
                       <Col md="6">
                         <FormGroup>
                           <label className="control-label">Email address</label>
-                          <Input
-                            name="email"
-                            placeholder="Email"
-                            type="email"
-                          />
+                          <Input name="email" placeholder="Email" type="email" />
                         </FormGroup>
                       </Col>
                     </Row>
                     <FormGroup>
                       <label className="control-label">Your message</label>
-                      <Input
-                        id="messages"
-                        name="message"
-                        placeholder="Message"
-                        type="textarea"
-                        rows="6"
-                      />
+                      <Input id="messages" name="message" placeholder="Message" type="textarea" rows="6" />
                     </FormGroup>
                     <Row>
                       <Col md="6">
                         <FormGroup check>
                           <Label check>
                             <Input defaultValue="" type="checkbox" />
-                            I&apos;m not a robot !{" "}
-                            <span className="form-check-sign" />
+                            I&apos;m not a robot ! <span className="form-check-sign" />
                           </Label>
                         </FormGroup>
                       </Col>
                       <Col md="6">
-                        <Button
-                          className="btn-rose pull-right"
-                          color="default"
-                          type="submit"
-                        >
+                        <Button className="btn-rose pull-right" color="default" type="submit">
                           Send Message
                         </Button>
                       </Col>

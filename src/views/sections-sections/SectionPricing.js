@@ -1,28 +1,14 @@
-import React from "react";
+import React from 'react';
 
 // reactstrap components
-import {
-  Button,
-  Card,
-  CardBody,
-  CardFooter,
-  CardTitle,
-  NavItem,
-  NavLink,
-  Nav,
-  TabContent,
-  TabPane,
-  Container,
-  Row,
-  Col,
-} from "reactstrap";
+import { Button, Card, CardBody, CardFooter, CardTitle, NavItem, NavLink, Nav, TabContent, TabPane, Container, Row, Col } from 'reactstrap';
 
 // core components
 
 function SectionPricing() {
-  const [activePill, setActivePill] = React.useState("1");
+  const [activePill, setActivePill] = React.useState('1');
   // pills for the last pricing
-  const [pillActive, setPillActive] = React.useState("personal");
+  const [pillActive, setPillActive] = React.useState('personal');
   return (
     <>
       <div className="section section-pricing cd-section" id="pricing">
@@ -32,10 +18,7 @@ function SectionPricing() {
             <Row>
               <Col className="ml-auto mr-auto text-center" md="6">
                 <h2 className="title">Pick the best plan for you</h2>
-                <h5 className="description">
-                  You have Free Unlimited Updates and Premium Support on each
-                  package.
-                </h5>
+                <h5 className="description">You have Free Unlimited Updates and Premium Support on each package.</h5>
               </Col>
             </Row>
             <div className="space-top" />
@@ -49,17 +32,9 @@ function SectionPricing() {
                       </span>
                     </div>
                     <CardTitle tag="h3">$199</CardTitle>
-                    <p className="card-description">
-                      This is good if your company size is between 5 and 20
-                      employees.
-                    </p>
+                    <p className="card-description">This is good if your company size is between 5 and 20 employees.</p>
                     <CardFooter>
-                      <Button
-                        className="btn-neutral btn-round"
-                        color="default"
-                        href="#pablo"
-                        onClick={(e) => e.preventDefault()}
-                      >
+                      <Button className="btn-neutral btn-round" color="default" href="#pablo" onClick={(e) => e.preventDefault()}>
                         Choose Plan
                       </Button>
                     </CardFooter>
@@ -75,17 +50,9 @@ function SectionPricing() {
                       </span>
                     </div>
                     <CardTitle tag="h3">$249</CardTitle>
-                    <p className="card-description">
-                      This is good if your company size is between 21 and 59
-                      employees.
-                    </p>
+                    <p className="card-description">This is good if your company size is between 21 and 59 employees.</p>
                     <CardFooter>
-                      <Button
-                        className="btn-neutral btn-round"
-                        color="default"
-                        href="#pablo"
-                        onClick={(e) => e.preventDefault()}
-                      >
+                      <Button className="btn-neutral btn-round" color="default" href="#pablo" onClick={(e) => e.preventDefault()}>
                         Choose Plan
                       </Button>
                     </CardFooter>
@@ -101,17 +68,9 @@ function SectionPricing() {
                       </span>
                     </div>
                     <CardTitle tag="h3">$359</CardTitle>
-                    <p className="card-description">
-                      This is good if your company size is between 60 and 159
-                      employees.
-                    </p>
+                    <p className="card-description">This is good if your company size is between 60 and 159 employees.</p>
                     <CardFooter>
-                      <Button
-                        className="btn-neutral btn-round"
-                        color="default"
-                        href="#pablo"
-                        onClick={(e) => e.preventDefault()}
-                      >
+                      <Button className="btn-neutral btn-round" color="default" href="#pablo" onClick={(e) => e.preventDefault()}>
                         Choose Plan
                       </Button>
                     </CardFooter>
@@ -127,17 +86,9 @@ function SectionPricing() {
                       </span>
                     </div>
                     <CardTitle tag="h3">$599</CardTitle>
-                    <p className="card-description">
-                      This is good if your company size is between 160 and 299
-                      employees.
-                    </p>
+                    <p className="card-description">This is good if your company size is between 160 and 299 employees.</p>
                     <CardFooter>
-                      <Button
-                        className="btn-neutral btn-round"
-                        color="default"
-                        href="#pablo"
-                        onClick={(e) => e.preventDefault()}
-                      >
+                      <Button className="btn-neutral btn-round" color="default" href="#pablo" onClick={(e) => e.preventDefault()}>
                         Choose Plan
                       </Button>
                     </CardFooter>
@@ -154,19 +105,16 @@ function SectionPricing() {
             <Row>
               <Col className="ml-auto mr-auto text-center" md="6">
                 <h2 className="title">Pick the best plan for you</h2>
-                <h5 className="description">
-                  You have Free Unlimited Updates and Premium Support on each
-                  package.
-                </h5>
+                <h5 className="description">You have Free Unlimited Updates and Premium Support on each package.</h5>
                 <br />
                 <Nav className="nav-pills-danger justify-content-center" pills>
                   <NavItem>
                     <NavLink
-                      className={activePill === "1" ? "active" : ""}
+                      className={activePill === '1' ? 'active' : ''}
                       href="#pablo"
                       onClick={(e) => {
                         e.preventDefault();
-                        setActivePill("1");
+                        setActivePill('1');
                       }}
                     >
                       Monthly
@@ -174,11 +122,11 @@ function SectionPricing() {
                   </NavItem>
                   <NavItem>
                     <NavLink
-                      className={activePill === "2" ? "active" : ""}
+                      className={activePill === '2' ? 'active' : ''}
                       href="#pablo"
                       onClick={(e) => {
                         e.preventDefault();
-                        setActivePill("2");
+                        setActivePill('2');
                       }}
                     >
                       Yearly
@@ -186,9 +134,9 @@ function SectionPricing() {
                   </NavItem>
                 </Nav>
                 {/* Pill panes */}
-                <TabContent activeTab={"pill-" + activePill}>
-                  <TabPane tabId={"pill-" + activePill} />
-                  <TabPane tabId={"pill-" + activePill} />
+                <TabContent activeTab={'pill-' + activePill}>
+                  <TabPane tabId={'pill-' + activePill} />
+                  <TabPane tabId={'pill-' + activePill} />
                 </TabContent>
               </Col>
             </Row>
@@ -199,10 +147,7 @@ function SectionPricing() {
                   className="card-pricing"
                   data-background="image"
                   style={{
-                    backgroundImage:
-                      "url(" +
-                      require("assets/img/sections/daniel-olahh.jpg").default +
-                      ")",
+                    backgroundImage: 'url(' + require('assets/img/sections/daniel-olahh.jpg').default + ')',
                   }}
                 >
                   <CardBody>
@@ -224,12 +169,7 @@ function SectionPricing() {
                         <b>2</b> Personal Brand
                       </li>
                     </ul>
-                    <Button
-                      className="btn-round"
-                      color="warning"
-                      href="#pablo"
-                      onClick={(e) => e.preventDefault()}
-                    >
+                    <Button className="btn-round" color="warning" href="#pablo" onClick={(e) => e.preventDefault()}>
                       Get Started
                     </Button>
                   </CardBody>
@@ -240,10 +180,7 @@ function SectionPricing() {
                   className="card-pricing"
                   data-background="image"
                   style={{
-                    backgroundImage:
-                      "url(" +
-                      require("assets/img/sections/forest-bg.jpg").default +
-                      ")",
+                    backgroundImage: 'url(' + require('assets/img/sections/forest-bg.jpg').default + ')',
                   }}
                 >
                   <CardBody>
@@ -266,12 +203,7 @@ function SectionPricing() {
                         <b>5.000</b> Messages
                       </li>
                     </ul>
-                    <Button
-                      className="btn-round"
-                      color="success"
-                      href="#pablo"
-                      onClick={(e) => e.preventDefault()}
-                    >
+                    <Button className="btn-round" color="success" href="#pablo" onClick={(e) => e.preventDefault()}>
                       Get Started
                     </Button>
                   </CardBody>
@@ -282,10 +214,7 @@ function SectionPricing() {
                   className="card-pricing"
                   data-background="image"
                   style={{
-                    backgroundImage:
-                      "url(" +
-                      require("assets/img/sections/anders-jilden.jpg").default +
-                      ")",
+                    backgroundImage: 'url(' + require('assets/img/sections/anders-jilden.jpg').default + ')',
                   }}
                 >
                   <CardBody>
@@ -308,12 +237,7 @@ function SectionPricing() {
                         <b>5.000</b> Messages
                       </li>
                     </ul>
-                    <Button
-                      className="btn-round"
-                      color="danger"
-                      href="#pablo"
-                      onClick={(e) => e.preventDefault()}
-                    >
+                    <Button className="btn-round" color="danger" href="#pablo" onClick={(e) => e.preventDefault()}>
                       Get Started
                     </Button>
                   </CardBody>
@@ -327,20 +251,14 @@ function SectionPricing() {
         <div
           className="pricing-3 section-image"
           style={{
-            backgroundImage:
-              "url(" +
-              require("assets/img/sections/daniel-olahs.jpg").default +
-              ")",
+            backgroundImage: 'url(' + require('assets/img/sections/daniel-olahs.jpg').default + ')',
           }}
         >
           <Container>
             <Row>
               <Col className="ml-auto mr-auto text-center" md="6">
                 <h2 className="title">Pick the best plan for you</h2>
-                <h5 className="description">
-                  You have Free Unlimited Updates and Premium Support on each
-                  package.
-                </h5>
+                <h5 className="description">You have Free Unlimited Updates and Premium Support on each package.</h5>
               </Col>
             </Row>
             <div className="space-top" />
@@ -353,16 +271,9 @@ function SectionPricing() {
                       <i className="nc-icon nc-user-run" />
                     </div>
                     <CardTitle tag="h3">$29</CardTitle>
-                    <p className="card-description">
-                      Here’s a sentence I never expected: we are making...
-                    </p>
+                    <p className="card-description">Here’s a sentence I never expected: we are making...</p>
                     <CardFooter>
-                      <Button
-                        className="btn-round card-link"
-                        color="info"
-                        href="#pablo"
-                        onClick={(e) => e.preventDefault()}
-                      >
+                      <Button className="btn-round card-link" color="info" href="#pablo" onClick={(e) => e.preventDefault()}>
                         Choose Plan
                       </Button>
                     </CardFooter>
@@ -370,28 +281,16 @@ function SectionPricing() {
                 </Card>
               </Col>
               <Col className="mr-auto" md="4">
-                <Card
-                  className="card-pricing"
-                  data-background="color"
-                  data-color="blue"
-                >
+                <Card className="card-pricing" data-background="color" data-color="blue">
                   <CardBody>
                     <h6 className="card-category">Small company</h6>
                     <div className="card-icon">
                       <i className="nc-icon nc-air-baloon" />
                     </div>
                     <CardTitle tag="h3">$59</CardTitle>
-                    <p className="card-description">
-                      Sometimes combining two companies that compete in the same
-                      market provides...
-                    </p>
+                    <p className="card-description">Sometimes combining two companies that compete in the same market provides...</p>
                     <CardFooter>
-                      <Button
-                        className="btn-neutral btn-round card-link"
-                        color="default"
-                        href="#pablo"
-                        onClick={(e) => e.preventDefault()}
-                      >
+                      <Button className="btn-neutral btn-round card-link" color="default" href="#pablo" onClick={(e) => e.preventDefault()}>
                         Choose Plan
                       </Button>
                     </CardFooter>
@@ -406,16 +305,9 @@ function SectionPricing() {
                       <i className="nc-icon nc-istanbul" />
                     </div>
                     <CardTitle tag="h3">$199</CardTitle>
-                    <p className="card-description">
-                      This is good if you are a freelancer of photographer.
-                    </p>
+                    <p className="card-description">This is good if you are a freelancer of photographer.</p>
                     <CardFooter>
-                      <Button
-                        className="btn-round card-link"
-                        color="info"
-                        href="#pablo"
-                        onClick={(e) => e.preventDefault()}
-                      >
+                      <Button className="btn-round card-link" color="info" href="#pablo" onClick={(e) => e.preventDefault()}>
                         Choose Plan
                       </Button>
                     </CardFooter>
@@ -432,10 +324,7 @@ function SectionPricing() {
             <Row>
               <Col className="ml-auto mr-auto text-center" md="6">
                 <h2 className="title">Pick the best plan for you</h2>
-                <h5 className="description">
-                  You have Free Unlimited Updates and Premium Support on each
-                  package.
-                </h5>
+                <h5 className="description">You have Free Unlimited Updates and Premium Support on each package.</h5>
               </Col>
             </Row>
             <div className="space-top" />
@@ -463,12 +352,7 @@ function SectionPricing() {
                         Personal Brand
                       </li>
                     </ul>
-                    <Button
-                      className="btn-outline-neutral btn-round"
-                      color="default"
-                      href="#pablo"
-                      onClick={(e) => e.preventDefault()}
-                    >
+                    <Button className="btn-outline-neutral btn-round" color="default" href="#pablo" onClick={(e) => e.preventDefault()}>
                       Downgrade plan
                     </Button>
                   </CardBody>
@@ -477,9 +361,7 @@ function SectionPricing() {
               <Col md="3">
                 <Card className="card-pricing">
                   <CardBody>
-                    <h6 className="card-category text-success">
-                      Small company
-                    </h6>
+                    <h6 className="card-category text-success">Small company</h6>
                     <CardTitle tag="h1">$89</CardTitle>
                     <ul>
                       <li>
@@ -499,13 +381,7 @@ function SectionPricing() {
                         Personal Brand
                       </li>
                     </ul>
-                    <Button
-                      className="btn-round"
-                      color="success"
-                      href="#pablo"
-                      onClick={(e) => e.preventDefault()}
-                      outline
-                    >
+                    <Button className="btn-round" color="success" href="#pablo" onClick={(e) => e.preventDefault()} outline>
                       Current plan
                     </Button>
                   </CardBody>
@@ -514,9 +390,7 @@ function SectionPricing() {
               <Col md="3">
                 <Card className="card-pricing card-plain">
                   <CardBody>
-                    <h6 className="card-category text-success">
-                      Large Company
-                    </h6>
+                    <h6 className="card-category text-success">Large Company</h6>
                     <CardTitle tag="h1">$189</CardTitle>
                     <ul className="text-white">
                       <li>
@@ -536,12 +410,7 @@ function SectionPricing() {
                         Personal Brand
                       </li>
                     </ul>
-                    <Button
-                      className="btn-outline-neutral btn-round"
-                      color="default"
-                      href="#pablo"
-                      onClick={(e) => e.preventDefault()}
-                    >
+                    <Button className="btn-outline-neutral btn-round" color="default" href="#pablo" onClick={(e) => e.preventDefault()}>
                       Upgrade plan
                     </Button>
                   </CardBody>
@@ -570,12 +439,7 @@ function SectionPricing() {
                         Personal Brand
                       </li>
                     </ul>
-                    <Button
-                      className="btn-outline-neutral btn-round"
-                      color="default"
-                      href="#pablo"
-                      onClick={(e) => e.preventDefault()}
-                    >
+                    <Button className="btn-outline-neutral btn-round" color="default" href="#pablo" onClick={(e) => e.preventDefault()}>
                       Upgrade plan
                     </Button>
                   </CardBody>
@@ -595,11 +459,11 @@ function SectionPricing() {
                   <Nav className="nav-pills-danger" pills role="tablist">
                     <NavItem>
                       <NavLink
-                        className={pillActive === "personal" ? "active" : ""}
+                        className={pillActive === 'personal' ? 'active' : ''}
                         href="#pablo"
                         onClick={(e) => {
                           e.preventDefault();
-                          setPillActive("personal");
+                          setPillActive('personal');
                         }}
                       >
                         Personal
@@ -607,11 +471,11 @@ function SectionPricing() {
                     </NavItem>
                     <NavItem>
                       <NavLink
-                        className={pillActive === "commercial" ? "active" : ""}
+                        className={pillActive === 'commercial' ? 'active' : ''}
                         href="#pablo"
                         onClick={(e) => {
                           e.preventDefault();
-                          setPillActive("commercial");
+                          setPillActive('commercial');
                         }}
                       >
                         Commercial
@@ -621,9 +485,8 @@ function SectionPricing() {
                 </div>
                 <br />
                 <p className="description text-gray">
-                  You have Free Unlimited Updates and Premium Support on each
-                  package. You also have 20 days to request a refund if
-                  you&apos;re not happy with your purchase.
+                  You have Free Unlimited Updates and Premium Support on each package. You also have 20 days to request a refund if you&apos;re not
+                  happy with your purchase.
                 </p>
               </Col>
               <Col className="ml-auto" md="7">
@@ -634,9 +497,7 @@ function SectionPricing() {
                       <Col md="6">
                         <Card className="card-pricing">
                           <CardBody>
-                            <h6 className="card-category text-primary">
-                              HTML Package
-                            </h6>
+                            <h6 className="card-category text-primary">HTML Package</h6>
                             <CardTitle tag="h1">$0</CardTitle>
                             <ul>
                               <li>
@@ -652,12 +513,7 @@ function SectionPricing() {
                                 <b>14</b> Page Examples
                               </li>
                             </ul>
-                            <Button
-                              className="btn-round"
-                              color="primary"
-                              href="#pablo"
-                              onClick={(e) => e.preventDefault()}
-                            >
+                            <Button className="btn-round" color="primary" href="#pablo" onClick={(e) => e.preventDefault()}>
                               Free download
                             </Button>
                           </CardBody>
@@ -666,9 +522,7 @@ function SectionPricing() {
                       <Col md="6">
                         <Card className="card-pricing" data-color="orange">
                           <CardBody>
-                            <h6 className="card-category text-success">
-                              HTML Package
-                            </h6>
+                            <h6 className="card-category text-success">HTML Package</h6>
                             <CardTitle tag="h1">$59</CardTitle>
                             <ul>
                               <li>
@@ -684,12 +538,7 @@ function SectionPricing() {
                                 <b>24</b> Page Examples
                               </li>
                             </ul>
-                            <Button
-                              className="btn-neutral btn-round"
-                              color="default"
-                              href="#pablo"
-                              onClick={(e) => e.preventDefault()}
-                            >
+                            <Button className="btn-neutral btn-round" color="default" href="#pablo" onClick={(e) => e.preventDefault()}>
                               Free download
                             </Button>
                           </CardBody>
@@ -703,9 +552,7 @@ function SectionPricing() {
                       <Col md="6">
                         <Card className="card-pricing">
                           <CardBody>
-                            <h6 className="card-category text-warning">
-                              HTML Package
-                            </h6>
+                            <h6 className="card-category text-warning">HTML Package</h6>
                             <CardTitle tag="h1">$159</CardTitle>
                             <ul>
                               <li>
@@ -721,12 +568,7 @@ function SectionPricing() {
                                 <b>34</b> Page Examples
                               </li>
                             </ul>
-                            <Button
-                              className="btn-round"
-                              color="warning"
-                              href="#pablo"
-                              onClick={(e) => e.preventDefault()}
-                            >
+                            <Button className="btn-round" color="warning" href="#pablo" onClick={(e) => e.preventDefault()}>
                               Buy Now !
                             </Button>
                           </CardBody>
@@ -735,9 +577,7 @@ function SectionPricing() {
                       <Col md="6">
                         <Card className="card-pricing" data-color="orange">
                           <CardBody>
-                            <h6 className="card-category text-success">
-                              HTML Package
-                            </h6>
+                            <h6 className="card-category text-success">HTML Package</h6>
                             <CardTitle tag="h1">$359</CardTitle>
                             <ul>
                               <li>
@@ -753,12 +593,7 @@ function SectionPricing() {
                                 <b>44</b> Page Examples
                               </li>
                             </ul>
-                            <Button
-                              className="btn-neutral btn-round"
-                              color="default"
-                              href="#pablo"
-                              onClick={(e) => e.preventDefault()}
-                            >
+                            <Button className="btn-neutral btn-round" color="default" href="#pablo" onClick={(e) => e.preventDefault()}>
                               Free download
                             </Button>
                           </CardBody>

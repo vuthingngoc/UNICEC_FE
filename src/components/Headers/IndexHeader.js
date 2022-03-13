@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 
 // reactstrap components
 
@@ -10,8 +10,7 @@ function IndexHeader() {
       <div
         className="page-header"
         style={{
-          backgroundImage:
-            "url(" + require("assets/img/cover.jpg").default + ")",
+          backgroundImage: 'url(' + require('assets/img/cover.jpg').default + ')',
         }}
       >
         <div className="filter" />

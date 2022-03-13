@@ -1,9 +1,9 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React from 'react';
+import { Link } from 'react-router-dom';
 // nodejs library that concatenates strings
-import classnames from "classnames";
+import classnames from 'classnames';
 // JavaScript plugin that hides or shows a component based on your scroll
-import Headroom from "headroom.js";
+import Headroom from 'headroom.js';
 // reactstrap components
 import {
   Collapse,
@@ -16,35 +16,29 @@ import {
   Nav,
   Container,
   UncontrolledTooltip,
-} from "reactstrap";
+} from 'reactstrap';
 
 // core components
 
 function MultiDropdownNavbar() {
-  const [navbarColor, setNavbarColor] = React.useState("navbar-transparent");
+  const [navbarColor, setNavbarColor] = React.useState('navbar-transparent');
   const [bodyClick, setBodyClick] = React.useState(false);
   const [collapseOpen, setCollapseOpen] = React.useState(false);
   React.useEffect(() => {
-    let headroom = new Headroom(document.getElementById("navbar-main"));
+    let headroom = new Headroom(document.getElementById('navbar-main'));
     // initialise
     headroom.init();
 
     const updateNavbarColor = () => {
-      if (
-        document.documentElement.scrollTop > 499 ||
-        document.body.scrollTop > 499
-      ) {
-        setNavbarColor("bg-info");
-      } else if (
-        document.documentElement.scrollTop < 500 ||
-        document.body.scrollTop < 500
-      ) {
-        setNavbarColor("navbar-transparent");
+      if (document.documentElement.scrollTop > 499 || document.body.scrollTop > 499) {
+        setNavbarColor('bg-info');
+      } else if (document.documentElement.scrollTop < 500 || document.body.scrollTop < 500) {
+        setNavbarColor('navbar-transparent');
       }
     };
-    window.addEventListener("scroll", updateNavbarColor);
+    window.addEventListener('scroll', updateNavbarColor);
     return function cleanup() {
-      window.removeEventListener("scroll", updateNavbarColor);
+      window.removeEventListener('scroll', updateNavbarColor);
     };
   });
   return (
@@ -53,17 +47,13 @@ function MultiDropdownNavbar() {
         <div
           id="bodyClick"
           onClick={() => {
-            document.documentElement.classList.toggle("nav-open");
+            document.documentElement.classList.toggle('nav-open');
             setBodyClick(false);
             setCollapseOpen(false);
           }}
         />
       ) : null}
-      <Navbar
-        className={classnames("fixed-top", navbarColor)}
-        id="navbar-main"
-        expand="lg"
-      >
+      <Navbar className={classnames('fixed-top', navbarColor)} id="navbar-main" expand="lg">
         <Container>
           <div className="navbar-translate">
             <NavbarBrand id="navbar-brand" to="/index" tag={Link}>
@@ -77,7 +67,7 @@ function MultiDropdownNavbar() {
               id="navigation"
               type="button"
               onClick={() => {
-                document.documentElement.classList.toggle("nav-open");
+                document.documentElement.classList.toggle('nav-open');
                 setBodyClick(true);
                 setCollapseOpen(true);
               }}
@@ -94,84 +84,45 @@ function MultiDropdownNavbar() {
                   Multilevel Dropdown
                 </DropdownToggle>
                 <DropdownMenu className="dropdown-danger">
-                  <DropdownItem
-                    href="#pablo"
-                    onClick={(e) => e.preventDefault()}
-                  >
+                  <DropdownItem href="#pablo" onClick={(e) => e.preventDefault()}>
                     Action
                   </DropdownItem>
-                  <DropdownItem
-                    href="#pablo"
-                    onClick={(e) => e.preventDefault()}
-                  >
+                  <DropdownItem href="#pablo" onClick={(e) => e.preventDefault()}>
                     Another action
                   </DropdownItem>
                   <UncontrolledDropdown>
-                    <DropdownToggle
-                      className="dropdown-item"
-                      color="default"
-                      tag="a"
-                      caret
-                    >
+                    <DropdownToggle className="dropdown-item" color="default" tag="a" caret>
                       Submenu
                     </DropdownToggle>
                     <DropdownMenu className="dropdown-danger">
-                      <DropdownItem
-                        href="#pablo"
-                        onClick={(e) => e.preventDefault()}
-                      >
+                      <DropdownItem href="#pablo" onClick={(e) => e.preventDefault()}>
                         Submenu action
                       </DropdownItem>
-                      <DropdownItem
-                        href="#pablo"
-                        onClick={(e) => e.preventDefault()}
-                      >
+                      <DropdownItem href="#pablo" onClick={(e) => e.preventDefault()}>
                         Submenu action
                       </DropdownItem>
                       <UncontrolledDropdown>
-                        <DropdownToggle
-                          className="dropdown-item"
-                          color="default"
-                          tag="a"
-                          caret
-                        >
+                        <DropdownToggle className="dropdown-item" color="default" tag="a" caret>
                           Subsubmenu
                         </DropdownToggle>
                         <DropdownMenu className="dropdown-danger">
-                          <DropdownItem
-                            href="#pablo"
-                            onClick={(e) => e.preventDefault()}
-                          >
+                          <DropdownItem href="#pablo" onClick={(e) => e.preventDefault()}>
                             Subsubmenu action 1
                           </DropdownItem>
-                          <DropdownItem
-                            href="#pablo"
-                            onClick={(e) => e.preventDefault()}
-                          >
+                          <DropdownItem href="#pablo" onClick={(e) => e.preventDefault()}>
                             Subsubmenu action 2
                           </DropdownItem>
                         </DropdownMenu>
                       </UncontrolledDropdown>
                       <UncontrolledDropdown>
-                        <DropdownToggle
-                          className="dropdown-item"
-                          color="default"
-                          tag="a"
-                          caret
-                        >
+                        <DropdownToggle className="dropdown-item" color="default" tag="a" caret>
                           Second Subsubmenu
                         </DropdownToggle>
                         <DropdownMenu className="dropdown-danger">
-                          <DropdownItem
-                            href="#pablo"
-                            onClick={(e) => e.preventDefault()}
-                          >
+                          <DropdownItem href="#pablo" onClick={(e) => e.preventDefault()}>
                             Subsubmenu action 1
                           </DropdownItem>
-                          <DropdownItem
-                            href="#pablo"
-                            onClick={(e) => e.preventDefault()}
-                          >
+                          <DropdownItem href="#pablo" onClick={(e) => e.preventDefault()}>
                             Subsubmenu action 2
                           </DropdownItem>
                         </DropdownMenu>

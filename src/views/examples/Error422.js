@@ -1,19 +1,19 @@
-import React from "react";
+import React from 'react';
 
 // reactstrap components
-import { Card, CardBody, Container, Row, Col } from "reactstrap";
+import { Card, CardBody, Container, Row, Col } from 'reactstrap';
 
 // core components
-import ColorNavbar from "components/Navbars/ColorNavbar.js";
+import ColorNavbar from 'components/Navbars/ColorNavbar.js';
 
 function Error422() {
-  document.documentElement.classList.remove("nav-open");
+  document.documentElement.classList.remove('nav-open');
   React.useEffect(() => {
-    document.body.classList.add("error-422");
+    document.body.classList.add('error-422');
     window.scrollTo(0, 0);
     document.body.scrollTop = 0;
     return function cleanup() {
-      document.body.classList.remove("error-422");
+      document.body.classList.remove('error-422');
     };
   });
   return (
@@ -22,10 +22,7 @@ function Error422() {
       <div
         className="background-img"
         style={{
-          backgroundImage:
-            "url(" +
-            require("assets/img/sections/jan-sendereks.jpg").default +
-            ")",
+          backgroundImage: 'url(' + require('assets/img/sections/jan-sendereks.jpg').default + ')',
         }}
       >
         <div className="filter" />
@@ -54,9 +51,7 @@ function Error422() {
                             <i aria-hidden={true} className="fa fa-desktop" />
                           </a>
                         </div>
-                        <p className="card-description">
-                          Admin &amp; Dashboards
-                        </p>
+                        <p className="card-description">Admin &amp; Dashboards</p>
                       </CardBody>
                     </Card>
                   </Col>
@@ -89,10 +84,7 @@ function Error422() {
                       <CardBody className="text-center">
                         <h4 className="card-icon">
                           <a href="#pablo" onClick={(e) => e.preventDefault()}>
-                            <i
-                              aria-hidden={true}
-                              className="fa fa-puzzle-piece"
-                            />
+                            <i aria-hidden={true} className="fa fa-puzzle-piece" />
                           </a>
                         </h4>
                         <p className="card-description">Bootstrap components</p>

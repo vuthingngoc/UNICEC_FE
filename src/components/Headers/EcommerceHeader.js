@@ -1,7 +1,7 @@
-import React from "react";
+import React from 'react';
 
 // reactstrap components
-import { Container } from "reactstrap";
+import { Container } from 'reactstrap';
 
 // core components
 
@@ -11,10 +11,7 @@ function EcommerceHeader() {
       <div
         className="page-header"
         style={{
-          backgroundImage:
-            "url(" +
-            require("assets/img/ecommerce/balmain_runway.jpg").default +
-            ")",
+          backgroundImage: 'url(' + require('assets/img/ecommerce/balmain_runway.jpg').default + ')',
         }}
       >
         <div className="filter" />

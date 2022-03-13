@@ -1,6 +1,6 @@
-import React from "react";
+import React from 'react';
 // plugin that creates slider
-import Slider from "nouislider";
+import Slider from 'nouislider';
 
 // reactstrap components
 import {
@@ -18,12 +18,12 @@ import {
   Row,
   Col,
   UncontrolledTooltip,
-} from "reactstrap";
+} from 'reactstrap';
 
 // core components
-import ColorNavbar from "components/Navbars/ColorNavbar.js";
-import EcommerceHeader from "components/Headers/EcommerceHeader.js";
-import FooterEcommerce from "components/Footers/FooterEcommerce.js";
+import ColorNavbar from 'components/Navbars/ColorNavbar.js';
+import EcommerceHeader from 'components/Headers/EcommerceHeader.js';
+import FooterEcommerce from 'components/Footers/FooterEcommerce.js';
 
 function Ecommerce() {
   // states for collapses
@@ -31,21 +31,19 @@ function Ecommerce() {
   const [clothing, setClothing] = React.useState(false);
   const [designer, setDesigner] = React.useState(false);
   const [color, setColor] = React.useState(false);
-  document.documentElement.classList.remove("nav-open");
+  document.documentElement.classList.remove('nav-open');
   React.useEffect(() => {
-    if (
-      !document.getElementById("sliderDouble").classList.contains("noUi-target")
-    ) {
-      Slider.create(document.getElementById("sliderDouble"), {
+    if (!document.getElementById('sliderDouble').classList.contains('noUi-target')) {
+      Slider.create(document.getElementById('sliderDouble'), {
         start: [20, 80],
         connect: [false, true, false],
         step: 1,
         range: { min: 0, max: 100 },
       });
     }
-    document.body.classList.add("ecommerce-page");
+    document.body.classList.add('ecommerce-page');
     return function cleanup() {
-      document.body.classList.remove("ecommerce-page");
+      document.body.classList.remove('ecommerce-page');
     };
   });
   return (
@@ -61,21 +59,12 @@ function Ecommerce() {
                 <Card className="card-product card-plain">
                   <div className="card-image">
                     <a href="#pablo" onClick={(e) => e.preventDefault()}>
-                      <img
-                        alt="..."
-                        className="img-rounded img-responsive"
-                        src={
-                          require("assets/img/ecommerce/balmain_5.jpg").default
-                        }
-                      />
+                      <img alt="..." className="img-rounded img-responsive" src={require('assets/img/ecommerce/balmain_5.jpg').default} />
                     </a>
                     <CardBody>
                       <div className="card-description">
                         <CardTitle tag="h5">Green Velvet Dress</CardTitle>
-                        <p className="card-description">
-                          This is a limited edition dress for the fall
-                          collection. Comes in 3 colours.
-                        </p>
+                        <p className="card-description">This is a limited edition dress for the fall collection. Comes in 3 colours.</p>
                       </div>
                       <div className="price">
                         <s className="mr-1">3.520 €</s>
@@ -89,21 +78,12 @@ function Ecommerce() {
                 <Card className="card-product card-plain">
                   <div className="card-image">
                     <a href="#pablo" onClick={(e) => e.preventDefault()}>
-                      <img
-                        alt="..."
-                        className="img-rounded img-responsive"
-                        src={
-                          require("assets/img/ecommerce/balmain_3.jpg").default
-                        }
-                      />
+                      <img alt="..." className="img-rounded img-responsive" src={require('assets/img/ecommerce/balmain_3.jpg').default} />
                     </a>
                     <CardBody>
                       <div className="card-description">
                         <CardTitle tag="h5">Crepe and Organza Dress</CardTitle>
-                        <p className="card-description">
-                          This is a limited edition dress for the fall
-                          collection. Comes in 3 colours.
-                        </p>
+                        <p className="card-description">This is a limited edition dress for the fall collection. Comes in 3 colours.</p>
                       </div>
                       <div className="price">
                         <s className="mr-1">2.675 €</s>
@@ -117,21 +97,12 @@ function Ecommerce() {
                 <Card className="card-product card-plain">
                   <div className="card-image">
                     <a href="#pablo" onClick={(e) => e.preventDefault()}>
-                      <img
-                        alt="..."
-                        className="img-rounded img-responsive"
-                        src={
-                          require("assets/img/ecommerce/balmain_4.jpg").default
-                        }
-                      />
+                      <img alt="..." className="img-rounded img-responsive" src={require('assets/img/ecommerce/balmain_4.jpg').default} />
                     </a>
                     <CardBody>
                       <div className="card-description">
                         <CardTitle tag="h5">Lace Mini Dress</CardTitle>
-                        <p className="card-description">
-                          This is a limited edition dress for the fall
-                          collection. Comes in 3 colours.
-                        </p>
+                        <p className="card-description">This is a limited edition dress for the fall collection. Comes in 3 colours.</p>
                       </div>
                       <div className="price">
                         <s className="mr-1">3.915 €</s>
@@ -151,17 +122,8 @@ function Ecommerce() {
             <Row>
               <Col md="3">
                 <Card className="card-refine">
-                  <div
-                    aria-expanded={true}
-                    aria-multiselectable={true}
-                    className="panel-group"
-                    id="accordion"
-                  >
-                    <CardHeader
-                      className="card-collapse"
-                      id="priceRanger"
-                      role="tab"
-                    >
+                  <div aria-expanded={true} aria-multiselectable={true} className="panel-group" id="accordion">
+                    <CardHeader className="card-collapse" id="priceRanger" role="tab">
                       <h5 className="mb-0 panel-title">
                         <a
                           aria-expanded={priceRange}
@@ -180,11 +142,7 @@ function Ecommerce() {
                         <div className="slider slider-info" id="sliderDouble" />
                       </CardBody>
                     </Collapse>
-                    <CardHeader
-                      className="card-collapse"
-                      id="clothingGear"
-                      role="tab"
-                    >
+                    <CardHeader className="card-collapse" id="clothingGear" role="tab">
                       <h5 className="mb-0 panel-title">
                         <a
                           aria-expanded={clothing}
@@ -202,11 +160,7 @@ function Ecommerce() {
                       <CardBody>
                         <FormGroup check>
                           <Label check>
-                            <Input
-                              defaultChecked
-                              defaultValue=""
-                              type="checkbox"
-                            />
+                            <Input defaultChecked defaultValue="" type="checkbox" />
                             Blazers <span className="form-check-sign" />
                           </Label>
                         </FormGroup>
@@ -254,11 +208,7 @@ function Ecommerce() {
                         </FormGroup>
                       </CardBody>
                     </Collapse>
-                    <CardHeader
-                      className="card-collapse"
-                      id="designer"
-                      role="tab"
-                    >
+                    <CardHeader className="card-collapse" id="designer" role="tab">
                       <h5 className="mb-0 panel-title">
                         <a
                           aria-expanded={designer}
@@ -276,11 +226,7 @@ function Ecommerce() {
                       <CardBody>
                         <FormGroup check>
                           <Label check>
-                            <Input
-                              defaultChecked
-                              defaultValue=""
-                              type="checkbox"
-                            />
+                            <Input defaultChecked defaultValue="" type="checkbox" />
                             All <span className="form-check-sign" />
                           </Label>
                         </FormGroup>
@@ -299,8 +245,7 @@ function Ecommerce() {
                         <FormGroup check>
                           <Label check>
                             <Input defaultValue="" type="checkbox" />
-                            Alexander McQueen{" "}
-                            <span className="form-check-sign" />
+                            Alexander McQueen <span className="form-check-sign" />
                           </Label>
                         </FormGroup>
                         <FormGroup check>
@@ -330,8 +275,7 @@ function Ecommerce() {
                         <FormGroup check>
                           <Label check>
                             <Input defaultValue="" type="checkbox" />
-                            Burberry Prorsum{" "}
-                            <span className="form-check-sign" />
+                            Burberry Prorsum <span className="form-check-sign" />
                           </Label>
                         </FormGroup>
                         <FormGroup check>
@@ -355,8 +299,7 @@ function Ecommerce() {
                         <FormGroup check>
                           <Label check>
                             <Input defaultValue="" type="checkbox" />
-                            Dolce &amp; Gabbana{" "}
-                            <span className="form-check-sign" />
+                            Dolce &amp; Gabbana <span className="form-check-sign" />
                           </Label>
                         </FormGroup>
                         <FormGroup check>
@@ -409,11 +352,7 @@ function Ecommerce() {
                       <CardBody>
                         <FormGroup check>
                           <Label check>
-                            <Input
-                              defaultChecked
-                              defaultValue=""
-                              type="checkbox"
-                            />
+                            <Input defaultChecked defaultValue="" type="checkbox" />
                             All <span className="form-check-sign" />
                           </Label>
                         </FormGroup>
@@ -466,21 +405,12 @@ function Ecommerce() {
                       <Card className="card-product card-plain">
                         <div className="card-image">
                           <a href="#pablo" onClick={(e) => e.preventDefault()}>
-                            <img
-                              alt="..."
-                              className="img-rounded img-responsive"
-                              src={
-                                require("assets/img/ecommerce/balmain_1.jpg")
-                                  .default
-                              }
-                            />
+                            <img alt="..." className="img-rounded img-responsive" src={require('assets/img/ecommerce/balmain_1.jpg').default} />
                           </a>
                           <CardBody>
                             <div className="card-description">
                               <CardTitle tag="h5">One Shoulder Dress</CardTitle>
-                              <p className="card-description">
-                                Dresses &amp; Skirts
-                              </p>
+                              <p className="card-description">Dresses &amp; Skirts</p>
                             </div>
                             <div className="price">
                               <h5>2.900 €</h5>
@@ -493,21 +423,12 @@ function Ecommerce() {
                       <Card className="card-product card-plain">
                         <div className="card-image">
                           <a href="#pablo" onClick={(e) => e.preventDefault()}>
-                            <img
-                              alt="..."
-                              className="img-rounded img-responsive"
-                              src={
-                                require("assets/img/ecommerce/balmain_2.jpg")
-                                  .default
-                              }
-                            />
+                            <img alt="..." className="img-rounded img-responsive" src={require('assets/img/ecommerce/balmain_2.jpg').default} />
                           </a>
                           <CardBody>
                             <div className="card-description">
                               <CardTitle tag="h5">Stretch-Knit Dress</CardTitle>
-                              <p className="card-description">
-                                Dresses &amp; Skirts
-                              </p>
+                              <p className="card-description">Dresses &amp; Skirts</p>
                             </div>
                             <div className="price">
                               <h5>1.700 €</h5>
@@ -520,23 +441,12 @@ function Ecommerce() {
                       <Card className="card-product card-plain">
                         <div className="card-image">
                           <a href="#pablo" onClick={(e) => e.preventDefault()}>
-                            <img
-                              alt="..."
-                              className="img-rounded img-responsive"
-                              src={
-                                require("assets/img/ecommerce/balmain_2.jpg")
-                                  .default
-                              }
-                            />
+                            <img alt="..." className="img-rounded img-responsive" src={require('assets/img/ecommerce/balmain_2.jpg').default} />
                           </a>
                           <CardBody>
                             <div className="card-description">
-                              <CardTitle tag="h5">
-                                Chrystal Sheer Dress
-                              </CardTitle>
-                              <p className="card-description">
-                                Dresses &amp; Skirts
-                              </p>
+                              <CardTitle tag="h5">Chrystal Sheer Dress</CardTitle>
+                              <p className="card-description">Dresses &amp; Skirts</p>
                             </div>
                             <div className="price">
                               <h5>1.500 €</h5>
@@ -549,21 +459,12 @@ function Ecommerce() {
                       <Card className="card-product card-plain">
                         <div className="card-image">
                           <a href="#pablo" onClick={(e) => e.preventDefault()}>
-                            <img
-                              alt="..."
-                              className="img-rounded img-responsive"
-                              src={
-                                require("assets/img/ecommerce/balmain_2.jpg")
-                                  .default
-                              }
-                            />
+                            <img alt="..." className="img-rounded img-responsive" src={require('assets/img/ecommerce/balmain_2.jpg').default} />
                           </a>
                           <CardBody>
                             <div className="card-description">
                               <CardTitle tag="h5">One Shoulder Dress</CardTitle>
-                              <p className="card-description">
-                                Dresses &amp; Skirts
-                              </p>
+                              <p className="card-description">Dresses &amp; Skirts</p>
                             </div>
                             <div className="price">
                               <h5>2.600 €</h5>
@@ -576,21 +477,12 @@ function Ecommerce() {
                       <Card className="card-product card-plain">
                         <div className="card-image">
                           <a href="#pablo" onClick={(e) => e.preventDefault()}>
-                            <img
-                              alt="..."
-                              className="img-rounded img-responsive"
-                              src={
-                                require("assets/img/ecommerce/balmain_8.jpg")
-                                  .default
-                              }
-                            />
+                            <img alt="..." className="img-rounded img-responsive" src={require('assets/img/ecommerce/balmain_8.jpg').default} />
                           </a>
                           <CardBody>
                             <div className="card-description">
                               <CardTitle tag="h5">Glass Beads Skirt</CardTitle>
-                              <p className="card-description">
-                                Dresses &amp; Skirts
-                              </p>
+                              <p className="card-description">Dresses &amp; Skirts</p>
                             </div>
                             <div className="price">
                               <h5>7.500 €</h5>
@@ -603,21 +495,12 @@ function Ecommerce() {
                       <Card className="card-product card-plain">
                         <div className="card-image">
                           <a href="#pablo" onClick={(e) => e.preventDefault()}>
-                            <img
-                              alt="..."
-                              className="img-rounded img-responsive"
-                              src={
-                                require("assets/img/ecommerce/balmain_8.jpg")
-                                  .default
-                              }
-                            />
+                            <img alt="..." className="img-rounded img-responsive" src={require('assets/img/ecommerce/balmain_8.jpg').default} />
                           </a>
                           <CardBody>
                             <div className="card-description">
                               <CardTitle tag="h5">Velvet Mini Dress</CardTitle>
-                              <p className="card-description">
-                                Dresses &amp; Skirts
-                              </p>
+                              <p className="card-description">Dresses &amp; Skirts</p>
                             </div>
                             <div className="price">
                               <h5>3.500 €</h5>
@@ -627,13 +510,7 @@ function Ecommerce() {
                       </Card>
                     </Col>
                     <Col className="offset-md-4" md="3">
-                      <Button
-                        className="btn-round"
-                        color="default"
-                        data-rotation-color="gray"
-                        id="successBtn"
-                        outline
-                      >
+                      <Button className="btn-round" color="default" data-rotation-color="gray" id="successBtn" outline>
                         Load more...
                       </Button>
                       <UncontrolledTooltip delay={0} target="successBtn">
@@ -654,14 +531,7 @@ function Ecommerce() {
                 <Card className="card-blog">
                   <div className="card-image">
                     <a href="#pablo" onClick={(e) => e.preventDefault()}>
-                      <img
-                        alt="..."
-                        className="img img-raised"
-                        src={
-                          require("assets/img/sections/miguel-perales.jpg")
-                            .default
-                        }
-                      />
+                      <img alt="..." className="img img-raised" src={require('assets/img/sections/miguel-perales.jpg').default} />
                     </a>
                   </div>
                   <CardBody>
@@ -672,22 +542,14 @@ function Ecommerce() {
                       </a>
                     </CardTitle>
                     <p className="card-description">
-                      LinkedIn is today launching its official desktop
-                      application for Windows 10, allowing the professional
-                      social networking service to... <br />
+                      LinkedIn is today launching its official desktop application for Windows 10, allowing the professional social networking service
+                      to... <br />
                     </p>
                     <hr />
                     <CardFooter>
                       <div className="author">
                         <a href="#pablo" onClick={(e) => e.preventDefault()}>
-                          <img
-                            alt="..."
-                            className="avatar img-raised mr-2"
-                            src={
-                              require("assets/img/faces/ayo-ogunseinde-2.jpg")
-                                .default
-                            }
-                          />
+                          <img alt="..." className="avatar img-raised mr-2" src={require('assets/img/faces/ayo-ogunseinde-2.jpg').default} />
                           <span>Mike John</span>
                         </a>
                       </div>
@@ -702,14 +564,7 @@ function Ecommerce() {
                 <Card className="card-blog">
                   <div className="card-image">
                     <a href="#pablo" onClick={(e) => e.preventDefault()}>
-                      <img
-                        alt="..."
-                        className="img img-raised"
-                        src={
-                          require("assets/img/sections/roger-keller.jpg")
-                            .default
-                        }
-                      />
+                      <img alt="..." className="img img-raised" src={require('assets/img/sections/roger-keller.jpg').default} />
                     </a>
                   </div>
                   <CardBody>
@@ -720,22 +575,14 @@ function Ecommerce() {
                       </a>
                     </CardTitle>
                     <p className="card-description">
-                      The latest version of MIT’s Cheetah robot made its stage
-                      debut today at TC Sessions: Robotics in Cambridge, Mass.
-                      It’s a familiar project... <br />
+                      The latest version of MIT’s Cheetah robot made its stage debut today at TC Sessions: Robotics in Cambridge, Mass. It’s a
+                      familiar project... <br />
                     </p>
                     <hr />
                     <CardFooter>
                       <div className="author">
                         <a href="#pablo" onClick={(e) => e.preventDefault()}>
-                          <img
-                            alt="..."
-                            className="avatar img-raised mr-2"
-                            src={
-                              require("assets/img/faces/kaci-baum-2.jpg")
-                                .default
-                            }
-                          />
+                          <img alt="..." className="avatar img-raised mr-2" src={require('assets/img/faces/kaci-baum-2.jpg').default} />
                           <span>Nickie Kelly</span>
                         </a>
                       </div>
@@ -750,14 +597,7 @@ function Ecommerce() {
                 <Card className="card-blog">
                   <div className="card-image">
                     <a href="#pablo" onClick={(e) => e.preventDefault()}>
-                      <img
-                        alt="..."
-                        className="img img-raised"
-                        src={
-                          require("assets/img/sections/joshua-earlesz.jpg")
-                            .default
-                        }
-                      />
+                      <img alt="..." className="img img-raised" src={require('assets/img/sections/joshua-earlesz.jpg').default} />
                     </a>
                   </div>
                   <CardBody>
@@ -771,22 +611,14 @@ function Ecommerce() {
                       </a>
                     </CardTitle>
                     <p className="card-description">
-                      Because developing a doctor-on-demand service that would
-                      allow personalized medical visits, booked through an app
-                      on a user’s phone is... <br />
+                      Because developing a doctor-on-demand service that would allow personalized medical visits, booked through an app on a user’s
+                      phone is... <br />
                     </p>
                     <hr />
                     <CardFooter>
                       <div className="author">
                         <a href="#pablo" onClick={(e) => e.preventDefault()}>
-                          <img
-                            alt="..."
-                            className="avatar img-raised mr-2"
-                            src={
-                              require("assets/img/faces/erik-lucatero-2.jpg")
-                                .default
-                            }
-                          />
+                          <img alt="..." className="avatar img-raised mr-2" src={require('assets/img/faces/erik-lucatero-2.jpg').default} />
                           <span>Mike John</span>
                         </a>
                       </div>

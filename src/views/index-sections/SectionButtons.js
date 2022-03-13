@@ -1,6 +1,6 @@
-import React from "react";
+import React from 'react';
 // react plugin used to create DropdownMenu for selecting items
-import Select from "react-select";
+import Select from 'react-select';
 
 // reactstrap components
 import {
@@ -24,33 +24,28 @@ import {
   Row,
   Col,
   CustomInput,
-} from "reactstrap";
+} from 'reactstrap';
 
 // core components
-import TagsInput from "components/TagsInput/TagsInput.js";
+import TagsInput from 'components/TagsInput/TagsInput.js';
 
 const selectOptions = [
-  { value: "", label: " Choose city", isDisabled: true },
-  { value: "1", label: "Paris " },
-  { value: "2", label: "Bucharest" },
-  { value: "3", label: "Rome" },
-  { value: "4", label: "New York" },
-  { value: "5", label: "Miami " },
-  { value: "6", label: "Piatra Neamt" },
-  { value: "7", label: "Paris " },
-  { value: "8", label: "Bucharest" },
-  { value: "9", label: "Rome" },
-  { value: "10", label: "New York" },
-  { value: "11", label: "Miami " },
+  { value: '', label: ' Choose city', isDisabled: true },
+  { value: '1', label: 'Paris ' },
+  { value: '2', label: 'Bucharest' },
+  { value: '3', label: 'Rome' },
+  { value: '4', label: 'New York' },
+  { value: '5', label: 'Miami ' },
+  { value: '6', label: 'Piatra Neamt' },
+  { value: '7', label: 'Paris ' },
+  { value: '8', label: 'Bucharest' },
+  { value: '9', label: 'Rome' },
+  { value: '10', label: 'New York' },
+  { value: '11', label: 'Miami ' },
 ];
 
 function SectionButtons() {
-  const [regularTags, setRegularTags] = React.useState([
-    "Minimal",
-    " Light",
-    " New",
-    " Friends",
-  ]);
+  const [regularTags, setRegularTags] = React.useState(['Minimal', ' Light', ' New', ' Friends']);
   const [defaultSelect, setDefaultSelect] = React.useState(null);
   const [successSelect, setSuccessSelect] = React.useState(null);
   const [dangerSelect, setDangerSelect] = React.useState(null);
@@ -67,7 +62,7 @@ function SectionButtons() {
         <div
           id="bodyClick"
           onClick={() => {
-            document.documentElement.classList.toggle("nav-open");
+            document.documentElement.classList.toggle('nav-open');
             setBodyClick(false);
           }}
         />
@@ -96,11 +91,7 @@ function SectionButtons() {
                   <i className="fa fa-heart mr-1" />
                   With Icon
                 </Button>
-                <Button
-                  className="btn-just-icon mr-1"
-                  color="info"
-                  type="button"
-                >
+                <Button className="btn-just-icon mr-1" color="info" type="button">
                   <i className="fa fa-heart" />
                 </Button>
                 <Button className="btn-link" color="info" type="button">
@@ -115,13 +106,7 @@ function SectionButtons() {
             </div>
             <Row>
               <Col md="8">
-                <Button
-                  color="danger"
-                  outline
-                  size="sm"
-                  type="button"
-                  className="mr-1"
-                >
+                <Button color="danger" outline size="sm" type="button" className="mr-1">
                   Small
                 </Button>
                 <Button color="danger" outline type="button" className="mr-1">
@@ -139,60 +124,25 @@ function SectionButtons() {
             </div>
             <Row>
               <Col md="8">
-                <Button
-                  className="btn-round mr-1"
-                  color="default"
-                  outline
-                  type="button"
-                >
+                <Button className="btn-round mr-1" color="default" outline type="button">
                   Default
                 </Button>
-                <Button
-                  className="btn-round mr-1"
-                  color="primary"
-                  outline
-                  type="button"
-                >
+                <Button className="btn-round mr-1" color="primary" outline type="button">
                   Primary
                 </Button>
-                <Button
-                  className="btn-round mr-1"
-                  color="info"
-                  outline
-                  type="button"
-                >
+                <Button className="btn-round mr-1" color="info" outline type="button">
                   Info
                 </Button>
-                <Button
-                  className="btn-round mr-1"
-                  color="success"
-                  outline
-                  type="button"
-                >
+                <Button className="btn-round mr-1" color="success" outline type="button">
                   Success
                 </Button>
-                <Button
-                  className="btn-round mr-1"
-                  color="warning"
-                  outline
-                  type="button"
-                >
+                <Button className="btn-round mr-1" color="warning" outline type="button">
                   Warning
                 </Button>
-                <Button
-                  className="btn-round mr-1"
-                  color="danger"
-                  outline
-                  type="button"
-                >
+                <Button className="btn-round mr-1" color="danger" outline type="button">
                   Danger
                 </Button>
-                <Button
-                  className="btn-round"
-                  color="neutral"
-                  outline
-                  type="button"
-                >
+                <Button className="btn-round" color="neutral" outline type="button">
                   Neutral
                 </Button>
               </Col>
@@ -200,35 +150,19 @@ function SectionButtons() {
             <br />
             <Row>
               <Col md="8">
-                <Button
-                  className="btn-round mr-1"
-                  color="default"
-                  type="button"
-                >
+                <Button className="btn-round mr-1" color="default" type="button">
                   Default
                 </Button>
-                <Button
-                  className="btn-round mr-1"
-                  color="primary"
-                  type="button"
-                >
+                <Button className="btn-round mr-1" color="primary" type="button">
                   Primary
                 </Button>
                 <Button className="btn-round mr-1" color="info" type="button">
                   Info
                 </Button>
-                <Button
-                  className="btn-round mr-1"
-                  color="success"
-                  type="button"
-                >
+                <Button className="btn-round mr-1" color="success" type="button">
                   Success
                 </Button>
-                <Button
-                  className="btn-round mr-1"
-                  color="warning"
-                  type="button"
-                >
+                <Button className="btn-round mr-1" color="warning" type="button">
                   Warning
                 </Button>
                 <Button className="btn-round mr-1" color="danger" type="button">
@@ -245,60 +179,25 @@ function SectionButtons() {
           </div>
           <Row>
             <Col md="8">
-              <Button
-                className="mr-1"
-                color="link"
-                href="#pablo"
-                onClick={(e) => e.preventDefault()}
-              >
+              <Button className="mr-1" color="link" href="#pablo" onClick={(e) => e.preventDefault()}>
                 Default
               </Button>
-              <Button
-                className="btn-link mr-1"
-                color="primary"
-                href="#pablo"
-                onClick={(e) => e.preventDefault()}
-              >
+              <Button className="btn-link mr-1" color="primary" href="#pablo" onClick={(e) => e.preventDefault()}>
                 Primary
               </Button>
-              <Button
-                className="btn-link mr-1"
-                color="success"
-                href="#pablo"
-                onClick={(e) => e.preventDefault()}
-              >
+              <Button className="btn-link mr-1" color="success" href="#pablo" onClick={(e) => e.preventDefault()}>
                 Success
               </Button>
-              <Button
-                className="btn-link mr-1"
-                color="info"
-                href="#pablo"
-                onClick={(e) => e.preventDefault()}
-              >
+              <Button className="btn-link mr-1" color="info" href="#pablo" onClick={(e) => e.preventDefault()}>
                 Info
               </Button>
-              <Button
-                className="btn-link mr-1"
-                color="warning"
-                href="#pablo"
-                onClick={(e) => e.preventDefault()}
-              >
+              <Button className="btn-link mr-1" color="warning" href="#pablo" onClick={(e) => e.preventDefault()}>
                 Warning
               </Button>
-              <Button
-                className="btn-link mr-1"
-                color="danger"
-                href="#pablo"
-                onClick={(e) => e.preventDefault()}
-              >
+              <Button className="btn-link mr-1" color="danger" href="#pablo" onClick={(e) => e.preventDefault()}>
                 Danger
               </Button>
-              <Button
-                className="btn-neutral"
-                color="link"
-                href="#pablo"
-                onClick={(e) => e.preventDefault()}
-              >
+              <Button className="btn-neutral" color="link" href="#pablo" onClick={(e) => e.preventDefault()}>
                 Neutral
               </Button>
             </Col>
@@ -309,42 +208,20 @@ function SectionButtons() {
             </div>
             <Row>
               <Col md="8">
-                <Button
-                  className="btn-just-icon mr-1"
-                  color="default"
-                  type="button"
-                >
+                <Button className="btn-just-icon mr-1" color="default" type="button">
                   <i className="fa fa-twitter" />
                 </Button>
-                <Button
-                  className="btn-just-icon mr-1"
-                  color="default"
-                  outline
-                  type="button"
-                >
+                <Button className="btn-just-icon mr-1" color="default" outline type="button">
                   <i className="fa fa-twitter" />
                 </Button>
-                <Button
-                  className="btn-just-icon mr-1"
-                  color="link"
-                  type="button"
-                >
+                <Button className="btn-just-icon mr-1" color="link" type="button">
                   <i className="fa fa-twitter" />
                 </Button>
-                <Button
-                  className="btn-round mr-1"
-                  color="default"
-                  type="button"
-                >
+                <Button className="btn-round mr-1" color="default" type="button">
                   <i className="nc-icon nc-settings-gear-65 mr-1" />
                   Settings
                 </Button>
-                <Button
-                  className="btn-border btn-round mr-1"
-                  color="default"
-                  outline
-                  type="button"
-                >
+                <Button className="btn-border btn-round mr-1" color="default" outline type="button">
                   <i className="nc-icon nc-settings-gear-65 mr-1" />
                   Settings
                 </Button>
@@ -354,27 +231,13 @@ function SectionButtons() {
                 </Button>
                 <br />
                 <br />
-                <Button
-                  className="btn-just-icon mr-1"
-                  color="warning"
-                  size="sm"
-                  type="button"
-                >
+                <Button className="btn-just-icon mr-1" color="warning" size="sm" type="button">
                   <i className="nc-icon nc-sound-wave" />
                 </Button>
-                <Button
-                  className="btn-just-icon mr-1"
-                  color="danger"
-                  type="button"
-                >
+                <Button className="btn-just-icon mr-1" color="danger" type="button">
                   <i className="nc-icon nc-simple-remove" />
                 </Button>
-                <Button
-                  className="btn-just-icon"
-                  color="default"
-                  size="lg"
-                  type="button"
-                >
+                <Button className="btn-just-icon" color="default" size="lg" type="button">
                   <i className="nc-icon nc-chat-33" />
                 </Button>
               </Col>
@@ -432,64 +295,34 @@ function SectionButtons() {
             </div>
             <Row>
               <Col md="8">
-                <Button
-                  className="btn-just-icon btn-border mr-1"
-                  color="twitter"
-                >
+                <Button className="btn-just-icon btn-border mr-1" color="twitter">
                   <i className="fa fa-twitter" />
                 </Button>
-                <Button
-                  className="btn-just-icon btn-border mr-1"
-                  color="facebook"
-                >
+                <Button className="btn-just-icon btn-border mr-1" color="facebook">
                   <i className="fa fa-facebook" />
                 </Button>
-                <Button
-                  className="btn-just-icon btn-border mr-1"
-                  color="google"
-                >
+                <Button className="btn-just-icon btn-border mr-1" color="google">
                   <i className="fa fa-google-plus" />
                 </Button>
-                <Button
-                  className="btn-just-icon btn-border mr-1"
-                  color="linkedin"
-                >
+                <Button className="btn-just-icon btn-border mr-1" color="linkedin">
                   <i className="fa fa-linkedin" />
                 </Button>
-                <Button
-                  className="btn-just-icon btn-border mr-1"
-                  color="pinterest"
-                >
+                <Button className="btn-just-icon btn-border mr-1" color="pinterest">
                   <i className="fa fa-pinterest-p" />
                 </Button>
-                <Button
-                  className="btn-just-icon btn-border mr-1"
-                  color="youtube"
-                >
+                <Button className="btn-just-icon btn-border mr-1" color="youtube">
                   <i className="fa fa-youtube" />
                 </Button>
-                <Button
-                  className="btn-just-icon btn-border mr-1"
-                  color="tumblr"
-                >
+                <Button className="btn-just-icon btn-border mr-1" color="tumblr">
                   <i className="fa fa-tumblr" />
                 </Button>
-                <Button
-                  className="btn-just-icon btn-borde mr-1r"
-                  color="github"
-                >
+                <Button className="btn-just-icon btn-borde mr-1r" color="github">
                   <i className="fa fa-github-alt" />
                 </Button>
-                <Button
-                  className="btn-just-icon btn-border mr-1"
-                  color="dribbble"
-                >
+                <Button className="btn-just-icon btn-border mr-1" color="dribbble">
                   <i className="fa fa-dribbble" />
                 </Button>
-                <Button
-                  className="btn-just-icon btn-border mr-1"
-                  color="reddit"
-                >
+                <Button className="btn-just-icon btn-border mr-1" color="reddit">
                   <i className="fa fa-reddit-alien" />
                 </Button>
                 <Button className="btn-just-icon btn-border" color="instagram">
@@ -507,25 +340,16 @@ function SectionButtons() {
                 <Button className="btn-just-icon btn-link mr-1" color="twitter">
                   <i className="fa fa-twitter" />
                 </Button>
-                <Button
-                  className="btn-just-icon btn-link mr-1"
-                  color="facebook"
-                >
+                <Button className="btn-just-icon btn-link mr-1" color="facebook">
                   <i className="fa fa-facebook" />
                 </Button>
                 <Button className="btn-just-icon btn-link mr-1" color="google">
                   <i className="fa fa-google-plus" />
                 </Button>
-                <Button
-                  className="btn-just-icon btn-link mr-1"
-                  color="linkedin"
-                >
+                <Button className="btn-just-icon btn-link mr-1" color="linkedin">
                   <i className="fa fa-linkedin" />
                 </Button>
-                <Button
-                  className="btn-just-icon btn-link mr-1"
-                  color="pinterest"
-                >
+                <Button className="btn-just-icon btn-link mr-1" color="pinterest">
                   <i className="fa fa-pinterest-p" />
                 </Button>
                 <Button className="btn-just-icon btn-link mr-1" color="youtube">
@@ -537,19 +361,13 @@ function SectionButtons() {
                 <Button className="btn-just-icon btn-link mr-1" color="github">
                   <i className="fa fa-github-alt" />
                 </Button>
-                <Button
-                  className="btn-just-icon btn-link mr-1"
-                  color="dribbble"
-                >
+                <Button className="btn-just-icon btn-link mr-1" color="dribbble">
                   <i className="fa fa-dribbble" />
                 </Button>
                 <Button className="btn-just-icon btn-link mr-1" color="reddit">
                   <i className="fa fa-reddit-alien" />
                 </Button>
-                <Button
-                  className="btn-just-icon btn-link mr-1"
-                  color="instagram"
-                >
+                <Button className="btn-just-icon btn-link mr-1" color="instagram">
                   <i className="fa fa-instagram" />
                 </Button>
               </Col>
@@ -569,10 +387,7 @@ function SectionButtons() {
                   <i className="nc-icon nc-zoom-split mr-1" />
                   Search
                 </Button>
-                <Button
-                  className="btn-move-left btn-round mr-1"
-                  color="default"
-                >
+                <Button className="btn-move-left btn-round mr-1" color="default">
                   <i className="nc-icon nc-minimal-left mr-1" />
                   Back
                 </Button>
@@ -594,22 +409,12 @@ function SectionButtons() {
               </Col>
               <Col sm="3">
                 <FormGroup>
-                  <Input
-                    className="no-border"
-                    defaultValue=""
-                    placeholder="No Border"
-                    type="text"
-                  />
+                  <Input className="no-border" defaultValue="" placeholder="No Border" type="text" />
                 </FormGroup>
               </Col>
               <Col sm="3">
                 <FormGroup>
-                  <Input
-                    defaultValue=""
-                    disabled
-                    placeholder="Disabled"
-                    type="text"
-                  />
+                  <Input defaultValue="" disabled placeholder="Disabled" type="text" />
                 </FormGroup>
               </Col>
             </Row>
@@ -627,11 +432,7 @@ function SectionButtons() {
               </Col>
               <Col sm="3">
                 <InputGroup className="no-border">
-                  <Input
-                    className="no-border"
-                    placeholder="No Border"
-                    type="text"
-                  />
+                  <Input className="no-border" placeholder="No Border" type="text" />
                   <InputGroupAddon addonType="append">
                     <InputGroupText>%</InputGroupText>
                   </InputGroupAddon>
@@ -651,50 +452,26 @@ function SectionButtons() {
             <Row>
               <Col sm="3">
                 <FormGroup className="has-success">
-                  <Input
-                    className="form-control-success"
-                    defaultValue="Success"
-                    id="inputSuccess"
-                    type="text"
-                  />
+                  <Input className="form-control-success" defaultValue="Success" id="inputSuccess" type="text" />
                 </FormGroup>
               </Col>
               <Col sm="3">
                 <FormGroup className="has-success">
-                  <Input
-                    className="form-control-success no-border"
-                    defaultValue="Success"
-                    id="inputSuccess1"
-                    type="text"
-                  />
+                  <Input className="form-control-success no-border" defaultValue="Success" id="inputSuccess1" type="text" />
                 </FormGroup>
               </Col>
             </Row>
             <Row>
               <Col sm="3">
                 <FormGroup className="has-danger">
-                  <Input
-                    className="form-control-danger"
-                    defaultValue="Error"
-                    id="inputDanger"
-                    type="text"
-                  />
-                  <div className="form-control-feedback">
-                    Sorry, that username&apos;s taken. Try another?
-                  </div>
+                  <Input className="form-control-danger" defaultValue="Error" id="inputDanger" type="text" />
+                  <div className="form-control-feedback">Sorry, that username&apos;s taken. Try another?</div>
                 </FormGroup>
               </Col>
               <Col sm="3">
                 <FormGroup className="has-danger">
-                  <Input
-                    className="form-control-danger no-border"
-                    defaultValue="Error"
-                    id="inputDanger1"
-                    type="text"
-                  />
-                  <div className="form-control-feedback">
-                    Sorry, that username&apos;s taken. Try another?
-                  </div>
+                  <Input className="form-control-danger no-border" defaultValue="Error" id="inputDanger1" type="text" />
+                  <div className="form-control-feedback">Sorry, that username&apos;s taken. Try another?</div>
                 </FormGroup>
               </Col>
             </Row>
@@ -726,12 +503,7 @@ function SectionButtons() {
               </FormGroup>
               <FormGroup check disabled>
                 <Label check>
-                  <Input
-                    defaultChecked
-                    defaultValue=""
-                    disabled
-                    type="checkbox"
-                  />
+                  <Input defaultChecked defaultValue="" disabled type="checkbox" />
                   Disabled checked <span className="form-check-sign" />
                 </Label>
               </FormGroup>
@@ -742,49 +514,25 @@ function SectionButtons() {
               </div>
               <div className="form-check-radio">
                 <Label check>
-                  <Input
-                    defaultValue="option1"
-                    id="exampleRadios1"
-                    name="exampleRadios"
-                    type="radio"
-                  />
+                  <Input defaultValue="option1" id="exampleRadios1" name="exampleRadios" type="radio" />
                   Radio is off <span className="form-check-sign" />
                 </Label>
               </div>
               <div className="form-check-radio">
                 <Label check>
-                  <Input
-                    defaultChecked
-                    defaultValue="option2"
-                    id="exampleRadios2"
-                    name="exampleRadios"
-                    type="radio"
-                  />
+                  <Input defaultChecked defaultValue="option2" id="exampleRadios2" name="exampleRadios" type="radio" />
                   Radio is on <span className="form-check-sign" />
                 </Label>
               </div>
               <div className="form-check-radio disabled">
                 <Label check>
-                  <Input
-                    defaultValue="option3"
-                    disabled
-                    id="exampleRadios3"
-                    name="exampleRadios"
-                    type="radio"
-                  />
+                  <Input defaultValue="option3" disabled id="exampleRadios3" name="exampleRadios" type="radio" />
                   Disabled radio is off <span className="form-check-sign" />
                 </Label>
               </div>
               <div className="form-check-radio disabled">
                 <Label check>
-                  <Input
-                    defaultChecked
-                    defaultValue="option4"
-                    disabled
-                    id="exampleRadios4"
-                    name="exampleRadioz"
-                    type="radio"
-                  />
+                  <Input defaultChecked defaultValue="option4" disabled id="exampleRadios4" name="exampleRadioz" type="radio" />
                   Disabled radio is on <span className="form-check-sign" />
                 </Label>
               </div>
@@ -796,12 +544,7 @@ function SectionButtons() {
             </div>
             <Row>
               <Col md="5" sm="6">
-                <Input
-                  className="border-input"
-                  placeholder="This is a textarea with border. Here can be your nice text"
-                  rows="3"
-                  type="textarea"
-                />
+                <Input className="border-input" placeholder="This is a textarea with border. Here can be your nice text" rows="3" type="textarea" />
               </Col>
               <Col md="5" sm="6">
                 <Input
@@ -826,55 +569,22 @@ function SectionButtons() {
               <h3>Switches</h3>
             </div>
             <div className="d-inline-flex mr-1">
-              <CustomInput
-                type="switch"
-                defaultChecked
-                id="exampleCustomSwitch-7"
-                name="customSwitch-7"
-                className="custom-switch-default"
-              />
+              <CustomInput type="switch" defaultChecked id="exampleCustomSwitch-7" name="customSwitch-7" className="custom-switch-default" />
             </div>
             <div className="d-inline-flex mr-1">
-              <CustomInput
-                type="switch"
-                id="exampleCustomSwitch-8"
-                name="customSwitch-8"
-                className="custom-switch-default"
-              />
+              <CustomInput type="switch" id="exampleCustomSwitch-8" name="customSwitch-8" className="custom-switch-default" />
             </div>
             <div className="d-inline-flex mr-1">
-              <CustomInput
-                type="switch"
-                defaultChecked
-                id="exampleCustomSwitch-9"
-                name="customSwitch-9"
-                className="custom-switch-primary"
-              />
+              <CustomInput type="switch" defaultChecked id="exampleCustomSwitch-9" name="customSwitch-9" className="custom-switch-primary" />
             </div>
             <div className="d-inline-flex mr-1">
-              <CustomInput
-                type="switch"
-                id="exampleCustomSwitch-10"
-                name="customSwitch-10"
-                className="custom-switch-primary"
-              />
+              <CustomInput type="switch" id="exampleCustomSwitch-10" name="customSwitch-10" className="custom-switch-primary" />
             </div>
             <div className="d-inline-flex mr-1">
-              <CustomInput
-                type="switch"
-                defaultChecked
-                id="exampleCustomSwitch-11"
-                name="customSwitch-11"
-                className="custom-switch-info"
-              />
+              <CustomInput type="switch" defaultChecked id="exampleCustomSwitch-11" name="customSwitch-11" className="custom-switch-info" />
             </div>
             <div className="d-inline-flex">
-              <CustomInput
-                type="switch"
-                id="exampleCustomSwitch-12"
-                name="customSwitch-12"
-                className="custom-switch-info"
-              />
+              <CustomInput type="switch" id="exampleCustomSwitch-12" name="customSwitch-12" className="custom-switch-info" />
             </div>
             <div className="title">
               <h3>Switches with labels</h3>
@@ -890,13 +600,7 @@ function SectionButtons() {
               />
             </div>
             <div className="mb-1">
-              <CustomInput
-                type="switch"
-                id="exampleCustomSwitch-14"
-                name="customSwitch-14"
-                className="custom-switch-success"
-                label="Default off"
-              />
+              <CustomInput type="switch" id="exampleCustomSwitch-14" name="customSwitch-14" className="custom-switch-success" label="Default off" />
             </div>
             <div className="mb-1">
               <CustomInput
@@ -909,13 +613,7 @@ function SectionButtons() {
               />
             </div>
             <div className="mb-1">
-              <CustomInput
-                type="switch"
-                id="exampleCustomSwitch-16"
-                name="customSwitch-16"
-                className="custom-switch-warning"
-                label="Default off"
-              />
+              <CustomInput type="switch" id="exampleCustomSwitch-16" name="customSwitch-16" className="custom-switch-warning" label="Default off" />
             </div>
             <div className="mb-1">
               <CustomInput
@@ -928,13 +626,7 @@ function SectionButtons() {
               />
             </div>
             <div className="mb-1">
-              <CustomInput
-                type="switch"
-                id="exampleCustomSwitch-18"
-                name="customSwitch-18"
-                className="custom-switch-danger"
-                label="Default off"
-              />
+              <CustomInput type="switch" id="exampleCustomSwitch-18" name="customSwitch-18" className="custom-switch-danger" label="Default off" />
             </div>
           </div>
           <div id="labels">
@@ -991,11 +683,7 @@ function SectionButtons() {
             <div className="title">
               <h3>Tags</h3>
             </div>
-            <TagsInput
-              onChange={handleTags}
-              tagProps={{ className: "react-tagsinput-tag badge-success" }}
-              value={regularTags}
-            />
+            <TagsInput onChange={handleTags} tagProps={{ className: 'react-tagsinput-tag badge-success' }} value={regularTags} />
           </div>
           <div id="select">
             <div className="title">
@@ -1085,10 +773,7 @@ function SectionButtons() {
                 <div id="navbar-dropdown">
                   <Navbar className="navbar-default" expand="lg">
                     <Container>
-                      <NavbarBrand
-                        href="#pablo"
-                        onClick={(e) => e.preventDefault()}
-                      >
+                      <NavbarBrand href="#pablo" onClick={(e) => e.preventDefault()}>
                         Dropdown colors
                       </NavbarBrand>
                       <button
@@ -1096,7 +781,7 @@ function SectionButtons() {
                         id="navbarSupportedContent1"
                         type="button"
                         onClick={() => {
-                          document.documentElement.classList.toggle("nav-open");
+                          document.documentElement.classList.toggle('nav-open');
                           setBodyClick(true);
                         }}
                       >
@@ -1104,295 +789,160 @@ function SectionButtons() {
                         <span className="navbar-toggler-icon" />
                         <span className="navbar-toggler-icon" />
                       </button>
-                      <UncontrolledCollapse
-                        navbar
-                        toggler="#navbarSupportedContent1"
-                      >
+                      <UncontrolledCollapse navbar toggler="#navbarSupportedContent1">
                         <Nav className="ml-auto" navbar>
                           {/* default color */}
                           <UncontrolledDropdown nav inNavbar>
-                            <DropdownToggle
-                              caret
-                              className="btn-round"
-                              color="default"
-                              data-toggle="dropdown"
-                            >
+                            <DropdownToggle caret className="btn-round" color="default" data-toggle="dropdown">
                               Default <b className="caret" />
                             </DropdownToggle>
                             <DropdownMenu right>
-                              <DropdownItem header>
-                                Dropdown header
-                              </DropdownItem>
-                              <DropdownItem
-                                href="#pablo"
-                                onClick={(e) => e.preventDefault()}
-                              >
+                              <DropdownItem header>Dropdown header</DropdownItem>
+                              <DropdownItem href="#pablo" onClick={(e) => e.preventDefault()}>
                                 Action
                               </DropdownItem>
-                              <DropdownItem
-                                href="#pablo"
-                                onClick={(e) => e.preventDefault()}
-                              >
+                              <DropdownItem href="#pablo" onClick={(e) => e.preventDefault()}>
                                 Another action
                               </DropdownItem>
-                              <DropdownItem
-                                href="#pablo"
-                                onClick={(e) => e.preventDefault()}
-                              >
+                              <DropdownItem href="#pablo" onClick={(e) => e.preventDefault()}>
                                 Something else here
                               </DropdownItem>
                               <DropdownItem divider />
-                              <DropdownItem
-                                href="#pablo"
-                                onClick={(e) => e.preventDefault()}
-                              >
+                              <DropdownItem href="#pablo" onClick={(e) => e.preventDefault()}>
                                 Separated link
                               </DropdownItem>
                               <DropdownItem divider />
-                              <DropdownItem
-                                href="#pablo"
-                                onClick={(e) => e.preventDefault()}
-                              >
+                              <DropdownItem href="#pablo" onClick={(e) => e.preventDefault()}>
                                 Another separated link
                               </DropdownItem>
                             </DropdownMenu>
                           </UncontrolledDropdown>
                           {/* primary color */}
                           <UncontrolledDropdown nav inNavbar>
-                            <DropdownToggle
-                              caret
-                              className="btn-round"
-                              color="primary"
-                              data-toggle="dropdown"
-                            >
+                            <DropdownToggle caret className="btn-round" color="primary" data-toggle="dropdown">
                               Primary <b className="caret" />
                             </DropdownToggle>
                             <DropdownMenu className="dropdown-primary" right>
-                              <DropdownItem header>
-                                Dropdown header
-                              </DropdownItem>
-                              <DropdownItem
-                                href="#pablo"
-                                onClick={(e) => e.preventDefault()}
-                              >
+                              <DropdownItem header>Dropdown header</DropdownItem>
+                              <DropdownItem href="#pablo" onClick={(e) => e.preventDefault()}>
                                 Action
                               </DropdownItem>
-                              <DropdownItem
-                                href="#pablo"
-                                onClick={(e) => e.preventDefault()}
-                              >
+                              <DropdownItem href="#pablo" onClick={(e) => e.preventDefault()}>
                                 Another action
                               </DropdownItem>
-                              <DropdownItem
-                                href="#pablo"
-                                onClick={(e) => e.preventDefault()}
-                              >
+                              <DropdownItem href="#pablo" onClick={(e) => e.preventDefault()}>
                                 Something else here
                               </DropdownItem>
                               <DropdownItem divider />
-                              <DropdownItem
-                                href="#pablo"
-                                onClick={(e) => e.preventDefault()}
-                              >
+                              <DropdownItem href="#pablo" onClick={(e) => e.preventDefault()}>
                                 Separated link
                               </DropdownItem>
                               <DropdownItem divider />
-                              <DropdownItem
-                                href="#pablo"
-                                onClick={(e) => e.preventDefault()}
-                              >
+                              <DropdownItem href="#pablo" onClick={(e) => e.preventDefault()}>
                                 Another separated link
                               </DropdownItem>
                             </DropdownMenu>
                           </UncontrolledDropdown>
                           {/* info color */}
                           <UncontrolledDropdown nav inNavbar>
-                            <DropdownToggle
-                              caret
-                              className="btn-round"
-                              color="info"
-                              data-toggle="dropdown"
-                            >
+                            <DropdownToggle caret className="btn-round" color="info" data-toggle="dropdown">
                               Info <b className="caret" />
                             </DropdownToggle>
                             <DropdownMenu className="dropdown-info" right>
-                              <DropdownItem header>
-                                Dropdown header
-                              </DropdownItem>
-                              <DropdownItem
-                                href="#pablo"
-                                onClick={(e) => e.preventDefault()}
-                              >
+                              <DropdownItem header>Dropdown header</DropdownItem>
+                              <DropdownItem href="#pablo" onClick={(e) => e.preventDefault()}>
                                 Action
                               </DropdownItem>
-                              <DropdownItem
-                                href="#pablo"
-                                onClick={(e) => e.preventDefault()}
-                              >
+                              <DropdownItem href="#pablo" onClick={(e) => e.preventDefault()}>
                                 Another action
                               </DropdownItem>
-                              <DropdownItem
-                                href="#pablo"
-                                onClick={(e) => e.preventDefault()}
-                              >
+                              <DropdownItem href="#pablo" onClick={(e) => e.preventDefault()}>
                                 Something else here
                               </DropdownItem>
                               <DropdownItem divider />
-                              <DropdownItem
-                                href="#pablo"
-                                onClick={(e) => e.preventDefault()}
-                              >
+                              <DropdownItem href="#pablo" onClick={(e) => e.preventDefault()}>
                                 Separated link
                               </DropdownItem>
                               <DropdownItem divider />
-                              <DropdownItem
-                                href="#pablo"
-                                onClick={(e) => e.preventDefault()}
-                              >
+                              <DropdownItem href="#pablo" onClick={(e) => e.preventDefault()}>
                                 Another separated link
                               </DropdownItem>
                             </DropdownMenu>
                           </UncontrolledDropdown>
                           {/* success color */}
                           <UncontrolledDropdown nav inNavbar>
-                            <DropdownToggle
-                              caret
-                              className="btn-round"
-                              color="success"
-                              data-toggle="dropdown"
-                            >
+                            <DropdownToggle caret className="btn-round" color="success" data-toggle="dropdown">
                               Success <b className="caret" />
                             </DropdownToggle>
                             <DropdownMenu className="dropdown-success" right>
-                              <DropdownItem header>
-                                Dropdown header
-                              </DropdownItem>
-                              <DropdownItem
-                                href="#pablo"
-                                onClick={(e) => e.preventDefault()}
-                              >
+                              <DropdownItem header>Dropdown header</DropdownItem>
+                              <DropdownItem href="#pablo" onClick={(e) => e.preventDefault()}>
                                 Action
                               </DropdownItem>
-                              <DropdownItem
-                                href="#pablo"
-                                onClick={(e) => e.preventDefault()}
-                              >
+                              <DropdownItem href="#pablo" onClick={(e) => e.preventDefault()}>
                                 Another action
                               </DropdownItem>
-                              <DropdownItem
-                                href="#pablo"
-                                onClick={(e) => e.preventDefault()}
-                              >
+                              <DropdownItem href="#pablo" onClick={(e) => e.preventDefault()}>
                                 Something else here
                               </DropdownItem>
                               <DropdownItem divider />
-                              <DropdownItem
-                                href="#pablo"
-                                onClick={(e) => e.preventDefault()}
-                              >
+                              <DropdownItem href="#pablo" onClick={(e) => e.preventDefault()}>
                                 Separated link
                               </DropdownItem>
                               <DropdownItem divider />
-                              <DropdownItem
-                                href="#pablo"
-                                onClick={(e) => e.preventDefault()}
-                              >
+                              <DropdownItem href="#pablo" onClick={(e) => e.preventDefault()}>
                                 Another separated link
                               </DropdownItem>
                             </DropdownMenu>
                           </UncontrolledDropdown>
                           {/* warning color */}
                           <UncontrolledDropdown nav inNavbar>
-                            <DropdownToggle
-                              caret
-                              className="btn-round"
-                              color="warning"
-                              data-toggle="dropdown"
-                            >
+                            <DropdownToggle caret className="btn-round" color="warning" data-toggle="dropdown">
                               Warning <b className="caret" />
                             </DropdownToggle>
                             <DropdownMenu className="dropdown-warning" right>
-                              <DropdownItem header>
-                                Dropdown header
-                              </DropdownItem>
-                              <DropdownItem
-                                href="#pablo"
-                                onClick={(e) => e.preventDefault()}
-                              >
+                              <DropdownItem header>Dropdown header</DropdownItem>
+                              <DropdownItem href="#pablo" onClick={(e) => e.preventDefault()}>
                                 Action
                               </DropdownItem>
-                              <DropdownItem
-                                href="#pablo"
-                                onClick={(e) => e.preventDefault()}
-                              >
+                              <DropdownItem href="#pablo" onClick={(e) => e.preventDefault()}>
                                 Another action
                               </DropdownItem>
-                              <DropdownItem
-                                href="#pablo"
-                                onClick={(e) => e.preventDefault()}
-                              >
+                              <DropdownItem href="#pablo" onClick={(e) => e.preventDefault()}>
                                 Something else here
                               </DropdownItem>
                               <DropdownItem divider />
-                              <DropdownItem
-                                href="#pablo"
-                                onClick={(e) => e.preventDefault()}
-                              >
+                              <DropdownItem href="#pablo" onClick={(e) => e.preventDefault()}>
                                 Separated link
                               </DropdownItem>
                               <DropdownItem divider />
-                              <DropdownItem
-                                href="#pablo"
-                                onClick={(e) => e.preventDefault()}
-                              >
+                              <DropdownItem href="#pablo" onClick={(e) => e.preventDefault()}>
                                 Another separated link
                               </DropdownItem>
                             </DropdownMenu>
                           </UncontrolledDropdown>
                           {/* danger color */}
                           <UncontrolledDropdown nav inNavbar>
-                            <DropdownToggle
-                              caret
-                              className="btn-round"
-                              color="danger"
-                              data-toggle="dropdown"
-                            >
+                            <DropdownToggle caret className="btn-round" color="danger" data-toggle="dropdown">
                               Danger <b className="caret" />
                             </DropdownToggle>
                             <DropdownMenu className="dropdown-danger" right>
-                              <DropdownItem header>
-                                Dropdown header
-                              </DropdownItem>
-                              <DropdownItem
-                                href="#pablo"
-                                onClick={(e) => e.preventDefault()}
-                              >
+                              <DropdownItem header>Dropdown header</DropdownItem>
+                              <DropdownItem href="#pablo" onClick={(e) => e.preventDefault()}>
                                 Action
                               </DropdownItem>
-                              <DropdownItem
-                                href="#pablo"
-                                onClick={(e) => e.preventDefault()}
-                              >
+                              <DropdownItem href="#pablo" onClick={(e) => e.preventDefault()}>
                                 Another action
                               </DropdownItem>
-                              <DropdownItem
-                                href="#pablo"
-                                onClick={(e) => e.preventDefault()}
-                              >
+                              <DropdownItem href="#pablo" onClick={(e) => e.preventDefault()}>
                                 Something else here
                               </DropdownItem>
                               <DropdownItem divider />
-                              <DropdownItem
-                                href="#pablo"
-                                onClick={(e) => e.preventDefault()}
-                              >
+                              <DropdownItem href="#pablo" onClick={(e) => e.preventDefault()}>
                                 Separated link
                               </DropdownItem>
                               <DropdownItem divider />
-                              <DropdownItem
-                                href="#pablo"
-                                onClick={(e) => e.preventDefault()}
-                              >
+                              <DropdownItem href="#pablo" onClick={(e) => e.preventDefault()}>
                                 Another separated link
                               </DropdownItem>
                             </DropdownMenu>

@@ -1,25 +1,14 @@
-import React from "react";
+import React from 'react';
 
 // reactstrap components
-import {
-  Button,
-  Card,
-  CardBody,
-  CardTitle,
-  Container,
-  Row,
-  Col,
-} from "reactstrap";
+import { Button, Card, CardBody, CardTitle, Container, Row, Col } from 'reactstrap';
 
 // core components
 
 function SectionFreeDemo() {
   return (
     <>
-      <div
-        className="section section-free-demo section-dark"
-        style={{ display: "none" }}
-      >
+      <div className="section section-free-demo section-dark" style={{ display: 'none' }}>
         <Container>
           <Row>
             <Col md="5">
@@ -29,11 +18,8 @@ function SectionFreeDemo() {
               <div className="section-description">
                 <h3 className="title">Free Demo</h3>
                 <h5 className="description">
-                  Do you want to test and see the benefits of this kit before
-                  purchasing it? You can give the demo version a try. It
-                  features enough basic components for you to get a feel of the
-                  design and also test the quality of the code. Get it free on
-                  GitHub!
+                  Do you want to test and see the benefits of this kit before purchasing it? You can give the demo version a try. It features enough
+                  basic components for you to get a feel of the design and also test the quality of the code. Get it free on GitHub!
                 </h5>
                 <Row className="space-top">
                   <Col md="6">
@@ -148,9 +134,8 @@ function SectionFreeDemo() {
                 <Col md="12">
                   <br />
                   <p className="description">
-                    *Components: buttons, social buttons, navbars, dropdowns,
-                    tabs, tables, cards, select, tags, sliders etc. and their
-                    customisation by classes.
+                    *Components: buttons, social buttons, navbars, dropdowns, tabs, tables, cards, select, tags, sliders etc. and their customisation
+                    by classes.
                   </p>
                 </Col>
               </Row>

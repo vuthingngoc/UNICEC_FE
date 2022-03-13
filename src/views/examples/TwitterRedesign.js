@@ -1,5 +1,5 @@
 /*eslint-disable*/
-import React from "react";
+import React from 'react';
 
 // reactstrap components
 import {
@@ -21,15 +21,15 @@ import {
   Row,
   Col,
   UncontrolledTooltip,
-} from "reactstrap";
+} from 'reactstrap';
 
 // core components
-import ColorNavbar from "components/Navbars/ColorNavbar.js";
-import TwitterRedesignHeader from "components/Headers/TwitterRedesignHeader.js";
-import FooterWhite from "components/Footers/FooterWhite.js";
+import ColorNavbar from 'components/Navbars/ColorNavbar.js';
+import TwitterRedesignHeader from 'components/Headers/TwitterRedesignHeader.js';
+import FooterWhite from 'components/Footers/FooterWhite.js';
 
 function TwitterRedesign() {
-  const [activeTab, setActiveTab] = React.useState("1");
+  const [activeTab, setActiveTab] = React.useState('1');
 
   const toggle = (tab) => {
     if (activeTab !== tab) {
@@ -37,11 +37,11 @@ function TwitterRedesign() {
     }
   };
 
-  document.documentElement.classList.remove("nav-open");
+  document.documentElement.classList.remove('nav-open');
   React.useEffect(() => {
-    document.body.classList.add("twitter-redesign");
+    document.body.classList.add('twitter-redesign');
     return function cleanup() {
-      document.body.classList.remove("twitter-redesign");
+      document.body.classList.remove('twitter-redesign');
     };
   });
   return (
@@ -54,18 +54,9 @@ function TwitterRedesign() {
             <Row className="owner">
               <Col className="ml-auto mr-auto text-center" md="2" sm="4" xs="6">
                 <div className="avatar">
-                  <img
-                    alt="..."
-                    className="img-circle img-responsive"
-                    src={require("assets/img/rihanna.jpg").default}
-                  />
+                  <img alt="..." className="img-circle img-responsive" src={require('assets/img/rihanna.jpg').default} />
                   <div className="following">
-                    <Button
-                      className="btn-just-icon"
-                      color="info"
-                      id="tooltip924342351"
-                      size="sm"
-                    >
+                    <Button className="btn-just-icon" color="info" id="tooltip924342351" size="sm">
                       <i className="nc-icon nc-simple-add" />
                     </Button>
                     <UncontrolledTooltip delay={0} target="tooltip924342351">
@@ -84,15 +75,11 @@ function TwitterRedesign() {
             <Row>
               <Col className="ml-auto mr-auto text-center" md="6">
                 <p>
-                  Excited to share this with you!{" "}
-                  <a
-                    className="link-danger twitter-hashtag"
-                    href="#pablo"
-                    onClick={(e) => e.preventDefault()}
-                  >
+                  Excited to share this with you!{' '}
+                  <a className="link-danger twitter-hashtag" href="#pablo" onClick={(e) => e.preventDefault()}>
                     #ANTIdiaRy
-                  </a>{" "}
-                  —{" "}
+                  </a>{' '}
+                  —{' '}
                   <a href="#pablo" onClick={(e) => e.preventDefault()}>
                     http://smarturl.it
                   </a>
@@ -123,9 +110,9 @@ function TwitterRedesign() {
                   <Nav id="tabs" role="tablist" tabs>
                     <NavItem>
                       <NavLink
-                        className={activeTab === "1" ? "active" : ""}
+                        className={activeTab === '1' ? 'active' : ''}
                         onClick={() => {
-                          toggle("1");
+                          toggle('1');
                         }}
                       >
                         Tweets
@@ -133,9 +120,9 @@ function TwitterRedesign() {
                     </NavItem>
                     <NavItem>
                       <NavLink
-                        className={activeTab === "2" ? "active" : ""}
+                        className={activeTab === '2' ? 'active' : ''}
                         onClick={() => {
-                          toggle("2");
+                          toggle('2');
                         }}
                       >
                         Connections
@@ -143,9 +130,9 @@ function TwitterRedesign() {
                     </NavItem>
                     <NavItem>
                       <NavLink
-                        className={activeTab === "3" ? "active" : ""}
+                        className={activeTab === '3' ? 'active' : ''}
                         onClick={() => {
-                          toggle("3");
+                          toggle('3');
                         }}
                       >
                         Media
@@ -160,17 +147,9 @@ function TwitterRedesign() {
                     <Col md="8">
                       <div className="tweets">
                         <Media>
-                          <a
-                            className="pull-left"
-                            href="#pablo"
-                            onClick={(e) => e.preventDefault()}
-                          >
+                          <a className="pull-left" href="#pablo" onClick={(e) => e.preventDefault()}>
                             <div className="avatar">
-                              <Media
-                                alt="..."
-                                object
-                                src={require("assets/img/rihanna.jpg").default}
-                              />
+                              <Media alt="..." object src={require('assets/img/rihanna.jpg').default} />
                             </div>
                           </a>
                           <Media body>
@@ -179,63 +158,34 @@ function TwitterRedesign() {
                               <small>@rihanna · 1h</small>
                             </Media>
                             <p>
-                              It's just beyond the vault. Discover room 7 of the{" "}
-                              <a
-                                className="link-danger"
-                                href="#pablo"
-                                onClick={(e) => e.preventDefault()}
-                              >
+                              It's just beyond the vault. Discover room 7 of the{' '}
+                              <a className="link-danger" href="#pablo" onClick={(e) => e.preventDefault()}>
                                 #ANTIdiaRy
-                              </a>{" "}
-                              at{" "}
-                              <a
-                                className="link-info"
-                                href="#pablo"
-                                onClick={(e) => e.preventDefault()}
-                              >
+                              </a>{' '}
+                              at{' '}
+                              <a className="link-info" href="#pablo" onClick={(e) => e.preventDefault()}>
                                 {`http://smarturl.it/AntidiaRyTW`}
                               </a>
                             </p>
                             <div className="media-footer">
-                              <Button
-                                color="link"
-                                href="#pablo"
-                                onClick={(e) => e.preventDefault()}
-                              >
+                              <Button color="link" href="#pablo" onClick={(e) => e.preventDefault()}>
                                 <i className="fa fa-reply" />
                               </Button>
-                              <Button
-                                className="btn-link"
-                                color="success"
-                                href="#pablo"
-                                onClick={(e) => e.preventDefault()}
-                              >
+                              <Button className="btn-link" color="success" href="#pablo" onClick={(e) => e.preventDefault()}>
                                 <i className="fa fa-retweet mr-1" />
                                 2.1k
                               </Button>
-                              <Button
-                                className="btn-link"
-                                color="danger"
-                                href="#pablo"
-                                onClick={(e) => e.preventDefault()}
-                              >
+                              <Button className="btn-link" color="danger" href="#pablo" onClick={(e) => e.preventDefault()}>
                                 <i className="fa fa-heart mr-1" />
                                 3.2k
                               </Button>
                               <UncontrolledDropdown>
-                                <DropdownToggle
-                                  className="btn-just-icon"
-                                  color="link"
-                                  size="lg"
-                                >
+                                <DropdownToggle className="btn-just-icon" color="link" size="lg">
                                   <i className="fa fa-ellipsis-h" />
                                 </DropdownToggle>
                                 <DropdownMenu right>
                                   <DropdownItem>
-                                    <a
-                                      href="#pablo"
-                                      onClick={(e) => e.preventDefault()}
-                                    >
+                                    <a href="#pablo" onClick={(e) => e.preventDefault()}>
                                       <Row>
                                         <Col sm="2">
                                           <span className="icon-simple">
@@ -248,10 +198,7 @@ function TwitterRedesign() {
                                   </DropdownItem>
                                   <DropdownItem divider />
                                   <DropdownItem>
-                                    <a
-                                      href="#pablo"
-                                      onClick={(e) => e.preventDefault()}
-                                    >
+                                    <a href="#pablo" onClick={(e) => e.preventDefault()}>
                                       <Row>
                                         <Col sm="2">
                                           <span className="icon-simple">
@@ -264,10 +211,7 @@ function TwitterRedesign() {
                                   </DropdownItem>
                                   <DropdownItem divider />
                                   <DropdownItem>
-                                    <a
-                                      href="#pablo"
-                                      onClick={(e) => e.preventDefault()}
-                                    >
+                                    <a href="#pablo" onClick={(e) => e.preventDefault()}>
                                       <Row>
                                         <Col sm="2">
                                           <span className="icon-simple">
@@ -285,31 +229,15 @@ function TwitterRedesign() {
                         </Media>
                         {/* end media */}
                         <Media>
-                          <a
-                            className="pull-left"
-                            href="#pablo"
-                            onClick={(e) => e.preventDefault()}
-                          >
+                          <a className="pull-left" href="#pablo" onClick={(e) => e.preventDefault()}>
                             <div className="avatar">
-                              <Media
-                                alt="..."
-                                object
-                                src={require("assets/img/khaled.jpg").default}
-                              />
+                              <Media alt="..." object src={require('assets/img/khaled.jpg').default} />
                             </div>
                             <div className="retweet">
-                              <Button
-                                className="btn-just-icon"
-                                color="success"
-                                id="tooltip397232910"
-                                size="sm"
-                              >
+                              <Button className="btn-just-icon" color="success" id="tooltip397232910" size="sm">
                                 <i className="fa fa-retweet" />
                               </Button>
-                              <UncontrolledTooltip
-                                delay={0}
-                                target="tooltip397232910"
-                              >
+                              <UncontrolledTooltip delay={0} target="tooltip397232910">
                                 Follow
                               </UncontrolledTooltip>
                             </div>
@@ -320,27 +248,15 @@ function TwitterRedesign() {
                               <small>@djkhaled · 6 Jan 2016</small>
                             </Media>
                             <p>
-                              <a
-                                className="link-danger"
-                                href="#pablo"
-                                onClick={(e) => e.preventDefault()}
-                              >
+                              <a className="link-danger" href="#pablo" onClick={(e) => e.preventDefault()}>
                                 #LA
-                              </a>{" "}
-                              fan luv I'm be{" "}
-                              <a
-                                className="link-info"
-                                href="#pablo"
-                                onClick={(e) => e.preventDefault()}
-                              >
+                              </a>{' '}
+                              fan luv I'm be{' '}
+                              <a className="link-info" href="#pablo" onClick={(e) => e.preventDefault()}>
                                 @1oakla
-                              </a>{" "}
-                              tonight i want see fan luv let's win more !{" "}
-                              <a
-                                className="link-danger"
-                                href="#pablo"
-                                onClick={(e) => e.preventDefault()}
-                              >
+                              </a>{' '}
+                              tonight i want see fan luv let's win more !{' '}
+                              <a className="link-danger" href="#pablo" onClick={(e) => e.preventDefault()}>
                                 #wethebest
                               </a>
                             </p>
@@ -350,33 +266,22 @@ function TwitterRedesign() {
                                   <img
                                     alt="..."
                                     className="img-rounded img-tweet-link img-responsive"
-                                    src={
-                                      require("assets/img/khaled_tweet.png")
-                                        .default
-                                    }
+                                    src={require('assets/img/khaled_tweet.png').default}
                                   />
                                 </Col>
                                 <Col md="8">
                                   <strong>Let's win more by DJ Khaled</strong>
-                                  <a
-                                    href="#pablo"
-                                    onClick={(e) => e.preventDefault()}
-                                  >
+                                  <a href="#pablo" onClick={(e) => e.preventDefault()}>
                                     <p>
-                                      This is a 3-day event hosted by DJ Khaled
-                                      for his fan luv in LA. Major{" "}
+                                      This is a 3-day event hosted by DJ Khaled for his fan luv in LA. Major{' '}
                                       <span role="img" aria-label="key emoji">
                                         🔑
-                                      </span>{" "}
+                                      </span>{' '}
                                       to success. Bless up!
                                     </p>
                                   </a>
                                   <small>
-                                    <a
-                                      className="text-muted"
-                                      href="#pablo"
-                                      onClick={(e) => e.preventDefault()}
-                                    >
+                                    <a className="text-muted" href="#pablo" onClick={(e) => e.preventDefault()}>
                                       djkhaled.com
                                     </a>
                                   </small>
@@ -384,44 +289,24 @@ function TwitterRedesign() {
                               </Row>
                             </div>
                             <div className="media-footer">
-                              <Button
-                                color="link"
-                                href="#pablo"
-                                onClick={(e) => e.preventDefault()}
-                              >
+                              <Button color="link" href="#pablo" onClick={(e) => e.preventDefault()}>
                                 <i className="fa fa-reply" />
                               </Button>
-                              <Button
-                                color="link"
-                                href="#pablo"
-                                onClick={(e) => e.preventDefault()}
-                              >
+                              <Button color="link" href="#pablo" onClick={(e) => e.preventDefault()}>
                                 <i className="fa fa-retweet mr-1" />
                                 100
                               </Button>
-                              <Button
-                                className="btn-link"
-                                color="danger"
-                                href="#pablo"
-                                onClick={(e) => e.preventDefault()}
-                              >
+                              <Button className="btn-link" color="danger" href="#pablo" onClick={(e) => e.preventDefault()}>
                                 <i className="fa fa-heart mr-1" />
                                 234
                               </Button>
                               <UncontrolledDropdown>
-                                <DropdownToggle
-                                  className="btn-icon"
-                                  color="link"
-                                  size="lg"
-                                >
+                                <DropdownToggle className="btn-icon" color="link" size="lg">
                                   <i className="fa fa-ellipsis-h" />
                                 </DropdownToggle>
                                 <DropdownMenu right>
                                   <DropdownItem>
-                                    <a
-                                      href="#pablo"
-                                      onClick={(e) => e.preventDefault()}
-                                    >
+                                    <a href="#pablo" onClick={(e) => e.preventDefault()}>
                                       <Row>
                                         <Col sm="2">
                                           <span className="icon-simple">
@@ -434,10 +319,7 @@ function TwitterRedesign() {
                                   </DropdownItem>
                                   <DropdownItem divider />
                                   <DropdownItem>
-                                    <a
-                                      href="#pablo"
-                                      onClick={(e) => e.preventDefault()}
-                                    >
+                                    <a href="#pablo" onClick={(e) => e.preventDefault()}>
                                       <Row>
                                         <Col sm="2">
                                           <span className="icon-simple">
@@ -450,10 +332,7 @@ function TwitterRedesign() {
                                   </DropdownItem>
                                   <DropdownItem divider />
                                   <DropdownItem>
-                                    <a
-                                      href="#pablo"
-                                      onClick={(e) => e.preventDefault()}
-                                    >
+                                    <a href="#pablo" onClick={(e) => e.preventDefault()}>
                                       <Row>
                                         <Col sm="2">
                                           <span className="icon-simple">
@@ -471,17 +350,9 @@ function TwitterRedesign() {
                         </Media>
                         {/* end media */}
                         <Media>
-                          <a
-                            className="pull-left"
-                            href="#pablo"
-                            onClick={(e) => e.preventDefault()}
-                          >
+                          <a className="pull-left" href="#pablo" onClick={(e) => e.preventDefault()}>
                             <div className="avatar">
-                              <Media
-                                alt="..."
-                                object
-                                src={require("assets/img/rihanna.jpg").default}
-                              />
+                              <Media alt="..." object src={require('assets/img/rihanna.jpg').default} />
                             </div>
                           </a>
                           <Media body>
@@ -490,50 +361,25 @@ function TwitterRedesign() {
                               <small>@rihanna · 8 Jan 2016</small>
                             </Media>
                             <p>
-                              bitch better have my mistletoe{" "}
-                              <a
-                                className="link-danger"
-                                href="#pablo"
-                                onClick={(e) => e.preventDefault()}
-                              >
+                              bitch better have my mistletoe{' '}
+                              <a className="link-danger" href="#pablo" onClick={(e) => e.preventDefault()}>
                                 #rihannaxstance
                               </a>
                             </p>
-                            <img
-                              alt="..."
-                              className="img-rounded img-tweet"
-                              src={require("assets/img/rihanna_tweet.jpeg")}
-                            />
+                            <img alt="..." className="img-rounded img-tweet" src={require('assets/img/rihanna_tweet.jpeg')} />
                             <div className="media-footer">
-                              <Button
-                                color="link"
-                                href="#pablo"
-                                onClick={(e) => e.preventDefault()}
-                              >
+                              <Button color="link" href="#pablo" onClick={(e) => e.preventDefault()}>
                                 <i className="fa fa-reply" />
                               </Button>
-                              <Button
-                                color="link"
-                                href="#pablo"
-                                onClick={(e) => e.preventDefault()}
-                              >
+                              <Button color="link" href="#pablo" onClick={(e) => e.preventDefault()}>
                                 <i className="fa fa-retweet mr-1" />
                                 5.8K
                               </Button>
-                              <Button
-                                className="btn-link"
-                                color="danger"
-                                href="#pablo"
-                                onClick={(e) => e.preventDefault()}
-                              >
+                              <Button className="btn-link" color="danger" href="#pablo" onClick={(e) => e.preventDefault()}>
                                 <i className="fa fa-heart mr-1" />
                                 12K
                               </Button>
-                              <Button
-                                color="link"
-                                href="#pablo"
-                                onClick={(e) => e.preventDefault()}
-                              >
+                              <Button color="link" href="#pablo" onClick={(e) => e.preventDefault()}>
                                 <i className="fa fa-ellipsis-h" />
                               </Button>
                             </div>
@@ -541,17 +387,9 @@ function TwitterRedesign() {
                         </Media>
                         {/* end media */}
                         <Media>
-                          <a
-                            className="pull-left"
-                            href="#pablo"
-                            onClick={(e) => e.preventDefault()}
-                          >
+                          <a className="pull-left" href="#pablo" onClick={(e) => e.preventDefault()}>
                             <div className="avatar">
-                              <Media
-                                alt="..."
-                                object
-                                src={require("assets/img/rihanna.jpg").default}
-                              />
+                              <Media alt="..." object src={require('assets/img/rihanna.jpg').default} />
                             </div>
                           </a>
                           <Media body>
@@ -560,53 +398,30 @@ function TwitterRedesign() {
                               <small>@rihanna · 9 Jan 2016</small>
                             </Media>
                             <p>
-                              Thank you God for fulfilling Your plans in my
-                              life.... All the Glory belongs to You!!!!{" "}
-                              <a
-                                href="https://instagram.com/p/4m5W4sBMzj/?ref=creativetim"
-                                target="_blank"
-                              >
+                              Thank you God for fulfilling Your plans in my life.... All the Glory belongs to You!!!!{' '}
+                              <a href="https://instagram.com/p/4m5W4sBMzj/?ref=creativetim" target="_blank">
                                 {`https://instagram.com/p/4m5W4sBMzj/`}
                               </a>
                             </p>
                             <div className="media-footer">
-                              <Button
-                                color="link"
-                                href="#pablo"
-                                onClick={(e) => e.preventDefault()}
-                              >
+                              <Button color="link" href="#pablo" onClick={(e) => e.preventDefault()}>
                                 <i className="fa fa-reply" />
                               </Button>
-                              <Button
-                                color="link"
-                                href="#pablo"
-                                onClick={(e) => e.preventDefault()}
-                              >
+                              <Button color="link" href="#pablo" onClick={(e) => e.preventDefault()}>
                                 <i className="fa fa-retweet mr-1" />
                                 5.9K
                               </Button>
-                              <Button
-                                color="link"
-                                href="#pablo"
-                                onClick={(e) => e.preventDefault()}
-                              >
+                              <Button color="link" href="#pablo" onClick={(e) => e.preventDefault()}>
                                 <i className="fa fa-heart mr-1" />
                                 11K
                               </Button>
                               <UncontrolledDropdown>
-                                <DropdownToggle
-                                  className="btn-icon"
-                                  color="link"
-                                  size="lg"
-                                >
+                                <DropdownToggle className="btn-icon" color="link" size="lg">
                                   <i className="fa fa-ellipsis-h" />
                                 </DropdownToggle>
                                 <DropdownMenu right>
                                   <DropdownItem>
-                                    <a
-                                      href="#pablo"
-                                      onClick={(e) => e.preventDefault()}
-                                    >
+                                    <a href="#pablo" onClick={(e) => e.preventDefault()}>
                                       <Row>
                                         <Col sm="2">
                                           <span className="icon-simple">
@@ -619,10 +434,7 @@ function TwitterRedesign() {
                                   </DropdownItem>
                                   <DropdownItem divider />
                                   <DropdownItem>
-                                    <a
-                                      href="#pablo"
-                                      onClick={(e) => e.preventDefault()}
-                                    >
+                                    <a href="#pablo" onClick={(e) => e.preventDefault()}>
                                       <Row>
                                         <Col sm="2">
                                           <span className="icon-simple">
@@ -635,10 +447,7 @@ function TwitterRedesign() {
                                   </DropdownItem>
                                   <DropdownItem divider />
                                   <DropdownItem>
-                                    <a
-                                      href="#pablo"
-                                      onClick={(e) => e.preventDefault()}
-                                    >
+                                    <a href="#pablo" onClick={(e) => e.preventDefault()}>
                                       <Row>
                                         <Col sm="2">
                                           <span className="icon-simple">
@@ -656,31 +465,15 @@ function TwitterRedesign() {
                         </Media>
                         {/* end media */}
                         <Media className="last-media">
-                          <a
-                            className="pull-left"
-                            href="#pablo"
-                            onClick={(e) => e.preventDefault()}
-                          >
+                          <a className="pull-left" href="#pablo" onClick={(e) => e.preventDefault()}>
                             <div className="avatar">
-                              <Media
-                                alt="..."
-                                object
-                                src={require("assets/img/billboard.jpeg")}
-                              />
+                              <Media alt="..." object src={require('assets/img/billboard.jpeg')} />
                             </div>
                             <div className="retweet">
-                              <Button
-                                className="btn-just-icon"
-                                color="success"
-                                id="tooltip673539083"
-                                size="sm"
-                              >
+                              <Button className="btn-just-icon" color="success" id="tooltip673539083" size="sm">
                                 <i className="fa fa-retweet" />
                               </Button>
-                              <UncontrolledTooltip
-                                delay={0}
-                                target="tooltip673539083"
-                              >
+                              <UncontrolledTooltip delay={0} target="tooltip673539083">
                                 Follow
                               </UncontrolledTooltip>
                             </div>
@@ -691,60 +484,33 @@ function TwitterRedesign() {
                               <small>@billboard · 1 Jul 2016</small>
                             </Media>
                             <p>
-                              <a
-                                href="#pablo"
-                                onClick={(e) => e.preventDefault()}
-                              >
+                              <a href="#pablo" onClick={(e) => e.preventDefault()}>
                                 @Rihanna
-                              </a>{" "}
-                              has become the first artist to surpass RIAA's 100
-                              million cumulative singles award threshold:{" "}
-                              <a
-                                href="http://blbrd.cm/3rQ3Iq?ref=creativetim"
-                                target="_blank"
-                              >
+                              </a>{' '}
+                              has become the first artist to surpass RIAA's 100 million cumulative singles award threshold:{' '}
+                              <a href="http://blbrd.cm/3rQ3Iq?ref=creativetim" target="_blank">
                                 {`http://blbrd.cm/3rQ3Iq`}
                               </a>
                             </p>
                             <div className="media-footer">
-                              <Button
-                                color="link"
-                                href="#pablo"
-                                onClick={(e) => e.preventDefault()}
-                              >
+                              <Button color="link" href="#pablo" onClick={(e) => e.preventDefault()}>
                                 <i className="fa fa-reply" />
                               </Button>
-                              <Button
-                                color="link"
-                                href="#pablo"
-                                onClick={(e) => e.preventDefault()}
-                              >
+                              <Button color="link" href="#pablo" onClick={(e) => e.preventDefault()}>
                                 <i className="fa fa-retweet" />
                                 5.6K
                               </Button>
-                              <Button
-                                className="btn-link"
-                                color="danger"
-                                href="#pablo"
-                                onClick={(e) => e.preventDefault()}
-                              >
+                              <Button className="btn-link" color="danger" href="#pablo" onClick={(e) => e.preventDefault()}>
                                 <i className="fa fa-heart" />
                                 7.2K
                               </Button>
                               <UncontrolledDropdown>
-                                <DropdownToggle
-                                  className="btn-icon"
-                                  color="link"
-                                  size="lg"
-                                >
+                                <DropdownToggle className="btn-icon" color="link" size="lg">
                                   <i className="fa fa-ellipsis-h" />
                                 </DropdownToggle>
                                 <DropdownMenu right>
                                   <DropdownItem>
-                                    <a
-                                      href="#pablo"
-                                      onClick={(e) => e.preventDefault()}
-                                    >
+                                    <a href="#pablo" onClick={(e) => e.preventDefault()}>
                                       <Row>
                                         <Col sm="2">
                                           <span className="icon-simple">
@@ -756,10 +522,7 @@ function TwitterRedesign() {
                                     </a>
                                   </DropdownItem>
                                   <DropdownItem>
-                                    <a
-                                      href="#pablo"
-                                      onClick={(e) => e.preventDefault()}
-                                    >
+                                    <a href="#pablo" onClick={(e) => e.preventDefault()}>
                                       <Row>
                                         <Col sm="2">
                                           <span className="icon-simple">
@@ -771,10 +534,7 @@ function TwitterRedesign() {
                                     </a>
                                   </DropdownItem>
                                   <DropdownItem>
-                                    <a
-                                      href="#pablo"
-                                      onClick={(e) => e.preventDefault()}
-                                    >
+                                    <a href="#pablo" onClick={(e) => e.preventDefault()}>
                                       <Row>
                                         <Col sm="2">
                                           <span className="icon-simple">
@@ -803,13 +563,9 @@ function TwitterRedesign() {
                       <Card className="card-with-shadow">
                         <CardBody>
                           <CardTitle tag="h5">
-                            Who to follow ·{" "}
+                            Who to follow ·{' '}
                             <small>
-                              <a
-                                className="link-info"
-                                href="#pablo"
-                                onClick={(e) => e.preventDefault()}
-                              >
+                              <a className="link-info" href="#pablo" onClick={(e) => e.preventDefault()}>
                                 View all
                               </a>
                             </small>
@@ -823,53 +579,33 @@ function TwitterRedesign() {
                                       <img
                                         alt="..."
                                         className="img-circle img-no-padding img-responsive"
-                                        src={
-                                          require("assets/img/chet_faker_1.jpg")
-                                            .default
-                                        }
+                                        src={require('assets/img/chet_faker_1.jpg').default}
                                       />
                                     </div>
                                   </Col>
                                   <Col className="description-section" md="7">
                                     <span>
-                                      Chet Faker{" "}
-                                      <a
-                                        className="text-muted"
-                                        href="#pablo"
-                                        onClick={(e) => e.preventDefault()}
-                                      >
+                                      Chet Faker{' '}
+                                      <a className="text-muted" href="#pablo" onClick={(e) => e.preventDefault()}>
                                         @chetfaker
                                       </a>
                                     </span>
                                     <br />
                                     <span className="text-muted">
                                       <small>
-                                        Followed by{" "}
-                                        <a
-                                          className="link-info"
-                                          href="#pablo"
-                                          onClick={(e) => e.preventDefault()}
-                                        >
+                                        Followed by{' '}
+                                        <a className="link-info" href="#pablo" onClick={(e) => e.preventDefault()}>
                                           @banks
-                                        </a>{" "}
-                                        and{" "}
-                                        <a
-                                          className="link-info"
-                                          href="#pablo"
-                                          onClick={(e) => e.preventDefault()}
-                                        >
+                                        </a>{' '}
+                                        and{' '}
+                                        <a className="link-info" href="#pablo" onClick={(e) => e.preventDefault()}>
                                           @rihanna
                                         </a>
                                       </small>
                                     </span>
                                   </Col>
                                   <Col className="follow" md="2">
-                                    <Button
-                                      className="btn-just-icon"
-                                      color="info"
-                                      outline
-                                      size="sm"
-                                    >
+                                    <Button className="btn-just-icon" color="info" outline size="sm">
                                       <i className="fa fa-plus" />
                                     </Button>
                                   </Col>
@@ -882,45 +618,29 @@ function TwitterRedesign() {
                                       <img
                                         alt="..."
                                         className="img-circle img-no-padding img-responsive"
-                                        src={
-                                          require("assets/img/placeholder.jpg")
-                                            .default
-                                        }
+                                        src={require('assets/img/placeholder.jpg').default}
                                       />
                                     </div>
                                   </Col>
                                   <Col className="description-section" md="7">
                                     <span>
-                                      John Green{" "}
-                                      <a
-                                        className="text-muted"
-                                        href="#pablo"
-                                        onClick={(e) => e.preventDefault()}
-                                      >
+                                      John Green{' '}
+                                      <a className="text-muted" href="#pablo" onClick={(e) => e.preventDefault()}>
                                         @johngreen
                                       </a>
                                     </span>
                                     <br />
                                     <span className="text-muted">
                                       <small>
-                                        Followed by{" "}
-                                        <a
-                                          className="link-info"
-                                          href="#pablo"
-                                          onClick={(e) => e.preventDefault()}
-                                        >
+                                        Followed by{' '}
+                                        <a className="link-info" href="#pablo" onClick={(e) => e.preventDefault()}>
                                           @rihanna
                                         </a>
                                       </small>
                                     </span>
                                   </Col>
                                   <Col className="follow" md="2">
-                                    <Button
-                                      className="btn-just-icon"
-                                      color="info"
-                                      outline
-                                      size="sm"
-                                    >
+                                    <Button className="btn-just-icon" color="info" outline size="sm">
                                       <i className="fa fa-plus" />
                                     </Button>
                                   </Col>
@@ -933,45 +653,29 @@ function TwitterRedesign() {
                                       <img
                                         alt="..."
                                         className="img-circle img-no-padding img-responsive"
-                                        src={
-                                          require("assets/img/drake.jpg")
-                                            .default
-                                        }
+                                        src={require('assets/img/drake.jpg').default}
                                       />
                                     </div>
                                   </Col>
                                   <Col className="description-section" md="7">
                                     <span>
-                                      Drake{" "}
-                                      <a
-                                        className="text-muted"
-                                        href="#pablo"
-                                        onClick={(e) => e.preventDefault()}
-                                      >
+                                      Drake{' '}
+                                      <a className="text-muted" href="#pablo" onClick={(e) => e.preventDefault()}>
                                         @drake
                                       </a>
                                     </span>
                                     <br />
                                     <span className="text-muted">
                                       <small>
-                                        Followed by{" "}
-                                        <a
-                                          className="link-info"
-                                          href="#pablo"
-                                          onClick={(e) => e.preventDefault()}
-                                        >
+                                        Followed by{' '}
+                                        <a className="link-info" href="#pablo" onClick={(e) => e.preventDefault()}>
                                           @chetfaker
                                         </a>
                                       </small>
                                     </span>
                                   </Col>
                                   <Col className="follow" md="2">
-                                    <Button
-                                      className="btn-just-icon"
-                                      color="info"
-                                      outline
-                                      size="sm"
-                                    >
+                                    <Button className="btn-just-icon" color="info" outline size="sm">
                                       <i className="fa fa-plus" />
                                     </Button>
                                   </Col>
@@ -985,13 +689,9 @@ function TwitterRedesign() {
                       <Card className="card-with-shadow">
                         <CardBody>
                           <CardTitle tag="h5">
-                            Trends ·{" "}
+                            Trends ·{' '}
                             <small>
-                              <a
-                                className="link-info"
-                                href="#pablo"
-                                onClick={(e) => e.preventDefault()}
-                              >
+                              <a className="link-info" href="#pablo" onClick={(e) => e.preventDefault()}>
                                 Change
                               </a>
                             </small>
@@ -999,61 +699,37 @@ function TwitterRedesign() {
                           <div className="hashtag-suggestions">
                             <ul className="list-unstyled">
                               <li>
-                                <a
-                                  className="link-danger"
-                                  href="#pablo"
-                                  onClick={(e) => e.preventDefault()}
-                                >
+                                <a className="link-danger" href="#pablo" onClick={(e) => e.preventDefault()}>
                                   #JeSuisToujoursCharlie
                                 </a>
                               </li>
                               <li>
-                                <a
-                                  href="#pablo"
-                                  onClick={(e) => e.preventDefault()}
-                                >
+                                <a href="#pablo" onClick={(e) => e.preventDefault()}>
                                   Oculus Rift
                                 </a>
                               </li>
                               <li>
-                                <a
-                                  className="link-danger"
-                                  href="#pablo"
-                                  onClick={(e) => e.preventDefault()}
-                                >
+                                <a className="link-danger" href="#pablo" onClick={(e) => e.preventDefault()}>
                                   #CarenAndLarryAreNotReal
                                 </a>
                               </li>
                               <li>
-                                <a
-                                  className="link-danger"
-                                  href="#pablo"
-                                  onClick={(e) => e.preventDefault()}
-                                >
+                                <a className="link-danger" href="#pablo" onClick={(e) => e.preventDefault()}>
                                   #Twitter10k
                                 </a>
                               </li>
                               <li>
-                                <a
-                                  href="#pablo"
-                                  onClick={(e) => e.preventDefault()}
-                                >
+                                <a href="#pablo" onClick={(e) => e.preventDefault()}>
                                   EXCLUSIVE MOVE WITHINGTON
                                 </a>
                               </li>
                               <li>
-                                <a
-                                  href="#pablo"
-                                  onClick={(e) => e.preventDefault()}
-                                >
+                                <a href="#pablo" onClick={(e) => e.preventDefault()}>
                                   London
                                 </a>
                               </li>
                               <li>
-                                <a
-                                  href="#pablo"
-                                  onClick={(e) => e.preventDefault()}
-                                >
+                                <a href="#pablo" onClick={(e) => e.preventDefault()}>
                                   DJ Khaled Snapchat
                                 </a>
                               </li>
