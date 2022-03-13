@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 
 // reactstrap components
 import {
@@ -17,7 +17,7 @@ import {
   NavLink,
   Nav,
   Container,
-} from "reactstrap";
+} from 'reactstrap';
 
 // core components
 
@@ -29,7 +29,7 @@ function SectionNavigation() {
         <div
           id="bodyClick"
           onClick={() => {
-            document.documentElement.classList.toggle("nav-open");
+            document.documentElement.classList.toggle('nav-open');
             setBodyClick(false);
           }}
         />
@@ -53,7 +53,7 @@ function SectionNavigation() {
                   id="navbarSupportedContent2"
                   type="button"
                   onClick={() => {
-                    document.documentElement.classList.toggle("nav-open");
+                    document.documentElement.classList.toggle('nav-open');
                     setBodyClick(true);
                   }}
                 >
@@ -64,42 +64,24 @@ function SectionNavigation() {
                 <UncontrolledCollapse navbar toggler="#navbarSupportedContent2">
                   <Nav className="mr-auto" navbar>
                     <NavItem className="active">
-                      <NavLink
-                        href="#pablo"
-                        onClick={(e) => e.preventDefault()}
-                      >
+                      <NavLink href="#pablo" onClick={(e) => e.preventDefault()}>
                         Home <span className="sr-only">(current)</span>
                       </NavLink>
                     </NavItem>
                     <NavItem>
-                      <NavLink
-                        href="#pablo"
-                        onClick={(e) => e.preventDefault()}
-                      >
+                      <NavLink href="#pablo" onClick={(e) => e.preventDefault()}>
                         Link
                       </NavLink>
                     </NavItem>
                     <NavItem>
-                      <NavLink
-                        className="disabled"
-                        href="#pablo"
-                        onClick={(e) => e.preventDefault()}
-                      >
+                      <NavLink className="disabled" href="#pablo" onClick={(e) => e.preventDefault()}>
                         Disabled
                       </NavLink>
                     </NavItem>
                   </Nav>
                   <Form className="form-inline ml-auto">
-                    <Input
-                      className="mr-sm-2 no-border"
-                      placeholder="Search"
-                      type="text"
-                    />
-                    <Button
-                      className="btn-just-icon btn-round"
-                      color="primary"
-                      type="submit"
-                    >
+                    <Input className="mr-sm-2 no-border" placeholder="Search" type="text" />
+                    <Button className="btn-just-icon btn-round" color="primary" type="submit">
                       <i aria-hidden={true} className="nc-icon nc-zoom-split" />
                     </Button>
                   </Form>
@@ -117,7 +99,7 @@ function SectionNavigation() {
                   id="navbarSupportedContent3"
                   type="button"
                   onClick={() => {
-                    document.documentElement.classList.toggle("nav-open");
+                    document.documentElement.classList.toggle('nav-open');
                     setBodyClick(true);
                   }}
                 >
@@ -128,18 +110,12 @@ function SectionNavigation() {
                 <UncontrolledCollapse navbar toggler="#navbarSupportedContent3">
                   <Nav className="ml-auto" navbar>
                     <NavItem>
-                      <NavLink
-                        href="#pablo"
-                        onClick={(e) => e.preventDefault()}
-                      >
+                      <NavLink href="#pablo" onClick={(e) => e.preventDefault()}>
                         Discover
                       </NavLink>
                     </NavItem>
                     <NavItem>
-                      <NavLink
-                        href="#pablo"
-                        onClick={(e) => e.preventDefault()}
-                      >
+                      <NavLink href="#pablo" onClick={(e) => e.preventDefault()}>
                         Wishlist
                       </NavLink>
                     </NavItem>
@@ -149,59 +125,32 @@ function SectionNavigation() {
                       </Button>
                     </NavItem>
                     <NavItem className="position-relative">
-                      <Button
-                        className="btn-just-icon"
-                        color="default"
-                        data-toggle="dropdown"
-                        href="#pablo"
-                        onClick={(e) => e.preventDefault()}
-                      >
+                      <Button className="btn-just-icon" color="default" data-toggle="dropdown" href="#pablo" onClick={(e) => e.preventDefault()}>
                         <i className="nc-icon nc-email-85" />
                       </Button>
-                      <Badge
-                        className="notification-bubble"
-                        color="danger"
-                        pill
-                      >
+                      <Badge className="notification-bubble" color="danger" pill>
                         2
                       </Badge>
                     </NavItem>
                     <UncontrolledDropdown nav inNavbar>
-                      <DropdownToggle
-                        data-toggle="dropdown"
-                        height="30"
-                        width="30"
-                        tag={NavLink}
-                      >
+                      <DropdownToggle data-toggle="dropdown" height="30" width="30" tag={NavLink}>
                         <div className="profile-photo-small">
                           <img
                             alt="..."
                             className="img-circle img-responsive img-no-padding"
-                            src={
-                              require("assets/img/faces/joe-gardner-2.jpg")
-                                .default
-                            }
+                            src={require('assets/img/faces/joe-gardner-2.jpg').default}
                           />
                         </div>
                       </DropdownToggle>
                       <DropdownMenu className="dropdown-info" right>
-                        <DropdownItem
-                          href="#pablo"
-                          onClick={(e) => e.preventDefault()}
-                        >
+                        <DropdownItem href="#pablo" onClick={(e) => e.preventDefault()}>
                           Me
                         </DropdownItem>
-                        <DropdownItem
-                          href="#pablo"
-                          onClick={(e) => e.preventDefault()}
-                        >
+                        <DropdownItem href="#pablo" onClick={(e) => e.preventDefault()}>
                           Settings
                         </DropdownItem>
                         <DropdownItem divider />
-                        <DropdownItem
-                          href="#pablo"
-                          onClick={(e) => e.preventDefault()}
-                        >
+                        <DropdownItem href="#pablo" onClick={(e) => e.preventDefault()}>
                           Sign out
                         </DropdownItem>
                       </DropdownMenu>
@@ -221,7 +170,7 @@ function SectionNavigation() {
                   id="navbarSupportedContent4"
                   type="button"
                   onClick={() => {
-                    document.documentElement.classList.toggle("nav-open");
+                    document.documentElement.classList.toggle('nav-open');
                     setBodyClick(true);
                   }}
                 >
@@ -232,62 +181,32 @@ function SectionNavigation() {
                 <UncontrolledCollapse navbar toggler="#navbarSupportedContent4">
                   <Nav className="ml-auto" navbar>
                     <NavItem>
-                      <NavLink
-                        href="#pablo"
-                        onClick={(e) => e.preventDefault()}
-                      >
+                      <NavLink href="#pablo" onClick={(e) => e.preventDefault()}>
                         Discover
                       </NavLink>
                     </NavItem>
                     <NavItem>
-                      <NavLink
-                        href="#pablo"
-                        onClick={(e) => e.preventDefault()}
-                      >
+                      <NavLink href="#pablo" onClick={(e) => e.preventDefault()}>
                         Wishlist
                       </NavLink>
                     </NavItem>
                     <UncontrolledDropdown nav inNavbar>
-                      <DropdownToggle
-                        className="btn-just-icon"
-                        color="warning"
-                        data-toggle="dropdown"
-                      >
+                      <DropdownToggle className="btn-just-icon" color="warning" data-toggle="dropdown">
                         <i className="nc-icon nc-sound-wave" />
                       </DropdownToggle>
-                      <DropdownMenu
-                        className="dropdown-notification"
-                        tag="ul"
-                        right
-                      >
-                        <li className="no-notification">
-                          You&apos;re all clear!
-                        </li>
+                      <DropdownMenu className="dropdown-notification" tag="ul" right>
+                        <li className="no-notification">You&apos;re all clear!</li>
                       </DropdownMenu>
                     </UncontrolledDropdown>
                     <UncontrolledDropdown nav inNavbar>
-                      <DropdownToggle
-                        className="btn-just-icon"
-                        color="danger"
-                        data-toggle="dropdown"
-                      >
+                      <DropdownToggle className="btn-just-icon" color="danger" data-toggle="dropdown">
                         <i className="nc-icon nc-email-85" />
                       </DropdownToggle>
-                      <DropdownMenu
-                        className="dropdown-wide dropdown-notification"
-                        tag="ul"
-                        right
-                      >
-                        <DropdownItem header>
-                          You have 7 unread notifications
-                        </DropdownItem>
+                      <DropdownMenu className="dropdown-wide dropdown-notification" tag="ul" right>
+                        <DropdownItem header>You have 7 unread notifications</DropdownItem>
                         <li>
                           <ul className="dropdown-notification-list scroll-area">
-                            <a
-                              className="notification-item"
-                              href="#pablo"
-                              onClick={(e) => e.preventDefault()}
-                            >
+                            <a className="notification-item" href="#pablo" onClick={(e) => e.preventDefault()}>
                               <div className="notification-text">
                                 <Badge color="success" pill>
                                   <i className="nc-icon nc-chat-33" />
@@ -298,58 +217,37 @@ function SectionNavigation() {
                                 </span>
                                 <br />
                                 <span className="time">20min ago</span>
-                                <Button
-                                  className="btn-just-icon read-notification btn-round"
-                                  color="default"
-                                >
+                                <Button className="btn-just-icon read-notification btn-round" color="default">
                                   <i className="nc-icon nc-check-2" />
                                 </Button>
                               </div>
                             </a>
-                            <a
-                              className="notification-item"
-                              href="#pablo"
-                              onClick={(e) => e.preventDefault()}
-                            >
+                            <a className="notification-item" href="#pablo" onClick={(e) => e.preventDefault()}>
                               <div className="notification-text">
                                 <Badge color="info" pill>
                                   <i className="nc-icon nc-alert-circle-i" />
                                 </Badge>
-                                <span className="message">
-                                  Our privacy policy changed!
-                                </span>
+                                <span className="message">Our privacy policy changed!</span>
                                 <br />
                                 <span className="time">1day ago</span>
                               </div>
                             </a>
-                            <a
-                              className="notification-item"
-                              href="#pablo"
-                              onClick={(e) => e.preventDefault()}
-                            >
+                            <a className="notification-item" href="#pablo" onClick={(e) => e.preventDefault()}>
                               <div className="notification-text">
                                 <Badge color="warning" pill>
                                   <i className="nc-icon nc-ambulance" />
                                 </Badge>
-                                <span className="message">
-                                  Please confirm your email address.
-                                </span>
+                                <span className="message">Please confirm your email address.</span>
                                 <br />
                                 <span className="time">2days ago</span>
                               </div>
                             </a>
-                            <a
-                              className="notification-item"
-                              href="#pablo"
-                              onClick={(e) => e.preventDefault()}
-                            >
+                            <a className="notification-item" href="#pablo" onClick={(e) => e.preventDefault()}>
                               <div className="notification-text">
                                 <Badge color="primary" pill>
                                   <i className="nc-icon nc-paper" />
                                 </Badge>
-                                <span className="message">
-                                  Have you thought about marketing?
-                                </span>
+                                <span className="message">Have you thought about marketing?</span>
                                 <br />
                                 <span className="time">3days ago</span>
                               </div>
@@ -360,10 +258,7 @@ function SectionNavigation() {
                         <li className="dropdown-footer">
                           <ul className="dropdown-footer-menu">
                             <li>
-                              <a
-                                href="#pablo"
-                                onClick={(e) => e.preventDefault()}
-                              >
+                              <a href="#pablo" onClick={(e) => e.preventDefault()}>
                                 Mark all as read
                               </a>
                             </li>
@@ -372,55 +267,32 @@ function SectionNavigation() {
                       </DropdownMenu>
                     </UncontrolledDropdown>
                     <UncontrolledDropdown nav inNavbar>
-                      <DropdownToggle
-                        data-toggle="dropdown"
-                        height="30"
-                        width="30"
-                        tag={NavLink}
-                      >
+                      <DropdownToggle data-toggle="dropdown" height="30" width="30" tag={NavLink}>
                         <div className="profile-photo-small">
                           <img
                             alt="..."
                             className="img-circle img-responsive img-no-padding"
-                            src={
-                              require("assets/img/faces/erik-lucatero-2.jpg")
-                                .default
-                            }
+                            src={require('assets/img/faces/erik-lucatero-2.jpg').default}
                           />
                         </div>
                       </DropdownToggle>
                       <DropdownMenu className="dropdown-danger" right>
                         <DropdownItem header>Dropdown header</DropdownItem>
-                        <DropdownItem
-                          href="#pablo"
-                          onClick={(e) => e.preventDefault()}
-                        >
+                        <DropdownItem href="#pablo" onClick={(e) => e.preventDefault()}>
                           Action
                         </DropdownItem>
-                        <DropdownItem
-                          href="#pablo"
-                          onClick={(e) => e.preventDefault()}
-                        >
+                        <DropdownItem href="#pablo" onClick={(e) => e.preventDefault()}>
                           Another action
                         </DropdownItem>
-                        <DropdownItem
-                          href="#pablo"
-                          onClick={(e) => e.preventDefault()}
-                        >
+                        <DropdownItem href="#pablo" onClick={(e) => e.preventDefault()}>
                           Something else here
                         </DropdownItem>
                         <DropdownItem divider />
-                        <DropdownItem
-                          href="#pablo"
-                          onClick={(e) => e.preventDefault()}
-                        >
+                        <DropdownItem href="#pablo" onClick={(e) => e.preventDefault()}>
                           Separated link
                         </DropdownItem>
                         <DropdownItem divider />
-                        <DropdownItem
-                          href="#pablo"
-                          onClick={(e) => e.preventDefault()}
-                        >
+                        <DropdownItem href="#pablo" onClick={(e) => e.preventDefault()}>
                           Another separated link
                         </DropdownItem>
                       </DropdownMenu>

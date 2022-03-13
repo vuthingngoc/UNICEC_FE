@@ -1,19 +1,19 @@
-import React from "react";
+import React from 'react';
 
 // reactstrap components
-import { Card, CardBody, Container, Row, Col } from "reactstrap";
+import { Card, CardBody, Container, Row, Col } from 'reactstrap';
 
 // core components
-import ColorNavbar from "components/Navbars/ColorNavbar.js";
+import ColorNavbar from 'components/Navbars/ColorNavbar.js';
 
 function Error404() {
-  document.documentElement.classList.remove("nav-open");
+  document.documentElement.classList.remove('nav-open');
   React.useEffect(() => {
-    document.body.classList.add("error-404");
+    document.body.classList.add('error-404');
     window.scrollTo(0, 0);
     document.body.scrollTop = 0;
     return function cleanup() {
-      document.body.classList.remove("error-404");
+      document.body.classList.remove('error-404');
     };
   });
   return (
@@ -22,10 +22,7 @@ function Error404() {
       <div
         className="background-img"
         style={{
-          backgroundImage:
-            "url(" +
-            require("assets/img/sections/martin-knize.jpg").default +
-            ")",
+          backgroundImage: 'url(' + require('assets/img/sections/martin-knize.jpg').default + ')',
         }}
       >
         <div className="filter" />
@@ -34,9 +31,7 @@ function Error404() {
             <h1 className="title">
               404
               <br />
-              <p className="error-msg">
-                The page you requested could not be found
-              </p>
+              <p className="error-msg">The page you requested could not be found</p>
             </h1>
           </Row>
           <div className="container-cards">
@@ -57,9 +52,7 @@ function Error404() {
                             <i aria-hidden={true} className="fa fa-desktop" />
                           </a>
                         </div>
-                        <p className="card-description">
-                          Admin &amp; Dashboards
-                        </p>
+                        <p className="card-description">Admin &amp; Dashboards</p>
                       </CardBody>
                     </Card>
                   </Col>
@@ -92,10 +85,7 @@ function Error404() {
                       <CardBody className="text-center">
                         <h4 className="card-icon">
                           <a href="#pablo" onClick={(e) => e.preventDefault()}>
-                            <i
-                              aria-hidden={true}
-                              className="fa fa-puzzle-piece"
-                            />
+                            <i aria-hidden={true} className="fa fa-puzzle-piece" />
                           </a>
                         </h4>
                         <p className="card-description">Bootstrap components</p>

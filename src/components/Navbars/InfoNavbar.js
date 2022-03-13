@@ -1,7 +1,7 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React from 'react';
+import { Link } from 'react-router-dom';
 // JavaScript plugin that hides or shows a component based on your scroll
-import Headroom from "headroom.js";
+import Headroom from 'headroom.js';
 // reactstrap components
 import {
   Button,
@@ -16,14 +16,14 @@ import {
   Nav,
   Container,
   UncontrolledTooltip,
-} from "reactstrap";
+} from 'reactstrap';
 // core components
 
 function WhiteNavbar() {
   const [bodyClick, setBodyClick] = React.useState(false);
   const [collapseOpen, setCollapseOpen] = React.useState(false);
   React.useEffect(() => {
-    let headroom = new Headroom(document.getElementById("navbar-main"));
+    let headroom = new Headroom(document.getElementById('navbar-main'));
     // initialise
     headroom.init();
   });
@@ -33,7 +33,7 @@ function WhiteNavbar() {
         <div
           id="bodyClick"
           onClick={() => {
-            document.documentElement.classList.toggle("nav-open");
+            document.documentElement.classList.toggle('nav-open');
             setBodyClick(false);
             setCollapseOpen(false);
           }}
@@ -53,7 +53,7 @@ function WhiteNavbar() {
               id="navigation"
               type="button"
               onClick={() => {
-                document.documentElement.classList.toggle("nav-open");
+                document.documentElement.classList.toggle('nav-open');
                 setBodyClick(true);
                 setCollapseOpen(true);
               }}

@@ -1,13 +1,13 @@
 /*eslint-disable*/
-import React from "react";
+import React from 'react';
 
 function NucleoIcons() {
   React.useEffect(() => {
-    document.body.classList.add("demo-icons");
+    document.body.classList.add('demo-icons');
     window.scrollTo(0, 0);
     document.body.scrollTop = 0;
     return function cleanup() {
-      document.body.classList.remove("demo-icons");
+      document.body.classList.remove('demo-icons');
     };
   });
   return (
@@ -15,7 +15,7 @@ function NucleoIcons() {
       <header>
         <h1>Paper Kit PRO React Icons</h1>
         <p>
-          Built with{" "}
+          Built with{' '}
           <a href="https://nucleoapp.com/?ref=1712" target="_blank">
             nucleoapp.com
           </a>

@@ -37,7 +37,7 @@
 }
 
 .bootstrap-select {
-  .dropdown-menu[x-placement="top-start"] {
+  .dropdown-menu[x-placement='top-start'] {
     .dropdown-menu.inner {
       margin-bottom: -50px;
     }
@@ -45,8 +45,8 @@
 }
 
 #modals .btn,
-.btn[data-toggle="tooltip"],
-.btn[data-toggle="popover"] {
+.btn[data-toggle='tooltip'],
+.btn[data-toggle='popover'] {
   margin-bottom: 10px;
 }
 

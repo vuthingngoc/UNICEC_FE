@@ -1,6 +1,6 @@
-import React from "react";
+import React from 'react';
 // react plugin used to create DropdownMenu for selecting items
-import Select from "react-select";
+import Select from 'react-select';
 
 // reactstrap components
 import {
@@ -18,34 +18,34 @@ import {
   CarouselItem,
   CarouselIndicators,
   CarouselCaption,
-} from "reactstrap";
+} from 'reactstrap';
 
 // core components
-import ColorNavbar from "components/Navbars/ColorNavbar.js";
-import ProductPageHeader from "components/Headers/ProductPageHeader.js";
-import FooterBlack from "components/Footers/FooterBlack.js";
+import ColorNavbar from 'components/Navbars/ColorNavbar.js';
+import ProductPageHeader from 'components/Headers/ProductPageHeader.js';
+import FooterBlack from 'components/Footers/FooterBlack.js';
 
 // carousel items
 const carouselItems = [
   {
-    src: require("assets/img/jacket-1.jpg").default,
-    altText: "Somewhere",
-    caption: "Somewhere",
+    src: require('assets/img/jacket-1.jpg').default,
+    altText: 'Somewhere',
+    caption: 'Somewhere',
   },
   {
-    src: require("assets/img/jacket-2.jpg").default,
-    altText: "Somewhere else",
-    caption: "Somewhere else",
+    src: require('assets/img/jacket-2.jpg').default,
+    altText: 'Somewhere else',
+    caption: 'Somewhere else',
   },
   {
-    src: require("assets/img/jacket-3.jpg").default,
-    altText: "Here it is",
-    caption: "Here it is",
+    src: require('assets/img/jacket-3.jpg').default,
+    altText: 'Here it is',
+    caption: 'Here it is',
   },
   {
-    src: require("assets/img/jacket-4.jpg").default,
-    altText: "Here it is",
-    caption: "Here it is",
+    src: require('assets/img/jacket-4.jpg').default,
+    altText: 'Here it is',
+    caption: 'Here it is',
   },
 ];
 
@@ -56,12 +56,12 @@ function ProductPage() {
   const [collapseThree, setCollapseThree] = React.useState(false);
   // react-select states
   const [colorSelect, setColorSelect] = React.useState({
-    value: "1",
-    label: "Black ",
+    value: '1',
+    label: 'Black ',
   });
   const [sizeSelect, setSizeSelect] = React.useState({
-    value: "1",
-    label: "Small ",
+    value: '1',
+    label: 'Small ',
   });
   // carousel states and functions
   const [activeIndex, setActiveIndex] = React.useState(0);
@@ -74,14 +74,12 @@ function ProductPage() {
   };
   const next = () => {
     if (animating) return;
-    const nextIndex =
-      activeIndex === carouselItems.length - 1 ? 0 : activeIndex + 1;
+    const nextIndex = activeIndex === carouselItems.length - 1 ? 0 : activeIndex + 1;
     setActiveIndex(nextIndex);
   };
   const previous = () => {
     if (animating) return;
-    const nextIndex =
-      activeIndex === 0 ? carouselItems.length - 1 : activeIndex - 1;
+    const nextIndex = activeIndex === 0 ? carouselItems.length - 1 : activeIndex - 1;
     setActiveIndex(nextIndex);
   };
   const goToIndex = (newIndex) => {
@@ -89,11 +87,11 @@ function ProductPage() {
     setActiveIndex(newIndex);
   };
 
-  document.documentElement.classList.remove("nav-open");
+  document.documentElement.classList.remove('nav-open');
   React.useEffect(() => {
-    document.body.classList.add("product-page");
+    document.body.classList.add('product-page');
     return function cleanup() {
-      document.body.classList.remove("product-page");
+      document.body.classList.remove('product-page');
     };
   });
   return (
@@ -120,28 +118,13 @@ function ProductPage() {
               <Col md="7" sm="6">
                 <div className="ml-auto mr-auto" id="carousel">
                   <Card className="page-carousel">
-                    <Carousel
-                      activeIndex={activeIndex}
-                      next={next}
-                      previous={previous}
-                    >
-                      <CarouselIndicators
-                        items={carouselItems}
-                        activeIndex={activeIndex}
-                        onClickHandler={goToIndex}
-                      />
+                    <Carousel activeIndex={activeIndex} next={next} previous={previous}>
+                      <CarouselIndicators items={carouselItems} activeIndex={activeIndex} onClickHandler={goToIndex} />
                       {carouselItems.map((item) => {
                         return (
-                          <CarouselItem
-                            onExiting={onExiting}
-                            onExited={onExited}
-                            key={item.src}
-                          >
+                          <CarouselItem onExiting={onExiting} onExited={onExited} key={item.src}>
                             <img src={item.src} alt={item.altText} />
-                            <CarouselCaption
-                              captionText={item.caption}
-                              captionHeader=""
-                            />
+                            <CarouselCaption captionText={item.caption} captionHeader="" />
                           </CarouselItem>
                         );
                       })}
@@ -182,13 +165,8 @@ function ProductPage() {
                   <strong>€ 2,900.00</strong>
                 </h4>
                 <hr />
-                <p>
-                  This blazer in suede is a must-have of your wardrobe. Team it
-                  with a angora blazer and a angora sweater.
-                </p>
-                <span className="label label-default shipping">
-                  Free shipping to Europe
-                </span>
+                <p>This blazer in suede is a must-have of your wardrobe. Team it with a angora blazer and a angora sweater.</p>
+                <span className="label label-default shipping">Free shipping to Europe</span>
                 <Row>
                   <Col md="6" sm="6">
                     <label>Select color</label>
@@ -200,9 +178,9 @@ function ProductPage() {
                         value={colorSelect}
                         onChange={(value) => setColorSelect(value)}
                         options={[
-                          { value: "1", label: "Black " },
-                          { value: "2", label: "Gray" },
-                          { value: "3", label: "White" },
+                          { value: '1', label: 'Black ' },
+                          { value: '2', label: 'Gray' },
+                          { value: '3', label: 'White' },
                         ]}
                         placeholder="COLOR"
                       />
@@ -218,9 +196,9 @@ function ProductPage() {
                         value={sizeSelect}
                         onChange={(value) => setSizeSelect(value)}
                         options={[
-                          { value: "1", label: "Small " },
-                          { value: "2", label: "Medium" },
-                          { value: "3", label: "Large" },
+                          { value: '1', label: 'Small ' },
+                          { value: '2', label: 'Medium' },
+                          { value: '3', label: 'Large' },
                         ]}
                         placeholder="SIZE"
                       />
@@ -249,10 +227,7 @@ function ProductPage() {
                   </div>
                   <div className="description">
                     <h4 className="info-title">2 Days Delivery</h4>
-                    <p>
-                      Spend your time generating new ideas. You don&apos;t have
-                      to think of implementing anymore.
-                    </p>
+                    <p>Spend your time generating new ideas. You don&apos;t have to think of implementing anymore.</p>
                   </div>
                 </div>
               </Col>
@@ -263,10 +238,7 @@ function ProductPage() {
                   </div>
                   <div className="description">
                     <h4 className="info-title">Refundable Policy</h4>
-                    <p>
-                      Larger, yet dramatically thinner. More powerful, but
-                      remarkably power efficient.
-                    </p>
+                    <p>Larger, yet dramatically thinner. More powerful, but remarkably power efficient.</p>
                   </div>
                 </div>
               </Col>
@@ -277,22 +249,15 @@ function ProductPage() {
                   </div>
                   <div className="description">
                     <h4 className="info-title">Popular Item</h4>
-                    <p>
-                      Choose from a veriety of colors resembling sugar paper
-                      pastels.
-                    </p>
+                    <p>Choose from a veriety of colors resembling sugar paper pastels.</p>
                   </div>
                 </div>
               </Col>
             </Row>
             <hr />
             <p>
-              What to find out more about how we build our stuff?{" "}
-              <a
-                className="link-danger"
-                href="#pablo"
-                onClick={(e) => e.preventDefault()}
-              >
+              What to find out more about how we build our stuff?{' '}
+              <a className="link-danger" href="#pablo" onClick={(e) => e.preventDefault()}>
                 Learn more.
               </a>
             </p>
@@ -303,11 +268,7 @@ function ProductPage() {
               <div id="acordeon">
                 <div aria-multiselectable={true} id="accordion" role="tablist">
                   <Card className="no-transition">
-                    <CardHeader
-                      className="card-collapse"
-                      id="headingOne"
-                      role="tab"
-                    >
+                    <CardHeader className="card-collapse" id="headingOne" role="tab">
                       <h5 className="mb-0 panel-title">
                         <a
                           aria-expanded={collapseOne}
@@ -318,36 +279,20 @@ function ProductPage() {
                             setCollapseOne(!collapseOne);
                           }}
                         >
-                          Default Collapsible Item 1{" "}
-                          <i className="nc-icon nc-minimal-down" />
+                          Default Collapsible Item 1 <i className="nc-icon nc-minimal-down" />
                         </a>
                       </h5>
                     </CardHeader>
-                    <UncontrolledCollapse
-                      aria-labelledby="headingOne"
-                      role="tabpanel"
-                      toggler="#collapseOne"
-                    >
+                    <UncontrolledCollapse aria-labelledby="headingOne" role="tabpanel" toggler="#collapseOne">
                       <CardBody>
-                        Anim pariatur cliche reprehenderit, enim eiusmod high
-                        life accusamus terry richardson ad squid. 3 wolf moon
-                        officia aute, non cupidatat skateboard dolor brunch.
-                        Food truck quinoa nesciunt laborum eiusmod. Brunch 3
-                        wolf moon tempor, sunt aliqua put a bird on it squid
-                        single-origin coffee nulla assumenda shoreditch et.
-                        Nihil anim keffiyeh helvetica, craft beer labore wes
-                        anderson cred nesciunt sapiente ea proident. Ad vegan
-                        excepteur butcher vice lomo. Leggings occaecat craft
-                        beer farm-to-table, raw denim aesthetic synth nesciunt
-                        you probably haven&apos;t heard of them accusamus labore
-                        sustainable VHS.
+                        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non
+                        cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a
+                        bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes
+                        anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table,
+                        raw denim aesthetic synth nesciunt you probably haven&apos;t heard of them accusamus labore sustainable VHS.
                       </CardBody>
                     </UncontrolledCollapse>
-                    <CardHeader
-                      className="card-collapse"
-                      id="headingTwo"
-                      role="tab"
-                    >
+                    <CardHeader className="card-collapse" id="headingTwo" role="tab">
                       <h5 className="mb-0 panel-title">
                         <a
                           aria-expanded={collapseTwo}
@@ -358,36 +303,20 @@ function ProductPage() {
                             setCollapseTwo(!collapseTwo);
                           }}
                         >
-                          Default Collapsible Item 2{" "}
-                          <i className="nc-icon nc-minimal-down" />
+                          Default Collapsible Item 2 <i className="nc-icon nc-minimal-down" />
                         </a>
                       </h5>
                     </CardHeader>
-                    <UncontrolledCollapse
-                      aria-labelledby="headingTwo"
-                      role="tabpanel"
-                      toggler="#collapseTwo"
-                    >
+                    <UncontrolledCollapse aria-labelledby="headingTwo" role="tabpanel" toggler="#collapseTwo">
                       <CardBody>
-                        Anim pariatur cliche reprehenderit, enim eiusmod high
-                        life accusamus terry richardson ad squid. 3 wolf moon
-                        officia aute, non cupidatat skateboard dolor brunch.
-                        Food truck quinoa nesciunt laborum eiusmod. Brunch 3
-                        wolf moon tempor, sunt aliqua put a bird on it squid
-                        single-origin coffee nulla assumenda shoreditch et.
-                        Nihil anim keffiyeh helvetica, craft beer labore wes
-                        anderson cred nesciunt sapiente ea proident. Ad vegan
-                        excepteur butcher vice lomo. Leggings occaecat craft
-                        beer farm-to-table, raw denim aesthetic synth nesciunt
-                        you probably haven&apos;t heard of them accusamus labore
-                        sustainable VHS.
+                        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non
+                        cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a
+                        bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes
+                        anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table,
+                        raw denim aesthetic synth nesciunt you probably haven&apos;t heard of them accusamus labore sustainable VHS.
                       </CardBody>
                     </UncontrolledCollapse>
-                    <CardHeader
-                      className="card-collapse"
-                      id="headingThree"
-                      role="tab"
-                    >
+                    <CardHeader className="card-collapse" id="headingThree" role="tab">
                       <h5 className="mb-0 panel-title">
                         <a
                           aria-expanded={collapseThree}
@@ -398,29 +327,17 @@ function ProductPage() {
                             setCollapseThree(!collapseThree);
                           }}
                         >
-                          Default Collapsible Item 3{" "}
-                          <i className="nc-icon nc-minimal-down" />
+                          Default Collapsible Item 3 <i className="nc-icon nc-minimal-down" />
                         </a>
                       </h5>
                     </CardHeader>
-                    <UncontrolledCollapse
-                      aria-labelledby="headingThree"
-                      role="tabpanel"
-                      toggler="#collapseThree"
-                    >
+                    <UncontrolledCollapse aria-labelledby="headingThree" role="tabpanel" toggler="#collapseThree">
                       <CardBody>
-                        Anim pariatur cliche reprehenderit, enim eiusmod high
-                        life accusamus terry richardson ad squid. 3 wolf moon
-                        officia aute, non cupidatat skateboard dolor brunch.
-                        Food truck quinoa nesciunt laborum eiusmod. Brunch 3
-                        wolf moon tempor, sunt aliqua put a bird on it squid
-                        single-origin coffee nulla assumenda shoreditch et.
-                        Nihil anim keffiyeh helvetica, craft beer labore wes
-                        anderson cred nesciunt sapiente ea proident. Ad vegan
-                        excepteur butcher vice lomo. Leggings occaecat craft
-                        beer farm-to-table, raw denim aesthetic synth nesciunt
-                        you probably haven&apos;t heard of them accusamus labore
-                        sustainable VHS.
+                        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non
+                        cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a
+                        bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes
+                        anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table,
+                        raw denim aesthetic synth nesciunt you probably haven&apos;t heard of them accusamus labore sustainable VHS.
                       </CardBody>
                     </UncontrolledCollapse>
                   </Card>
@@ -438,9 +355,8 @@ function ProductPage() {
                   <strong>€ 975.00</strong>
                 </p>
                 <p>
-                  Constructed from robust full-grain leather, it&apos;s finished
-                  with the label&apos;s &apos;city webbing&apos; - a rich take
-                  on the brand&apos;s signature stripes.
+                  Constructed from robust full-grain leather, it&apos;s finished with the label&apos;s &apos;city webbing&apos; - a rich take on the
+                  brand&apos;s signature stripes.
                 </p>
                 <br />
                 <Button className="btn-round" color="danger">
@@ -448,11 +364,7 @@ function ProductPage() {
                 </Button>
               </Col>
               <Col className="ml-auto" md="3" sm="4">
-                <img
-                  alt="..."
-                  className="img-rounded img-responsive"
-                  src={require("assets/img/gallery/paul-smith.jpg").default}
-                />
+                <img alt="..." className="img-rounded img-responsive" src={require('assets/img/gallery/paul-smith.jpg').default} />
               </Col>
             </Row>
           </Container>
@@ -468,17 +380,11 @@ function ProductPage() {
                 <Card className="card-product card-plain">
                   <div className="card-image">
                     <a href="#pablo" onClick={(e) => e.preventDefault()}>
-                      <img
-                        alt="..."
-                        className="img-rounded img-responsive"
-                        src={require("assets/img/balmain-1.jpg").default}
-                      />
+                      <img alt="..." className="img-rounded img-responsive" src={require('assets/img/balmain-1.jpg').default} />
                     </a>
                     <CardBody>
                       <div className="card-description">
-                        <CardTitle tag="h5">
-                          Double Breasted Mini Dress
-                        </CardTitle>
+                        <CardTitle tag="h5">Double Breasted Mini Dress</CardTitle>
                         <p className="card-description">Dresses &amp; Skirts</p>
                       </div>
                       <div className="actions">
@@ -492,11 +398,7 @@ function ProductPage() {
                 <Card className="card-product card-plain">
                   <div className="card-image">
                     <a href="#pablo" onClick={(e) => e.preventDefault()}>
-                      <img
-                        alt="..."
-                        className="img-rounded img-responsive"
-                        src={require("assets/img/balmain-2.jpg").default}
-                      />
+                      <img alt="..." className="img-rounded img-responsive" src={require('assets/img/balmain-2.jpg').default} />
                     </a>
                     <CardBody>
                       <div className="card-description">
@@ -514,11 +416,7 @@ function ProductPage() {
                 <Card className="card-product card-plain">
                   <div className="card-image">
                     <a href="#pablo" onClick={(e) => e.preventDefault()}>
-                      <img
-                        alt="..."
-                        className="img-rounded img-responsive"
-                        src={require("assets/img/balmain-3.jpg").default}
-                      />
+                      <img alt="..." className="img-rounded img-responsive" src={require('assets/img/balmain-3.jpg').default} />
                     </a>
                     <CardBody>
                       <div className="card-description">

@@ -1,30 +1,21 @@
-import React from "react";
+import React from 'react';
 
 // reactstrap components
-import {
-  Button,
-  Card,
-  CardTitle,
-  Form,
-  Input,
-  Container,
-  Row,
-  Col,
-} from "reactstrap";
+import { Button, Card, CardTitle, Form, Input, Container, Row, Col } from 'reactstrap';
 
 // core components
-import ColorNavbar from "components/Navbars/ColorNavbar.js";
+import ColorNavbar from 'components/Navbars/ColorNavbar.js';
 
 function RegisterPage() {
-  document.documentElement.classList.remove("nav-open");
+  document.documentElement.classList.remove('nav-open');
   React.useEffect(() => {
-    document.body.classList.add("register-page");
-    document.body.classList.add("full-screen");
+    document.body.classList.add('register-page');
+    document.body.classList.add('full-screen');
     window.scrollTo(0, 0);
     document.body.scrollTop = 0;
     return function cleanup() {
-      document.body.classList.remove("register-page");
-      document.body.classList.remove("full-screen");
+      document.body.classList.remove('register-page');
+      document.body.classList.remove('full-screen');
     };
   });
   return (
@@ -34,10 +25,7 @@ function RegisterPage() {
         <div
           className="page-header"
           style={{
-            backgroundImage:
-              "url(" +
-              require("assets/img/sections/soroush-karimi.jpg").default +
-              ")",
+            backgroundImage: 'url(' + require('assets/img/sections/soroush-karimi.jpg').default + ')',
           }}
         >
           <div className="filter" />
@@ -50,11 +38,7 @@ function RegisterPage() {
                   </div>
                   <div className="description">
                     <h3>We&apos;ve got you covered</h3>
-                    <p>
-                      Larger, yet dramatically thinner. More powerful, but
-                      remarkably power efficient. Everything you need in a
-                      single case.
-                    </p>
+                    <p>Larger, yet dramatically thinner. More powerful, but remarkably power efficient. Everything you need in a single case.</p>
                   </div>
                 </div>
                 <div className="info info-horizontal">
@@ -64,9 +48,8 @@ function RegisterPage() {
                   <div className="description">
                     <h3>Clear Directions</h3>
                     <p>
-                      Efficiently unleash cross-media information without
-                      cross-media value. Quickly maximize timely deliverables
-                      for real-time schemas.
+                      Efficiently unleash cross-media information without cross-media value. Quickly maximize timely deliverables for real-time
+                      schemas.
                     </p>
                   </div>
                 </div>
@@ -76,10 +59,7 @@ function RegisterPage() {
                   </div>
                   <div className="description">
                     <h3>We value your privacy</h3>
-                    <p>
-                      Completely synergize resource taxing relationships via
-                      premier niche markets.
-                    </p>
+                    <p>Completely synergize resource taxing relationships via premier niche markets.</p>
                   </div>
                 </div>
               </Col>
@@ -114,7 +94,7 @@ function RegisterPage() {
                   </Form>
                   <div className="login">
                     <p>
-                      Already have an account?{" "}
+                      Already have an account?{' '}
                       <a href="#pablo" onClick={(e) => e.preventDefault()}>
                         Log in
                       </a>
@@ -127,8 +107,7 @@ function RegisterPage() {
           </Container>
           <div className="demo-footer text-center">
             <h6>
-              © {new Date().getFullYear()}, made with{" "}
-              <i className="fa fa-heart heart" /> by Creative Tim
+              © {new Date().getFullYear()}, made with <i className="fa fa-heart heart" /> by Creative Tim
             </h6>
           </div>
         </div>

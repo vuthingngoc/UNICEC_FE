@@ -17,11 +17,10 @@ select.selectpicker {
   .dropdown-menu {
     overflow: visible !important;
     min-width: 100% !important;
-    .dropdown-item{
-
-    &:focus{
-      outline: none;
-    }
+    .dropdown-item {
+      &:focus {
+        outline: none;
+      }
 
       // &.active{
       //   &:hover{
@@ -33,13 +32,13 @@ select.selectpicker {
 
   .dropdown-menu {
     .dropdown-item:first-child {
-       border-top-left-radius: 0;
-       border-top-right-radius: 0;
+      border-top-left-radius: 0;
+      border-top-right-radius: 0;
     }
 
     .dropdown-item:last-child {
-        border-bottom-left-radius: 0;
-        border-bottom-right-radius: 0;
+      border-bottom-left-radius: 0;
+      border-bottom-right-radius: 0;
     }
   }
 }
@@ -51,7 +50,7 @@ select.selectpicker {
   text-align: right;
   white-space: nowrap;
 
-  &:after{
+  &:after {
     margin-top: 0;
   }
 }
@@ -118,7 +117,7 @@ select.selectpicker {
 .bootstrap-select.fit-width {
   width: auto !important;
 }
-.bootstrap-select:not([class*="col-"]):not([class*="form-control"]):not(.input-group-btn) {
+.bootstrap-select:not([class*='col-']):not([class*='form-control']):not(.input-group-btn) {
   width: 220px;
 }
 .bootstrap-select .dropdown-toggle:focus {
@@ -131,7 +130,7 @@ select.selectpicker {
   padding: 0;
   border: none;
 }
-:not(.input-group) > .bootstrap-select.form-control:not([class*="col-"]) {
+:not(.input-group) > .bootstrap-select.form-control:not([class*='col-']) {
   width: 100%;
 }
 .bootstrap-select.form-control.input-group-btn {
@@ -141,14 +140,14 @@ select.selectpicker {
   border-radius: 0;
 }
 .bootstrap-select:not(.input-group-btn),
-.bootstrap-select[class*="col-"] {
+.bootstrap-select[class*='col-'] {
   float: none;
   display: inline-block;
   margin-left: 0;
 }
 .bootstrap-select.dropdown-menu-right,
-.bootstrap-select[class*="col-"].dropdown-menu-right,
-.row .bootstrap-select[class*="col-"].dropdown-menu-right {
+.bootstrap-select[class*='col-'].dropdown-menu-right,
+.row .bootstrap-select[class*='col-'].dropdown-menu-right {
   float: right;
 }
 .form-inline .bootstrap-select,
@@ -232,20 +231,20 @@ select.selectpicker {
 .input-group .bootstrap-select.form-control .dropdown-toggle {
   border-radius: inherit;
 }
-.bootstrap-select[class*="col-"] .dropdown-toggle {
+.bootstrap-select[class*='col-'] .dropdown-toggle {
   width: 100%;
 }
 .bootstrap-select .dropdown-menu {
   min-width: 100%;
   -webkit-box-sizing: border-box;
-     -moz-box-sizing: border-box;
-          box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
 }
 .bootstrap-select .dropdown-menu > .inner:focus {
   outline: none !important;
 }
 .bootstrap-select .dropdown-toggle:focus,
-.bootstrap-select .dropdown-toggle:focus:active, {
+.bootstrap-select .dropdown-toggle:focus:active {
   outline: none !important;
 }
 .bootstrap-select .dropdown-menu.inner {
@@ -256,7 +255,7 @@ select.selectpicker {
   margin: 0;
   border-radius: 0;
   -webkit-box-shadow: none;
-          box-shadow: none;
+  box-shadow: none;
 }
 .bootstrap-select .dropdown-menu li {
   position: relative;
@@ -270,9 +269,9 @@ select.selectpicker {
 .bootstrap-select .dropdown-menu li a {
   cursor: pointer;
   -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 .bootstrap-select .dropdown-menu li a.opt {
   position: relative;
@@ -297,12 +296,12 @@ select.selectpicker {
   background: #f5f5f5;
   border: 1px solid #e3e3e3;
   -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
-          box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
   pointer-events: none;
   opacity: 0.9;
   -webkit-box-sizing: border-box;
-     -moz-box-sizing: border-box;
-          box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
 }
 .bootstrap-select .no-results {
   padding: 3px;
@@ -341,9 +340,9 @@ select.selectpicker {
   border-style: solid;
   border-width: 0 0.26em 0.26em 0;
   -webkit-transform: rotate(45deg);
-      -ms-transform: rotate(45deg);
-       -o-transform: rotate(45deg);
-          transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg);
 }
 .bootstrap-select.show-menu-arrow.open > .dropdown-toggle,
 .bootstrap-select.show-menu-arrow.show > .dropdown-toggle {
@@ -403,8 +402,8 @@ select.selectpicker {
 .bs-actionsbox {
   width: 100%;
   -webkit-box-sizing: border-box;
-     -moz-box-sizing: border-box;
-          box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
 }
 .bs-actionsbox .btn-group button {
   width: 50%;
@@ -413,8 +412,8 @@ select.selectpicker {
   float: left;
   width: 100%;
   -webkit-box-sizing: border-box;
-     -moz-box-sizing: border-box;
-          box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
 }
 .bs-donebutton .btn-group button {
   width: 100%;

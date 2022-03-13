@@ -1,16 +1,7 @@
-import React from "react";
+import React from 'react';
 
 // reactstrap components
-import {
-  Button,
-  Card,
-  CardBody,
-  CardFooter,
-  CardTitle,
-  Container,
-  Row,
-  Col,
-} from "reactstrap";
+import { Button, Card, CardBody, CardFooter, CardTitle, Container, Row, Col } from 'reactstrap';
 
 // core components
 
@@ -23,10 +14,8 @@ function SectionSharing() {
             <div className="title text-center">
               <h3 className="title">Ready to grab this Powerful UI Kit?</h3>
               <p className="description">
-                You have <b>Free Unlimited Updates</b> and{" "}
-                <b>Premium Support</b> on each package for 6 months. You also
-                have <b>24 hours</b> to request a refund if you&apos;re not
-                happy with your purchase.
+                You have <b>Free Unlimited Updates</b> and <b>Premium Support</b> on each package for 6 months. You also have <b>24 hours</b> to
+                request a refund if you&apos;re not happy with your purchase.
               </p>
               <br />
             </div>
@@ -43,9 +32,8 @@ function SectionSharing() {
                       </div>
                       <CardTitle tag="h3">$79</CardTitle>
                       <p className="card-description">
-                        For personal websites, school projects, startups or any
-                        other project where your users will not be charged for
-                        using it. Create one single website/app for one client.
+                        For personal websites, school projects, startups or any other project where your users will not be charged for using it.
+                        Create one single website/app for one client.
                       </p>
                       <CardFooter>
                         <Button
@@ -70,10 +58,8 @@ function SectionSharing() {
                       </div>
                       <CardTitle tag="h3">$449</CardTitle>
                       <p className="card-description">
-                        For business projects, multiple websites for clients or
-                        for creating themes where your users will be charged for
-                        using it. Create multiple websites/apps for multiple
-                        clients.
+                        For business projects, multiple websites for clients or for creating themes where your users will be charged for using it.
+                        Create multiple websites/apps for multiple clients.
                       </p>
                       <CardFooter>
                         <Button

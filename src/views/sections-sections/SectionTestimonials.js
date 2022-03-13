@@ -1,28 +1,16 @@
-import React from "react";
+import React from 'react';
 
 // reactstrap components
-import {
-  Card,
-  CardBody,
-  CardFooter,
-  CardTitle,
-  Container,
-  Row,
-  Col,
-  Carousel,
-  CarouselItem,
-  CarouselIndicators,
-} from "reactstrap";
+import { Card, CardBody, CardFooter, CardTitle, Container, Row, Col, Carousel, CarouselItem, CarouselIndicators } from 'reactstrap';
 
 // core components
 const items = [
   {
-    src: "https://s3.amazonaws.com/creativetim_bucket/photos/110862/thumb.?1482812727",
+    src: 'https://s3.amazonaws.com/creativetim_bucket/photos/110862/thumb.?1482812727',
     content: (
       <CardBody>
         <h5 className="card-description">
-          &quot;I&apos;m newer to the front-end... With my creative side lacking
-          in experience this really put me in the right spot to speed through
+          &quot;I&apos;m newer to the front-end... With my creative side lacking in experience this really put me in the right spot to speed through
           the fast lane. I love this Design kit so much!&quot;
         </h5>
         <CardFooter>
@@ -38,17 +26,14 @@ const items = [
         </CardFooter>
       </CardBody>
     ),
-    altText: "",
-    caption: "",
+    altText: '',
+    caption: '',
   },
   {
-    src: "https://s3.amazonaws.com/creativetim_bucket/photos/134607/thumb.?1487680276",
+    src: 'https://s3.amazonaws.com/creativetim_bucket/photos/134607/thumb.?1487680276',
     content: (
       <CardBody>
-        <h5 className="card-description">
-          &quot;Love the shapes and color palette on this one! Perfect for one
-          of my pet projects!&quot;
-        </h5>
+        <h5 className="card-description">&quot;Love the shapes and color palette on this one! Perfect for one of my pet projects!&quot;</h5>
         <CardFooter>
           <CardTitle tag="h4">Robin Leysen</CardTitle>
           <h6 className="card-category">Web Developer</h6>
@@ -62,17 +47,14 @@ const items = [
         </CardFooter>
       </CardBody>
     ),
-    altText: "",
-    caption: "",
+    altText: '',
+    caption: '',
   },
   {
-    src: "https://s3.amazonaws.com/creativetim_bucket/photos/125268/thumb.jpeg?1497799215",
+    src: 'https://s3.amazonaws.com/creativetim_bucket/photos/125268/thumb.jpeg?1497799215',
     content: (
       <CardBody>
-        <h5 className="card-description">
-          &quot;Love it. Use it for prototypes and along with Paper
-          Dashboard.&quot;
-        </h5>
+        <h5 className="card-description">&quot;Love it. Use it for prototypes and along with Paper Dashboard.&quot;</h5>
         <CardFooter>
           <CardTitle tag="h4">Cristi Jora</CardTitle>
           <h6 className="card-category">Web Developer</h6>
@@ -86,8 +68,8 @@ const items = [
         </CardFooter>
       </CardBody>
     ),
-    altText: "",
-    caption: "",
+    altText: '',
+    caption: '',
   },
 ];
 
@@ -117,18 +99,12 @@ function SectionTestimonials() {
   };
   return (
     <>
-      <div
-        className="section section-testimonials cd-section"
-        id="testimonials"
-      >
+      <div className="section section-testimonials cd-section" id="testimonials">
         {/* ********* TESTIMONIALS 1 ********* */}
         <div
           className="testimonials-1 section-image"
           style={{
-            backgroundImage:
-              "url(" +
-              require("assets/img/sections/uriel-soberanes.jpg").default +
-              ")",
+            backgroundImage: 'url(' + require('assets/img/sections/uriel-soberanes.jpg').default + ')',
           }}
         >
           <Container>
@@ -136,8 +112,7 @@ function SectionTestimonials() {
               <Col className="ml-auto mr-auto text-center" md="6">
                 <h2 className="title">Our Clients Love Us</h2>
                 <h5 className="description">
-                  You need more information? Check what other persons are saying
-                  about our product. They are very happy with their purchase.
+                  You need more information? Check what other persons are saying about our product. They are very happy with their purchase.
                 </h5>
               </Col>
             </Row>
@@ -150,23 +125,15 @@ function SectionTestimonials() {
                   </div>
                   <CardBody>
                     <p className="card-description">
-                      Your products, all the kits that I have downloaded from
-                      your site and worked with are sooo cool! I love the color
-                      mixtures, cards... everything. Keep up the great work!
+                      Your products, all the kits that I have downloaded from your site and worked with are sooo cool! I love the color mixtures,
+                      cards... everything. Keep up the great work!
                     </p>
                     <CardFooter>
                       <CardTitle tag="h4">Alec Thompson</CardTitle>
                       <h6 className="card-category">@alecthompson</h6>
                       <div className="card-avatar">
                         <a href="#pablo" onClick={(e) => e.preventDefault()}>
-                          <img
-                            alt="..."
-                            className="img"
-                            src={
-                              require("assets/img/faces/ayo-ogunseinde-2.jpg")
-                                .default
-                            }
-                          />
+                          <img alt="..." className="img" src={require('assets/img/faces/ayo-ogunseinde-2.jpg').default} />
                         </a>
                       </div>
                     </CardFooter>
@@ -180,24 +147,15 @@ function SectionTestimonials() {
                   </div>
                   <CardBody>
                     <p className="card-description">
-                      &quot;Don&apos;t be scared of the truth because we need to
-                      restart the human foundation in truth. That&apos;s why I
-                      love you like Kanye loves Kanye I love Rick Owens’ bed
-                      design but the back is not so attractive&quot;
+                      &quot;Don&apos;t be scared of the truth because we need to restart the human foundation in truth. That&apos;s why I love you
+                      like Kanye loves Kanye I love Rick Owens’ bed design but the back is not so attractive&quot;
                     </p>
                     <CardFooter>
                       <CardTitle tag="h4">Gina Andrew</CardTitle>
                       <h6 className="card-category">@ginaandrew</h6>
                       <div className="card-avatar">
                         <a href="#pablo" onClick={(e) => e.preventDefault()}>
-                          <img
-                            alt="..."
-                            className="img"
-                            src={
-                              require("assets/img/faces/joe-gardner-2.jpg")
-                                .default
-                            }
-                          />
+                          <img alt="..." className="img" src={require('assets/img/faces/joe-gardner-2.jpg').default} />
                         </a>
                       </div>
                     </CardFooter>
@@ -211,24 +169,15 @@ function SectionTestimonials() {
                   </div>
                   <CardBody>
                     <p className="card-description">
-                      &quot;Your products, all the kits that I have downloaded
-                      from your site and worked with are sooo cool! I love the
-                      color mixtures, cards... everything. Keep up the great
-                      work!&quot;
+                      &quot;Your products, all the kits that I have downloaded from your site and worked with are sooo cool! I love the color
+                      mixtures, cards... everything. Keep up the great work!&quot;
                     </p>
                     <CardFooter>
                       <CardTitle tag="h4">Joe West</CardTitle>
                       <h6 className="card-category">@georgewest</h6>
                       <div className="card-avatar">
                         <a href="#pablo" onClick={(e) => e.preventDefault()}>
-                          <img
-                            alt="..."
-                            className="img"
-                            src={
-                              require("assets/img/faces/kaci-baum-2.jpg")
-                                .default
-                            }
-                          />
+                          <img alt="..." className="img" src={require('assets/img/faces/kaci-baum-2.jpg').default} />
                         </a>
                       </div>
                     </CardFooter>
@@ -248,66 +197,42 @@ function SectionTestimonials() {
                   <img
                     alt="..."
                     className="left-first-person add-animation"
-                    src={
-                      "https://s3.amazonaws.com/creativetim_bucket/photos/110862/thumb.?1482812727"
-                    }
+                    src={'https://s3.amazonaws.com/creativetim_bucket/photos/110862/thumb.?1482812727'}
                   />
                   <img
                     alt="..."
                     className="left-second-person add-animation"
-                    src={
-                      "https://s3.amazonaws.com/creativetim_bucket/photos/139481/thumb.jpg?1485460613"
-                    }
+                    src={'https://s3.amazonaws.com/creativetim_bucket/photos/139481/thumb.jpg?1485460613'}
                   />
                   <img
                     alt="..."
                     className="left-third-person add-animation"
-                    src={
-                      "https://s3.amazonaws.com/creativetim_bucket/photos/152441/thumb.jpg?1488233314"
-                    }
+                    src={'https://s3.amazonaws.com/creativetim_bucket/photos/152441/thumb.jpg?1488233314'}
                   />
                   <img
                     alt="..."
                     className="left-fourth-person add-animation"
-                    src={
-                      "https://s3.amazonaws.com/creativetim_bucket/photos/110862/thumb.?1482812727"
-                    }
+                    src={'https://s3.amazonaws.com/creativetim_bucket/photos/110862/thumb.?1482812727'}
                   />
                   <img
                     alt="..."
                     className="left-fifth-person add-animation"
-                    src={
-                      "https://s3.amazonaws.com/creativetim_bucket/photos/161506/thumb.?1489848178"
-                    }
+                    src={'https://s3.amazonaws.com/creativetim_bucket/photos/161506/thumb.?1489848178'}
                   />
                   <img
                     alt="..."
                     className="left-sixth-person add-animation"
-                    src={
-                      "https://s3.amazonaws.com/creativetim_bucket/photos/77627/thumb.jpg?1487360092"
-                    }
+                    src={'https://s3.amazonaws.com/creativetim_bucket/photos/77627/thumb.jpg?1487360092'}
                   />
                 </div>
               </Col>
               <Col className="ml-auto mr-auto" md="6">
                 <div className="page-carousel">
-                  <Carousel
-                    activeIndex={activeIndex}
-                    next={next}
-                    previous={previous}
-                  >
-                    <CarouselIndicators
-                      items={items}
-                      activeIndex={activeIndex}
-                      onClickHandler={goToIndex}
-                    />
+                  <Carousel activeIndex={activeIndex} next={next} previous={previous}>
+                    <CarouselIndicators items={items} activeIndex={activeIndex} onClickHandler={goToIndex} />
                     {items.map((item) => {
                       return (
-                        <CarouselItem
-                          onExiting={onExiting}
-                          onExited={onExited}
-                          key={item.src}
-                        >
+                        <CarouselItem onExiting={onExiting} onExited={onExited} key={item.src}>
                           <Card className="card-testimonial card-plain">
                             <div className="card-avatar">
                               <img alt="..." className="img" src={item.src} />
@@ -356,37 +281,27 @@ function SectionTestimonials() {
                   <img
                     alt="..."
                     className="right-second-person add-animation"
-                    src={
-                      "https://s3.amazonaws.com/creativetim_bucket/photos/125268/thumb.jpeg?1497799215"
-                    }
+                    src={'https://s3.amazonaws.com/creativetim_bucket/photos/125268/thumb.jpeg?1497799215'}
                   />
                   <img
                     alt="..."
                     className="right-third-person add-animation"
-                    src={
-                      "https://s3.amazonaws.com/creativetim_bucket/photos/123334/thumb.JPG?1479459618"
-                    }
+                    src={'https://s3.amazonaws.com/creativetim_bucket/photos/123334/thumb.JPG?1479459618'}
                   />
                   <img
                     alt="..."
                     className="right-fourth-person add-animation"
-                    src={
-                      "https://s3.amazonaws.com/creativetim_bucket/photos/118235/thumb.?1477435947"
-                    }
+                    src={'https://s3.amazonaws.com/creativetim_bucket/photos/118235/thumb.?1477435947'}
                   />
                   <img
                     alt="..."
                     className="right-fifth-person add-animation"
-                    src={
-                      "https://s3.amazonaws.com/creativetim_bucket/photos/18/thumb.png?1431433244"
-                    }
+                    src={'https://s3.amazonaws.com/creativetim_bucket/photos/18/thumb.png?1431433244'}
                   />
                   <img
                     alt="..."
                     className="right-sixth-person add-animation"
-                    src={
-                      "https://s3.amazonaws.com/creativetim_bucket/photos/167683/thumb.?1491014996"
-                    }
+                    src={'https://s3.amazonaws.com/creativetim_bucket/photos/167683/thumb.?1491014996'}
                   />
                 </div>
               </Col>
@@ -408,14 +323,7 @@ function SectionTestimonials() {
                   <CardBody>
                     <div className="author">
                       <a href="#pablo" onClick={(e) => e.preventDefault()}>
-                        <img
-                          alt="..."
-                          className="avatar img-raised mr-2"
-                          src={
-                            require("assets/img/faces/joe-gardner-2.jpg")
-                              .default
-                          }
-                        />
+                        <img alt="..." className="avatar img-raised mr-2" src={require('assets/img/faces/joe-gardner-2.jpg').default} />
                         <span>Erik Johnson</span>
                       </a>
                     </div>
@@ -424,10 +332,8 @@ function SectionTestimonials() {
                     </span>
                     <div className="clearfix" />
                     <p className="card-description">
-                      &quot;During the first selection of grant winners on the
-                      essential aspects, and the products are not burdened with
-                      non-essentials. Back to purity, back to simplicity. At
-                      best, it is self-explanatory.&quot;
+                      &quot;During the first selection of grant winners on the essential aspects, and the products are not burdened with
+                      non-essentials. Back to purity, back to simplicity. At best, it is self-explanatory.&quot;
                     </p>
                   </CardBody>
                 </Card>
@@ -437,14 +343,7 @@ function SectionTestimonials() {
                   <CardBody>
                     <div className="author">
                       <a href="#pablo" onClick={(e) => e.preventDefault()}>
-                        <img
-                          alt="..."
-                          className="avatar img-raised mr-2"
-                          src={
-                            require("assets/img/faces/erik-lucatero-2.jpg")
-                              .default
-                          }
-                        />
+                        <img alt="..." className="avatar img-raised mr-2" src={require('assets/img/faces/erik-lucatero-2.jpg').default} />
                         <span>Erik Johnson</span>
                       </a>
                     </div>
@@ -453,11 +352,9 @@ function SectionTestimonials() {
                     </span>
                     <div className="clearfix" />
                     <p className="card-description">
-                      &quot;The plan is to add additional flexibility in the
-                      future to allow applicants to make a case for how much
-                      money they actually need. Less, but better – because it
-                      concentrates on the essential aspects, and the products
-                      are not burdened with non-essentials...&quot;
+                      &quot;The plan is to add additional flexibility in the future to allow applicants to make a case for how much money they
+                      actually need. Less, but better – because it concentrates on the essential aspects, and the products are not burdened with
+                      non-essentials...&quot;
                     </p>
                   </CardBody>
                 </Card>
@@ -467,13 +364,7 @@ function SectionTestimonials() {
                   <CardBody>
                     <div className="author">
                       <a href="#pablo" onClick={(e) => e.preventDefault()}>
-                        <img
-                          alt="..."
-                          className="avatar img-raised mr-2"
-                          src={
-                            require("assets/img/faces/kaci-baum-2.jpg").default
-                          }
-                        />
+                        <img alt="..." className="avatar img-raised mr-2" src={require('assets/img/faces/kaci-baum-2.jpg').default} />
                         <span>Erik Johnson</span>
                       </a>
                     </div>
@@ -482,10 +373,8 @@ function SectionTestimonials() {
                     </span>
                     <div className="clearfix" />
                     <p className="card-description">
-                      &quot;Simulation of many-body quantum systems with neural
-                      networks, and the products are not burdened with
-                      non-essentials. Back to purity, back to simplicity. At
-                      best, it is self-explanatory.&quot;
+                      &quot;Simulation of many-body quantum systems with neural networks, and the products are not burdened with non-essentials. Back
+                      to purity, back to simplicity. At best, it is self-explanatory.&quot;
                     </p>
                   </CardBody>
                 </Card>
@@ -497,14 +386,7 @@ function SectionTestimonials() {
                   <CardBody>
                     <div className="author">
                       <a href="#pablo" onClick={(e) => e.preventDefault()}>
-                        <img
-                          alt="..."
-                          className="avatar img-raised mr-2"
-                          src={
-                            require("assets/img/faces/clem-onojeghuo-2.jpg")
-                              .default
-                          }
-                        />
+                        <img alt="..." className="avatar img-raised mr-2" src={require('assets/img/faces/clem-onojeghuo-2.jpg').default} />
                         <span>Erik Johnson</span>
                       </a>
                     </div>
@@ -513,10 +395,8 @@ function SectionTestimonials() {
                     </span>
                     <div className="clearfix" />
                     <p className="card-description">
-                      &quot;Machine learning for motion recognition and
-                      trajectory generation of human movement for rehabilitation
-                      with non-essentials. Back to purity, back to simplicity.
-                      At best, it is self-explanatory.&quot;
+                      &quot;Machine learning for motion recognition and trajectory generation of human movement for rehabilitation with
+                      non-essentials. Back to purity, back to simplicity. At best, it is self-explanatory.&quot;
                     </p>
                   </CardBody>
                 </Card>
@@ -526,14 +406,7 @@ function SectionTestimonials() {
                   <CardBody>
                     <div className="author">
                       <a href="#pablo" onClick={(e) => e.preventDefault()}>
-                        <img
-                          alt="..."
-                          className="avatar img-raised"
-                          src={
-                            require("assets/img/faces/ayo-ogunseinde-2.jpg")
-                              .default
-                          }
-                        />
+                        <img alt="..." className="avatar img-raised" src={require('assets/img/faces/ayo-ogunseinde-2.jpg').default} />
                         <span>Erik Johnson</span>
                       </a>
                     </div>
@@ -542,12 +415,9 @@ function SectionTestimonials() {
                     </span>
                     <div className="clearfix" />
                     <p className="card-description">
-                      &quot;Less, but better – because it concentrates on the
-                      essential aspects, and the products are not burdened with
-                      non-essentials. Back to purity, back to simplicity. At
-                      best, it is self-explanatory. The entire AI Grant project
-                      reminds me of a cross between a Thiel Fellowship and a
-                      Kaggle competition.&quot;
+                      &quot;Less, but better – because it concentrates on the essential aspects, and the products are not burdened with
+                      non-essentials. Back to purity, back to simplicity. At best, it is self-explanatory. The entire AI Grant project reminds me of a
+                      cross between a Thiel Fellowship and a Kaggle competition.&quot;
                     </p>
                   </CardBody>
                 </Card>

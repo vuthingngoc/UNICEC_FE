@@ -8,14 +8,14 @@
 }
 
 .react-tagsinput-tag {
-  transition: all .17s linear;
+  transition: all 0.17s linear;
   cursor: pointer;
   margin: 5px 3px 5px 0;
   position: relative;
-  padding: 4px 8px 3px .8em;
+  padding: 4px 8px 3px 0.8em;
   border-radius: 12px;
   color: #fff;
-  font-size: .75em;
+  font-size: 0.75em;
   font-weight: 500;
   display: inline-block;
   line-height: 1.5em;
@@ -29,10 +29,10 @@
 
 .react-tagsinput-tag a::before {
   font-family: 'nucleo-icons';
-  content: "\ea4f";
+  content: '\ea4f';
   padding: 0px 2px;
 }
-.react-tagsinput-tag a{
+.react-tagsinput-tag a {
   cursor: pointer;
   position: absolute;
   top: 3px;
@@ -40,8 +40,6 @@
   opacity: 0;
   background-color: transparent;
 }
-
-
 
 .react-tagsinput-input {
   background: transparent;
@@ -57,18 +55,18 @@
   width: 80px;
 }
 
-.react-tagsinput{
-  .react-tagsinput-tag{
+.react-tagsinput {
+  .react-tagsinput-tag {
     -webkit-transition: all 300ms ease 0s;
     -moz-transition: all 300ms ease 0s;
     -o-transition: all 300ms ease 0s;
     -ms-transition: all 300ms ease 0s;
     transition: all 300ms ease 0s;
 
-    &:hover{
+    &:hover {
       padding-right: 22px;
 
-      a{
+      a {
         opacity: 1;
         padding-right: 4px;
       }

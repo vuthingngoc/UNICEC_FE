@@ -1,18 +1,7 @@
-import React from "react";
+import React from 'react';
 
 // reactstrap components
-import {
-  Badge,
-  Button,
-  Card,
-  CardBody,
-  CardFooter,
-  CardTitle,
-  Container,
-  Row,
-  Col,
-  UncontrolledTooltip,
-} from "reactstrap";
+import { Badge, Button, Card, CardBody, CardFooter, CardTitle, Container, Row, Col, UncontrolledTooltip } from 'reactstrap';
 
 // core components
 
@@ -30,31 +19,17 @@ function SectionCards() {
               <Card className="card-blog">
                 <div className="card-image">
                   <a href="#pablo" onClick={(e) => e.preventDefault()}>
-                    <img
-                      alt="..."
-                      className="img"
-                      src={
-                        require("assets/img/sections/neill-kumar.jpg").default
-                      }
-                    />
+                    <img alt="..." className="img" src={require('assets/img/sections/neill-kumar.jpg').default} />
                   </a>
                 </div>
                 <CardBody className="text-center">
-                  <CardTitle tag="h4">
-                    We will create a great experience
-                  </CardTitle>
+                  <CardTitle tag="h4">We will create a great experience</CardTitle>
                   <div className="card-description">
-                    Cards are an interaction model that are spreading pretty
-                    widely, in fact. What all of these have in common is that
-                    they&apos;re pulling...
+                    Cards are an interaction model that are spreading pretty widely, in fact. What all of these have in common is that they&apos;re
+                    pulling...
                   </div>
                   <CardFooter>
-                    <Button
-                      className="btn-round"
-                      color="danger"
-                      href="#pablo"
-                      onClick={(e) => e.preventDefault()}
-                    >
+                    <Button className="btn-round" color="danger" href="#pablo" onClick={(e) => e.preventDefault()}>
                       View Article
                     </Button>
                   </CardFooter>
@@ -72,10 +47,8 @@ function SectionCards() {
                     </a>
                   </CardTitle>
                   <p className="card-description">
-                    Design makes an important contribution to the preservation
-                    of the environment. It conserves resources and minimises
-                    physical and visual pollution throughout the lifecycle of
-                    the product....
+                    Design makes an important contribution to the preservation of the environment. It conserves resources and minimises physical and
+                    visual pollution throughout the lifecycle of the product....
                   </p>
                   <CardFooter className="text-center">
                     <Button
@@ -91,12 +64,7 @@ function SectionCards() {
                     <UncontrolledTooltip delay={0} target="tooltip275070155">
                       Bookmark
                     </UncontrolledTooltip>
-                    <Button
-                      className="btn-neutral btn-round"
-                      color="default"
-                      href="#pablo"
-                      onClick={(e) => e.preventDefault()}
-                    >
+                    <Button className="btn-neutral btn-round" color="default" href="#pablo" onClick={(e) => e.preventDefault()}>
                       <i className="fa fa-newspaper-o mr-1" />
                       Read
                     </Button>
@@ -111,14 +79,9 @@ function SectionCards() {
                   </span>
                   <div className="clearfix" />
                   <p className="card-description">
-                    {'"'}It clarifies the product&apos;s structure. Better still, it
-                    can make the product clearly express its function by making
-                    use of the{" "}
-                    <a
-                      className="text-danger"
-                      href="#pablo"
-                      onClick={(e) => e.preventDefault()}
-                    >
+                    {'"'}It clarifies the product&apos;s structure. Better still, it can make the product clearly express its function by making use
+                    of the{' '}
+                    <a className="text-danger" href="#pablo" onClick={(e) => e.preventDefault()}>
                       @mike
                     </a>
                     {"'"}s intuition. At best, it is self-explanatory.{'"'}
@@ -130,34 +93,20 @@ function SectionCards() {
               <Card className="card-blog">
                 <div className="card-image">
                   <a href="#pablo" onClick={(e) => e.preventDefault()}>
-                    <img
-                      alt="..."
-                      className="img"
-                      src={
-                        require("assets/img/sections/anders-jilden.jpg").default
-                      }
-                    />
+                    <img alt="..." className="img" src={require('assets/img/sections/anders-jilden.jpg').default} />
                   </a>
                 </div>
                 <CardBody>
                   <CardTitle tag="h4">Good Design Is Aesthetic</CardTitle>
                   <div className="card-description">
-                    Cards are an interaction model that are spreading pretty
-                    widely, in fact. What all of these have in common is that
-                    they&apos;re pulling...
+                    Cards are an interaction model that are spreading pretty widely, in fact. What all of these have in common is that they&apos;re
+                    pulling...
                   </div>
                   <hr />
                   <CardFooter>
                     <div className="author">
                       <a href="#pablo" onClick={(e) => e.preventDefault()}>
-                        <img
-                          alt="..."
-                          className="avatar img-raised mr-2"
-                          src={
-                            require("assets/img/faces/ayo-ogunseinde-2.jpg")
-                              .default
-                          }
-                        />
+                        <img alt="..." className="avatar img-raised mr-2" src={require('assets/img/faces/ayo-ogunseinde-2.jpg').default} />
                         <span>Mike John</span>
                       </a>
                     </div>
@@ -170,30 +119,19 @@ function SectionCards() {
               <Card
                 data-background="image"
                 style={{
-                  backgroundImage:
-                    "url(" +
-                    require("assets/img/sections/rawpixel-com.jpg").default +
-                    ")",
+                  backgroundImage: 'url(' + require('assets/img/sections/rawpixel-com.jpg').default + ')',
                 }}
               >
                 <CardBody>
                   <a href="#pablo" onClick={(e) => e.preventDefault()}>
-                    <CardTitle tag="h3">
-                      Ten Principles of {"“Good Design”"}
-                    </CardTitle>
+                    <CardTitle tag="h3">Ten Principles of {'“Good Design”'}</CardTitle>
                   </a>
                   <p className="card-description">
-                    Don&apos;t be scared of the truth because we need to restart the
-                    human foundation in truth And I love you like Kanye loves
-                    Kanye I love Rick Owens{"’ "}bed design but the back is...
+                    Don&apos;t be scared of the truth because we need to restart the human foundation in truth And I love you like Kanye loves Kanye I
+                    love Rick Owens{'’ '}bed design but the back is...
                   </p>
                   <CardFooter>
-                    <Button
-                      className="btn-round"
-                      color="success"
-                      href="#pablo"
-                      onClick={(e) => e.preventDefault()}
-                    >
+                    <Button className="btn-round" color="success" href="#pablo" onClick={(e) => e.preventDefault()}>
                       <i className="fa fa-file-pdf-o mr-1" />
                       Download PDF
                     </Button>
@@ -206,14 +144,7 @@ function SectionCards() {
                 <CardBody>
                   <div className="author">
                     <a href="#pablo" onClick={(e) => e.preventDefault()}>
-                      <img
-                        alt="..."
-                        className="avatar img-raised mr-2"
-                        src={
-                          require("assets/img/faces/erik-lucatero-2.jpg")
-                            .default
-                        }
-                      />
+                      <img alt="..." className="avatar img-raised mr-2" src={require('assets/img/faces/erik-lucatero-2.jpg').default} />
                       <span>Erik Johnson</span>
                     </a>
                   </div>
@@ -222,10 +153,8 @@ function SectionCards() {
                   </span>
                   <div className="clearfix" />
                   <p className="card-description">
-                    {'"'}Less, but better – because it concentrates on the
-                    essential aspects, and the products are not burdened with
-                    non-essentials. Back to purity, back to simplicity. At best,
-                    it is self-explanatory.{'"'}
+                    {'"'}Less, but better – because it concentrates on the essential aspects, and the products are not burdened with non-essentials.
+                    Back to purity, back to simplicity. At best, it is self-explanatory.{'"'}
                   </p>
                 </CardBody>
               </Card>
@@ -237,60 +166,37 @@ function SectionCards() {
                   <div className="clearfix" />
                   <div className="author">
                     <a href="#pablo" onClick={(e) => e.preventDefault()}>
-                      <img
-                        alt="..."
-                        className="avatar-big img-raised border-gray"
-                        src={
-                          require("assets/img/faces/kaci-baum-2.jpg").default
-                        }
-                      />
+                      <img alt="..." className="avatar-big img-raised border-gray" src={require('assets/img/faces/kaci-baum-2.jpg').default} />
                     </a>
                     <CardTitle tag="h5">Kaci Baum</CardTitle>
                     <p className="category">
-                      <a
-                        className="text-danger"
-                        href="#pablo"
-                        onClick={(e) => e.preventDefault()}
-                      >
+                      <a className="text-danger" href="#pablo" onClick={(e) => e.preventDefault()}>
                         @kacibaum
                       </a>
                     </p>
                   </div>
                   <p className="card-description">
-                    {'"'}Less, but better – because it concentrates on the
-                    essential aspects, and the products are not burdened with
-                    non-essentials.{'"'}
+                    {'"'}Less, but better – because it concentrates on the essential aspects, and the products are not burdened with non-essentials.
+                    {'"'}
                   </p>
                 </CardBody>
               </Card>
               <Card>
                 <div className="card-image">
                   <a href="#pablo" onClick={(e) => e.preventDefault()}>
-                    <img
-                      alt="..."
-                      className="img"
-                      src={
-                        require("assets/img/sections/david-marcu.jpg").default
-                      }
-                    />
+                    <img alt="..." className="img" src={require('assets/img/sections/david-marcu.jpg').default} />
                   </a>
                 </div>
                 <CardBody>
                   <Badge color="warning" pill>
                     Travel
                   </Badge>
-                  <CardTitle tag="h5">
-                    Currently at the San Francisco Museum of Modern Art
-                  </CardTitle>
+                  <CardTitle tag="h5">Currently at the San Francisco Museum of Modern Art</CardTitle>
                   <hr />
                   <CardFooter>
                     <div className="author">
                       <a href="#pablo" onClick={(e) => e.preventDefault()}>
-                        <img
-                          alt="..."
-                          className="avatar img-raised mr-2"
-                          src={require("assets/img/rihanna.jpg").default}
-                        />
+                        <img alt="..." className="avatar img-raised mr-2" src={require('assets/img/rihanna.jpg').default} />
                         <span>Lord Alex</span>
                       </a>
                     </div>
@@ -307,11 +213,7 @@ function SectionCards() {
           <Row className="coloured-cards">
             <Col md="4" sm="6">
               <div className="card-big-shadow">
-                <Card
-                  className="card-just-text"
-                  data-color="blue"
-                  data-radius="none"
-                >
+                <Card className="card-just-text" data-color="blue" data-radius="none">
                   <CardBody>
                     <h6 className="card-category">Best cards</h6>
                     <CardTitle tag="h4">
@@ -320,9 +222,8 @@ function SectionCards() {
                       </a>
                     </CardTitle>
                     <p className="card-description">
-                      What all of these have in common is that they&apos;re pulling
-                      information out of the app or the service and making it
-                      relevant to the moment.
+                      What all of these have in common is that they&apos;re pulling information out of the app or the service and making it relevant
+                      to the moment.
                     </p>
                   </CardBody>
                 </Card>
@@ -331,11 +232,7 @@ function SectionCards() {
             </Col>
             <Col md="4" sm="6">
               <div className="card-big-shadow">
-                <Card
-                  className="card-just-text"
-                  data-color="green"
-                  data-radius="none"
-                >
+                <Card className="card-just-text" data-color="green" data-radius="none">
                   <CardBody>
                     <h6 className="card-category">Best cards</h6>
                     <CardTitle tag="h4">
@@ -344,9 +241,8 @@ function SectionCards() {
                       </a>
                     </CardTitle>
                     <p className="card-description">
-                      What all of these have in common is that they&apos;re pulling
-                      information out of the app or the service and making it
-                      relevant to the moment.
+                      What all of these have in common is that they&apos;re pulling information out of the app or the service and making it relevant
+                      to the moment.
                     </p>
                   </CardBody>
                 </Card>
@@ -355,11 +251,7 @@ function SectionCards() {
             </Col>
             <Col md="4" sm="6">
               <div className="card-big-shadow">
-                <Card
-                  className="card-just-text"
-                  data-color="yellow"
-                  data-radius="none"
-                >
+                <Card className="card-just-text" data-color="yellow" data-radius="none">
                   <CardBody>
                     <h6 className="card-category">Best cards</h6>
                     <CardTitle tag="h4">
@@ -368,9 +260,8 @@ function SectionCards() {
                       </a>
                     </CardTitle>
                     <p className="card-description">
-                      What all of these have in common is that they&apos;re pulling
-                      information out of the app or the service and making it
-                      relevant to the moment.
+                      What all of these have in common is that they&apos;re pulling information out of the app or the service and making it relevant
+                      to the moment.
                     </p>
                   </CardBody>
                 </Card>
@@ -379,11 +270,7 @@ function SectionCards() {
             </Col>
             <Col md="4" sm="6">
               <div className="card-big-shadow">
-                <Card
-                  className="card-just-text"
-                  data-color="brown"
-                  data-radius="none"
-                >
+                <Card className="card-just-text" data-color="brown" data-radius="none">
                   <CardBody>
                     <h6 className="card-category">Best cards</h6>
                     <CardTitle tag="h4">
@@ -392,9 +279,8 @@ function SectionCards() {
                       </a>
                     </CardTitle>
                     <p className="card-description">
-                      What all of these have in common is that they&apos;re pulling
-                      information out of the app or the service and making it
-                      relevant to the moment.
+                      What all of these have in common is that they&apos;re pulling information out of the app or the service and making it relevant
+                      to the moment.
                     </p>
                   </CardBody>
                 </Card>
@@ -403,11 +289,7 @@ function SectionCards() {
             </Col>
             <Col md="4" sm="6">
               <div className="card-big-shadow">
-                <Card
-                  className="card-just-text"
-                  data-color="purple"
-                  data-radius="none"
-                >
+                <Card className="card-just-text" data-color="purple" data-radius="none">
                   <CardBody>
                     <h6 className="card-category">Best cards</h6>
                     <CardTitle tag="h4">
@@ -416,9 +298,8 @@ function SectionCards() {
                       </a>
                     </CardTitle>
                     <p className="card-description">
-                      What all of these have in common is that they&apos;re pulling
-                      information out of the app or the service and making it
-                      relevant to the moment.
+                      What all of these have in common is that they&apos;re pulling information out of the app or the service and making it relevant
+                      to the moment.
                     </p>
                   </CardBody>
                 </Card>
@@ -427,11 +308,7 @@ function SectionCards() {
             </Col>
             <Col md="4" sm="6">
               <div className="card-big-shadow">
-                <Card
-                  className="card-just-text"
-                  data-color="orange"
-                  data-radius="none"
-                >
+                <Card className="card-just-text" data-color="orange" data-radius="none">
                   <CardBody>
                     <h6 className="card-category">Best cards</h6>
                     <CardTitle tag="h4">
@@ -440,9 +317,8 @@ function SectionCards() {
                       </a>
                     </CardTitle>
                     <p className="card-description">
-                      What all of these have in common is that they&apos;re pulling
-                      information out of the app or the service and making it
-                      relevant to the moment.
+                      What all of these have in common is that they&apos;re pulling information out of the app or the service and making it relevant
+                      to the moment.
                     </p>
                   </CardBody>
                 </Card>
@@ -479,12 +355,7 @@ function SectionCards() {
                       Twitter API
                     </li>
                   </ul>
-                  <Button
-                    className="btn-round card-link"
-                    color="success"
-                    href="#pablo"
-                    onClick={(e) => e.preventDefault()}
-                  >
+                  <Button className="btn-round card-link" color="success" href="#pablo" onClick={(e) => e.preventDefault()}>
                     Get Started
                   </Button>
                 </CardBody>
@@ -499,17 +370,9 @@ function SectionCards() {
                     </span>
                   </div>
                   <CardTitle tag="h3">$249</CardTitle>
-                  <p className="card-description">
-                    This is good if your company size is between 100 and 299
-                    employees.
-                  </p>
+                  <p className="card-description">This is good if your company size is between 100 and 299 employees.</p>
                   <CardFooter>
-                    <Button
-                      className="btn-neutral btn-round"
-                      color="default"
-                      href="#pablo"
-                      onClick={(e) => e.preventDefault()}
-                    >
+                    <Button className="btn-neutral btn-round" color="default" href="#pablo" onClick={(e) => e.preventDefault()}>
                       Choose Plan
                     </Button>
                   </CardFooter>
@@ -535,12 +398,7 @@ function SectionCards() {
                       <b>Unlimited</b> Messages
                     </li>
                   </ul>
-                  <Button
-                    className="btn-round"
-                    color="warning"
-                    href="#pablo"
-                    onClick={(e) => e.preventDefault()}
-                  >
+                  <Button className="btn-round" color="warning" href="#pablo" onClick={(e) => e.preventDefault()}>
                     Get Started
                   </Button>
                 </CardBody>
@@ -551,10 +409,7 @@ function SectionCards() {
                 className="card-pricing"
                 data-background="image"
                 style={{
-                  backgroundImage:
-                    "url(" +
-                    require("assets/img/sections/mika-matin.jpg").default +
-                    ")",
+                  backgroundImage: 'url(' + require('assets/img/sections/mika-matin.jpg').default + ')',
                 }}
               >
                 <CardBody>
@@ -563,16 +418,9 @@ function SectionCards() {
                     <i className="nc-icon nc-user-run" />
                   </div>
                   <CardTitle tag="h3">$29</CardTitle>
-                  <p className="card-description">
-                    This is good if you are a freelancer of photographer.
-                  </p>
+                  <p className="card-description">This is good if you are a freelancer of photographer.</p>
                   <CardFooter>
-                    <Button
-                      className="btn-round card-link"
-                      color="info"
-                      href="#pablo"
-                      onClick={(e) => e.preventDefault()}
-                    >
+                    <Button className="btn-round card-link" color="info" href="#pablo" onClick={(e) => e.preventDefault()}>
                       Choose Plan
                     </Button>
                   </CardFooter>
@@ -586,10 +434,7 @@ function SectionCards() {
               <Card
                 data-background="image"
                 style={{
-                  backgroundImage:
-                    "url(" +
-                    require("assets/img/sections/uriel-soberanes.jpg").default +
-                    ")",
+                  backgroundImage: 'url(' + require('assets/img/sections/uriel-soberanes.jpg').default + ')',
                 }}
               >
                 <CardBody>
@@ -598,26 +443,16 @@ function SectionCards() {
                     Technology
                   </h6>
                   <a href="#pablo" onClick={(e) => e.preventDefault()}>
-                    <CardTitle tag="h3">
-                      The aesthetic quality of a product
-                    </CardTitle>
+                    <CardTitle tag="h3">The aesthetic quality of a product</CardTitle>
                   </a>
                   <p className="card-description">
-                    It clarifies the product{"’"}s structure. Better still, it
-                    can make the product clearly express its function by making
-                    use of the user{"’"}s intuition.
+                    It clarifies the product{'’'}s structure. Better still, it can make the product clearly express its function by making use of the
+                    user{'’'}s intuition.
                   </p>
                   <CardFooter>
                     <div className="author">
                       <a href="#pablo" onClick={(e) => e.preventDefault()}>
-                        <img
-                          alt="..."
-                          className="avatar img-raised mr-2"
-                          src={
-                            require("assets/img/faces/ayo-ogunseinde-2.jpg")
-                              .default
-                          }
-                        />
+                        <img alt="..." className="avatar img-raised mr-2" src={require('assets/img/faces/ayo-ogunseinde-2.jpg').default} />
                         <span>Ayo Michael</span>
                       </a>
                     </div>
@@ -629,10 +464,7 @@ function SectionCards() {
               <Card
                 data-background="image"
                 style={{
-                  backgroundImage:
-                    "url(" +
-                    require("assets/img/sections/david-marcu.jpg").default +
-                    ")",
+                  backgroundImage: 'url(' + require('assets/img/sections/david-marcu.jpg').default + ')',
                 }}
               >
                 <CardBody>
@@ -640,17 +472,9 @@ function SectionCards() {
                   <div className="card-icon">
                     <i className="nc-icon nc-spaceship" />
                   </div>
-                  <p className="card-description">
-                    Unlike fashionable design, it lasts many years – even in
-                    today&apos;s throwaway society.
-                  </p>
+                  <p className="card-description">Unlike fashionable design, it lasts many years – even in today&apos;s throwaway society.</p>
                   <CardFooter>
-                    <Button
-                      className="btn-round card-link"
-                      color="danger"
-                      href="#pablo"
-                      onClick={(e) => e.preventDefault()}
-                    >
+                    <Button className="btn-round card-link" color="danger" href="#pablo" onClick={(e) => e.preventDefault()}>
                       <i className="fa fa-book mr-1" />
                       Read Article
                     </Button>
@@ -662,10 +486,7 @@ function SectionCards() {
               <Card
                 data-background="image"
                 style={{
-                  backgroundImage:
-                    "url(" +
-                    require("assets/img/sections/leonard-cotte.jpg").default +
-                    ")",
+                  backgroundImage: 'url(' + require('assets/img/sections/leonard-cotte.jpg').default + ')',
                 }}
               >
                 <CardBody>
@@ -673,31 +494,17 @@ function SectionCards() {
                     Web Design
                   </Badge>
                   <a href="#pablo" onClick={(e) => e.preventDefault()}>
-                    <CardTitle tag="h3">
-                      San Francisco Museum of Modern Art
-                    </CardTitle>
+                    <CardTitle tag="h3">San Francisco Museum of Modern Art</CardTitle>
                   </a>
                   <p className="card-description">
-                    Nothing must be arbitrary or left to chance. Care and
-                    accuracy in the design process show respect towards the
-                    consumer.
+                    Nothing must be arbitrary or left to chance. Care and accuracy in the design process show respect towards the consumer.
                   </p>
                   <CardFooter>
-                    <Button
-                      className="btn-neutral"
-                      color="link"
-                      href="#pablo"
-                      onClick={(e) => e.preventDefault()}
-                    >
+                    <Button className="btn-neutral" color="link" href="#pablo" onClick={(e) => e.preventDefault()}>
                       <i className="fa fa-book mr-1" />
                       Read
                     </Button>
-                    <Button
-                      className="btn-neutral"
-                      color="link"
-                      href="#pablo"
-                      onClick={(e) => e.preventDefault()}
-                    >
+                    <Button className="btn-neutral" color="link" href="#pablo" onClick={(e) => e.preventDefault()}>
                       <i className="fa fa-clock-o mr-1" />
                       Bookmark
                     </Button>
@@ -713,30 +520,18 @@ function SectionCards() {
                 <div
                   className="card-cover"
                   style={{
-                    backgroundImage:
-                      "url(" +
-                      require("assets/img/sections/angelo-pantazis.jpg")
-                        .default +
-                      ")",
+                    backgroundImage: 'url(' + require('assets/img/sections/angelo-pantazis.jpg').default + ')',
                   }}
                 />
                 <div className="card-avatar border-white">
                   <a href="#pablo" onClick={(e) => e.preventDefault()}>
-                    <img
-                      alt="..."
-                      src={
-                        require("assets/img/faces/ayo-ogunseinde-2.jpg").default
-                      }
-                    />
+                    <img alt="..." src={require('assets/img/faces/ayo-ogunseinde-2.jpg').default} />
                   </a>
                 </div>
                 <CardBody>
                   <CardTitle tag="h4">Ayo Michael</CardTitle>
                   <h6 className="card-category">Designer</h6>
-                  <p className="card-description">
-                    Hey there! Welcome to your user card. As you can see, it is
-                    already looking great.
-                  </p>
+                  <p className="card-description">Hey there! Welcome to your user card. As you can see, it is already looking great.</p>
                 </CardBody>
               </Card>
               {/* end card */}
@@ -746,48 +541,25 @@ function SectionCards() {
                 <div
                   className="card-cover"
                   style={{
-                    backgroundImage:
-                      "url(" +
-                      require("assets/img/sections/pavel-kosov.jpg").default +
-                      ")",
+                    backgroundImage: 'url(' + require('assets/img/sections/pavel-kosov.jpg').default + ')',
                   }}
                 />
                 <div className="card-avatar border-white">
                   <a href="#pablo" onClick={(e) => e.preventDefault()}>
-                    <img
-                      alt="..."
-                      src={
-                        require("assets/img/faces/joe-gardner-2.jpg").default
-                      }
-                    />
+                    <img alt="..." src={require('assets/img/faces/joe-gardner-2.jpg').default} />
                   </a>
                 </div>
                 <CardBody>
                   <CardTitle tag="h4">Audrey Hepburn</CardTitle>
                   <h6 className="card-category">Developer</h6>
                   <CardFooter className="text-center">
-                    <Button
-                      className="btn-just-icon mr-1"
-                      color="twitter"
-                      href="#pablo"
-                      onClick={(e) => e.preventDefault()}
-                    >
+                    <Button className="btn-just-icon mr-1" color="twitter" href="#pablo" onClick={(e) => e.preventDefault()}>
                       <i className="fa fa-twitter" />
                     </Button>
-                    <Button
-                      className="btn-just-icon mr-1"
-                      color="dribbble"
-                      href="#pablo"
-                      onClick={(e) => e.preventDefault()}
-                    >
+                    <Button className="btn-just-icon mr-1" color="dribbble" href="#pablo" onClick={(e) => e.preventDefault()}>
                       <i className="fa fa-dribbble" />
                     </Button>
-                    <Button
-                      className="btn-just-icon mr-1"
-                      color="facebook"
-                      href="#pablo"
-                      onClick={(e) => e.preventDefault()}
-                    >
+                    <Button className="btn-just-icon mr-1" color="facebook" href="#pablo" onClick={(e) => e.preventDefault()}>
                       <i className="fa fa-facebook-square" />
                     </Button>
                   </CardFooter>
@@ -799,45 +571,21 @@ function SectionCards() {
               <Card className="card-profile">
                 <div className="card-avatar border-white">
                   <a href="#pablo" onClick={(e) => e.preventDefault()}>
-                    <img
-                      alt="..."
-                      src={require("assets/img/faces/kaci-baum-2.jpg").default}
-                    />
+                    <img alt="..." src={require('assets/img/faces/kaci-baum-2.jpg').default} />
                   </a>
                 </div>
                 <CardBody>
                   <CardTitle tag="h4">Laci Thor</CardTitle>
                   <h6 className="card-category">Marketing Specialist</h6>
-                  <p className="card-description">
-                    British actress and humanitarian recognised as a film and
-                    fashion icon.
-                  </p>
+                  <p className="card-description">British actress and humanitarian recognised as a film and fashion icon.</p>
                   <CardFooter className="text-center">
-                    <Button
-                      className="btn-just-icon mr-1"
-                      color="default"
-                      href="#pablo"
-                      onClick={(e) => e.preventDefault()}
-                      outline
-                    >
+                    <Button className="btn-just-icon mr-1" color="default" href="#pablo" onClick={(e) => e.preventDefault()} outline>
                       <i className="fa fa-twitter" />
                     </Button>
-                    <Button
-                      className="btn-just-icon mr-1"
-                      color="default"
-                      href="#pablo"
-                      onClick={(e) => e.preventDefault()}
-                      outline
-                    >
+                    <Button className="btn-just-icon mr-1" color="default" href="#pablo" onClick={(e) => e.preventDefault()} outline>
                       <i className="fa fa-github-alt" />
                     </Button>
-                    <Button
-                      className="btn-just-icon mr-1"
-                      color="default"
-                      href="#pablo"
-                      onClick={(e) => e.preventDefault()}
-                      outline
-                    >
+                    <Button className="btn-just-icon mr-1" color="default" href="#pablo" onClick={(e) => e.preventDefault()} outline>
                       <i className="fa fa-envelope" />
                     </Button>
                   </CardFooter>
@@ -849,29 +597,17 @@ function SectionCards() {
               <Card className="card-profile">
                 <div className="card-avatar border-white">
                   <a href="#pablo" onClick={(e) => e.preventDefault()}>
-                    <img
-                      alt="..."
-                      src={
-                        require("assets/img/faces/erik-lucatero-2.jpg").default
-                      }
-                    />
+                    <img alt="..." src={require('assets/img/faces/erik-lucatero-2.jpg').default} />
                   </a>
                 </div>
                 <CardBody>
                   <CardTitle tag="h4">Joe Gardner</CardTitle>
                   <h6 className="card-category">Artist and Music Composer</h6>
                   <p className="card-description">
-                    One of the co-founders. Joe drives the technical strategy of
-                    the platform, customer support and brand.
+                    One of the co-founders. Joe drives the technical strategy of the platform, customer support and brand.
                   </p>
                   <CardFooter className="text-center">
-                    <Button
-                      className="btn-icon btn-border btn-round"
-                      color="default"
-                      href="#pablo"
-                      onClick={(e) => e.preventDefault()}
-                      outline
-                    >
+                    <Button className="btn-icon btn-border btn-round" color="default" href="#pablo" onClick={(e) => e.preventDefault()} outline>
                       <i className="fa fa-check mr-1" />
                       Following
                     </Button>
@@ -889,28 +625,19 @@ function SectionCards() {
               <Card className="card-profile card-plain">
                 <div className="card-avatar border-white">
                   <a href="#pablo" onClick={(e) => e.preventDefault()}>
-                    <img
-                      alt="..."
-                      src={require("assets/img/placeholder.jpg").default}
-                    />
+                    <img alt="..." src={require('assets/img/placeholder.jpg').default} />
                   </a>
                 </div>
                 <CardBody>
                   <CardTitle tag="h4">Anonymous Tim</CardTitle>
                   <h6 className="card-category">A private guy</h6>
                   <p className="card-description">
-                    Hey there! Welcome to your user card. As you can see, it is
-                    already looking great. But if you want to tell us more about
-                    yourself by adding details in the settings page.
+                    Hey there! Welcome to your user card. As you can see, it is already looking great. But if you want to tell us more about yourself
+                    by adding details in the settings page.
                   </p>
                 </CardBody>
                 <CardFooter className="text-center">
-                  <Button
-                    className="btn-icon btn-rotate btn-round"
-                    color="default"
-                    href="#pablo"
-                    onClick={(e) => e.preventDefault()}
-                  >
+                  <Button className="btn-icon btn-rotate btn-round" color="default" href="#pablo" onClick={(e) => e.preventDefault()}>
                     <i className="fa fa-cog mr-1" />
                     Settings
                   </Button>
@@ -922,31 +649,19 @@ function SectionCards() {
               <Card className="card-profile card-plain">
                 <div className="card-avatar border-white">
                   <a href="#pablo" onClick={(e) => e.preventDefault()}>
-                    <img
-                      alt="..."
-                      src={
-                        require("assets/img/faces/joe-gardner-2.jpg").default
-                      }
-                    />
+                    <img alt="..." src={require('assets/img/faces/joe-gardner-2.jpg').default} />
                   </a>
                 </div>
                 <CardBody>
                   <CardTitle tag="h4">Joe Gardner</CardTitle>
                   <h6 className="card-category">Artist and Music Composer</h6>
                   <p className="card-description">
-                    Joe Garnder is one of the co-founders and drives the
-                    technical strategy of the platform, customer support and
-                    brand. Talk with Joe only interesting topics.
+                    Joe Garnder is one of the co-founders and drives the technical strategy of the platform, customer support and brand. Talk with Joe
+                    only interesting topics.
                   </p>
                 </CardBody>
                 <CardFooter className="text-center">
-                  <Button
-                    className="btn-icon btn-border btn-round"
-                    color="default"
-                    href="#pablo"
-                    onClick={(e) => e.preventDefault()}
-                    outline
-                  >
+                  <Button className="btn-icon btn-border btn-round" color="default" href="#pablo" onClick={(e) => e.preventDefault()} outline>
                     <i className="fa fa-check mr-1" />
                     Following
                   </Button>
@@ -964,13 +679,7 @@ function SectionCards() {
               <Card className="card-plain">
                 <div className="card-image">
                   <a href="#pablo" onClick={(e) => e.preventDefault()}>
-                    <img
-                      alt="..."
-                      className="img-rounded img-responsive"
-                      src={
-                        require("assets/img/sections/ilya-yakover.jpg").default
-                      }
-                    />
+                    <img alt="..." className="img-rounded img-responsive" src={require('assets/img/sections/ilya-yakover.jpg').default} />
                   </a>
                   <CardBody>
                     <a href="#pablo" onClick={(e) => e.preventDefault()}>
@@ -978,10 +687,7 @@ function SectionCards() {
                         <img
                           alt="..."
                           className="img-circle img-no-padding img-responsive img-raised mr-2"
-                          src={
-                            require("assets/img/faces/clem-onojeghuo-3.jpg")
-                              .default
-                          }
+                          src={require('assets/img/faces/clem-onojeghuo-3.jpg').default}
                         />
                       </div>
                       <span className="name">Eric Faker</span>
@@ -994,13 +700,7 @@ function SectionCards() {
             <Col md="4" sm="6">
               <div className="card-image text-center">
                 <a href="#pablo" onClick={(e) => e.preventDefault()}>
-                  <img
-                    alt="..."
-                    className="img-rounded img-responsive"
-                    src={
-                      require("assets/img/sections/rawpixel-coms.jpg").default
-                    }
-                  />
+                  <img alt="..." className="img-rounded img-responsive" src={require('assets/img/sections/rawpixel-coms.jpg').default} />
                 </a>
                 <CardBody className="details-center">
                   <a href="#pablo" onClick={(e) => e.preventDefault()}>
@@ -1008,10 +708,7 @@ function SectionCards() {
                       <img
                         alt="..."
                         className="img-circle img-no-padding img-responsive"
-                        src={
-                          require("assets/img/faces/ayo-ogunseinde-2.jpg")
-                            .default
-                        }
+                        src={require('assets/img/faces/ayo-ogunseinde-2.jpg').default}
                       />
                       <div className="text">
                         <span className="name">Tom Hanks</span>
@@ -1025,13 +722,7 @@ function SectionCards() {
             <Col md="3">
               <div className="card-image text-center">
                 <a href="#pablo" onClick={(e) => e.preventDefault()}>
-                  <img
-                    alt="..."
-                    className="img-rounded img-responsive"
-                    src={
-                      require("assets/img/sections/joshua-stannard.jpg").default
-                    }
-                  />
+                  <img alt="..." className="img-rounded img-responsive" src={require('assets/img/sections/joshua-stannard.jpg').default} />
                 </a>
                 <CardBody className="details-center">
                   <a href="#pablo" onClick={(e) => e.preventDefault()}>
@@ -1039,10 +730,7 @@ function SectionCards() {
                       <img
                         alt="..."
                         className="img-circle img-no-padding img-responsive"
-                        src={
-                          require("assets/img/faces/erik-lucatero-2.jpg")
-                            .default
-                        }
+                        src={require('assets/img/faces/erik-lucatero-2.jpg').default}
                       />
                       <div className="text">
                         <span className="name">Sunset Bling</span>
@@ -1062,11 +750,7 @@ function SectionCards() {
               <Card className="card-product card-plain">
                 <div className="card-image">
                   <a href="#pablo" onClick={(e) => e.preventDefault()}>
-                    <img
-                      alt="..."
-                      className="img-rounded img-responsive"
-                      src={require("assets/img/balmain-1.jpg").default}
-                    />
+                    <img alt="..." className="img-rounded img-responsive" src={require('assets/img/balmain-1.jpg').default} />
                   </a>
                   <CardBody>
                     <div className="card-description">
@@ -1084,11 +768,7 @@ function SectionCards() {
               <Card className="card-product card-plain">
                 <div className="card-image">
                   <a href="#pablo" onClick={(e) => e.preventDefault()}>
-                    <img
-                      alt="..."
-                      className="img-rounded img-responsive"
-                      src={require("assets/img/balmain-2.jpg").default}
-                    />
+                    <img alt="..." className="img-rounded img-responsive" src={require('assets/img/balmain-2.jpg').default} />
                   </a>
                   <CardBody>
                     <div className="card-description">
@@ -1111,11 +791,7 @@ function SectionCards() {
               <Card className="card-product card-plain">
                 <div className="card-image">
                   <a href="#pablo" onClick={(e) => e.preventDefault()}>
-                    <img
-                      alt="..."
-                      className="img-rounded img-responsive"
-                      src={require("assets/img/balmain-3.jpg").default}
-                    />
+                    <img alt="..." className="img-rounded img-responsive" src={require('assets/img/balmain-3.jpg').default} />
                   </a>
                   <CardBody>
                     <div className="card-description">

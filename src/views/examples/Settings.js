@@ -1,29 +1,20 @@
-import React from "react";
+import React from 'react';
 // reactstrap components
-import {
-  Button,
-  FormGroup,
-  Form,
-  Input,
-  Container,
-  Row,
-  Col,
-  CustomInput,
-} from "reactstrap";
+import { Button, FormGroup, Form, Input, Container, Row, Col, CustomInput } from 'reactstrap';
 
 // core components
-import ColorNavbar from "components/Navbars/ColorNavbar.js";
-import SettingsHeader from "components/Headers/SettingsHeader.js";
-import FooterWhite from "components/Footers/FooterWhite.js";
+import ColorNavbar from 'components/Navbars/ColorNavbar.js';
+import SettingsHeader from 'components/Headers/SettingsHeader.js';
+import FooterWhite from 'components/Footers/FooterWhite.js';
 
 function Settings() {
-  document.documentElement.classList.remove("nav-open");
+  document.documentElement.classList.remove('nav-open');
   React.useEffect(() => {
-    document.body.classList.add("settings-page");
+    document.body.classList.add('settings-page');
     window.scrollTo(0, 0);
     document.body.scrollTop = 0;
     return function cleanup() {
-      document.body.classList.remove("settings-page");
+      document.body.classList.remove('settings-page');
     };
   });
   return (
@@ -35,25 +26,13 @@ function Settings() {
           <Container>
             <Row>
               <div className="profile-picture">
-                <div
-                  className="fileinput fileinput-new"
-                  data-provides="fileinput"
-                >
+                <div className="fileinput fileinput-new" data-provides="fileinput">
                   <div className="fileinput-new img-no-padding">
-                    <img
-                      alt="..."
-                      src={
-                        require("assets/img/faces/clem-onojeghuo-2.jpg").default
-                      }
-                    />
+                    <img alt="..." src={require('assets/img/faces/clem-onojeghuo-2.jpg').default} />
                   </div>
                   <div className="fileinput-preview fileinput-exists img-no-padding" />
                   <div>
-                    <Button
-                      className="btn-file btn-round"
-                      color="default"
-                      outline
-                    >
+                    <Button className="btn-file btn-round" color="default" outline>
                       <span className="fileinput-new">Change Photo</span>
                       <span className="fileinput-exists">Change</span>
                       <input name="..." type="file" />
@@ -80,31 +59,19 @@ function Settings() {
                     <Col md="6" sm="6">
                       <FormGroup>
                         <label>First Name</label>
-                        <Input
-                          className="border-input"
-                          placeholder="First Name"
-                          type="text"
-                        />
+                        <Input className="border-input" placeholder="First Name" type="text" />
                       </FormGroup>
                     </Col>
                     <Col md="6" sm="6">
                       <FormGroup>
                         <label>Last Email</label>
-                        <Input
-                          className="border-input"
-                          placeholder="Last Name"
-                          type="text"
-                        />
+                        <Input className="border-input" placeholder="Last Name" type="text" />
                       </FormGroup>
                     </Col>
                   </Row>
                   <FormGroup>
                     <label>Job Title</label>
-                    <Input
-                      className="border-input"
-                      placeholder="Job Title"
-                      type="text"
-                    />
+                    <Input className="border-input" placeholder="Job Title" type="text" />
                   </FormGroup>
                   <FormGroup>
                     <label>Description</label>
@@ -117,10 +84,7 @@ function Settings() {
                     />
                     <h5>
                       <small>
-                        <span
-                          className="pull-right"
-                          id="textarea-limited-message"
-                        >
+                        <span className="pull-right" id="textarea-limited-message">
                           150 characters left
                         </span>
                       </small>
@@ -129,42 +93,20 @@ function Settings() {
                   <label>Notifications</label>
                   <ul className="notifications">
                     <li className="notification-item d-flex justify-content-between align-items-center">
-                      Updates regarding platform changes{" "}
-                      <CustomInput
-                        type="switch"
-                        defaultChecked
-                        id="exampleCustomSwitch-1"
-                        name="customSwitch-1"
-                        className="custom-switch-info"
-                      />
+                      Updates regarding platform changes{' '}
+                      <CustomInput type="switch" defaultChecked id="exampleCustomSwitch-1" name="customSwitch-1" className="custom-switch-info" />
                     </li>
                     <li className="notification-item d-flex justify-content-between align-items-center">
-                      Updates regarding product changes{" "}
-                      <CustomInput
-                        type="switch"
-                        defaultChecked
-                        id="exampleCustomSwitch-2"
-                        name="customSwitch-2"
-                        className="custom-switch-info"
-                      />
+                      Updates regarding product changes{' '}
+                      <CustomInput type="switch" defaultChecked id="exampleCustomSwitch-2" name="customSwitch-2" className="custom-switch-info" />
                     </li>
                     <li className="notification-item d-flex justify-content-between align-items-center">
-                      Weekly newsletter{" "}
-                      <CustomInput
-                        type="switch"
-                        defaultChecked
-                        id="exampleCustomSwitch-3"
-                        name="customSwitch-3"
-                        className="custom-switch-info"
-                      />
+                      Weekly newsletter{' '}
+                      <CustomInput type="switch" defaultChecked id="exampleCustomSwitch-3" name="customSwitch-3" className="custom-switch-info" />
                     </li>
                   </ul>
                   <div className="text-center">
-                    <Button
-                      className="btn-wd btn-round"
-                      color="info"
-                      type="submit"
-                    >
+                    <Button className="btn-wd btn-round" color="info" type="submit">
                       Save
                     </Button>
                   </div>

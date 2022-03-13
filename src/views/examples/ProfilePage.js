@@ -1,28 +1,15 @@
-import React from "react";
+import React from 'react';
 
 // reactstrap components
-import {
-  Button,
-  Label,
-  FormGroup,
-  Input,
-  NavItem,
-  NavLink,
-  Nav,
-  TabContent,
-  TabPane,
-  Container,
-  Row,
-  Col,
-} from "reactstrap";
+import { Button, Label, FormGroup, Input, NavItem, NavLink, Nav, TabContent, TabPane, Container, Row, Col } from 'reactstrap';
 
 // core components
-import ColorNavbar from "components/Navbars/ColorNavbar.js";
-import ProfilePageHeader from "components/Headers/ProfilePageHeader.js";
-import FooterWhite from "components/Footers/FooterWhite.js";
+import ColorNavbar from 'components/Navbars/ColorNavbar.js';
+import ProfilePageHeader from 'components/Headers/ProfilePageHeader.js';
+import FooterWhite from 'components/Footers/FooterWhite.js';
 
 function ProfilePage() {
-  const [activeTab, setActiveTab] = React.useState("1");
+  const [activeTab, setActiveTab] = React.useState('1');
 
   const toggle = (tab) => {
     if (activeTab !== tab) {
@@ -30,11 +17,11 @@ function ProfilePage() {
     }
   };
 
-  document.documentElement.classList.remove("nav-open");
+  document.documentElement.classList.remove('nav-open');
   React.useEffect(() => {
-    document.body.classList.add("profile-page");
+    document.body.classList.add('profile-page');
     return function cleanup() {
-      document.body.classList.remove("profile-page");
+      document.body.classList.remove('profile-page');
     };
   });
   return (
@@ -46,17 +33,9 @@ function ProfilePage() {
           <Container>
             <Row>
               <div className="profile-picture">
-                <div
-                  className="fileinput fileinput-new"
-                  data-provides="fileinput"
-                >
+                <div className="fileinput fileinput-new" data-provides="fileinput">
                   <div className="fileinput-new img-no-padding">
-                    <img
-                      alt="..."
-                      src={
-                        require("assets/img/faces/joe-gardner-2.jpg").default
-                      }
-                    />
+                    <img alt="..." src={require('assets/img/faces/joe-gardner-2.jpg').default} />
                   </div>
                   <div className="name">
                     <h4 className="title text-center">
@@ -70,10 +49,8 @@ function ProfilePage() {
             <Row>
               <Col className="ml-auto mr-auto text-center" md="6">
                 <p>
-                  An artist of considerable range, Chet Faker — the name taken
-                  by Melbourne-raised, Brooklyn-based Nick Murphy — writes,
-                  performs and records all of his own music, giving it a warm,
-                  intimate feel with a solid groove structure.
+                  An artist of considerable range, Chet Faker — the name taken by Melbourne-raised, Brooklyn-based Nick Murphy — writes, performs and
+                  records all of his own music, giving it a warm, intimate feel with a solid groove structure.
                 </p>
                 <br />
                 <Button className="btn-round" color="default" outline>
@@ -88,9 +65,9 @@ function ProfilePage() {
                 <Nav role="tablist" tabs>
                   <NavItem>
                     <NavLink
-                      className={activeTab === "1" ? "active" : ""}
+                      className={activeTab === '1' ? 'active' : ''}
                       onClick={() => {
-                        toggle("1");
+                        toggle('1');
                       }}
                     >
                       Follows
@@ -98,9 +75,9 @@ function ProfilePage() {
                   </NavItem>
                   <NavItem>
                     <NavLink
-                      className={activeTab === "2" ? "active" : ""}
+                      className={activeTab === '2' ? 'active' : ''}
                       onClick={() => {
-                        toggle("2");
+                        toggle('2');
                       }}
                     >
                       Following
@@ -121,10 +98,7 @@ function ProfilePage() {
                             <img
                               alt="..."
                               className="img-circle img-no-padding img-responsive"
-                              src={
-                                require("assets/img/faces/clem-onojeghuo-3.jpg")
-                                  .default
-                              }
+                              src={require('assets/img/faces/clem-onojeghuo-3.jpg').default}
                             />
                           </Col>
                           <Col className="ml-auto mr-auto" lg="7" md="4" xs="4">
@@ -136,11 +110,7 @@ function ProfilePage() {
                           <Col className="ml-auto mr-auto" lg="3" md="4" xs="4">
                             <FormGroup check>
                               <Label check>
-                                <Input
-                                  defaultChecked
-                                  defaultValue=""
-                                  type="checkbox"
-                                />
+                                <Input defaultChecked defaultValue="" type="checkbox" />
                                 <span className="form-check-sign" />
                               </Label>
                             </FormGroup>
@@ -154,10 +124,7 @@ function ProfilePage() {
                             <img
                               alt="..."
                               className="img-circle img-no-padding img-responsive"
-                              src={
-                                require("assets/img/faces/erik-lucatero-2.jpg")
-                                  .default
-                              }
+                              src={require('assets/img/faces/erik-lucatero-2.jpg').default}
                             />
                           </Col>
                           <Col lg="7" md="4" xs="4">

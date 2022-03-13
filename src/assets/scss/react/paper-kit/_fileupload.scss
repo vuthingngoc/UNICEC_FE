@@ -21,7 +21,7 @@
   display: inline-block;
   margin-bottom: 9px;
 
-  input[type="file"]{
+  input[type='file'] {
     display: none;
   }
 }
@@ -41,7 +41,7 @@
   vertical-align: middle;
   border-radius: 4px;
 
-  &.img-circle{
+  &.img-circle {
     border-radius: 50%;
     width: 150px;
     height: 150px;
@@ -113,12 +113,12 @@
 .input-group-addon:not(:first-child) {
   border-left: 0;
 }
-.thumbnail{
+.thumbnail {
   border: 0 none;
   border-radius: 3px;
   padding: 0;
 }
-.picture-container{
+.picture-container {
   position: relative;
   cursor: pointer;
   text-align: center;

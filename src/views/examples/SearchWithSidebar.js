@@ -1,29 +1,20 @@
-import React from "react";
+import React from 'react';
 
 // reactstrap components
-import {
-  Button,
-  Form,
-  Input,
-  InputGroup,
-  Container,
-  Row,
-  Col,
-  UncontrolledTooltip,
-} from "reactstrap";
+import { Button, Form, Input, InputGroup, Container, Row, Col, UncontrolledTooltip } from 'reactstrap';
 
 // core components
-import DangerNavbar from "components/Navbars/DangerNavbar.js";
-import FooterWhite from "components/Footers/FooterWhite.js";
+import DangerNavbar from 'components/Navbars/DangerNavbar.js';
+import FooterWhite from 'components/Footers/FooterWhite.js';
 
 function SearchWithSidebar() {
-  document.documentElement.classList.remove("nav-open");
+  document.documentElement.classList.remove('nav-open');
   React.useEffect(() => {
-    document.body.classList.add("search-page");
+    document.body.classList.add('search-page');
     window.scrollTo(0, 0);
     document.body.scrollTop = 0;
     return function cleanup() {
-      document.body.classList.remove("search-page");
+      document.body.classList.remove('search-page');
     };
   });
   return (
@@ -37,23 +28,13 @@ function SearchWithSidebar() {
                 <Col className="ml-auto mr-auto text-center" md="6" xs="12">
                   <Form className="form-inline search-form" role="search">
                     <InputGroup className="no-border">
-                      <span
-                        className="input-group-addon addon-xtreme no-border"
-                        id="basic-addon1"
-                      >
+                      <span className="input-group-addon addon-xtreme no-border" id="basic-addon1">
                         <i className="fa fa-search" />
                       </span>
-                      <Input
-                        aria-describedby="basic-addon1"
-                        className="input-xtreme no-border"
-                        placeholder="Find Stuff"
-                        type="text"
-                      />
+                      <Input aria-describedby="basic-addon1" className="input-xtreme no-border" placeholder="Find Stuff" type="text" />
                     </InputGroup>
                   </Form>
-                  <h6 className="text-muted">
-                    Is this what you are looking for?
-                  </h6>
+                  <h6 className="text-muted">Is this what you are looking for?</h6>
                   <ul className="list-unstyled follows">
                     <li>
                       <Row>
@@ -61,10 +42,7 @@ function SearchWithSidebar() {
                           <img
                             alt="..."
                             className="img-circle img-no-padding img-responsive"
-                            src={
-                              require("assets/img/faces/ayo-ogunseinde-2.jpg")
-                                .default
-                            }
+                            src={require('assets/img/faces/ayo-ogunseinde-2.jpg').default}
                           />
                         </Col>
                         <Col className="description" md="6" xs="4">
@@ -76,18 +54,10 @@ function SearchWithSidebar() {
                           </h5>
                         </Col>
                         <Col md="2" xs="2">
-                          <Button
-                            className="btn-just-icon btn-round btn-tooltip"
-                            color="danger"
-                            id="tooltip565993392"
-                            outline
-                          >
+                          <Button className="btn-just-icon btn-round btn-tooltip" color="danger" id="tooltip565993392" outline>
                             <i className="fa fa-plus" />
                           </Button>
-                          <UncontrolledTooltip
-                            delay={0}
-                            target="tooltip565993392"
-                          >
+                          <UncontrolledTooltip delay={0} target="tooltip565993392">
                             follow
                           </UncontrolledTooltip>
                         </Col>
@@ -99,10 +69,7 @@ function SearchWithSidebar() {
                           <img
                             alt="..."
                             className="img-circle img-no-padding img-responsive"
-                            src={
-                              require("assets/img/faces/kaci-baum-2.jpg")
-                                .default
-                            }
+                            src={require('assets/img/faces/kaci-baum-2.jpg').default}
                           />
                         </Col>
                         <Col className="description" md="6" xs="4">
@@ -112,18 +79,10 @@ function SearchWithSidebar() {
                           </h5>
                         </Col>
                         <Col md="2" xs="2">
-                          <Button
-                            className="btn-just-icon btn-round btn-tooltip"
-                            color="danger"
-                            id="tooltip385246717"
-                            outline
-                          >
+                          <Button className="btn-just-icon btn-round btn-tooltip" color="danger" id="tooltip385246717" outline>
                             <i className="fa fa-plus" />
                           </Button>
-                          <UncontrolledTooltip
-                            delay={0}
-                            target="tooltip385246717"
-                          >
+                          <UncontrolledTooltip delay={0} target="tooltip385246717">
                             follow
                           </UncontrolledTooltip>
                         </Col>
@@ -135,10 +94,7 @@ function SearchWithSidebar() {
                           <img
                             alt="..."
                             className="img-circle img-no-padding img-responsive"
-                            src={
-                              require("assets/img/faces/erik-lucatero-2.jpg")
-                                .default
-                            }
+                            src={require('assets/img/faces/erik-lucatero-2.jpg').default}
                           />
                         </Col>
                         <Col className="description" md="6" xs="4">
@@ -148,18 +104,10 @@ function SearchWithSidebar() {
                           </h5>
                         </Col>
                         <Col md="2" xs="2">
-                          <Button
-                            className="btn-just-icon btn-round btn-tooltip"
-                            color="danger"
-                            id="tooltip890195664"
-                            outline
-                          >
+                          <Button className="btn-just-icon btn-round btn-tooltip" color="danger" id="tooltip890195664" outline>
                             <i className="fa fa-plus" />
                           </Button>
-                          <UncontrolledTooltip
-                            delay={0}
-                            target="tooltip890195664"
-                          >
+                          <UncontrolledTooltip delay={0} target="tooltip890195664">
                             follow
                           </UncontrolledTooltip>
                         </Col>
@@ -171,10 +119,7 @@ function SearchWithSidebar() {
                           <img
                             alt="..."
                             className="img-circle img-no-padding img-responsive"
-                            src={
-                              require("assets/img/faces/clem-onojeghuo-2.jpg")
-                                .default
-                            }
+                            src={require('assets/img/faces/clem-onojeghuo-2.jpg').default}
                           />
                         </Col>
                         <Col className="description" md="6" xs="4">
@@ -184,18 +129,10 @@ function SearchWithSidebar() {
                           </h5>
                         </Col>
                         <Col md="2" xs="2">
-                          <Button
-                            className="btn-just-icon btn-round btn-tooltip"
-                            color="danger"
-                            id="tooltip588441915"
-                            outline
-                          >
+                          <Button className="btn-just-icon btn-round btn-tooltip" color="danger" id="tooltip588441915" outline>
                             <i className="fa fa-plus" />
                           </Button>
-                          <UncontrolledTooltip
-                            delay={0}
-                            target="tooltip588441915"
-                          >
+                          <UncontrolledTooltip delay={0} target="tooltip588441915">
                             follow
                           </UncontrolledTooltip>
                         </Col>
@@ -203,10 +140,7 @@ function SearchWithSidebar() {
                     </li>
                   </ul>
                   <div className="text-missing">
-                    <h5 className="text-muted">
-                      If you are not finding who you’re looking for try using an
-                      email address.
-                    </h5>
+                    <h5 className="text-muted">If you are not finding who you’re looking for try using an email address.</h5>
                   </div>
                 </Col>
               </Row>

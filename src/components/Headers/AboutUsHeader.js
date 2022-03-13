@@ -1,7 +1,7 @@
-import React from "react";
+import React from 'react';
 
 // reactstrap components
-import { Container } from "reactstrap";
+import { Container } from 'reactstrap';
 
 // core components
 
@@ -11,10 +11,7 @@ function AboutUsHeader() {
       <div
         className="page-header page-header-small"
         style={{
-          backgroundImage:
-            "url(" +
-            require("assets/img/sections/gerrit-vermeulen.jpg").default +
-            ")",
+          backgroundImage: 'url(' + require('assets/img/sections/gerrit-vermeulen.jpg').default + ')',
         }}
       >
         <div className="filter filter-danger" />

@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 
 // reactstrap components
 
@@ -10,8 +10,7 @@ function TwitterRedesignHeader() {
       <div
         className="page-header page-header-small"
         style={{
-          backgroundImage:
-            "url(" + require("assets/img/rihanna_cover.jpg").default + ")",
+          backgroundImage: 'url(' + require('assets/img/rihanna_cover.jpg').default + ')',
         }}
       >
         <div className="filter" />

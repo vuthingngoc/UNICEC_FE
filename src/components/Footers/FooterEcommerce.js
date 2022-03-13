@@ -1,15 +1,7 @@
-import React from "react";
+import React from 'react';
 
 // reactstrap components
-import {
-  Button,
-  FormGroup,
-  Form,
-  Input,
-  Container,
-  Row,
-  Col,
-} from "reactstrap";
+import { Button, FormGroup, Form, Input, Container, Row, Col } from 'reactstrap';
 
 // core components
 
@@ -22,22 +14,12 @@ function FooterEcommerce() {
             <Col md="9" sm="8">
               <Form>
                 <FormGroup>
-                  <Input
-                    defaultValue=""
-                    placeholder="Enter your email..."
-                    type="text"
-                  />
+                  <Input defaultValue="" placeholder="Enter your email..." type="text" />
                 </FormGroup>
               </Form>
             </Col>
             <Col md="3" sm="4">
-              <Button
-                block
-                className="btn-neutral"
-                color="default"
-                size="lg"
-                type="button"
-              >
+              <Button block className="btn-neutral" color="default" size="lg" type="button">
                 Join Newsletter
               </Button>
             </Col>
@@ -83,43 +65,22 @@ function FooterEcommerce() {
                 </ul>
                 <hr />
                 <div className="copyright">
-                  © {new Date().getFullYear()}, made with{" "}
-                  <i className="fa fa-heart heart" /> by Creative Tim
+                  © {new Date().getFullYear()}, made with <i className="fa fa-heart heart" /> by Creative Tim
                 </div>
               </div>
             </Col>
             <Col className="ml-auto" md="4" sm="2">
               <div className="social-area">
-                <Button
-                  className="btn-round btn-just-icon mr-1"
-                  color="facebook"
-                  href="#pablo"
-                  onClick={(e) => e.preventDefault()}
-                >
+                <Button className="btn-round btn-just-icon mr-1" color="facebook" href="#pablo" onClick={(e) => e.preventDefault()}>
                   <i className="fa fa-facebook" />
                 </Button>
-                <Button
-                  className="btn-just-icon btn-round mr-1"
-                  color="twitter"
-                  href="#pablo"
-                  onClick={(e) => e.preventDefault()}
-                >
+                <Button className="btn-just-icon btn-round mr-1" color="twitter" href="#pablo" onClick={(e) => e.preventDefault()}>
                   <i className="fa fa-twitter" />
                 </Button>
-                <Button
-                  className="btn-just-icon btn-round mr-1"
-                  color="google"
-                  href="#pablo"
-                  onClick={(e) => e.preventDefault()}
-                >
+                <Button className="btn-just-icon btn-round mr-1" color="google" href="#pablo" onClick={(e) => e.preventDefault()}>
                   <i className="fa fa-google-plus" />
                 </Button>
-                <Button
-                  className="btn-just-icon btn-round"
-                  color="pinterest"
-                  href="#pablo"
-                  onClick={(e) => e.preventDefault()}
-                >
+                <Button className="btn-just-icon btn-round" color="pinterest" href="#pablo" onClick={(e) => e.preventDefault()}>
                   <i className="fa fa-pinterest-p" />
                 </Button>
               </div>

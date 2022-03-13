@@ -1,23 +1,40 @@
 module.exports = {
   env: {
     browser: true,
-    amd: true,
     node: true,
-    jest: true,
     es6: true,
   },
-  extends: [
-    "plugin:react/recommended",
-    'eslint:recommended',
-],
+  extends: ['eslint:recommended', 'plugin:react/recommended', 'plugin:prettier/recommended'],
   parserOptions: {
     ecmaFeatures: {
       jsx: true,
       modules: true,
     },
     ecmaVersion: 8,
-    sourceType: "module",
+    sourceType: 'module',
   },
-  plugins: ["react"],
-  rules: {},
+  plugins: ['react', 'prettier'],
+  rules: {
+    'import/extensions': [
+      'error',
+      'ignorePackages',
+      {
+        js: 'never',
+        jsx: 'never',
+      },
+    ],
+    'react/prop-types': 'off',
+    'prettier/prettier': [
+      'error',
+      {
+        endOfLine: 'auto',
+      },
+    ],
+    'linebreak-style': 0,
+    'quote-props': 0,
+    'import/no-extraneous-dependencies': ['error', { devDependencies: true }],
+    'comma-dangle': 'off',
+    'react/react-in-jsx-scope': 'off',
+    'react/no-array-index-key': 'off',
+  },
 };

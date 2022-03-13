@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 
 // reactstrap components
 
@@ -10,10 +10,7 @@ function SettingsHeader() {
       <div
         className="page-header page-header-xs settings-background"
         style={{
-          backgroundImage:
-            "url(" +
-            require("assets/img/sections/joshua-earles.jpg").default +
-            ")",
+          backgroundImage: 'url(' + require('assets/img/sections/joshua-earles.jpg').default + ')',
         }}
       >
         <div className="filter" />

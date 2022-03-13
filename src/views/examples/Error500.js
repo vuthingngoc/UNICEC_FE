@@ -1,19 +1,19 @@
-import React from "react";
+import React from 'react';
 
 // reactstrap components
-import { Button, Container, Row } from "reactstrap";
+import { Button, Container, Row } from 'reactstrap';
 
 // core components
-import ColorNavbar from "components/Navbars/ColorNavbar.js";
+import ColorNavbar from 'components/Navbars/ColorNavbar.js';
 
 function Error500() {
-  document.documentElement.classList.remove("nav-open");
+  document.documentElement.classList.remove('nav-open');
   React.useEffect(() => {
-    document.body.classList.add("error-500");
+    document.body.classList.add('error-500');
     window.scrollTo(0, 0);
     document.body.scrollTop = 0;
     return function cleanup() {
-      document.body.classList.remove("error-500");
+      document.body.classList.remove('error-500');
     };
   });
   return (
@@ -22,10 +22,7 @@ function Error500() {
       <div
         className="background-img"
         style={{
-          backgroundImage:
-            "url(" +
-            require("assets/img/sections/the-how-photographer.jpg").default +
-            ")",
+          backgroundImage: 'url(' + require('assets/img/sections/the-how-photographer.jpg').default + ')',
         }}
       >
         <div className="filter" />
@@ -34,17 +31,14 @@ function Error500() {
             <h1 className="title">
                500 <br />
               <p className="error-msg">
-                We&apos;re sorry, but something went wrong. We are working an
-                fixing this. <br />
+                We&apos;re sorry, but something went wrong. We are working an fixing this. <br />
                 Please refresh the page in a couple of seconds.
               </p>
             </h1>
           </Row>
           <div className="container-cards space-top">
             <Row>
-              <h5 className="discover-pages text-center">
-                Meanwhie, you can check our social pages...
-              </h5>
+              <h5 className="discover-pages text-center">Meanwhie, you can check our social pages...</h5>
             </Row>
             <div className="offset-md-5 social-buttons">
               <Button
@@ -56,13 +50,7 @@ function Error500() {
               >
                 <i aria-hidden={true} className="fa fa-facebook" />
               </Button>
-              <Button
-                className="btn-just-icon"
-                color="twitter"
-                href="https://twitter.com/CreativeTim?ref=creativetim"
-                size="lg"
-                target="_blank"
-              >
+              <Button className="btn-just-icon" color="twitter" href="https://twitter.com/CreativeTim?ref=creativetim" size="lg" target="_blank">
                 <i aria-hidden={true} className="fa fa-twitter" />
               </Button>
               <Button

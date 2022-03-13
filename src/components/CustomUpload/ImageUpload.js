@@ -1,17 +1,15 @@
-import React from "react";
+import React from 'react';
 // used for making the prop types of this component
-import PropTypes from "prop-types";
+import PropTypes from 'prop-types';
 
-import { Button } from "reactstrap";
+import { Button } from 'reactstrap';
 
-import defaultImage from "assets/img/image_placeholder.jpg";
-import defaultAvatar from "assets/img/placeholder.jpg";
+import defaultImage from 'assets/img/image_placeholder.jpg';
+import defaultAvatar from 'assets/img/placeholder.jpg';
 
 function ImageUpload(props) {
   const [file, setFile] = React.useState(null);
-  const [imagePreviewUrl, setImagePreviewUrl] = React.useState(
-    props.avatar ? defaultAvatar : defaultImage
-  );
+  const [imagePreviewUrl, setImagePreviewUrl] = React.useState(props.avatar ? defaultAvatar : defaultImage);
   const fileInput = React.useRef(null);
   const handleImageChange = (e) => {
     e.preventDefault();
@@ -42,35 +40,21 @@ function ImageUpload(props) {
   return (
     <div className="fileinput text-center">
       <input type="file" onChange={handleImageChange} ref={fileInput} />
-      <div className={"thumbnail" + (props.avatar ? " img-circle" : "")}>
+      <div className={'thumbnail' + (props.avatar ? ' img-circle' : '')}>
         <img src={imagePreviewUrl} alt="..." />
       </div>
       <div>
         {file === null ? (
-          <Button
-            className="btn-round"
-            color="default"
-            outline
-            onClick={handleClick}
-          >
-            {props.avatar ? "Add Photo" : "Select image"}
+          <Button className="btn-round" color="default" outline onClick={handleClick}>
+            {props.avatar ? 'Add Photo' : 'Select image'}
           </Button>
         ) : (
           <span>
-            <Button
-              className="btn-round"
-              outline
-              color="default"
-              onClick={handleClick}
-            >
+            <Button className="btn-round" outline color="default" onClick={handleClick}>
               Change
             </Button>
             {props.avatar ? <br /> : null}
-            <Button
-              color="danger"
-              className="btn-round btn-link"
-              onClick={handleRemove}
-            >
+            <Button color="danger" className="btn-round btn-link" onClick={handleRemove}>
               <i className="fa fa-times" />
               Remove
             </Button>

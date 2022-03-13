@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 
 // reactstrap components
 import {
@@ -18,7 +18,7 @@ import {
   Container,
   Row,
   Col,
-} from "reactstrap";
+} from 'reactstrap';
 
 // core components
 
@@ -30,7 +30,7 @@ function SectionNavbars() {
         <div
           id="bodyClick"
           onClick={() => {
-            document.documentElement.classList.toggle("nav-open");
+            document.documentElement.classList.toggle('nav-open');
             setBodyClick(false);
           }}
         />
@@ -44,10 +44,7 @@ function SectionNavbars() {
             <Col md="12">
               <Navbar className="bg-warning" expand="lg">
                 <Container>
-                  <NavbarBrand
-                    href="#pablo"
-                    onClick={(e) => e.preventDefault()}
-                  >
+                  <NavbarBrand href="#pablo" onClick={(e) => e.preventDefault()}>
                     Yellow Menu
                   </NavbarBrand>
                   <button
@@ -55,7 +52,7 @@ function SectionNavbars() {
                     id="navbarSupportedContent5"
                     type="button"
                     onClick={() => {
-                      document.documentElement.classList.toggle("nav-open");
+                      document.documentElement.classList.toggle('nav-open');
                       setBodyClick(true);
                     }}
                   >
@@ -63,24 +60,15 @@ function SectionNavbars() {
                     <span className="navbar-toggler-icon" />
                     <span className="navbar-toggler-icon" />
                   </button>
-                  <UncontrolledCollapse
-                    navbar
-                    toggler="#navbarSupportedContent5"
-                  >
+                  <UncontrolledCollapse navbar toggler="#navbarSupportedContent5">
                     <Nav className="mr-auto" navbar>
                       <NavItem>
-                        <NavLink
-                          href="#pablo"
-                          onClick={(e) => e.preventDefault()}
-                        >
+                        <NavLink href="#pablo" onClick={(e) => e.preventDefault()}>
                           Link
                         </NavLink>
                       </NavItem>
                       <NavItem>
-                        <NavLink
-                          href="#pablo"
-                          onClick={(e) => e.preventDefault()}
-                        >
+                        <NavLink href="#pablo" onClick={(e) => e.preventDefault()}>
                           Link
                         </NavLink>
                       </NavItem>
@@ -100,36 +88,21 @@ function SectionNavbars() {
                         </DropdownToggle>
                         <DropdownMenu className="dropdown-warning" right>
                           <DropdownItem header>Dropdown header</DropdownItem>
-                          <DropdownItem
-                            href="#pablo"
-                            onClick={(e) => e.preventDefault()}
-                          >
+                          <DropdownItem href="#pablo" onClick={(e) => e.preventDefault()}>
                             Action
                           </DropdownItem>
-                          <DropdownItem
-                            href="#pablo"
-                            onClick={(e) => e.preventDefault()}
-                          >
+                          <DropdownItem href="#pablo" onClick={(e) => e.preventDefault()}>
                             Another action
                           </DropdownItem>
-                          <DropdownItem
-                            href="#pablo"
-                            onClick={(e) => e.preventDefault()}
-                          >
+                          <DropdownItem href="#pablo" onClick={(e) => e.preventDefault()}>
                             Something else here
                           </DropdownItem>
                           <DropdownItem divider />
-                          <DropdownItem
-                            href="#pablo"
-                            onClick={(e) => e.preventDefault()}
-                          >
+                          <DropdownItem href="#pablo" onClick={(e) => e.preventDefault()}>
                             Separated link
                           </DropdownItem>
                           <DropdownItem divider />
-                          <DropdownItem
-                            href="#pablo"
-                            onClick={(e) => e.preventDefault()}
-                          >
+                          <DropdownItem href="#pablo" onClick={(e) => e.preventDefault()}>
                             Another separated link
                           </DropdownItem>
                         </DropdownMenu>
@@ -144,10 +117,7 @@ function SectionNavbars() {
             <Col md="12">
               <Navbar className="bg-success" expand="lg">
                 <Container>
-                  <NavbarBrand
-                    href="#pablo"
-                    onClick={(e) => e.preventDefault()}
-                  >
+                  <NavbarBrand href="#pablo" onClick={(e) => e.preventDefault()}>
                     Green Menu
                   </NavbarBrand>
                   <button
@@ -155,7 +125,7 @@ function SectionNavbars() {
                     id="navbarSupportedContent7"
                     type="button"
                     onClick={() => {
-                      document.documentElement.classList.toggle("nav-open");
+                      document.documentElement.classList.toggle('nav-open');
                       setBodyClick(true);
                     }}
                   >
@@ -163,38 +133,21 @@ function SectionNavbars() {
                     <span className="navbar-toggler-icon" />
                     <span className="navbar-toggler-icon" />
                   </button>
-                  <UncontrolledCollapse
-                    navbar
-                    toggler="#navbarSupportedContent7"
-                  >
+                  <UncontrolledCollapse navbar toggler="#navbarSupportedContent7">
                     <Nav className="ml-auto" navbar>
                       <Form className="form-inline">
-                        <Input
-                          className="mr-sm-2 no-border"
-                          placeholder="Search"
-                          type="text"
-                        />
-                        <Button
-                          className="btn-just-icon btn-round"
-                          color="primary"
-                          type="submit"
-                        >
+                        <Input className="mr-sm-2 no-border" placeholder="Search" type="text" />
+                        <Button className="btn-just-icon btn-round" color="primary" type="submit">
                           <i className="nc-icon nc-zoom-split" />
                         </Button>
                       </Form>
                       <NavItem className="active">
-                        <NavLink
-                          href="#pablo"
-                          onClick={(e) => e.preventDefault()}
-                        >
+                        <NavLink href="#pablo" onClick={(e) => e.preventDefault()}>
                           Link <span className="sr-only">(current)</span>
                         </NavLink>
                       </NavItem>
                       <NavItem>
-                        <NavLink
-                          href="#pablo"
-                          onClick={(e) => e.preventDefault()}
-                        >
+                        <NavLink href="#pablo" onClick={(e) => e.preventDefault()}>
                           Another Link
                         </NavLink>
                       </NavItem>
