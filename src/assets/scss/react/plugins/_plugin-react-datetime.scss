@@ -3,6 +3,7 @@
 */
 .rdt {
   position: relative;
+
   .rdtPicker {
     -webkit-transition: all 150ms linear;
     -moz-transition: all 150ms linear;
@@ -25,47 +26,24 @@
 .rdtPicker {
   display: none;
   position: absolute;
-  width: 260px;
-  padding: 4px;
+  padding: 20px;
   margin-top: 1px;
   z-index: 99999 !important;
   background: #fff;
-  border-radius: 0.125rem;
+  border-radius: .375rem;
   box-shadow: 0px 10px 50px 0px rgba(0, 0, 0, 0.2);
   -webkit-background-clip: padding-box;
   background-clip: padding-box;
-  min-width: 160px;
-
-  &:before {
-    display: inline-block;
-    position: absolute;
-    width: 0;
-    height: 0;
-    vertical-align: middle;
-    content: '';
-    top: -5px;
-    left: 10px;
-    right: auto;
-    color: #ffffff;
-    border-bottom: 0.4em solid;
-    border-right: 0.4em solid transparent;
-    border-left: 0.4em solid transparent;
-  }
-  &:after {
-    border-bottom: 0.4em solid #ffffff;
-    border-right: 0.4em solid transparent;
-    border-left: 0.4em solid transparent;
-    content: '';
-    display: inline-block;
-    position: absolute;
-    top: -5px;
-    left: 10px;
+  min-width: 292px;
+  @include media-breakpoint-down(xs) {
+    padding: 5px;
+    min-width: 262px;
   }
 }
 
 .rdtPicker {
   display: block;
-  top: 40px;
+  top: 50px;
 }
 .rdtStatic .rdtPicker {
   box-shadow: none;
@@ -74,14 +52,31 @@
 
 .rdtPicker .rdtTimeToggle {
   text-align: center;
-  padding: 5px;
+  padding: 10px;
   border-radius: 4px;
+  visibility: hidden;
+  position: relative;
+  &:before {
+    visibility: visible;
+    width: 100%;
+    height: 100%;
+    border-radius: 3px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font: normal normal normal 1em/1 "Nucleo";
+    font-size: 18px;
+    content: "\EA5E";
+  }
 }
 
 .rdtPicker table {
   width: 100%;
   margin: 0;
-  border-color: $white-color !important;
+  border-color: $white !important;
 }
 .rdtPicker td,
 .rdtPicker th {
@@ -92,33 +87,58 @@
   cursor: pointer;
 }
 .rdtDay {
-  height: 30px;
-  line-height: 33px;
-  width: 30px;
+  font-size: .875rem;
+  width: 36px;
+  height: 36px;
+  transition: all .15s ease;
   text-align: center;
-  padding: 0px;
+  border: none;
   border-radius: 50%;
   &.rdtToday.rdtActive,
   &.rdtActive,
-  &.rdtActive:hover {
-    background-color: $primary-color !important;
-    color: $white-color;
+  &.rdtActive:hover,
+  &.start-date,
+  &.end-date,
+  &.middle-date,
+  &.start-date:hover,
+  &.end-date:hover,
+  &.middle-date:hover {
+    background-color: $info !important;
+    color: $white !important;
+  }
+  &.start-date{
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+  &.middle-date{
+    border-radius: 0;
+  }
+  &.end-date{
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
   }
 }
 .rdtDays {
   tr {
     .dow {
       text-align: center;
-      border-bottom: 1px solid #e3e3e3;
       font-size: 12px;
-      text-transform: uppercase;
       font-weight: inherit;
       padding-bottom: 5px;
       padding-top: 10px;
+      font-weight: 300;
+      font-size: .875rem;
+      width: 20px;
+      height: 20px;
     }
-    .rdtOld,
-    .rdtNew {
-      color: $medium-gray;
+    .rdtDay {
+      color: $gray-700;
+      font-size: .875rem;
+      &.rdtOld,
+      &.rdtNew {
+        color: $gray-500;
+        font-weight: 300;
+      }
     }
   }
 }
@@ -127,7 +147,8 @@
 .rdtPicker td.rdtHour:hover,
 .rdtPicker td.rdtMinute:hover,
 .rdtPicker td.rdtSecond:hover,
-.rdtPicker .rdtTimeToggle:hover {
+.rdtPicker .rdtTimeToggle:hover,
+.rdtPicker .rdtTimeToggle:hover:before {
   background: #eeeeee;
   cursor: pointer;
 }
@@ -153,21 +174,37 @@
   color: #999999;
   cursor: not-allowed;
 }
-.rdtPicker .dow {
+.rdtPicker tr .dow {
   width: 14.2857%;
   border-bottom: none;
+  font-size: .875rem;
+  width: 36px;
+  height: 36px;
+  transition: all .15s ease;
+  text-align: center;
+  border: none;font-weight: 500;
+  border-radius: .375rem;
 }
 .rdtPicker th.rdtSwitch {
-  width: 50px;
-  padding: 5px;
-  border-radius: 4px;
+  font-weight: 500;
+  border-radius: .375rem;
+  font-size: .875rem;
+  width: 145px;
+  height: 36px;
+  transition: all .15s ease;
+  text-align: center;
+  border: none;
 }
 .rdtPicker th.rdtNext,
 .rdtPicker th.rdtPrev {
-  font-size: 21px;
-  vertical-align: top;
-  border-radius: 50%;
-  line-height: 33px;
+  font-size: .875rem;
+  width: 36px;
+  height: 36px;
+  transition: all .15s ease;
+  text-align: center;
+  border: none;
+  border-radius: .375rem;
+  cursor: pointer;
 }
 
 .rdtPicker {
@@ -176,7 +213,7 @@
   th.rdtNext,
   th.rdtPrev,
   .rdtTimeToggle {
-    color: $primary-color;
+    color: $gray-700;
   }
 }
 
@@ -262,9 +299,9 @@ td.rdtYear:hover {
 .rdtCounters {
   .rdtCounter:last-child {
     .rdtCount {
-      color: $primary-color;
+      color: $info;
       border-radius: 50%;
-      border: 1px solid $primary-color;
+      border: 1px solid $info;
     }
   }
 }
@@ -278,7 +315,7 @@ td.rdtYear:hover {
   cursor: pointer;
   display: block;
   border-radius: 50%;
-  color: $medium-gray;
+  color: $gray-500;
   -webkit-transition: all 60ms ease-in;
   -moz-transition: all 60ms ease-in;
   -o-transition: all 60ms ease-in;
@@ -326,32 +363,29 @@ td.rdtYear:hover {
     border-radius: 50%;
     text-align: center;
 
-    &.rdtActive {
-      background-color: $primary-color !important;
-      color: $white-color;
+    &.rdtActive,
+    &.start-date,
+    &.end-date,
+    &.middle-date {
+      background-color: $info !important;
+      color: $white;
     }
   }
+}
+.input-group .input-group-prepend + .rdt .form-control{
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.input-group .input-group-prepend + .rdt .form-control{
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.input-group > .rdt:not(:last-child) .form-control{
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
 }
 
 .form-group .rdt {
   margin-bottom: 0;
   flex: 1 1 auto;
-  width: 1%;
-}
-
-.input-group .input-group-prepend + .rdt .form-control {
-  border-top-left-radius: 0;
-  border-bottom-left-radius: 0;
-  border-left: 0;
-  padding-left: 0;
-  border-right: 1px solid $medium-gray;
-}
-
-.input-group > .rdt:not(:last-child) .form-control {
-  border-top-right-radius: 0;
-  border-bottom-right-radius: 0;
-  border-right: 0;
-  padding-right: 0;
-  border-left: 1px solid $medium-gray;
-  padding-left: 0.75rem;
 }

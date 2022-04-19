@@ -1,70 +1,65 @@
-# [Paper Kit PRO React - Premium Bootstrap 4, React, React Hooks and Reactstrap UI Kit](https://demos.creative-tim.com/paper-kit-pro-react/#/presentation?ref=pkpr-github-readme) ![version](https://img.shields.io/badge/version-1.3.0-blue.svg) [![GitHub issues open](https://img.shields.io/github/issues/creativetimofficial/ct-paper-kit-pro-react.svg?maxAge=2592000)](https://github.com/creativetimofficial/ct-paper-kit-pro-react/issues?q=is%3Aopen+is%3Aissue) [![GitHub issues closed](https://img.shields.io/github/issues-closed-raw/creativetimofficial/ct-paper-kit-pro-react.svg?maxAge=2592000)](https://github.com/creativetimofficial/ct-paper-kit-pro-react/issues?q=is%3Aissue+is%3Aclosed) [![Join the chat at https://gitter.im/NIT-dgp/General](https://badges.gitter.im/NIT-dgp/General.svg)](https://gitter.im/creative-tim-general/Lobby) [![Chat](https://img.shields.io/badge/chat-on%20discord-7289da.svg)](https://discord.gg/E4aHAQy)
+# [Argon Dashboard PRO React](https://demos.creative-tim.com/argon-dashboard-pro-react/#/) [![Tweet](https://img.shields.io/twitter/url/http/shields.io.svg?style=social&logo=twitter)](https://twitter.com/intent/tweet?url=https%3A%2F%2Fcreativetimofficial.github.io%2Fargon-dashboard-pro-react&text=Argon%20Dashboard%20PRO%20React%20-%20Premium%20Reactstrap%20Admin%20Template&original_referer=https%3A%2F%2Fdemos.creative-tim.com%argon-dashboard-pro-react%2F%3F_ga%3D2.234372891.44370326.1533641128-1803433978.1528781151&via=creativetim&hashtags=react%2Creactstrap)
 
-![Paper Kit React](https://raw.githubusercontent.com/creativetimofficial/public-assets/master/paper-kit-pro-react/opt_pkp_react_thumbnail.jpg)
+![version](https://img.shields.io/badge/version-1.2.1-blue.svg) [![GitHub issues open](https://img.shields.io/github/issues/creativetimofficial/ct-argon-dashboard-pro-react.svg?maxAge=2592000)](https://github.com/creativetimofficial/ct-argon-dashboard-pro-react/issues?q=is%3Aopen+is%3Aissue) [![GitHub issues closed](https://img.shields.io/github/issues-closed-raw/creativetimofficial/ct-argon-dashboard-pro-react.svg?maxAge=2592000)](https://github.com/creativetimofficial/ct-argon-dashboard-pro/issues-react?q=is%3Aissue+is%3Aclosed) [![Join the chat at https://gitter.im/NIT-dgp/General](https://badges.gitter.im/NIT-dgp/General.svg)](https://gitter.im/creative-tim/) [![Chat](https://img.shields.io/badge/chat-on%20discord-7289da.svg)](https://discord.gg/E4aHAQy)
 
-**Paper Kit PRO React** is a Premium Bootstrap 4, Reactstrap, React, React Hooks and Paper Design UI Kit with pale colors, beautiful typography and thoughtful drawings. We've created it having paper and drawings in mind.
+![Product Gif](https://github.com/creativetimofficial/public-assets/blob/master/argon-dashboard-pro-react/argon-dashboard-pro-react.gif)
 
-Any elements that is vital to code a web project is already here, fully coded. All components are fully responsive and look great on every screen size. Transitions, shadows, colors, they all resemble the flow you would have using pieces of paper.
+Start your development with a premium dashboard for Bootstrap 4, Reactstrap and React. Argon perfectly combines reusable HTML and React and modular CSS with a modern styling and beautiful markup throughout each HTML template in the pack.
 
-We have created the UI Kit kit having pastel colors and paper in mind. It feels light, fresh and easy to go through. It features beautiful typography, font icons and thoughtful layouts.
+#### Fully Coded Components
 
-If you like bright and fresh colors, you will love this Premium Bootstrap 4 and Reactstrap UI Kit! It features a huge number of components that can help you create amazing websites.
+Argon Dashboard PRO React is built with over 100 individual components, giving you the freedom of choosing and combining. All components can take variations in colour, that you can easily modify using SASS files.
 
-**Getting Started**
-
-1.  Install NodeJs from [NodeJs Official Page](https://nodejs.org/en/?ref=creativetim)
-2.  Go to [creative tim website](https://www.creative-tim.com/?ref=pkpr-docs-introduction) and login into your account
-3.  Go to the [downloads section of your account](https://www.creative-tim.com/downloads?ref=pkpr-docs-introduction) (be sure to be logged into your account)
-4.  Press the download button near **Paper Kit PRO React** product (this will download onto your computer a zip file)
-5.  Unzip the downloaded file to a folder in your computer
-6.  Open Terminal
-7.  Go to your file project (where you've unzipped the product)
-8.  Run in terminal `npm install`
-9.  Then run `npm start`
-10. Or you can simply run `npm run install:clean` which will install `node_modules` and also will start your project.
-11. Navigate to [https://localhost:3000](https://localhost:3000)
-12. More information → [react](https://reactjs.org/docs/installation.html?ref=creativetim)
-
-**Fully Coded Components**
-
-Paper Kit PRO React is built with over frontend 1000 individual components, giving you the freedom of choosing and combining. All components can take variations in colour, that you can easily modify using SASS files and classes.
-
-You will save a lot of time going from prototyping to full-functional code, because all elements are implemented. This Premium Bootstrap 4 and Reactstrap UI Kit is coming with prebuilt examples, so the development process is seamless, switching from our pages to the real website is very easy to be done.
+You will save a lot of time going from prototyping to full-functional code, because all elements are implemented. This Dashboard is coming with prebuilt examples, so the development process is seamless, switching from our pages to the real website is very easy to be done.
 
 Every element has multiple states for colors, styles, hover, focus, that you can easily access and use.
 
-View [all components here](https://demos.creative-tim.com/paper-kit-pro-react/#/documentation/custom-upload).
+#### Complex Documentation
 
-**COMPLEX DOCUMENTATION**
+Each element is well presented in a very complex documentation. You can read more about the idea behind this dashboard here. You can check the components here and the foundation here.
 
-Each element is well presented in a very complex documentation. You can read more about the [idea behind this design system here](https://demos.creative-tim.com/paper-kit-pro-react/#/documentation/introduction). You can [check the components here](https://demos.creative-tim.com/paper-kit-pro-react/#/documentation/alerts) and the [colors/typography/columns/elements here](https://demos.creative-tim.com/paper-kit-pro-react/#/documentation/colors).
-
-**Example Pages**
+#### Example Pages
 
 If you want to get inspiration or just show something directly to your clients, you can jump start your development with our pre-built example pages. You will be able to quickly set up the basic structure for your web project.
 
-View [example pages here](https://demos.creative-tim.com/paper-kit-pro-react/#/presentation).
+#### Special thanks
 
-**Reacr Hooks support**
+During the development of this dashboard, we have used many existing resources from awesome developers. We want to thank them for providing their tools open source:
 
-Paper Kit React is built on top of Bootstrap 4 using React and Reactstrap, so it fully supports React Hooks.
+- [@fullcalendar/core v4.0.2](https://fullcalendar.io?ref=creativetim)
+- [@fullcalendar/daygrid v4.0.1](https://fullcalendar.io?ref=creativetim)
+- [@fullcalendar/interaction v4.0.2](https://fullcalendar.io?ref=creativetim)
+- [chart.js v2.8.0](https://www.chartjs.org/?ref=creativetim)
+- [classnames v2.2.6](https://github.com/JedWatson/classnames?ref=creativetim)
+- [dropzone v5.5.1](https://www.dropzonejs.com/?ref=creativetim)
+- [list.js v1.5.0](https://listjs.com/?ref=creativetim)
+- [moment v2.24.0](https://momentjs.com/?ref=creativetim)
+- [node-sass v4.11.0](https://github.com/sass/node-sass?ref=creativetim)
+- [nouislider v13.1.4](https://refreshless.com/nouislider/?ref=creativetim)
+- [prop-types v15.7.2](https://www.npmjs.com/package/prop-types?ref=creativetim)
+- [react v16.8.6](https://reactjs.org/?ref=creativetim)
+- [react-bootstrap-sweetalert v4.4.1](http://djorg83.github.io/react-bootstrap-sweetalert/?ref=creativetim)
+- [react-bootstrap-table-next v3.1.0](https://react-bootstrap-table.github.io/react-bootstrap-table2/?ref=creativetim)
+- [react-bootstrap-table2-paginator v2.0.5](https://www.npmjs.com/package/react-bootstrap-table2-paginator?ref=creativetim)
+- [react-bootstrap-table2-toolkit v1.4.0](https://www.npmjs.com/package/react-bootstrap-table2-toolkit?ref=creativetim)
+- [react-chartjs-2 v2.7.6](http://jerairrest.github.io/react-chartjs-2/?ref=creativetim)
+- [react-copy-to-clipboard v5.0.1](http://nkbt.github.io/react-copy-to-clipboard/?ref=creativetim)
+- [react-datetime v2.16.3](https://github.com/YouCanBookMe/react-datetime?ref=creativetim)
+- [react-dom v16.8.6](https://reactjs.org/docs/react-dom.html?ref=creativetim)
+- [react-google-maps v9.4.5](https://tomchentw.github.io/react-google-maps/?ref=creativetim)
+- [react-jvectormap v0.0.6](https://github.com/kadoshms/react-jvectormap?ref=creativetim)
+- [react-notification-alert v0.0.12](https://github.com/creativetimofficial/react-notification-alert#readme?ref=creativetim)
+- [react-perfect-scrollbar v1.4.4](https://github.com/goldenyz/react-perfect-scrollbar?ref=creativetim)
+- [react-quill v1.3.3](https://github.com/zenoamaro/react-quill?ref=creativetim)
+- [react-router v5.0.0](https://reacttraining.com/react-router/?ref=creativetim)
+- [react-router-dom v5.0.0](https://reacttraining.com/react-router/?ref=creativetim)
+- [react-scripts v2.1.8](https://github.com/facebook/create-react-app?ref=creativetim)
+- [react-select2-wrapper v1.0.4-beta6](https://github.com/rkit/react-select2-wrapper?ref=creativetim)
+- [react-tagsinput v3.19.0](https://github.com/olahol/react-tagsinput?ref=creativetim)
+- [react-to-print v2.1.0](https://github.com/gregnb/react-to-print#readme?ref=creativetim)
+- [reactstrap v8.0.0](https://reactstrap.github.io/?ref=creativetim)
 
-**React Hooks support**
-
-Paper Kit React is built on top of Bootstrap 4 using React and Reactstrap, so it fully supports them. Most of the elements from the framework are re-designed to resemble sheets of paper and color pastels. If the are elements that we have not touched, they will gracefully fall back to the Bootstrap 4 default.
-
-**HELPFUL LINKS**
-
-- View [Github Repository](https://github.com/creativetimofficial/ct-paper-kit-pro-react)
-- Check [FAQ Page](https://www.creative-tim.com/faq)
-
-- [Landing Page](https://demos.creative-tim.com/paper-kit-react/#/landing-page?ref=pkpr-github-readme)
-- [Register](https://demos.creative-tim.com/paper-kit-react/#/register-page?ref=pkpr-github-readme)
-- [Profile Page](https://demos.creative-tim.com/paper-kit-react/#/profile-page?ref=pkpr-github-readme)
-
-Tutorial and components
-
-Once you download the archive, you will be able find a tutorial page inside it explaining how to start using it. You can also check the [documentation online](https://demos.creative-tim.com/paper-kit-react/#/documentation/introduction?ref=pkpr-github-readme).
+Let us know your thoughts below. And good luck with development!
 
 ## Table of Contents
 
@@ -76,50 +71,53 @@ Once you download the archive, you will be able find a tutorial page inside it e
 - [Browser Support](#browser-support)
 - [Resources](#resources)
 - [Reporting Issues](#reporting-issues)
+- [Technical Support or Questions](#technical-support-or-questions)
 - [Licensing](#licensing)
 - [Useful Links](#useful-links)
 
 ## Versions
 
-| HTML                                                                                                                                                                                                                           | Angular                                                                                                                                                                                                                                              | React                                                                                                                                                                                                                                 |
-| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [![Paper Kit 2 PRO HTML](https://raw.githubusercontent.com/creativetimofficial/public-assets/master/paper-kit-2-pro-html/opt_pk2p_thumbnail.jpg)](https://www.creative-tim.com/product/paper-kit-2-pro?ref=pkpr-github-readme) | [![Paper Kit 2 PRO Angular](https://raw.githubusercontent.com/creativetimofficial/public-assets/master/paper-kit-2-pro-angular/opt_pk2p_angular_thumbnail.jpg)](https://www.creative-tim.com/product/paper-kit-2-pro-angular?ref=pkpr-github-readme) | [![Paper Kit PRO React](https://raw.githubusercontent.com/creativetimofficial/public-assets/master/paper-kit-pro-react/opt_pkp_react_thumbnail.jpg)](https://www.creative-tim.com/product/paper-kit-pro-react?ref=pkpr-github-readme) |
+[<img src="https://raw.githubusercontent.com/creativetimofficial/public-assets/master/logos/html-logo.jpg" width="60" height="60"/>](https://www.creative-tim.com/product/argon-dashboard-pro)
+[<img src="https://raw.githubusercontent.com/creativetimofficial/public-assets/master/logos/laravel_logo.png" width="60" height="60" style="background:white;"/>](https://www.creative-tim.com/product/argon-dashboard-pro-laravel)
+[<img src="https://raw.githubusercontent.com/creativetimofficial/public-assets/master/logos/nodejs-logo.jpg" width="60" height="60" />](https://www.creative-tim.com/product/argon-dashboard-pro-nodejs)
+[<img src="https://raw.githubusercontent.com/creativetimofficial/public-assets/master/logos/react-logo.png" width="60" height="60" style="background:white;"/>](https://www.creative-tim.com/product/argon-dashboard-pro-react)
+
+| HTML                                                                                                                                                                                                            | Laravel                                                                                                                                                                                                                                    | NodeJS                                                                                                                                                                                                                                 | React                                                                                                                                                                                                                              |
+| --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [![Argon Dashboard Pro HTML](https://raw.githubusercontent.com/creativetimofficial/public-assets/master/argon-dashboard-pro/argon-dashboard-pro.jpg)](https://www.creative-tim.com/product/argon-dashboard-pro) | [![Argon Dashboard Pro Laravel](https://raw.githubusercontent.com/creativetimofficial/public-assets/master/argon-dashboard-pro-laravel/argon-dashboard-pro-laravel.jpg)](https://www.creative-tim.com/product/argon-dashboard-pro-laravel) | [![Argon Dashboard Pro NodeJS](https://raw.githubusercontent.com/creativetimofficial/public-assets/master/argon-dashboard-pro-nodejs/argon-dashboard-pro-nodejs.jpg)](https://www.creative-tim.com/product/argon-dashboard-pro-nodejs) | [![Argon Dashboard Pro React](https://raw.githubusercontent.com/creativetimofficial/public-assets/master/argon-dashboard-pro-react/argon-dashboard-pro-react.jpg)](https://www.creative-tim.com/product/argon-dashboard-pro-react) |
 
 ## Demo
 
-| Buttons                                                                                                                                                                                               | Navigation                                                                                                                                                                                             | JS Components                                                                                                                                                                                           |
-| ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [![Buttons](https://raw.githubusercontent.com/creativetimofficial/public-assets/master/paper-kit-pro-react/basic-components.png)](https://demos.creative-tim.com/paper-kit-pro-react/#/index#buttons) | [![Navigation](https://raw.githubusercontent.com/creativetimofficial/public-assets/master/paper-kit-pro-react/navigation.png)](https://demos.creative-tim.com/paper-kit-pro-react/#/index#navbar-full) | [![JS Components](https://raw.githubusercontent.com/creativetimofficial/public-assets/master/paper-kit-pro-react/js-components.png)](https://demos.creative-tim.com/paper-kit-pro-react/#/index#modals) |
+| Dashboard Page                                                                                                                                                                                                          | Alternative Dashboard Page                                                                                                                                                                                                                        | Calendar Page                                                                                                                                                                                                        | Widgets Page                                                                                                                                                                                                      |
+| ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [![Dashboard Page](https://github.com/creativetimofficial/public-assets/blob/master/argon-dashboard-pro-react/dashboard-page.png?raw=true)](https://demos.creative-tim.com/argon-dashboard-pro-react/#/admin/dashboard) | [![Alternative Dashboard Page](https://github.com/creativetimofficial/public-assets/blob/master/argon-dashboard-pro-react/alternative-page.png?raw=true)](https://demos.creative-tim.com/argon-dashboard-pro-react/#/admin/alternative-dashboard) | [![Calendar Page](https://github.com/creativetimofficial/public-assets/blob/master/argon-dashboard-pro-react/calendar-page.png?raw=true)](https://demos.creative-tim.com/argon-dashboard-pro-react/#/admin/calendar) | [![Widgets Page](https://github.com/creativetimofficial/public-assets/blob/master/argon-dashboard-pro-react/widgets-page.png?raw=true)](https://demos.creative-tim.com/argon-dashboard-pro-react/#/admin/widgets) |
 
-| Register Page                                                                                                                                                                                            | Landing Page                                                                                                                                                                                          | Profile Page                                                                                                                                                                                          |
-| -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [![Register Page](https://raw.githubusercontent.com/creativetimofficial/public-assets/master/paper-kit-pro-react/register-page.png)](https://demos.creative-tim.com/paper-kit-pro-react/#/register-page) | [![Landing Page](https://raw.githubusercontent.com/creativetimofficial/public-assets/master/paper-kit-pro-react/landing-page.png)](https://demos.creative-tim.com/paper-kit-pro-react/#/landing-page) | [![Profile Page](https://raw.githubusercontent.com/creativetimofficial/public-assets/master/paper-kit-pro-react/profile-page.png)](https://demos.creative-tim.com/paper-kit-pro-react/#/profile-page) |
+| Pricing Page                                                                                                                                                                                                      | Lock Page                                                                                                                                                                                               | Profile Page                                                                                                                                                                                                      |
+| ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [![Pricing Page](https://raw.githubusercontent.com/creativetimofficial/public-assets/master/argon-dashboard-pro-react/pricing-page.png)](https://demos.creative-tim.com/argon-dashboard-pro-react/#/auth/pricing) | [![Lock Page](https://github.com/creativetimofficial/public-assets/blob/master/argon-dashboard-pro-react/lock-page.png?raw=true)](https://demos.creative-tim.com/argon-dashboard-pro-react/#/auth/lock) | [![Profile Page](https://github.com/creativetimofficial/public-assets/blob/master/argon-dashboard-pro-react/profile-page.png?raw=true)](https://demos.creative-tim.com/argon-dashboard-pro-react/#/admin/profile) |
 
-[View More](https://demos.creative-tim.com/paper-kit-pro-react/#/index?ref=pkpr-github-readme)
+[View More](https://demos.creative-tim.com/argon-dashboard-react)
 
 ## Quick start
 
-1.  Download the project's zip
-2.  Make sure you have node.js (<https://nodejs.org/en/>) installed
-3.  Type `npm install` in terminal/console in the source folder where `package.json` is located
-4.  You will find all the branding colors inside `src/assets/scss/paper-kit/_variables.scss`. You can change them with a `HEX` value or with other predefined variables.
-5.  Run in terminal `npm start`.
+Quick start options:
+
+- Buy from [Creative Tim](https://www.creative-tim.com/product/argon-dashboard-pro-react)
 
 ## Documentation
 
-The documentation for the Paper Kit PRO React is hosted at our [website](https://demos.creative-tim.com/paper-kit-pro-react/#/documentation/introduction?ref=pkpr-github-readme).
+The documentation for the Argon Dashboard PRO React is hosted at our [website](https://demos.creative-tim.com/argon-dashboard-pro-react/#/documentation/overview).
 
 ## File Structure
 
 Within the download you'll find the following directories and files:
 
 ```
-paper-kit-pro-react
+Argon Dashboard PRO React
 .
-├── CHANGELOG.md
-├── ISSUE_TEMPLATE.md
 ├── README.md
-├── jsconfig.json
+├── ISSUE_TEMPLATE.md
+├── CHANGELOG.md
 ├── package.json
 ├── Documentation
 │   └── documentation.html
@@ -128,186 +126,145 @@ paper-kit-pro-react
 │   ├── index.html
 │   └── manifest.json
 └── src
+    ├── index.js
+    ├── routes.js
     ├── assets
     │   ├── css
-    │   │   ├── bootstrap.min.css
-    │   │   ├── bootstrap.min.css.map
-    │   │   ├── paper-kit.css
-    │   │   ├── paper-kit.css.map
-    │   │   └── paper-kit.min.css
-    │   ├── demo
-    │   │   ├── demo.css
-    │   │   └── react-demo.css
+    │   │   ├── argon-dashboard-pro-react.css
+    │   │   ├── argon-dashboard-pro-react.css.map
+    │   │   └── argon-dashboard-pro-react.min.css
     │   ├── fonts
-    │   │   ├── nucleo-icons.eot
-    │   │   ├── nucleo-icons.ttf
-    │   │   ├── nucleo-icons.woff
-    │   │   └── nucleo-icons.woff2
+    │   │   └── nucleo
     │   ├── img
-    │   │   ├── demo
-    │   │   ├── ecommerce
-    │   │   ├── faces
-    │   │   ├── gallery
-    │   │   ├── photo_swipe
-    │   │   ├── presentation-page
-    │   │   │   ├── examples
-    │   │   │   ├── screenshots
-    │   │   │   └── try
-    │   │   ├── sections
-    │   │   └── tables
-    │   ├── scss
-    │   │   ├── paper-kit
+    │   │   ├── brand
+    │   │   ├── icons
     │   │   │   ├── cards
-    │   │   │   ├── mixins
-    │   │   │   ├── plugins
-    │   │   │   │   └── photo-swipe
-    │   │   │   └── sections
-    │   │   ├── react
-    │   │   │    ├── paper-kit
-    │   │   │    ├── plugins
-    │   │   │    └── react-differences.scss
-    │   │   └── paper-kit.scss
-    │   └── video
-    │       └── fireworks.mp4
+    │   │   │   ├── common
+    │   │   │   └── flags
+    │   │   └── theme
+    │   ├── scss
+    │   │   ├── argon-dashboard-pro-react.scss
+    │   │   ├── bootstrap
+    │   │   ├── core
+    │   │   ├── custom
+    │   │   └── react
+    │   └── vendor
+    │       ├── @fortawesome
+    │       │   └── fontawesome-free
+    │       ├── animate.css
+    │       ├── fullcalendar
+    │       │   └── dist
+    │       ├── nucleo
+    │       ├── quill
+    │       │   └── dist
+    │       ├── select2
+    │       │   └── dist
+    │       └── sweetalert2
+    │           └── dist
+    ├── variables
+    │   ├── charts.jsx
+    │   └── general.jsx
+    ├── layouts
+    │   ├── Admin.jsx
+    │   └── Auth.jsx
     ├── components
-    │   ├── CustomUpload
-    │   │   └── ImageUpload.js
     │   ├── Footers
-    │   │   ├── FooterAboutUs.js
-    │   │   ├── FooterBlack.js
-    │   │   ├── FooterEcommerce.js
-    │   │   ├── FooterGray.js
-    │   │   └── FooterWhite.js
+    │   │   ├── AdminFooter.jsx
+    │   │   └── AuthFooter.jsx
     │   ├── Headers
-    │   │   ├── AboutUsHeader.js
-    │   │   ├── BlogPostHeader.js
-    │   │   ├── EcommerceHeader.js
-    │   │   ├── IndexHeader.js
-    │   │   ├── LandingPageHeader.js
-    │   │   ├── PresentationHeader.js
-    │   │   ├── ProductPageHeader.js
-    │   │   ├── ProfilePageHeader.js
-    │   │   ├── SettingsHeader.js
-    │   │   └── TwitterRedesignHeader.js
-    │   └── Navbars
-    │       ├── ColorNavbar.js
-    │       ├── DangerNavbar.js
-    │       ├── InfoNavbar.js
-    │       ├── MultiDropdownNavbar.js
-    │       └── WhiteNavbar.js
-    ├── index.js
+    │   │   ├── AlternativeHeader.jsx
+    │   │   ├── AuthHeader.jsx
+    │   │   ├── CardsHeader.jsx
+    │   │   ├── IndexHeader.jsx
+    │   │   ├── ProfileHeader.jsx
+    │   │   └── SimpleHeader.jsx
+    │   ├── Navbars
+    │   │   ├── AdminNavbar.jsx
+    │   │   ├── AuthNavbar.jsx
+    │   │   └── IndexNavbar.jsx
+    │   └── Sidebar
+    │       └── Sidebar.jsx
     └── views
-        ├── Index.js
-        ├── NucleoIcons.js
-        ├── Presentation.js
-        ├── Sections.js
-        ├── examples
-        │   ├── AboutUs.js
-        │   ├── AddProduct.js
-        │   ├── BlogPost.js
-        │   ├── BlogPosts.js
-        │   ├── ContactUs.js
-        │   ├── Discover.js
-        │   ├── Ecommerce.js
-        │   ├── Error404.js
-        │   ├── Error422.js
-        │   ├── Error500.js
-        │   ├── LandingPage.js
-        │   ├── LoginPage.js
-        │   ├── ProductPage.js
-        │   ├── ProfilePage.js
-        │   ├── RegisterPage.js
-        │   ├── SearchWithSidebar.js
-        │   ├── Settings.js
-        │   └── TwitterRedesign.js
-        ├── index-sections
-        │   ├── SectionButtons.js
-        │   ├── SectionCards.js
-        │   ├── SectionComments.js
-        │   ├── SectionCommentsAreaSmall.js
-        │   ├── SectionDescriptionAreas.js
-        │   ├── SectionFooterAreas.js
-        │   ├── SectionJavaScript.js
-        │   ├── SectionNavbars.js
-        │   ├── SectionNavigation.js
-        │   ├── SectionNotification.js
-        │   ├── SectionPreFooterAreas.js
-        │   ├── SectionTables.js
-        │   └── SectionTypography.js
-        ├── presentation-sections
-        │   ├── SectionCards.js
-        │   ├── SectionComponents.js
-        │   ├── SectionContent.js
-        │   ├── SectionExamples.js
-        │   ├── SectionFreeDemo.js
-        │   ├── SectionIcons.js
-        │   ├── SectionOverview.js
-        │   ├── SectionResponsive.js
-        │   ├── SectionSections.js
-        │   ├── SectionSharing.js
-        │   ├── SectionSummary.js
-        │   └── SectionTestimonials.js
-        └── sections-sections
-            ├── SectionBlog.js
-            ├── SectionContactUs.js
-            ├── SectionFeature.js
-            ├── SectionHeader.js
-            ├── SectionPricing.js
-            ├── SectionProject.js
-            ├── SectionTeam.js
-            └── SectionTestimonials.js
+        ├── Index.jsx
+        └── pages
+            ├── Calendar.jsx
+            ├── Charts.jsx
+            ├── Widgets.jsx
+            ├── components
+            │   ├── Buttons.jsx
+            │   ├── Cards.jsx
+            │   ├── Grid.jsx
+            │   ├── Icons.jsx
+            │   ├── Notifications.jsx
+            │   └── Typography.jsx
+            ├── dashboards
+            │   ├── Alternative.jsx
+            │   └── Dashboard.jsx
+            ├── examples
+            │   ├── Lock.jsx
+            │   ├── Login.jsx
+            │   ├── Pricing.jsx
+            │   ├── Profile.jsx
+            │   ├── Register.jsx
+            │   └── Timeline.jsx
+            ├── forms
+            │   ├── Components.jsx
+            │   ├── Elements.jsx
+            │   └── Validation.jsx
+            ├── maps
+            │   ├── Google.jsx
+            │   └── Vector.jsx
+            └── tables
+                ├── ReactBSTables.jsx
+                ├── Sortable.jsx
+                └── Tables.jsx
 ```
 
 ## Browser Support
 
 At present, we officially aim to support the last two versions of the following browsers:
 
-<img src="https://github.com/creativetimofficial/public-assets/blob/master/logos/chrome-logo.png?raw=true" width="64" height="64"> <img src="https://raw.githubusercontent.com/creativetimofficial/public-assets/master/logos/firefox-logo.png" width="64" height="64"> <img src="https://raw.githubusercontent.com/creativetimofficial/public-assets/master/logos/edge-logo.png" width="64" height="64"> <img src="https://raw.githubusercontent.com/creativetimofficial/public-assets/master/logos/safari-logo.png" width="64" height="64"> <img src="https://raw.githubusercontent.com/creativetimofficial/public-assets/master/logos/opera-logo.png" width="64" height="64">
+<img src="https://s3.amazonaws.com/creativetim_bucket/github/browser/chrome.png" width="64" height="64"> <img src="https://s3.amazonaws.com/creativetim_bucket/github/browser/firefox.png" width="64" height="64"> <img src="https://s3.amazonaws.com/creativetim_bucket/github/browser/edge.png" width="64" height="64"> <img src="https://s3.amazonaws.com/creativetim_bucket/github/browser/safari.png" width="64" height="64"> <img src="https://s3.amazonaws.com/creativetim_bucket/github/browser/opera.png" width="64" height="64">
 
 ## Resources
 
-- Demo: <http://demos.creative-tim.com/paper-kit-pro-react/#/presentation?ref=pkpr-github-readme>
-- Download Page: <https://www.creative-tim.com/product/paper-kit-pro-react?ref=pkpr-github-readme>
-- Documentation: <https://demos.creative-tim.com/paper-kit-pro-react/#/documentation/introduction?ref=pkpr-github-readme>
-- License Agreement: <https://www.creative-tim.com/license?ref=pkpr-github-readme>
-- Support: <https://www.creative-tim.com/contact-us?ref=pkpr-github-readme>
-- Issues: [Github Issues Page](https://github.com/creativetimofficial/ct-paper-kit-pro-react/issues)
-
-**Dashboards:**
-
-| HTML                                                                                                                                                                                                                                       | React                                                                                                                                                                                                                                           | Vue                                                                                                                                                                                                                                                       | Angular                                                                                                                                                                                                                                                            |
-| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| [![Paper Dashboard PRO HTML](https://raw.githubusercontent.com/creativetimofficial/public-assets/master/paper-dashboard-2-pro-html/opt_pd2p_thumbnail.jpg)](https://www.creative-tim.com/product/paper-dashboard-2?ref=pkpr-github-readme) | [![Paper Dashboard PRO React](https://raw.githubusercontent.com/creativetimofficial/public-assets/master/paper-dashboard-2-pro-react/opt_pdp_react.jpg)](https://www.creative-tim.com/product/paper-dashboard-pro-react?ref=pkpr-github-readme) | [![Vue Paper Dashboard 2 PRO](https://raw.githubusercontent.com/creativetimofficial/public-assets/master/vue-paper-dashboard-2-pro/vue-paper-dashboard-2-pro.jpg)](https://www.creative-tim.com/product/vue-paper-dashboard-2-pro?ref=pkpr-github-readme) | [![ Paper Dashboard PRO Angular](https://raw.githubusercontent.com/creativetimofficial/public-assets/master/paper-dashboard-2-pro-angular/opt_pdp_angular_thumbnail.jpg)](https://www.creative-tim.com/product/paper-dashboard-pro-angular?ref=pkpr-github-readme) |
+- [Live Preview](https://demos.creative-tim.com/argon-dashboard-pro-react/#/?ref=github-ad-pro-react)
+- Buy Page: https://www.creative-tim.com/product/argon-dashboard-pro-react?ref=github-ad-pro-react
+- Documentation is [here](https://demos.creative-tim.com/argon-dashboard-pro-react/#/documentation/overview?ref=github-ad-pro-react)
+- License Agreement: https://www.creative-tim.com/license?ref=github-ad-pro-react
+- Support: https://www.creative-tim.com/contact-us?ref=github-ad-pro-react
+- Issues: [Github Issues Page](https://github.com/creativetimofficial/ct-argon-dashboard-pro-react/issues)
+- Argon Dashboard React - [demo](https://www.creative-tim.com/product/argon-dashboard-react?ref=github-ad-pro-react)
+- For Front End Development - [Argon Design System React ](hhttps://www.creative-tim.com/product/argon-dashboard-react?ref=github-ad-pro-react)
 
 ## Reporting Issues
 
-We use GitHub Issues as the official bug tracker for the Paper Kit 2. Here are some advices for our users that want to report an issue:
+We use GitHub Issues as the official bug tracker for the Argon Dashboard PRO React. Here are some advices for our users that want to report an issue:
 
-1. Make sure that you are using the latest version of the Paper Kit PRO React. Check the CHANGELOG from your dashboard on our [website](https://www.creative-tim.com/?ref=pkpr-github-readme).
+1. Make sure that you are using the latest version of the Argon Dashboard PRO. Check the CHANGELOG from your dashboard on our [website](https://www.creative-tim.com/?ref=github-ad-pro-react).
 2. Providing us reproducible steps for the issue will shorten the time it takes for it to be fixed.
 3. Some issues may be browser specific, so specifying in what browser you encountered the issue might help.
 
+## Technical Support or Questions
+
+If you have questions or need help integrating the product please [contact us](https://www.creative-tim.com/contact-us?ref=github-ad-pro-react) instead of opening an issue.
+
 ## Licensing
 
-- Copyright 2021 Creative Tim (https://www.creative-tim.com/?ref=pkpr-github-readme)
-
-[changelog]: ./CHANGELOG.md
-[license]: ./LICENSE.md
+- Copyright 2021 Creative Tim (https://www.creative-tim.com?ref=github-ad-pro-react)
+- Creative Tim [license](https://www.creative-tim.com/license?ref=github-ad-pro-react)
 
 ## Useful Links
 
-- [Tutorials](https://www.youtube.com/channel/UCVyTG4sCw-rOvB9oHkzZD1w)
-- [Affiliate Program](https://www.creative-tim.com/affiliates/new?ref=pkpr-github-readme) (earn money)
-- [Blog Creative Tim](http://blog.creative-tim.com/?ref=pkpr-github-readme)
-- [Free Products](https://www.creative-tim.com/bootstrap-themes/free?ref=pkpr-github-readme) from Creative Tim
-- [Premium Products](https://www.creative-tim.com/bootstrap-themes/premium?ref=pkpr-github-readme) from Creative Tim
-- [React Products](https://www.creative-tim.com/bootstrap-themes/react-themes?ref=pkpr-github-readme) from Creative Tim
-- [Angular Products](https://www.creative-tim.com/bootstrap-themes/angular-themes?ref=pkpr-github-readme) from Creative Tim
-- [VueJS Products](https://www.creative-tim.com/bootstrap-themes/vuejs-themes?ref=pkpr-github-readme) from Creative Tim
-- [More products](https://www.creative-tim.com/bootstrap-themes?ref=pkpr-github-readme) from Creative Tim
-- Check our Bundles [here](https://www.creative-tim.com/bundles?ref=pkpr-github-readme)
+- [More products](https://www.creative-tim.com/bootstrap-themes?ref=github-ad-pro-react) from Creative Tim
 
-### Social Media
+- [Tutorials](https://www.youtube.com/channel/UCVyTG4sCw-rOvB9oHkzZD1w)
+
+- [Freebies](https://www.creative-tim.com/bootstrap-themes/free?ref=github-ad-pro-react) from Creative Tim
+
+- [Affiliate Program](https://www.creative-tim.com/affiliates/new) (earn money)
+
+##### Social Media
 
 Twitter: <https://twitter.com/CreativeTim>
 
@@ -315,4 +272,6 @@ Facebook: <https://www.facebook.com/CreativeTim>
 
 Dribbble: <https://dribbble.com/creativetim>
 
-Instagram: <https://www.instagram.com/CreativeTimOfficial>
+Google+: <https://plus.google.com/+CreativetimPage>
+
+Instagram: <https://instagram.com/creativetimofficial>
