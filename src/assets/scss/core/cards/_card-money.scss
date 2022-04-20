@@ -4,24 +4,24 @@
 //
 
 .card-serial-number {
+  display: flex;
+  justify-content: space-between;
+  font-size: $h1-font-size;
+
+  > div:not(:last-child) {
     display: flex;
-    justify-content: space-between;
-    font-size: $h1-font-size;
+    flex: 1 1 auto;
 
-    > div:not(:last-child) {
-        display: flex;
-        flex: 1 1 auto;
-
-        &:after {
-            content: "-";
-            flex: 1 1 auto;
-            text-align: center;
-            position: relative;
-            left: -2px;
-        }
+    &:after {
+      content: '-';
+      flex: 1 1 auto;
+      text-align: center;
+      position: relative;
+      left: -2px;
     }
+  }
 
-    @include media-breakpoint-down(xs) {
-        font-size: $h3-font-size;
-    }
+  @include media-breakpoint-down(xs) {
+    font-size: $h3-font-size;
+  }
 }

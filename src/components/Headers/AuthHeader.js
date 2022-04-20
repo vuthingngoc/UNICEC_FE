@@ -15,9 +15,9 @@
 
 */
 // nodejs library to set properties for components
-import PropTypes from "prop-types";
+import PropTypes from 'prop-types';
 // reactstrap components
-import { Container, Row, Col } from "reactstrap";
+import { Container, Row, Col } from 'reactstrap';
 
 function AuthHeader({ title, lead }) {
   return (
@@ -34,14 +34,7 @@ function AuthHeader({ title, lead }) {
           </div>
         </Container>
         <div className="separator separator-bottom separator-skew zindex-100">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            preserveAspectRatio="none"
-            version="1.1"
-            viewBox="0 0 2560 100"
-            x="0"
-            y="0"
-          >
+          <svg xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" version="1.1" viewBox="0 0 2560 100" x="0" y="0">
             <polygon className="fill-default" points="2560 0 2560 100 0 100" />
           </svg>
         </div>

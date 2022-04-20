@@ -14,26 +14,13 @@
 * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 
 */
-import React from "react";
+import React from 'react';
 // nodejs library that concatenates classes
-import classnames from "classnames";
+import classnames from 'classnames';
 // reactstrap components
-import {
-  Button,
-  Card,
-  CardBody,
-  FormGroup,
-  Form,
-  Input,
-  InputGroupAddon,
-  InputGroupText,
-  InputGroup,
-  Container,
-  Row,
-  Col,
-} from "reactstrap";
+import { Button, Card, CardBody, FormGroup, Form, Input, InputGroupAddon, InputGroupText, InputGroup, Container, Row, Col } from 'reactstrap';
 // core components
-import AuthHeader from "components/Headers/AuthHeader.js";
+import AuthHeader from 'components/Headers/AuthHeader.js';
 
 function Lock() {
   const [focused, setFocused] = React.useState(false);
@@ -47,11 +34,7 @@ function Lock() {
               <Row className="justify-content-center">
                 <Col className="order-lg-2" lg="3">
                   <div className="card-profile-image">
-                    <img
-                      alt="..."
-                      className="rounded-circle border-secondary"
-                      src={require("assets/img/theme/team-4.jpg").default}
-                    />
+                    <img alt="..." className="rounded-circle border-secondary" src={require('assets/img/theme/team-4.jpg').default} />
                   </div>
                 </Col>
               </Row>
@@ -71,12 +54,7 @@ function Lock() {
                           <i className="ni ni-lock-circle-open" />
                         </InputGroupText>
                       </InputGroupAddon>
-                      <Input
-                        placeholder="Password"
-                        type="password"
-                        onFocus={() => setFocused(true)}
-                        onBlur={() => setFocused(false)}
-                      />
+                      <Input placeholder="Password" type="password" onFocus={() => setFocused(true)} onBlur={() => setFocused(false)} />
                     </InputGroup>
                   </FormGroup>
                   <div className="text-center">

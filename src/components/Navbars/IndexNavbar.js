@@ -15,36 +15,17 @@
 
 */
 // react library for routing
-import { Link } from "react-router-dom";
+import { Link } from 'react-router-dom';
 // reactstrap components
-import {
-  UncontrolledCollapse,
-  NavbarBrand,
-  Navbar,
-  NavItem,
-  NavLink,
-  Nav,
-  Container,
-  Row,
-  Col,
-  UncontrolledTooltip,
-  Button,
-} from "reactstrap";
+import { UncontrolledCollapse, NavbarBrand, Navbar, NavItem, NavLink, Nav, Container, Row, Col, UncontrolledTooltip, Button } from 'reactstrap';
 
 function AdminNavbar() {
   return (
     <>
-      <Navbar
-        className="navbar-horizontal navbar-main navbar-dark bg-info"
-        expand="lg"
-        id="navbar-main"
-      >
+      <Navbar className="navbar-horizontal navbar-main navbar-dark bg-info" expand="lg" id="navbar-main">
         <Container>
           <NavbarBrand to="/" tag={Link}>
-            <img
-              alt="..."
-              src={require("assets/img/brand/argon-react-white.png").default}
-            />
+            <img alt="..." src={require('assets/img/brand/argon-react-white.png').default} />
           </NavbarBrand>
           <button
             aria-controls="navbar-collapse"
@@ -58,19 +39,12 @@ function AdminNavbar() {
           >
             <span className="navbar-toggler-icon" />
           </button>
-          <UncontrolledCollapse
-            className="navbar-custom-collapse"
-            navbar
-            toggler="#navbar-collapse"
-          >
+          <UncontrolledCollapse className="navbar-custom-collapse" navbar toggler="#navbar-collapse">
             <div className="navbar-collapse-header">
               <Row>
                 <Col className="collapse-brand" xs="6">
                   <Link to="/admin/dashboard">
-                    <img
-                      alt="..."
-                      src={require("assets/img/brand/blue.png").default}
-                    />
+                    <img alt="..." src={require('assets/img/brand/blue.png').default} />
                   </Link>
                 </Col>
                 <Col className="collapse-close" xs="6">
@@ -120,16 +94,9 @@ function AdminNavbar() {
             <hr className="d-lg-none" />
             <Nav className="align-items-lg-center ml-lg-auto" navbar>
               <NavItem>
-                <NavLink
-                  className="nav-link-icon"
-                  href="https://www.facebook.com/creativetim?ref=creative-tim"
-                  id="tooltip601201423"
-                  target="_blank"
-                >
+                <NavLink className="nav-link-icon" href="https://www.facebook.com/creativetim?ref=creative-tim" id="tooltip601201423" target="_blank">
                   <i className="fab fa-facebook-square" />
-                  <span className="nav-link-inner--text d-lg-none">
-                    Facebook
-                  </span>
+                  <span className="nav-link-inner--text d-lg-none">Facebook</span>
                 </NavLink>
                 <UncontrolledTooltip delay={0} target="tooltip601201423">
                   Like us on Facebook
@@ -143,25 +110,16 @@ function AdminNavbar() {
                   target="_blank"
                 >
                   <i className="fab fa-instagram" />
-                  <span className="nav-link-inner--text d-lg-none">
-                    Instagram
-                  </span>
+                  <span className="nav-link-inner--text d-lg-none">Instagram</span>
                 </NavLink>
                 <UncontrolledTooltip delay={0} target="tooltip871243015">
                   Follow us on Instagram
                 </UncontrolledTooltip>
               </NavItem>
               <NavItem>
-                <NavLink
-                  className="nav-link-icon"
-                  href="https://twitter.com/creativetim?ref=creative-tim"
-                  id="tooltip366258619"
-                  target="_blank"
-                >
+                <NavLink className="nav-link-icon" href="https://twitter.com/creativetim?ref=creative-tim" id="tooltip366258619" target="_blank">
                   <i className="fab fa-twitter-square" />
-                  <span className="nav-link-inner--text d-lg-none">
-                    Twitter
-                  </span>
+                  <span className="nav-link-inner--text d-lg-none">Twitter</span>
                 </NavLink>
                 <UncontrolledTooltip delay={0} target="tooltip366258619">
                   Follow us on Twitter

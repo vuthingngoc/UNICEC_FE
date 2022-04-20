@@ -15,20 +15,9 @@
 
 */
 // reactstrap components
-import {
-  Card,
-  CardHeader,
-  CardBody,
-  Label,
-  FormGroup,
-  Form,
-  Input,
-  Container,
-  Row,
-  Col,
-} from "reactstrap";
+import { Card, CardHeader, CardBody, Label, FormGroup, Form, Input, Container, Row, Col } from 'reactstrap';
 // core components
-import SimpleHeader from "components/Headers/SimpleHeader.js";
+import SimpleHeader from 'components/Headers/SimpleHeader.js';
 
 function Elements() {
   return (
@@ -43,141 +32,78 @@ function Elements() {
             <Row>
               <Col md="4">
                 <FormGroup>
-                  <label
-                    className="form-control-label"
-                    htmlFor="example3cols1Input"
-                  >
+                  <label className="form-control-label" htmlFor="example3cols1Input">
                     One of three cols
                   </label>
-                  <Input
-                    id="example3cols1Input"
-                    placeholder="One of three cols"
-                    type="text"
-                  />
+                  <Input id="example3cols1Input" placeholder="One of three cols" type="text" />
                 </FormGroup>
               </Col>
               <Col md="4">
                 <FormGroup>
-                  <label
-                    className="form-control-label"
-                    htmlFor="example3cols2Input"
-                  >
+                  <label className="form-control-label" htmlFor="example3cols2Input">
                     One of three cols
                   </label>
-                  <Input
-                    id="example3cols2Input"
-                    placeholder="One of three cols"
-                    type="text"
-                  />
+                  <Input id="example3cols2Input" placeholder="One of three cols" type="text" />
                 </FormGroup>
               </Col>
               <Col md="4">
                 <FormGroup>
-                  <label
-                    className="form-control-label"
-                    htmlFor="example3cols3Input"
-                  >
+                  <label className="form-control-label" htmlFor="example3cols3Input">
                     One of three cols
                   </label>
-                  <Input
-                    id="example3cols3Input"
-                    placeholder="One of three cols"
-                    type="text"
-                  />
+                  <Input id="example3cols3Input" placeholder="One of three cols" type="text" />
                 </FormGroup>
               </Col>
             </Row>
             <Row>
               <Col md="3" sm="6">
                 <FormGroup>
-                  <label
-                    className="form-control-label"
-                    htmlFor="example4cols1Input"
-                  >
+                  <label className="form-control-label" htmlFor="example4cols1Input">
                     One of four cols
                   </label>
-                  <Input
-                    id="example4cols1Input"
-                    placeholder="One of four cols"
-                    type="text"
-                  />
+                  <Input id="example4cols1Input" placeholder="One of four cols" type="text" />
                 </FormGroup>
               </Col>
               <Col md="3" sm="6">
                 <FormGroup>
-                  <label
-                    className="form-control-label"
-                    htmlFor="example4cols2Input"
-                  >
+                  <label className="form-control-label" htmlFor="example4cols2Input">
                     One of four cols
                   </label>
-                  <Input
-                    id="example4cols2Input"
-                    placeholder="One of four cols"
-                    type="text"
-                  />
+                  <Input id="example4cols2Input" placeholder="One of four cols" type="text" />
                 </FormGroup>
               </Col>
               <Col md="3" sm="6">
                 <FormGroup>
-                  <label
-                    className="form-control-label"
-                    htmlFor="example4cols3Input"
-                  >
+                  <label className="form-control-label" htmlFor="example4cols3Input">
                     One of four cols
                   </label>
-                  <Input
-                    id="example4cols3Input"
-                    placeholder="One of four cols"
-                    type="text"
-                  />
+                  <Input id="example4cols3Input" placeholder="One of four cols" type="text" />
                 </FormGroup>
               </Col>
               <Col md="3" sm="6">
                 <FormGroup>
-                  <label
-                    className="form-control-label"
-                    htmlFor="example5cols3Input"
-                  >
+                  <label className="form-control-label" htmlFor="example5cols3Input">
                     One of four cols
                   </label>
-                  <Input
-                    id="example5cols3Input"
-                    placeholder="One of four cols"
-                    type="text"
-                  />
+                  <Input id="example5cols3Input" placeholder="One of four cols" type="text" />
                 </FormGroup>
               </Col>
             </Row>
             <Row>
               <Col md="6">
                 <FormGroup>
-                  <label
-                    className="form-control-label"
-                    htmlFor="example2cols1Input"
-                  >
+                  <label className="form-control-label" htmlFor="example2cols1Input">
                     One of two cols
                   </label>
-                  <Input
-                    id="example2cols1Input"
-                    placeholder="One of two cols"
-                    type="text"
-                  />
+                  <Input id="example2cols1Input" placeholder="One of two cols" type="text" />
                 </FormGroup>
               </Col>
               <Col md="6">
                 <FormGroup>
-                  <label
-                    className="form-control-label"
-                    htmlFor="example2cols2Input"
-                  >
+                  <label className="form-control-label" htmlFor="example2cols2Input">
                     One of two cols
                   </label>
-                  <Input
-                    id="example2cols2Input"
-                    placeholder="One of two cols"
-                    type="text"
-                  />
+                  <Input id="example2cols2Input" placeholder="One of two cols" type="text" />
                 </FormGroup>
               </Col>
             </Row>
@@ -193,23 +119,13 @@ function Elements() {
                 <CardBody>
                   <Form>
                     <FormGroup>
-                      <label
-                        className="form-control-label"
-                        htmlFor="exampleFormControlInput1"
-                      >
+                      <label className="form-control-label" htmlFor="exampleFormControlInput1">
                         Email address
                       </label>
-                      <Input
-                        id="exampleFormControlInput1"
-                        placeholder="name@example.com"
-                        type="email"
-                      />
+                      <Input id="exampleFormControlInput1" placeholder="name@example.com" type="email" />
                     </FormGroup>
                     <FormGroup>
-                      <label
-                        className="form-control-label"
-                        htmlFor="exampleFormControlSelect1"
-                      >
+                      <label className="form-control-label" htmlFor="exampleFormControlSelect1">
                         Example select
                       </label>
                       <Input id="exampleFormControlSelect1" type="select">
@@ -221,17 +137,10 @@ function Elements() {
                       </Input>
                     </FormGroup>
                     <FormGroup>
-                      <label
-                        className="form-control-label"
-                        htmlFor="exampleFormControlSelect2"
-                      >
+                      <label className="form-control-label" htmlFor="exampleFormControlSelect2">
                         Example multiple select
                       </label>
-                      <Input
-                        id="exampleFormControlSelect2"
-                        multiple="multiple"
-                        type="select"
-                      >
+                      <Input id="exampleFormControlSelect2" multiple="multiple" type="select">
                         <option>1</option>
                         <option>2</option>
                         <option>3</option>
@@ -240,17 +149,10 @@ function Elements() {
                       </Input>
                     </FormGroup>
                     <FormGroup>
-                      <label
-                        className="form-control-label"
-                        htmlFor="exampleFormControlTextarea1"
-                      >
+                      <label className="form-control-label" htmlFor="exampleFormControlTextarea1">
                         Example textarea
                       </label>
-                      <Input
-                        id="exampleFormControlTextarea1"
-                        rows="3"
-                        type="textarea"
-                      />
+                      <Input id="exampleFormControlTextarea1" rows="3" type="textarea" />
                     </FormGroup>
                   </Form>
                 </CardBody>
@@ -262,214 +164,107 @@ function Elements() {
                 <CardBody>
                   <Form>
                     <FormGroup className="row">
-                      <Label
-                        className="form-control-label"
-                        htmlFor="example-text-input"
-                        md="2"
-                      >
+                      <Label className="form-control-label" htmlFor="example-text-input" md="2">
                         Text
                       </Label>
                       <Col md="10">
-                        <Input
-                          defaultValue="John Snow"
-                          id="example-text-input"
-                          type="text"
-                        />
+                        <Input defaultValue="John Snow" id="example-text-input" type="text" />
                       </Col>
                     </FormGroup>
                     <FormGroup className="row">
-                      <Label
-                        className="form-control-label"
-                        htmlFor="example-search-input"
-                        md="2"
-                      >
+                      <Label className="form-control-label" htmlFor="example-search-input" md="2">
                         Search
                       </Label>
                       <Col md="10">
-                        <Input
-                          defaultValue="Tell me your secret ..."
-                          id="example-search-input"
-                          type="search"
-                        />
+                        <Input defaultValue="Tell me your secret ..." id="example-search-input" type="search" />
                       </Col>
                     </FormGroup>
                     <FormGroup className="row">
-                      <Label
-                        className="form-control-label"
-                        htmlFor="example-email-input"
-                        md="2"
-                      >
+                      <Label className="form-control-label" htmlFor="example-email-input" md="2">
                         Email
                       </Label>
                       <Col md="10">
-                        <Input
-                          defaultValue="argon@example.com"
-                          id="example-email-input"
-                          type="email"
-                        />
+                        <Input defaultValue="argon@example.com" id="example-email-input" type="email" />
                       </Col>
                     </FormGroup>
                     <FormGroup className="row">
-                      <Label
-                        className="form-control-label"
-                        htmlFor="example-url-input"
-                        md="2"
-                      >
+                      <Label className="form-control-label" htmlFor="example-url-input" md="2">
                         URL
                       </Label>
                       <Col md="10">
-                        <Input
-                          defaultValue="https://www.creative-tim.com"
-                          id="example-url-input"
-                          type="url"
-                        />
+                        <Input defaultValue="https://www.creative-tim.com" id="example-url-input" type="url" />
                       </Col>
                     </FormGroup>
                     <FormGroup className="row">
-                      <Label
-                        className="form-control-label"
-                        htmlFor="example-tel-input"
-                        md="2"
-                      >
+                      <Label className="form-control-label" htmlFor="example-tel-input" md="2">
                         Phone
                       </Label>
                       <Col md="10">
-                        <Input
-                          defaultValue="40-(770)-888-444"
-                          id="example-tel-input"
-                          type="tel"
-                        />
+                        <Input defaultValue="40-(770)-888-444" id="example-tel-input" type="tel" />
                       </Col>
                     </FormGroup>
                     <FormGroup className="row">
-                      <Label
-                        className="form-control-label"
-                        htmlFor="example-password-input"
-                        md="2"
-                      >
+                      <Label className="form-control-label" htmlFor="example-password-input" md="2">
                         Password
                       </Label>
                       <Col md="10">
-                        <Input
-                          defaultValue="password"
-                          id="example-password-input"
-                          type="password"
-                          autoComplete="off"
-                        />
+                        <Input defaultValue="password" id="example-password-input" type="password" autoComplete="off" />
                       </Col>
                     </FormGroup>
                     <FormGroup className="row">
-                      <Label
-                        className="form-control-label"
-                        htmlFor="example-number-input"
-                        md="2"
-                      >
+                      <Label className="form-control-label" htmlFor="example-number-input" md="2">
                         Number
                       </Label>
                       <Col md="10">
-                        <Input
-                          defaultValue="23"
-                          id="example-number-input"
-                          type="number"
-                        />
+                        <Input defaultValue="23" id="example-number-input" type="number" />
                       </Col>
                     </FormGroup>
                     <FormGroup className="row">
-                      <Label
-                        className="form-control-label"
-                        htmlFor="example-datetime-local-input"
-                        md="2"
-                      >
+                      <Label className="form-control-label" htmlFor="example-datetime-local-input" md="2">
                         Datetime
                       </Label>
                       <Col md="10">
-                        <Input
-                          defaultValue={
-                            new Date().getFullYear() + "-11-23T10:30:00"
-                          }
-                          id="example-datetime-local-input"
-                          type="datetime-local"
-                        />
+                        <Input defaultValue={new Date().getFullYear() + '-11-23T10:30:00'} id="example-datetime-local-input" type="datetime-local" />
                       </Col>
                     </FormGroup>
                     <FormGroup className="row">
-                      <Label
-                        className="form-control-label"
-                        htmlFor="example-date-input"
-                        md="2"
-                      >
+                      <Label className="form-control-label" htmlFor="example-date-input" md="2">
                         Date
                       </Label>
                       <Col md="10">
-                        <Input
-                          defaultValue={new Date().getFullYear() + "-11-23"}
-                          id="example-date-input"
-                          type="date"
-                        />
+                        <Input defaultValue={new Date().getFullYear() + '-11-23'} id="example-date-input" type="date" />
                       </Col>
                     </FormGroup>
                     <FormGroup className="row">
-                      <Label
-                        className="form-control-label"
-                        htmlFor="example-month-input"
-                        md="2"
-                      >
+                      <Label className="form-control-label" htmlFor="example-month-input" md="2">
                         Month
                       </Label>
                       <Col md="10">
-                        <Input
-                          defaultValue={new Date().getFullYear() + "-11"}
-                          id="example-month-input"
-                          type="month"
-                        />
+                        <Input defaultValue={new Date().getFullYear() + '-11'} id="example-month-input" type="month" />
                       </Col>
                     </FormGroup>
                     <FormGroup className="row">
-                      <Label
-                        className="form-control-label"
-                        htmlFor="example-week-input"
-                        md="2"
-                      >
+                      <Label className="form-control-label" htmlFor="example-week-input" md="2">
                         Week
                       </Label>
                       <Col md="10">
-                        <Input
-                          defaultValue={new Date().getFullYear() + "-W23"}
-                          id="example-week-input"
-                          type="week"
-                        />
+                        <Input defaultValue={new Date().getFullYear() + '-W23'} id="example-week-input" type="week" />
                       </Col>
                     </FormGroup>
                     <FormGroup className="row">
-                      <Label
-                        className="form-control-label"
-                        htmlFor="example-time-input"
-                        md="2"
-                      >
+                      <Label className="form-control-label" htmlFor="example-time-input" md="2">
                         Time
                       </Label>
                       <Col md="10">
-                        <Input
-                          defaultValue="10:30:00"
-                          id="example-time-input"
-                          type="time"
-                        />
+                        <Input defaultValue="10:30:00" id="example-time-input" type="time" />
                       </Col>
                     </FormGroup>
                     <FormGroup className="row">
-                      <Label
-                        className="form-control-label"
-                        htmlFor="example-color-input"
-                        md="2"
-                      >
+                      <Label className="form-control-label" htmlFor="example-color-input" md="2">
                         Color
                       </Label>
                       <Col md="10">
-                        <Input
-                          defaultValue="#5e72e4"
-                          id="example-color-input"
-                          type="color"
-                        />
+                        <Input defaultValue="#5e72e4" id="example-color-input" type="color" />
                       </Col>
                     </FormGroup>
                   </Form>
@@ -486,11 +281,7 @@ function Elements() {
                 <CardBody>
                   <FormGroup>
                     <label className="form-control-label">Large input</label>
-                    <Input
-                      className="form-control-lg"
-                      placeholder=".form-control-lg"
-                      type="text"
-                    />
+                    <Input className="form-control-lg" placeholder=".form-control-lg" type="text" />
                   </FormGroup>
                   <FormGroup>
                     <label className="form-control-label">Default input</label>
@@ -498,11 +289,7 @@ function Elements() {
                   </FormGroup>
                   <FormGroup>
                     <label className="form-control-label">Small input</label>
-                    <Input
-                      className="form-control-sm"
-                      placeholder=".form-control-sm"
-                      type="text"
-                    />
+                    <Input className="form-control-sm" placeholder=".form-control-sm" type="text" />
                   </FormGroup>
                 </CardBody>
               </Card>
@@ -513,31 +300,16 @@ function Elements() {
                 <CardBody>
                   <Form>
                     <FormGroup>
-                      <label
-                        className="form-control-label"
-                        htmlFor="exampleFormControlTextarea2"
-                      >
+                      <label className="form-control-label" htmlFor="exampleFormControlTextarea2">
                         Basic textarea
                       </label>
-                      <Input
-                        id="exampleFormControlTextarea2"
-                        rows="3"
-                        type="textarea"
-                      />
+                      <Input id="exampleFormControlTextarea2" rows="3" type="textarea" />
                     </FormGroup>
                     <FormGroup>
-                      <label
-                        className="form-control-label"
-                        htmlFor="exampleFormControlTextarea3"
-                      >
+                      <label className="form-control-label" htmlFor="exampleFormControlTextarea3">
                         Unresizable textarea
                       </label>
-                      <Input
-                        id="exampleFormControlTextarea3"
-                        resize="none"
-                        rows="3"
-                        type="textarea"
-                      />
+                      <Input id="exampleFormControlTextarea3" resize="none" rows="3" type="textarea" />
                     </FormGroup>
                   </Form>
                 </CardBody>
@@ -549,10 +321,7 @@ function Elements() {
                 <CardBody>
                   <Form>
                     <FormGroup>
-                      <label
-                        className="form-control-label"
-                        htmlFor="exampleFormControlSelect3"
-                      >
+                      <label className="form-control-label" htmlFor="exampleFormControlSelect3">
                         Basic select
                       </label>
                       <Input id="exampleFormControlSelect3" type="select">
@@ -564,17 +333,10 @@ function Elements() {
                       </Input>
                     </FormGroup>
                     <FormGroup>
-                      <label
-                        className="form-control-label"
-                        htmlFor="exampleFormControlSelect5"
-                      >
+                      <label className="form-control-label" htmlFor="exampleFormControlSelect5">
                         Basic select
                       </label>
-                      <Input
-                        disabled
-                        id="exampleFormControlSelect5"
-                        type="select"
-                      >
+                      <Input disabled id="exampleFormControlSelect5" type="select">
                         <option>1</option>
                         <option>2</option>
                         <option>3</option>
@@ -583,17 +345,10 @@ function Elements() {
                       </Input>
                     </FormGroup>
                     <FormGroup>
-                      <label
-                        className="form-control-label"
-                        htmlFor="exampleFormControlSelect6"
-                      >
+                      <label className="form-control-label" htmlFor="exampleFormControlSelect6">
                         Multiple select
                       </label>
-                      <Input
-                        id="exampleFormControlSelect6"
-                        multiple="multiple"
-                        type="select"
-                      >
+                      <Input id="exampleFormControlSelect6" multiple="multiple" type="select">
                         <option>1</option>
                         <option>2</option>
                         <option>3</option>
@@ -602,18 +357,10 @@ function Elements() {
                       </Input>
                     </FormGroup>
                     <FormGroup>
-                      <label
-                        className="form-control-label"
-                        htmlFor="exampleFormControlSelect4"
-                      >
+                      <label className="form-control-label" htmlFor="exampleFormControlSelect4">
                         Disabled multiple select
                       </label>
-                      <Input
-                        disabled
-                        id="exampleFormControlSelect4"
-                        multiple="multiple"
-                        type="select"
-                      >
+                      <Input disabled id="exampleFormControlSelect4" multiple="multiple" type="select">
                         <option>1</option>
                         <option>2</option>
                         <option>3</option>
@@ -631,16 +378,8 @@ function Elements() {
                 <CardBody>
                   <Form>
                     <div className="custom-file">
-                      <input
-                        className="custom-file-input"
-                        id="customFileLang"
-                        lang="en"
-                        type="file"
-                      />
-                      <label
-                        className="custom-file-label"
-                        htmlFor="customFileLang"
-                      >
+                      <input className="custom-file-input" id="customFileLang" lang="en" type="file" />
+                      <label className="custom-file-label" htmlFor="customFileLang">
                         Select file
                       </label>
                     </div>
@@ -656,120 +395,52 @@ function Elements() {
                     <Row>
                       <Col md="6">
                         <div className="custom-control custom-checkbox mb-3">
-                          <input
-                            className="custom-control-input"
-                            id="customCheck1"
-                            type="checkbox"
-                          />
-                          <label
-                            className="custom-control-label"
-                            htmlFor="customCheck1"
-                          >
+                          <input className="custom-control-input" id="customCheck1" type="checkbox" />
+                          <label className="custom-control-label" htmlFor="customCheck1">
                             Unchecked
                           </label>
                         </div>
                         <div className="custom-control custom-checkbox mb-3">
-                          <input
-                            className="custom-control-input"
-                            defaultChecked
-                            id="customCheck2"
-                            type="checkbox"
-                          />
-                          <label
-                            className="custom-control-label"
-                            htmlFor="customCheck2"
-                          >
+                          <input className="custom-control-input" defaultChecked id="customCheck2" type="checkbox" />
+                          <label className="custom-control-label" htmlFor="customCheck2">
                             Checked
                           </label>
                         </div>
                         <div className="custom-control custom-checkbox mb-3">
-                          <input
-                            className="custom-control-input"
-                            disabled
-                            id="customCheck3"
-                            type="checkbox"
-                          />
-                          <label
-                            className="custom-control-label"
-                            htmlFor="customCheck3"
-                          >
+                          <input className="custom-control-input" disabled id="customCheck3" type="checkbox" />
+                          <label className="custom-control-label" htmlFor="customCheck3">
                             Disabled Unchecked
                           </label>
                         </div>
                         <div className="custom-control custom-checkbox mb-3">
-                          <input
-                            className="custom-control-input"
-                            defaultChecked
-                            disabled
-                            id="customCheck4"
-                            type="checkbox"
-                          />
-                          <label
-                            className="custom-control-label"
-                            htmlFor="customCheck4"
-                          >
+                          <input className="custom-control-input" defaultChecked disabled id="customCheck4" type="checkbox" />
+                          <label className="custom-control-label" htmlFor="customCheck4">
                             Disabled Checked
                           </label>
                         </div>
                       </Col>
                       <Col md="6">
                         <div className="custom-control custom-radio mb-3">
-                          <input
-                            className="custom-control-input"
-                            id="customRadio5"
-                            name="custom-radio-1"
-                            type="radio"
-                          />
-                          <label
-                            className="custom-control-label"
-                            htmlFor="customRadio5"
-                          >
+                          <input className="custom-control-input" id="customRadio5" name="custom-radio-1" type="radio" />
+                          <label className="custom-control-label" htmlFor="customRadio5">
                             Unchecked
                           </label>
                         </div>
                         <div className="custom-control custom-radio mb-3">
-                          <input
-                            className="custom-control-input"
-                            defaultChecked
-                            id="customRadio6"
-                            name="custom-radio-1"
-                            type="radio"
-                          />
-                          <label
-                            className="custom-control-label"
-                            htmlFor="customRadio6"
-                          >
+                          <input className="custom-control-input" defaultChecked id="customRadio6" name="custom-radio-1" type="radio" />
+                          <label className="custom-control-label" htmlFor="customRadio6">
                             Checked
                           </label>
                         </div>
                         <div className="custom-control custom-radio mb-3">
-                          <input
-                            className="custom-control-input"
-                            disabled
-                            id="customRadio7"
-                            name="custom-radio-3"
-                            type="radio"
-                          />
-                          <label
-                            className="custom-control-label"
-                            htmlFor="customRadio7"
-                          >
+                          <input className="custom-control-input" disabled id="customRadio7" name="custom-radio-3" type="radio" />
+                          <label className="custom-control-label" htmlFor="customRadio7">
                             Disabled unchecked
                           </label>
                         </div>
                         <div className="custom-control custom-radio mb-3">
-                          <input
-                            className="custom-control-input"
-                            defaultChecked
-                            disabled
-                            id="customRadio8"
-                            name="custom-radio-4"
-                            type="radio"
-                          />
-                          <label
-                            className="custom-control-label"
-                            htmlFor="customRadio8"
-                          >
+                          <input className="custom-control-input" defaultChecked disabled id="customRadio8" name="custom-radio-4" type="radio" />
+                          <label className="custom-control-label" htmlFor="customRadio8">
                             Disabled checkbox
                           </label>
                         </div>

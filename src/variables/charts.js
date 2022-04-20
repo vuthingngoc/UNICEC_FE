@@ -14,7 +14,7 @@
 * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 
 */
-const Chart = require("chart.js");
+const Chart = require('chart.js');
 // Only for demo purposes - return a random number to generate datasets
 var randomScalingFactor = function () {
   return Math.round(Math.random() * 100);
@@ -42,7 +42,7 @@ Chart.elements.Rectangle.prototype.draw = function () {
     bottom = vm.base;
     signX = 1;
     signY = bottom > top ? 1 : -1;
-    borderSkipped = vm.borderSkipped || "bottom";
+    borderSkipped = vm.borderSkipped || 'bottom';
   } else {
     // horizontal bar
     left = vm.base;
@@ -51,7 +51,7 @@ Chart.elements.Rectangle.prototype.draw = function () {
     bottom = vm.y + vm.height / 2;
     signX = right > left ? 1 : -1;
     signY = 1;
-    borderSkipped = vm.borderSkipped || "left";
+    borderSkipped = vm.borderSkipped || 'left';
   }
 
   // Canvas doesn't allow us to stroke inside the width so we can
@@ -62,12 +62,10 @@ Chart.elements.Rectangle.prototype.draw = function () {
     borderWidth = borderWidth > barSize ? barSize : borderWidth;
     var halfStroke = borderWidth / 2;
     // Adjust borderWidth when bar top position is near vm.base(zero).
-    var borderLeft = left + (borderSkipped !== "left" ? halfStroke * signX : 0);
-    var borderRight =
-      right + (borderSkipped !== "right" ? -halfStroke * signX : 0);
-    var borderTop = top + (borderSkipped !== "top" ? halfStroke * signY : 0);
-    var borderBottom =
-      bottom + (borderSkipped !== "bottom" ? -halfStroke * signY : 0);
+    var borderLeft = left + (borderSkipped !== 'left' ? halfStroke * signX : 0);
+    var borderRight = right + (borderSkipped !== 'right' ? -halfStroke * signX : 0);
+    var borderTop = top + (borderSkipped !== 'top' ? halfStroke * signY : 0);
+    var borderBottom = bottom + (borderSkipped !== 'bottom' ? -halfStroke * signY : 0);
     // not become a vertical line?
     if (borderLeft !== borderRight) {
       top = borderTop;
@@ -96,7 +94,7 @@ Chart.elements.Rectangle.prototype.draw = function () {
   ];
 
   // Find first (starting) corner with fallback to 'bottom'
-  var borders = ["bottom", "left", "top", "right"];
+  var borders = ['bottom', 'left', 'top', 'right'];
   var startCorner = borders.indexOf(borderSkipped, 0);
   if (startCorner === -1) {
     startCorner = 0;
@@ -151,36 +149,36 @@ Chart.elements.Rectangle.prototype.draw = function () {
   }
 };
 
-var mode = "light"; //(themeMode) ? themeMode : 'light';
+var mode = 'light'; //(themeMode) ? themeMode : 'light';
 var fonts = {
-  base: "Open Sans",
+  base: 'Open Sans',
 };
 
 // Colors
 var colors = {
   gray: {
-    100: "#f6f9fc",
-    200: "#e9ecef",
-    300: "#dee2e6",
-    400: "#ced4da",
-    500: "#adb5bd",
-    600: "#8898aa",
-    700: "#525f7f",
-    800: "#32325d",
-    900: "#212529",
+    100: '#f6f9fc',
+    200: '#e9ecef',
+    300: '#dee2e6',
+    400: '#ced4da',
+    500: '#adb5bd',
+    600: '#8898aa',
+    700: '#525f7f',
+    800: '#32325d',
+    900: '#212529',
   },
   theme: {
-    default: "#172b4d",
-    primary: "#5e72e4",
-    secondary: "#f4f5f7",
-    info: "#11cdef",
-    success: "#2dce89",
-    danger: "#f5365c",
-    warning: "#fb6340",
+    default: '#172b4d',
+    primary: '#5e72e4',
+    secondary: '#f4f5f7',
+    info: '#11cdef',
+    success: '#2dce89',
+    danger: '#f5365c',
+    warning: '#fb6340',
   },
-  black: "#12263F",
-  white: "#FFFFFF",
-  transparent: "transparent",
+  black: '#12263F',
+  white: '#FFFFFF',
+  transparent: 'transparent',
 };
 
 // Methods
@@ -193,8 +191,8 @@ function chartOptions() {
       global: {
         responsive: true,
         maintainAspectRatio: false,
-        defaultColor: mode === "dark" ? colors.gray[700] : colors.gray[600],
-        defaultFontColor: mode === "dark" ? colors.gray[700] : colors.gray[600],
+        defaultColor: mode === 'dark' ? colors.gray[700] : colors.gray[600],
+        defaultFontColor: mode === 'dark' ? colors.gray[700] : colors.gray[600],
         defaultFontFamily: fonts.base,
         defaultFontSize: 13,
         layout: {
@@ -202,7 +200,7 @@ function chartOptions() {
         },
         legend: {
           display: false,
-          position: "bottom",
+          position: 'bottom',
           labels: {
             usePointStyle: true,
             padding: 16,
@@ -211,27 +209,27 @@ function chartOptions() {
         elements: {
           point: {
             radius: 0,
-            backgroundColor: colors.theme["primary"],
+            backgroundColor: colors.theme['primary'],
           },
           line: {
             tension: 0.4,
             borderWidth: 4,
-            borderColor: colors.theme["primary"],
+            borderColor: colors.theme['primary'],
             backgroundColor: colors.transparent,
-            borderCapStyle: "rounded",
+            borderCapStyle: 'rounded',
           },
           rectangle: {
-            backgroundColor: colors.theme["warning"],
+            backgroundColor: colors.theme['warning'],
           },
           arc: {
-            backgroundColor: colors.theme["primary"],
-            borderColor: mode === "dark" ? colors.gray[800] : colors.white,
+            backgroundColor: colors.theme['primary'],
+            borderColor: mode === 'dark' ? colors.gray[800] : colors.white,
             borderWidth: 4,
           },
         },
         tooltips: {
           enabled: true,
-          mode: "index",
+          mode: 'index',
           intersect: false,
         },
       },
@@ -239,18 +237,15 @@ function chartOptions() {
         cutoutPercentage: 83,
         legendCallback: function (chart) {
           var data = chart.data;
-          var content = "";
+          var content = '';
 
           data.labels.forEach(function (label, index) {
             var bgColor = data.datasets[0].backgroundColor[index];
 
             content += '<span class="chart-legend-item">';
-            content +=
-              '<i class="chart-legend-indicator" style="background-color: ' +
-              bgColor +
-              '"></i>';
+            content += '<i class="chart-legend-indicator" style="background-color: ' + bgColor + '"></i>';
             content += label;
-            content += "</span>";
+            content += '</span>';
           });
 
           return content;
@@ -260,16 +255,16 @@ function chartOptions() {
   };
 
   // yAxes
-  Chart.scaleService.updateScaleDefaults("linear", {
+  Chart.scaleService.updateScaleDefaults('linear', {
     gridLines: {
       borderDash: [2],
       borderDashOffset: [2],
-      color: mode === "dark" ? colors.gray[900] : colors.gray[300],
+      color: mode === 'dark' ? colors.gray[900] : colors.gray[300],
       drawBorder: false,
       drawTicks: false,
       lineWidth: 1,
       zeroLineWidth: 1,
-      zeroLineColor: mode === "dark" ? colors.gray[900] : colors.gray[300],
+      zeroLineColor: mode === 'dark' ? colors.gray[900] : colors.gray[300],
       zeroLineBorderDash: [2],
       zeroLineBorderDashOffset: [2],
     },
@@ -285,7 +280,7 @@ function chartOptions() {
   });
 
   // xAxes
-  Chart.scaleService.updateScaleDefaults("category", {
+  Chart.scaleService.updateScaleDefaults('category', {
     gridLines: {
       drawBorder: false,
       drawOnChartArea: false,
@@ -302,7 +297,7 @@ function chartOptions() {
 // Parse global options
 function parseOptions(parent, options) {
   for (var item in options) {
-    if (typeof options[item] !== "object") {
+    if (typeof options[item] !== 'object') {
       parent[item] = options[item];
     } else {
       parseOptions(parent[item], options[item]);
@@ -323,7 +318,7 @@ let chartExample1 = {
           ticks: {
             callback: function (value) {
               if (!(value % 10)) {
-                return "$" + value + "k";
+                return '$' + value + 'k';
               }
             },
           },
@@ -333,37 +328,37 @@ let chartExample1 = {
     tooltips: {
       callbacks: {
         label: function (item, data) {
-          var label = data.datasets[item.datasetIndex].label || "";
+          var label = data.datasets[item.datasetIndex].label || '';
           var yLabel = item.yLabel;
-          var content = "";
+          var content = '';
 
           if (data.datasets.length > 1) {
             content += label;
           }
 
-          content += "$" + yLabel + "k";
+          content += '$' + yLabel + 'k';
           return content;
         },
       },
     },
   },
-  data1: (canvas) => {
+  data1: () => {
     return {
-      labels: ["May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+      labels: ['May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
       datasets: [
         {
-          label: "Performance",
+          label: 'Performance',
           data: [0, 20, 10, 30, 15, 40, 20, 60, 60],
         },
       ],
     };
   },
-  data2: (canvas) => {
+  data2: () => {
     return {
-      labels: ["May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+      labels: ['May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
       datasets: [
         {
-          label: "Performance",
+          label: 'Performance',
           data: [0, 20, 5, 25, 10, 30, 15, 40, 40],
         },
       ],
@@ -395,9 +390,9 @@ let chartExample2 = {
     tooltips: {
       callbacks: {
         label: function (item, data) {
-          var label = data.datasets[item.datasetIndex].label || "";
+          var label = data.datasets[item.datasetIndex].label || '';
           var yLabel = item.yLabel;
-          var content = "";
+          var content = '';
           if (data.datasets.length > 1) {
             content += label;
           }
@@ -408,10 +403,10 @@ let chartExample2 = {
     },
   },
   data: {
-    labels: ["Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+    labels: ['Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
     datasets: [
       {
-        label: "Sales",
+        label: 'Sales',
         data: [25, 20, 30, 22, 17, 29],
         maxBarThickness: 10,
       },
@@ -435,10 +430,10 @@ let chartExample3 = {
     },
   },
   data: {
-    labels: ["May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+    labels: ['May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
     datasets: [
       {
-        label: "Performance",
+        label: 'Performance',
         data: [0, 20, 10, 30, 15, 40, 20, 60, 60],
       },
     ],
@@ -461,10 +456,10 @@ const chartExample4 = {
     },
   },
   data: {
-    labels: ["May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+    labels: ['May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
     datasets: [
       {
-        label: "Performance",
+        label: 'Performance',
         data: [10, 18, 28, 23, 28, 40, 36, 46, 52],
         pointRadius: 10,
         pointHoverRadius: 15,
@@ -477,31 +472,19 @@ const chartExample4 = {
 // Example 5 of Chart inside src/views/pages/Charts.js
 const chartExample5 = {
   data: {
-    labels: ["Danger", "Warning", "Success", "Primary", "Info"],
+    labels: ['Danger', 'Warning', 'Success', 'Primary', 'Info'],
     datasets: [
       {
-        data: [
-          randomScalingFactor(),
-          randomScalingFactor(),
-          randomScalingFactor(),
-          randomScalingFactor(),
-          randomScalingFactor(),
-        ],
-        backgroundColor: [
-          colors.theme["danger"],
-          colors.theme["warning"],
-          colors.theme["success"],
-          colors.theme["primary"],
-          colors.theme["info"],
-        ],
-        label: "Dataset 1",
+        data: [randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor()],
+        backgroundColor: [colors.theme['danger'], colors.theme['warning'], colors.theme['success'], colors.theme['primary'], colors.theme['info']],
+        label: 'Dataset 1',
       },
     ],
   },
   options: {
     responsive: true,
     legend: {
-      position: "top",
+      position: 'top',
     },
     animation: {
       animateScale: true,
@@ -513,31 +496,19 @@ const chartExample5 = {
 // Example 6 of Chart inside src/views/pages/Charts.js
 const chartExample6 = {
   data: {
-    labels: ["Danger", "Warning", "Success", "Primary", "Info"],
+    labels: ['Danger', 'Warning', 'Success', 'Primary', 'Info'],
     datasets: [
       {
-        data: [
-          randomScalingFactor(),
-          randomScalingFactor(),
-          randomScalingFactor(),
-          randomScalingFactor(),
-          randomScalingFactor(),
-        ],
-        backgroundColor: [
-          colors.theme["danger"],
-          colors.theme["warning"],
-          colors.theme["success"],
-          colors.theme["primary"],
-          colors.theme["info"],
-        ],
-        label: "Dataset 1",
+        data: [randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor()],
+        backgroundColor: [colors.theme['danger'], colors.theme['warning'], colors.theme['success'], colors.theme['primary'], colors.theme['info']],
+        label: 'Dataset 1',
       },
     ],
   },
   options: {
     responsive: true,
     legend: {
-      position: "top",
+      position: 'top',
     },
     animation: {
       animateScale: true,
@@ -549,11 +520,11 @@ const chartExample6 = {
 // Example 7 of Chart inside src/views/pages/Charts.js
 const chartExample7 = {
   data: {
-    labels: ["January", "February", "March", "April", "May", "June", "July"],
+    labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
     datasets: [
       {
-        label: "Dataset 1",
-        backgroundColor: colors.theme["danger"],
+        label: 'Dataset 1',
+        backgroundColor: colors.theme['danger'],
         data: [
           randomScalingFactor(),
           randomScalingFactor(),
@@ -566,8 +537,8 @@ const chartExample7 = {
         maxBarThickness: 10,
       },
       {
-        label: "Dataset 2",
-        backgroundColor: colors.theme["primary"],
+        label: 'Dataset 2',
+        backgroundColor: colors.theme['primary'],
         data: [
           randomScalingFactor(),
           randomScalingFactor(),
@@ -580,8 +551,8 @@ const chartExample7 = {
         maxBarThickness: 10,
       },
       {
-        label: "Dataset 3",
-        backgroundColor: colors.theme["success"],
+        label: 'Dataset 3',
+        backgroundColor: colors.theme['success'],
         data: [
           randomScalingFactor(),
           randomScalingFactor(),
@@ -597,7 +568,7 @@ const chartExample7 = {
   },
   options: {
     tooltips: {
-      mode: "index",
+      mode: 'index',
       intersect: false,
     },
     responsive: true,

@@ -15,7 +15,7 @@
 
 */
 // reactstrap components
-import { Button, Container, Row, Col } from "reactstrap";
+import { Button, Container, Row, Col } from 'reactstrap';
 
 function ProfileHeader() {
   return (
@@ -23,13 +23,10 @@ function ProfileHeader() {
       <div
         className="header pb-6 d-flex align-items-center"
         style={{
-          minHeight: "500px",
-          backgroundImage:
-            'url("' +
-            require("assets/img/theme/profile-cover.jpg").default +
-            '")',
-          backgroundSize: "cover",
-          backgroundPosition: "center top",
+          minHeight: '500px',
+          backgroundImage: 'url("' + require('assets/img/theme/profile-cover.jpg').default + '")',
+          backgroundSize: 'cover',
+          backgroundPosition: 'center top',
         }}
       >
         <span className="mask bg-gradient-info opacity-8" />
@@ -38,16 +35,8 @@ function ProfileHeader() {
           <Row>
             <Col lg="7" md="10">
               <h1 className="display-2 text-white">مرحبا جيسي</h1>
-              <p className="text-white mt-0 mb-5">
-                هذه هي صفحة ملفك الشخصي. يمكنك رؤية التقدم الذي أحرزته في عملك
-                وإدارة مشاريعك أو المهام المعينة
-              </p>
-              <Button
-                className="btn-neutral"
-                color="default"
-                href="#pablo"
-                onClick={(e) => e.preventDefault()}
-              >
+              <p className="text-white mt-0 mb-5">هذه هي صفحة ملفك الشخصي. يمكنك رؤية التقدم الذي أحرزته في عملك وإدارة مشاريعك أو المهام المعينة</p>
+              <Button className="btn-neutral" color="default" href="#pablo" onClick={(e) => e.preventDefault()}>
                 تعديل الملف الشخصي
               </Button>
             </Col>

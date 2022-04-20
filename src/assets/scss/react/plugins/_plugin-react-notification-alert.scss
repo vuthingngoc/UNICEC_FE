@@ -12,18 +12,18 @@
     }
 
     &:not(.alert-info):not(.alert-success):not(.alert-warning):not(.alert-danger) {
-      background-color: rgba($black, .95);
+      background-color: rgba($black, 0.95);
 
       .alert-notify-close {
         color: $yellow;
 
         &:hover {
-          opacity: .8;
+          opacity: 0.8;
         }
       }
     }
 
-    .ni[data-notify="icon"] {
+    .ni[data-notify='icon'] {
       position: relative;
       top: 4px;
     }
@@ -39,7 +39,7 @@
       right: $alert-padding-x !important;
       transform: translateY(0);
     }
-    [data-notify="icon"] {
+    [data-notify='icon'] {
       font-size: 1.25rem;
       margin-right: 1.25rem;
       display: inline-block;

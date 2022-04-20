@@ -14,13 +14,13 @@
 * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 
 */
-import React from "react";
+import React from 'react';
 // react plugin for creating vector maps
-import { VectorMap } from "react-jvectormap";
+import { VectorMap } from 'react-jvectormap';
 // javascipt plugin for creating charts
-import Chart from "chart.js";
+import Chart from 'chart.js';
 // react plugin used to create charts
-import { Line, Bar } from "react-chartjs-2";
+import { Line, Bar } from 'react-chartjs-2';
 // reactstrap components
 import {
   Badge,
@@ -42,16 +42,11 @@ import {
   Row,
   Col,
   UncontrolledTooltip,
-} from "reactstrap";
+} from 'reactstrap';
 // core components
-import AlternativeHeader from "components/Headers/AlternativeHeader.js";
+import AlternativeHeader from 'components/Headers/AlternativeHeader.js';
 
-import {
-  chartOptions,
-  parseOptions,
-  chartExample2,
-  chartExample3,
-} from "variables/charts.js";
+import { chartOptions, parseOptions, chartExample2, chartExample3 } from 'variables/charts.js';
 
 let mapData = {
   AU: 760,
@@ -83,48 +78,25 @@ function Alternative() {
               <CardBody>
                 <Row>
                   <div className="col">
-                    <CardTitle
-                      tag="h5"
-                      className="text-uppercase text-muted mb-0 text-white"
-                    >
+                    <CardTitle tag="h5" className="text-uppercase text-muted mb-0 text-white">
                       Tasks completed
                     </CardTitle>
-                    <span className="h2 font-weight-bold mb-0 text-white">
-                      8/24
-                    </span>
-                    <Progress
-                      className="progress-xs mt-3 mb-0"
-                      max="100"
-                      value="30"
-                      color="success"
-                    />
+                    <span className="h2 font-weight-bold mb-0 text-white">8/24</span>
+                    <Progress className="progress-xs mt-3 mb-0" max="100" value="30" color="success" />
                   </div>
                   <Col className="col-auto">
                     <UncontrolledDropdown>
-                      <DropdownToggle
-                        size="sm"
-                        color="neutral"
-                        className="mr-0"
-                      >
+                      <DropdownToggle size="sm" color="neutral" className="mr-0">
                         <i className="fas fa-ellipsis-h" />
                       </DropdownToggle>
                       <DropdownMenu right>
-                        <DropdownItem
-                          href="#pablo"
-                          onClick={(e) => e.preventDefault()}
-                        >
+                        <DropdownItem href="#pablo" onClick={(e) => e.preventDefault()}>
                           Action
                         </DropdownItem>
-                        <DropdownItem
-                          href="#pablo"
-                          onClick={(e) => e.preventDefault()}
-                        >
+                        <DropdownItem href="#pablo" onClick={(e) => e.preventDefault()}>
                           Another action
                         </DropdownItem>
-                        <DropdownItem
-                          href="#pablo"
-                          onClick={(e) => e.preventDefault()}
-                        >
+                        <DropdownItem href="#pablo" onClick={(e) => e.preventDefault()}>
                           Something else here
                         </DropdownItem>
                       </DropdownMenu>
@@ -132,11 +104,7 @@ function Alternative() {
                   </Col>
                 </Row>
                 <p className="mt-3 mb-0 text-sm">
-                  <a
-                    className="text-nowrap text-white font-weight-600"
-                    href="#pablo"
-                    onClick={(e) => e.preventDefault()}
-                  >
+                  <a className="text-nowrap text-white font-weight-600" href="#pablo" onClick={(e) => e.preventDefault()}>
                     See details
                   </a>
                 </p>
@@ -148,48 +116,25 @@ function Alternative() {
               <CardBody>
                 <Row>
                   <div className="col">
-                    <CardTitle
-                      tag="h5"
-                      className="text-uppercase text-muted mb-0 text-white"
-                    >
+                    <CardTitle tag="h5" className="text-uppercase text-muted mb-0 text-white">
                       Contacts
                     </CardTitle>
-                    <span className="h2 font-weight-bold mb-0 text-white">
-                      123/267
-                    </span>
-                    <Progress
-                      className="progress-xs mt-3 mb-0"
-                      max="100"
-                      value="50"
-                      color="success"
-                    />
+                    <span className="h2 font-weight-bold mb-0 text-white">123/267</span>
+                    <Progress className="progress-xs mt-3 mb-0" max="100" value="50" color="success" />
                   </div>
                   <Col className="col-auto">
                     <UncontrolledDropdown>
-                      <DropdownToggle
-                        size="sm"
-                        color="neutral"
-                        className="mr-0"
-                      >
+                      <DropdownToggle size="sm" color="neutral" className="mr-0">
                         <i className="fas fa-ellipsis-h" />
                       </DropdownToggle>
                       <DropdownMenu right>
-                        <DropdownItem
-                          href="#pablo"
-                          onClick={(e) => e.preventDefault()}
-                        >
+                        <DropdownItem href="#pablo" onClick={(e) => e.preventDefault()}>
                           Action
                         </DropdownItem>
-                        <DropdownItem
-                          href="#pablo"
-                          onClick={(e) => e.preventDefault()}
-                        >
+                        <DropdownItem href="#pablo" onClick={(e) => e.preventDefault()}>
                           Another action
                         </DropdownItem>
-                        <DropdownItem
-                          href="#pablo"
-                          onClick={(e) => e.preventDefault()}
-                        >
+                        <DropdownItem href="#pablo" onClick={(e) => e.preventDefault()}>
                           Something else here
                         </DropdownItem>
                       </DropdownMenu>
@@ -197,11 +142,7 @@ function Alternative() {
                   </Col>
                 </Row>
                 <p className="mt-3 mb-0 text-sm">
-                  <a
-                    className="text-nowrap text-white font-weight-600"
-                    href="#pablo"
-                    onClick={(e) => e.preventDefault()}
-                  >
+                  <a className="text-nowrap text-white font-weight-600" href="#pablo" onClick={(e) => e.preventDefault()}>
                     See details
                   </a>
                 </p>
@@ -213,48 +154,25 @@ function Alternative() {
               <CardBody>
                 <Row>
                   <div className="col">
-                    <CardTitle
-                      tag="h5"
-                      className="text-uppercase text-muted mb-0 text-white"
-                    >
+                    <CardTitle tag="h5" className="text-uppercase text-muted mb-0 text-white">
                       Items sold
                     </CardTitle>
-                    <span className="h2 font-weight-bold mb-0 text-white">
-                      200/300
-                    </span>
-                    <Progress
-                      className="progress-xs mt-3 mb-0"
-                      max="100"
-                      value="80"
-                      color="success"
-                    />
+                    <span className="h2 font-weight-bold mb-0 text-white">200/300</span>
+                    <Progress className="progress-xs mt-3 mb-0" max="100" value="80" color="success" />
                   </div>
                   <Col className="col-auto">
                     <UncontrolledDropdown>
-                      <DropdownToggle
-                        size="sm"
-                        color="neutral"
-                        className="mr-0"
-                      >
+                      <DropdownToggle size="sm" color="neutral" className="mr-0">
                         <i className="fas fa-ellipsis-h" />
                       </DropdownToggle>
                       <DropdownMenu right>
-                        <DropdownItem
-                          href="#pablo"
-                          onClick={(e) => e.preventDefault()}
-                        >
+                        <DropdownItem href="#pablo" onClick={(e) => e.preventDefault()}>
                           Action
                         </DropdownItem>
-                        <DropdownItem
-                          href="#pablo"
-                          onClick={(e) => e.preventDefault()}
-                        >
+                        <DropdownItem href="#pablo" onClick={(e) => e.preventDefault()}>
                           Another action
                         </DropdownItem>
-                        <DropdownItem
-                          href="#pablo"
-                          onClick={(e) => e.preventDefault()}
-                        >
+                        <DropdownItem href="#pablo" onClick={(e) => e.preventDefault()}>
                           Something else here
                         </DropdownItem>
                       </DropdownMenu>
@@ -262,11 +180,7 @@ function Alternative() {
                   </Col>
                 </Row>
                 <p className="mt-3 mb-0 text-sm">
-                  <a
-                    className="text-nowrap text-white font-weight-600"
-                    href="#pablo"
-                    onClick={(e) => e.preventDefault()}
-                  >
+                  <a className="text-nowrap text-white font-weight-600" href="#pablo" onClick={(e) => e.preventDefault()}>
                     See details
                   </a>
                 </p>
@@ -278,48 +192,25 @@ function Alternative() {
               <CardBody>
                 <Row>
                   <div className="col">
-                    <CardTitle
-                      tag="h5"
-                      className="text-uppercase text-muted mb-0 text-white"
-                    >
+                    <CardTitle tag="h5" className="text-uppercase text-muted mb-0 text-white">
                       Notifications
                     </CardTitle>
-                    <span className="h2 font-weight-bold mb-0 text-white">
-                      50/62
-                    </span>
-                    <Progress
-                      className="progress-xs mt-3 mb-0"
-                      max="100"
-                      value="90"
-                      color="success"
-                    />
+                    <span className="h2 font-weight-bold mb-0 text-white">50/62</span>
+                    <Progress className="progress-xs mt-3 mb-0" max="100" value="90" color="success" />
                   </div>
                   <Col className="col-auto">
                     <UncontrolledDropdown>
-                      <DropdownToggle
-                        size="sm"
-                        color="neutral"
-                        className="mr-0"
-                      >
+                      <DropdownToggle size="sm" color="neutral" className="mr-0">
                         <i className="fas fa-ellipsis-h" />
                       </DropdownToggle>
                       <DropdownMenu right>
-                        <DropdownItem
-                          href="#pablo"
-                          onClick={(e) => e.preventDefault()}
-                        >
+                        <DropdownItem href="#pablo" onClick={(e) => e.preventDefault()}>
                           Action
                         </DropdownItem>
-                        <DropdownItem
-                          href="#pablo"
-                          onClick={(e) => e.preventDefault()}
-                        >
+                        <DropdownItem href="#pablo" onClick={(e) => e.preventDefault()}>
                           Another action
                         </DropdownItem>
-                        <DropdownItem
-                          href="#pablo"
-                          onClick={(e) => e.preventDefault()}
-                        >
+                        <DropdownItem href="#pablo" onClick={(e) => e.preventDefault()}>
                           Something else here
                         </DropdownItem>
                       </DropdownMenu>
@@ -327,11 +218,7 @@ function Alternative() {
                   </Col>
                 </Row>
                 <p className="mt-3 mb-0 text-sm">
-                  <a
-                    className="text-nowrap text-white font-weight-600"
-                    href="#pablo"
-                    onClick={(e) => e.preventDefault()}
-                  >
+                  <a className="text-nowrap text-white font-weight-600" href="#pablo" onClick={(e) => e.preventDefault()}>
                     See details
                   </a>
                 </p>
@@ -347,12 +234,7 @@ function Alternative() {
             </CardHeader>
             <CardBody>
               <div className="chart">
-                <Line
-                  data={chartExample3.data}
-                  options={chartExample3.options}
-                  id="chart-sales"
-                  className="chart-canvas"
-                />
+                <Line data={chartExample3.data} options={chartExample3.options} id="chart-sales" className="chart-canvas" />
               </div>
             </CardBody>
           </Card>
@@ -360,21 +242,14 @@ function Alternative() {
             <CardHeader className="bg-transparent">
               <Row className="align-items-center">
                 <div className="col">
-                  <h6 className="text-uppercase text-muted ls-1 mb-1">
-                    Performance
-                  </h6>
+                  <h6 className="text-uppercase text-muted ls-1 mb-1">Performance</h6>
                   <h2 className="h3 mb-0">Total orders</h2>
                 </div>
               </Row>
             </CardHeader>
             <CardBody>
               <div className="chart">
-                <Bar
-                  data={chartExample2.data}
-                  options={chartExample2.options}
-                  className="chart-canvas"
-                  id="chart-bars"
-                />
+                <Bar data={chartExample2.data} options={chartExample2.options} className="chart-canvas" id="chart-bars" />
               </div>
             </CardBody>
           </Card>
@@ -388,13 +263,7 @@ function Alternative() {
                   <h5 className="h3 mb-0">Progress track</h5>
                 </Col>
                 <Col className="text-right" xs="4">
-                  <Button
-                    className="btn-neutral"
-                    color="default"
-                    href="#pablo"
-                    onClick={(e) => e.preventDefault()}
-                    size="sm"
-                  >
+                  <Button className="btn-neutral" color="default" href="#pablo" onClick={(e) => e.preventDefault()} size="sm">
                     Action
                   </Button>
                 </Col>
@@ -406,127 +275,65 @@ function Alternative() {
                 <ListGroupItem className="px-0">
                   <Row className="align-items-center">
                     <Col className="col-auto">
-                      <a
-                        className="avatar rounded-circle"
-                        href="#pablo"
-                        onClick={(e) => e.preventDefault()}
-                      >
-                        <img
-                          alt="..."
-                          src={
-                            require("assets/img/theme/bootstrap.jpg").default
-                          }
-                        />
+                      <a className="avatar rounded-circle" href="#pablo" onClick={(e) => e.preventDefault()}>
+                        <img alt="..." src={require('assets/img/theme/bootstrap.jpg').default} />
                       </a>
                     </Col>
                     <div className="col">
                       <h5>Argon Design System</h5>
-                      <Progress
-                        className="progress-xs mb-0"
-                        max="100"
-                        value="60"
-                        color="warning"
-                      />
+                      <Progress className="progress-xs mb-0" max="100" value="60" color="warning" />
                     </div>
                   </Row>
                 </ListGroupItem>
                 <ListGroupItem className="px-0">
                   <Row className="align-items-center">
                     <Col className="col-auto">
-                      <a
-                        className="avatar rounded-circle"
-                        href="#pablo"
-                        onClick={(e) => e.preventDefault()}
-                      >
-                        <img
-                          alt="..."
-                          src={require("assets/img/theme/angular.jpg").default}
-                        />
+                      <a className="avatar rounded-circle" href="#pablo" onClick={(e) => e.preventDefault()}>
+                        <img alt="..." src={require('assets/img/theme/angular.jpg').default} />
                       </a>
                     </Col>
                     <div className="col">
                       <h5>Angular Now UI Kit PRO</h5>
-                      <Progress
-                        className="progress-xs mb-0"
-                        max="100"
-                        value="100"
-                        color="success"
-                      />
+                      <Progress className="progress-xs mb-0" max="100" value="100" color="success" />
                     </div>
                   </Row>
                 </ListGroupItem>
                 <ListGroupItem className="px-0">
                   <Row className="align-items-center">
                     <Col className="col-auto">
-                      <a
-                        className="avatar rounded-circle"
-                        href="#pablo"
-                        onClick={(e) => e.preventDefault()}
-                      >
-                        <img
-                          alt="..."
-                          src={require("assets/img/theme/sketch.jpg").default}
-                        />
+                      <a className="avatar rounded-circle" href="#pablo" onClick={(e) => e.preventDefault()}>
+                        <img alt="..." src={require('assets/img/theme/sketch.jpg').default} />
                       </a>
                     </Col>
                     <div className="col">
                       <h5>Black Dashboard</h5>
-                      <Progress
-                        className="progress-xs mb-0"
-                        max="100"
-                        value="72"
-                        color="danger"
-                      />
+                      <Progress className="progress-xs mb-0" max="100" value="72" color="danger" />
                     </div>
                   </Row>
                 </ListGroupItem>
                 <ListGroupItem className="px-0">
                   <Row className="align-items-center">
                     <Col className="col-auto">
-                      <a
-                        className="avatar rounded-circle"
-                        href="#pablo"
-                        onClick={(e) => e.preventDefault()}
-                      >
-                        <img
-                          alt="..."
-                          src={require("assets/img/theme/react.jpg").default}
-                        />
+                      <a className="avatar rounded-circle" href="#pablo" onClick={(e) => e.preventDefault()}>
+                        <img alt="..." src={require('assets/img/theme/react.jpg').default} />
                       </a>
                     </Col>
                     <div className="col">
                       <h5>React Material Dashboard</h5>
-                      <Progress
-                        className="progress-xs mb-0"
-                        max="100"
-                        value="90"
-                        color="info"
-                      />
+                      <Progress className="progress-xs mb-0" max="100" value="90" color="info" />
                     </div>
                   </Row>
                 </ListGroupItem>
                 <ListGroupItem className="px-0">
                   <Row className="align-items-center">
                     <Col className="col-auto">
-                      <a
-                        className="avatar rounded-circle"
-                        href="#pablo"
-                        onClick={(e) => e.preventDefault()}
-                      >
-                        <img
-                          alt="..."
-                          src={require("assets/img/theme/vue.jpg").default}
-                        />
+                      <a className="avatar rounded-circle" href="#pablo" onClick={(e) => e.preventDefault()}>
+                        <img alt="..." src={require('assets/img/theme/vue.jpg').default} />
                       </a>
                     </Col>
                     <div className="col">
                       <h5>Vue Paper UI Kit PRO</h5>
-                      <Progress
-                        className="progress-xs mb-0"
-                        max="100"
-                        value="100"
-                        color="success"
-                      />
+                      <Progress className="progress-xs mb-0" max="100" value="100" color="success" />
                     </div>
                   </Row>
                 </ListGroupItem>
@@ -543,12 +350,7 @@ function Alternative() {
                     <h3 className="mb-0">Page visits</h3>
                   </div>
                   <div className="col text-right">
-                    <Button
-                      color="primary"
-                      href="#pablo"
-                      onClick={(e) => e.preventDefault()}
-                      size="sm"
-                    >
+                    <Button color="primary" href="#pablo" onClick={(e) => e.preventDefault()} size="sm">
                       See all
                     </Button>
                   </div>
@@ -577,22 +379,11 @@ function Alternative() {
                   <tr>
                     <th scope="row">
                       <Media className="align-items-center">
-                        <a
-                          className="avatar rounded-circle mr-3"
-                          href="#pablo"
-                          onClick={(e) => e.preventDefault()}
-                        >
-                          <img
-                            alt="..."
-                            src={
-                              require("assets/img/theme/bootstrap.jpg").default
-                            }
-                          />
+                        <a className="avatar rounded-circle mr-3" href="#pablo" onClick={(e) => e.preventDefault()}>
+                          <img alt="..." src={require('assets/img/theme/bootstrap.jpg').default} />
                         </a>
                         <Media>
-                          <span className="name mb-0 text-sm">
-                            Argon Design System
-                          </span>
+                          <span className="name mb-0 text-sm">Argon Design System</span>
                         </Media>
                       </Media>
                     </th>
@@ -605,72 +396,28 @@ function Alternative() {
                     </td>
                     <td>
                       <div className="avatar-group">
-                        <a
-                          className="avatar avatar-sm rounded-circle"
-                          href="#pablo"
-                          id="tooltip133563378"
-                          onClick={(e) => e.preventDefault()}
-                        >
-                          <img
-                            alt="..."
-                            src={require("assets/img/theme/team-1.jpg").default}
-                          />
+                        <a className="avatar avatar-sm rounded-circle" href="#pablo" id="tooltip133563378" onClick={(e) => e.preventDefault()}>
+                          <img alt="..." src={require('assets/img/theme/team-1.jpg').default} />
                         </a>
-                        <UncontrolledTooltip
-                          delay={0}
-                          target="tooltip133563378"
-                        >
+                        <UncontrolledTooltip delay={0} target="tooltip133563378">
                           Ryan Tompson
                         </UncontrolledTooltip>
-                        <a
-                          className="avatar avatar-sm rounded-circle"
-                          href="#pablo"
-                          id="tooltip336932279"
-                          onClick={(e) => e.preventDefault()}
-                        >
-                          <img
-                            alt="..."
-                            src={require("assets/img/theme/team-2.jpg").default}
-                          />
+                        <a className="avatar avatar-sm rounded-circle" href="#pablo" id="tooltip336932279" onClick={(e) => e.preventDefault()}>
+                          <img alt="..." src={require('assets/img/theme/team-2.jpg').default} />
                         </a>
-                        <UncontrolledTooltip
-                          delay={0}
-                          target="tooltip336932279"
-                        >
+                        <UncontrolledTooltip delay={0} target="tooltip336932279">
                           Romina Hadid
                         </UncontrolledTooltip>
-                        <a
-                          className="avatar avatar-sm rounded-circle"
-                          href="#pablo"
-                          id="tooltip619079522"
-                          onClick={(e) => e.preventDefault()}
-                        >
-                          <img
-                            alt="..."
-                            src={require("assets/img/theme/team-3.jpg").default}
-                          />
+                        <a className="avatar avatar-sm rounded-circle" href="#pablo" id="tooltip619079522" onClick={(e) => e.preventDefault()}>
+                          <img alt="..." src={require('assets/img/theme/team-3.jpg').default} />
                         </a>
-                        <UncontrolledTooltip
-                          delay={0}
-                          target="tooltip619079522"
-                        >
+                        <UncontrolledTooltip delay={0} target="tooltip619079522">
                           Alexander Smith
                         </UncontrolledTooltip>
-                        <a
-                          className="avatar avatar-sm rounded-circle"
-                          href="#pablo"
-                          id="tooltip432104658"
-                          onClick={(e) => e.preventDefault()}
-                        >
-                          <img
-                            alt="..."
-                            src={require("assets/img/theme/team-4.jpg").default}
-                          />
+                        <a className="avatar avatar-sm rounded-circle" href="#pablo" id="tooltip432104658" onClick={(e) => e.preventDefault()}>
+                          <img alt="..." src={require('assets/img/theme/team-4.jpg').default} />
                         </a>
-                        <UncontrolledTooltip
-                          delay={0}
-                          target="tooltip432104658"
-                        >
+                        <UncontrolledTooltip delay={0} target="tooltip432104658">
                           Jessica Doe
                         </UncontrolledTooltip>
                       </div>
@@ -685,30 +432,17 @@ function Alternative() {
                     </td>
                     <td className="text-right">
                       <UncontrolledDropdown>
-                        <DropdownToggle
-                          color=""
-                          size="sm"
-                          className="btn-icon-only text-light"
-                        >
+                        <DropdownToggle color="" size="sm" className="btn-icon-only text-light">
                           <i className="fas fa-ellipsis-v" />
                         </DropdownToggle>
                         <DropdownMenu className="dropdown-menu-arrow" right>
-                          <DropdownItem
-                            href="#pablo"
-                            onClick={(e) => e.preventDefault()}
-                          >
+                          <DropdownItem href="#pablo" onClick={(e) => e.preventDefault()}>
                             Action
                           </DropdownItem>
-                          <DropdownItem
-                            href="#pablo"
-                            onClick={(e) => e.preventDefault()}
-                          >
+                          <DropdownItem href="#pablo" onClick={(e) => e.preventDefault()}>
                             Another action
                           </DropdownItem>
-                          <DropdownItem
-                            href="#pablo"
-                            onClick={(e) => e.preventDefault()}
-                          >
+                          <DropdownItem href="#pablo" onClick={(e) => e.preventDefault()}>
                             Something else here
                           </DropdownItem>
                         </DropdownMenu>
@@ -718,22 +452,11 @@ function Alternative() {
                   <tr>
                     <th scope="row">
                       <Media className="align-items-center">
-                        <a
-                          className="avatar rounded-circle mr-3"
-                          href="#pablo"
-                          onClick={(e) => e.preventDefault()}
-                        >
-                          <img
-                            alt="..."
-                            src={
-                              require("assets/img/theme/angular.jpg").default
-                            }
-                          />
+                        <a className="avatar rounded-circle mr-3" href="#pablo" onClick={(e) => e.preventDefault()}>
+                          <img alt="..." src={require('assets/img/theme/angular.jpg').default} />
                         </a>
                         <Media>
-                          <span className="name mb-0 text-sm">
-                            Angular Now UI Kit PRO
-                          </span>
+                          <span className="name mb-0 text-sm">Angular Now UI Kit PRO</span>
                         </Media>
                       </Media>
                     </th>
@@ -746,72 +469,28 @@ function Alternative() {
                     </td>
                     <td>
                       <div className="avatar-group">
-                        <a
-                          className="avatar avatar-sm rounded-circle"
-                          href="#pablo"
-                          id="tooltip634319950"
-                          onClick={(e) => e.preventDefault()}
-                        >
-                          <img
-                            alt="..."
-                            src={require("assets/img/theme/team-1.jpg").default}
-                          />
+                        <a className="avatar avatar-sm rounded-circle" href="#pablo" id="tooltip634319950" onClick={(e) => e.preventDefault()}>
+                          <img alt="..." src={require('assets/img/theme/team-1.jpg').default} />
                         </a>
-                        <UncontrolledTooltip
-                          delay={0}
-                          target="tooltip634319950"
-                        >
+                        <UncontrolledTooltip delay={0} target="tooltip634319950">
                           Ryan Tompson
                         </UncontrolledTooltip>
-                        <a
-                          className="avatar avatar-sm rounded-circle"
-                          href="#pablo"
-                          id="tooltip493477456"
-                          onClick={(e) => e.preventDefault()}
-                        >
-                          <img
-                            alt="..."
-                            src={require("assets/img/theme/team-2.jpg").default}
-                          />
+                        <a className="avatar avatar-sm rounded-circle" href="#pablo" id="tooltip493477456" onClick={(e) => e.preventDefault()}>
+                          <img alt="..." src={require('assets/img/theme/team-2.jpg').default} />
                         </a>
-                        <UncontrolledTooltip
-                          delay={0}
-                          target="tooltip493477456"
-                        >
+                        <UncontrolledTooltip delay={0} target="tooltip493477456">
                           Romina Hadid
                         </UncontrolledTooltip>
-                        <a
-                          className="avatar avatar-sm rounded-circle"
-                          href="#pablo"
-                          id="tooltip556499717"
-                          onClick={(e) => e.preventDefault()}
-                        >
-                          <img
-                            alt="..."
-                            src={require("assets/img/theme/team-3.jpg").default}
-                          />
+                        <a className="avatar avatar-sm rounded-circle" href="#pablo" id="tooltip556499717" onClick={(e) => e.preventDefault()}>
+                          <img alt="..." src={require('assets/img/theme/team-3.jpg').default} />
                         </a>
-                        <UncontrolledTooltip
-                          delay={0}
-                          target="tooltip556499717"
-                        >
+                        <UncontrolledTooltip delay={0} target="tooltip556499717">
                           Alexander Smith
                         </UncontrolledTooltip>
-                        <a
-                          className="avatar avatar-sm rounded-circle"
-                          href="#pablo"
-                          id="tooltip106307927"
-                          onClick={(e) => e.preventDefault()}
-                        >
-                          <img
-                            alt="..."
-                            src={require("assets/img/theme/team-4.jpg").default}
-                          />
+                        <a className="avatar avatar-sm rounded-circle" href="#pablo" id="tooltip106307927" onClick={(e) => e.preventDefault()}>
+                          <img alt="..." src={require('assets/img/theme/team-4.jpg').default} />
                         </a>
-                        <UncontrolledTooltip
-                          delay={0}
-                          target="tooltip106307927"
-                        >
+                        <UncontrolledTooltip delay={0} target="tooltip106307927">
                           Jessica Doe
                         </UncontrolledTooltip>
                       </div>
@@ -826,30 +505,17 @@ function Alternative() {
                     </td>
                     <td className="text-right">
                       <UncontrolledDropdown>
-                        <DropdownToggle
-                          color=""
-                          size="sm"
-                          className="btn-icon-only text-light"
-                        >
+                        <DropdownToggle color="" size="sm" className="btn-icon-only text-light">
                           <i className="fas fa-ellipsis-v" />
                         </DropdownToggle>
                         <DropdownMenu className="dropdown-menu-arrow" right>
-                          <DropdownItem
-                            href="#pablo"
-                            onClick={(e) => e.preventDefault()}
-                          >
+                          <DropdownItem href="#pablo" onClick={(e) => e.preventDefault()}>
                             Action
                           </DropdownItem>
-                          <DropdownItem
-                            href="#pablo"
-                            onClick={(e) => e.preventDefault()}
-                          >
+                          <DropdownItem href="#pablo" onClick={(e) => e.preventDefault()}>
                             Another action
                           </DropdownItem>
-                          <DropdownItem
-                            href="#pablo"
-                            onClick={(e) => e.preventDefault()}
-                          >
+                          <DropdownItem href="#pablo" onClick={(e) => e.preventDefault()}>
                             Something else here
                           </DropdownItem>
                         </DropdownMenu>
@@ -859,20 +525,11 @@ function Alternative() {
                   <tr>
                     <th scope="row">
                       <Media className="align-items-center">
-                        <a
-                          className="avatar rounded-circle mr-3"
-                          href="#pablo"
-                          onClick={(e) => e.preventDefault()}
-                        >
-                          <img
-                            alt="..."
-                            src={require("assets/img/theme/sketch.jpg").default}
-                          />
+                        <a className="avatar rounded-circle mr-3" href="#pablo" onClick={(e) => e.preventDefault()}>
+                          <img alt="..." src={require('assets/img/theme/sketch.jpg').default} />
                         </a>
                         <Media>
-                          <span className="name mb-0 text-sm">
-                            Black Dashboard
-                          </span>
+                          <span className="name mb-0 text-sm">Black Dashboard</span>
                         </Media>
                       </Media>
                     </th>
@@ -885,72 +542,28 @@ function Alternative() {
                     </td>
                     <td>
                       <div className="avatar-group">
-                        <a
-                          className="avatar avatar-sm rounded-circle"
-                          href="#pablo"
-                          id="tooltip389668727"
-                          onClick={(e) => e.preventDefault()}
-                        >
-                          <img
-                            alt="..."
-                            src={require("assets/img/theme/team-1.jpg").default}
-                          />
+                        <a className="avatar avatar-sm rounded-circle" href="#pablo" id="tooltip389668727" onClick={(e) => e.preventDefault()}>
+                          <img alt="..." src={require('assets/img/theme/team-1.jpg').default} />
                         </a>
-                        <UncontrolledTooltip
-                          delay={0}
-                          target="tooltip389668727"
-                        >
+                        <UncontrolledTooltip delay={0} target="tooltip389668727">
                           Ryan Tompson
                         </UncontrolledTooltip>
-                        <a
-                          className="avatar avatar-sm rounded-circle"
-                          href="#pablo"
-                          id="tooltip477178747"
-                          onClick={(e) => e.preventDefault()}
-                        >
-                          <img
-                            alt="..."
-                            src={require("assets/img/theme/team-2.jpg").default}
-                          />
+                        <a className="avatar avatar-sm rounded-circle" href="#pablo" id="tooltip477178747" onClick={(e) => e.preventDefault()}>
+                          <img alt="..." src={require('assets/img/theme/team-2.jpg').default} />
                         </a>
-                        <UncontrolledTooltip
-                          delay={0}
-                          target="tooltip477178747"
-                        >
+                        <UncontrolledTooltip delay={0} target="tooltip477178747">
                           Romina Hadid
                         </UncontrolledTooltip>
-                        <a
-                          className="avatar avatar-sm rounded-circle"
-                          href="#pablo"
-                          id="tooltip927225283"
-                          onClick={(e) => e.preventDefault()}
-                        >
-                          <img
-                            alt="..."
-                            src={require("assets/img/theme/team-3.jpg").default}
-                          />
+                        <a className="avatar avatar-sm rounded-circle" href="#pablo" id="tooltip927225283" onClick={(e) => e.preventDefault()}>
+                          <img alt="..." src={require('assets/img/theme/team-3.jpg').default} />
                         </a>
-                        <UncontrolledTooltip
-                          delay={0}
-                          target="tooltip927225283"
-                        >
+                        <UncontrolledTooltip delay={0} target="tooltip927225283">
                           Alexander Smith
                         </UncontrolledTooltip>
-                        <a
-                          className="avatar avatar-sm rounded-circle"
-                          href="#pablo"
-                          id="tooltip394856270"
-                          onClick={(e) => e.preventDefault()}
-                        >
-                          <img
-                            alt="..."
-                            src={require("assets/img/theme/team-4.jpg").default}
-                          />
+                        <a className="avatar avatar-sm rounded-circle" href="#pablo" id="tooltip394856270" onClick={(e) => e.preventDefault()}>
+                          <img alt="..." src={require('assets/img/theme/team-4.jpg').default} />
                         </a>
-                        <UncontrolledTooltip
-                          delay={0}
-                          target="tooltip394856270"
-                        >
+                        <UncontrolledTooltip delay={0} target="tooltip394856270">
                           Jessica Doe
                         </UncontrolledTooltip>
                       </div>
@@ -965,30 +578,17 @@ function Alternative() {
                     </td>
                     <td className="text-right">
                       <UncontrolledDropdown>
-                        <DropdownToggle
-                          color=""
-                          size="sm"
-                          className="btn-icon-only text-light"
-                        >
+                        <DropdownToggle color="" size="sm" className="btn-icon-only text-light">
                           <i className="fas fa-ellipsis-v" />
                         </DropdownToggle>
                         <DropdownMenu className="dropdown-menu-arrow" right>
-                          <DropdownItem
-                            href="#pablo"
-                            onClick={(e) => e.preventDefault()}
-                          >
+                          <DropdownItem href="#pablo" onClick={(e) => e.preventDefault()}>
                             Action
                           </DropdownItem>
-                          <DropdownItem
-                            href="#pablo"
-                            onClick={(e) => e.preventDefault()}
-                          >
+                          <DropdownItem href="#pablo" onClick={(e) => e.preventDefault()}>
                             Another action
                           </DropdownItem>
-                          <DropdownItem
-                            href="#pablo"
-                            onClick={(e) => e.preventDefault()}
-                          >
+                          <DropdownItem href="#pablo" onClick={(e) => e.preventDefault()}>
                             Something else here
                           </DropdownItem>
                         </DropdownMenu>
@@ -998,20 +598,11 @@ function Alternative() {
                   <tr>
                     <th scope="row">
                       <Media className="align-items-center">
-                        <a
-                          className="avatar rounded-circle mr-3"
-                          href="#pablo"
-                          onClick={(e) => e.preventDefault()}
-                        >
-                          <img
-                            alt="..."
-                            src={require("assets/img/theme/react.jpg").default}
-                          />
+                        <a className="avatar rounded-circle mr-3" href="#pablo" onClick={(e) => e.preventDefault()}>
+                          <img alt="..." src={require('assets/img/theme/react.jpg').default} />
                         </a>
                         <Media>
-                          <span className="name mb-0 text-sm">
-                            React Material Dashboard
-                          </span>
+                          <span className="name mb-0 text-sm">React Material Dashboard</span>
                         </Media>
                       </Media>
                     </th>
@@ -1024,66 +615,28 @@ function Alternative() {
                     </td>
                     <td>
                       <div className="avatar-group">
-                        <a
-                          className="avatar avatar-sm rounded-circle"
-                          href="#pablo"
-                          id="tooltip51649841"
-                          onClick={(e) => e.preventDefault()}
-                        >
-                          <img
-                            alt="..."
-                            src={require("assets/img/theme/team-1.jpg").default}
-                          />
+                        <a className="avatar avatar-sm rounded-circle" href="#pablo" id="tooltip51649841" onClick={(e) => e.preventDefault()}>
+                          <img alt="..." src={require('assets/img/theme/team-1.jpg').default} />
                         </a>
                         <UncontrolledTooltip delay={0} target="tooltip51649841">
                           Ryan Tompson
                         </UncontrolledTooltip>
-                        <a
-                          className="avatar avatar-sm rounded-circle"
-                          href="#pablo"
-                          id="tooltip85562388"
-                          onClick={(e) => e.preventDefault()}
-                        >
-                          <img
-                            alt="..."
-                            src={require("assets/img/theme/team-2.jpg").default}
-                          />
+                        <a className="avatar avatar-sm rounded-circle" href="#pablo" id="tooltip85562388" onClick={(e) => e.preventDefault()}>
+                          <img alt="..." src={require('assets/img/theme/team-2.jpg').default} />
                         </a>
                         <UncontrolledTooltip delay={0} target="tooltip85562388">
                           Romina Hadid
                         </UncontrolledTooltip>
-                        <a
-                          className="avatar avatar-sm rounded-circle"
-                          href="#pablo"
-                          id="tooltip195204481"
-                          onClick={(e) => e.preventDefault()}
-                        >
-                          <img
-                            alt="..."
-                            src={require("assets/img/theme/team-3.jpg").default}
-                          />
+                        <a className="avatar avatar-sm rounded-circle" href="#pablo" id="tooltip195204481" onClick={(e) => e.preventDefault()}>
+                          <img alt="..." src={require('assets/img/theme/team-3.jpg').default} />
                         </a>
-                        <UncontrolledTooltip
-                          delay={0}
-                          target="tooltip195204481"
-                        >
+                        <UncontrolledTooltip delay={0} target="tooltip195204481">
                           Alexander Smith
                         </UncontrolledTooltip>
-                        <a
-                          className="avatar avatar-sm rounded-circle"
-                          href="#pablo"
-                          id="tooltip967941406"
-                          onClick={(e) => e.preventDefault()}
-                        >
-                          <img
-                            alt="..."
-                            src={require("assets/img/theme/team-4.jpg").default}
-                          />
+                        <a className="avatar avatar-sm rounded-circle" href="#pablo" id="tooltip967941406" onClick={(e) => e.preventDefault()}>
+                          <img alt="..." src={require('assets/img/theme/team-4.jpg').default} />
                         </a>
-                        <UncontrolledTooltip
-                          delay={0}
-                          target="tooltip967941406"
-                        >
+                        <UncontrolledTooltip delay={0} target="tooltip967941406">
                           Jessica Doe
                         </UncontrolledTooltip>
                       </div>
@@ -1098,30 +651,17 @@ function Alternative() {
                     </td>
                     <td className="text-right">
                       <UncontrolledDropdown>
-                        <DropdownToggle
-                          color=""
-                          size="sm"
-                          className="btn-icon-only text-light"
-                        >
+                        <DropdownToggle color="" size="sm" className="btn-icon-only text-light">
                           <i className="fas fa-ellipsis-v" />
                         </DropdownToggle>
                         <DropdownMenu className="dropdown-menu-arrow" right>
-                          <DropdownItem
-                            href="#pablo"
-                            onClick={(e) => e.preventDefault()}
-                          >
+                          <DropdownItem href="#pablo" onClick={(e) => e.preventDefault()}>
                             Action
                           </DropdownItem>
-                          <DropdownItem
-                            href="#pablo"
-                            onClick={(e) => e.preventDefault()}
-                          >
+                          <DropdownItem href="#pablo" onClick={(e) => e.preventDefault()}>
                             Another action
                           </DropdownItem>
-                          <DropdownItem
-                            href="#pablo"
-                            onClick={(e) => e.preventDefault()}
-                          >
+                          <DropdownItem href="#pablo" onClick={(e) => e.preventDefault()}>
                             Something else here
                           </DropdownItem>
                         </DropdownMenu>
@@ -1131,20 +671,11 @@ function Alternative() {
                   <tr>
                     <th scope="row">
                       <Media className="align-items-center">
-                        <a
-                          className="avatar rounded-circle mr-3"
-                          href="#pablo"
-                          onClick={(e) => e.preventDefault()}
-                        >
-                          <img
-                            alt="..."
-                            src={require("assets/img/theme/vue.jpg").default}
-                          />
+                        <a className="avatar rounded-circle mr-3" href="#pablo" onClick={(e) => e.preventDefault()}>
+                          <img alt="..." src={require('assets/img/theme/vue.jpg').default} />
                         </a>
                         <Media>
-                          <span className="name mb-0 text-sm">
-                            Vue Paper UI Kit PRO
-                          </span>
+                          <span className="name mb-0 text-sm">Vue Paper UI Kit PRO</span>
                         </Media>
                       </Media>
                     </th>
@@ -1157,69 +688,28 @@ function Alternative() {
                     </td>
                     <td>
                       <div className="avatar-group">
-                        <a
-                          className="avatar avatar-sm rounded-circle"
-                          href="#pablo"
-                          id="tooltip177298166"
-                          onClick={(e) => e.preventDefault()}
-                        >
-                          <img
-                            alt="..."
-                            src={require("assets/img/theme/team-1.jpg").default}
-                          />
+                        <a className="avatar avatar-sm rounded-circle" href="#pablo" id="tooltip177298166" onClick={(e) => e.preventDefault()}>
+                          <img alt="..." src={require('assets/img/theme/team-1.jpg').default} />
                         </a>
-                        <UncontrolledTooltip
-                          delay={0}
-                          target="tooltip177298166"
-                        >
+                        <UncontrolledTooltip delay={0} target="tooltip177298166">
                           Ryan Tompson
                         </UncontrolledTooltip>
-                        <a
-                          className="avatar avatar-sm rounded-circle"
-                          href="#pablo"
-                          id="tooltip290379011"
-                          onClick={(e) => e.preventDefault()}
-                        >
-                          <img
-                            alt="..."
-                            src={require("assets/img/theme/team-2.jpg").default}
-                          />
+                        <a className="avatar avatar-sm rounded-circle" href="#pablo" id="tooltip290379011" onClick={(e) => e.preventDefault()}>
+                          <img alt="..." src={require('assets/img/theme/team-2.jpg').default} />
                         </a>
-                        <UncontrolledTooltip
-                          delay={0}
-                          target="tooltip290379011"
-                        >
+                        <UncontrolledTooltip delay={0} target="tooltip290379011">
                           Romina Hadid
                         </UncontrolledTooltip>
-                        <a
-                          className="avatar avatar-sm rounded-circle"
-                          href="#pablo"
-                          id="tooltip2287293"
-                          onClick={(e) => e.preventDefault()}
-                        >
-                          <img
-                            alt="..."
-                            src={require("assets/img/theme/team-3.jpg").default}
-                          />
+                        <a className="avatar avatar-sm rounded-circle" href="#pablo" id="tooltip2287293" onClick={(e) => e.preventDefault()}>
+                          <img alt="..." src={require('assets/img/theme/team-3.jpg').default} />
                         </a>
                         <UncontrolledTooltip delay={0} target="tooltip2287293">
                           Alexander Smith
                         </UncontrolledTooltip>
-                        <a
-                          className="avatar avatar-sm rounded-circle"
-                          href="#pablo"
-                          id="tooltip539852250"
-                          onClick={(e) => e.preventDefault()}
-                        >
-                          <img
-                            alt="..."
-                            src={require("assets/img/theme/team-4.jpg").default}
-                          />
+                        <a className="avatar avatar-sm rounded-circle" href="#pablo" id="tooltip539852250" onClick={(e) => e.preventDefault()}>
+                          <img alt="..." src={require('assets/img/theme/team-4.jpg').default} />
                         </a>
-                        <UncontrolledTooltip
-                          delay={0}
-                          target="tooltip539852250"
-                        >
+                        <UncontrolledTooltip delay={0} target="tooltip539852250">
                           Jessica Doe
                         </UncontrolledTooltip>
                       </div>
@@ -1234,30 +724,17 @@ function Alternative() {
                     </td>
                     <td className="text-right">
                       <UncontrolledDropdown>
-                        <DropdownToggle
-                          color=""
-                          size="sm"
-                          className="btn-icon-only text-light"
-                        >
+                        <DropdownToggle color="" size="sm" className="btn-icon-only text-light">
                           <i className="fas fa-ellipsis-v" />
                         </DropdownToggle>
                         <DropdownMenu className="dropdown-menu-arrow" right>
-                          <DropdownItem
-                            href="#pablo"
-                            onClick={(e) => e.preventDefault()}
-                          >
+                          <DropdownItem href="#pablo" onClick={(e) => e.preventDefault()}>
                             Action
                           </DropdownItem>
-                          <DropdownItem
-                            href="#pablo"
-                            onClick={(e) => e.preventDefault()}
-                          >
+                          <DropdownItem href="#pablo" onClick={(e) => e.preventDefault()}>
                             Another action
                           </DropdownItem>
-                          <DropdownItem
-                            href="#pablo"
-                            onClick={(e) => e.preventDefault()}
-                          >
+                          <DropdownItem href="#pablo" onClick={(e) => e.preventDefault()}>
                             Something else here
                           </DropdownItem>
                         </DropdownMenu>
@@ -1267,22 +744,11 @@ function Alternative() {
                   <tr>
                     <th scope="row">
                       <Media className="align-items-center">
-                        <a
-                          className="avatar rounded-circle mr-3"
-                          href="#pablo"
-                          onClick={(e) => e.preventDefault()}
-                        >
-                          <img
-                            alt="..."
-                            src={
-                              require("assets/img/theme/bootstrap.jpg").default
-                            }
-                          />
+                        <a className="avatar rounded-circle mr-3" href="#pablo" onClick={(e) => e.preventDefault()}>
+                          <img alt="..." src={require('assets/img/theme/bootstrap.jpg').default} />
                         </a>
                         <Media>
-                          <span className="name mb-0 text-sm">
-                            Argon Design System
-                          </span>
+                          <span className="name mb-0 text-sm">Argon Design System</span>
                         </Media>
                       </Media>
                     </th>
@@ -1295,72 +761,28 @@ function Alternative() {
                     </td>
                     <td>
                       <div className="avatar-group">
-                        <a
-                          className="avatar avatar-sm rounded-circle"
-                          href="#pablo"
-                          id="tooltip758997307"
-                          onClick={(e) => e.preventDefault()}
-                        >
-                          <img
-                            alt="..."
-                            src={require("assets/img/theme/team-1.jpg").default}
-                          />
+                        <a className="avatar avatar-sm rounded-circle" href="#pablo" id="tooltip758997307" onClick={(e) => e.preventDefault()}>
+                          <img alt="..." src={require('assets/img/theme/team-1.jpg').default} />
                         </a>
-                        <UncontrolledTooltip
-                          delay={0}
-                          target="tooltip758997307"
-                        >
+                        <UncontrolledTooltip delay={0} target="tooltip758997307">
                           Ryan Tompson
                         </UncontrolledTooltip>
-                        <a
-                          className="avatar avatar-sm rounded-circle"
-                          href="#pablo"
-                          id="tooltip597292977"
-                          onClick={(e) => e.preventDefault()}
-                        >
-                          <img
-                            alt="..."
-                            src={require("assets/img/theme/team-2.jpg").default}
-                          />
+                        <a className="avatar avatar-sm rounded-circle" href="#pablo" id="tooltip597292977" onClick={(e) => e.preventDefault()}>
+                          <img alt="..." src={require('assets/img/theme/team-2.jpg').default} />
                         </a>
-                        <UncontrolledTooltip
-                          delay={0}
-                          target="tooltip597292977"
-                        >
+                        <UncontrolledTooltip delay={0} target="tooltip597292977">
                           Romina Hadid
                         </UncontrolledTooltip>
-                        <a
-                          className="avatar avatar-sm rounded-circle"
-                          href="#pablo"
-                          id="tooltip443183509"
-                          onClick={(e) => e.preventDefault()}
-                        >
-                          <img
-                            alt="..."
-                            src={require("assets/img/theme/team-3.jpg").default}
-                          />
+                        <a className="avatar avatar-sm rounded-circle" href="#pablo" id="tooltip443183509" onClick={(e) => e.preventDefault()}>
+                          <img alt="..." src={require('assets/img/theme/team-3.jpg').default} />
                         </a>
-                        <UncontrolledTooltip
-                          delay={0}
-                          target="tooltip443183509"
-                        >
+                        <UncontrolledTooltip delay={0} target="tooltip443183509">
                           Alexander Smith
                         </UncontrolledTooltip>
-                        <a
-                          className="avatar avatar-sm rounded-circle"
-                          href="#pablo"
-                          id="tooltip806450131"
-                          onClick={(e) => e.preventDefault()}
-                        >
-                          <img
-                            alt="..."
-                            src={require("assets/img/theme/team-4.jpg").default}
-                          />
+                        <a className="avatar avatar-sm rounded-circle" href="#pablo" id="tooltip806450131" onClick={(e) => e.preventDefault()}>
+                          <img alt="..." src={require('assets/img/theme/team-4.jpg').default} />
                         </a>
-                        <UncontrolledTooltip
-                          delay={0}
-                          target="tooltip806450131"
-                        >
+                        <UncontrolledTooltip delay={0} target="tooltip806450131">
                           Jessica Doe
                         </UncontrolledTooltip>
                       </div>
@@ -1375,30 +797,17 @@ function Alternative() {
                     </td>
                     <td className="text-right">
                       <UncontrolledDropdown>
-                        <DropdownToggle
-                          color=""
-                          size="sm"
-                          className="btn-icon-only text-light"
-                        >
+                        <DropdownToggle color="" size="sm" className="btn-icon-only text-light">
                           <i className="fas fa-ellipsis-v" />
                         </DropdownToggle>
                         <DropdownMenu className="dropdown-menu-arrow" right>
-                          <DropdownItem
-                            href="#pablo"
-                            onClick={(e) => e.preventDefault()}
-                          >
+                          <DropdownItem href="#pablo" onClick={(e) => e.preventDefault()}>
                             Action
                           </DropdownItem>
-                          <DropdownItem
-                            href="#pablo"
-                            onClick={(e) => e.preventDefault()}
-                          >
+                          <DropdownItem href="#pablo" onClick={(e) => e.preventDefault()}>
                             Another action
                           </DropdownItem>
-                          <DropdownItem
-                            href="#pablo"
-                            onClick={(e) => e.preventDefault()}
-                          >
+                          <DropdownItem href="#pablo" onClick={(e) => e.preventDefault()}>
                             Something else here
                           </DropdownItem>
                         </DropdownMenu>
@@ -1417,13 +826,7 @@ function Alternative() {
                     <h5 className="h3 mb-0">Real time</h5>
                   </Col>
                   <Col className="text-right" xs="4">
-                    <Button
-                      className="btn-neutral"
-                      color="default"
-                      href="#pablo"
-                      onClick={(e) => e.preventDefault()}
-                      size="sm"
-                    >
+                    <Button className="btn-neutral" color="default" href="#pablo" onClick={(e) => e.preventDefault()} size="sm">
                       Action
                     </Button>
                   </Col>
@@ -1433,88 +836,88 @@ function Alternative() {
                 <VectorMap
                   containerClassName="vector-map vector-map-sm"
                   containerStyle={{
-                    width: "100%",
-                    height: "280px",
+                    width: '100%',
+                    height: '280px',
                   }}
-                  map={"world_mill"}
+                  map={'world_mill'}
                   zoomOnScroll={false}
-                  scaleColors={["#f00", "#0071A4"]}
+                  scaleColors={['#f00', '#0071A4']}
                   normalizeFunction="polynomial"
                   hoverOpacity={0.7}
                   hoverColor={false}
                   backgroundColor="transparent"
                   regionStyle={{
                     initial: {
-                      fill: "#e9ecef",
-                      "fill-opacity": 0.8,
-                      stroke: "none",
-                      "stroke-width": 0,
-                      "stroke-opacity": 1,
+                      fill: '#e9ecef',
+                      'fill-opacity': 0.8,
+                      stroke: 'none',
+                      'stroke-width': 0,
+                      'stroke-opacity': 1,
                     },
                     hover: {
-                      fill: "#dee2e6",
-                      "fill-opacity": 0.8,
-                      cursor: "pointer",
+                      fill: '#dee2e6',
+                      'fill-opacity': 0.8,
+                      cursor: 'pointer',
                     },
                     selected: {
-                      fill: "yellow",
+                      fill: 'yellow',
                     },
                     selectedHover: {},
                   }}
                   markerStyle={{
                     initial: {
-                      fill: "#fb6340",
-                      "stroke-width": 0,
+                      fill: '#fb6340',
+                      'stroke-width': 0,
                     },
                     hover: {
-                      fill: "#11cdef",
-                      "stroke-width": 0,
+                      fill: '#11cdef',
+                      'stroke-width': 0,
                     },
                   }}
                   markers={[
                     {
                       latLng: [41.9, 12.45],
-                      name: "Vatican City",
+                      name: 'Vatican City',
                     },
                     {
                       latLng: [43.73, 7.41],
-                      name: "Monaco",
+                      name: 'Monaco',
                     },
                     {
                       latLng: [35.88, 14.5],
-                      name: "Malta",
+                      name: 'Malta',
                     },
                     {
                       latLng: [1.3, 103.8],
-                      name: "Singapore",
+                      name: 'Singapore',
                     },
                     {
                       latLng: [1.46, 173.03],
-                      name: "Kiribati",
+                      name: 'Kiribati',
                     },
                     {
                       latLng: [-21.13, -175.2],
-                      name: "Tonga",
+                      name: 'Tonga',
                     },
                     {
                       latLng: [15.3, -61.38],
-                      name: "Dominica",
+                      name: 'Dominica',
                     },
                     {
                       latLng: [-20.2, 57.5],
-                      name: "Mauritius",
+                      name: 'Mauritius',
                     },
                     {
                       latLng: [26.02, 50.55],
-                      name: "Bahrain",
+                      name: 'Bahrain',
                     },
                   ]}
                   series={{
                     regions: [
                       {
                         values: mapData,
-                        scale: ["#ced4da", "#adb5bd"],
-                        normalizeFunction: "polynomial",
+                        scale: ['#ced4da', '#adb5bd'],
+                        normalizeFunction: 'polynomial',
                       },
                     ],
                   }}
@@ -1523,10 +926,7 @@ function Alternative() {
                   <ListGroupItem className="px-0">
                     <Row className="align-items-center">
                       <Col className="col-auto">
-                        <img
-                          alt="..."
-                          src={require("assets/img/icons/flags/US.png").default}
-                        />
+                        <img alt="..." src={require('assets/img/icons/flags/US.png').default} />
                       </Col>
                       <div className="col">
                         <small>Country:</small>
@@ -1545,10 +945,7 @@ function Alternative() {
                   <ListGroupItem className="px-0">
                     <Row className="align-items-center">
                       <Col className="col-auto">
-                        <img
-                          alt="..."
-                          src={require("assets/img/icons/flags/DE.png").default}
-                        />
+                        <img alt="..." src={require('assets/img/icons/flags/DE.png').default} />
                       </Col>
                       <div className="col">
                         <small>Country:</small>
@@ -1567,10 +964,7 @@ function Alternative() {
                   <ListGroupItem className="px-0">
                     <Row className="align-items-center">
                       <Col className="col-auto">
-                        <img
-                          alt="..."
-                          src={require("assets/img/icons/flags/GB.png").default}
-                        />
+                        <img alt="..." src={require('assets/img/icons/flags/GB.png').default} />
                       </Col>
                       <div className="col">
                         <small>Country:</small>
@@ -1601,15 +995,8 @@ function Alternative() {
                 <ListGroupItem className="px-0">
                   <Row className="align-items-center">
                     <Col className="col-auto">
-                      <a
-                        className="avatar rounded-circle"
-                        href="#pablo"
-                        onClick={(e) => e.preventDefault()}
-                      >
-                        <img
-                          alt="..."
-                          src={require("assets/img/theme/team-1.jpg").default}
-                        />
+                      <a className="avatar rounded-circle" href="#pablo" onClick={(e) => e.preventDefault()}>
+                        <img alt="..." src={require('assets/img/theme/team-1.jpg').default} />
                       </a>
                     </Col>
                     <div className="col ml--2">
@@ -1631,15 +1018,8 @@ function Alternative() {
                 <ListGroupItem className="px-0">
                   <Row className="align-items-center">
                     <Col className="col-auto">
-                      <a
-                        className="avatar rounded-circle"
-                        href="#pablo"
-                        onClick={(e) => e.preventDefault()}
-                      >
-                        <img
-                          alt="..."
-                          src={require("assets/img/theme/team-2.jpg").default}
-                        />
+                      <a className="avatar rounded-circle" href="#pablo" onClick={(e) => e.preventDefault()}>
+                        <img alt="..." src={require('assets/img/theme/team-2.jpg').default} />
                       </a>
                     </Col>
                     <div className="col ml--2">
@@ -1661,15 +1041,8 @@ function Alternative() {
                 <ListGroupItem className="px-0">
                   <Row className="align-items-center">
                     <Col className="col-auto">
-                      <a
-                        className="avatar rounded-circle"
-                        href="#pablo"
-                        onClick={(e) => e.preventDefault()}
-                      >
-                        <img
-                          alt="..."
-                          src={require("assets/img/theme/team-3.jpg").default}
-                        />
+                      <a className="avatar rounded-circle" href="#pablo" onClick={(e) => e.preventDefault()}>
+                        <img alt="..." src={require('assets/img/theme/team-3.jpg').default} />
                       </a>
                     </Col>
                     <div className="col ml--2">
@@ -1691,15 +1064,8 @@ function Alternative() {
                 <ListGroupItem className="px-0">
                   <Row className="align-items-center">
                     <Col className="col-auto">
-                      <a
-                        className="avatar rounded-circle"
-                        href="#pablo"
-                        onClick={(e) => e.preventDefault()}
-                      >
-                        <img
-                          alt="..."
-                          src={require("assets/img/theme/team-4.jpg").default}
-                        />
+                      <a className="avatar rounded-circle" href="#pablo" onClick={(e) => e.preventDefault()}>
+                        <img alt="..." src={require('assets/img/theme/team-4.jpg').default} />
                       </a>
                     </Col>
                     <div className="col ml--2">
@@ -1735,16 +1101,8 @@ function Alternative() {
                     </div>
                     <div>
                       <div className="custom-control custom-checkbox custom-checkbox-success">
-                        <input
-                          className="custom-control-input"
-                          defaultChecked
-                          id="chk-todo-task-1"
-                          type="checkbox"
-                        />
-                        <label
-                          className="custom-control-label"
-                          htmlFor="chk-todo-task-1"
-                        />
+                        <input className="custom-control-input" defaultChecked id="chk-todo-task-1" type="checkbox" />
+                        <label className="custom-control-label" htmlFor="chk-todo-task-1" />
                       </div>
                     </div>
                   </div>
@@ -1757,15 +1115,8 @@ function Alternative() {
                     </div>
                     <div>
                       <div className="custom-control custom-checkbox custom-checkbox-warning">
-                        <input
-                          className="custom-control-input"
-                          id="chk-todo-task-2"
-                          type="checkbox"
-                        />
-                        <label
-                          className="custom-control-label"
-                          htmlFor="chk-todo-task-2"
-                        />
+                        <input className="custom-control-input" id="chk-todo-task-2" type="checkbox" />
+                        <label className="custom-control-label" htmlFor="chk-todo-task-2" />
                       </div>
                     </div>
                   </div>
@@ -1773,22 +1124,13 @@ function Alternative() {
                 <ListGroupItem className="checklist-entry flex-column align-items-start py-4 px-4">
                   <div className="checklist-item checklist-item-info">
                     <div className="checklist-info">
-                      <h5 className="checklist-title mb-0">
-                        Argon Dashboard Launch
-                      </h5>
+                      <h5 className="checklist-title mb-0">Argon Dashboard Launch</h5>
                       <small>10:30 AM</small>
                     </div>
                     <div>
                       <div className="custom-control custom-checkbox custom-checkbox-info">
-                        <input
-                          className="custom-control-input"
-                          id="chk-todo-task-3"
-                          type="checkbox"
-                        />
-                        <label
-                          className="custom-control-label"
-                          htmlFor="chk-todo-task-3"
-                        />
+                        <input className="custom-control-input" id="chk-todo-task-3" type="checkbox" />
+                        <label className="custom-control-label" htmlFor="chk-todo-task-3" />
                       </div>
                     </div>
                   </div>
@@ -1801,16 +1143,8 @@ function Alternative() {
                     </div>
                     <div>
                       <div className="custom-control custom-checkbox custom-checkbox-danger">
-                        <input
-                          className="custom-control-input"
-                          defaultChecked
-                          id="chk-todo-task-4"
-                          type="checkbox"
-                        />
-                        <label
-                          className="custom-control-label"
-                          htmlFor="chk-todo-task-4"
-                        />
+                        <input className="custom-control-input" defaultChecked id="chk-todo-task-4" type="checkbox" />
+                        <label className="custom-control-label" htmlFor="chk-todo-task-4" />
                       </div>
                     </div>
                   </div>
@@ -1827,102 +1161,52 @@ function Alternative() {
                 <ListGroupItem className="px-0">
                   <Row className="align-items-center">
                     <Col className="col-auto">
-                      <a
-                        className="avatar rounded-circle"
-                        href="#pablo"
-                        onClick={(e) => e.preventDefault()}
-                      >
-                        <img
-                          alt="..."
-                          src={
-                            require("assets/img/theme/bootstrap.jpg").default
-                          }
-                        />
+                      <a className="avatar rounded-circle" href="#pablo" onClick={(e) => e.preventDefault()}>
+                        <img alt="..." src={require('assets/img/theme/bootstrap.jpg').default} />
                       </a>
                     </Col>
                     <div className="col">
                       <h5>Argon Design System</h5>
-                      <Progress
-                        className="progress-xs mb-0"
-                        max="100"
-                        value="60"
-                        color="warning"
-                      />
+                      <Progress className="progress-xs mb-0" max="100" value="60" color="warning" />
                     </div>
                   </Row>
                 </ListGroupItem>
                 <ListGroupItem className="px-0">
                   <Row className="align-items-center">
                     <Col className="col-auto">
-                      <a
-                        className="avatar rounded-circle"
-                        href="#pablo"
-                        onClick={(e) => e.preventDefault()}
-                      >
-                        <img
-                          alt="..."
-                          src={require("assets/img/theme/angular.jpg").default}
-                        />
+                      <a className="avatar rounded-circle" href="#pablo" onClick={(e) => e.preventDefault()}>
+                        <img alt="..." src={require('assets/img/theme/angular.jpg').default} />
                       </a>
                     </Col>
                     <div className="col">
                       <h5>Angular Now UI Kit PRO</h5>
-                      <Progress
-                        className="progress-xs mb-0"
-                        max="100"
-                        value="100"
-                        color="success"
-                      />
+                      <Progress className="progress-xs mb-0" max="100" value="100" color="success" />
                     </div>
                   </Row>
                 </ListGroupItem>
                 <ListGroupItem className="px-0">
                   <Row className="align-items-center">
                     <Col className="col-auto">
-                      <a
-                        className="avatar rounded-circle"
-                        href="#pablo"
-                        onClick={(e) => e.preventDefault()}
-                      >
-                        <img
-                          alt="..."
-                          src={require("assets/img/theme/sketch.jpg").default}
-                        />
+                      <a className="avatar rounded-circle" href="#pablo" onClick={(e) => e.preventDefault()}>
+                        <img alt="..." src={require('assets/img/theme/sketch.jpg').default} />
                       </a>
                     </Col>
                     <div className="col">
                       <h5>Black Dashboard</h5>
-                      <Progress
-                        className="progress-xs mb-0"
-                        max="100"
-                        value="72"
-                        color="danger"
-                      />
+                      <Progress className="progress-xs mb-0" max="100" value="72" color="danger" />
                     </div>
                   </Row>
                 </ListGroupItem>
                 <ListGroupItem className="px-0">
                   <Row className="align-items-center">
                     <Col className="col-auto">
-                      <a
-                        className="avatar rounded-circle"
-                        href="#pablo"
-                        onClick={(e) => e.preventDefault()}
-                      >
-                        <img
-                          alt="..."
-                          src={require("assets/img/theme/react.jpg").default}
-                        />
+                      <a className="avatar rounded-circle" href="#pablo" onClick={(e) => e.preventDefault()}>
+                        <img alt="..." src={require('assets/img/theme/react.jpg').default} />
                       </a>
                     </Col>
                     <div className="col">
                       <h5>React Material Dashboard</h5>
-                      <Progress
-                        className="progress-xs mb-0"
-                        max="100"
-                        value="90"
-                        color="info"
-                      />
+                      <Progress className="progress-xs mb-0" max="100" value="90" color="info" />
                     </div>
                   </Row>
                 </ListGroupItem>

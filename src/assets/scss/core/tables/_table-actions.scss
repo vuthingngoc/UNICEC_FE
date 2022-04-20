@@ -3,23 +3,23 @@
 //
 
 .table-action {
-    font-size: $font-size-sm;
-    color: $table-action-color;
-    margin: 0 .25rem;
+  font-size: $font-size-sm;
+  color: $table-action-color;
+  margin: 0 0.25rem;
 
-    &:hover {
-        color: darken($table-action-color, 10%);
-    }
+  &:hover {
+    color: darken($table-action-color, 10%);
+  }
 }
 
 .table-action-delete {
-    &:hover {
-        color: theme-color("danger");
-    }
+  &:hover {
+    color: theme-color('danger');
+  }
 }
 
 .table-dark {
-    .table-action {
-        color: $table-dark-action-color;
-    }
+  .table-action {
+    color: $table-dark-action-color;
+  }
 }
