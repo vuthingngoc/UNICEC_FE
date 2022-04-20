@@ -41,7 +41,8 @@
 .scroll-element .scroll-arrow {
   cursor: default;
 }
-.scroll-element.scroll-x.scroll-scrollx_visible, .scroll-element.scroll-y.scroll-scrolly_visible {
+.scroll-element.scroll-x.scroll-scrollx_visible,
+.scroll-element.scroll-y.scroll-scrolly_visible {
   display: block;
 }
 
@@ -117,7 +118,7 @@
 
 .scrollbar-inner > .scroll-element .scroll-element_track,
 .scrollbar-inner > .scroll-element .scroll-bar {
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=40)";
+  -ms-filter: 'progid:DXImageTransform.Microsoft.Alpha(Opacity=40)';
   filter: alpha(opacity=40);
   opacity: 0.4;
 }
@@ -289,9 +290,9 @@
 }
 
 .scrollbar-macosx > .scroll-element .scroll-bar {
-  background-color: #6C6E71;
+  background-color: #6c6e71;
   display: block;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  -ms-filter: 'progid:DXImageTransform.Microsoft.Alpha(Opacity=0)';
   filter: alpha(opacity=0);
   opacity: 0;
   -webkit-border-radius: 7px;
@@ -306,7 +307,7 @@
 
 .scrollbar-macosx:hover > .scroll-element .scroll-bar,
 .scrollbar-macosx > .scroll-element.scroll-draggable .scroll-bar {
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=70)";
+  -ms-filter: 'progid:DXImageTransform.Microsoft.Alpha(Opacity=70)';
   filter: alpha(opacity=70);
   opacity: 0.7;
 }
@@ -397,7 +398,7 @@
 
 .scrollbar-light > .scroll-element .scroll-element_size {
   background: #dbdbdb;
-  background: url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIxMDAlIiB5Mj0iMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2RiZGJkYiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNlOGU4ZTgiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+");
+  background: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIxMDAlIiB5Mj0iMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2RiZGJkYiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNlOGU4ZTgiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+');
   background: -moz-linear-gradient(left, #dbdbdb 0%, #e8e8e8 100%);
   background: -webkit-gradient(linear, left top, right top, color-stop(0%, #dbdbdb), color-stop(100%, #e8e8e8));
   background: -webkit-linear-gradient(left, #dbdbdb 0%, #e8e8e8 100%);
@@ -427,7 +428,7 @@
 
 .scrollbar-light > .scroll-element .scroll-bar {
   background: #fefefe;
-  background: url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIxMDAlIiB5Mj0iMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2ZlZmVmZSIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNmNWY1ZjUiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+");
+  background: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIxMDAlIiB5Mj0iMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2ZlZmVmZSIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNmNWY1ZjUiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+');
   background: -moz-linear-gradient(left, #fefefe 0%, #f5f5f5 100%);
   background: -webkit-gradient(linear, left top, right top, color-stop(0%, #fefefe), color-stop(100%, #f5f5f5));
   background: -webkit-linear-gradient(left, #fefefe 0%, #f5f5f5 100%);
@@ -745,7 +746,7 @@
 .scrollbar-dynamic > .scroll-element:hover .scroll-element_outer,
 .scrollbar-dynamic > .scroll-element.scroll-draggable .scroll-element_outer {
   overflow: hidden;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=70)";
+  -ms-filter: 'progid:DXImageTransform.Microsoft.Alpha(Opacity=70)';
   filter: alpha(opacity=70);
   opacity: 0.7;
 }
@@ -907,43 +908,42 @@
   top: -19px;
 }
 
-
 //
 // Custom styles
 //
 
 .scrollbar-inner {
-    height: 100%;
+  height: 100%;
 
-    &:not(:hover) .scroll-element {
-        opacity: 0;
+  &:not(:hover) .scroll-element {
+    opacity: 0;
+  }
+
+  .scroll-element {
+    transition: opacity 300ms;
+    margin-right: 2px;
+
+    .scroll-bar,
+    .scroll-element_track {
+      transition: background-color 300ms;
     }
 
-    .scroll-element {
-        transition: opacity 300ms;
-        margin-right: 2px;
-
-        .scroll-bar,
-        .scroll-element_track {
-            transition: background-color 300ms;
-        }
-
-        .scroll-element_track {
-            background-color: transparent;
-        }
-
-        &:hover {
-            width: 4px;
-        }
+    .scroll-element_track {
+      background-color: transparent;
     }
 
-    .scroll-element.scroll-y {
-        width: 3px;
-        right: 0;
+    &:hover {
+      width: 4px;
     }
+  }
 
-    .scroll-element.scroll-x {
-        height: 3px;
-        bottom: 0;
-    }
+  .scroll-element.scroll-y {
+    width: 3px;
+    right: 0;
+  }
+
+  .scroll-element.scroll-x {
+    height: 3px;
+    bottom: 0;
+  }
 }

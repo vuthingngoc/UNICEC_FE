@@ -15,9 +15,9 @@
 
 */
 // reactstrap components
-import { Card, CardHeader, CardBody, Container, Row, Col } from "reactstrap";
+import { Card, CardHeader, CardBody, Container, Row, Col } from 'reactstrap';
 // core components
-import SimpleHeader from "components/Headers/SimpleHeader.js";
+import SimpleHeader from 'components/Headers/SimpleHeader.js';
 
 function Grid() {
   return (
@@ -111,7 +111,7 @@ function Grid() {
                   <Col lg="2">
                     <span>1 of 3</span>
                   </Col>
-                  <Col md={{ size: "autp" }}>
+                  <Col md={{ size: 'autp' }}>
                     <span>Variable width content</span>
                   </Col>
                   <Col lg="2">
@@ -122,7 +122,7 @@ function Grid() {
                   <Col>
                     <span>1 of 3</span>
                   </Col>
-                  <Col md={{ size: "auto" }}>
+                  <Col md={{ size: 'auto' }}>
                     <span>Variable width content</span>
                   </Col>
                   <Col lg="2">

@@ -14,15 +14,15 @@
 * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 
 */
-import React from "react";
+import React from 'react';
 // nodejs library that concatenates classes
-import classnames from "classnames";
+import classnames from 'classnames';
 // JavaScript library that creates a callendar with events
-import { Calendar } from "@fullcalendar/core";
-import dayGridPlugin from "@fullcalendar/daygrid";
-import interaction from "@fullcalendar/interaction";
+import { Calendar } from '@fullcalendar/core';
+import dayGridPlugin from '@fullcalendar/daygrid';
+import interaction from '@fullcalendar/interaction';
 // react component used to create sweet alerts
-import ReactBSAlert from "react-bootstrap-sweetalert";
+import ReactBSAlert from 'react-bootstrap-sweetalert';
 // reactstrap components
 import {
   Button,
@@ -39,10 +39,10 @@ import {
   Col,
   Breadcrumb,
   BreadcrumbItem,
-} from "reactstrap";
+} from 'reactstrap';
 // core components
 
-import { events as eventsVariables } from "variables/general.js";
+import { events as eventsVariables } from 'variables/general.js';
 
 let calendar;
 
@@ -68,24 +68,24 @@ function CalendarView() {
   const createCalendar = () => {
     calendar = new Calendar(calendarRef.current, {
       plugins: [interaction, dayGridPlugin],
-      initialView: "dayGridMonth",
+      initialView: 'dayGridMonth',
       selectable: true,
       editable: true,
       events: events,
-      headerToolbar: "",
+      headerToolbar: '',
       // Add new event
       select: (info) => {
         setModalAdd(true);
         setStartDate(info.startStr);
         setEndDate(info.endStr);
-        setRadios("bg-info");
+        setRadios('bg-info');
       },
       // Edit calendar event action
       eventClick: ({ event }) => {
         setEventId(event.id);
         setEventTitle(event.title);
         setEventDescription(event.extendedProps.description);
-        setRadios("bg-info");
+        setRadios('bg-info');
         setEvent(event);
         setModalChange(true);
       },
@@ -117,12 +117,12 @@ function CalendarView() {
     setEvents(newEvents);
     setStartDate(undefined);
     setEndDate(undefined);
-    setRadios("bg-info");
+    setRadios('bg-info');
     setEventTitle(undefined);
   };
   const changeEvent = () => {
-    var newEvents = events.map((prop, key) => {
-      if (prop.id + "" === eventId + "") {
+    var newEvents = events.map((prop) => {
+      if (prop.id + '' === eventId + '') {
         setEvent(undefined);
         calendar.getEventById(eventId).remove();
         let saveNewEvent = {
@@ -144,7 +144,7 @@ function CalendarView() {
     });
     setModalChange(false);
     setEvents(newEvents);
-    setRadios("bg-info");
+    setRadios('bg-info');
     setEventTitle(undefined);
     setEventDescription(undefined);
     setEventId(undefined);
@@ -154,11 +154,11 @@ function CalendarView() {
     setAlert(
       <ReactBSAlert
         warning
-        style={{ display: "block", marginTop: "-100px" }}
+        style={{ display: 'block', marginTop: '-100px' }}
         title="Are you sure?"
         onConfirm={() => {
           setAlert(false);
-          setRadios("bg-info");
+          setRadios('bg-info');
           setEventTitle(undefined);
           setEventDescription(undefined);
           setEventId(undefined);
@@ -171,17 +171,17 @@ function CalendarView() {
         showCancel
         btnSize=""
       >
-        You won't be able to revert this!
+        You won&apos;t be able to revert this!
       </ReactBSAlert>
     );
   };
   const deleteEvent = () => {
-    var newEvents = events.filter((prop) => prop.id + "" !== eventId);
+    var newEvents = events.filter((prop) => prop.id + '' !== eventId);
     setEvent(undefined);
     setAlert(
       <ReactBSAlert
         success
-        style={{ display: "block", marginTop: "-100px" }}
+        style={{ display: 'block', marginTop: '-100px' }}
         title="Success"
         onConfirm={() => setAlert(null)}
         onCancel={() => setAlert(null)}
@@ -194,7 +194,7 @@ function CalendarView() {
     );
     setModalChange(false);
     setEvents(newEvents);
-    setRadios("bg-info");
+    setRadios('bg-info');
     setEventTitle(undefined);
     setEventDescription(undefined);
     setEventId(undefined);
@@ -209,13 +209,8 @@ function CalendarView() {
           <div className="header-body">
             <Row className="align-items-center py-4">
               <Col lg="6">
-                <h6 className="fullcalendar-title h2 text-white d-inline-block mb-0 mr-1">
-                  {currentDate}
-                </h6>
-                <Breadcrumb
-                  className="d-none d-md-inline-block ml-lg-4"
-                  listClassName="breadcrumb-links breadcrumb-dark"
-                >
+                <h6 className="fullcalendar-title h2 text-white d-inline-block mb-0 mr-1">{currentDate}</h6>
+                <Breadcrumb className="d-none d-md-inline-block ml-lg-4" listClassName="breadcrumb-links breadcrumb-dark">
                   <BreadcrumbItem>
                     <a href="#pablo" onClick={(e) => e.preventDefault()}>
                       <i className="fas fa-home" />
@@ -252,31 +247,13 @@ function CalendarView() {
                 >
                   <i className="fas fa-angle-right" />
                 </Button>
-                <Button
-                  className="btn-neutral"
-                  color="default"
-                  data-calendar-view="month"
-                  onClick={() => changeView("dayGridMonth")}
-                  size="sm"
-                >
+                <Button className="btn-neutral" color="default" data-calendar-view="month" onClick={() => changeView('dayGridMonth')} size="sm">
                   Month
                 </Button>
-                <Button
-                  className="btn-neutral"
-                  color="default"
-                  data-calendar-view="basicWeek"
-                  onClick={() => changeView("dayGridWeek")}
-                  size="sm"
-                >
+                <Button className="btn-neutral" color="default" data-calendar-view="basicWeek" onClick={() => changeView('dayGridWeek')} size="sm">
                   Week
                 </Button>
-                <Button
-                  className="btn-neutral"
-                  color="default"
-                  data-calendar-view="basicDay"
-                  onClick={() => changeView("dayGridDay")}
-                  size="sm"
-                >
+                <Button className="btn-neutral" color="default" data-calendar-view="basicDay" onClick={() => changeView('dayGridDay')} size="sm">
                   Day
                 </Button>
               </Col>
@@ -292,19 +269,10 @@ function CalendarView() {
                 <h5 className="h3 mb-0">Calendar</h5>
               </CardHeader>
               <CardBody className="p-0">
-                <div
-                  className="calendar"
-                  data-toggle="calendar"
-                  id="calendar"
-                  ref={calendarRef}
-                />
+                <div className="calendar" data-toggle="calendar" id="calendar" ref={calendarRef} />
               </CardBody>
             </Card>
-            <Modal
-              isOpen={modalAdd}
-              toggle={() => setModalAdd(false)}
-              className="modal-dialog-centered modal-secondary"
-            >
+            <Modal isOpen={modalAdd} toggle={() => setModalAdd(false)} className="modal-dialog-centered modal-secondary">
               <div className="modal-body">
                 <form className="new-event--form">
                   <FormGroup>
@@ -317,89 +285,70 @@ function CalendarView() {
                     />
                   </FormGroup>
                   <FormGroup className="mb-0">
-                    <label className="form-control-label d-block mb-3">
-                      Status color
-                    </label>
-                    <ButtonGroup
-                      className="btn-group-toggle btn-group-colors event-tag"
-                      data-toggle="buttons"
-                    >
+                    <label className="form-control-label d-block mb-3">Status color</label>
+                    <ButtonGroup className="btn-group-toggle btn-group-colors event-tag" data-toggle="buttons">
                       <Button
-                        className={classnames("bg-info", {
-                          active: radios === "bg-info",
+                        className={classnames('bg-info', {
+                          active: radios === 'bg-info',
                         })}
                         color=""
                         type="button"
-                        onClick={() => setRadios("bg-info")}
+                        onClick={() => setRadios('bg-info')}
                       />
                       <Button
-                        className={classnames("bg-warning", {
-                          active: radios === "bg-warning",
+                        className={classnames('bg-warning', {
+                          active: radios === 'bg-warning',
                         })}
                         color=""
                         type="button"
-                        onClick={() => setRadios("bg-warning")}
+                        onClick={() => setRadios('bg-warning')}
                       />
                       <Button
-                        className={classnames("bg-danger", {
-                          active: radios === "bg-danger",
+                        className={classnames('bg-danger', {
+                          active: radios === 'bg-danger',
                         })}
                         color=""
                         type="button"
-                        onClick={() => setRadios("bg-danger")}
+                        onClick={() => setRadios('bg-danger')}
                       />
                       <Button
-                        className={classnames("bg-success", {
-                          active: radios === "bg-success",
+                        className={classnames('bg-success', {
+                          active: radios === 'bg-success',
                         })}
                         color=""
                         type="button"
-                        onClick={() => setRadios("bg-success")}
+                        onClick={() => setRadios('bg-success')}
                       />
                       <Button
-                        className={classnames("bg-default", {
-                          active: radios === "bg-default",
+                        className={classnames('bg-default', {
+                          active: radios === 'bg-default',
                         })}
                         color=""
                         type="button"
-                        onClick={() => setRadios("bg-default")}
+                        onClick={() => setRadios('bg-default')}
                       />
                       <Button
-                        className={classnames("bg-primary", {
-                          active: radios === "bg-primary",
+                        className={classnames('bg-primary', {
+                          active: radios === 'bg-primary',
                         })}
                         color=""
                         type="button"
-                        onClick={() => setRadios("bg-primary")}
+                        onClick={() => setRadios('bg-primary')}
                       />
                     </ButtonGroup>
                   </FormGroup>
                 </form>
               </div>
               <div className="modal-footer">
-                <Button
-                  className="new-event--add"
-                  color="primary"
-                  type="button"
-                  onClick={addNewEvent}
-                >
+                <Button className="new-event--add" color="primary" type="button" onClick={addNewEvent}>
                   Add event
                 </Button>
-                <Button
-                  className="ml-auto"
-                  color="link"
-                  type="button"
-                  onClick={() => setModalAdd(false)}
-                >
+                <Button className="ml-auto" color="link" type="button" onClick={() => setModalAdd(false)}>
                   Close
                 </Button>
               </div>
             </Modal>
-            <Modal
-              isOpen={modalChange}
-              toggle={() => setModalChange(false)}
-              className="modal-dialog-centered modal-secondary"
-            >
+            <Modal isOpen={modalChange} toggle={() => setModalChange(false)} className="modal-dialog-centered modal-secondary">
               <div className="modal-body">
                 <Form className="edit-event--form">
                   <FormGroup>
@@ -413,60 +362,55 @@ function CalendarView() {
                     />
                   </FormGroup>
                   <FormGroup>
-                    <label className="form-control-label d-block mb-3">
-                      Status color
-                    </label>
-                    <ButtonGroup
-                      className="btn-group-toggle btn-group-colors event-tag mb-0"
-                      data-toggle="buttons"
-                    >
+                    <label className="form-control-label d-block mb-3">Status color</label>
+                    <ButtonGroup className="btn-group-toggle btn-group-colors event-tag mb-0" data-toggle="buttons">
                       <Button
-                        className={classnames("bg-info", {
-                          active: radios === "bg-info",
+                        className={classnames('bg-info', {
+                          active: radios === 'bg-info',
                         })}
                         color=""
                         type="button"
-                        onClick={() => setRadios("bg-info")}
+                        onClick={() => setRadios('bg-info')}
                       />
                       <Button
-                        className={classnames("bg-warning", {
-                          active: radios === "bg-warning",
+                        className={classnames('bg-warning', {
+                          active: radios === 'bg-warning',
                         })}
                         color=""
                         type="button"
-                        onClick={() => setRadios("bg-warning")}
+                        onClick={() => setRadios('bg-warning')}
                       />
                       <Button
-                        className={classnames("bg-danger", {
-                          active: radios === "bg-danger",
+                        className={classnames('bg-danger', {
+                          active: radios === 'bg-danger',
                         })}
                         color=""
                         type="button"
-                        onClick={() => setRadios("bg-danger")}
+                        onClick={() => setRadios('bg-danger')}
                       />
                       <Button
-                        className={classnames("bg-success", {
-                          active: radios === "bg-success",
+                        className={classnames('bg-success', {
+                          active: radios === 'bg-success',
                         })}
                         color=""
                         type="button"
-                        onClick={() => setRadios("bg-success")}
+                        onClick={() => setRadios('bg-success')}
                       />
                       <Button
-                        className={classnames("bg-default", {
-                          active: radios === "bg-default",
+                        className={classnames('bg-default', {
+                          active: radios === 'bg-default',
                         })}
                         color=""
                         type="button"
-                        onClick={() => setRadios("bg-default")}
+                        onClick={() => setRadios('bg-default')}
                       />
                       <Button
-                        className={classnames("bg-primary", {
-                          active: radios === "bg-primary",
+                        className={classnames('bg-primary', {
+                          active: radios === 'bg-primary',
                         })}
                         color=""
                         type="button"
-                        onClick={() => setRadios("bg-primary")}
+                        onClick={() => setRadios('bg-primary')}
                       />
                     </ButtonGroup>
                   </FormGroup>
@@ -497,11 +441,7 @@ function CalendarView() {
                 >
                   Delete
                 </Button>
-                <Button
-                  className="ml-auto"
-                  color="link"
-                  onClick={() => setModalChange(false)}
-                >
+                <Button className="ml-auto" color="link" onClick={() => setModalChange(false)}>
                   Close
                 </Button>
               </div>

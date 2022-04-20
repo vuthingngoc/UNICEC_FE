@@ -15,13 +15,13 @@
 
 */
 // javascipt plugin for creating charts
-import Chart from "chart.js";
+import Chart from 'chart.js';
 // react plugin used to create charts
-import { Line, Bar, Doughnut, Pie } from "react-chartjs-2";
+import { Line, Bar, Doughnut, Pie } from 'react-chartjs-2';
 // reactstrap components
-import { Card, CardHeader, CardBody, Container, Row, Col } from "reactstrap";
+import { Card, CardHeader, CardBody, Container, Row, Col } from 'reactstrap';
 // core components
-import CardsHeader from "components/Headers/CardsHeader.js";
+import CardsHeader from 'components/Headers/CardsHeader.js';
 
 import {
   chartOptions,
@@ -32,7 +32,7 @@ import {
   chartExample5,
   chartExample6,
   chartExample7,
-} from "variables/charts.js";
+} from 'variables/charts.js';
 
 function Charts() {
   if (window.Chart) {
@@ -51,12 +51,7 @@ function Charts() {
               </CardHeader>
               <CardBody>
                 <div className="chart">
-                  <Line
-                    data={chartExample3.data}
-                    options={chartExample3.options}
-                    id="chart-sales"
-                    className="chart-canvas"
-                  />
+                  <Line data={chartExample3.data} options={chartExample3.options} id="chart-sales" className="chart-canvas" />
                 </div>
               </CardBody>
             </Card>
@@ -69,12 +64,7 @@ function Charts() {
               </CardHeader>
               <CardBody>
                 <div className="chart">
-                  <Bar
-                    data={chartExample2.data}
-                    options={chartExample2.options}
-                    className="chart-canvas"
-                    id="chart-bars"
-                  />
+                  <Bar data={chartExample2.data} options={chartExample2.options} className="chart-canvas" id="chart-bars" />
                 </div>
               </CardBody>
             </Card>
@@ -89,12 +79,7 @@ function Charts() {
               </CardHeader>
               <CardBody>
                 <div className="chart">
-                  <Line
-                    data={chartExample4.data}
-                    options={chartExample4.options}
-                    id="chart-points"
-                    className="chart-canvas"
-                  />
+                  <Line data={chartExample4.data} options={chartExample4.options} id="chart-points" className="chart-canvas" />
                 </div>
               </CardBody>
             </Card>
@@ -107,12 +92,7 @@ function Charts() {
               </CardHeader>
               <CardBody>
                 <div className="chart">
-                  <Doughnut
-                    data={chartExample5.data}
-                    options={chartExample5.options}
-                    className="chart-canvas"
-                    id="chart-doughnut"
-                  />
+                  <Doughnut data={chartExample5.data} options={chartExample5.options} className="chart-canvas" id="chart-doughnut" />
                 </div>
               </CardBody>
             </Card>
@@ -127,12 +107,7 @@ function Charts() {
               </CardHeader>
               <CardBody>
                 <div className="chart">
-                  <Pie
-                    data={chartExample6.data}
-                    options={chartExample6.options}
-                    className="chart-canvas"
-                    id="chart-pie"
-                  />
+                  <Pie data={chartExample6.data} options={chartExample6.options} className="chart-canvas" id="chart-pie" />
                 </div>
               </CardBody>
             </Card>
@@ -145,12 +120,7 @@ function Charts() {
               </CardHeader>
               <CardBody>
                 <div className="chart">
-                  <Bar
-                    data={chartExample7.data}
-                    options={chartExample7.options}
-                    className="chart-canvas"
-                    id="chart-bar-stacked"
-                  />
+                  <Bar data={chartExample7.data} options={chartExample7.options} className="chart-canvas" id="chart-bar-stacked" />
                 </div>
               </CardBody>
             </Card>

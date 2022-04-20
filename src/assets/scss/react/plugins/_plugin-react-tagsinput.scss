@@ -1,4 +1,4 @@
-.bootstrap-tagsinput .tag a{
+.bootstrap-tagsinput .tag a {
   position: absolute;
   top: 50%;
   margin-left: 10px;
@@ -8,6 +8,6 @@
 
   &::after {
     font-size: 16px;
-    content: "×";
+    content: '×';
   }
 }

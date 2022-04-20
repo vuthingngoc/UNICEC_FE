@@ -31,9 +31,9 @@ import {
   Container,
   Row,
   Col,
-} from "reactstrap";
+} from 'reactstrap';
 // core components
-import RTLProfileHeader from "components/Headers/RTLProfileHeader.js";
+import RTLProfileHeader from 'components/Headers/RTLProfileHeader.js';
 
 function RTLSupport() {
   return (
@@ -43,42 +43,22 @@ function RTLSupport() {
         <Row>
           <Col className="order-xl-2" xl="4">
             <Card className="card-profile">
-              <CardImg
-                alt="..."
-                src={require("assets/img/theme/img-1-1000x600.jpg").default}
-                top
-              />
+              <CardImg alt="..." src={require('assets/img/theme/img-1-1000x600.jpg').default} top />
               <Row className="justify-content-center">
                 <Col className="order-lg-2" lg="3">
                   <div className="card-profile-image">
                     <a href="#pablo" onClick={(e) => e.preventDefault()}>
-                      <img
-                        alt="..."
-                        className="rounded-circle"
-                        src={require("assets/img/theme/team-4.jpg").default}
-                      />
+                      <img alt="..." className="rounded-circle" src={require('assets/img/theme/team-4.jpg').default} />
                     </a>
                   </div>
                 </Col>
               </Row>
               <CardHeader className="text-center border-0 pt-8 pt-md-4 pb-0 pb-md-4">
                 <div className="d-flex justify-content-between">
-                  <Button
-                    className="mr-4"
-                    color="info"
-                    href="#pablo"
-                    onClick={(e) => e.preventDefault()}
-                    size="sm"
-                  >
+                  <Button className="mr-4" color="info" href="#pablo" onClick={(e) => e.preventDefault()} size="sm">
                     الاتصال
                   </Button>
-                  <Button
-                    className="float-right"
-                    color="default"
-                    href="#pablo"
-                    onClick={(e) => e.preventDefault()}
-                    size="sm"
-                  >
+                  <Button className="float-right" color="default" href="#pablo" onClick={(e) => e.preventDefault()} size="sm">
                     رسالة
                   </Button>
                 </div>
@@ -133,129 +113,65 @@ function RTLSupport() {
                   <ListGroupItem className="px-0">
                     <Row className="align-items-center">
                       <Col className="col-auto">
-                        <a
-                          className="avatar rounded-circle"
-                          href="#pablo"
-                          onClick={(e) => e.preventDefault()}
-                        >
-                          <img
-                            alt="..."
-                            src={
-                              require("assets/img/theme/bootstrap.jpg").default
-                            }
-                          />
+                        <a className="avatar rounded-circle" href="#pablo" onClick={(e) => e.preventDefault()}>
+                          <img alt="..." src={require('assets/img/theme/bootstrap.jpg').default} />
                         </a>
                       </Col>
                       <div className="col">
                         <h5>Argon Design System</h5>
-                        <Progress
-                          className="progress-xs mb-0"
-                          max="100"
-                          value="60"
-                          color="warning"
-                        />
+                        <Progress className="progress-xs mb-0" max="100" value="60" color="warning" />
                       </div>
                     </Row>
                   </ListGroupItem>
                   <ListGroupItem className="px-0">
                     <Row className="align-items-center">
                       <Col className="col-auto">
-                        <a
-                          className="avatar rounded-circle"
-                          href="#pablo"
-                          onClick={(e) => e.preventDefault()}
-                        >
-                          <img
-                            alt="..."
-                            src={
-                              require("assets/img/theme/angular.jpg").default
-                            }
-                          />
+                        <a className="avatar rounded-circle" href="#pablo" onClick={(e) => e.preventDefault()}>
+                          <img alt="..." src={require('assets/img/theme/angular.jpg').default} />
                         </a>
                       </Col>
                       <div className="col">
                         <h5>Angular Now UI Kit PRO</h5>
-                        <Progress
-                          className="progress-xs mb-0"
-                          max="100"
-                          value="100"
-                          color="success"
-                        />
+                        <Progress className="progress-xs mb-0" max="100" value="100" color="success" />
                       </div>
                     </Row>
                   </ListGroupItem>
                   <ListGroupItem className="px-0">
                     <Row className="align-items-center">
                       <Col className="col-auto">
-                        <a
-                          className="avatar rounded-circle"
-                          href="#pablo"
-                          onClick={(e) => e.preventDefault()}
-                        >
-                          <img
-                            alt="..."
-                            src={require("assets/img/theme/sketch.jpg").default}
-                          />
+                        <a className="avatar rounded-circle" href="#pablo" onClick={(e) => e.preventDefault()}>
+                          <img alt="..." src={require('assets/img/theme/sketch.jpg').default} />
                         </a>
                       </Col>
                       <div className="col">
                         <h5>Black Dashboard</h5>
-                        <Progress
-                          className="progress-xs mb-0"
-                          max="100"
-                          value="72"
-                          color="danger"
-                        />
+                        <Progress className="progress-xs mb-0" max="100" value="72" color="danger" />
                       </div>
                     </Row>
                   </ListGroupItem>
                   <ListGroupItem className="px-0">
                     <Row className="align-items-center">
                       <Col className="col-auto">
-                        <a
-                          className="avatar rounded-circle"
-                          href="#pablo"
-                          onClick={(e) => e.preventDefault()}
-                        >
-                          <img
-                            alt="..."
-                            src={require("assets/img/theme/react.jpg").default}
-                          />
+                        <a className="avatar rounded-circle" href="#pablo" onClick={(e) => e.preventDefault()}>
+                          <img alt="..." src={require('assets/img/theme/react.jpg').default} />
                         </a>
                       </Col>
                       <div className="col">
                         <h5>React Material Dashboard</h5>
-                        <Progress
-                          className="progress-xs mb-0"
-                          max="100"
-                          value="90"
-                          color="info"
-                        />
+                        <Progress className="progress-xs mb-0" max="100" value="90" color="info" />
                       </div>
                     </Row>
                   </ListGroupItem>
                   <ListGroupItem className="px-0">
                     <Row className="align-items-center">
                       <Col className="col-auto">
-                        <a
-                          className="avatar rounded-circle"
-                          href="#pablo"
-                          onClick={(e) => e.preventDefault()}
-                        >
-                          <img
-                            alt="..."
-                            src={require("assets/img/theme/vue.jpg").default}
-                          />
+                        <a className="avatar rounded-circle" href="#pablo" onClick={(e) => e.preventDefault()}>
+                          <img alt="..." src={require('assets/img/theme/vue.jpg').default} />
                         </a>
                       </Col>
                       <div className="col">
                         <h5>Vue Paper UI Kit PRO</h5>
-                        <Progress
-                          className="progress-xs mb-0"
-                          max="100"
-                          value="100"
-                          color="success"
-                        />
+                        <Progress className="progress-xs mb-0" max="100" value="100" color="success" />
                       </div>
                     </Row>
                   </ListGroupItem>
@@ -270,15 +186,10 @@ function RTLSupport() {
                   <CardBody>
                     <Row>
                       <div className="col">
-                        <CardTitle
-                          className="text-uppercase text-muted mb-0 text-white"
-                          tag="h5"
-                        >
+                        <CardTitle className="text-uppercase text-muted mb-0 text-white" tag="h5">
                           إجمالي حركة المرور
                         </CardTitle>
-                        <span className="h2 font-weight-bold mb-0 text-white">
-                          350,897
-                        </span>
+                        <span className="h2 font-weight-bold mb-0 text-white">350,897</span>
                       </div>
                       <Col className="col-auto">
                         <div className="icon icon-shape bg-white text-dark rounded-circle shadow">
@@ -291,9 +202,7 @@ function RTLSupport() {
                         <i className="fa fa-arrow-up ml-2" />
                         3.48%
                       </span>
-                      <span className="text-nowrap text-light">
-                        منذ اخر شهر
-                      </span>
+                      <span className="text-nowrap text-light">منذ اخر شهر</span>
                     </p>
                   </CardBody>
                 </Card>
@@ -303,12 +212,8 @@ function RTLSupport() {
                   <CardBody>
                     <Row>
                       <div className="col">
-                        <CardTitle className="text-uppercase text-muted mb-0 text-white">
-                          أداء
-                        </CardTitle>
-                        <span className="h2 font-weight-bold mb-0 text-white">
-                          49,65%
-                        </span>
+                        <CardTitle className="text-uppercase text-muted mb-0 text-white">أداء</CardTitle>
+                        <span className="h2 font-weight-bold mb-0 text-white">49,65%</span>
                       </div>
                       <Col className="col-auto">
                         <div className="icon icon-shape bg-white text-dark rounded-circle shadow">
@@ -334,12 +239,7 @@ function RTLSupport() {
                     <h3 className="mb-0">تعديل الملف الشخصي</h3>
                   </Col>
                   <Col className="text-left" xs="4">
-                    <Button
-                      color="primary"
-                      href="#pablo"
-                      onClick={(e) => e.preventDefault()}
-                      size="sm"
-                    >
+                    <Button color="primary" href="#pablo" onClick={(e) => e.preventDefault()} size="sm">
                       الإعدادات
                     </Button>
                   </Col>
@@ -347,148 +247,82 @@ function RTLSupport() {
               </CardHeader>
               <CardBody>
                 <Form>
-                  <h6 className="heading-small text-muted mb-4">
-                    معلومات المستخدم
-                  </h6>
+                  <h6 className="heading-small text-muted mb-4">معلومات المستخدم</h6>
                   <div className="pl-lg-4">
                     <Row>
                       <Col lg="6">
                         <FormGroup>
-                          <label
-                            className="form-control-label"
-                            htmlFor="input-username"
-                          >
+                          <label className="form-control-label" htmlFor="input-username">
                             اسم المستخدم
                           </label>
-                          <Input
-                            defaultValue="اسم المستخدم"
-                            id="input-username"
-                            placeholder="Username"
-                            type="text"
-                          />
+                          <Input defaultValue="اسم المستخدم" id="input-username" placeholder="Username" type="text" />
                         </FormGroup>
                       </Col>
                       <Col lg="6">
                         <FormGroup>
-                          <label
-                            className="form-control-label"
-                            htmlFor="input-email"
-                          >
+                          <label className="form-control-label" htmlFor="input-email">
                             عنوان البريد الإلكتروني
                           </label>
-                          <Input
-                            id="input-email"
-                            placeholder="jesse@example.com"
-                            type="email"
-                          />
+                          <Input id="input-email" placeholder="jesse@example.com" type="email" />
                         </FormGroup>
                       </Col>
                     </Row>
                     <Row>
                       <Col lg="6">
                         <FormGroup>
-                          <label
-                            className="form-control-label"
-                            htmlFor="input-first-name"
-                          >
+                          <label className="form-control-label" htmlFor="input-first-name">
                             الاسم
                           </label>
-                          <Input
-                            defaultValue="الاسم"
-                            id="input-first-name"
-                            placeholder="First name"
-                            type="text"
-                          />
+                          <Input defaultValue="الاسم" id="input-first-name" placeholder="First name" type="text" />
                         </FormGroup>
                       </Col>
                       <Col lg="6">
                         <FormGroup>
-                          <label
-                            className="form-control-label"
-                            htmlFor="input-last-name"
-                          >
+                          <label className="form-control-label" htmlFor="input-last-name">
                             الكنية
                           </label>
-                          <Input
-                            defaultValue="الكنية"
-                            id="input-last-name"
-                            placeholder="Last name"
-                            type="text"
-                          />
+                          <Input defaultValue="الكنية" id="input-last-name" placeholder="Last name" type="text" />
                         </FormGroup>
                       </Col>
                     </Row>
                   </div>
                   <hr className="my-4" />
 
-                  <h6 className="heading-small text-muted mb-4">
-                    معلومات الاتصال
-                  </h6>
+                  <h6 className="heading-small text-muted mb-4">معلومات الاتصال</h6>
                   <div className="pl-lg-4">
                     <Row>
                       <Col md="12">
                         <FormGroup>
-                          <label
-                            className="form-control-label"
-                            htmlFor="input-address"
-                          >
+                          <label className="form-control-label" htmlFor="input-address">
                             عنوان
                           </label>
-                          <Input
-                            defaultValue="عنوان"
-                            id="input-address"
-                            placeholder="Home Address"
-                            type="text"
-                          />
+                          <Input defaultValue="عنوان" id="input-address" placeholder="Home Address" type="text" />
                         </FormGroup>
                       </Col>
                     </Row>
                     <Row>
                       <Col lg="4">
                         <FormGroup>
-                          <label
-                            className="form-control-label"
-                            htmlFor="input-city"
-                          >
+                          <label className="form-control-label" htmlFor="input-city">
                             مدينة
                           </label>
-                          <Input
-                            defaultValue="مدينة"
-                            id="input-city"
-                            placeholder="City"
-                            type="text"
-                          />
+                          <Input defaultValue="مدينة" id="input-city" placeholder="City" type="text" />
                         </FormGroup>
                       </Col>
                       <Col lg="4">
                         <FormGroup>
-                          <label
-                            className="form-control-label"
-                            htmlFor="input-country"
-                          >
+                          <label className="form-control-label" htmlFor="input-country">
                             بلد
                           </label>
-                          <Input
-                            defaultValue="بلد"
-                            id="input-country"
-                            placeholder="Country"
-                            type="text"
-                          />
+                          <Input defaultValue="بلد" id="input-country" placeholder="Country" type="text" />
                         </FormGroup>
                       </Col>
                       <Col lg="4">
                         <FormGroup>
-                          <label
-                            className="form-control-label"
-                            htmlFor="input-country"
-                          >
+                          <label className="form-control-label" htmlFor="input-country">
                             الكود
                           </label>
-                          <Input
-                            id="input-postal-code"
-                            placeholder="الكود"
-                            type="number"
-                          />
+                          <Input id="input-postal-code" placeholder="الكود" type="number" />
                         </FormGroup>
                       </Col>
                     </Row>
@@ -499,12 +333,7 @@ function RTLSupport() {
                   <div className="pl-lg-4">
                     <FormGroup>
                       <label className="form-control-label">عني</label>
-                      <Input
-                        placeholder="الجميلة."
-                        rows="4"
-                        type="textarea"
-                        defaultValue="الجميلة."
-                      />
+                      <Input placeholder="الجميلة." rows="4" type="textarea" defaultValue="الجميلة." />
                     </FormGroup>
                   </div>
                 </Form>

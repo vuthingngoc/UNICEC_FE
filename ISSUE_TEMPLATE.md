@@ -1,6 +1,5 @@
 !!! IF YOU DO NOT USE THIS ISSUES TEAMPLATE, YOUR ISSUE IS LIABLE TO BEING IGNORED BY US
 
-
 # Prerequisites
 
 Please answer the following questions for yourself before submitting an issue.
@@ -34,9 +33,9 @@ Please provide detailed steps for reproducing the issue.
 
 Please provide any relevant information about your setup. This is important in case the issue is not reproducible except for under certain conditions.
 
-* Device:
-* Operating System:
-* Browser and Version:
+- Device:
+- Operating System:
+- Browser and Version:
 
 ## Failure Logs
 

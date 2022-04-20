@@ -15,19 +15,9 @@
 
 */
 // reactstrap components
-import {
-  Button,
-  Card,
-  CardHeader,
-  CardBody,
-  CardFooter,
-  Table,
-  Container,
-  Row,
-  Col,
-} from "reactstrap";
+import { Button, Card, CardHeader, CardBody, CardFooter, Table, Container, Row, Col } from 'reactstrap';
 // core components
-import AuthHeader from "components/Headers/AuthHeader.js";
+import AuthHeader from 'components/Headers/AuthHeader.js';
 
 function Pricing() {
   return (
@@ -39,9 +29,7 @@ function Pricing() {
             <div className="pricing card-group flex-column flex-md-row mb-3">
               <Card className="card-pricing border-0 text-center mb-4">
                 <CardHeader className="bg-transparent">
-                  <h4 className="text-uppercase ls-1 text-info py-3 mb-0">
-                    Bravo pack
-                  </h4>
+                  <h4 className="text-uppercase ls-1 text-info py-3 mb-0">Bravo pack</h4>
                 </CardHeader>
                 <CardBody className="px-lg-7">
                   <div className="display-2">$49</div>
@@ -67,9 +55,7 @@ function Pricing() {
                           </div>
                         </div>
                         <div>
-                          <span className="pl-2">
-                            Working materials in Sketch
-                          </span>
+                          <span className="pl-2">Working materials in Sketch</span>
                         </div>
                       </div>
                     </li>
@@ -91,20 +77,14 @@ function Pricing() {
                   </Button>
                 </CardBody>
                 <CardFooter>
-                  <a
-                    className="text-light"
-                    href="#pablo"
-                    onClick={(e) => e.preventDefault()}
-                  >
+                  <a className="text-light" href="#pablo" onClick={(e) => e.preventDefault()}>
                     Request a demo
                   </a>
                 </CardFooter>
               </Card>
               <Card className="card-pricing bg-gradient-success zoom-in shadow-lg rounded border-0 text-center mb-4">
                 <CardHeader className="bg-transparent">
-                  <h4 className="text-uppercase ls-1 text-white py-3 mb-0">
-                    Alpha pack
-                  </h4>
+                  <h4 className="text-uppercase ls-1 text-white py-3 mb-0">Alpha pack</h4>
                 </CardHeader>
                 <CardBody className="px-lg-7">
                   <div className="display-1 text-white">$199</div>
@@ -118,9 +98,7 @@ function Pricing() {
                           </div>
                         </div>
                         <div>
-                          <span className="pl-2 text-white">
-                            Complete documentation
-                          </span>
+                          <span className="pl-2 text-white">Complete documentation</span>
                         </div>
                       </div>
                     </li>
@@ -132,9 +110,7 @@ function Pricing() {
                           </div>
                         </div>
                         <div>
-                          <span className="pl-2 text-white">
-                            Working materials in Sketch
-                          </span>
+                          <span className="pl-2 text-white">Working materials in Sketch</span>
                         </div>
                       </div>
                     </li>
@@ -146,9 +122,7 @@ function Pricing() {
                           </div>
                         </div>
                         <div>
-                          <span className="pl-2 text-white">
-                            2GB cloud storage
-                          </span>
+                          <span className="pl-2 text-white">2GB cloud storage</span>
                         </div>
                       </div>
                     </li>
@@ -158,11 +132,7 @@ function Pricing() {
                   </Button>
                 </CardBody>
                 <CardFooter className="bg-transparent">
-                  <a
-                    className="text-white"
-                    href="#pablo"
-                    onClick={(e) => e.preventDefault()}
-                  >
+                  <a className="text-white" href="#pablo" onClick={(e) => e.preventDefault()}>
                     Contact sales
                   </a>
                 </CardFooter>
@@ -178,9 +148,8 @@ function Pricing() {
           </div>
           <Col lg="6">
             <p className="text-white">
-              <strong>The Arctic Ocean</strong> freezes every winter and much of
-              the sea-ice then thaws every summer, and that process will
-              continue whatever.
+              <strong>The Arctic Ocean</strong> freezes every winter and much of the sea-ice then thaws every summer, and that process will continue
+              whatever.
             </p>
           </Col>
         </div>
@@ -234,9 +203,7 @@ function Pricing() {
                     <i className="fas fa-check text-success" />
                   </td>
                   <td className="text-center">
-                    <span className="text-sm text-light">
-                      Limited to 1 domain only
-                    </span>
+                    <span className="text-sm text-light">Limited to 1 domain only</span>
                   </td>
                 </tr>
                 <tr>

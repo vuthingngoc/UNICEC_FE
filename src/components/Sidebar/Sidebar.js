@@ -14,24 +14,17 @@
 * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 
 */
-import React from "react";
+import React from 'react';
 // react library for routing
-import { useLocation, NavLink as NavLinkRRD, Link } from "react-router-dom";
+import { useLocation, NavLink as NavLinkRRD, Link } from 'react-router-dom';
 // nodejs library that concatenates classes
-import classnames from "classnames";
+import classnames from 'classnames';
 // nodejs library to set properties for components
-import { PropTypes } from "prop-types";
+import { PropTypes } from 'prop-types';
 // react library that creates nice scrollbar on windows devices
-import PerfectScrollbar from "react-perfect-scrollbar";
+import PerfectScrollbar from 'react-perfect-scrollbar';
 // reactstrap components
-import {
-  Collapse,
-  NavbarBrand,
-  Navbar,
-  NavItem,
-  NavLink,
-  Nav,
-} from "reactstrap";
+import { Collapse, NavbarBrand, Navbar, NavItem, NavLink, Nav } from 'reactstrap';
 
 function Sidebar({ toggleSidenav, sidenavOpen, routes, logo, rtlActive }) {
   const [state, setState] = React.useState({});
@@ -42,25 +35,25 @@ function Sidebar({ toggleSidenav, sidenavOpen, routes, logo, rtlActive }) {
   }, []);
   // verifies if routeName is the one active (in browser input)
   const activeRoute = (routeName) => {
-    return location.pathname.indexOf(routeName) > -1 ? "active" : "";
+    return location.pathname.indexOf(routeName) > -1 ? 'active' : '';
   };
   // makes the sidenav normal on hover (actually when mouse enters on it)
   const onMouseEnterSidenav = () => {
-    if (!document.body.classList.contains("g-sidenav-pinned")) {
-      document.body.classList.add("g-sidenav-show");
+    if (!document.body.classList.contains('g-sidenav-pinned')) {
+      document.body.classList.add('g-sidenav-show');
     }
   };
   // makes the sidenav mini on hover (actually when mouse leaves from it)
   const onMouseLeaveSidenav = () => {
-    if (!document.body.classList.contains("g-sidenav-pinned")) {
-      document.body.classList.remove("g-sidenav-show");
+    if (!document.body.classList.contains('g-sidenav-pinned')) {
+      document.body.classList.remove('g-sidenav-show');
     }
   };
   // this creates the intial state of this component based on the collapse routes
   // that it gets through routes
   const getCollapseStates = (routes) => {
     let initialState = {};
-    routes.map((prop, key) => {
+    routes.map((prop) => {
       if (prop.collapse) {
         initialState = {
           [prop.state]: getCollapseInitialState(prop.views),
@@ -100,7 +93,7 @@ function Sidebar({ toggleSidenav, sidenavOpen, routes, logo, rtlActive }) {
       }
       if (prop.collapse) {
         var st = {};
-        st[prop["state"]] = !state[prop.state];
+        st[prop['state']] = !state[prop.state];
         return (
           <NavItem key={key}>
             <NavLink
@@ -128,21 +121,14 @@ function Sidebar({ toggleSidenav, sidenavOpen, routes, logo, rtlActive }) {
               ) : null}
             </NavLink>
             <Collapse isOpen={state[prop.state]}>
-              <Nav className="nav-sm flex-column">
-                {createLinks(prop.views)}
-              </Nav>
+              <Nav className="nav-sm flex-column">{createLinks(prop.views)}</Nav>
             </Collapse>
           </NavItem>
         );
       }
       return (
         <NavItem className={activeRoute(prop.layout + prop.path)} key={key}>
-          <NavLink
-            to={prop.layout + prop.path}
-            activeClassName=""
-            onClick={closeSidenav}
-            tag={NavLinkRRD}
-          >
+          <NavLink to={prop.layout + prop.path} activeClassName="" onClick={closeSidenav} tag={NavLinkRRD}>
             {prop.icon !== undefined ? (
               <>
                 <i className={prop.icon} />
@@ -171,7 +157,7 @@ function Sidebar({ toggleSidenav, sidenavOpen, routes, logo, rtlActive }) {
   } else if (logo && logo.outterLink) {
     navbarBrandProps = {
       href: logo.outterLink,
-      target: "_blank",
+      target: '_blank',
     };
   }
   const scrollBarInner = (
@@ -179,16 +165,12 @@ function Sidebar({ toggleSidenav, sidenavOpen, routes, logo, rtlActive }) {
       <div className="sidenav-header d-flex align-items-center">
         {logo ? (
           <NavbarBrand {...navbarBrandProps}>
-            <img
-              alt={logo.imgAlt}
-              className="navbar-brand-img"
-              src={logo.imgSrc}
-            />
+            <img alt={logo.imgAlt} className="navbar-brand-img" src={logo.imgSrc} />
           </NavbarBrand>
         ) : null}
         <div className="ml-auto">
           <div
-            className={classnames("sidenav-toggler d-none d-xl-block", {
+            className={classnames('sidenav-toggler d-none d-xl-block', {
               active: sidenavOpen,
             })}
             onClick={toggleSidenav}
@@ -211,37 +193,25 @@ function Sidebar({ toggleSidenav, sidenavOpen, routes, logo, rtlActive }) {
           </h6>
           <Nav className="mb-md-3" navbar>
             <NavItem>
-              <NavLink
-                href="https://demos.creative-tim.com/argon-dashboard-pro-react/#/documentation/overview?ref=adpr-sidebar"
-                target="_blank"
-              >
+              <NavLink href="https://demos.creative-tim.com/argon-dashboard-pro-react/#/documentation/overview?ref=adpr-sidebar" target="_blank">
                 <i className="ni ni-spaceship" />
                 <span className="nav-link-text">Getting started</span>
               </NavLink>
             </NavItem>
             <NavItem>
-              <NavLink
-                href="https://demos.creative-tim.com/argon-dashboard-pro-react/#/documentation/colors?ref=adpr-sidebar"
-                target="_blank"
-              >
+              <NavLink href="https://demos.creative-tim.com/argon-dashboard-pro-react/#/documentation/colors?ref=adpr-sidebar" target="_blank">
                 <i className="ni ni-palette" />
                 <span className="nav-link-text">Foundation</span>
               </NavLink>
             </NavItem>
             <NavItem>
-              <NavLink
-                href="https://demos.creative-tim.com/argon-dashboard-pro-react/#/documentation/alert?ref=adpr-sidebar"
-                target="_blank"
-              >
+              <NavLink href="https://demos.creative-tim.com/argon-dashboard-pro-react/#/documentation/alert?ref=adpr-sidebar" target="_blank">
                 <i className="ni ni-ui-04" />
                 <span className="nav-link-text">Components</span>
               </NavLink>
             </NavItem>
             <NavItem>
-              <NavLink
-                href="https://demos.creative-tim.com/argon-dashboard-pro-react/#/documentation/charts?ref=adpr-sidebar"
-                target="_blank"
-              >
+              <NavLink href="https://demos.creative-tim.com/argon-dashboard-pro-react/#/documentation/charts?ref=adpr-sidebar" target="_blank">
                 <i className="ni ni-chart-pie-35" />
                 <span className="nav-link-text">Plugins</span>
               </NavLink>
@@ -253,18 +223,11 @@ function Sidebar({ toggleSidenav, sidenavOpen, routes, logo, rtlActive }) {
   );
   return (
     <Navbar
-      className={
-        "sidenav navbar-vertical navbar-expand-xs navbar-light bg-white " +
-        (rtlActive ? "" : "fixed-left")
-      }
+      className={'sidenav navbar-vertical navbar-expand-xs navbar-light bg-white ' + (rtlActive ? '' : 'fixed-left')}
       onMouseEnter={onMouseEnterSidenav}
       onMouseLeave={onMouseLeaveSidenav}
     >
-      {navigator.platform.indexOf("Win") > -1 ? (
-        <PerfectScrollbar>{scrollBarInner}</PerfectScrollbar>
-      ) : (
-        scrollBarInner
-      )}
+      {navigator.platform.indexOf('Win') > -1 ? <PerfectScrollbar>{scrollBarInner}</PerfectScrollbar> : scrollBarInner}
     </Navbar>
   );
 }

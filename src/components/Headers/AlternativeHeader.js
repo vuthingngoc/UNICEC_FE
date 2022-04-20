@@ -15,14 +15,7 @@
 
 */
 // reactstrap components
-import {
-  Breadcrumb,
-  BreadcrumbItem,
-  Button,
-  Container,
-  Row,
-  Col,
-} from "reactstrap";
+import { Breadcrumb, BreadcrumbItem, Button, Container, Row, Col } from 'reactstrap';
 
 function AlternativeHeader() {
   return (
@@ -32,11 +25,8 @@ function AlternativeHeader() {
           <div className="header-body">
             <Row className="align-items-center py-4">
               <Col lg="6" xs="7">
-                <h6 className="h2 d-inline-block mb-0">Alternative</h6>{" "}
-                <Breadcrumb
-                  className="d-none d-md-inline-block ml-md-4"
-                  listClassName="breadcrumb-links"
-                >
+                <h6 className="h2 d-inline-block mb-0">Alternative</h6>{' '}
+                <Breadcrumb className="d-none d-md-inline-block ml-md-4" listClassName="breadcrumb-links">
                   <BreadcrumbItem>
                     <a href="#pablo" onClick={(e) => e.preventDefault()}>
                       <i className="fas fa-home" />
@@ -53,22 +43,10 @@ function AlternativeHeader() {
                 </Breadcrumb>
               </Col>
               <Col className="text-right" lg="6" xs="5">
-                <Button
-                  className="btn-neutral"
-                  color=""
-                  href="#pablo"
-                  onClick={(e) => e.preventDefault()}
-                  size="sm"
-                >
+                <Button className="btn-neutral" color="" href="#pablo" onClick={(e) => e.preventDefault()} size="sm">
                   New
                 </Button>
-                <Button
-                  className="btn-neutral"
-                  color=""
-                  href="#pablo"
-                  onClick={(e) => e.preventDefault()}
-                  size="sm"
-                >
+                <Button className="btn-neutral" color="" href="#pablo" onClick={(e) => e.preventDefault()} size="sm">
                   Filters
                 </Button>
               </Col>
