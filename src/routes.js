@@ -1,19 +1,3 @@
-/*!
-
-=========================================================
-* Argon Dashboard PRO React - v1.2.1
-=========================================================
-
-* Product Page: https://www.creative-tim.com/product/argon-dashboard-pro-react
-* Copyright 2021 Creative Tim (https://www.creative-tim.com)
-
-* Coded by Creative Tim
-
-=========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
-*/
 import Alternative from 'views/pages/dashboards/Alternative.js';
 import Buttons from 'views/pages/components/Buttons.js';
 import Calendar from 'views/pages/Calendar.js';
@@ -26,7 +10,7 @@ import Google from 'views/pages/maps/Google.js';
 import Grid from 'views/pages/components/Grid.js';
 import Icons from 'views/pages/components/Icons.js';
 import Lock from 'views/pages/examples/Lock.js';
-import Login from 'views/pages/examples/Login.js';
+//import Login from 'views/pages/examples/Login.jsx';
 import Notifications from 'views/pages/components/Notifications.js';
 import Pricing from 'views/pages/examples/Pricing.js';
 import Profile from 'views/pages/examples/Profile.js';
@@ -40,6 +24,9 @@ import Typography from 'views/pages/components/Typography.js';
 import Validation from 'views/pages/forms/Validation.js';
 import Vector from 'views/pages/maps/Vector.js';
 import Widgets from 'views/pages/Widgets.js';
+
+//LoginPage
+import LoginPage from 'views/pages/LoginPage/LoginPage.jsx';
 
 const routes = [
   {
@@ -77,11 +64,18 @@ const routes = [
         component: Pricing,
         layout: '/auth',
       },
+      // {
+      //   path: '/login',
+      //   name: 'Login',
+      //   miniName: 'L',
+      //   component: Login,
+      //   layout: '/auth',
+      // },
       {
         path: '/login',
         name: 'Login',
         miniName: 'L',
-        component: Login,
+        component: LoginPage,
         layout: '/auth',
       },
       {
