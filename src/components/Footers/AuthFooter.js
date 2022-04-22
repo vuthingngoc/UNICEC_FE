@@ -1,22 +1,7 @@
-/*!
-
-=========================================================
-* Argon Dashboard PRO React - v1.2.1
-=========================================================
-
-* Product Page: https://www.creative-tim.com/product/argon-dashboard-pro-react
-* Copyright 2021 Creative Tim (https://www.creative-tim.com)
-
-* Coded by Creative Tim
-
-=========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
-*/
 /*eslint-disable*/
 
 // reactstrap components
+import { Link } from 'react-router-dom';
 import { NavItem, NavLink, Nav, Container, Row, Col } from 'reactstrap';
 
 function AuthFooter() {
@@ -24,39 +9,60 @@ function AuthFooter() {
     <>
       <footer className="py-5" id="footer-main">
         <Container>
+          <Row className="justify-content-xl-between">
+            <Col className="my-2" md="2" lg="4">
+              <Row>
+                <img alt="..." src={require('assets/img/brand/Logo with text.png').default} style={{ width: '120px', height: '120px' }} />
+              </Row>
+              <Row>
+                <span>Nền tảng quản lý thông tin sự kiện và cuộc thi của Câu Lạc Bộ </span>
+              </Row>
+            </Col>
+            <Col className="my-2" md="2" lg="4">
+              <Row>
+                <h2 className="font-weight-bold" style={{ padding: '0px 12px' }}>
+                  Liên kết
+                </h2>
+              </Row>
+              <Row>
+                <NavLink to="/" tag={Link}>
+                  <span>Đội ngũ phát triển</span>
+                </NavLink>
+              </Row>
+              <Row>
+                <NavLink to="/" tag={Link}>
+                  <span>Điều khoảng dịch vụ</span>
+                </NavLink>
+              </Row>
+              <Row>
+                <NavLink to="/" tag={Link}>
+                  <span>Chính sách bảo mật</span>
+                </NavLink>
+              </Row>
+              <Row>
+                <NavLink to="/" tag={Link}>
+                  <span>Liên hệ</span>
+                </NavLink>
+              </Row>
+            </Col>
+            <Col className="my-2" md="2" lg="4">
+              <Row>
+                <h2 className="font-weight-bold">Liên hệ</h2>
+              </Row>
+              <Row>
+                <span>Lô E2a-7, Đường D1, Đ. D1, Long Thạnh Mỹ, Thành Phố Thủ Đức, Thành phố Hồ Chí Minh 700000, Việt Nam</span>
+                <span>unicecflatform@gmail.com</span>
+              </Row>
+            </Col>
+          </Row>
           <Row className="align-items-center justify-content-xl-between">
-            <Col xl="6">
-              <div className="copyright text-center text-xl-left text-muted">
-                © {new Date().getFullYear()}{' '}
-                <a className="font-weight-bold ml-1" href="https://www.creative-tim.com?ref=adpr-auth-footer" target="_blank">
-                  Creative Tim
-                </a>
-              </div>
-            </Col>
-            <Col xl="6">
-              <Nav className="nav-footer justify-content-center justify-content-xl-end">
-                <NavItem>
-                  <NavLink href="https://www.creative-tim.com?ref=adpr-auth-footer" target="_blank">
-                    Creative Tim
-                  </NavLink>
-                </NavItem>
-                <NavItem>
-                  <NavLink href="https://www.creative-tim.com/presentation?ref=adpr-auth-footer" target="_blank">
-                    About Us
-                  </NavLink>
-                </NavItem>
-                <NavItem>
-                  <NavLink href="http://blog.creative-tim.com?ref=adpr-auth-footer" target="_blank">
-                    Blog
-                  </NavLink>
-                </NavItem>
-                <NavItem>
-                  <NavLink href="https://www.creative-tim.com/license?ref=adpr-auth-footer" target="_blank">
-                    License
-                  </NavLink>
-                </NavItem>
-              </Nav>
-            </Col>
+            <div className="copyright text-muted text-center" style={{ margin: 'auto' }}>
+              © {new Date().getFullYear()}{' '}
+              <a className="font-weight-bold ml-1" href="/" target="_blank">
+                UNICEC
+              </a>
+              , FPT University
+            </div>
           </Row>
         </Container>
       </footer>

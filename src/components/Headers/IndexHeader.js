@@ -1,63 +1,47 @@
-/*!
-
-=========================================================
-* Argon Dashboard PRO React - v1.2.1
-=========================================================
-
-* Product Page: https://www.creative-tim.com/product/argon-dashboard-pro-react
-* Copyright 2021 Creative Tim (https://www.creative-tim.com)
-
-* Coded by Creative Tim
-
-=========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
-*/
-// react library for routing
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 // reactstrap components
-import { Button, Card, CardBody, Container, Row, Col } from 'reactstrap';
+import { Button, Container, Row, Col } from 'reactstrap';
 
 function IndexHeader() {
   return (
     <>
-      <div className="header bg-info pt-5 pb-7">
+      <div className="header bg-neutral pt-5 pb-7">
         <Container>
           <div className="header-body">
             <Row className="align-items-center">
-              <Col lg="6">
+              <Col lg="8">
                 <div className="pr-5">
-                  <h1 className="display-2 text-white font-weight-bold mb-0">Argon Dashboard PRO React</h1>
-                  <h2 className="display-4 text-white font-weight-light">A beautiful premium dashboard for Bootstrap 4, React and Reactstrap.</h2>
-                  <p className="text-white mt-4">
-                    Argon perfectly combines reusable HTML and modular CSS with a modern styling and beautiful markup throughout each HTML template in
-                    the pack.
+                  <h1 className="display-2 mb-0" style={{ fontWeight: '900', fontFamily: 'sans-serif' }}>
+                    UNICEC
+                  </h1>
+                  <p className="lead">Nền tảng quản lý thông tin sự kiện và cuộc thi của Câu Lạc Bộ Sinh Viên hàng đầu tại Việt Nam.</p>
+                  <p className="lead">
+                    Hỗ trợ tìm kiếm các cuộc thi và sự kiện để mang lại các phần thưởng dành cho người thắng cuộc từ những nhà tài trợ khác nhau.
                   </p>
                   <div className="mt-5">
-                    <Button className="btn-neutral my-2" color="default" to="/admin/dashboard" tag={Link}>
-                      Explore Dashboard
-                    </Button>
-                    <Button
-                      className="my-2"
-                      color="default"
-                      href="https://www.creative-tim.com/product/argon-dashboard-pro-react?ref=adpr-auth-navbar"
-                    >
-                      Purchase now
+                    <Button type="button" outline color="success" href="/" style={{ margin: 'auto', borderWidth: '3px' }}>
+                      <Row className="align-items-center text-center" style={{ textAlign: 'center' }}>
+                        <h2 style={{ margin: 'auto', fontWeight: '900' }}>
+                          <i className="fas fa-download" /> Tải UniCEC
+                        </h2>
+                      </Row>
+                      <Row className="align-items-center text-center">
+                        <span style={{ margin: 'auto' }}>Android 7.1 2022-04-21 V1.0.0</span>
+                      </Row>
                     </Button>
                   </div>
                 </div>
               </Col>
-              <Col lg="6">
+              <Col lg="4">
                 <Row className="pt-5">
-                  <Col md="6">
+                  {/* <Col md="6">
                     <Card>
                       <CardBody>
                         <div className="icon icon-shape bg-gradient-red text-white rounded-circle shadow mb-4">
                           <i className="ni ni-active-40" />
                         </div>
-                        <h5 className="h3">Components</h5>
-                        <p>Argon comes with over 70 handcrafted components.</p>
+                        <h5 className="h3">Quản lý câu lạc bộ</h5>
+                        <p>Hỗ trợ quản lý thành viên và hoạt động cho các chủ nhiệm câu lạc bộ.</p>
                       </CardBody>
                     </Card>
                     <Card>
@@ -65,8 +49,8 @@ function IndexHeader() {
                         <div className="icon icon-shape bg-gradient-info text-white rounded-circle shadow mb-4">
                           <i className="ni ni-active-40" />
                         </div>
-                        <h5 className="h3">Plugins</h5>
-                        <p>Fully integrated and extendable third-party plugins that you will love.</p>
+                        <h5 className="h3">Quản lý cuộc thi</h5>
+                        <p>Hỗ trợ tạo và quản lý các cuộc thi và sự kiện trong và ngoài trường.</p>
                       </CardBody>
                     </Card>
                   </Col>
@@ -76,8 +60,8 @@ function IndexHeader() {
                         <div className="icon icon-shape bg-gradient-success text-white rounded-circle shadow mb-4">
                           <i className="ni ni-active-40" />
                         </div>
-                        <h5 className="h3">Pages</h5>
-                        <p>From simple to complex, you get a beautiful set of 15+ page examples.</p>
+                        <h5 className="h3">Cung cấp thông tin cuộc thi</h5>
+                        <p>Hệ thống thông tin về các cuộc thi từ khắp các trường đại học và doanh nghiệp.</p>
                       </CardBody>
                     </Card>
                     <Card className="mb-4">
@@ -85,11 +69,12 @@ function IndexHeader() {
                         <div className="icon icon-shape bg-gradient-warning text-white rounded-circle shadow mb-4">
                           <i className="ni ni-active-40" />
                         </div>
-                        <h5 className="h3">Documentation</h5>
-                        <p>You will love how easy is to to work with Argon.</p>
+                        <h5 className="h3">Hỗ trợ thành viên trong câu lạc bộ</h5>
+                        <p>Các thành viên sẽ dễ dàng tiếp cận các thông tin và hoạt đông trong câu lạc bộ.</p>
                       </CardBody>
                     </Card>
-                  </Col>
+                  </Col> */}
+                  <img alt="..." src={require('assets/img/brand/mobile_UNICEC.png').default} />
                 </Row>
               </Col>
             </Row>

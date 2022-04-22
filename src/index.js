@@ -1,19 +1,3 @@
-/*!
-
-=========================================================
-* Argon Dashboard PRO React - v1.2.1
-=========================================================
-
-* Product Page: https://www.creative-tim.com/product/argon-dashboard-pro-react
-* Copyright 2021 Creative Tim (https://www.creative-tim.com)
-
-* Coded by Creative Tim
-
-=========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
-*/
 import React from 'react';
 import ReactDOM from 'react-dom';
 // react library for routing
@@ -36,7 +20,7 @@ import 'assets/scss/argon-dashboard-pro-react.scss?v1.2.0';
 import AdminLayout from 'layouts/Admin.js';
 import RTLLayout from 'layouts/RTL.js';
 import AuthLayout from 'layouts/Auth.js';
-import IndexView from 'views/Index.js';
+import Homepage from 'views/pages/homepage/index';
 
 ReactDOM.render(
   <BrowserRouter>
@@ -44,7 +28,7 @@ ReactDOM.render(
       <Route path="/admin" render={(props) => <AdminLayout {...props} />} />
       <Route path="/rtl" render={(props) => <RTLLayout {...props} />} />
       <Route path="/auth" render={(props) => <AuthLayout {...props} />} />
-      <Route path="/" render={(props) => <IndexView {...props} />} />
+      <Route path="/" render={(props) => <Homepage {...props} />} />
       <Redirect from="*" to="/" />
     </Switch>
   </BrowserRouter>,
