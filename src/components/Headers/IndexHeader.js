@@ -1,4 +1,4 @@
-// import { Link } from 'react-router-dom';
+// react library for routing
 // reactstrap components
 import { Button, Container, Row, Col } from 'reactstrap';
 
