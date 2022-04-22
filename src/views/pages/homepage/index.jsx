@@ -1,44 +1,26 @@
-/*!
-
-=========================================================
-* Argon Dashboard PRO React - v1.2.1
-=========================================================
-
-* Product Page: https://www.creative-tim.com/product/argon-dashboard-pro-react
-* Copyright 2021 Creative Tim (https://www.creative-tim.com)
-
-* Coded by Creative Tim
-
-=========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
-*/
-/*eslint-disable*/
-// react library for routing
 import { Link } from 'react-router-dom';
 // reactstrap components
-import { Badge, Button, Card, CardBody, Container, Row, Col, UncontrolledTooltip } from 'reactstrap';
+import { Badge, Card, CardBody, Container, Row, Col, UncontrolledTooltip } from 'reactstrap';
 // core components
 import IndexNavbar from 'components/Navbars/IndexNavbar.js';
 import IndexHeader from 'components/Headers/IndexHeader.js';
 import AuthFooter from 'components/Footers/AuthFooter.js';
 
-function Index() {
+function Homepage() {
   return (
     <>
       <IndexNavbar />
-      <div className="main-content">
+      <div className="main-content" style={{ marginTop: '80px' }}>
         <IndexHeader />
         <section className="py-6 pb-9 bg-default">
           <Container fluid>
             <Row className="justify-content-center text-center">
               <Col md="6">
-                <h2 className="display-3 text-white">A complete React solution</h2>
+                <h2 className="display-4 text-white">Giải pháp hoàn hảo cho quản lý câu lạc bộ và cuộc thi</h2>
                 <p className="lead text-white">
-                  Argon is a completly new product built on our newest re-built from scratch framework structure that is meant to make our products
-                  more intuitive, more adaptive and, needless to say, so much easier to customize. Let Argon amaze you with its cool features and
-                  build tools and get your project to a whole new level.
+                  UNICEC là một nền tảng giúp bạn quản lý các thành viên trong câu lạc bộ về các mặt như tuyển thành viên, thông báo và tổ chức hoạt
+                  động trong câu lạc bộ. Không chỉ thế đây còn là một sân chơi dành cho các bạn muốn tham gia những cuộc thi được tổ chức và tài trợ
+                  bởi các trường đại học hoặc các nhà tài trợ đến từ nhiều doanh nghiệp khác nhau.
                 </p>
               </Col>
             </Row>
@@ -55,22 +37,17 @@ function Index() {
                         <div className="icon icon-shape bg-gradient-info text-white rounded-circle mb-4">
                           <i className="ni ni-check-bold" />
                         </div>
-                        <h4 className="h3 text-info text-uppercase">Based on React and Reactstrap</h4>
-                        <p className="description mt-3">
-                          Argon is built on top of the most popular open source toolkit for developing with HTML, CSS, and JS.
-                        </p>
+                        <h4 className="h3 text-info text-uppercase">Quản lý câu lạc bộ</h4>
+                        <p className="description mt-3">Hỗ trợ quản lý thành viên và hoạt động cho các chủ nhiệm câu lạc bộ.</p>
                         <div>
                           <Badge color="info" pill>
-                            react
+                            CLUB
                           </Badge>
                           <Badge color="info" pill>
-                            reactstrap
+                            Nhóm
                           </Badge>
                           <Badge color="info" pill>
-                            dashboard
-                          </Badge>
-                          <Badge color="info" pill>
-                            template
+                            Hoạt động
                           </Badge>
                         </div>
                       </CardBody>
@@ -80,18 +57,16 @@ function Index() {
                     <Card className="card-lift--hover shadow border-0">
                       <CardBody className="py-5">
                         <div className="icon icon-shape bg-gradient-success text-white rounded-circle mb-4">
-                          <i className="ni ni-istanbul" />
+                          <i className="ni ni-trophy" />
                         </div>
-                        <h4 className="h3 text-success text-uppercase">Integrated build tools</h4>
-                        <p className="description mt-3">
-                          Use Argons's included npm scripts to compile source code, scss and more with just a few simple commands.
-                        </p>
+                        <h4 className="h3 text-success text-uppercase">Tổ chức và quản lý cuộc thi</h4>
+                        <p className="description mt-3">Hỗ trợ tạo và quản lý các cuộc thi và sự kiện trong và ngoài trường.</p>
                         <div>
                           <Badge color="success" pill>
-                            npm
+                            Cuộc thi
                           </Badge>
                           <Badge color="success" pill>
-                            build tools
+                            Sự kiện
                           </Badge>
                         </div>
                       </CardBody>
@@ -101,21 +76,16 @@ function Index() {
                     <Card className="card-lift--hover shadow border-0">
                       <CardBody className="py-5">
                         <div className="icon icon-shape bg-gradient-warning text-white rounded-circle mb-4">
-                          <i className="ni ni-planet" />
+                          <i className="ni ni-circle-08" />
                         </div>
-                        <h4 className="h3 text-warning text-uppercase">Full Sass support</h4>
-                        <p className="description mt-3">
-                          Argon makes customization easier than ever before. You get all the tools to make your website building process a breeze.
-                        </p>
+                        <h4 className="h3 text-warning text-uppercase">Hỗ trợ thành viên câu lạc bộ</h4>
+                        <p className="description mt-3">Các thành viên sẽ dễ dàng tiếp cận các thông tin và hoạt đông trong câu lạc bộ.</p>
                         <div>
                           <Badge color="warning" pill>
-                            sass
+                            Thành viên
                           </Badge>
                           <Badge color="warning" pill>
-                            design
-                          </Badge>
-                          <Badge color="warning" pill>
-                            customize
+                            Ứng tuyển
                           </Badge>
                         </div>
                       </CardBody>
@@ -134,10 +104,8 @@ function Index() {
               </Col>
               <Col className="order-md-1" md="6">
                 <div className="pr-md-5">
-                  <h1>Awesome features</h1>
-                  <p>
-                    The kit comes with three pre-built pages to help you get started faster. You can change the text and images and you're good to go.
-                  </p>
+                  <h1>Quản lý câu lạc bộ</h1>
+                  <p>Hỗ trợ quản lý thành viên và hoạt động cho các chủ nhiệm câu lạc bộ.</p>
                   <ul className="list-unstyled mt-5">
                     <li className="py-2">
                       <div className="d-flex align-items-center">
@@ -147,7 +115,7 @@ function Index() {
                           </Badge>
                         </div>
                         <div>
-                          <h4 className="mb-0">Carefully crafted components</h4>
+                          <h4 className="mb-0">Dễ dàng theo dõi thành viên</h4>
                         </div>
                       </div>
                     </li>
@@ -155,11 +123,11 @@ function Index() {
                       <div className="d-flex align-items-center">
                         <div>
                           <Badge className="badge-circle mr-3" color="success">
-                            <i className="ni ni-html5" />
+                            <i className="ni ni-ruler-pencil" />
                           </Badge>
                         </div>
                         <div>
-                          <h4 className="mb-0">Amazing page examples</h4>
+                          <h4 className="mb-0">Chia hoạt động cho các thành viên nhanh hơn</h4>
                         </div>
                       </div>
                     </li>
@@ -167,11 +135,11 @@ function Index() {
                       <div className="d-flex align-items-center">
                         <div>
                           <Badge className="badge-circle mr-3" color="success">
-                            <i className="ni ni-satisfied" />
+                            <i className="ni ni-send" />
                           </Badge>
                         </div>
                         <div>
-                          <h4 className="mb-0">Super friendly support team</h4>
+                          <h4 className="mb-0">Hỗ trợ hệ thống tạo phiếu cho việc duyệt thành viên</h4>
                         </div>
                       </div>
                     </li>
@@ -189,13 +157,10 @@ function Index() {
               </Col>
               <Col md="6">
                 <div className="pr-md-5">
-                  <h1>Example pages</h1>
-                  <p>
-                    If you want to get inspiration or just show something directly to your clients, you can jump start your development with our
-                    pre-built example pages.
-                  </p>
-                  <Link className="font-weight-bold text-warning mt-5" to="/admin/profile">
-                    Explore pages
+                  <h1>Tổ chức và quản lý cuộc thi</h1>
+                  <p>Hỗ trợ tạo và quản lý các cuộc thi và sự kiện trong và ngoài trường.</p>
+                  <Link className="font-weight-bold text-warning mt-5" to="/">
+                    Trở thành nhà tài trợ
                   </Link>
                 </div>
               </Col>
@@ -210,20 +175,17 @@ function Index() {
               </Col>
               <Col className="order-md-1" md="6">
                 <div className="pr-md-5">
-                  <h1>Lovable widgets and cards</h1>
-                  <p>
-                    We love cards and everybody on the web seems to. We have gone above and beyond with options for you to organise your information.
-                    From cards designed for content, to pricing cards or user profiles, you will have many options to choose from.
-                  </p>
-                  <Link className="font-weight-bold text-info mt-5" to="/admin/widgets">
-                    Explore widgets
+                  <h1>Hỗ trợ thành viên câu lạc bộ</h1>
+                  <p>Các thành viên sẽ dễ dàng tiếp cận các thông tin và hoạt đông trong câu lạc bộ.</p>
+                  <Link className="font-weight-bold text-info mt-5" to="/">
+                    Tải ứng dụng ngay
                   </Link>
                 </div>
               </Col>
             </Row>
           </Container>
         </section>
-        <section className="py-7 section-nucleo-icons bg-white overflow-hidden">
+        {/* <section className="py-7 section-nucleo-icons bg-white overflow-hidden">
           <Container>
             <Row className="justify-content-center">
               <Col className="text-center" lg="8">
@@ -247,7 +209,7 @@ function Index() {
               </Col>
             </Row>
             <div className="blur--hover">
-              <a href="https://demos.creative-tim.com/argon-dashboard-pro-react/#/documentation/icons?ref=adpr-index-page" target="_blank">
+              <a href="https://demos.creative-tim.com/argon-dashboard-pro-react/#/documentation/icons?ref=adpr-index-page">
                 <div className="icons-container blur-item mt-5">
                   <i className="icon ni ni-diamond" />
 
@@ -271,164 +233,158 @@ function Index() {
               </a>
             </div>
           </Container>
-        </section>
+        </section> */}
         <section className="py-7">
           <Container>
             <Row className="row-grid justify-content-center">
-              <Col className="text-center" lg="8">
+              <Col className="text-center" lg="10">
                 <h2 className="display-3">
-                  Do you love this awesome <span className="text-success">Dashboard for Bootstrap 4, React and Reactstrap?</span>
+                  Nền tảng quản lý Câu lạc bộ và cuộc thi đáng tin cậy nhất Việt Nam
+                  <span className="text-success">University Club&apos;s Events and Competitions Platform</span>
                 </h2>
-                <p className="lead">
-                  Cause if you do, it can be yours now. Hit the button below to navigate to get the free version or purchase a license for your next
-                  project. Build a new web app or give an old Bootstrap project a new look!
-                </p>
-                <div className="btn-wrapper">
-                  <Button
-                    className="btn-neutral mb-3 mb-sm-0"
-                    color="default"
-                    href="https://www.creative-tim.com/product/argon-dashboard-react?ref=adpr-index-page"
-                    target="_blank"
-                  >
-                    <span className="btn-inner--text">Get FREE version</span>
-                  </Button>
-                  <Button
-                    className="btn-icon mb-3 mb-sm-0"
-                    color="info"
-                    href="https://www.creative-tim.com/product/argon-dashboard-pro-react?ref=adpr-index-page"
-                    target="_blank"
-                  >
-                    <span className="btn-inner--icon">
-                      <i className="ni ni-basket" />
-                    </span>
-                    <span className="btn-inner--text">Purchase now</span>
-                    <Badge className="badge-md badge-floating border-white" color="danger" pill>
-                      $89
-                    </Badge>
-                  </Button>
-                </div>
+                <Row
+                  style={{
+                    marginTop: '20px',
+                    background:
+                      'linear-gradient(90deg, rgba(255,255,255,0.2) 0%, rgba(140,255,140,0.3) 26%, rgba(255,255,255,1) 50%, rgba(140,255,140,0.3) 76%, rgba(255,255,255,1) 100%)',
+                    padding: '10px 10px 10px 10px',
+                  }}
+                >
+                  <Col className="text-center" lg="4">
+                    <Row className="text-center">
+                      <h2 className="font-weight-bold" style={{ color: 'orange', margin: 'auto' }}>
+                        10 lượt
+                      </h2>
+                    </Row>
+                    <Row className="text-center">
+                      <p className="font-weight-bold" style={{ margin: 'auto' }}>
+                        Cài đặt
+                      </p>
+                    </Row>
+                  </Col>
+                  <Col className="text-center" lg="4">
+                    <Row className="text-center">
+                      <h2 className="font-weight-bold" style={{ color: 'orange', margin: 'auto' }}>
+                        32
+                      </h2>
+                    </Row>
+                    <Row className="text-center">
+                      <p className="font-weight-bold" style={{ margin: 'auto' }}>
+                        Người dùng hoạt động hằng ngày
+                      </p>
+                    </Row>
+                  </Col>
+                  <Col className="text-center" lg="4">
+                    <Row className="text-center">
+                      <h2 className="font-weight-bold" style={{ color: 'orange', margin: 'auto' }}>
+                        8
+                      </h2>
+                    </Row>
+                    <Row className="text-center">
+                      <p className="font-weight-bold" style={{ margin: 'auto' }}>
+                        Câu lạc bộ tham gia
+                      </p>
+                    </Row>
+                  </Col>
+                </Row>
                 <div className="text-center">
-                  <h4 className="display-4 mb-5 mt-5">Available on these technologies</h4>
+                  <h4 className="display-4 mb-5 mt-5">Các câu lạc bộ liên kết</h4>
                   <Row className="justify-content-center">
                     <Col className="my-2" md="2" xs="3">
-                      <a href="https://www.creative-tim.com/product/argon-dashboard-pro?ref=adpr-index-page" id="tooltip170669606" target="_blank">
+                      <a href="https://www.facebook.com/fcodefpt/" id="tooltip170669606">
                         <img
                           alt="..."
                           className="img-fluid rounded-circle shadow shadow-lg--hover"
-                          src="https://raw.githubusercontent.com/creativetimofficial/public-assets/master/logos/bootstrap.jpg"
+                          src="https://scontent.fsgn5-9.fna.fbcdn.net/v/t39.30808-6/241277567_2935941399955753_2523832604141178857_n.png?_nc_cat=105&ccb=1-5&_nc_sid=09cbfe&_nc_ohc=86wYDNMBdOsAX_oeWxv&_nc_ht=scontent.fsgn5-9.fna&oh=00_AT_VvtAE6O9W-5KUeId3v50zfG7hYX_802GjQnZ6R8_OeA&oe=62670EB9"
                         />
                       </a>
                       <UncontrolledTooltip delay={0} target="tooltip170669606">
-                        Bootstrap 4 - Most popular front-end component library
+                        BF-Code (FPTU)
                       </UncontrolledTooltip>
                     </Col>
                     <Col className="my-2" md="2" xs="3">
-                      <a
-                        href="https://www.creative-tim.com/product/argon-dashboard-pro-react?ref=adpr-index-page"
-                        id="tooltip374813715"
-                        target="_blank"
-                      >
+                      <a href="https://www.facebook.com/HebeFPT/" id="tooltip374813715">
                         <img
                           alt="..."
                           className="img-fluid rounded-circle"
-                          src="https://raw.githubusercontent.com/creativetimofficial/public-assets/master/logos/react.jpg"
+                          src="https://scontent.fsgn5-12.fna.fbcdn.net/v/t1.6435-9/78794861_1401071720053762_2383132169770893312_n.jpg?_nc_cat=102&ccb=1-5&_nc_sid=09cbfe&_nc_ohc=MlL7_8zE3tQAX-DuIzc&_nc_ht=scontent.fsgn5-12.fna&oh=00_AT_C0culXkRW4nJYATKt03eiiF0D_MhF6bwLp4kVpY_ubg&oe=6287344A"
                         />
                       </a>
                       <UncontrolledTooltip delay={0} target="tooltip374813715">
-                        React - A JavaScript library for building user interfaces
+                        CLUB Hebe (FPTU)
                       </UncontrolledTooltip>
                     </Col>
                     <Col className="my-2" md="2" xs="3">
-                      <a
-                        href="https://www.creative-tim.com/product/argon-dashboard-pro-nodejs?ref=adpr-index-page"
-                        id="tooltip374813716"
-                        target="_blank"
-                      >
+                      <a href="https://www.facebook.com/fptgoclub/" id="tooltip374813716">
                         <img
                           alt="..."
                           className="img-fluid rounded-circle"
-                          src="https://raw.githubusercontent.com/creativetimofficial/public-assets/master/logos/nodejs-logo.jpg"
+                          src="https://scontent.fsgn5-7.fna.fbcdn.net/v/t39.30808-6/272784309_2766636626963183_7780236095711902715_n.jpg?_nc_cat=101&ccb=1-5&_nc_sid=09cbfe&_nc_ohc=zQdN-pwlgSkAX-irdsW&tn=lee7gutsvP7t0wfU&_nc_ht=scontent.fsgn5-7.fna&oh=00_AT8bRxMt1MMx07zm2-MlLsitH-8inJblXKAPShFSRPHD9g&oe=626738BE"
                         />
                       </a>
                       <UncontrolledTooltip delay={0} target="tooltip374813716">
-                        Node.js - a JavaScript runtime built on Chrome's V8 JavaScript engine
+                        CLB Cờ vây (FPTU)
                       </UncontrolledTooltip>
                     </Col>
                     <Col className="my-2" md="2" xs="3">
-                      <a
-                        href="https://www.creative-tim.com/product/argon-dashboard-pro-laravel?ref=adpr-index-page"
-                        id="tooltip374813717"
-                        target="_blank"
-                      >
+                      <a href="https://www.facebook.com/fptu.melody.club/" id="tooltip374813717">
                         <img
                           alt="..."
                           className="img-fluid rounded-circle"
-                          src="https://raw.githubusercontent.com/creativetimofficial/public-assets/master/logos/laravel_logo.png"
+                          src="https://scontent.fsgn5-9.fna.fbcdn.net/v/t39.30808-6/275375133_468347551505740_2131455553827243807_n.jpg?_nc_cat=100&ccb=1-5&_nc_sid=09cbfe&_nc_ohc=FHP-3bDEdpQAX9jqGfF&_nc_ht=scontent.fsgn5-9.fna&oh=00_AT8fuaEIrKXLYgAgjZxnL3G8TpV-Ol4VQGHiWs_TnQSH1w&oe=6267D342"
                           style={{ backgroundColor: 'white' }}
                         />
                       </a>
                       <UncontrolledTooltip delay={0} target="tooltip374813717">
-                        Laravel - The PHP Framework For Web Artisans
+                        FPT Melody Club (FPTU)
                       </UncontrolledTooltip>
                     </Col>
                     <Col className="my-2" md="2" xs="3">
-                      <a
-                        href="https://www.creative-tim.com/product/vue-argon-dashboard-pro?ref=adpr-index-page"
-                        id="tooltip616015001"
-                        target="_blank"
-                      >
+                      <a href="https://www.facebook.com/tiengtrungFPT/" id="tooltip616015001">
                         <img
                           alt="..."
                           className="img-fluid rounded-circle"
-                          src="https://raw.githubusercontent.com/creativetimofficial/public-assets/master/logos/vue.jpg"
+                          src="https://scontent.fsgn5-8.fna.fbcdn.net/v/t1.6435-9/130757038_2968507013435767_3598620208958254404_n.jpg?_nc_cat=109&ccb=1-5&_nc_sid=09cbfe&_nc_ohc=gCfVsVHDa0QAX-Uw6HT&_nc_oc=AQmSdK6kzc3_-lavVycG0xF93g5xiEJhJSTBNihtLlrnzdEwiQwzv1K8Mux_hVS62gQ&tn=lee7gutsvP7t0wfU&_nc_ht=scontent.fsgn5-8.fna&oh=00_AT_YxlRuBNQgeQ33WrXnyEwbz7pRvMggVPQqjiDHQVeM7g&oe=6288AC39"
                         />
                       </a>
                       <UncontrolledTooltip delay={0} target="tooltip616015001">
-                        Vue.js - The progressive javascript framework
+                        CLB Tiếng Trung (FPTU)
                       </UncontrolledTooltip>
                     </Col>
                     <Col className="my-2" md="2" xs="3">
-                      <a
-                        href="https://www.creative-tim.com/product/argon-dashboard-pro-angular?ref=adpr-index-page"
-                        id="tooltip211254026"
-                        target="_blank"
-                      >
+                      <a href="https://www.facebook.com/FU.Business/" id="tooltip211254026">
                         <img
                           alt="..."
                           className="img-fluid rounded-circle"
-                          src="https://raw.githubusercontent.com/creativetimofficial/public-assets/master/logos/angular.jpg"
+                          src="https://scontent.fsgn5-7.fna.fbcdn.net/v/t1.18169-9/17022409_1316021248481954_6660646335865381717_n.png?_nc_cat=101&ccb=1-5&_nc_sid=09cbfe&_nc_ohc=xxxbqD-M2pcAX8zElM8&_nc_ht=scontent.fsgn5-7.fna&oh=00_AT8e9ObL0gKWbpRLPZ53sDs_xWDbOhCz-MM7-yIyuCws4A&oe=6289CA1E"
                         />
                       </a>
                       <UncontrolledTooltip delay={0} target="tooltip211254026">
-                        Angular - One framework. Mobile & desktop
+                        FPT Business Club (FPTU)
                       </UncontrolledTooltip>
                     </Col>
                     <Col className="my-2" md="2" xs="3">
-                      <a
-                        href="https://www.creative-tim.com/product/argon-dashboard-pro-react?ref=adpr-index-page"
-                        id="tooltip82987604"
-                        target="_blank"
-                      >
+                      <a href="https://www.facebook.com/iGoClub" id="tooltip82987604">
                         <img
                           alt="..."
                           className="img-fluid rounded-circle"
-                          src="https://raw.githubusercontent.com/creativetimofficial/public-assets/master/logos/sketch.jpg"
+                          src="https://scontent.fsgn5-13.fna.fbcdn.net/v/t39.30808-6/278402228_407676238026069_7257878776928739635_n.jpg?_nc_cat=106&ccb=1-5&_nc_sid=09cbfe&_nc_ohc=daSA00Be3C0AX8czvbR&_nc_ht=scontent.fsgn5-13.fna&oh=00_AT-xZe5rzegewBxgc_UtJ2_nNZhWMBjuXS6Lp3Rxe3nYmg&oe=6266B4EB"
                         />
                       </a>
                       <UncontrolledTooltip delay={0} target="tooltip82987604">
-                        Sketch - Digital design toolkit
+                        iGo Club (FPTU)
                       </UncontrolledTooltip>
                     </Col>
                     <Col className="my-2" md="2" xs="3">
-                      <a href="https://www.adobe.com/products/photoshop.html?ref=creative-tim" id="tooltip731835410" target="_blank">
+                      <a href="https://www.facebook.com/fuguitarclub/" id="tooltip731835410">
                         <img
                           alt="..."
                           className="img-fluid rounded-circle opacity-3"
-                          src="https://raw.githubusercontent.com/creativetimofficial/public-assets/master/logos/ps.jpg"
+                          src="https://scontent.fsgn5-11.fna.fbcdn.net/v/t39.30808-6/262163622_310707094393225_8838935825348156786_n.jpg?_nc_cat=110&ccb=1-5&_nc_sid=09cbfe&_nc_ohc=fhv9q6B5uoAAX8cpUI9&_nc_ht=scontent.fsgn5-11.fna&oh=00_AT9fmqzbw-tv5ZnRYlcDRTXEuQMGgcmdw77ltAWQTG-byg&oe=6267D7B4"
                         />
                       </a>
                       <UncontrolledTooltip delay={0} target="tooltip731835410">
-                        Adobe Photoshop - Software for digital images manipulation
+                        FU Guitar Club (FPTU)
                       </UncontrolledTooltip>
                     </Col>
                   </Row>
@@ -443,4 +399,4 @@ function Index() {
   );
 }
 
-export default Index;
+export default Homepage;

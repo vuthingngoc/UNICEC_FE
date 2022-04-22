@@ -1,31 +1,31 @@
-/*!
-
-=========================================================
-* Argon Dashboard PRO React - v1.2.1
-=========================================================
-
-* Product Page: https://www.creative-tim.com/product/argon-dashboard-pro-react
-* Copyright 2021 Creative Tim (https://www.creative-tim.com)
-
-* Coded by Creative Tim
-
-=========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
-*/
 // react library for routing
+import classNames from 'classnames';
+import React from 'react';
 import { Link } from 'react-router-dom';
 // reactstrap components
 import { UncontrolledCollapse, NavbarBrand, Navbar, NavItem, NavLink, Nav, Container, Row, Col, UncontrolledTooltip, Button } from 'reactstrap';
 
 function AdminNavbar() {
+  const [navbarColor, setNavbarColor] = React.useState('bg-white');
+  React.useEffect(() => {
+    const updateNavbarColor = () => {
+      if (document.documentElement.scrollTop > 30 || document.body.scrollTop > 30) {
+        setNavbarColor('bg-neutral');
+      } else if (document.documentElement.scrollTop < 30 || document.body.scrollTop < 30) {
+        setNavbarColor('bg-white');
+      }
+    };
+    window.addEventListener('scroll', updateNavbarColor);
+    return function cleanup() {
+      window.removeEventListener('scroll', updateNavbarColor);
+    };
+  });
   return (
     <>
-      <Navbar className="navbar-horizontal navbar-main navbar-dark bg-info" expand="lg" id="navbar-main">
+      <Navbar className={classNames('fixed-top navbar-horizontal navbar-main', navbarColor)} expand="lg" id="navbar-main">
         <Container>
           <NavbarBrand to="/" tag={Link}>
-            <img alt="..." src={require('assets/img/brand/argon-react-white.png').default} />
+            <img alt="..." src={require('assets/img/brand/Logo.png').default} style={{ height: '50px', width: '50px' }} />
           </NavbarBrand>
           <button
             aria-controls="navbar-collapse"
@@ -37,14 +37,14 @@ function AdminNavbar() {
             id="navbar-collapse"
             type="button"
           >
-            <span className="navbar-toggler-icon" />
+            <i className="fas fa-bars" />
           </button>
           <UncontrolledCollapse className="navbar-custom-collapse" navbar toggler="#navbar-collapse">
             <div className="navbar-collapse-header">
               <Row>
                 <Col className="collapse-brand" xs="6">
                   <Link to="/admin/dashboard">
-                    <img alt="..." src={require('assets/img/brand/blue.png').default} />
+                    <img alt="..." src={require('assets/img/brand/Logo text ngang.png').default} />
                   </Link>
                 </Col>
                 <Col className="collapse-close" xs="6">
@@ -63,93 +63,64 @@ function AdminNavbar() {
                   </button>
                 </Col>
               </Row>
+              <Row style={{ marginTop: '25px' }}>
+                <Col className="collapse-brand" xs="6">
+                  <Button className="btn-default btn-icon" href="/auth/login">
+                    <span className="btn-inner--icon">
+                      <i className="fas fa-sign-in-alt mr-2" />
+                    </span>
+                    <span className="nav-link-inner--text">Đăng nhập</span>
+                  </Button>
+                </Col>
+              </Row>
             </div>
             <Nav className="mr-auto" navbar>
               <NavItem>
-                <NavLink to="/admin/dashboard" tag={Link}>
-                  <span className="nav-link-inner--text">Dashboard</span>
+                <NavLink to="/" tag={Link}>
+                  <span className="nav-link-inner--text" style={{ fontSize: '20px', fontWeight: '900' }}>
+                    UNICEC
+                  </span>
                 </NavLink>
               </NavItem>
               <NavItem>
-                <NavLink to="/auth/pricing" tag={Link}>
-                  <span className="nav-link-inner--text">Pricing</span>
+                <NavLink to="/" tag={Link}>
+                  <span className="nav-link-inner--text" style={{ fontSize: '20px', fontWeight: '900' }}>
+                    Giới thiệu
+                  </span>
                 </NavLink>
               </NavItem>
               <NavItem>
-                <NavLink to="/auth/login" tag={Link}>
-                  <span className="nav-link-inner--text">Login</span>
+                <NavLink to="/" tag={Link}>
+                  <span className="nav-link-inner--text" style={{ fontSize: '20px', fontWeight: '900' }}>
+                    Tính năng
+                  </span>
                 </NavLink>
               </NavItem>
               <NavItem>
-                <NavLink to="/auth/register" tag={Link}>
-                  <span className="nav-link-inner--text">Register</span>
-                </NavLink>
-              </NavItem>
-              <NavItem>
-                <NavLink to="/auth/lock" tag={Link}>
-                  <span className="nav-link-inner--text">Lock</span>
+                <NavLink to="/" tag={Link}>
+                  <span className="nav-link-inner--text" style={{ fontSize: '20px', fontWeight: '900' }}>
+                    Liên hệ
+                  </span>
                 </NavLink>
               </NavItem>
             </Nav>
             <hr className="d-lg-none" />
-            <Nav className="align-items-lg-center ml-lg-auto" navbar>
+            <Nav className="align-items-lg-center ml-lg-4" navbar>
               <NavItem>
-                <NavLink className="nav-link-icon" href="https://www.facebook.com/creativetim?ref=creative-tim" id="tooltip601201423" target="_blank">
-                  <i className="fab fa-facebook-square" />
+                <NavLink className="nav-link-icon" href="https://www.facebook.com/" id="tooltip601201423" target="_blank">
+                  <i className="fab fa-facebook-square fa-2x" />
                   <span className="nav-link-inner--text d-lg-none">Facebook</span>
                 </NavLink>
                 <UncontrolledTooltip delay={0} target="tooltip601201423">
-                  Like us on Facebook
-                </UncontrolledTooltip>
-              </NavItem>
-              <NavItem>
-                <NavLink
-                  className="nav-link-icon"
-                  href="https://www.instagram.com/creativetimofficial?ref=creative-tim"
-                  id="tooltip871243015"
-                  target="_blank"
-                >
-                  <i className="fab fa-instagram" />
-                  <span className="nav-link-inner--text d-lg-none">Instagram</span>
-                </NavLink>
-                <UncontrolledTooltip delay={0} target="tooltip871243015">
-                  Follow us on Instagram
-                </UncontrolledTooltip>
-              </NavItem>
-              <NavItem>
-                <NavLink className="nav-link-icon" href="https://twitter.com/creativetim?ref=creative-tim" id="tooltip366258619" target="_blank">
-                  <i className="fab fa-twitter-square" />
-                  <span className="nav-link-inner--text d-lg-none">Twitter</span>
-                </NavLink>
-                <UncontrolledTooltip delay={0} target="tooltip366258619">
-                  Follow us on Twitter
-                </UncontrolledTooltip>
-              </NavItem>
-              <NavItem>
-                <NavLink
-                  className="nav-link-icon"
-                  href="https://github.com/creativetimofficial?ref=creative-tim"
-                  id="tooltip931502898"
-                  target="_blank"
-                >
-                  <i className="fab fa-github" />
-                  <span className="nav-link-inner--text d-lg-none">Github</span>
-                </NavLink>
-                <UncontrolledTooltip delay={0} target="tooltip931502898">
-                  Star us on Github
+                  Trang Fanpage
                 </UncontrolledTooltip>
               </NavItem>
               <NavItem className="d-none d-lg-block ml-lg-4">
-                <Button
-                  className="btn-neutral btn-icon"
-                  color="default"
-                  href="https://www.creative-tim.com/product/argon-dashboard-pro-react?ref=adpr-index-navbar"
-                  target="_blank"
-                >
+                <Button className="btn-neutral btn-icon" color="default" href="/auth/login">
                   <span className="btn-inner--icon">
-                    <i className="fas fa-shopping-cart mr-2" />
+                    <i className="fas fa-sign-in-alt mr-2" />
                   </span>
-                  <span className="nav-link-inner--text">Purchase now</span>
+                  <span className="nav-link-inner--text">Đăng nhập</span>
                 </Button>
               </NavItem>
             </Nav>
