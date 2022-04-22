@@ -20,7 +20,6 @@ import 'assets/scss/argon-dashboard-pro-react.scss?v1.2.0';
 import AdminLayout from 'layouts/Admin.js';
 import RTLLayout from 'layouts/RTL.js';
 import AuthLayout from 'layouts/Auth.js';
-<<<<<<< HEAD
 import Homepage from 'views/pages/homepage/index';
 
 ReactDOM.render(
@@ -33,22 +32,5 @@ ReactDOM.render(
       <Redirect from="*" to="/" />
     </Switch>
   </BrowserRouter>,
-=======
-import IndexView from 'views/Index.js';
-import AuthContextProvider from 'contexts/AuthContext';
-
-ReactDOM.render(
-  <AuthContextProvider>
-    <BrowserRouter>
-      <Switch>
-        <Route path="/admin" render={(props) => <AdminLayout {...props} />} />
-        <Route path="/rtl" render={(props) => <RTLLayout {...props} />} />
-        <Route path="/auth" render={(props) => <AuthLayout {...props} />} />
-        <Route path="/" render={(props) => <IndexView {...props} />} />
-        <Redirect from="*" to="/" />
-      </Switch>
-    </BrowserRouter>
-  </AuthContextProvider>,
->>>>>>> master
   document.getElementById('root')
 );

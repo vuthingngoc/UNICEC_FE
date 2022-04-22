@@ -1,7 +1,4 @@
-<<<<<<< HEAD
-=======
 // nodejs library to set properties for components
->>>>>>> master
 import PropTypes from 'prop-types';
 // reactstrap components
 import { Container, Row, Col } from 'reactstrap';
