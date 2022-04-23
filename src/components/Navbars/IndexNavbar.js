@@ -6,23 +6,54 @@ import { Link } from 'react-router-dom';
 import { UncontrolledCollapse, NavbarBrand, Navbar, NavItem, NavLink, Nav, Container, Row, Col, UncontrolledTooltip, Button } from 'reactstrap';
 
 function AdminNavbar() {
-  const [navbarColor, setNavbarColor] = React.useState('bg-white');
+  const [navbarColor, setNavbarColor] = React.useState('bg-transparent');
   React.useEffect(() => {
     const updateNavbarColor = () => {
       if (document.documentElement.scrollTop > 30 || document.body.scrollTop > 30) {
         setNavbarColor('bg-neutral');
       } else if (document.documentElement.scrollTop < 30 || document.body.scrollTop < 30) {
-        setNavbarColor('bg-white');
+        setNavbarColor('bg-transparent');
       }
     };
+
+    var href = window.location.href.substring(window.location.href.lastIndexOf('#/') + 2);
+    var hrefId = href.substring(href.lastIndexOf('#') + 1);
+    if (href.lastIndexOf('#') > 0) {
+      document.getElementById(hrefId).scrollIntoView({
+        behavior: 'smooth',
+        block: 'start',
+        inline: 'nearest',
+      });
+    }
+    // this function is used to make the right bullets list
+    // (the bellow <nav id="cd-vertical-nav">)
+    // active when changeing the section on scroll
+    const updateView = () => {
+      var contentSections = document.getElementsByClassName('cd-index');
+      var navigationItems = document.getElementById('cd-index-nav').getElementsByTagName('a');
+      for (let i = 0; i < contentSections.length; i++) {
+        var activeSection = parseInt(navigationItems[i].getAttribute('data-number'), 10) - 1;
+        if (
+          contentSections[i].offsetTop - window.innerHeight / 2 < window.pageYOffset &&
+          contentSections[i].offsetTop + contentSections[i].scrollHeight - window.innerHeight / 2 > window.pageYOffset
+        ) {
+          navigationItems[activeSection].classList.add('text-blue');
+        } else {
+          navigationItems[activeSection].classList.remove('text-blue');
+        }
+      }
+    };
+
     window.addEventListener('scroll', updateNavbarColor);
+    window.addEventListener('scroll', updateView);
     return function cleanup() {
       window.removeEventListener('scroll', updateNavbarColor);
+      window.removeEventListener('scroll', updateView);
     };
   });
   return (
     <>
-      <Navbar className={classNames('fixed-top navbar-horizontal navbar-main', navbarColor)} expand="lg" id="navbar-main">
+      <Navbar className={classNames('fixed-top navbar-horizontal', navbarColor)} expand="lg" id="navbar-main">
         <Container>
           <NavbarBrand to="/" tag={Link}>
             <img alt="..." src={require('assets/img/brand/Logo.png').default} style={{ height: '50px', width: '50px' }} />
@@ -74,33 +105,73 @@ function AdminNavbar() {
                 </Col>
               </Row>
             </div>
-            <Nav className="mr-auto" navbar>
+            <Nav className="navigation-index mr-auto" id="cd-index-nav" navbar>
               <NavItem>
-                <NavLink to="/" tag={Link}>
-                  <span className="nav-link-inner--text" style={{ fontSize: '20px', fontWeight: '900' }}>
-                    UNICEC
-                  </span>
+                <NavLink
+                  onClick={(e) => {
+                    e.preventDefault();
+                    document.getElementById('UNICEC').scrollIntoView({
+                      behavior: 'smooth',
+                      block: 'start',
+                      inline: 'nearest',
+                    });
+                  }}
+                  to="#UNICEC"
+                  data-number="1"
+                  tag={Link}
+                >
+                  <span style={{ fontSize: '20px', fontWeight: '900' }}>UNICEC</span>
                 </NavLink>
               </NavItem>
               <NavItem>
-                <NavLink to="/" tag={Link}>
-                  <span className="nav-link-inner--text" style={{ fontSize: '20px', fontWeight: '900' }}>
-                    Giới thiệu
-                  </span>
+                <NavLink
+                  onClick={(e) => {
+                    e.preventDefault();
+                    document.getElementById('gioi-thieu').scrollIntoView({
+                      behavior: 'smooth',
+                      block: 'start',
+                      inline: 'nearest',
+                    });
+                  }}
+                  to="#gioi-thieu"
+                  data-number="2"
+                  tag={Link}
+                >
+                  <span style={{ fontSize: '20px', fontWeight: '900' }}>Giới thiệu</span>
                 </NavLink>
               </NavItem>
               <NavItem>
-                <NavLink to="/" tag={Link}>
-                  <span className="nav-link-inner--text" style={{ fontSize: '20px', fontWeight: '900' }}>
-                    Tính năng
-                  </span>
+                <NavLink
+                  onClick={(e) => {
+                    e.preventDefault();
+                    document.getElementById('tinh-nang').scrollIntoView({
+                      behavior: 'smooth',
+                      block: 'start',
+                      inline: 'nearest',
+                    });
+                  }}
+                  to="#tinh-nang"
+                  data-number="3"
+                  tag={Link}
+                >
+                  <span style={{ fontSize: '20px', fontWeight: '900' }}>Tính năng</span>
                 </NavLink>
               </NavItem>
               <NavItem>
-                <NavLink to="/" tag={Link}>
-                  <span className="nav-link-inner--text" style={{ fontSize: '20px', fontWeight: '900' }}>
-                    Liên hệ
-                  </span>
+                <NavLink
+                  onClick={(e) => {
+                    e.preventDefault();
+                    document.getElementById('lien-he').scrollIntoView({
+                      behavior: 'smooth',
+                      block: 'start',
+                      inline: 'nearest',
+                    });
+                  }}
+                  to="#lien-he"
+                  data-number="4"
+                  tag={Link}
+                >
+                  <span style={{ fontSize: '20px', fontWeight: '900' }}>Liên hệ</span>
                 </NavLink>
               </NavItem>
             </Nav>

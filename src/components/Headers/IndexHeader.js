@@ -5,7 +5,13 @@ import { Button, Container, Row, Col } from 'reactstrap';
 function IndexHeader() {
   return (
     <>
-      <div className="header bg-neutral pt-5 pb-7">
+      <div
+        className="header pt-5 pb-7 cd-index"
+        id="UNICEC"
+        style={{
+          backgroundImage: 'url("https://img.freepik.com/free-photo/simple-white-background-with-smooth-lines-light-colors_476363-5558.jpg?w=2000")',
+        }}
+      >
         <Container>
           <div className="header-body">
             <Row className="align-items-center">
@@ -34,46 +40,6 @@ function IndexHeader() {
               </Col>
               <Col lg="4">
                 <Row className="pt-5">
-                  {/* <Col md="6">
-                    <Card>
-                      <CardBody>
-                        <div className="icon icon-shape bg-gradient-red text-white rounded-circle shadow mb-4">
-                          <i className="ni ni-active-40" />
-                        </div>
-                        <h5 className="h3">Quản lý câu lạc bộ</h5>
-                        <p>Hỗ trợ quản lý thành viên và hoạt động cho các chủ nhiệm câu lạc bộ.</p>
-                      </CardBody>
-                    </Card>
-                    <Card>
-                      <CardBody>
-                        <div className="icon icon-shape bg-gradient-info text-white rounded-circle shadow mb-4">
-                          <i className="ni ni-active-40" />
-                        </div>
-                        <h5 className="h3">Quản lý cuộc thi</h5>
-                        <p>Hỗ trợ tạo và quản lý các cuộc thi và sự kiện trong và ngoài trường.</p>
-                      </CardBody>
-                    </Card>
-                  </Col>
-                  <Col className="pt-lg-5 pt-4" md="6">
-                    <Card className="mb-4">
-                      <CardBody>
-                        <div className="icon icon-shape bg-gradient-success text-white rounded-circle shadow mb-4">
-                          <i className="ni ni-active-40" />
-                        </div>
-                        <h5 className="h3">Cung cấp thông tin cuộc thi</h5>
-                        <p>Hệ thống thông tin về các cuộc thi từ khắp các trường đại học và doanh nghiệp.</p>
-                      </CardBody>
-                    </Card>
-                    <Card className="mb-4">
-                      <CardBody>
-                        <div className="icon icon-shape bg-gradient-warning text-white rounded-circle shadow mb-4">
-                          <i className="ni ni-active-40" />
-                        </div>
-                        <h5 className="h3">Hỗ trợ thành viên trong câu lạc bộ</h5>
-                        <p>Các thành viên sẽ dễ dàng tiếp cận các thông tin và hoạt đông trong câu lạc bộ.</p>
-                      </CardBody>
-                    </Card>
-                  </Col> */}
                   <img alt="..." src={require('assets/img/brand/mobile_UNICEC.png').default} />
                 </Row>
               </Col>

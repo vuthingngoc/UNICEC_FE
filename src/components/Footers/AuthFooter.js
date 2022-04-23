@@ -7,7 +7,7 @@ import { NavItem, NavLink, Nav, Container, Row, Col } from 'reactstrap';
 function AuthFooter() {
   return (
     <>
-      <footer className="py-5" id="footer-main">
+      <footer className="py-5 cd-index" id="lien-he">
         <Container>
           <Row className="justify-content-xl-between">
             <Col className="my-2" md="2" lg="4">

@@ -10,181 +10,185 @@ function Homepage() {
   return (
     <>
       <IndexNavbar />
-      <div className="main-content" style={{ marginTop: '80px' }}>
+      <div className="main-content">
         <IndexHeader />
-        <section className="py-6 pb-9 bg-default">
-          <Container fluid>
-            <Row className="justify-content-center text-center">
-              <Col md="6">
-                <h2 className="display-4 text-white">Giải pháp hoàn hảo cho quản lý câu lạc bộ và cuộc thi</h2>
-                <p className="lead text-white">
-                  UNICEC là một nền tảng giúp bạn quản lý các thành viên trong câu lạc bộ về các mặt như tuyển thành viên, thông báo và tổ chức hoạt
-                  động trong câu lạc bộ. Không chỉ thế đây còn là một sân chơi dành cho các bạn muốn tham gia những cuộc thi được tổ chức và tài trợ
-                  bởi các trường đại học hoặc các nhà tài trợ đến từ nhiều doanh nghiệp khác nhau.
-                </p>
-              </Col>
-            </Row>
-          </Container>
-        </section>
-        <section className="section section-lg pt-lg-0 mt--7">
-          <Container>
-            <Row className="justify-content-center">
-              <Col lg="12">
-                <Row>
-                  <Col lg="4">
-                    <Card className="card-lift--hover shadow border-0">
-                      <CardBody className="py-5">
-                        <div className="icon icon-shape bg-gradient-info text-white rounded-circle mb-4">
-                          <i className="ni ni-check-bold" />
+        <div className="cd-index" id="gioi-thieu">
+          <section className="py-6 pb-9 bg-default">
+            <Container fluid style={{ paddingTop: '50px' }}>
+              <Row className="justify-content-center text-center">
+                <Col md="6">
+                  <h2 className="display-4 text-white">Giải pháp hoàn hảo cho quản lý câu lạc bộ và cuộc thi</h2>
+                  <p className="lead text-white">
+                    UNICEC là một nền tảng giúp bạn quản lý các thành viên trong câu lạc bộ về các mặt như tuyển thành viên, thông báo và tổ chức hoạt
+                    động trong câu lạc bộ. Không chỉ thế đây còn là một sân chơi dành cho các bạn muốn tham gia những cuộc thi được tổ chức và tài trợ
+                    bởi các trường đại học hoặc các nhà tài trợ đến từ nhiều doanh nghiệp khác nhau.
+                  </p>
+                </Col>
+              </Row>
+            </Container>
+          </section>
+          <section className="section section-lg pt-lg-0 mt--7">
+            <Container>
+              <Row className="justify-content-center">
+                <Col lg="12">
+                  <Row>
+                    <Col lg="4">
+                      <Card className="card-lift--hover shadow border-0">
+                        <CardBody className="py-5">
+                          <div className="icon icon-shape bg-gradient-info text-white rounded-circle mb-4">
+                            <i className="ni ni-check-bold" />
+                          </div>
+                          <h4 className="h3 text-info text-uppercase">Quản lý câu lạc bộ</h4>
+                          <p className="description mt-3">Hỗ trợ quản lý thành viên và hoạt động cho các chủ nhiệm câu lạc bộ.</p>
+                          <div>
+                            <Badge color="info" pill>
+                              CLUB
+                            </Badge>
+                            <Badge color="info" pill>
+                              Nhóm
+                            </Badge>
+                            <Badge color="info" pill>
+                              Hoạt động
+                            </Badge>
+                          </div>
+                        </CardBody>
+                      </Card>
+                    </Col>
+                    <Col lg="4">
+                      <Card className="card-lift--hover shadow border-0">
+                        <CardBody className="py-5">
+                          <div className="icon icon-shape bg-gradient-success text-white rounded-circle mb-4">
+                            <i className="ni ni-trophy" />
+                          </div>
+                          <h4 className="h3 text-success text-uppercase">Tổ chức và quản lý cuộc thi</h4>
+                          <p className="description mt-3">Hỗ trợ tạo và quản lý các cuộc thi và sự kiện trong và ngoài trường.</p>
+                          <div>
+                            <Badge color="success" pill>
+                              Cuộc thi
+                            </Badge>
+                            <Badge color="success" pill>
+                              Sự kiện
+                            </Badge>
+                          </div>
+                        </CardBody>
+                      </Card>
+                    </Col>
+                    <Col lg="4">
+                      <Card className="card-lift--hover shadow border-0">
+                        <CardBody className="py-5">
+                          <div className="icon icon-shape bg-gradient-warning text-white rounded-circle mb-4">
+                            <i className="ni ni-circle-08" />
+                          </div>
+                          <h4 className="h3 text-warning text-uppercase">Hỗ trợ thành viên câu lạc bộ</h4>
+                          <p className="description mt-3">Các thành viên sẽ dễ dàng tiếp cận các thông tin và hoạt đông trong câu lạc bộ.</p>
+                          <div>
+                            <Badge color="warning" pill>
+                              Thành viên
+                            </Badge>
+                            <Badge color="warning" pill>
+                              Ứng tuyển
+                            </Badge>
+                          </div>
+                        </CardBody>
+                      </Card>
+                    </Col>
+                  </Row>
+                </Col>
+              </Row>
+            </Container>
+          </section>
+        </div>
+        <div className="cd-index" id="tinh-nang">
+          <section className="py-6">
+            <Container>
+              <Row className="row-grid align-items-center">
+                <Col className="order-md-2" md="6">
+                  <img alt="..." className="img-fluid" src={require('assets/img/theme/landing-1.png').default} />
+                </Col>
+                <Col className="order-md-1" md="6">
+                  <div className="pr-md-5">
+                    <h1>Quản lý câu lạc bộ</h1>
+                    <p>Hỗ trợ quản lý thành viên và hoạt động cho các chủ nhiệm câu lạc bộ.</p>
+                    <ul className="list-unstyled mt-5">
+                      <li className="py-2">
+                        <div className="d-flex align-items-center">
+                          <div>
+                            <Badge className="badge-circle mr-3" color="success">
+                              <i className="ni ni-settings-gear-65" />
+                            </Badge>
+                          </div>
+                          <div>
+                            <h4 className="mb-0">Dễ dàng theo dõi thành viên</h4>
+                          </div>
                         </div>
-                        <h4 className="h3 text-info text-uppercase">Quản lý câu lạc bộ</h4>
-                        <p className="description mt-3">Hỗ trợ quản lý thành viên và hoạt động cho các chủ nhiệm câu lạc bộ.</p>
-                        <div>
-                          <Badge color="info" pill>
-                            CLUB
-                          </Badge>
-                          <Badge color="info" pill>
-                            Nhóm
-                          </Badge>
-                          <Badge color="info" pill>
-                            Hoạt động
-                          </Badge>
+                      </li>
+                      <li className="py-2">
+                        <div className="d-flex align-items-center">
+                          <div>
+                            <Badge className="badge-circle mr-3" color="success">
+                              <i className="ni ni-ruler-pencil" />
+                            </Badge>
+                          </div>
+                          <div>
+                            <h4 className="mb-0">Chia hoạt động cho các thành viên nhanh hơn</h4>
+                          </div>
                         </div>
-                      </CardBody>
-                    </Card>
-                  </Col>
-                  <Col lg="4">
-                    <Card className="card-lift--hover shadow border-0">
-                      <CardBody className="py-5">
-                        <div className="icon icon-shape bg-gradient-success text-white rounded-circle mb-4">
-                          <i className="ni ni-trophy" />
+                      </li>
+                      <li className="py-2">
+                        <div className="d-flex align-items-center">
+                          <div>
+                            <Badge className="badge-circle mr-3" color="success">
+                              <i className="ni ni-send" />
+                            </Badge>
+                          </div>
+                          <div>
+                            <h4 className="mb-0">Hỗ trợ hệ thống tạo phiếu cho việc duyệt thành viên</h4>
+                          </div>
                         </div>
-                        <h4 className="h3 text-success text-uppercase">Tổ chức và quản lý cuộc thi</h4>
-                        <p className="description mt-3">Hỗ trợ tạo và quản lý các cuộc thi và sự kiện trong và ngoài trường.</p>
-                        <div>
-                          <Badge color="success" pill>
-                            Cuộc thi
-                          </Badge>
-                          <Badge color="success" pill>
-                            Sự kiện
-                          </Badge>
-                        </div>
-                      </CardBody>
-                    </Card>
-                  </Col>
-                  <Col lg="4">
-                    <Card className="card-lift--hover shadow border-0">
-                      <CardBody className="py-5">
-                        <div className="icon icon-shape bg-gradient-warning text-white rounded-circle mb-4">
-                          <i className="ni ni-circle-08" />
-                        </div>
-                        <h4 className="h3 text-warning text-uppercase">Hỗ trợ thành viên câu lạc bộ</h4>
-                        <p className="description mt-3">Các thành viên sẽ dễ dàng tiếp cận các thông tin và hoạt đông trong câu lạc bộ.</p>
-                        <div>
-                          <Badge color="warning" pill>
-                            Thành viên
-                          </Badge>
-                          <Badge color="warning" pill>
-                            Ứng tuyển
-                          </Badge>
-                        </div>
-                      </CardBody>
-                    </Card>
-                  </Col>
-                </Row>
-              </Col>
-            </Row>
-          </Container>
-        </section>
-        <section className="py-6">
-          <Container>
-            <Row className="row-grid align-items-center">
-              <Col className="order-md-2" md="6">
-                <img alt="..." className="img-fluid" src={require('assets/img/theme/landing-1.png').default} />
-              </Col>
-              <Col className="order-md-1" md="6">
-                <div className="pr-md-5">
-                  <h1>Quản lý câu lạc bộ</h1>
-                  <p>Hỗ trợ quản lý thành viên và hoạt động cho các chủ nhiệm câu lạc bộ.</p>
-                  <ul className="list-unstyled mt-5">
-                    <li className="py-2">
-                      <div className="d-flex align-items-center">
-                        <div>
-                          <Badge className="badge-circle mr-3" color="success">
-                            <i className="ni ni-settings-gear-65" />
-                          </Badge>
-                        </div>
-                        <div>
-                          <h4 className="mb-0">Dễ dàng theo dõi thành viên</h4>
-                        </div>
-                      </div>
-                    </li>
-                    <li className="py-2">
-                      <div className="d-flex align-items-center">
-                        <div>
-                          <Badge className="badge-circle mr-3" color="success">
-                            <i className="ni ni-ruler-pencil" />
-                          </Badge>
-                        </div>
-                        <div>
-                          <h4 className="mb-0">Chia hoạt động cho các thành viên nhanh hơn</h4>
-                        </div>
-                      </div>
-                    </li>
-                    <li className="py-2">
-                      <div className="d-flex align-items-center">
-                        <div>
-                          <Badge className="badge-circle mr-3" color="success">
-                            <i className="ni ni-send" />
-                          </Badge>
-                        </div>
-                        <div>
-                          <h4 className="mb-0">Hỗ trợ hệ thống tạo phiếu cho việc duyệt thành viên</h4>
-                        </div>
-                      </div>
-                    </li>
-                  </ul>
-                </div>
-              </Col>
-            </Row>
-          </Container>
-        </section>
-        <section className="py-6">
-          <Container>
-            <Row className="row-grid align-items-center">
-              <Col md="6">
-                <img alt="..." className="img-fluid" src={require('assets/img/theme/landing-2.png').default} />
-              </Col>
-              <Col md="6">
-                <div className="pr-md-5">
-                  <h1>Tổ chức và quản lý cuộc thi</h1>
-                  <p>Hỗ trợ tạo và quản lý các cuộc thi và sự kiện trong và ngoài trường.</p>
-                  <Link className="font-weight-bold text-warning mt-5" to="/">
-                    Trở thành nhà tài trợ
-                  </Link>
-                </div>
-              </Col>
-            </Row>
-          </Container>
-        </section>
-        <section className="py-6">
-          <Container>
-            <Row className="row-grid align-items-center">
-              <Col className="order-md-2" md="6">
-                <img alt="..." className="img-fluid" src={require('assets/img/theme/landing-3.png').default} />
-              </Col>
-              <Col className="order-md-1" md="6">
-                <div className="pr-md-5">
-                  <h1>Hỗ trợ thành viên câu lạc bộ</h1>
-                  <p>Các thành viên sẽ dễ dàng tiếp cận các thông tin và hoạt đông trong câu lạc bộ.</p>
-                  <Link className="font-weight-bold text-info mt-5" to="/">
-                    Tải ứng dụng ngay
-                  </Link>
-                </div>
-              </Col>
-            </Row>
-          </Container>
-        </section>
+                      </li>
+                    </ul>
+                  </div>
+                </Col>
+              </Row>
+            </Container>
+          </section>
+          <section className="py-6">
+            <Container>
+              <Row className="row-grid align-items-center">
+                <Col md="6">
+                  <img alt="..." className="img-fluid" src={require('assets/img/theme/landing-2.png').default} />
+                </Col>
+                <Col md="6">
+                  <div className="pr-md-5">
+                    <h1>Tổ chức và quản lý cuộc thi</h1>
+                    <p>Hỗ trợ tạo và quản lý các cuộc thi và sự kiện trong và ngoài trường.</p>
+                    <Link className="font-weight-bold text-warning mt-5" to="/">
+                      Trở thành nhà tài trợ
+                    </Link>
+                  </div>
+                </Col>
+              </Row>
+            </Container>
+          </section>
+          <section className="py-6">
+            <Container>
+              <Row className="row-grid align-items-center">
+                <Col className="order-md-2" md="6">
+                  <img alt="..." className="img-fluid" src={require('assets/img/theme/landing-3.png').default} />
+                </Col>
+                <Col className="order-md-1" md="6">
+                  <div className="pr-md-5">
+                    <h1>Hỗ trợ thành viên câu lạc bộ</h1>
+                    <p>Các thành viên sẽ dễ dàng tiếp cận các thông tin và hoạt đông trong câu lạc bộ.</p>
+                    <Link className="font-weight-bold text-info mt-5" to="/">
+                      Tải ứng dụng ngay
+                    </Link>
+                  </div>
+                </Col>
+              </Row>
+            </Container>
+          </section>
+        </div>
         {/* <section className="py-7 section-nucleo-icons bg-white overflow-hidden">
           <Container>
             <Row className="justify-content-center">
@@ -246,7 +250,7 @@ function Homepage() {
                   style={{
                     marginTop: '20px',
                     background:
-                      'linear-gradient(90deg, rgba(255,255,255,0.2) 0%, rgba(140,255,140,0.3) 26%, rgba(255,255,255,1) 50%, rgba(140,255,140,0.3) 76%, rgba(255,255,255,1) 100%)',
+                      'linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(140,255,140,0.4) 26%, rgba(255,255,255,1) 50%, rgba(140,255,140,0.4) 76%, rgba(255,255,255,0) 100%)',
                     padding: '10px 10px 10px 10px',
                   }}
                 >
