@@ -25,9 +25,6 @@ function AdminNavbar() {
         inline: 'nearest',
       });
     }
-    // this function is used to make the right bullets list
-    // (the bellow <nav id="cd-vertical-nav">)
-    // active when changeing the section on scroll
     const updateView = () => {
       var contentSections = document.getElementsByClassName('cd-index');
       var navigationItems = document.getElementById('cd-index-nav').getElementsByTagName('a');
