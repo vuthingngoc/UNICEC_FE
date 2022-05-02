@@ -21,16 +21,19 @@ import AdminLayout from 'layouts/Admin.js';
 import RTLLayout from 'layouts/RTL.js';
 import AuthLayout from 'layouts/Auth.js';
 import Homepage from 'views/pages/homepage/index';
+import AuthContextProvider from 'contexts/AuthContext';
 
 ReactDOM.render(
-  <BrowserRouter>
-    <Switch>
-      <Route path="/admin" render={(props) => <AdminLayout {...props} />} />
-      <Route path="/rtl" render={(props) => <RTLLayout {...props} />} />
-      <Route path="/auth" render={(props) => <AuthLayout {...props} />} />
-      <Route path="/" render={(props) => <Homepage {...props} />} />
-      <Redirect from="*" to="/" />
-    </Switch>
-  </BrowserRouter>,
+  <AuthContextProvider>
+    <BrowserRouter>
+      <Switch>
+        <Route path="/admin" render={(props) => <AdminLayout {...props} />} />
+        <Route path="/rtl" render={(props) => <RTLLayout {...props} />} />
+        <Route path="/auth" render={(props) => <AuthLayout {...props} />} />
+        <Route path="/" render={(props) => <Homepage {...props} />} />
+        <Redirect from="*" to="/" />
+      </Switch>
+    </BrowserRouter>
+  </AuthContextProvider>,
   document.getElementById('root')
 );

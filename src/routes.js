@@ -28,6 +28,12 @@ import Widgets from 'views/pages/Widgets.js';
 //LoginPage
 import LoginPage from 'views/pages/LoginPage/LoginPage.jsx';
 
+//ClubMember
+import ClubMember from 'views/pages/MemberPage/ClubMember.jsx';
+
+//ShowAllClub
+import AllClubPage from 'views/pages/AllCLubPage/AllClubPage.jsx';
+
 const routes = [
   {
     collapse: true,
@@ -245,6 +251,20 @@ const routes = [
         name: 'React BS Tables',
         miniName: 'RBT',
         component: ReactBSTables,
+        layout: '/admin',
+      },
+      {
+        path: '/club-member',
+        name: 'CLub Member',
+        miniName: 'CM',
+        component: ClubMember,
+        layout: '/admin',
+      },
+      {
+        path: '/all-club',
+        name: 'All Club',
+        miniName: 'AC',
+        component: AllClubPage,
         layout: '/admin',
       },
     ],

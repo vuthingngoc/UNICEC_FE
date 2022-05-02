@@ -1,7 +1,7 @@
 import axios from 'axios';
 // import getOptions from 'utils/services.ultils';
 
-const backendUrl = 'http://192.168.1.31:3000';
+const backendUrl = 'http://14.225.254.134';
 
 export async function loginByPath(path, accessToken) {
   try {
