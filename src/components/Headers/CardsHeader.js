@@ -6,7 +6,6 @@ const clubData = {
   id: '1',
   university_id: '1',
   university_name: 'FPT University',
-  university_logo: 'https://printgo.vn/uploads/file-logo/1/512x512.cc353cc187dbfe66881bb790326b8b1a.ai.1.png',
   name: 'F-Code FPT',
   description: 'Câu lạc bộ học thuật lập trình trực thuộc trường đại học FPT cơ sở HCM.',
   type: 'Học thuật',
@@ -16,6 +15,7 @@ const clubData = {
   total_member: '50',
   total_event: '5',
   total_activity: '4',
+  member_increase_last_month: '3',
 };
 
 function CardsHeader() {
@@ -37,9 +37,8 @@ function CardsHeader() {
                       <a href={clubData.club_fanpage} target="blank">
                         {clubData.name}
                       </a>
-                      <small style={{ color: 'grey', fontFamily: 'cursive' }}>{`  (${clubData.club_contract})`}</small>
                     </h3>
-                    <span className="text-info font-weight-bold">{clubData.type}</span>{' '}
+                    <span style={{ color: 'grey', fontFamily: 'cursive' }}>{clubData.club_contract}</span>{' '}
                   </div>
                 </Row>
               </Col>
@@ -87,7 +86,7 @@ function CardsHeader() {
                     </Row>
                     <p className="mt-3 mb-0 text-sm">
                       <span className="text-success mr-2">
-                        <i className="fa fa-arrow-up" /> 3
+                        <i className="fa fa-arrow-up" /> {clubData.member_increase_last_month}
                       </span>{' '}
                       <span className="text-nowrap">trong tháng này</span>
                     </p>
