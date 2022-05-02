@@ -173,32 +173,32 @@ function Sidebar({ toggleSidenav, sidenavOpen, routes, logo, rtlActive }) {
           <Nav navbar>{createLinks(routes)}</Nav>
           <hr className="my-3" />
           <h6 className="navbar-heading p-0 text-muted">
-            <span className="docs-normal">Documentation</span>
+            <span className="docs-normal">Liên hệ</span>
             <span className="docs-mini">D</span>
           </h6>
           <Nav className="mb-md-3" navbar>
             <NavItem>
-              <NavLink href="https://demos.creative-tim.com/argon-dashboard-pro-react/#/documentation/overview?ref=adpr-sidebar" target="_blank">
+              <NavLink href="/" target="_blank">
                 <i className="ni ni-spaceship" />
-                <span className="nav-link-text">Getting started</span>
+                <span className="nav-link-text">Đội ngũ phát triển</span>
               </NavLink>
             </NavItem>
             <NavItem>
-              <NavLink href="https://demos.creative-tim.com/argon-dashboard-pro-react/#/documentation/colors?ref=adpr-sidebar" target="_blank">
+              <NavLink href="/" target="_blank">
                 <i className="ni ni-palette" />
-                <span className="nav-link-text">Foundation</span>
+                <span className="nav-link-text">Điều khoảng dịch vụ</span>
               </NavLink>
             </NavItem>
             <NavItem>
-              <NavLink href="https://demos.creative-tim.com/argon-dashboard-pro-react/#/documentation/alert?ref=adpr-sidebar" target="_blank">
+              <NavLink href="/" target="_blank">
                 <i className="ni ni-ui-04" />
-                <span className="nav-link-text">Components</span>
+                <span className="nav-link-text">Chính sách bảo mật</span>
               </NavLink>
             </NavItem>
             <NavItem>
-              <NavLink href="https://demos.creative-tim.com/argon-dashboard-pro-react/#/documentation/charts?ref=adpr-sidebar" target="_blank">
+              <NavLink href="/" target="_blank">
                 <i className="ni ni-chart-pie-35" />
-                <span className="nav-link-text">Plugins</span>
+                <span className="nav-link-text">Liên hệ</span>
               </NavLink>
             </NavItem>
           </Nav>
