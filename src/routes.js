@@ -43,6 +43,13 @@ const routes = [
         component: Alternative,
         layout: '/admin',
       },
+      // {
+      //   path: '/tat-ca',
+      //   name: 'ClucMemer',
+      //   miniName: 'T',
+      //   component: ClubMember,
+      //   layout: '/admin',
+      // },
     ],
   },
   {

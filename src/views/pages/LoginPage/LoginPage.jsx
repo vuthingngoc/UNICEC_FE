@@ -51,7 +51,7 @@ export default function Login() {
   // });
 
   async function loginWithAccessToken(accessToken) {
-    const res = await loginByPath('/api/v1/Firebase', accessToken);
+    const res = await loginByPath('api/v1/Firebase', accessToken);
     if (res.status === 200) {
       if (localStorage) {
         NotificationManager.success('Welcome', 'Login Success', 3000);
@@ -67,7 +67,7 @@ export default function Login() {
         //   history.push('/home');
         // }
         localStorage.setItem('accessToken', res.data.data);
-        history.push('/admin/dashboard');
+        history.push('/admin/clb-tham-gia');
       }
     } else {
       NotificationManager.warning('Server is busy now! Pleasy try againt', 'Server Error', 3000);
