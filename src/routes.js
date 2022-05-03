@@ -9,6 +9,12 @@ import Register from 'views/pages/examples/Register.js';
 //LoginPagef
 import LoginPage from 'views/pages/LoginPage/LoginPage.jsx';
 
+//ClubMember
+//import ClubMember from 'views/pages/MemberPage/ClubMember.jsx';
+
+//ShowAllClub
+//import AllClubPage from 'views/pages/AllCLubPage/AllClubPage.jsx';
+
 const routes = [
   {
     collapse: true,
@@ -37,6 +43,13 @@ const routes = [
         component: Alternative,
         layout: '/admin',
       },
+      // {
+      //   path: '/tat-ca',
+      //   name: 'ClucMemer',
+      //   miniName: 'T',
+      //   component: ClubMember,
+      //   layout: '/admin',
+      // },
     ],
   },
   {

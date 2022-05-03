@@ -179,7 +179,7 @@ const dataTable = [
   {
     name: 'Tiger Nixon',
     position: 'System Architect',
-    office: 'Edinburgh',
+    office: 'Male',
     age: '61',
     start_date: '2011/04/25',
     salary: '$320,800',
@@ -187,7 +187,7 @@ const dataTable = [
   {
     name: 'Garrett Winters',
     position: 'Accountant',
-    office: 'Tokyo',
+    office: 'Male',
     age: '63',
     start_date: '2011/07/25',
     salary: '$170,750',
@@ -195,7 +195,7 @@ const dataTable = [
   {
     name: 'Ashton Cox',
     position: 'Junior Technical Author',
-    office: 'San Francisco',
+    office: 'Male',
     age: '66',
     start_date: '2009/01/12',
     salary: '$86,000',
@@ -203,7 +203,7 @@ const dataTable = [
   {
     name: 'Cedric Kelly',
     position: 'Senior Javascript Developer',
-    office: 'Edinburgh',
+    office: 'Male',
     age: '22',
     start_date: '2012/03/29',
     salary: '$433,060',
@@ -211,7 +211,7 @@ const dataTable = [
   {
     name: 'Airi Satou',
     position: 'Accountant',
-    office: 'Tokyo',
+    office: 'Male',
     age: '33',
     start_date: '2008/11/28',
     salary: '$162,700',
@@ -219,7 +219,7 @@ const dataTable = [
   {
     name: 'Brielle Williamson',
     position: 'Integration Specialist',
-    office: 'New York',
+    office: 'Female',
     age: '61',
     start_date: '2012/12/02',
     salary: '$372,000',
@@ -227,7 +227,7 @@ const dataTable = [
   {
     name: 'Herrod Chandler',
     position: 'Sales Assistant',
-    office: 'San Francisco',
+    office: 'Female',
     age: '59',
     start_date: '2012/08/06',
     salary: '$137,500',
@@ -235,7 +235,7 @@ const dataTable = [
   {
     name: 'Rhona Davidson',
     position: 'Integration Specialist',
-    office: 'Tokyo',
+    office: 'Female',
     age: '55',
     start_date: '2010/10/14',
     salary: '$327,900',
@@ -243,7 +243,7 @@ const dataTable = [
   {
     name: 'Colleen Hurst',
     position: 'Javascript Developer',
-    office: 'San Francisco',
+    office: 'Female',
     age: '39',
     start_date: '2009/09/15',
     salary: '$205,500',
@@ -251,7 +251,7 @@ const dataTable = [
   {
     name: 'Sonya Frost',
     position: 'Software Engineer',
-    office: 'Edinburgh',
+    office: 'Male',
     age: '23',
     start_date: '2008/12/13',
     salary: '$103,600',

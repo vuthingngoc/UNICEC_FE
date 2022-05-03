@@ -23,12 +23,56 @@ import AuthHeader from 'components/Headers/AuthHeader.js';
 import { useAuth } from 'contexts/AuthContext';
 //import { useHistory } from 'react-router';
 import { NotificationManager } from 'react-notifications';
+//import jwtDecode from 'jwt-decode';
+import { loginByPath } from 'services/auth.service';
 
 export default function Login() {
   const [focusedEmail, setfocusedEmail] = React.useState(false);
   const [focusedPassword, setfocusedPassword] = React.useState(false);
 
   const { signInWithGoogle } = useAuth();
+
+  // React.useEffect(() => {
+  //   if (currentUser !== null && localStorage.getItem('accessToken') !== null) {
+  //     // const role = jwtDecode(localStorage.getItem('accessToken')).ROLE;
+  //     // if (role === '2') {
+  //     //   history.push('/admin/home');
+  //     // } else {
+  //     //   history.push('/home');
+  //     // }
+  //     history.push('/admin/dashboard');
+  //   }
+  //   // document.body.classList.add('register-page');
+  //   // document.body.classList.add('full-screen');
+  //   return function cleanup() {
+  //     document.body.classList.remove('register-page');
+  //     document.body.classList.remove('full-screen');
+  //   };
+  // });
+
+  async function loginWithAccessToken(accessToken) {
+    const res = await loginByPath('api/v1/Firebase', accessToken);
+    if (res.status === 200) {
+      if (localStorage) {
+        NotificationManager.success('Welcome', 'Login Success', 3000);
+        // const role = jwtDecode(res.data.data).ROLE;
+        // setIsSubmitting(false);
+        // if (role === '2') {
+        //   localStorage.setItem('accessToken', res.data.data);
+        //   history.push('/admin/home');
+        // } else if (role === '3') {
+        //   history.push('/newprofile');
+        // } else {
+        //   localStorage.setItem('accessToken', res.data.data);
+        //   history.push('/home');
+        // }
+        localStorage.setItem('accessToken', res.data.data);
+        history.push('/admin/clb-tham-gia');
+      }
+    } else {
+      NotificationManager.warning('Server is busy now! Pleasy try againt', 'Server Error', 3000);
+    }
+  }
 
   const handleErrorLogin = (request) => {
     switch (request) {
@@ -81,7 +125,7 @@ export default function Login() {
                         .then((response) => {
                           console.log(response);
                           // setIsSubmitting(false);
-                          // loginWithAccessToken(response.user.accessToken);
+                          loginWithAccessToken(response.user.accessToken);
                         })
                         .catch((error) => {
                           handleErrorLogin(error.message);

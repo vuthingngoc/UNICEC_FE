@@ -80,6 +80,58 @@ const clubActivity = [
   },
 ];
 
+const clubMember = [
+  {
+    id: '1',
+    name: 'Huy',
+    role: 'Trưởng CLB',
+    gender: 'Nam',
+    joinDate: '20-01-2000',
+  },
+  {
+    id: '1',
+    name: 'Huy',
+    role: 'Trưởng CLB',
+    gender: 'Nam',
+    joinDate: '20-01-2000',
+  },
+  {
+    id: '1',
+    name: 'Huy',
+    role: 'Trưởng CLB',
+    gender: 'Nam',
+    joinDate: '20-01-2000',
+  },
+  {
+    id: '1',
+    name: 'Huy',
+    role: 'Trưởng CLB',
+    gender: 'Nam',
+    joinDate: '20-01-2000',
+  },
+  {
+    id: '1',
+    name: 'Huy',
+    role: 'Trưởng CLB',
+    gender: 'Nam',
+    joinDate: '20-01-2000',
+  },
+  {
+    id: '1',
+    name: 'Huy',
+    role: 'Trưởng CLB',
+    gender: 'Nam',
+    joinDate: '20-01-2000',
+  },
+  {
+    id: '1',
+    name: 'Huy',
+    role: 'Trưởng CLB',
+    gender: 'Nam',
+    joinDate: '20-01-2000',
+  },
+];
+
 function Dashboard() {
   return (
     <>
@@ -199,7 +251,7 @@ function Dashboard() {
                     <h3 className="mb-0">Thành viên</h3>
                   </div>
                   <div className="col text-right">
-                    <Button color="primary" href="#pablo" onClick={(e) => e.preventDefault()} size="sm">
+                    <Button color="primary" href="/clubMember" size="sm">
                       Xem tất cả
                     </Button>
                   </div>
@@ -208,14 +260,16 @@ function Dashboard() {
               <Table className="align-items-center table-flush" responsive>
                 <thead className="thead-light">
                   <tr>
-                    <th scope="col">Page name</th>
-                    <th scope="col">Visitors</th>
-                    <th scope="col">Unique users</th>
-                    <th scope="col">Bounce rate</th>
+                    <th scope="col">ID</th>
+                    <th scope="col">Họ và tên</th>
+                    <th scope="col">Chức vụ</th>
+                    <th scope="col">Giới tính</th>
+                    <th scope="col">Ngày tham gia</th>
+                    {/* <th scope="col">Hành động</th> */}
                   </tr>
                 </thead>
                 <tbody>
-                  <tr>
+                  {/* <tr>
                     <th scope="row">/argon/</th>
                     <td>4,569</td>
                     <td>340</td>
@@ -223,43 +277,36 @@ function Dashboard() {
                       <i className="fas fa-arrow-up text-success mr-3" />
                       46,53%
                     </td>
-                  </tr>
-                  <tr>
-                    <th scope="row">/argon/index.html</th>
-                    <td>3,985</td>
-                    <td>319</td>
-                    <td>
-                      <i className="fas fa-arrow-down text-warning mr-3" />
-                      46,53%
-                    </td>
-                  </tr>
-                  <tr>
-                    <th scope="row">/argon/charts.html</th>
-                    <td>3,513</td>
-                    <td>294</td>
-                    <td>
-                      <i className="fas fa-arrow-down text-warning mr-3" />
-                      36,49%
-                    </td>
-                  </tr>
-                  <tr>
-                    <th scope="row">/argon/tables.html</th>
-                    <td>2,050</td>
-                    <td>147</td>
-                    <td>
-                      <i className="fas fa-arrow-up text-success mr-3" />
-                      50,87%
-                    </td>
-                  </tr>
-                  <tr>
-                    <th scope="row">/argon/profile.html</th>
-                    <td>1,795</td>
-                    <td>190</td>
-                    <td>
-                      <i className="fas fa-arrow-down text-danger mr-3" />
-                      46,53%
-                    </td>
-                  </tr>
+                  </tr> */}
+                  {clubMember ? (
+                    clubMember.map((e, value) => {
+                      return (
+                        <tr key={`${value}`}>
+                          <td> {e.id} </td>
+                          <td> {e.name} </td>
+                          <td> {e.role} </td>
+                          <td> {e.gender} </td>
+                          <td> {e.joinDate} </td>
+                          {/* <td className="table-actions">
+                            <a className="table-action" href="#pablo" id="tooltip564981685" onClick={(e) => e.preventDefault()}>
+                              <i className="fas fa-user-edit" />
+                            </a>
+                            <UncontrolledTooltip delay={0} target="tooltip564981685">
+                              Sửa thông tin
+                            </UncontrolledTooltip>
+                            <a className="table-action table-action-delete" href="#pablo" id="tooltip601065234" onClick={(e) => e.preventDefault()}>
+                              <i className="fas fa-trash" />
+                            </a>
+                            <UncontrolledTooltip delay={0} target="tooltip601065234">
+                              Vô hiệu hóa tài khoản
+                            </UncontrolledTooltip>
+                          </td> */}
+                        </tr>
+                      );
+                    })
+                  ) : (
+                    <h2>Chưa có dữ liệu</h2>
+                  )}
                 </tbody>
               </Table>
             </Card>

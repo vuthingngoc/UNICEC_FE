@@ -21,16 +21,23 @@ import AdminLayout from 'layouts/Admin.js';
 import RTLLayout from 'layouts/RTL.js';
 import AuthLayout from 'layouts/Auth.js';
 import Homepage from 'views/pages/homepage/index';
+import AuthContextProvider from 'contexts/AuthContext';
+import MemberPage from 'views/pages/MemberPage/index';
+import LoginPage from 'views/pages/LoginPage/LoginPage';
 
 ReactDOM.render(
-  <BrowserRouter>
-    <Switch>
-      <Route path="/admin" render={(props) => <AdminLayout {...props} />} />
-      <Route path="/rtl" render={(props) => <RTLLayout {...props} />} />
-      <Route path="/auth" render={(props) => <AuthLayout {...props} />} />
-      <Route path="/" render={(props) => <Homepage {...props} />} />
-      <Redirect from="*" to="/" />
-    </Switch>
-  </BrowserRouter>,
+  <AuthContextProvider>
+    <BrowserRouter>
+      <Switch>
+        <Route path="/admin" render={(props) => <AdminLayout {...props} />} />
+        <Route path="/rtl" render={(props) => <RTLLayout {...props} />} />
+        <Route path="/auth" render={(props) => <AuthLayout {...props} />} />
+        <Route path="/clubMember" render={(props) => <MemberPage {...props} />} />
+        <Route path="/login" render={(props) => <LoginPage {...props} />} />
+        <Route path="/" render={(props) => <Homepage {...props} />} />
+        <Redirect from="*" to="/" />
+      </Switch>
+    </BrowserRouter>
+  </AuthContextProvider>,
   document.getElementById('root')
 );
