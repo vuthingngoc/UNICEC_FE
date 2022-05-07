@@ -3,7 +3,7 @@ import Alternative from 'views/pages/dashboards/Alternative.js';
 import Dashboard from 'views/pages/dashboards/Dashboard.js';
 import Lock from 'views/pages/examples/Lock.js';
 //import Login from 'views/pages/examples/Login.jsx';
-import Pricing from 'views/pages/examples/Pricing.js';
+//import Pricing from 'views/pages/examples/Pricing.js';
 // import Profile from 'views/pages/examples/Profile.js';
 import Register from 'views/pages/examples/Register.js';
 //LoginPagef
@@ -14,6 +14,8 @@ import LoginPage from 'views/pages/LoginPage/LoginPage.jsx';
 
 //ShowAllClub
 //import AllClubPage from 'views/pages/AllCLubPage/AllClubPage.jsx';
+
+import ShowCompetition from 'views/pages/ShowCompetitionPage/index.jsx';
 
 const routes = [
   {
@@ -62,7 +64,7 @@ const routes = [
         path: '/cuoc-thi',
         name: 'Cuộc thi',
         miniName: 'C',
-        component: Pricing,
+        component: ShowCompetition,
         layout: '/auth',
       },
       {
