@@ -1,84 +1,12 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Button, Card, CardHeader, CardBody, ListGroupItem, ListGroup, Progress, Table, Container, Row, Col } from 'reactstrap';
 
 // core components
 import CardsHeader from 'components/Headers/CardsHeader.js';
+import { getDataByPath } from 'services/data.service';
 
-const clubHeadmaster = [
-  {
-    id: '1',
-    name: 'Huy',
-    role: 'Chủ nhiệm',
-    avartar:
-      'https://scontent.fsgn5-11.fna.fbcdn.net/v/t39.30808-6/275005018_3058643097691973_1254205249411315442_n.jpg?_nc_cat=103&ccb=1-5&_nc_sid=174925&_nc_ohc=KvkJ0Cjv28AAX_GCdYK&_nc_ht=scontent.fsgn5-11.fna&oh=00_AT9cvhzxTdFOU6gnuCJPyuJ6TqhIczL8fUlFL9RblJj7aw&oe=6273E1F9',
-    status: 'Online',
-  },
-  {
-    id: '2',
-    name: 'Khánh Đoan',
-    role: 'Phó chủ nhiệm',
-    avartar:
-      'https://scontent.fsgn5-2.fna.fbcdn.net/v/t39.30808-1/278009236_1595037880860181_5461611636136109196_n.jpg?stp=dst-jpg_p160x160&_nc_cat=110&ccb=1-5&_nc_sid=7206a8&_nc_ohc=_4WcgjzAo-UAX9ZZkTW&_nc_ht=scontent.fsgn5-2.fna&oh=00_AT-A3_phDxOObN6r3wyObDbbL86VSkB_uxHb0OXA0IliAA&oe=62747836',
-    status: 'Online',
-  },
-
-  {
-    id: '3',
-    name: 'Nguyễn Trọng Nghĩa',
-    role: 'Phó chủ nhiệm',
-    avartar:
-      'https://scontent.fsgn5-2.fna.fbcdn.net/v/t39.30808-1/279079864_3202727029977265_4694133876640596616_n.jpg?stp=dst-jpg_p160x160&_nc_cat=110&ccb=1-5&_nc_sid=7206a8&_nc_ohc=OqvKvVbVmMgAX_P4P0n&_nc_ht=scontent.fsgn5-2.fna&oh=00_AT8cnN5mvXHtiQ-UBajNxeakKUrdBMCD6Ln4Bgho6o7ipg&oe=6273B924',
-    status: 'Offline',
-  },
-];
-
-const clubEventCompetition = [
-  {
-    id: '1',
-    name: 'CODEKITTEN TPHCM',
-    type: 'Cuộc thi',
-    time: '3:30 PM 28/4/2022',
-  },
-  {
-    id: '2',
-    name: 'F-CODE TECH EXHIBITION',
-    type: 'Sự kiện',
-    time: 'ALL DAY 24/4/2022',
-  },
-  {
-    id: '3',
-    name: 'HỖ TRỢ TRUYỀN THÔNG K17',
-    type: 'Sự kiện',
-    time: 'ALL DAY 24/4/2022',
-  },
-];
-
-const clubActivity = [
-  {
-    id: '1',
-    name: 'Chuẩn bị ELYMPICS',
-    require: '20',
-    process: '20',
-  },
-  {
-    id: '2',
-    name: 'Duyệt đơn gia nhập',
-    require: '100',
-    process: '45',
-  },
-  {
-    id: '3',
-    name: 'Chuẩn bị F-CODE TECH EXHIBTION',
-    require: '35',
-    process: '18',
-  },
-  {
-    id: '4',
-    name: 'Chuẩn bị chủ đề SPRING WITH FRONT-END',
-    require: '10',
-    process: '8',
-  },
-];
+const university_id = 1;
+const club_id = 1;
 
 const clubMember = [
   {
@@ -133,6 +61,55 @@ const clubMember = [
 ];
 
 function Dashboard() {
+  const [clubHeadmasters, setClubHeadmasters] = useState(null);
+  const [clubEventCompetitions, setClubEventCompetitions] = useState(null);
+  const [clubActivity, setClubActivity] = useState(null);
+
+  async function loadDataHeadmasters(id) {
+    if (id !== null) {
+      const path = 'api/v1/member/leaders/club/';
+      const res = await getDataByPath(`${path}${id}`, '', '');
+      if (res !== null && res.status === 200) {
+        setClubHeadmasters(res.data);
+      }
+    }
+  }
+
+  async function loadDataEventCompetition(id) {
+    if (id !== null) {
+      const path = 'api/v1/competition/top3';
+      const data = 'event=true';
+      const res = await getDataByPath(`${path}${id}`, '', data);
+      if (res !== null && res.status === 200) {
+        setClubEventCompetitions(res.data);
+      }
+    }
+  }
+
+  async function loadClubActivity(universityId, clubId) {
+    if (universityId !== null && clubId !== null) {
+      const path = 'api/v1/club-activity/top4';
+      const data = `universityId=${universityId}&clubId=${clubId}`;
+      const res = await getDataByPath(`${path}`, '', data);
+      console.log(res.data);
+      if (res !== null && res.status === 200) {
+        setClubActivity(res.data);
+      }
+    }
+  }
+
+  useEffect(() => {
+    if (clubHeadmasters === null) {
+      loadDataHeadmasters(university_id);
+    }
+    if (clubEventCompetitions === null) {
+      loadDataEventCompetition('');
+    }
+    if (clubActivity === null) {
+      loadClubActivity(university_id, club_id);
+    }
+  });
+
   return (
     <>
       <CardsHeader name="Default" parentName="Dashboards" />
@@ -145,31 +122,36 @@ function Dashboard() {
               </CardHeader>
               <CardBody>
                 <ListGroup className="list my--3" flush>
-                  {clubHeadmaster ? (
-                    clubHeadmaster.map((e, value) => {
+                  {clubHeadmasters ? (
+                    clubHeadmasters.map((ele, value) => {
                       return (
-                        <ListGroupItem className="px-0" key={`Headmaster-${value}`}>
+                        <ListGroupItem className="px-0" key={`Headmasters-${value}`}>
                           <Row className="align-items-center">
                             <Col className="col-auto">
                               <a className="avatar rounded-circle" href="#pablo" onClick={(e) => e.preventDefault()}>
-                                <img alt="..." src={e.avartar} />
+                                <img alt="..." src={ele.avatar} />
                               </a>
                             </Col>
                             <div className="col ml--2">
                               <h4 className="mb-0">
                                 <a href="#pablo" onClick={(e) => e.preventDefault()}>
-                                  {e.name}
+                                  {ele.name}
                                 </a>
-                                <span className="text-muted">{`   (${e.role})`}</span>
+                                <span className="text-muted">{`   (${ele.club_role_name})`}</span>
                               </h4>
-                              <span className={`${e.status === 'Online' ? 'text-success' : 'text-danger'}`}>●</span> <small>{e.status}</small>
+                              <span className={`${ele.status === true ? 'text-success' : 'text-danger'}`}>●</span>{' '}
+                              <small>{ele.status === true ? 'Online' : 'Offline'}</small>
                             </div>
                           </Row>
                         </ListGroupItem>
                       );
                     })
                   ) : (
-                    <h2>Please wait</h2>
+                    <img
+                      alt="loading"
+                      src="https://upload.wikimedia.org/wikipedia/commons/b/b1/Loading_icon.gif?20151024034921"
+                      style={{ display: 'block', margin: 'auto', width: '50%', height: '50%' }}
+                    />
                   )}
                 </ListGroup>
               </CardBody>
@@ -182,8 +164,8 @@ function Dashboard() {
               </CardHeader>
               <CardBody className="p-0">
                 <ListGroup data-toggle="checklist" flush>
-                  {clubEventCompetition ? (
-                    clubEventCompetition.map((e, value) => {
+                  {clubEventCompetitions ? (
+                    clubEventCompetitions.map((e, value) => {
                       return (
                         <ListGroupItem className="checklist-entry flex-column align-items-start py-4 px-4" key={`Event-${value}`}>
                           <div className={`${e.type === 'Sự kiện' ? 'checklist-item-success' : 'checklist-item-info'} checklist-item`}>
@@ -203,7 +185,11 @@ function Dashboard() {
                       );
                     })
                   ) : (
-                    <h2>Please wait</h2>
+                    <img
+                      alt="loading"
+                      src="https://upload.wikimedia.org/wikipedia/commons/b/b1/Loading_icon.gif?20151024034921"
+                      style={{ display: 'block', margin: 'auto', width: '50%', height: '50%' }}
+                    />
                   )}
                 </ListGroup>
               </CardBody>
@@ -235,7 +221,11 @@ function Dashboard() {
                       );
                     })
                   ) : (
-                    <h2>Please Wait</h2>
+                    <img
+                      alt="loading"
+                      src="https://upload.wikimedia.org/wikipedia/commons/b/b1/Loading_icon.gif?20151024034921"
+                      style={{ display: 'block', margin: 'auto', width: '50%', height: '50%' }}
+                    />
                   )}
                 </ListGroup>
               </CardBody>
