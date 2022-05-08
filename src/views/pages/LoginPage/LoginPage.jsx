@@ -25,12 +25,14 @@ import { useAuth } from 'contexts/AuthContext';
 import { NotificationManager } from 'react-notifications';
 //import jwtDecode from 'jwt-decode';
 import { loginByPath } from 'services/auth.service';
+import { useHistory } from 'react-router';
 
 export default function Login() {
   const [focusedEmail, setfocusedEmail] = React.useState(false);
   const [focusedPassword, setfocusedPassword] = React.useState(false);
 
   const { signInWithGoogle } = useAuth();
+  const history = useHistory();
 
   // React.useEffect(() => {
   //   if (currentUser !== null && localStorage.getItem('accessToken') !== null) {
@@ -52,7 +54,6 @@ export default function Login() {
 
   async function loginWithAccessToken(accessToken) {
     const res = await loginByPath('api/v1/firebase', accessToken);
-    console.log(res);
     if (res.status === 200) {
       if (localStorage) {
         NotificationManager.success('Welcome', 'Login Success', 3000);

@@ -7,14 +7,16 @@ const backendUrl = 'http://14.225.254.134';
 export async function loginByPath(path, accessToken) {
   try {
     let endpoint = `${backendUrl}`;
-    let otions = {};
+    let option = {};
     if (path !== '') {
       endpoint = `${backendUrl}/${path}`;
     }
     if (accessToken !== '') {
-      otions = getOptions(accessToken);
+      option = getOptions(accessToken);
     }
-    const res = await axios.post(endpoint, {}, otions);
+    const res = await axios.post(endpoint, {}, option);
+    console.log(res);
+
     return res;
   } catch (error) {
     return error.response;

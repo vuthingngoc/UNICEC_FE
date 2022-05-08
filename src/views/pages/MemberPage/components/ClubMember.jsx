@@ -385,8 +385,8 @@ function ClubMember() {
           <Card>
             <CardHeader>
               <Row>
-                <h2 className="mb-0">Danh sách các thành viên</h2>
                 <Col className="mt-3 mt-md-0 text-md-right" lg="12" xs="0">
+                  <h2 className>Danh sách các thành viên</h2>
                   <Button className="btn-neutral" color="default" size="sm">
                     New
                   </Button>
