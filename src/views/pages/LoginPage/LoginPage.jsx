@@ -51,7 +51,8 @@ export default function Login() {
   // });
 
   async function loginWithAccessToken(accessToken) {
-    const res = await loginByPath('api/v1/Firebase', accessToken);
+    const res = await loginByPath('api/v1/firebase', accessToken);
+    console.log(res);
     if (res.status === 200) {
       if (localStorage) {
         NotificationManager.success('Welcome', 'Login Success', 3000);
