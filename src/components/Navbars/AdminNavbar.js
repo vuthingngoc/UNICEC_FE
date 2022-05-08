@@ -1,6 +1,9 @@
+import React, { useEffect, useState } from 'react';
+import jwtDecode from 'jwt-decode';
 import classnames from 'classnames';
 // nodejs library to set properties for components
 import PropTypes from 'prop-types';
+import { useAuth } from 'contexts/AuthContext.js';
 // reactstrap components
 import {
   Collapse,
@@ -14,19 +17,25 @@ import {
   InputGroupAddon,
   InputGroupText,
   InputGroup,
-  ListGroupItem,
-  ListGroup,
+  // ListGroupItem,
+  // ListGroup,
   Media,
   Navbar,
   NavItem,
   NavLink,
   Nav,
   Container,
-  Row,
-  Col,
+  // Row,
+  // Col,
 } from 'reactstrap';
+import { useHistory } from 'react-router';
 
 function AdminNavbar({ theme, sidenavOpen, toggleSidenav }) {
+  const [email, setEmail] = useState(null);
+  const [avatar, setAvatar] = useState(null);
+  const { currentUser, logout } = useAuth();
+  const history = useHistory();
+
   // function that on mobile devices makes the search open
   const openSearch = () => {
     document.body.classList.add('g-navbar-search-showing');
@@ -53,6 +62,19 @@ function AdminNavbar({ theme, sidenavOpen, toggleSidenav }) {
       document.body.classList.remove('g-navbar-search-hidden');
     }, 500);
   };
+
+  useEffect(() => {
+    if (localStorage) {
+      if (localStorage.getItem('accessToken') !== null) {
+        const jwtData = jwtDecode(localStorage.getItem('accessToken'));
+        console.log(jwtData);
+        // let local = localStorage.getItem('accessToken');
+        // console.log(local);
+        setEmail(jwtData.Email);
+        setAvatar(jwtData.Avatar);
+      }
+    }
+  });
 
   return (
     <>
@@ -109,7 +131,7 @@ function AdminNavbar({ theme, sidenavOpen, toggleSidenav }) {
                 <DropdownToggle className="nav-link" color="" tag="a">
                   <i className="ni ni-bell-55" />
                 </DropdownToggle>
-                <DropdownMenu className="dropdown-menu-xl py-0 overflow-hidden" right>
+                {/* <DropdownMenu className="dropdown-menu-xl py-0 overflow-hidden" right>
                   <div className="px-3 py-3">
                     <h6 className="text-sm text-muted m-0">
                       You have <strong className="text-info">13</strong> notifications.
@@ -212,13 +234,13 @@ function AdminNavbar({ theme, sidenavOpen, toggleSidenav }) {
                   <DropdownItem className="text-center text-info font-weight-bold py-3" href="#pablo" onClick={(e) => e.preventDefault()}>
                     View all
                   </DropdownItem>
-                </DropdownMenu>
+                </DropdownMenu> */}
               </UncontrolledDropdown>
               <UncontrolledDropdown nav>
                 <DropdownToggle className="nav-link" color="" tag="a">
                   <i className="ni ni-ungroup" />
                 </DropdownToggle>
-                <DropdownMenu className="dropdown-menu-lg dropdown-menu-dark bg-default" right>
+                {/* <DropdownMenu className="dropdown-menu-lg dropdown-menu-dark bg-default" right>
                   <Row className="shortcuts px-4">
                     <Col className="shortcut-item" href="#pablo" onClick={(e) => e.preventDefault()} xs="4" tag="a">
                       <span className="shortcut-media avatar rounded-circle bg-gradient-red">
@@ -257,48 +279,62 @@ function AdminNavbar({ theme, sidenavOpen, toggleSidenav }) {
                       <small>Shop</small>
                     </Col>
                   </Row>
-                </DropdownMenu>
+                </DropdownMenu> */}
               </UncontrolledDropdown>
             </Nav>
             <Nav className="align-items-center ml-auto ml-md-0" navbar>
-              <UncontrolledDropdown nav>
-                <DropdownToggle className="nav-link pr-0" color="" tag="a">
-                  <Media className="align-items-center">
-                    <span className="avatar avatar-sm rounded-circle">
-                      <img alt="..." src={require('assets/img/theme/team-4.jpg').default} />
-                    </span>
-                    <Media className="ml-2 d-none d-lg-block">
-                      <span className="mb-0 text-sm font-weight-bold">John Snow</span>
+              {currentUser !== null && localStorage.getItem('accessToken') !== null && email !== null ? (
+                <UncontrolledDropdown nav>
+                  <DropdownToggle className="nav-link pr-0" color="" tag="a">
+                    <Media className="align-items-center">
+                      <span className="avatar avatar-sm rounded-circle">
+                        <img alt="..." src={avatar} />
+                      </span>
+                      <Media className="ml-2 d-none d-lg-block">
+                        <span className="mb-0 text-sm font-weight-bold">{email}</span>
+                      </Media>
                     </Media>
-                  </Media>
-                </DropdownToggle>
-                <DropdownMenu right>
-                  <DropdownItem className="noti-title" header tag="div">
-                    <h6 className="text-overflow m-0">Welcome!</h6>
-                  </DropdownItem>
-                  <DropdownItem href="#pablo" onClick={(e) => e.preventDefault()}>
-                    <i className="ni ni-single-02" />
-                    <span>My profile</span>
-                  </DropdownItem>
-                  <DropdownItem href="#pablo" onClick={(e) => e.preventDefault()}>
-                    <i className="ni ni-settings-gear-65" />
-                    <span>Settings</span>
-                  </DropdownItem>
-                  <DropdownItem href="#pablo" onClick={(e) => e.preventDefault()}>
-                    <i className="ni ni-calendar-grid-58" />
-                    <span>Activity</span>
-                  </DropdownItem>
-                  <DropdownItem href="#pablo" onClick={(e) => e.preventDefault()}>
-                    <i className="ni ni-support-16" />
-                    <span>Support</span>
-                  </DropdownItem>
-                  <DropdownItem divider />
-                  <DropdownItem href="#pablo" onClick={(e) => e.preventDefault()}>
-                    <i className="ni ni-user-run" />
-                    <span>Logout</span>
-                  </DropdownItem>
-                </DropdownMenu>
-              </UncontrolledDropdown>
+                  </DropdownToggle>
+                  <DropdownMenu right>
+                    <DropdownItem className="noti-title" header tag="div">
+                      <h6 className="text-overflow m-0">Welcome!</h6>
+                    </DropdownItem>
+                    <DropdownItem href="#pablo" onClick={(e) => e.preventDefault()}>
+                      <i className="ni ni-single-02" />
+                      <span>My profile</span>
+                    </DropdownItem>
+                    <DropdownItem href="#pablo" onClick={(e) => e.preventDefault()}>
+                      <i className="ni ni-settings-gear-65" />
+                      <span>Settings</span>
+                    </DropdownItem>
+                    <DropdownItem href="#pablo" onClick={(e) => e.preventDefault()}>
+                      <i className="ni ni-calendar-grid-58" />
+                      <span>Activity</span>
+                    </DropdownItem>
+                    <DropdownItem href="#pablo" onClick={(e) => e.preventDefault()}>
+                      <i className="ni ni-support-16" />
+                      <span>Support</span>
+                    </DropdownItem>
+                    <DropdownItem divider />
+                    <DropdownItem
+                      href="#pablo"
+                      onClick={async () => {
+                        logout();
+                        if (localStorage) {
+                          localStorage.clear('accessToken');
+                          history.push('/login');
+                        }
+                      }}
+                    >
+                      <i className="ni ni-user-run" />
+                      <span>Logout</span>
+                    </DropdownItem>
+                  </DropdownMenu>
+                </UncontrolledDropdown>
+              ) : (
+                <h2 />
+              )}
+              ;
             </Nav>
           </Collapse>
         </Container>

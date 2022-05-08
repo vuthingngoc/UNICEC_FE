@@ -15,7 +15,7 @@ import LoginPage from 'views/pages/LoginPage/LoginPage.jsx';
 //ShowAllClub
 //import AllClubPage from 'views/pages/AllCLubPage/AllClubPage.jsx';
 
-import ShowCompetition from 'views/pages/ShowCompetitionPage/index.jsx';
+import ShowCompetition from 'views/pages/ShowCompetitionPage/CompetitionPage.jsx';
 
 const routes = [
   {
@@ -65,28 +65,28 @@ const routes = [
         name: 'Cuộc thi',
         miniName: 'C',
         component: ShowCompetition,
-        layout: '/auth',
+        layout: '/admin',
       },
       {
         path: '/su-kien',
         name: 'Sự kiện',
         miniName: 'S',
         component: LoginPage,
-        layout: '/auth',
+        layout: '/admin',
       },
       {
         path: '/da-tham-gia',
         name: 'Đã tham gia',
         miniName: 'TH',
         component: Register,
-        layout: '/auth',
+        layout: '/admin',
       },
       {
         path: '/tao-cuoc-thi',
         name: 'Tạo Cuộc thi',
         miniName: 'T',
         component: Lock,
-        layout: '/auth',
+        layout: '/admin',
       },
     ],
   },
