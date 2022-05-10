@@ -68,7 +68,7 @@ export default function Login() {
         //   localStorage.setItem('accessToken', res.data.data);
         //   history.push('/home');
         // }
-        localStorage.setItem('accessToken', res.data.data);
+        localStorage.setItem('accessToken', res.data.token);
         history.push('/admin/clb-tham-gia');
       }
     } else {
