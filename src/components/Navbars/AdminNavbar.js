@@ -334,7 +334,6 @@ function AdminNavbar({ theme, sidenavOpen, toggleSidenav }) {
               ) : (
                 <h2 />
               )}
-              ;
             </Nav>
           </Collapse>
         </Container>

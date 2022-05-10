@@ -65,33 +65,32 @@ function Dashboard() {
   const [clubEventCompetitions, setClubEventCompetitions] = useState(null);
   const [clubActivity, setClubActivity] = useState(null);
 
-  async function loadDataHeadmasters(id) {
+  async function loadDataHeadmasters(id, accessToken) {
     if (id !== null) {
       const path = 'api/v1/member/leaders/club/';
-      const res = await getDataByPath(`${path}${id}`, '', '');
+      const res = await getDataByPath(`${path}${id}`, accessToken, '');
       if (res !== null && res.status === 200) {
         setClubHeadmasters(res.data);
       }
     }
   }
 
-  async function loadDataEventCompetition(id) {
+  async function loadDataEventCompetition(id, accessToken) {
     if (id !== null) {
       const path = 'api/v1/competition/top3';
       const data = 'event=true';
-      const res = await getDataByPath(`${path}${id}`, '', data);
+      const res = await getDataByPath(`${path}${id}`, accessToken, data);
       if (res !== null && res.status === 200) {
         setClubEventCompetitions(res.data);
       }
     }
   }
 
-  async function loadClubActivity(universityId, clubId) {
+  async function loadClubActivity(universityId, clubId, accessToken) {
     if (universityId !== null && clubId !== null) {
       const path = 'api/v1/club-activity/top4';
       const data = `universityId=${universityId}&clubId=${clubId}`;
-      const res = await getDataByPath(`${path}`, '', data);
-      console.log(res.data);
+      const res = await getDataByPath(`${path}`, accessToken, data);
       if (res !== null && res.status === 200) {
         setClubActivity(res.data);
       }
@@ -99,14 +98,17 @@ function Dashboard() {
   }
 
   useEffect(() => {
-    if (clubHeadmasters === null) {
-      loadDataHeadmasters(university_id);
-    }
-    if (clubEventCompetitions === null) {
-      loadDataEventCompetition('');
-    }
-    if (clubActivity === null) {
-      loadClubActivity(university_id, club_id);
+    if (localStorage && localStorage.getItem('accessToken')) {
+      const accessToken = localStorage.getItem('accessToken');
+      if (clubHeadmasters === null) {
+        loadDataHeadmasters(university_id, accessToken);
+      }
+      if (clubEventCompetitions === null) {
+        loadDataEventCompetition('', accessToken);
+      }
+      if (clubActivity === null) {
+        loadClubActivity(university_id, club_id, accessToken);
+      }
     }
   });
 
@@ -164,7 +166,7 @@ function Dashboard() {
               </CardHeader>
               <CardBody className="p-0">
                 <ListGroup data-toggle="checklist" flush>
-                  {clubEventCompetitions ? (
+                  {clubEventCompetitions && Object.keys(clubEventCompetitions).length > 0 ? (
                     clubEventCompetitions.map((e, value) => {
                       return (
                         <ListGroupItem className="checklist-entry flex-column align-items-start py-4 px-4" key={`Event-${value}`}>
@@ -184,6 +186,8 @@ function Dashboard() {
                         </ListGroupItem>
                       );
                     })
+                  ) : clubEventCompetitions && Object.keys(clubEventCompetitions).length === 0 ? (
+                    <h2 style={{ margin: 'auto' }}>Danh sách trống</h2>
                   ) : (
                     <img
                       alt="loading"

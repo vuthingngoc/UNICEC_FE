@@ -13,7 +13,6 @@ export async function getDataByPath(path, accessToken, data) {
     if (data !== '') {
       endpoint = `${backendUrl}/${path}?${data}`;
     }
-    console.log(endpoint);
     const res = await axios.get(endpoint, option);
     return res;
   } catch (error) {
