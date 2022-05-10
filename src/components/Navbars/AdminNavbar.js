@@ -31,7 +31,7 @@ import {
 import { useHistory } from 'react-router';
 
 function AdminNavbar({ theme, sidenavOpen, toggleSidenav }) {
-  const [email, setEmail] = useState(null);
+  const [fullname, setFullname] = useState(null);
   const [avatar, setAvatar] = useState(null);
   const { currentUser, logout } = useAuth();
   const history = useHistory();
@@ -70,7 +70,7 @@ function AdminNavbar({ theme, sidenavOpen, toggleSidenav }) {
         console.log(jwtData);
         // let local = localStorage.getItem('accessToken');
         // console.log(local);
-        setEmail(jwtData.Email);
+        setFullname(jwtData.Fullname);
         setAvatar(jwtData.Avatar);
       }
     }
@@ -283,7 +283,7 @@ function AdminNavbar({ theme, sidenavOpen, toggleSidenav }) {
               </UncontrolledDropdown>
             </Nav>
             <Nav className="align-items-center ml-auto ml-md-0" navbar>
-              {currentUser !== null && localStorage.getItem('accessToken') !== null && email !== null ? (
+              {currentUser !== null && localStorage.getItem('accessToken') !== null && fullname !== null ? (
                 <UncontrolledDropdown nav>
                   <DropdownToggle className="nav-link pr-0" color="" tag="a">
                     <Media className="align-items-center">
@@ -291,7 +291,7 @@ function AdminNavbar({ theme, sidenavOpen, toggleSidenav }) {
                         <img alt="..." src={avatar} />
                       </span>
                       <Media className="ml-2 d-none d-lg-block">
-                        <span className="mb-0 text-sm font-weight-bold">{email}</span>
+                        <span className="mb-0 text-sm font-weight-bold">{fullname}</span>
                       </Media>
                     </Media>
                   </DropdownToggle>
