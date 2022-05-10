@@ -15,7 +15,6 @@ export async function loginByPath(path, accessToken) {
       option = getOptions(accessToken);
     }
     const res = await axios.post(endpoint, {}, option);
-    console.log(res);
 
     return res;
   } catch (error) {

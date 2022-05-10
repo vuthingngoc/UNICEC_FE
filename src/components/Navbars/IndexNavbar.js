@@ -52,7 +52,7 @@ function AdminNavbar() {
     <>
       <Navbar className={classNames('fixed-top navbar-horizontal', navbarColor)} expand="lg" id="navbar-main">
         <Container>
-          <NavbarBrand to="/" tag={Link}>
+          <NavbarBrand to="/admin/clb-tham-gia" tag={Link}>
             <img alt="..." src={require('assets/img/brand/Logo.png').default} style={{ height: '50px', width: '50px' }} />
           </NavbarBrand>
           <button
@@ -71,7 +71,7 @@ function AdminNavbar() {
             <div className="navbar-collapse-header">
               <Row>
                 <Col className="collapse-brand" xs="6">
-                  <Link to="/admin/dashboard">
+                  <Link to="/admin/clb-tham-gia">
                     <img alt="..." src={require('assets/img/brand/Logo text ngang.png').default} />
                   </Link>
                 </Col>
@@ -93,7 +93,7 @@ function AdminNavbar() {
               </Row>
               <Row style={{ marginTop: '25px' }}>
                 <Col className="collapse-brand" xs="6">
-                  <Button className="btn-default btn-icon" href="/auth/login">
+                  <Button className="btn-default btn-icon" href="/login">
                     <span className="btn-inner--icon">
                       <i className="fas fa-sign-in-alt mr-2" />
                     </span>
@@ -184,7 +184,7 @@ function AdminNavbar() {
                 </UncontrolledTooltip>
               </NavItem>
               <NavItem className="d-none d-lg-block ml-lg-4">
-                <Button className="btn-neutral btn-icon" color="default" href="/auth/login">
+                <Button className="btn-neutral btn-icon" color="default" href="/login">
                   <span className="btn-inner--icon">
                     <i className="fas fa-sign-in-alt mr-2" />
                   </span>
