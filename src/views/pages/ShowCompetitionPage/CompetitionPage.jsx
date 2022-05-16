@@ -1,67 +1,62 @@
 import React from 'react';
-import { Card, CardBody, ListGroupItem, ListGroup, Container, Row, Col } from 'reactstrap';
+import { CardBody, Container, Row, Col, CardImg, CardTitle, CardText } from 'reactstrap';
 
 // core components
 import CompetitionHeader from './components/CompetitionHeader.js';
+import styled from 'styled-components';
+
+const CardHover = styled.div`
+  :hover {
+    transform: scale(1.01);
+  }
+`;
 
 const competitionData = [
   {
     id: '1',
-    title: 'HuyLãi suất ngân hàng đồng loạt tăng',
-    avartar:
-      'https://scontent.fsgn5-11.fna.fbcdn.net/v/t39.30808-6/275005018_3058643097691973_1254205249411315442_n.jpg?_nc_cat=103&ccb=1-5&_nc_sid=174925&_nc_ohc=KvkJ0Cjv28AAX_GCdYK&_nc_ht=scontent.fsgn5-11.fna&oh=00_AT9cvhzxTdFOU6gnuCJPyuJ6TqhIczL8fUlFL9RblJj7aw&oe=6273E1F9',
-    content:
-      'Ngày càng nhiều ngân hàng tăng lãi suất huy động trong bối cảnh tăng trưởng tín dụng cao nhất một thập niên. Tuy nhiên, nhóm ngân hàng quốc doanh vẫn đứng ngoài cuộc đua này.    ',
+    title: 'Lãi suất ngân hàng đồng loạt tăng',
+    avartar: 'assets/img/theme/img-1-1000x600.jpg',
+    content: 'Ngày càng nhiều ngân hàng tăng lãi suất huy động trong bối cảnh tăng trưởng tín dụng cao nhất một thập niên.',
     startTime: '20/10/2000',
     endTime: '25/10/2000',
   },
   {
     id: '1',
-    title: 'HuyLãi suất ngân hàng đồng loạt tăng',
-    avartar:
-      'https://scontent.fsgn5-11.fna.fbcdn.net/v/t39.30808-6/275005018_3058643097691973_1254205249411315442_n.jpg?_nc_cat=103&ccb=1-5&_nc_sid=174925&_nc_ohc=KvkJ0Cjv28AAX_GCdYK&_nc_ht=scontent.fsgn5-11.fna&oh=00_AT9cvhzxTdFOU6gnuCJPyuJ6TqhIczL8fUlFL9RblJj7aw&oe=6273E1F9',
-    content:
-      'Ngày càng nhiều ngân hàng tăng lãi suất huy động trong bối cảnh tăng trưởng tín dụng cao nhất một thập niên. Tuy nhiên, nhóm ngân hàng quốc doanh vẫn đứng ngoài cuộc đua này.    ',
+    title: 'Lãi suất ngân hàng đồng loạt tăng',
+    avartar: 'assets/img/theme/img-1-1000x600.jpg',
+    content: 'Ngày càng nhiều ngân hàng tăng lãi suất huy động trong bối cảnh tăng trưởng tín dụng cao nhất một thập niên.',
     startTime: '20/10/2000',
     endTime: '25/10/2000',
   },
   {
     id: '1',
-    title: 'HuyLãi suất ngân hàng đồng loạt tăng',
-    avartar:
-      'https://scontent.fsgn5-11.fna.fbcdn.net/v/t39.30808-6/275005018_3058643097691973_1254205249411315442_n.jpg?_nc_cat=103&ccb=1-5&_nc_sid=174925&_nc_ohc=KvkJ0Cjv28AAX_GCdYK&_nc_ht=scontent.fsgn5-11.fna&oh=00_AT9cvhzxTdFOU6gnuCJPyuJ6TqhIczL8fUlFL9RblJj7aw&oe=6273E1F9',
-    content:
-      'Ngày càng nhiều ngân hàng tăng lãi suất huy động trong bối cảnh tăng trưởng tín dụng cao nhất một thập niên. Tuy nhiên, nhóm ngân hàng quốc doanh vẫn đứng ngoài cuộc đua này.    ',
+    title: 'Lãi suất ngân hàng đồng loạt tăng',
+    avartar: 'assets/img/theme/img-1-1000x600.jpg',
+    content: 'Ngày càng nhiều ngân hàng tăng lãi suất huy động trong bối cảnh tăng trưởng tín dụng cao nhất một thập niên.',
     startTime: '20/10/2000',
     endTime: '25/10/2000',
   },
   {
     id: '1',
-    title: 'HuyLãi suất ngân hàng đồng loạt tăng',
-    avartar:
-      'https://scontent.fsgn5-11.fna.fbcdn.net/v/t39.30808-6/275005018_3058643097691973_1254205249411315442_n.jpg?_nc_cat=103&ccb=1-5&_nc_sid=174925&_nc_ohc=KvkJ0Cjv28AAX_GCdYK&_nc_ht=scontent.fsgn5-11.fna&oh=00_AT9cvhzxTdFOU6gnuCJPyuJ6TqhIczL8fUlFL9RblJj7aw&oe=6273E1F9',
-    content:
-      'Ngày càng nhiều ngân hàng tăng lãi suất huy động trong bối cảnh tăng trưởng tín dụng cao nhất một thập niên. Tuy nhiên, nhóm ngân hàng quốc doanh vẫn đứng ngoài cuộc đua này.    ',
+    title: 'Lãi suất ngân hàng đồng loạt tăng',
+    avartar: 'assets/img/theme/img-1-1000x600.jpg',
+    content: 'Ngày càng nhiều ngân hàng tăng lãi suất huy động trong bối cảnh tăng trưởng tín dụng cao nhất một thập niên.',
     startTime: '20/10/2000',
     endTime: '25/10/2000',
   },
   {
     id: '1',
-    title: 'HuyLãi suất ngân hàng đồng loạt tăng',
-    avartar:
-      'https://scontent.fsgn5-11.fna.fbcdn.net/v/t39.30808-6/275005018_3058643097691973_1254205249411315442_n.jpg?_nc_cat=103&ccb=1-5&_nc_sid=174925&_nc_ohc=KvkJ0Cjv28AAX_GCdYK&_nc_ht=scontent.fsgn5-11.fna&oh=00_AT9cvhzxTdFOU6gnuCJPyuJ6TqhIczL8fUlFL9RblJj7aw&oe=6273E1F9',
-    content:
-      'Ngày càng nhiều ngân hàng tăng lãi suất huy động trong bối cảnh tăng trưởng tín dụng cao nhất một thập niên. Tuy nhiên, nhóm ngân hàng quốc doanh vẫn đứng ngoài cuộc đua này.    ',
+    title: 'Lãi suất ngân hàng đồng loạt tăng',
+    avartar: 'assets/img/theme/img-1-1000x600.jpg',
+    content: 'Ngày càng nhiều ngân hàng tăng lãi suất huy động trong bối cảnh tăng trưởng tín dụng cao nhất một thập niên.',
     startTime: '20/10/2000',
     endTime: '25/10/2000',
   },
   {
     id: '1',
-    title: 'HuyLãi suất ngân hàng đồng loạt tăng',
-    avartar:
-      'https://scontent.fsgn5-11.fna.fbcdn.net/v/t39.30808-6/275005018_3058643097691973_1254205249411315442_n.jpg?_nc_cat=103&ccb=1-5&_nc_sid=174925&_nc_ohc=KvkJ0Cjv28AAX_GCdYK&_nc_ht=scontent.fsgn5-11.fna&oh=00_AT9cvhzxTdFOU6gnuCJPyuJ6TqhIczL8fUlFL9RblJj7aw&oe=6273E1F9',
-    content:
-      'Ngày càng nhiều ngân hàng tăng lãi suất huy động trong bối cảnh tăng trưởng tín dụng cao nhất một thập niên. Tuy nhiên, nhóm ngân hàng quốc doanh vẫn đứng ngoài cuộc đua này.    ',
+    title: 'Lãi suất ngân hàng đồng loạt tăng',
+    avartar: 'assets/img/theme/img-1-1000x600.jpg',
+    content: 'Ngày càng nhiều ngân hàng tăng lãi suất huy động trong bối cảnh tăng trưởng tín dụng cao nhất một thập niên.  ',
     startTime: '20/10/2000',
     endTime: '25/10/2000',
   },
@@ -77,39 +72,30 @@ function CompetitionPage() {
             competitionData.map((e, value) => {
               return (
                 <Col xl="4" md="4" key={`ShowCompetition-${value}`}>
-                  <Card>
-                    {/* <CardHeader>
-                      <h5 className="h3 mb-0">Ban Quản Lý</h5>
-                    </CardHeader> */}
-                    <CardBody>
-                      <ListGroup className="list my--3" flush>
-                        <ListGroupItem className="px-0">
-                          <Row className="align-items-center">
-                            {/* <Col className="col-auto">
-                              
-                            </Col> */}
+                  <a href="">
+                    <CardHover className="card">
+                      <CardImg alt="..." src={require('assets/img/theme/img-1-1000x900.jpg').default} top />
+                      <CardBody>
+                        <Row>
+                          <Col className="text-right" xl="6" md="6" xs="6"></Col>
+                          <Col className="text-right" xl="6" md="6" xs="6">
+                            <i className="ni ni-calendar-grid-58 text-red" style={{ marginRight: '10px' }} />
+                            <label className="text-danger mb-0">{e.startTime} </label>
+                          </Col>
+                        </Row>
 
-                            <div className="col ml--2">
-                              <a className="avatar rounded-circle" href="#pablo" onClick={(e) => e.preventDefault()}>
-                                <img alt="..." src={e.avartar} />
-                              </a>
-                              <h4 className="mb-0">
-                                <a href="#pablo" onClick={(e) => e.preventDefault()}>
-                                  {e.title}
-                                </a>{' '}
-                                <br />
-                                <span className="text-muted">{`${e.content}`}</span>
-                              </h4>
-                              <span className="text-danger">{`${e.startTime}`} - </span> <span className="text-danger">{`${e.endTime}`}</span> <br />
-                              <a href="" color="primary" className="mt-3 mb-0 text-sm">
-                                Xem thêm
-                              </a>
-                            </div>
-                          </Row>
-                        </ListGroupItem>
-                      </ListGroup>
-                    </CardBody>
-                  </Card>
+                        <CardTitle className="h2 mb-0">{e.title}</CardTitle>
+
+                        <CardText className="mt-4" style={{ color: 'Black', textOverflow: 'ellipsis', whiteSpace: 'nowrap', overflow: 'hidden' }}>
+                          {e.content}
+                        </CardText>
+
+                        {/* <Button className="px-0" color="link" href="#pablo" onClick={(e) => e.preventDefault()}>
+                        Xem thêm
+                      </Button> */}
+                      </CardBody>
+                    </CardHover>
+                  </a>
                 </Col>
               );
             })
