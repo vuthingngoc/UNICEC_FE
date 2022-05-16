@@ -21,15 +21,16 @@ import {
 // core components
 import AuthHeader from 'components/Headers/AuthHeader.js';
 import { useAuth } from 'contexts/AuthContext';
-//import { useHistory } from 'react-router';
 import { NotificationManager } from 'react-notifications';
-//import jwtDecode from 'jwt-decode';
 import { loginByPath } from 'services/auth.service';
+import jwtDecode from 'jwt-decode';
+import { getDataByPath } from 'services/data.service';
 import { useHistory } from 'react-router';
 
 export default function Login() {
   const [focusedEmail, setfocusedEmail] = React.useState(false);
   const [focusedPassword, setfocusedPassword] = React.useState(false);
+  const [isSubmitting, setIsSubmitting] = React.useState(false);
 
   const { signInWithGoogle } = useAuth();
   const history = useHistory();
@@ -52,28 +53,35 @@ export default function Login() {
   //   };
   // });
 
-  async function loginWithAccessToken(accessToken) {
-    const res = await loginByPath('api/v1/firebase', accessToken);
+  async function loginWithAccessToken(accessTokenFirebase) {
+    setIsSubmitting(true);
+    const res = await loginByPath('api/v1/firebase', accessTokenFirebase);
     if (res.status === 200) {
       if (localStorage) {
         NotificationManager.success('Welcome', 'Login Success', 3000);
-        // const role = jwtDecode(res.data.data).ROLE;
-        // setIsSubmitting(false);
-        // if (role === '2') {
-        //   localStorage.setItem('accessToken', res.data.data);
-        //   history.push('/admin/home');
-        // } else if (role === '3') {
-        //   history.push('/newprofile');
-        // } else {
-        //   localStorage.setItem('accessToken', res.data.data);
-        //   history.push('/home');
-        // }
         localStorage.setItem('accessToken', res.data.token);
-        history.push('/admin/clb-tham-gia');
+        localStorage.setItem('roleID', jwtDecode(res.data.token).RoleId);
+        localStorage.setItem('universityID', jwtDecode(res.data.token).UniversityId);
+        getClubAndUniversity(res.data.token);
       }
     } else {
       NotificationManager.warning('Server is busy now! Pleasy try againt', 'Server Error', 3000);
     }
+  }
+
+  async function getClubAndUniversity(accessToken) {
+    const res = await getDataByPath('api/v1/club/user', accessToken);
+    console.log(res);
+    if (res.status === 200) {
+      if (res.data.length > 0) {
+        localStorage.setItem('clubID', res.data[0].id);
+        setIsSubmitting(false);
+        // history.push('/admin/clb-tham-gia');
+      }
+    } else {
+      localStorage.setItem('clubID', '0');
+    }
+    history.push('/admin/clb-tham-gia');
   }
 
   const handleErrorLogin = (request) => {
@@ -101,40 +109,24 @@ export default function Login() {
                   <small>Đăng nhập với</small>
                 </div>
                 <div className="btn-wrapper text-center">
-                  {/* <Button
-                    className="btn-neutral btn-icon"
-                    color="default"
-                    href="#pablo"
-                    onClick={(e) => e.preventDefault()}
-                  >
-                    <span className="btn-inner--icon mr-1">
-                      <img
-                        alt="..."
-                        src={
-                          require("assets/img/icons/common/github.svg").default
-                        }
-                      />
-                    </span>
-                    <span className="btn-inner--text">Github</span>
-                  </Button> */}
                   <Button
                     className="btn-neutral btn-icon"
                     color="default"
                     href="#pablo"
-                    //onClick={(e) => e.preventDefault()}
-                    onClick={() =>
+                    disabled={isSubmitting}
+                    onClick={() => {
                       signInWithGoogle()
                         .then((response) => {
                           console.log(response);
-                          // setIsSubmitting(false);
+                          setIsSubmitting(false);
                           loginWithAccessToken(response.user.accessToken);
                         })
                         .catch((error) => {
                           handleErrorLogin(error.message);
                           // setPassword('');
-                          // setIsSubmitting(false);
-                        })
-                    }
+                          setIsSubmitting(false);
+                        });
+                    }}
                   >
                     <span className="btn-inner--icon mr-1">
                       <img alt="..." src={require('assets/img/icons/common/google.svg').default} />
@@ -188,7 +180,7 @@ export default function Login() {
                     </label>
                   </div>
                   <div className="text-center">
-                    <Button className="my-4" color="info" type="button">
+                    <Button className="my-4" color="info" type="button" disabled={isSubmitting}>
                       Đăng nhập
                     </Button>
                   </div>
