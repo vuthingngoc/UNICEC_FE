@@ -5,9 +5,6 @@ import { Button, Card, CardHeader, CardBody, ListGroupItem, ListGroup, Progress,
 import CardsHeader from 'components/Headers/CardsHeader.js';
 import { getDataByPath } from 'services/data.service';
 
-const university_id = 1;
-const club_id = 1;
-
 const clubMember = [
   {
     id: '1',
@@ -66,20 +63,21 @@ function Dashboard() {
   const [clubActivity, setClubActivity] = useState(null);
 
   async function loadDataHeadmasters(id, accessToken) {
-    if (id !== null) {
-      const path = 'api/v1/member/leaders/club/';
-      const res = await getDataByPath(`${path}${id}`, accessToken, '');
+    if (id !== 0) {
+      const path = 'api/v1/member/leaders/club';
+      const res = await getDataByPath(`${path}/${id}`, accessToken, '');
       if (res !== null && res.status === 200) {
         setClubHeadmasters(res.data);
       }
     }
   }
 
-  async function loadDataEventCompetition(id, accessToken) {
-    if (id !== null) {
+  async function loadDataEventCompetition(club_id, accessToken) {
+    if (club_id !== null) {
       const path = 'api/v1/competition/top3';
-      const data = 'event=true';
-      const res = await getDataByPath(`${path}${id}`, accessToken, data);
+      const data = `clubId=${club_id}&event=true&status=0`;
+      const res = await getDataByPath(`${path}`, accessToken, data);
+      console.log(res);
       if (res !== null && res.status === 200) {
         setClubEventCompetitions(res.data);
       }
@@ -87,8 +85,8 @@ function Dashboard() {
   }
 
   async function loadClubActivity(universityId, clubId, accessToken) {
-    if (universityId !== null && clubId !== null) {
-      const path = 'api/v1/club-activity/top4';
+    if (universityId !== 0 && clubId !== 0) {
+      const path = 'api/v1/club-activity/top4-process';
       const data = `universityId=${universityId}&clubId=${clubId}`;
       const res = await getDataByPath(`${path}`, accessToken, data);
       if (res !== null && res.status === 200) {
@@ -99,12 +97,14 @@ function Dashboard() {
 
   useEffect(() => {
     if (localStorage && localStorage.getItem('accessToken')) {
+      const university_id = localStorage.getItem('universityID');
+      const club_id = localStorage.getItem('clubID');
       const accessToken = localStorage.getItem('accessToken');
       if (clubHeadmasters === null) {
-        loadDataHeadmasters(university_id, accessToken);
+        loadDataHeadmasters(club_id, accessToken);
       }
       if (clubEventCompetitions === null) {
-        loadDataEventCompetition('', accessToken);
+        loadDataEventCompetition(club_id, accessToken);
       }
       if (clubActivity === null) {
         loadClubActivity(university_id, club_id, accessToken);
@@ -216,8 +216,8 @@ function Dashboard() {
                               <Progress
                                 className="progress-xs mb-0"
                                 color={`${e.process / e.require === 1 ? 'green' : e.process / e.require >= 0.5 ? 'blue' : 'orange'}`}
-                                max={e.require}
-                                value={e.process}
+                                max={e.num_of_member_join}
+                                value={e.num_member_done_task}
                               />
                             </div>
                           </Row>
@@ -259,19 +259,9 @@ function Dashboard() {
                     <th scope="col">Chức vụ</th>
                     <th scope="col">Giới tính</th>
                     <th scope="col">Ngày tham gia</th>
-                    {/* <th scope="col">Hành động</th> */}
                   </tr>
                 </thead>
                 <tbody>
-                  {/* <tr>
-                    <th scope="row">/argon/</th>
-                    <td>4,569</td>
-                    <td>340</td>
-                    <td>
-                      <i className="fas fa-arrow-up text-success mr-3" />
-                      46,53%
-                    </td>
-                  </tr> */}
                   {clubMember ? (
                     clubMember.map((e, value) => {
                       return (
@@ -281,20 +271,6 @@ function Dashboard() {
                           <td> {e.role} </td>
                           <td> {e.gender} </td>
                           <td> {e.joinDate} </td>
-                          {/* <td className="table-actions">
-                            <a className="table-action" href="#pablo" id="tooltip564981685" onClick={(e) => e.preventDefault()}>
-                              <i className="fas fa-user-edit" />
-                            </a>
-                            <UncontrolledTooltip delay={0} target="tooltip564981685">
-                              Sửa thông tin
-                            </UncontrolledTooltip>
-                            <a className="table-action table-action-delete" href="#pablo" id="tooltip601065234" onClick={(e) => e.preventDefault()}>
-                              <i className="fas fa-trash" />
-                            </a>
-                            <UncontrolledTooltip delay={0} target="tooltip601065234">
-                              Vô hiệu hóa tài khoản
-                            </UncontrolledTooltip>
-                          </td> */}
                         </tr>
                       );
                     })
