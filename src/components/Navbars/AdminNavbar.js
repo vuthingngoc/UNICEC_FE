@@ -67,9 +67,6 @@ function AdminNavbar({ theme, sidenavOpen, toggleSidenav }) {
     if (localStorage) {
       if (localStorage.getItem('accessToken') !== null) {
         const jwtData = jwtDecode(localStorage.getItem('accessToken'));
-        console.log(jwtData);
-        // let local = localStorage.getItem('accessToken');
-        // console.log(local);
         setFullname(jwtData.Fullname);
         setAvatar(jwtData.Avatar);
       }

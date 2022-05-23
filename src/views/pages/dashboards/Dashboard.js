@@ -5,62 +5,11 @@ import { Button, Card, CardHeader, CardBody, ListGroupItem, ListGroup, Progress,
 import CardsHeader from 'components/Headers/CardsHeader.js';
 import { getDataByPath } from 'services/data.service';
 
-const clubMember = [
-  {
-    id: '1',
-    name: 'Huy',
-    role: 'Trưởng CLB',
-    gender: 'Nam',
-    joinDate: '20-01-2000',
-  },
-  {
-    id: '1',
-    name: 'Huy',
-    role: 'Trưởng CLB',
-    gender: 'Nam',
-    joinDate: '20-01-2000',
-  },
-  {
-    id: '1',
-    name: 'Huy',
-    role: 'Trưởng CLB',
-    gender: 'Nam',
-    joinDate: '20-01-2000',
-  },
-  {
-    id: '1',
-    name: 'Huy',
-    role: 'Trưởng CLB',
-    gender: 'Nam',
-    joinDate: '20-01-2000',
-  },
-  {
-    id: '1',
-    name: 'Huy',
-    role: 'Trưởng CLB',
-    gender: 'Nam',
-    joinDate: '20-01-2000',
-  },
-  {
-    id: '1',
-    name: 'Huy',
-    role: 'Trưởng CLB',
-    gender: 'Nam',
-    joinDate: '20-01-2000',
-  },
-  {
-    id: '1',
-    name: 'Huy',
-    role: 'Trưởng CLB',
-    gender: 'Nam',
-    joinDate: '20-01-2000',
-  },
-];
-
 function Dashboard() {
   const [clubHeadmasters, setClubHeadmasters] = useState(null);
   const [clubEventCompetitions, setClubEventCompetitions] = useState(null);
   const [clubActivity, setClubActivity] = useState(null);
+  const [clubMembers, setClubMembers] = useState(null);
 
   async function loadDataHeadmasters(id, accessToken) {
     if (id !== 0) {
@@ -68,6 +17,16 @@ function Dashboard() {
       const res = await getDataByPath(`${path}/${id}`, accessToken, '');
       if (res !== null && res.status === 200) {
         setClubHeadmasters(res.data);
+      }
+    }
+  }
+
+  async function loadDataMembers(clubId, accessToken) {
+    if (clubId !== 0) {
+      const path = 'api/v1/member/club';
+      const res = await getDataByPath(`${path}/${clubId}`, accessToken, '');
+      if (res !== null && res.status === 200) {
+        setClubMembers(res.data);
       }
     }
   }
@@ -80,24 +39,24 @@ function Dashboard() {
       console.log(res);
       if (res !== null && res.status === 200) {
         setClubEventCompetitions(res.data);
+      } else if (res !== null && res.status === 204) {
+        setClubEventCompetitions([]);
       }
     }
   }
 
-  async function loadClubActivity(universityId, clubId, accessToken) {
-    if (universityId !== 0 && clubId !== 0) {
+  async function loadClubActivity(clubId, accessToken) {
+    if (clubId !== 0) {
       const path = 'api/v1/club-activity/top4-process';
-      const data = `universityId=${universityId}&clubId=${clubId}`;
+      const data = `clubId=${clubId}`;
       const res = await getDataByPath(`${path}`, accessToken, data);
       if (res !== null && res.status === 200) {
         setClubActivity(res.data);
       }
     }
   }
-
   useEffect(() => {
     if (localStorage && localStorage.getItem('accessToken')) {
-      const university_id = localStorage.getItem('universityID');
       const club_id = localStorage.getItem('clubID');
       const accessToken = localStorage.getItem('accessToken');
       if (clubHeadmasters === null) {
@@ -107,10 +66,13 @@ function Dashboard() {
         loadDataEventCompetition(club_id, accessToken);
       }
       if (clubActivity === null) {
-        loadClubActivity(university_id, club_id, accessToken);
+        loadClubActivity(club_id, accessToken);
+      }
+      if (clubMembers === null) {
+        loadDataMembers(club_id, accessToken);
       }
     }
-  });
+  }, [clubHeadmasters]);
 
   return (
     <>
@@ -166,28 +128,30 @@ function Dashboard() {
               </CardHeader>
               <CardBody className="p-0">
                 <ListGroup data-toggle="checklist" flush>
-                  {clubEventCompetitions && Object.keys(clubEventCompetitions).length > 0 ? (
-                    clubEventCompetitions.map((e, value) => {
-                      return (
-                        <ListGroupItem className="checklist-entry flex-column align-items-start py-4 px-4" key={`Event-${value}`}>
-                          <div className={`${e.type === 'Sự kiện' ? 'checklist-item-success' : 'checklist-item-info'} checklist-item`}>
-                            <div className="checklist-info">
-                              <h5 className="checklist-title mb-0">{e.name}</h5>
-                              <small>{e.time}</small>
+                  {clubEventCompetitions ? (
+                    clubEventCompetitions.length > 0 ? (
+                      clubEventCompetitions.map((e, value) => {
+                        return (
+                          <ListGroupItem className="checklist-entry flex-column align-items-start py-4 px-4" key={`Event-${value}`}>
+                            <div className={`${e.type === 'Sự kiện' ? 'checklist-item-success' : 'checklist-item-info'} checklist-item`}>
+                              <div className="checklist-info">
+                                <h5 className="checklist-title mb-0">{e.name}</h5>
+                                <small>{e.time}</small>
+                              </div>
+                              <div>
+                                <Col className="col-auto">
+                                  <Button color="primary" size="sm" type="button">
+                                    Xem
+                                  </Button>
+                                </Col>
+                              </div>
                             </div>
-                            <div>
-                              <Col className="col-auto">
-                                <Button color="primary" size="sm" type="button">
-                                  Xem
-                                </Button>
-                              </Col>
-                            </div>
-                          </div>
-                        </ListGroupItem>
-                      );
-                    })
-                  ) : clubEventCompetitions && Object.keys(clubEventCompetitions).length === 0 ? (
-                    <h2 style={{ margin: 'auto' }}>Danh sách trống</h2>
+                          </ListGroupItem>
+                        );
+                      })
+                    ) : (
+                      <h2 style={{ margin: 'auto' }}>Danh sách trống</h2>
+                    )
                   ) : (
                     <img
                       alt="loading"
@@ -207,23 +171,27 @@ function Dashboard() {
               <CardBody>
                 <ListGroup className="list my--3" flush>
                   {clubActivity ? (
-                    clubActivity.map((e, value) => {
-                      return (
-                        <ListGroupItem className="px-0" key={`activity-${value}`}>
-                          <Row className="align-items-center">
-                            <div className="col">
-                              <h5>{e.name}</h5>
-                              <Progress
-                                className="progress-xs mb-0"
-                                color={`${e.process / e.require === 1 ? 'green' : e.process / e.require >= 0.5 ? 'blue' : 'orange'}`}
-                                max={e.num_of_member_join}
-                                value={e.num_member_done_task}
-                              />
-                            </div>
-                          </Row>
-                        </ListGroupItem>
-                      );
-                    })
+                    clubActivity.length > 0 ? (
+                      clubActivity.map((e, value) => {
+                        return (
+                          <ListGroupItem className="px-0" key={`activity-${value}`}>
+                            <Row className="align-items-center">
+                              <div className="col">
+                                <h5>{e.name}</h5>
+                                <Progress
+                                  className="progress-xs mb-0"
+                                  color={`${e.process / e.require === 1 ? 'green' : e.process / e.require >= 0.5 ? 'blue' : 'orange'}`}
+                                  max={e.num_of_member_join}
+                                  value={e.num_member_done_task}
+                                />
+                              </div>
+                            </Row>
+                          </ListGroupItem>
+                        );
+                      })
+                    ) : (
+                      <h2 style={{ margin: 'auto' }}>Danh sách trống</h2>
+                    )
                   ) : (
                     <img
                       alt="loading"
@@ -251,34 +219,36 @@ function Dashboard() {
                   </div>
                 </Row>
               </CardHeader>
-              <Table className="align-items-center table-flush" responsive>
-                <thead className="thead-light">
-                  <tr>
-                    <th scope="col">ID</th>
-                    <th scope="col">Họ và tên</th>
-                    <th scope="col">Chức vụ</th>
-                    <th scope="col">Giới tính</th>
-                    <th scope="col">Ngày tham gia</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {clubMember ? (
-                    clubMember.map((e, value) => {
+              {clubMembers ? (
+                <Table className="align-items-center table-flush" responsive>
+                  <thead className="thead-light">
+                    <tr>
+                      <th scope="col">STT</th>
+                      <th scope="col">Họ và tên</th>
+                      <th scope="col">Chức vụ</th>
+                      <th scope="col">Trạng thái</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {clubMembers.items.map((e, value) => {
                       return (
-                        <tr key={`${value}`}>
-                          <td> {e.id} </td>
+                        <tr key={`member-${value}`}>
+                          <td> {value + 1} </td>
                           <td> {e.name} </td>
-                          <td> {e.role} </td>
-                          <td> {e.gender} </td>
-                          <td> {e.joinDate} </td>
+                          <td> {e.club_role_name} </td>
+                          <td> {e.isOnline === true ? 'Online' : 'Offline'} </td>
                         </tr>
                       );
-                    })
-                  ) : (
-                    <h2>Chưa có dữ liệu</h2>
-                  )}
-                </tbody>
-              </Table>
+                    })}
+                  </tbody>
+                </Table>
+              ) : (
+                <img
+                  alt="loading"
+                  src="https://upload.wikimedia.org/wikipedia/commons/b/b1/Loading_icon.gif?20151024034921"
+                  style={{ display: 'block', margin: 'auto', width: '50%', height: '50%' }}
+                />
+              )}
             </Card>
           </Col>
         </Row>
