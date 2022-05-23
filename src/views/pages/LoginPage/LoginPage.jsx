@@ -71,7 +71,6 @@ export default function Login() {
 
   async function getClubAndUniversity(accessToken) {
     const res = await getDataByPath('api/v1/club/user', accessToken);
-    console.log(res);
     if (res.status === 200) {
       if (res.data.length > 0) {
         localStorage.setItem('clubID', res.data[0].id);

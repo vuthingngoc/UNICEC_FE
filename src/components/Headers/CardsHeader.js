@@ -11,7 +11,6 @@ function CardsHeader() {
     if (accessToken !== null) {
       const path = 'api/v1/club/user';
       const res = await getDataByPath(`${path}`, accessToken, '');
-      console.log(res.data[0]);
       if (res !== null && res.status === 200) {
         setClubDatas(res.data[0]);
       }
@@ -38,7 +37,14 @@ function CardsHeader() {
                   <Row>
                     <Col className="col-auto">
                       <a className="avatar rounded-circle" href="/" onClick={(e) => e.preventDefault()}>
-                        <img alt="..." src={clubDatas.image} />
+                        <img
+                          alt="..."
+                          src={`${
+                            clubDatas.image !== null
+                              ? clubDatas.image
+                              : 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/1024px-No_image_available.svg.png'
+                          } `}
+                        />
                       </a>
                     </Col>
                     <div className="col ml--2">
@@ -58,8 +64,8 @@ function CardsHeader() {
                 </Col>
               </Row>
               <Row>
-                <Col md="6" xl="3" style={{ paddingBottom: '2%' }}>
-                  <Card className="card-stats" style={{ width: '100%', height: '100%' }}>
+                <Col md="6" xl="3">
+                  <Card className="card-stats" style={{ width: '100%', height: '80%' }}>
                     <CardBody>
                       <Row>
                         <div className="col">
@@ -77,8 +83,8 @@ function CardsHeader() {
                     </CardBody>
                   </Card>
                 </Col>
-                <Col md="6" xl="3" style={{ paddingBottom: '2%' }}>
-                  <Card className="card-stats" style={{ width: '100%', height: '100%' }}>
+                <Col md="6" xl="3">
+                  <Card className="card-stats" style={{ width: '100%', height: '80%' }}>
                     <CardBody>
                       <Row>
                         <div className="col">
@@ -102,8 +108,8 @@ function CardsHeader() {
                     </CardBody>
                   </Card>
                 </Col>
-                <Col md="6" xl="3" style={{ paddingBottom: '2%' }}>
-                  <Card className="card-stats" style={{ width: '100%', height: '100%' }}>
+                <Col md="6" xl="3">
+                  <Card className="card-stats" style={{ width: '100%', height: '80%' }}>
                     <CardBody>
                       <Row>
                         <div className="col" style={{ paddingBottom: '20px' }}>
@@ -121,8 +127,8 @@ function CardsHeader() {
                     </CardBody>
                   </Card>
                 </Col>
-                <Col md="6" xl="3" style={{ paddingBottom: '2%' }}>
-                  <Card className="card-stats" style={{ width: '100%', height: '100%' }}>
+                <Col md="6" xl="3">
+                  <Card className="card-stats" style={{ width: '100%', height: '80%' }}>
                     <CardBody>
                       <Row>
                         <div className="col" style={{ paddingBottom: '35px' }}>
@@ -146,7 +152,7 @@ function CardsHeader() {
             <img
               alt="loading"
               src="https://upload.wikimedia.org/wikipedia/commons/b/b1/Loading_icon.gif?20151024034921"
-              style={{ display: 'block', margin: 'auto', width: '50%', height: '50%' }}
+              style={{ display: 'block', margin: 'auto', width: '30%', height: '30%' }}
             />
           )}
         </Container>
