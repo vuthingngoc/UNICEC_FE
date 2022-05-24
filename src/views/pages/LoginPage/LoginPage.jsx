@@ -1,6 +1,10 @@
 import React from 'react';
 // nodejs library that concatenates classes
 import classnames from 'classnames';
+import LoginNavbar from './component/LoginNavbar.js';
+
+// react component used to create sweet alerts
+import ReactBSAlert from 'react-bootstrap-sweetalert';
 
 // reactstrap components
 import {
@@ -21,9 +25,6 @@ import {
 // core components
 import AuthHeader from 'components/Headers/AuthHeader.js';
 import { useAuth } from 'contexts/AuthContext';
-//import { useHistory } from 'react-router';
-import { NotificationManager } from 'react-notifications';
-//import jwtDecode from 'jwt-decode';
 import { loginByPath } from 'services/auth.service';
 import { useHistory } from 'react-router';
 
@@ -34,63 +35,85 @@ export default function Login() {
   const { signInWithGoogle } = useAuth();
   const history = useHistory();
 
-  // React.useEffect(() => {
-  //   if (currentUser !== null && localStorage.getItem('accessToken') !== null) {
-  //     // const role = jwtDecode(localStorage.getItem('accessToken')).ROLE;
-  //     // if (role === '2') {
-  //     //   history.push('/admin/home');
-  //     // } else {
-  //     //   history.push('/home');
-  //     // }
-  //     history.push('/admin/dashboard');
-  //   }
-  //   // document.body.classList.add('register-page');
-  //   // document.body.classList.add('full-screen');
-  //   return function cleanup() {
-  //     document.body.classList.remove('register-page');
-  //     document.body.classList.remove('full-screen');
-  //   };
-  // });
+  const [alert, setalert] = React.useState(false);
+
+  const warningAlert = () => {
+    setalert(
+      <ReactBSAlert
+        warning
+        style={{ display: 'block', marginTop: '-100px' }}
+        title="Đăng nhập không thành công"
+        onConfirm={() => setalert(null)}
+        onCancel={() => setalert(null)}
+        confirmBtnBsStyle="warning"
+        confirmBtnText="xác nhận"
+        btnSize=""
+      >
+        Tài khoản chưa được đăng ký. vui lòng đăng ký!
+      </ReactBSAlert>
+    );
+  };
+
+  const warningAlertSystem = () => {
+    setalert(
+      <ReactBSAlert
+        warning
+        style={{ display: 'block', marginTop: '-100px' }}
+        title="Đăng nhập không thành công"
+        onConfirm={() => setalert(null)}
+        onCancel={() => setalert(null)}
+        confirmBtnBsStyle="warning"
+        confirmBtnText="Ok"
+        btnSize=""
+      >
+        Đã có lỗi xảy ra trong quá trình xác thực. Vui lòng thử lại sau!
+      </ReactBSAlert>
+    );
+  };
+
+  const successAlert = () => {
+    setalert(
+      <ReactBSAlert
+        success
+        style={{ display: 'block', marginTop: '-100px' }}
+        title="Đăng nhập thành công"
+        onConfirm={() => setalert(null)}
+        onCancel={() => setalert(null)}
+      >
+        Chào mừng bạn đến với hệ thống.
+      </ReactBSAlert>
+    );
+  };
 
   async function loginWithAccessToken(accessToken) {
     const res = await loginByPath('api/v1/firebase', accessToken);
     if (res.status === 200) {
       if (localStorage) {
-        NotificationManager.success('Welcome', 'Login Success', 3000);
-        // const role = jwtDecode(res.data.data).ROLE;
-        // setIsSubmitting(false);
-        // if (role === '2') {
-        //   localStorage.setItem('accessToken', res.data.data);
-        //   history.push('/admin/home');
-        // } else if (role === '3') {
-        //   history.push('/newprofile');
-        // } else {
-        //   localStorage.setItem('accessToken', res.data.data);
-        //   history.push('/home');
-        // }
+        successAlert();
+        setTimeout(function () {
+          history.push('/admin/clb-tham-gia');
+        }, 3000);
         localStorage.setItem('accessToken', res.data.token);
-        history.push('/admin/clb-tham-gia');
       }
     } else {
-      NotificationManager.warning('Server is busy now! Pleasy try againt', 'Server Error', 3000);
+      warningAlert();
     }
   }
 
   const handleErrorLogin = (request) => {
     switch (request) {
       case 'Firebase: Error (auth/user-not-found).':
-        NotificationManager.warning('Email chưa đăng ký', 'Login Error', 3000);
-        break;
-      case 'Firebase: Error (auth/wrong-password).':
-        NotificationManager.warning('Email hoặc Mật khẩu sai', 'Login Error', 3000);
+        warningAlert();
         break;
       default:
-        NotificationManager.warning('Hệ thống lỗi', 'Login Error', 3000);
+        warningAlertSystem();
     }
   };
 
   return (
     <>
+      {alert}
+      <LoginNavbar />
       <AuthHeader title="Chào mừng bạn đến với" lead="Nền tảng quản lý thông tin sự kiện và cuộc thi của Câu Lạc Bộ Sinh viên." />
       <Container className="mt--8 pb-5">
         <Row className="justify-content-center">
@@ -120,19 +143,16 @@ export default function Login() {
                   <Button
                     className="btn-neutral btn-icon"
                     color="default"
-                    href="#pablo"
                     //onClick={(e) => e.preventDefault()}
                     onClick={() =>
                       signInWithGoogle()
                         .then((response) => {
-                          console.log(response);
                           // setIsSubmitting(false);
                           loginWithAccessToken(response.user.accessToken);
                         })
                         .catch((error) => {
+                          console.log('hello');
                           handleErrorLogin(error.message);
-                          // setPassword('');
-                          // setIsSubmitting(false);
                         })
                     }
                   >

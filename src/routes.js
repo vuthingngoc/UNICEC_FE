@@ -7,7 +7,11 @@ import Lock from 'views/pages/examples/Lock.js';
 // import Profile from 'views/pages/examples/Profile.js';
 import Register from 'views/pages/examples/Register.js';
 //LoginPagef
-import LoginPage from 'views/pages/LoginPage/LoginPage.jsx';
+//import LoginPage from 'views/pages/LoginPage/LoginPage.jsx';
+
+//import CreateClubActivityIndex from 'views/pages/CreateClubActivity';
+
+import CreateClubActivity from 'views/pages/CreateClubActivity/CreateClubActivity';
 
 //ClubMember
 //import ClubMember from 'views/pages/MemberPage/ClubMember.jsx';
@@ -71,7 +75,7 @@ const routes = [
         path: '/su-kien',
         name: 'Sự kiện',
         miniName: 'S',
-        component: LoginPage,
+        component: CreateClubActivity,
         layout: '/admin',
       },
       {
