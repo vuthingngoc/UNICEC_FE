@@ -68,7 +68,7 @@ function Admin() {
         <AdminNavbar theme={getNavbarTheme()} toggleSidenav={toggleSidenav} sidenavOpen={sidenavOpen} brandText={getBrandText(location.pathname)} />
         <Switch>
           {getRoutes(routes)}
-          <Redirect from="*" to="/admin/dashboard" />
+          <Redirect from="*" to="/admin/thong-tin-clb" />
         </Switch>
         <AdminFooter />
       </div>
