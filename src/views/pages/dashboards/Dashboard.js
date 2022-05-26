@@ -36,7 +36,6 @@ function Dashboard() {
       const path = 'api/v1/competition/top3';
       const data = `clubId=${club_id}&event=true&status=0`;
       const res = await getDataByPath(`${path}`, accessToken, data);
-      console.log(res);
       if (res !== null && res.status === 200) {
         setClubEventCompetitions(res.data);
       } else if (res !== null && res.status === 204) {
@@ -80,7 +79,7 @@ function Dashboard() {
       <Container className="mt--6" fluid>
         <Row>
           <Col xl="4">
-            <Card>
+            <Card style={{ height: '80%' }}>
               <CardHeader>
                 <h5 className="h3 mb-0">Ban Quản Lý</h5>
               </CardHeader>
@@ -103,8 +102,8 @@ function Dashboard() {
                                 </a>
                                 <span className="text-muted">{`   (${ele.club_role_name})`}</span>
                               </h4>
-                              <span className={`${ele.status === true ? 'text-success' : 'text-danger'}`}>●</span>{' '}
-                              <small>{ele.status === true ? 'Online' : 'Offline'}</small>
+                              <span className={`${ele.isOnline === true ? 'text-success' : 'text-danger'}`}>●</span>{' '}
+                              <small>{ele.isOnline === true ? 'Online' : 'Offline'}</small>
                             </div>
                           </Row>
                         </ListGroupItem>
@@ -122,7 +121,7 @@ function Dashboard() {
             </Card>
           </Col>
           <Col xl="4">
-            <Card>
+            <Card style={{ height: '80%' }}>
               <CardHeader>
                 <h5 className="h3 mb-0">Sự kiện và cuộc thi</h5>
               </CardHeader>
@@ -164,7 +163,7 @@ function Dashboard() {
             </Card>
           </Col>
           <Col xl="4">
-            <Card>
+            <Card style={{ height: '80%' }}>
               <CardHeader>
                 <h5 className="h3 mb-0">Tiến độ hoạt động</h5>
               </CardHeader>
@@ -206,7 +205,7 @@ function Dashboard() {
         </Row>
         <Row>
           <Col xl="12">
-            <Card>
+            <Card style={{ height: '80%' }}>
               <CardHeader className="border-0">
                 <Row className="align-items-center">
                   <div className="col">

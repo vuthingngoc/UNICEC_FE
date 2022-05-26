@@ -3,10 +3,11 @@ import AdminFooter from 'components/Footers/AdminFooter.js';
 import AdminNavbar from 'components/Navbars/AdminNavbar.js';
 import Sidebar from 'components/Sidebar/Sidebar.js';
 import { useLocation } from 'react-router-dom';
-import ClubMember from './components/ClubMember.jsx';
 import routes from 'routes.js';
+import CompetitionDetailHeader from './components/CompetitionDetailHeader';
+import CompetitionDetailBody from './components/CompetitionDetailBody';
 
-function MemberPage() {
+export default function CompetitionDetailPage() {
   const [sidenavOpen, setSidenavOpen] = React.useState(true);
   const location = useLocation();
   const mainContentRef = React.useRef(null);
@@ -37,7 +38,6 @@ function MemberPage() {
   const getNavbarTheme = () => {
     return location.pathname.indexOf('admin/alternative-dashboard') === -1 ? 'dark' : 'light';
   };
-
   return (
     <>
       <Sidebar
@@ -52,12 +52,11 @@ function MemberPage() {
       />
       <div className="main-content" ref={mainContentRef}>
         <AdminNavbar theme={getNavbarTheme()} toggleSidenav={toggleSidenav} sidenavOpen={sidenavOpen} brandText={getBrandText(location.pathname)} />
-        <ClubMember />
+        <CompetitionDetailHeader />
+        <CompetitionDetailBody />
         <AdminFooter />
       </div>
       {sidenavOpen ? <div className="backdrop d-xl-none" onClick={toggleSidenav} /> : null}
     </>
   );
 }
-
-export default MemberPage;

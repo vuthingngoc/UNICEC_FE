@@ -75,12 +75,11 @@ export default function Login() {
       if (res.data.length > 0) {
         localStorage.setItem('clubID', res.data[0].id);
         setIsSubmitting(false);
-        // history.push('/admin/clb-tham-gia');
       }
     } else {
       localStorage.setItem('clubID', '0');
     }
-    history.push('/admin/clb-tham-gia');
+    history.push('/admin/thong-tin-clb');
   }
 
   const handleErrorLogin = (request) => {

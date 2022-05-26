@@ -24,11 +24,13 @@ import Homepage from 'views/pages/homepage/index';
 import AuthContextProvider from 'contexts/AuthContext';
 import MemberPage from 'views/pages/MemberPage/index';
 import LoginPage from 'views/pages/LoginPage/LoginPage';
+import CompetitionDetailPage from 'views/pages/CompetitionDetailPage';
 
 ReactDOM.render(
   <AuthContextProvider>
     <BrowserRouter>
       <Switch>
+        <Route path="/admin/cuoc-thi/chi-tiet/:id" render={(props) => <CompetitionDetailPage {...props} />} />
         <Route path="/admin" render={(props) => <AdminLayout {...props} />} />
         <Route path="/rtl" render={(props) => <RTLLayout {...props} />} />
         <Route path="/auth" render={(props) => <AuthLayout {...props} />} />
