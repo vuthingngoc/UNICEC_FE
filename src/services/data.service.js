@@ -1,6 +1,6 @@
 import axios from 'axios';
 import getOptions from 'utils/services.ultils';
-const backendUrl = 'http://14.225.254.134';
+const backendUrl = 'https://14.225.254.134';
 
 export async function getDataByPath(path, accessToken, data) {
   try {
