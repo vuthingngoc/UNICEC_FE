@@ -3,7 +3,11 @@ import Alternative from 'views/pages/dashboards/Alternative.js';
 import Dashboard from 'views/pages/dashboards/Dashboard.js';
 import Lock from 'views/pages/examples/Lock.js';
 //LoginPagef
-import LoginPage from 'views/pages/LoginPage/LoginPage.jsx';
+//import LoginPage from 'views/pages/LoginPage/LoginPage.jsx';
+
+//import CreateClubActivityIndex from 'views/pages/CreateClubActivity';
+
+import CreateClubActivity from 'views/pages/CreateClubActivity/CreateClubActivity';
 
 import ShowCompetition from 'views/pages/ShowCompetitionPage/CompetitionPage.jsx';
 
@@ -54,7 +58,7 @@ const routes = [
         path: '/su-kien',
         name: 'Sự kiện',
         miniName: 'S',
-        component: LoginPage,
+        component: CreateClubActivity,
         layout: '/admin',
       },
       {

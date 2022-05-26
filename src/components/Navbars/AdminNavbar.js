@@ -314,7 +314,6 @@ function AdminNavbar({ theme, sidenavOpen, toggleSidenav }) {
                     </DropdownItem>
                     <DropdownItem divider />
                     <DropdownItem
-                      href="#pablo"
                       onClick={async () => {
                         logout();
                         if (localStorage) {
