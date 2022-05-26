@@ -2,7 +2,7 @@ import { createContext, useContext, useEffect, useState } from 'react';
 import {
   // signInWithEmailAndPassword,
   onAuthStateChanged,
-  // signOut,
+  signOut,
   // createUserWithEmailAndPassword,
   GoogleAuthProvider,
   signInWithPopup,
@@ -14,7 +14,7 @@ const AuthContext = createContext({
   currentUser: null,
   // login: () => Promise,
   // register: () => Promise,
-  // logout: () => Promise,
+  logout: () => Promise,
   signInWithGoogle: () => Promise,
 });
 
@@ -41,9 +41,9 @@ export default function AuthContextProvider({ children }) {
     return signInWithPopup(auth, provide);
   }
 
-  // function logout() {
-  //   return signOut(auth);
-  // }
+  function logout() {
+    return signOut(auth);
+  }
 
   // function register(email, password) {
   //   return createUserWithEmailAndPassword(auth, email, password);
@@ -52,7 +52,7 @@ export default function AuthContextProvider({ children }) {
   const value = {
     currentUser,
     // login,
-    // logout,
+    logout,
     // register,
     signInWithGoogle,
   };

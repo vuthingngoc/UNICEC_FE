@@ -3,9 +3,11 @@ import classNames from 'classnames';
 import React from 'react';
 import { Link } from 'react-router-dom';
 // reactstrap components
-import { UncontrolledCollapse, NavbarBrand, Navbar, NavItem, NavLink, Nav, Container, Row, Col, UncontrolledTooltip, Button } from 'reactstrap';
+import { UncontrolledCollapse, NavbarBrand, Navbar, NavItem, NavLink, Nav, Container, Row, Col, Button } from 'reactstrap';
+import { useHistory } from 'react-router';
 
-function AdminNavbar() {
+function LoginNavbar() {
+  const history = useHistory();
   const [navbarColor, setNavbarColor] = React.useState('bg-transparent');
   React.useEffect(() => {
     const updateNavbarColor = () => {
@@ -16,43 +18,16 @@ function AdminNavbar() {
       }
     };
 
-    var href = window.location.href.substring(window.location.href.lastIndexOf('#/') + 2);
-    var hrefId = href.substring(href.lastIndexOf('#') + 1);
-    if (href.lastIndexOf('#') > 0) {
-      document.getElementById(hrefId).scrollIntoView({
-        behavior: 'smooth',
-        block: 'start',
-        inline: 'nearest',
-      });
-    }
-    const updateView = () => {
-      var contentSections = document.getElementsByClassName('cd-index');
-      var navigationItems = document.getElementById('cd-index-nav').getElementsByTagName('a');
-      for (let i = 0; i < contentSections.length; i++) {
-        var activeSection = parseInt(navigationItems[i].getAttribute('data-number'), 10) - 1;
-        if (
-          contentSections[i].offsetTop - window.innerHeight / 2 < window.pageYOffset &&
-          contentSections[i].offsetTop + contentSections[i].scrollHeight - window.innerHeight / 2 > window.pageYOffset
-        ) {
-          navigationItems[activeSection].classList.add('text-blue');
-        } else {
-          navigationItems[activeSection].classList.remove('text-blue');
-        }
-      }
-    };
-
     window.addEventListener('scroll', updateNavbarColor);
-    window.addEventListener('scroll', updateView);
     return function cleanup() {
       window.removeEventListener('scroll', updateNavbarColor);
-      window.removeEventListener('scroll', updateView);
     };
   });
   return (
     <>
       <Navbar className={classNames('fixed-top navbar-horizontal', navbarColor)} expand="lg" id="navbar-main">
         <Container>
-          <NavbarBrand to="/admin/thong-tin-clb" tag={Link}>
+          <NavbarBrand to="/" tag={Link}>
             <img alt="..." src={require('assets/img/brand/Logo.png').default} style={{ height: '50px', width: '50px' }} />
           </NavbarBrand>
           <button
@@ -71,7 +46,7 @@ function AdminNavbar() {
             <div className="navbar-collapse-header">
               <Row>
                 <Col className="collapse-brand" xs="6">
-                  <Link to="/admin/thong-tin-clb">
+                  <Link to="/admin/dashboard">
                     <img alt="..." src={require('assets/img/brand/Logo text ngang.png').default} />
                   </Link>
                 </Col>
@@ -93,7 +68,7 @@ function AdminNavbar() {
               </Row>
               <Row style={{ marginTop: '25px' }}>
                 <Col className="collapse-brand" xs="6">
-                  <Button className="btn-default btn-icon" href="/login">
+                  <Button className="btn-default btn-icon" href="/auth/login">
                     <span className="btn-inner--icon">
                       <i className="fas fa-sign-in-alt mr-2" />
                     </span>
@@ -107,6 +82,7 @@ function AdminNavbar() {
                 <NavLink
                   onClick={(e) => {
                     e.preventDefault();
+                    history.push('/admin#UNICEC');
                     document.getElementById('UNICEC').scrollIntoView({
                       behavior: 'smooth',
                       block: 'start',
@@ -124,11 +100,7 @@ function AdminNavbar() {
                 <NavLink
                   onClick={(e) => {
                     e.preventDefault();
-                    document.getElementById('gioi-thieu').scrollIntoView({
-                      behavior: 'smooth',
-                      block: 'start',
-                      inline: 'nearest',
-                    });
+                    history.push('/home#gioi-thieu');
                   }}
                   to="#gioi-thieu"
                   data-number="2"
@@ -141,11 +113,7 @@ function AdminNavbar() {
                 <NavLink
                   onClick={(e) => {
                     e.preventDefault();
-                    document.getElementById('tinh-nang').scrollIntoView({
-                      behavior: 'smooth',
-                      block: 'start',
-                      inline: 'nearest',
-                    });
+                    history.push('/home#tinh-nang');
                   }}
                   to="#tinh-nang"
                   data-number="3"
@@ -158,11 +126,7 @@ function AdminNavbar() {
                 <NavLink
                   onClick={(e) => {
                     e.preventDefault();
-                    document.getElementById('lien-he').scrollIntoView({
-                      behavior: 'smooth',
-                      block: 'start',
-                      inline: 'nearest',
-                    });
+                    history.push('/home#lien-he');
                   }}
                   to="#lien-he"
                   data-number="4"
@@ -173,7 +137,7 @@ function AdminNavbar() {
               </NavItem>
             </Nav>
             <hr className="d-lg-none" />
-            <Nav className="align-items-lg-center ml-lg-4" navbar>
+            {/* <Nav className="align-items-lg-center ml-lg-4" navbar>
               <NavItem>
                 <NavLink className="nav-link-icon" href="https://www.facebook.com/" id="tooltip601201423" target="_blank">
                   <i className="fab fa-facebook-square fa-2x" />
@@ -184,14 +148,14 @@ function AdminNavbar() {
                 </UncontrolledTooltip>
               </NavItem>
               <NavItem className="d-none d-lg-block ml-lg-4">
-                <Button className="btn-neutral btn-icon" color="default" href="/login">
+                <Button className="btn-neutral btn-icon" color="default" href="/auth/login">
                   <span className="btn-inner--icon">
                     <i className="fas fa-sign-in-alt mr-2" />
                   </span>
                   <span className="nav-link-inner--text">Đăng nhập</span>
                 </Button>
               </NavItem>
-            </Nav>
+            </Nav> */}
           </UncontrolledCollapse>
         </Container>
       </Navbar>
@@ -199,4 +163,4 @@ function AdminNavbar() {
   );
 }
 
-export default AdminNavbar;
+export default LoginNavbar;

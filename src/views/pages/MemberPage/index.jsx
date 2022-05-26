@@ -1,14 +1,12 @@
 import React from 'react';
-// react library for routing
-import { useLocation, Route, Switch, Redirect } from 'react-router-dom';
-// core components
-import AdminNavbar from 'components/Navbars/AdminNavbar.js';
 import AdminFooter from 'components/Footers/AdminFooter.js';
+import AdminNavbar from 'components/Navbars/AdminNavbar.js';
 import Sidebar from 'components/Sidebar/Sidebar.js';
-
+import { useLocation } from 'react-router-dom';
+import ClubMember from './components/ClubMember.jsx';
 import routes from 'routes.js';
 
-function Admin() {
+function MemberPage() {
   const [sidenavOpen, setSidenavOpen] = React.useState(true);
   const location = useLocation();
   const mainContentRef = React.useRef(null);
@@ -17,18 +15,6 @@ function Admin() {
     document.scrollingElement.scrollTop = 0;
     mainContentRef.current.scrollTop = 0;
   }, [location]);
-  const getRoutes = (routes) => {
-    return routes.map((prop, key) => {
-      if (prop.collapse) {
-        return getRoutes(prop.views);
-      }
-      if (prop.layout === '/admin') {
-        return <Route path={prop.layout + prop.path} component={prop.component} key={key} />;
-      } else {
-        return null;
-      }
-    });
-  };
   const getBrandText = () => {
     for (let i = 0; i < routes.length; i++) {
       if (location.pathname.indexOf(routes[i].layout + routes[i].path) !== -1) {
@@ -37,7 +23,7 @@ function Admin() {
     }
     return 'Brand';
   };
-  // toggles collapse between mini sidenav and normal
+  //toggles collapse between mini sidenav and normal
   const toggleSidenav = () => {
     if (document.body.classList.contains('g-sidenav-pinned')) {
       document.body.classList.remove('g-sidenav-pinned');
@@ -66,10 +52,7 @@ function Admin() {
       />
       <div className="main-content" ref={mainContentRef}>
         <AdminNavbar theme={getNavbarTheme()} toggleSidenav={toggleSidenav} sidenavOpen={sidenavOpen} brandText={getBrandText(location.pathname)} />
-        <Switch>
-          {getRoutes(routes)}
-          <Redirect from="*" to="/admin/dashboard" />
-        </Switch>
+        <ClubMember />
         <AdminFooter />
       </div>
       {sidenavOpen ? <div className="backdrop d-xl-none" onClick={toggleSidenav} /> : null}
@@ -77,4 +60,4 @@ function Admin() {
   );
 }
 
-export default Admin;
+export default MemberPage;

@@ -2,6 +2,7 @@
 import { Card, CardHeader, CardBody, Label, FormGroup, Form, Input, Container, Row, Col } from 'reactstrap';
 // core components
 import SimpleHeader from 'components/Headers/SimpleHeader.js';
+import 'react-quill/dist/quill.snow.css';
 
 function Elements() {
   return (
