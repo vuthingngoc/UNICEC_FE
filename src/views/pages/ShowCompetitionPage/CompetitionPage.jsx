@@ -17,6 +17,8 @@ import {
 // core components
 import CompetitionHeader from './components/CompetitionHeader.js';
 import styled from 'styled-components';
+import moment from 'moment';
+import 'moment/locale/vi';
 
 const CardHover = styled.div`
   :hover {
@@ -29,78 +31,88 @@ const competitionData = [
   {
     id: '1',
     title: 'Thử thách âm nhạc trực tuyến Soul of Melody [Không giới hạn người đăng kí, giải thưởng lên đến 1000 USD]',
-    avartar: 'assets/img/theme/img-1-1000x600.jpg',
+    banner: 'assets/img/theme/img-1-1000x600.jpg',
     type: 'Tài năng',
     startTime: '20/6/2022',
-    author_name: 'Thu Trang',
-    author_avatar: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/1024px-No_image_available.svg.png',
-    create_time: '3 ngày trước',
-    location: 'HO CHI MINH',
+    club_name: 'FU Guitar',
+    club_avatar: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/1024px-No_image_available.svg.png',
+    create_time: '23/5/2022',
+    isSponsor: true,
+    location: 'Đại học FPT',
     marjors: ['Kỹ Thuật', 'Ngôn ngữ'],
   },
   {
     id: '1',
     title: 'Thử thách âm nhạc trực tuyến Soul of Melody [Không giới hạn người đăng kí, giải thưởng lên đến 1000 USD]',
-    avartar: 'assets/img/theme/img-1-1000x600.jpg',
+    banner: 'assets/img/theme/img-1-1000x600.jpg',
     type: 'Tài năng',
     startTime: '20/6/2022',
-    author_name: 'Thu Trang',
-    author_avatar: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/1024px-No_image_available.svg.png',
-    create_time: '3 ngày trước',
-    location: 'HO CHI MINH',
+    club_name: 'FU Guitar',
+    club_avatar: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/1024px-No_image_available.svg.png',
+    create_time: '23/5/2022',
+    isSponsor: true,
+    location: 'Đại học FPT',
     marjors: 'ALL',
   },
   {
     id: '1',
     title: 'Thử thách âm nhạc trực tuyến Soul of Melody [Không giới hạn người đăng kí, giải thưởng lên đến 1000 USD]',
-    avartar: 'assets/img/theme/img-1-1000x600.jpg',
+    banner: 'assets/img/theme/img-1-1000x600.jpg',
     type: 'Tài năng',
     startTime: '20/6/2022',
-    author_name: 'Thu Trang',
-    author_avatar: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/1024px-No_image_available.svg.png',
-    create_time: '3 ngày trước',
-    location: 'HO CHI MINH',
+    club_name: 'FU Guitar',
+    club_avatar: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/1024px-No_image_available.svg.png',
+    create_time: '23/5/2022',
+    isSponsor: true,
+    location: 'Đại học FPT',
     marjors: 'ALL',
   },
   {
     id: '1',
     title: 'Thử thách âm nhạc trực tuyến Soul of Melody [Không giới hạn người đăng kí, giải thưởng lên đến 1000 USD]',
-    avartar: 'assets/img/theme/img-1-1000x600.jpg',
+    banner: 'assets/img/theme/img-1-1000x600.jpg',
     type: 'Tài năng',
     startTime: '20/6/2022',
-    author_name: 'Thu Trang',
-    author_avatar: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/1024px-No_image_available.svg.png',
-    create_time: '3 ngày trước',
-    location: 'HO CHI MINH',
+    club_name: 'FU Guitar',
+    club_avatar: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/1024px-No_image_available.svg.png',
+    create_time: '23/5/2022',
+    isSponsor: true,
+    location: 'Đại học FPT',
     marjors: 'ALL',
   },
   {
     id: '1',
     title: 'Thử thách âm nhạc trực tuyến Soul of Melody [Không giới hạn người đăng kí, giải thưởng lên đến 1000 USD]',
-    avartar: 'assets/img/theme/img-1-1000x600.jpg',
+    banner: 'assets/img/theme/img-1-1000x600.jpg',
     type: 'Tài năng',
     startTime: '20/6/2022',
-    author_name: 'Thu Trang',
-    author_avatar: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/1024px-No_image_available.svg.png',
-    create_time: '3 ngày trước',
-    location: 'HO CHI MINH',
+    club_name: 'FU Guitar',
+    club_avatar: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/1024px-No_image_available.svg.png',
+    create_time: '23/5/2022',
+    isSponsor: true,
+    location: 'Đại học FPT',
     marjors: 'ALL',
   },
   {
     id: '1',
     title: 'Thử thách âm nhạc trực tuyến Soul of Melody [Không giới hạn người đăng kí, giải thưởng lên đến 1000 USD]',
-    avartar: 'assets/img/theme/img-1-1000x600.jpg',
+    banner: 'assets/img/theme/img-1-1000x600.jpg',
     type: 'Tài năng',
     startTime: '20/6/2022',
-    author_name: 'Thu Trang',
-    author_avatar: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/1024px-No_image_available.svg.png',
-    create_time: '3 ngày trước',
-    location: 'HO CHI MINH',
+    club_name: 'FU Guitar',
+    club_avatar: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/1024px-No_image_available.svg.png',
+    create_time: '23/5/2022',
+    isSponsor: true,
+    location: 'Đại học FPT',
     marjors: 'ALL',
   },
 ];
 
 function CompetitionPage() {
+  const covertDatePassed = (date) => {
+    const ago = moment(date, 'DD/MM/YYYY').fromNow();
+    return ago;
+  };
   return (
     <>
       <CompetitionHeader name="Default" parentName="Dashboards" />
@@ -132,8 +144,8 @@ function CompetitionPage() {
                             <img
                               alt="..."
                               src={
-                                e.author_avatar
-                                  ? e.author_avatar
+                                e.club_avatar
+                                  ? e.club_avatar
                                   : 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/1024px-No_image_available.svg.png'
                               }
                             />
@@ -141,9 +153,9 @@ function CompetitionPage() {
                         </Col>
                         <div className="col mb-0">
                           <h6 className="text-sm font-weight-bold" style={{ margin: 'auto', color: 'black' }}>
-                            {e.author_name} ·{' '}
+                            {e.club_name} ·{' '}
                             <span className="text-sm" style={{ fontWeight: 'lighter', color: 'darkgrey' }}>
-                              {e.create_time}
+                              {covertDatePassed(e.create_time)}
                             </span>
                           </h6>
                         </div>
@@ -185,25 +197,17 @@ function CompetitionPage() {
                         <Row>
                           <Col className="col-auto">
                             <Badge className="font-weight-bold" color="info" pill style={{ fontFamily: 'sans-serif' }}>
-                              HO CHI MINH
+                              Đại học FPT
                             </Badge>
                           </Col>
-                          {e.marjors !== 'ALL' ? (
-                            e.marjors.map((ele, value) => {
-                              return (
-                                <Col className="col-auto" key={`major-${value}`}>
-                                  <Badge className="font-weight-bold" color="warning" pill style={{ fontFamily: 'sans-serif' }}>
-                                    {ele}
-                                  </Badge>
-                                </Col>
-                              );
-                            })
-                          ) : (
-                            <Col className="col-auto">
+                          {e.isSponsor === true ? (
+                            <Col className="col-auto" key={`major-${value}`}>
                               <Badge className="font-weight-bold" color="success" pill style={{ fontFamily: 'sans-serif' }}>
-                                Marjor: ALL
+                                Được tài trợ
                               </Badge>
                             </Col>
+                          ) : (
+                            <></>
                           )}
                         </Row>
                       </CardBody>

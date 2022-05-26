@@ -46,7 +46,7 @@ function LoginNavbar() {
             <div className="navbar-collapse-header">
               <Row>
                 <Col className="collapse-brand" xs="6">
-                  <Link to="/admin/dashboard">
+                  <Link to="/admin/thong-tin-clb">
                     <img alt="..." src={require('assets/img/brand/Logo text ngang.png').default} />
                   </Link>
                 </Col>
