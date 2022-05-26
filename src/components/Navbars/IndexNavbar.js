@@ -52,7 +52,7 @@ function AdminNavbar() {
     <>
       <Navbar className={classNames('fixed-top navbar-horizontal', navbarColor)} expand="lg" id="navbar-main">
         <Container>
-          <NavbarBrand to="/admin/clb-tham-gia" tag={Link}>
+          <NavbarBrand to="/admin/thong-tin-clb" tag={Link}>
             <img alt="..." src={require('assets/img/brand/Logo.png').default} style={{ height: '50px', width: '50px' }} />
           </NavbarBrand>
           <button
@@ -71,7 +71,7 @@ function AdminNavbar() {
             <div className="navbar-collapse-header">
               <Row>
                 <Col className="collapse-brand" xs="6">
-                  <Link to="/admin/clb-tham-gia">
+                  <Link to="/admin/thong-tin-clb">
                     <img alt="..." src={require('assets/img/brand/Logo text ngang.png').default} />
                   </Link>
                 </Col>

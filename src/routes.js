@@ -2,22 +2,12 @@ import Alternative from 'views/pages/dashboards/Alternative.js';
 
 import Dashboard from 'views/pages/dashboards/Dashboard.js';
 import Lock from 'views/pages/examples/Lock.js';
-//import Login from 'views/pages/examples/Login.jsx';
-//import Pricing from 'views/pages/examples/Pricing.js';
-// import Profile from 'views/pages/examples/Profile.js';
-import Register from 'views/pages/examples/Register.js';
 //LoginPagef
 //import LoginPage from 'views/pages/LoginPage/LoginPage.jsx';
 
 //import CreateClubActivityIndex from 'views/pages/CreateClubActivity';
 
 import CreateClubActivity from 'views/pages/CreateClubActivity/CreateClubActivity';
-
-//ClubMember
-//import ClubMember from 'views/pages/MemberPage/ClubMember.jsx';
-
-//ShowAllClub
-//import AllClubPage from 'views/pages/AllCLubPage/AllClubPage.jsx';
 
 import ShowCompetition from 'views/pages/ShowCompetitionPage/CompetitionPage.jsx';
 
@@ -29,33 +19,26 @@ const routes = [
     state: 'dashboardsCollapse',
     views: [
       {
-        path: '/clb-tham-gia',
-        name: 'Câu lạc bộ tham gia',
+        path: '/thong-tin-clb',
+        name: 'Thông tin câu lạc bộ',
         miniName: 'C',
         component: Dashboard,
         layout: '/admin',
       },
       {
         path: '/hoat-dong-clb',
-        name: 'Hoạt động câu lạc bộ',
+        name: 'Hoạt động',
         miniName: 'H',
         component: Alternative,
         layout: '/admin',
       },
       {
-        path: '/tat-ca-clb',
-        name: 'Tất cả câu lạc bộ',
+        path: '/thanh-vien',
+        name: 'Thành viên',
         miniName: 'T',
         component: Alternative,
         layout: '/admin',
       },
-      // {
-      //   path: '/tat-ca',
-      //   name: 'ClucMemer',
-      //   miniName: 'T',
-      //   component: ClubMember,
-      //   layout: '/admin',
-      // },
     ],
   },
   {
@@ -79,16 +62,16 @@ const routes = [
         layout: '/admin',
       },
       {
-        path: '/da-tham-gia',
-        name: 'Đã tham gia',
-        miniName: 'TH',
-        component: Register,
+        path: '/tao-cuoc-thi',
+        name: 'Tạo Cuộc thi',
+        miniName: 'TC',
+        component: Lock,
         layout: '/admin',
       },
       {
-        path: '/tao-cuoc-thi',
-        name: 'Tạo Cuộc thi',
-        miniName: 'T',
+        path: '/tao-su-kien',
+        name: 'Tạo sự kiện',
+        miniName: 'TS',
         component: Lock,
         layout: '/admin',
       },

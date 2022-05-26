@@ -50,7 +50,7 @@ function CompetitionHeader() {
             </Row>
             <Row>
               <Col md="6" xl="3">
-                <Card className="card-stats">
+                <Card className="card-stats" style={{ height: '80%' }}>
                   <CardBody>
                     <Row>
                       <div className="col">
@@ -69,7 +69,7 @@ function CompetitionHeader() {
                 </Card>
               </Col>
               <Col md="6" xl="3">
-                <Card className="card-stats">
+                <Card className="card-stats" style={{ height: '80%' }}>
                   <CardBody>
                     <Row>
                       <div className="col">
@@ -94,7 +94,7 @@ function CompetitionHeader() {
                 </Card>
               </Col>
               <Col md="6" xl="3">
-                <Card className="card-stats">
+                <Card className="card-stats" style={{ height: '80%' }}>
                   <CardBody>
                     <Row>
                       <div className="col" style={{ paddingBottom: '20px' }}>
@@ -113,7 +113,7 @@ function CompetitionHeader() {
                 </Card>
               </Col>
               <Col md="6" xl="3">
-                <Card className="card-stats">
+                <Card className="card-stats" style={{ height: '80%' }}>
                   <CardBody>
                     <Row>
                       <div className="col" style={{ paddingBottom: '35px' }}>
