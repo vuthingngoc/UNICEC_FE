@@ -1,4 +1,6 @@
 import React from 'react';
+import moment from 'moment';
+import 'moment/locale/vi';
 
 // reactstrap components
 import {
@@ -19,16 +21,15 @@ import {
 const competitionHeader = {
   id: '1',
   title: 'Thử thách âm nhạc trực tuyến Soul of Melody [Không giới hạn người đăng kí, giải thưởng lên đến 1000 USD]',
-  avartar: 'assets/img/theme/img-1-1000x600.jpg',
+  banner: 'assets/img/theme/img-1-1000x600.jpg',
   type: 'Tài năng',
   startTime: '20/6/2022',
-  author_name: 'Thu Trang',
-  author_avatar: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/1024px-No_image_available.svg.png',
-  create_time: '3 ngày trước',
+  club_name: 'Thu Trang',
+  club_avatar: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/1024px-No_image_available.svg.png',
+  create_time: '2022-05-23',
   location: 'Đại học FPT',
   address: 'Lô E2a-7, Đường D1, Đ. D1, Long Thạnh Mỹ, Thành Phố Thủ Đức, Thành phố Hồ Chí Minh',
   marjors: ['Kỹ Thuật', 'Ngôn ngữ'],
-  clubs: 'FU Guitar club',
   sponsor: 'HUTECH',
   sponsor_logo:
     'https://scontent.fsgn5-6.fna.fbcdn.net/v/t39.30808-6/275966182_2797390133737626_4303257920612301245_n.jpg?_nc_cat=1&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=b79I0gQlayoAX9Kao9-&_nc_ht=scontent.fsgn5-6.fna&oh=00_AT8D6q-M4sE7bAMnjQ2xCDE1ctoo6KqaZNIW0hcqrgGnHw&oe=62919071',
@@ -39,6 +40,11 @@ export default function CompetitionDetailHeader() {
   const convertDateFormat = (date) => {
     const arr = date.split('/');
     return `${arr[0]} - ${arr[1]} - ${arr[2]}`;
+  };
+
+  const covertDatePassed = (date) => {
+    const ago = moment(date, 'YYYY-MM-DD').fromNow();
+    return ago;
   };
 
   return (
@@ -135,8 +141,8 @@ export default function CompetitionDetailHeader() {
                             <img
                               alt="..."
                               src={
-                                competitionHeader.author_avatar
-                                  ? competitionHeader.author_avatar
+                                competitionHeader.club_avatar
+                                  ? competitionHeader.club_avatar
                                   : 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/1024px-No_image_available.svg.png'
                               }
                             />
@@ -144,10 +150,10 @@ export default function CompetitionDetailHeader() {
                         </Col>
                         <Col className="col-auto mb-0">
                           <h3 className="font-weight-bold" style={{ margin: 'auto', color: 'black' }}>
-                            {competitionHeader.author_name} <span style={{ color: 'blue' }}># {competitionHeader.clubs}</span>
+                            {competitionHeader.club_name}
                           </h3>
                           <span className="text-lg" style={{ fontWeight: 'lighter', color: 'darkgrey' }}>
-                            {competitionHeader.create_time}
+                            {covertDatePassed(competitionHeader.create_time)}
                           </span>
                         </Col>
                       </Row>

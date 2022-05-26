@@ -5,6 +5,7 @@ import LoginNavbar from './component/LoginNavbar.js';
 
 // react component used to create sweet alerts
 import ReactBSAlert from 'react-bootstrap-sweetalert';
+import Loading from '../components/Loading.js';
 
 // reactstrap components
 import {
@@ -21,6 +22,7 @@ import {
   Container,
   Row,
   Col,
+  Modal,
 } from 'reactstrap';
 // core components
 import AuthHeader from 'components/Headers/AuthHeader.js';
@@ -34,6 +36,7 @@ export default function Login() {
   const [focusedEmail, setfocusedEmail] = React.useState(false);
   const [focusedPassword, setfocusedPassword] = React.useState(false);
   const [isSubmitting, setIsSubmitting] = React.useState(false);
+  const [formModal, setformModal] = React.useState(false);
 
   const { signInWithGoogle } = useAuth();
   const history = useHistory();
@@ -93,10 +96,6 @@ export default function Login() {
     const res = await loginByPath('api/v1/firebase', accessTokenFirebase);
     if (res.status === 200) {
       if (localStorage) {
-        successAlert();
-        setTimeout(function () {
-          history.push('/admin/clb-tham-gia');
-        }, 3000);
         localStorage.setItem('accessToken', res.data.token);
         localStorage.setItem('accessToken', res.data.token);
         localStorage.setItem('roleID', jwtDecode(res.data.token).RoleId);
@@ -118,7 +117,11 @@ export default function Login() {
     } else {
       localStorage.setItem('clubID', '0');
     }
-    history.push('/admin/thong-tin-clb');
+    setformModal(false);
+    successAlert();
+    setTimeout(function () {
+      history.push('/admin/thong-tin-clb');
+    }, 2000);
   }
 
   const handleErrorLogin = (request) => {
@@ -148,19 +151,20 @@ export default function Login() {
                   <Button
                     className="btn-neutral btn-icon"
                     color="default"
-                    //onClick={(e) => e.preventDefault()}
+                    disabled={isSubmitting}
                     onClick={() => {
+                      setIsSubmitting(true);
                       signInWithGoogle()
                         .then((response) => {
                           console.log(response);
                           setIsSubmitting(false);
+                          setformModal(true);
                           loginWithAccessToken(response.user.accessToken);
                         })
                         .catch((error) => {
-                          console.log('hello');
                           handleErrorLogin(error.message);
-                          // setPassword('');
                           setIsSubmitting(false);
+                          setformModal(false);
                         });
                     }}
                   >
@@ -237,6 +241,11 @@ export default function Login() {
             </Row>
           </Col>
         </Row>
+        <Modal className="modal-dialog-centered" size="sm" isOpen={formModal}>
+          <div className="modal-body p-0 bg-transparent">
+            <Loading style={{ margin: 'auto' }} />
+          </div>
+        </Modal>
       </Container>
     </>
   );
