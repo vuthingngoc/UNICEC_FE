@@ -10,6 +10,7 @@ import Lock from 'views/pages/examples/Lock.js';
 import CreateClubActivity from 'views/pages/CreateClubActivity/CreateClubActivity';
 
 import ShowCompetition from 'views/pages/ShowCompetitionPage/CompetitionPage.jsx';
+import CreateCompetionPage from 'views/pages/CreateCompetitionPage';
 
 const routes = [
   {
@@ -63,9 +64,9 @@ const routes = [
       },
       {
         path: '/tao-cuoc-thi',
-        name: 'Tạo Cuộc thi',
+        name: 'Tạo cuộc thi',
         miniName: 'TC',
-        component: Lock,
+        component: CreateCompetionPage,
         layout: '/admin',
       },
       {
