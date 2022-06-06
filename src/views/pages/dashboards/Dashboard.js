@@ -79,7 +79,7 @@ function Dashboard() {
       <Container className="mt--6" fluid>
         <Row>
           <Col xl="4">
-            <Card style={{ height: '80%' }}>
+            <Card style={{ height: '90%', paddingBottom: '10px' }}>
               <CardHeader>
                 <h5 className="h3 mb-0">Ban Quản Lý</h5>
               </CardHeader>
@@ -121,7 +121,7 @@ function Dashboard() {
             </Card>
           </Col>
           <Col xl="4">
-            <Card style={{ height: '80%' }}>
+            <Card style={{ height: '90%', paddingBottom: '10px' }}>
               <CardHeader>
                 <h5 className="h3 mb-0">Sự kiện và cuộc thi</h5>
               </CardHeader>
@@ -163,7 +163,7 @@ function Dashboard() {
             </Card>
           </Col>
           <Col xl="4">
-            <Card style={{ height: '80%' }}>
+            <Card style={{ height: '90%', paddingBottom: '10px' }}>
               <CardHeader>
                 <h5 className="h3 mb-0">Tiến độ hoạt động</h5>
               </CardHeader>
@@ -205,7 +205,7 @@ function Dashboard() {
         </Row>
         <Row>
           <Col xl="12">
-            <Card style={{ height: '80%' }}>
+            <Card style={{ paddingBottom: '10px' }}>
               <CardHeader className="border-0">
                 <Row className="align-items-center">
                   <div className="col">
@@ -219,7 +219,7 @@ function Dashboard() {
                 </Row>
               </CardHeader>
               {clubMembers ? (
-                <Table className="align-items-center table-flush" responsive>
+                <Table className="align-items-center table-flush">
                   <thead className="thead-light">
                     <tr>
                       <th scope="col">STT</th>

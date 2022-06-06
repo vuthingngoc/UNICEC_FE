@@ -24,15 +24,24 @@ const competitionHeader = {
   banner: 'assets/img/theme/img-1-1000x600.jpg',
   type: 'Tài năng',
   startTime: '20/6/2022',
-  club_name: 'Thu Trang',
+  club_name: 'FU Guitar Club',
   club_avatar: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/1024px-No_image_available.svg.png',
   create_time: '2022-05-23',
   location: 'Đại học FPT',
   address: 'Lô E2a-7, Đường D1, Đ. D1, Long Thạnh Mỹ, Thành Phố Thủ Đức, Thành phố Hồ Chí Minh',
   marjors: ['Kỹ Thuật', 'Ngôn ngữ'],
-  sponsor: 'HUTECH',
-  sponsor_logo:
-    'https://scontent.fsgn5-6.fna.fbcdn.net/v/t39.30808-6/275966182_2797390133737626_4303257920612301245_n.jpg?_nc_cat=1&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=b79I0gQlayoAX9Kao9-&_nc_ht=scontent.fsgn5-6.fna&oh=00_AT8D6q-M4sE7bAMnjQ2xCDE1ctoo6KqaZNIW0hcqrgGnHw&oe=62919071',
+  sponsor: [
+    {
+      name: 'HUTECH',
+      logo: 'https://logovina.com/wp-content/uploads/2020/06/logo-hutech.jpg',
+      contract: 'https://www.facebook.com/hutechuniversity',
+    },
+    {
+      name: 'FPT University',
+      logo: 'https://pbs.twimg.com/profile_images/1230021618698600448/fJ0IeKqc_400x400.jpg',
+      contract: 'https://hcmuni.fpt.edu.vn/',
+    },
+  ],
   fee: '10000',
 };
 
@@ -179,23 +188,27 @@ export default function CompetitionDetailHeader() {
                           </Col>
                         )}
                       </Row>
-                      {competitionHeader.sponsor ? (
+                      {competitionHeader.sponsor.length > 0 ? (
                         <>
                           <CardTitle className="font-weight-bold text-default text-lg">Tài trợ bởi</CardTitle>
-                          <Row className="align-items-center mb-0" style={{ marginLeft: '10px' }}>
-                            <Col className="my-2" md="2" xs="3">
-                              <a href="https://www.facebook.com/hutechuniversity" id="tooltip374813717">
-                                <img
-                                  alt="..."
-                                  className="img-fluid rounded-circle"
-                                  src={competitionHeader.sponsor_logo}
-                                  style={{ backgroundColor: 'white' }}
-                                />
-                              </a>
-                              <UncontrolledTooltip delay={0} target="tooltip374813717">
-                                {competitionHeader.sponsor}
-                              </UncontrolledTooltip>
-                            </Col>
+                          <Row className="align-items-center mb-0">
+                            {competitionHeader.sponsor.map((ele, value) => {
+                              return (
+                                <Col className="col-auto" key={`sponsor-${value}`}>
+                                  <a href={ele.contract} target="_blank" id="tooltip374813717" rel="noreferrer">
+                                    <img
+                                      alt="..."
+                                      className="img-fluid rounded-circle md"
+                                      src={ele.logo}
+                                      style={{ backgroundColor: 'white', width: '80px', height: '80px' }}
+                                    />
+                                  </a>
+                                  <UncontrolledTooltip delay={0} target="tooltip374813717">
+                                    {ele.name}
+                                  </UncontrolledTooltip>
+                                </Col>
+                              );
+                            })}
                           </Row>
                         </>
                       ) : (
