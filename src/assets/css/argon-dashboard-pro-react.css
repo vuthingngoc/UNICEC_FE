@@ -25192,12 +25192,12 @@ html:not([dir='rtl']) .noUi-horizontal .noUi-handle {
   display: inline-flex;
   padding: 0 0.5rem;
   margin: 0 0 0.25rem 0.25rem;
-  background-color: #adb5bd;
+  background-color: #fee6e0;
+    color: #ff3709;
   border: none;
   border-radius: 0.25rem;
   line-height: 1.5rem;
   font-size: 0.875rem;
-  color: #8898aa;
 }
 
 .select2-container--default .select2-selection--multiple .select2-selection__choice__remove {
