@@ -7,9 +7,9 @@ import { getDataByPath } from 'services/data.service';
 function CardsHeader() {
   const [clubDatas, setClubDatas] = useState(null);
 
-  async function loadDataClubs(accessToken) {
+  async function loadDataClubs(accessToken, studentID) {
     if (accessToken !== null) {
-      const path = 'api/v1/club/user';
+      const path = `api/v1/clubs/user/${studentID}`;
       const res = await getDataByPath(`${path}`, accessToken, '');
       if (res !== null && res.status === 200) {
         setClubDatas(res.data[0]);
@@ -20,11 +20,12 @@ function CardsHeader() {
   useEffect(() => {
     if (localStorage && localStorage.getItem('accessToken')) {
       const accessToken = localStorage.getItem('accessToken');
+      const studentID = localStorage.getItem('studentID');
       if (clubDatas === null) {
-        loadDataClubs(accessToken);
+        loadDataClubs(accessToken, studentID);
       }
     }
-  });
+  }, []);
 
   return (
     <>
@@ -53,7 +54,7 @@ function CardsHeader() {
                           {clubDatas.name}
                         </a>
                       </h3>
-                      <span style={{ color: 'grey', fontFamily: 'cursive' }}>{clubDatas.club_contract}</span>{' '}
+                      <span style={{ color: 'grey', fontFamily: 'cursive' }}>{clubDatas.club_contact}</span>{' '}
                     </div>
                   </Row>
                 </Col>
@@ -101,7 +102,7 @@ function CardsHeader() {
                       </Row>
                       <p className="mt-3 mb-0 text-sm">
                         <span className="text-success mr-2">
-                          <i className="fa fa-arrow-up" /> {clubDatas.member_increase_last_month}
+                          <i className="fa fa-arrow-up" /> {clubDatas.member_increase_this_month}
                         </span>{' '}
                         <span className="text-nowrap">trong tháng này</span>
                       </p>

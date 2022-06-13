@@ -1,3 +1,4 @@
+/*eslint-disable*/
 import React from 'react';
 // nodejs library that concatenates classes
 import classnames from 'classnames';
@@ -97,18 +98,18 @@ export default function Login() {
     if (res.status === 200) {
       if (localStorage) {
         localStorage.setItem('accessToken', res.data.token);
-        localStorage.setItem('accessToken', res.data.token);
         localStorage.setItem('roleID', jwtDecode(res.data.token).RoleId);
         localStorage.setItem('universityID', jwtDecode(res.data.token).UniversityId);
-        getClubAndUniversity(res.data.token);
+        localStorage.setItem('studentID', jwtDecode(res.data.token).Id);
+        getClubAndUniversity(res.data.token, jwtDecode(res.data.token).Id);
       }
     } else {
       warningAlert();
     }
   }
 
-  async function getClubAndUniversity(accessToken) {
-    const res = await getDataByPath('api/v1/club/user', accessToken);
+  async function getClubAndUniversity(accessToken, studentID) {
+    const res = await getDataByPath(`api/v1/clubs/user/${studentID}`, accessToken, '');
     if (res.status === 200) {
       if (res.data.length > 0) {
         localStorage.setItem('clubID', res.data[0].id);
