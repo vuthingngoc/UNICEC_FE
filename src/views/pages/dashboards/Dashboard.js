@@ -13,7 +13,7 @@ function Dashboard() {
 
   async function loadDataHeadmasters(id, accessToken) {
     if (id !== 0) {
-      const path = 'api/v1/member/leaders/club';
+      const path = 'api/v1/members/leaders/club';
       const res = await getDataByPath(`${path}/${id}`, accessToken, '');
       if (res !== null && res.status === 200) {
         setClubHeadmasters(res.data);
@@ -23,7 +23,7 @@ function Dashboard() {
 
   async function loadDataMembers(clubId, accessToken) {
     if (clubId !== 0) {
-      const path = 'api/v1/member/club';
+      const path = 'api/v1/members/club';
       const res = await getDataByPath(`${path}/${clubId}`, accessToken, '');
       if (res !== null && res.status === 200) {
         setClubMembers(res.data);
@@ -33,9 +33,10 @@ function Dashboard() {
 
   async function loadDataEventCompetition(club_id, accessToken) {
     if (club_id !== null) {
-      const path = 'api/v1/competition/top3';
-      const data = `clubId=${club_id}&event=true&status=0`;
+      const path = 'api/v1/competitions/top3';
+      const data = `clubId=${club_id}`;
       const res = await getDataByPath(`${path}`, accessToken, data);
+      console.log(res);
       if (res !== null && res.status === 200) {
         setClubEventCompetitions(res.data);
       } else if (res !== null && res.status === 204) {
@@ -46,7 +47,7 @@ function Dashboard() {
 
   async function loadClubActivity(clubId, accessToken) {
     if (clubId !== 0) {
-      const path = 'api/v1/club-activity/top4-process';
+      const path = 'api/v1/competition-activities/top4-process';
       const data = `clubId=${clubId}`;
       const res = await getDataByPath(`${path}`, accessToken, data);
       if (res !== null && res.status === 200) {
@@ -134,8 +135,21 @@ function Dashboard() {
                           <ListGroupItem className="checklist-entry flex-column align-items-start py-4 px-4" key={`Event-${value}`}>
                             <div className={`${e.type === 'Sự kiện' ? 'checklist-item-success' : 'checklist-item-info'} checklist-item`}>
                               <div className="checklist-info">
-                                <h5 className="checklist-title mb-0">{e.name}</h5>
-                                <small>{e.time}</small>
+                                <h5 className="checklist-title mb-0" style={{ fontWeight: '700' }}>
+                                  {e.name}
+                                </h5>
+                                <Row>
+                                  <Col className="col-auto">
+                                    <small>Thể loại: {e.competition_type_name}</small>
+                                  </Col>
+                                  {e.is_sponsor === true ? (
+                                    <Col className="col-auto">
+                                      <small className="text-success font-weight-bold">Được tài trợ</small>
+                                    </Col>
+                                  ) : (
+                                    <></>
+                                  )}
+                                </Row>
                               </div>
                               <div>
                                 <Col className="col-auto">
