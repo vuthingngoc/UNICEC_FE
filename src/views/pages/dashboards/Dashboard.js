@@ -4,12 +4,14 @@ import { Button, Card, CardHeader, CardBody, ListGroupItem, ListGroup, Progress,
 // core components
 import CardsHeader from 'components/Headers/CardsHeader.js';
 import { getDataByPath } from 'services/data.service';
+import { useHistory } from 'react-router';
 
 function Dashboard() {
   const [clubHeadmasters, setClubHeadmasters] = useState(null);
   const [clubEventCompetitions, setClubEventCompetitions] = useState(null);
   const [clubActivity, setClubActivity] = useState(null);
   const [clubMembers, setClubMembers] = useState(null);
+  const history = useHistory();
 
   async function loadDataHeadmasters(id, accessToken) {
     if (id !== 0) {
@@ -111,11 +113,13 @@ function Dashboard() {
                       );
                     })
                   ) : (
-                    <img
-                      alt="loading"
-                      src="https://upload.wikimedia.org/wikipedia/commons/b/b1/Loading_icon.gif?20151024034921"
-                      style={{ display: 'block', margin: 'auto', width: '50%', height: '50%' }}
-                    />
+                    <Row>
+                      <img
+                        alt="..."
+                        src={require('assets/img/icons/Curve-Loading.gif').default}
+                        style={{ margin: 'auto', weight: '200px', height: '200px' }}
+                      />
+                    </Row>
                   )}
                 </ListGroup>
               </CardBody>
@@ -153,7 +157,14 @@ function Dashboard() {
                               </div>
                               <div>
                                 <Col className="col-auto">
-                                  <Button color="primary" size="sm" type="button">
+                                  <Button
+                                    color="primary"
+                                    size="sm"
+                                    type="button"
+                                    onClick={() => {
+                                      history.push(`/admin/cuoc-thi/chi-tiet/${e.competition_id}`);
+                                    }}
+                                  >
                                     Xem
                                   </Button>
                                 </Col>
@@ -166,11 +177,13 @@ function Dashboard() {
                       <h2 style={{ margin: 'auto' }}>Danh sách trống</h2>
                     )
                   ) : (
-                    <img
-                      alt="loading"
-                      src="https://upload.wikimedia.org/wikipedia/commons/b/b1/Loading_icon.gif?20151024034921"
-                      style={{ display: 'block', margin: 'auto', width: '50%', height: '50%' }}
-                    />
+                    <Row>
+                      <img
+                        alt="..."
+                        src={require('assets/img/icons/Curve-Loading.gif').default}
+                        style={{ margin: 'auto', weight: '200px', height: '200px' }}
+                      />
+                    </Row>
                   )}
                 </ListGroup>
               </CardBody>
@@ -206,11 +219,13 @@ function Dashboard() {
                       <h2 style={{ margin: 'auto' }}>Danh sách trống</h2>
                     )
                   ) : (
-                    <img
-                      alt="loading"
-                      src="https://upload.wikimedia.org/wikipedia/commons/b/b1/Loading_icon.gif?20151024034921"
-                      style={{ display: 'block', margin: 'auto', width: '50%', height: '50%' }}
-                    />
+                    <Row>
+                      <img
+                        alt="..."
+                        src={require('assets/img/icons/Curve-Loading.gif').default}
+                        style={{ margin: 'auto', weight: '200px', height: '200px' }}
+                      />
+                    </Row>
                   )}
                 </ListGroup>
               </CardBody>
@@ -256,11 +271,13 @@ function Dashboard() {
                   </tbody>
                 </Table>
               ) : (
-                <img
-                  alt="loading"
-                  src="https://upload.wikimedia.org/wikipedia/commons/b/b1/Loading_icon.gif?20151024034921"
-                  style={{ display: 'block', margin: 'auto', width: '50%', height: '50%' }}
-                />
+                <Row>
+                  <img
+                    alt="..."
+                    src={require('assets/img/icons/Curve-Loading.gif').default}
+                    style={{ margin: 'auto', weight: '200px', height: '200px' }}
+                  />
+                </Row>
               )}
             </Card>
           </Col>
