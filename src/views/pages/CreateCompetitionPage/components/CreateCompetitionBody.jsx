@@ -118,12 +118,12 @@ export default function CreateCompetitionBody() {
   };
 
   const handleConvertDataCompetitionTypes = (items) => {
-    const newDepartment = [];
+    const newCompetitionTypes = [];
     for (let index = 0; index < items.length; index++) {
       const element = { id: items[index].id, text: items[index].type_name };
-      newDepartment.push(element);
+      newCompetitionTypes.push(element);
     }
-    return newDepartment;
+    return newCompetitionTypes;
   };
 
   const toBase64 = (file) =>
@@ -146,7 +146,11 @@ export default function CreateCompetitionBody() {
 
   const addInfluencer = (name, base64) => {
     const newInfluencer = [...Influencer];
-    newInfluencer.push({ name: name, url: base64 });
+    if (base64 !== undefined) {
+      newInfluencer.push({ name: name, url: base64 });
+    } else {
+      newInfluencer.push({ name: name, url: 'https://i.pinimg.com/originals/ff/a0/9a/ffa09aec412db3f54deadf1b3781de2a.png' });
+    }
     setInfluencer(newInfluencer);
     setFullnameInfluencer('');
     setImgBase64Influencer('https://i.pinimg.com/originals/ff/a0/9a/ffa09aec412db3f54deadf1b3781de2a.png');
@@ -325,12 +329,18 @@ export default function CreateCompetitionBody() {
       if (localStorage && localStorage.getItem('accessToken')) {
         const accessToken = localStorage.getItem('accessToken');
         const club_id = localStorage.getItem('clubID');
-        const path = 'api/v1/competition';
+        const path = 'api/v1/competitions';
         const data = convertDataToCreate(club_id);
         console.log(data);
         if (data) {
           const res = await createDataByPath(path, accessToken, data);
           console.log(res);
+          if (res !== null && res.status === 200) {
+          } else if (res !== null && res.status === 400) {
+            if (res.data === 'Date not suitable') {
+              warningAlert('Ngày tháng không phù hợp');
+            }
+          }
         }
       }
     }
@@ -387,7 +397,7 @@ export default function CreateCompetitionBody() {
     <>
       {alert}
       <Container className="mt--6" fluid>
-        <Row className="justify-content-center" style={{ marginLeft: '50px' }}>
+        <Row className="justify-content-center">
           <Col md="8">
             <Card className="card-wrapper" lg="8">
               <CardHeader>
