@@ -2,7 +2,7 @@ import axios from 'axios';
 import getOptions from 'utils/services.ultils';
 // import getOptions from 'utils/services.ultils';
 
-const backendUrl = 'https://14.225.254.134';
+const backendUrl = process.env.REACT_APP_BACKEND_URL;
 
 export async function loginByPath(path, accessToken) {
   try {

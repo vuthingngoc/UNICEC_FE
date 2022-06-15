@@ -38,7 +38,6 @@ function Dashboard() {
       const path = 'api/v1/competitions/top3';
       const data = `clubId=${club_id}`;
       const res = await getDataByPath(`${path}`, accessToken, data);
-      console.log(res);
       if (res !== null && res.status === 200) {
         setClubEventCompetitions(res.data);
       } else if (res !== null && res.status === 204) {
@@ -74,7 +73,7 @@ function Dashboard() {
         loadDataMembers(club_id, accessToken);
       }
     }
-  }, [clubHeadmasters]);
+  }, []);
 
   return (
     <>

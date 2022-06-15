@@ -7,16 +7,39 @@ import { Row } from 'reactstrap';
 
 function CompetitionPage() {
   const [alert, setalert] = React.useState(false);
-  const [competitionList, setCompetitionList] = useState(null);
+  const [competitionList1, setCompetitionList1] = useState(null);
+  const [competitionList2, setCompetitionList2] = useState(null);
+  const [competitionList3, setCompetitionList3] = useState(null);
+  const [competitionList4, setCompetitionList4] = useState(null);
+  const [competitionList5, setCompetitionList5] = useState(null);
 
-  async function loadDataListCompetition(accessToken, clubId) {
+  async function loadDataListCompetition(accessToken, clubId, status) {
     if (accessToken) {
       const path = 'api/v1/competitions';
-      const data = `clubId=${clubId}&event=false`;
+      const data = `clubId=${clubId}&event=false&status=${status}`;
       const res = await getDataByPath(`${path}`, accessToken, data);
-      console.log(res);
       if (res !== null && res !== undefined && res.status === 200) {
-        setCompetitionList(res.data.items);
+        let newData = [];
+        if (res.data.items && res.data.items.length > 0) {
+          newData = res.data.items;
+        }
+        switch (status) {
+          case 1:
+            setCompetitionList1(newData);
+            break;
+          case 2:
+            setCompetitionList2(newData);
+            break;
+          case 3:
+            setCompetitionList3(newData);
+            break;
+          case 4:
+            setCompetitionList4(newData);
+            break;
+          case 5:
+            setCompetitionList5(newData);
+            break;
+        }
       } else {
         warningAlert('Kết nối tới máy chủ quá hạn');
       }
@@ -44,8 +67,12 @@ function CompetitionPage() {
     if (localStorage && localStorage.getItem('accessToken')) {
       const accessToken = localStorage.getItem('accessToken');
       const clubId = localStorage.getItem('clubID');
-      if (competitionList === null) {
-        loadDataListCompetition(accessToken, clubId);
+      if (competitionList1 === null) {
+        loadDataListCompetition(accessToken, clubId, 1);
+        loadDataListCompetition(accessToken, clubId, 2);
+        loadDataListCompetition(accessToken, clubId, 3);
+        loadDataListCompetition(accessToken, clubId, 4);
+        loadDataListCompetition(accessToken, clubId, 5);
       }
     }
   }, []);
@@ -53,10 +80,16 @@ function CompetitionPage() {
   return (
     <>
       {alert}
-      {competitionList ? (
+      {competitionList1 ? (
         <>
           <CompetitionHeader />
-          <CompetitionPageBody data={competitionList} />
+          <CompetitionPageBody
+            competitionList1={competitionList1}
+            competitionList2={competitionList2}
+            competitionList3={competitionList3}
+            competitionList4={competitionList4}
+            competitionList5={competitionList5}
+          />
         </>
       ) : (
         <Row>
