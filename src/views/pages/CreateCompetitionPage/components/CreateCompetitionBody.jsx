@@ -397,7 +397,7 @@ export default function CreateCompetitionBody() {
     <>
       {alert}
       <Container className="mt--6" fluid>
-        <Row className="justify-content-center" style={{ marginLeft: '50px' }}>
+        <Row className="justify-content-center">
           <Col md="8">
             <Card className="card-wrapper" lg="8">
               <CardHeader>
