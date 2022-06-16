@@ -7,9 +7,9 @@ import { getDataByPath } from 'services/data.service';
 function CardsHeader() {
   const [clubDatas, setClubDatas] = useState(null);
 
-  async function loadDataClubs(accessToken) {
+  async function loadDataClubs(accessToken, studentID) {
     if (accessToken !== null) {
-      const path = 'api/v1/club/user';
+      const path = `api/v1/clubs/user/${studentID}`;
       const res = await getDataByPath(`${path}`, accessToken, '');
       if (res !== null && res.status === 200) {
         setClubDatas(res.data[0]);
@@ -20,11 +20,12 @@ function CardsHeader() {
   useEffect(() => {
     if (localStorage && localStorage.getItem('accessToken')) {
       const accessToken = localStorage.getItem('accessToken');
+      const studentID = localStorage.getItem('studentID');
       if (clubDatas === null) {
-        loadDataClubs(accessToken);
+        loadDataClubs(accessToken, studentID);
       }
     }
-  });
+  }, []);
 
   return (
     <>
@@ -32,37 +33,39 @@ function CardsHeader() {
         <Container fluid>
           {clubDatas !== null ? (
             <div className="header-body">
-              <Row className="align-items-center py-4">
-                <Col lg="9" xs="10">
-                  <Row>
-                    <Col className="col-auto">
-                      <a className="avatar rounded-circle" href="/" onClick={(e) => e.preventDefault()}>
-                        <img
-                          alt="..."
-                          src={`${
-                            clubDatas.image !== null
-                              ? clubDatas.image
-                              : 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/1024px-No_image_available.svg.png'
-                          } `}
-                        />
-                      </a>
-                    </Col>
-                    <div className="col ml--2">
-                      <h3 className="mb-0 text-default" style={{ fontWeight: '900', fontFamily: 'sans-serif', margin: 'auto' }}>
-                        <a href={clubDatas.club_fanpage} target="blank">
-                          {clubDatas.name}
+              <Card className="card-wrapper mt-3">
+                <Row className="align-items-center py-4 ml-2 mr-2">
+                  <Col lg="9" xs="10">
+                    <Row>
+                      <Col className="col-auto">
+                        <a className="avatar rounded-circle" href="/" onClick={(e) => e.preventDefault()}>
+                          <img
+                            alt="..."
+                            src={`${
+                              clubDatas.image !== null
+                                ? clubDatas.image
+                                : 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/1024px-No_image_available.svg.png'
+                            } `}
+                          />
                         </a>
-                      </h3>
-                      <span style={{ color: 'grey', fontFamily: 'cursive' }}>{clubDatas.club_contract}</span>{' '}
-                    </div>
-                  </Row>
-                </Col>
-                <Col className="text-right" lg="3" xs="2">
-                  <p className="font-weight-bold text-default mb-0" style={{ fontFamily: 'cursive', margin: 'auto' }}>
-                    {clubDatas.university_name}
-                  </p>
-                </Col>
-              </Row>
+                      </Col>
+                      <div className="col ml--2">
+                        <h3 className="mb-0 text-default" style={{ fontWeight: '900', fontFamily: 'sans-serif', margin: 'auto' }}>
+                          <a href={clubDatas.club_fanpage} target="blank">
+                            {clubDatas.name}
+                          </a>
+                        </h3>
+                        <span style={{ color: 'grey', fontFamily: 'cursive' }}>{clubDatas.club_contact}</span>{' '}
+                      </div>
+                    </Row>
+                  </Col>
+                  <Col className="text-right" lg="3" xs="2">
+                    <p className="font-weight-bold text-default mb-0" style={{ fontFamily: 'cursive', margin: 'auto' }}>
+                      {clubDatas.university_name}
+                    </p>
+                  </Col>
+                </Row>
+              </Card>
               <Row>
                 <Col md="6" xl="3">
                   <Card className="card-stats" style={{ width: '100%', height: '80%' }}>
@@ -101,7 +104,7 @@ function CardsHeader() {
                       </Row>
                       <p className="mt-3 mb-0 text-sm">
                         <span className="text-success mr-2">
-                          <i className="fa fa-arrow-up" /> {clubDatas.member_increase_last_month}
+                          <i className="fa fa-arrow-up" /> {clubDatas.member_increase_this_month}
                         </span>{' '}
                         <span className="text-nowrap">trong tháng này</span>
                       </p>
@@ -149,11 +152,7 @@ function CardsHeader() {
               </Row>
             </div>
           ) : (
-            <img
-              alt="loading"
-              src="https://upload.wikimedia.org/wikipedia/commons/b/b1/Loading_icon.gif?20151024034921"
-              style={{ display: 'block', margin: 'auto', width: '30%', height: '30%' }}
-            />
+            <></>
           )}
         </Container>
       </div>

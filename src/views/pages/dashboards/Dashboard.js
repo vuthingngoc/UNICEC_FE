@@ -4,16 +4,18 @@ import { Button, Card, CardHeader, CardBody, ListGroupItem, ListGroup, Progress,
 // core components
 import CardsHeader from 'components/Headers/CardsHeader.js';
 import { getDataByPath } from 'services/data.service';
+import { useHistory } from 'react-router';
 
 function Dashboard() {
   const [clubHeadmasters, setClubHeadmasters] = useState(null);
   const [clubEventCompetitions, setClubEventCompetitions] = useState(null);
   const [clubActivity, setClubActivity] = useState(null);
   const [clubMembers, setClubMembers] = useState(null);
+  const history = useHistory();
 
   async function loadDataHeadmasters(id, accessToken) {
     if (id !== 0) {
-      const path = 'api/v1/member/leaders/club';
+      const path = 'api/v1/members/leaders/club';
       const res = await getDataByPath(`${path}/${id}`, accessToken, '');
       if (res !== null && res.status === 200) {
         setClubHeadmasters(res.data);
@@ -23,7 +25,7 @@ function Dashboard() {
 
   async function loadDataMembers(clubId, accessToken) {
     if (clubId !== 0) {
-      const path = 'api/v1/member/club';
+      const path = 'api/v1/members/club';
       const res = await getDataByPath(`${path}/${clubId}`, accessToken, '');
       if (res !== null && res.status === 200) {
         setClubMembers(res.data);
@@ -33,8 +35,8 @@ function Dashboard() {
 
   async function loadDataEventCompetition(club_id, accessToken) {
     if (club_id !== null) {
-      const path = 'api/v1/competition/top3';
-      const data = `clubId=${club_id}&event=true&status=0`;
+      const path = 'api/v1/competitions/top3';
+      const data = `clubId=${club_id}`;
       const res = await getDataByPath(`${path}`, accessToken, data);
       if (res !== null && res.status === 200) {
         setClubEventCompetitions(res.data);
@@ -46,7 +48,7 @@ function Dashboard() {
 
   async function loadClubActivity(clubId, accessToken) {
     if (clubId !== 0) {
-      const path = 'api/v1/club-activity/top4-process';
+      const path = 'api/v1/competition-activities/top4-process';
       const data = `clubId=${clubId}`;
       const res = await getDataByPath(`${path}`, accessToken, data);
       if (res !== null && res.status === 200) {
@@ -71,7 +73,7 @@ function Dashboard() {
         loadDataMembers(club_id, accessToken);
       }
     }
-  }, [clubHeadmasters]);
+  }, []);
 
   return (
     <>
@@ -110,11 +112,13 @@ function Dashboard() {
                       );
                     })
                   ) : (
-                    <img
-                      alt="loading"
-                      src="https://upload.wikimedia.org/wikipedia/commons/b/b1/Loading_icon.gif?20151024034921"
-                      style={{ display: 'block', margin: 'auto', width: '50%', height: '50%' }}
-                    />
+                    <Row>
+                      <img
+                        alt="..."
+                        src={require('assets/img/icons/Curve-Loading.gif').default}
+                        style={{ margin: 'auto', weight: '200px', height: '200px' }}
+                      />
+                    </Row>
                   )}
                 </ListGroup>
               </CardBody>
@@ -134,12 +138,32 @@ function Dashboard() {
                           <ListGroupItem className="checklist-entry flex-column align-items-start py-4 px-4" key={`Event-${value}`}>
                             <div className={`${e.type === 'Sự kiện' ? 'checklist-item-success' : 'checklist-item-info'} checklist-item`}>
                               <div className="checklist-info">
-                                <h5 className="checklist-title mb-0">{e.name}</h5>
-                                <small>{e.time}</small>
+                                <h5 className="checklist-title mb-0" style={{ fontWeight: '700' }}>
+                                  {e.name}
+                                </h5>
+                                <Row>
+                                  <Col className="col-auto">
+                                    <small>Thể loại: {e.competition_type_name}</small>
+                                  </Col>
+                                  {e.is_sponsor === true ? (
+                                    <Col className="col-auto">
+                                      <small className="text-success font-weight-bold">Được tài trợ</small>
+                                    </Col>
+                                  ) : (
+                                    <></>
+                                  )}
+                                </Row>
                               </div>
                               <div>
                                 <Col className="col-auto">
-                                  <Button color="primary" size="sm" type="button">
+                                  <Button
+                                    color="primary"
+                                    size="sm"
+                                    type="button"
+                                    onClick={() => {
+                                      history.push(`/admin/cuoc-thi/chi-tiet/${e.competition_id}`);
+                                    }}
+                                  >
                                     Xem
                                   </Button>
                                 </Col>
@@ -152,11 +176,13 @@ function Dashboard() {
                       <h2 style={{ margin: 'auto' }}>Danh sách trống</h2>
                     )
                   ) : (
-                    <img
-                      alt="loading"
-                      src="https://upload.wikimedia.org/wikipedia/commons/b/b1/Loading_icon.gif?20151024034921"
-                      style={{ display: 'block', margin: 'auto', width: '50%', height: '50%' }}
-                    />
+                    <Row>
+                      <img
+                        alt="..."
+                        src={require('assets/img/icons/Curve-Loading.gif').default}
+                        style={{ margin: 'auto', weight: '200px', height: '200px' }}
+                      />
+                    </Row>
                   )}
                 </ListGroup>
               </CardBody>
@@ -192,11 +218,13 @@ function Dashboard() {
                       <h2 style={{ margin: 'auto' }}>Danh sách trống</h2>
                     )
                   ) : (
-                    <img
-                      alt="loading"
-                      src="https://upload.wikimedia.org/wikipedia/commons/b/b1/Loading_icon.gif?20151024034921"
-                      style={{ display: 'block', margin: 'auto', width: '50%', height: '50%' }}
-                    />
+                    <Row>
+                      <img
+                        alt="..."
+                        src={require('assets/img/icons/Curve-Loading.gif').default}
+                        style={{ margin: 'auto', weight: '200px', height: '200px' }}
+                      />
+                    </Row>
                   )}
                 </ListGroup>
               </CardBody>
@@ -242,11 +270,13 @@ function Dashboard() {
                   </tbody>
                 </Table>
               ) : (
-                <img
-                  alt="loading"
-                  src="https://upload.wikimedia.org/wikipedia/commons/b/b1/Loading_icon.gif?20151024034921"
-                  style={{ display: 'block', margin: 'auto', width: '50%', height: '50%' }}
-                />
+                <Row>
+                  <img
+                    alt="..."
+                    src={require('assets/img/icons/Curve-Loading.gif').default}
+                    style={{ margin: 'auto', weight: '200px', height: '200px' }}
+                  />
+                </Row>
               )}
             </Card>
           </Col>

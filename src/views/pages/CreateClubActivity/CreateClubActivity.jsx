@@ -1,5 +1,5 @@
 import React from 'react';
-import { Card, CardHeader, CardBody, Label, FormGroup, Form, Input, Col, ListGroup, ListGroupItem, Row, Button } from 'reactstrap';
+import { Card, CardHeader, CardBody, Label, FormGroup, Form, Input, Col, Row, Button } from 'reactstrap';
 import ReactQuill from 'react-quill';
 import Dropzone from 'dropzone';
 import Select2 from 'react-select2-wrapper';
@@ -28,22 +28,6 @@ function CreateClubActivity() {
       },
     });
     document.getElementsByClassName('dz-preview-single')[0].innerHTML = '';
-    // let currentMultipleFile = undefined;
-    new Dropzone(document.getElementById('dropzone-multiple'), {
-      url: 'https://',
-      thumbnailWidth: null,
-      thumbnailHeight: null,
-      previewsContainer: document.getElementsByClassName('dz-preview-multiple')[0],
-      previewTemplate: document.getElementsByClassName('dz-preview-multiple')[0].innerHTML,
-      maxFiles: null,
-      acceptedFiles: null,
-      // init: function () {
-      //   this.on('addedfile', function (file) {
-      //     currentMultipleFile = file;
-      //   });
-      // },
-    });
-    document.getElementsByClassName('dz-preview-multiple')[0].innerHTML = '';
   }, []);
 
   return (
@@ -114,7 +98,7 @@ function CreateClubActivity() {
             </FormGroup>
             <FormGroup className="row">
               <Label className="form-control-label" htmlFor="example-color-input" md="2">
-                File
+                Ảnh
               </Label>
               <Col md="10">
                 <div className="dropzone dropzone-single mb-3" id="dropzone-single">
@@ -122,7 +106,7 @@ function CreateClubActivity() {
                     <div className="custom-file">
                       <input className="custom-file-input" id="projectCoverUploads" type="file" />
                       <label className="custom-file-label" htmlFor="projectCoverUploads">
-                        Choose file
+                        Chọn Ảnh
                       </label>
                     </div>
                   </div>
@@ -131,40 +115,6 @@ function CreateClubActivity() {
                       <img alt="..." className="dz-preview-img" data-dz-thumbnail="" />
                     </div>
                   </div>
-                </div>
-                <div className="dropzone dropzone-multiple" id="dropzone-multiple">
-                  <div className="fallback">
-                    <div className="custom-file">
-                      <input className="custom-file-input" id="customFileUploadMultiple" multiple="multiple" type="file" />
-                      <label className="custom-file-label" htmlFor="customFileUploadMultiple">
-                        Choose file
-                      </label>
-                    </div>
-                  </div>
-                  <ListGroup className=" dz-preview dz-preview-multiple list-group-lg" flush>
-                    <ListGroupItem className=" px-0">
-                      <Row className=" align-items-center">
-                        <Col className=" col-auto">
-                          <div className=" avatar">
-                            <img alt="..." className=" avatar-img rounded" data-dz-thumbnail src="..." />
-                          </div>
-                        </Col>
-                        <div className=" col ml--3">
-                          <h4 className=" mb-1" data-dz-name>
-                            ...
-                          </h4>
-                          <p className=" small text-muted mb-0" data-dz-size>
-                            ...
-                          </p>
-                        </div>
-                        <Col className=" col-auto">
-                          <Button size="sm" color="danger" data-dz-remove>
-                            <i className="fas fa-trash" />
-                          </Button>
-                        </Col>
-                      </Row>
-                    </ListGroupItem>
-                  </ListGroup>
                 </div>
               </Col>
             </FormGroup>

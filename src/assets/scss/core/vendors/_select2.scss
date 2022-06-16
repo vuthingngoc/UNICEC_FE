@@ -17,6 +17,7 @@
 .select2-container--default .select2-search--dropdown .select2-search__field {
   display: block;
   width: 100%;
+  text-align: center;
   height: $input-height;
   padding: $input-padding-y $input-padding-x;
   font-size: $font-size-base;
@@ -163,6 +164,8 @@
   padding: $input-padding-y-sm $input-padding-x-sm;
   font-size: $font-size-sm;
   line-height: $input-line-height-sm;
+  width: 100%;
+    text-align: left;
   @include border-radius($input-border-radius-sm);
 }
 

@@ -1,19 +1,37 @@
-import axios from 'axios';
 import getOptions from 'utils/services.ultils';
-const backendUrl = 'https://14.225.254.134';
+import authAxios from './authAxios';
 
 export async function getDataByPath(path, accessToken, data) {
   try {
-    let endpoint = `${backendUrl}`;
+    let endpoint = '';
     let option = {};
     if (accessToken && accessToken !== '') option = getOptions(accessToken);
     if (path !== '') {
-      endpoint = `${backendUrl}/${path}`;
+      endpoint = `/${path}`;
     }
     if (data !== '') {
-      endpoint = `${backendUrl}/${path}?${data}`;
+      endpoint = `/${path}?${data}`;
     }
-    const res = await axios.get(endpoint, option);
+    const res = await authAxios(option).get(endpoint);
+    return res;
+  } catch (error) {
+    return error.response;
+  }
+}
+
+export async function createDataByPath(path, accessToken, data) {
+  try {
+    let endpoint = '';
+    let body = {};
+    let option = {};
+    if (accessToken && accessToken !== '') option = getOptions(accessToken);
+    if (path !== '') {
+      endpoint = `/${path}`;
+    }
+    if (data !== '') {
+      body = data;
+    }
+    const res = await authAxios(option).post(endpoint, body);
     return res;
   } catch (error) {
     return error.response;
