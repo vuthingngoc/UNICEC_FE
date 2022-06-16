@@ -1,7 +1,7 @@
 import Alternative from 'views/pages/dashboards/Alternative.js';
 
 import Dashboard from 'views/pages/dashboards/Dashboard.js';
-import Lock from 'views/pages/examples/Lock.js';
+// import Lock from 'views/pages/examples/Lock.js';
 //LoginPagef
 //import LoginPage from 'views/pages/LoginPage/LoginPage.jsx';
 
@@ -11,6 +11,8 @@ import CreateClubActivity from 'views/pages/CreateClubActivity/CreateClubActivit
 
 import ShowCompetition from 'views/pages/ShowCompetitionPage/CompetitionPage.jsx';
 import CreateCompetionPage from 'views/pages/CreateCompetitionPage';
+
+import ShowlistTeamPage from 'views/pages/ShowListTeamPage/index.jsx';
 
 const routes = [
   {
@@ -73,7 +75,7 @@ const routes = [
         path: '/tao-su-kien',
         name: 'Tạo sự kiện',
         miniName: 'TS',
-        component: Lock,
+        component: ShowlistTeamPage,
         layout: '/admin',
       },
     ],
