@@ -12,6 +12,7 @@ function CompetitionPage() {
   const [competitionList3, setCompetitionList3] = useState(null);
   const [competitionList4, setCompetitionList4] = useState(null);
   const [competitionList5, setCompetitionList5] = useState(null);
+  const [clubData, setClubData] = useState(null);
 
   async function loadDataListCompetition(accessToken, clubId, status) {
     if (accessToken) {
@@ -46,6 +47,18 @@ function CompetitionPage() {
     }
   }
 
+  async function loadDataClubs(accessToken, studentID) {
+    if (accessToken !== null) {
+      const path = `api/v1/clubs/user/${studentID}`;
+      const res = await getDataByPath(`${path}`, accessToken, '');
+      if (res !== null && res.status === 200) {
+        setClubData(res.data[0]);
+      } else {
+        warningAlert('Kết nối tới máy chủ quá hạn');
+      }
+    }
+  }
+
   const warningAlert = (message) => {
     setalert(
       <ReactBSAlert
@@ -67,12 +80,16 @@ function CompetitionPage() {
     if (localStorage && localStorage.getItem('accessToken')) {
       const accessToken = localStorage.getItem('accessToken');
       const clubId = localStorage.getItem('clubID');
+      const studentID = localStorage.getItem('studentID');
       if (competitionList1 === null) {
         loadDataListCompetition(accessToken, clubId, 1);
         loadDataListCompetition(accessToken, clubId, 2);
         loadDataListCompetition(accessToken, clubId, 3);
         loadDataListCompetition(accessToken, clubId, 4);
         loadDataListCompetition(accessToken, clubId, 5);
+      }
+      if (clubData === null) {
+        loadDataClubs(accessToken, studentID);
       }
     }
   }, []);
@@ -82,7 +99,7 @@ function CompetitionPage() {
       {alert}
       {competitionList1 ? (
         <>
-          <CompetitionHeader />
+          <CompetitionHeader clubData={clubData} />
           <CompetitionPageBody
             competitionList1={competitionList1}
             competitionList2={competitionList2}

@@ -37,10 +37,6 @@ export default function CompetitionPageBody(data) {
     return `${day[2]}/${day[1]}/${day[0]}`;
   };
 
-  React.useEffect(() => {
-    console.log(data);
-  });
-
   return (
     <Container className="mt--6 bg-white" fluid>
       <Card className="pl-4">
@@ -395,7 +391,7 @@ export default function CompetitionPageBody(data) {
                 </Col>
               );
             })
-          ) : data.competitionLis3 && data.competitionList3.length === 0 ? (
+          ) : data.competitionList3 && data.competitionList3.length === 0 ? (
             <h2 className="display-3" style={{ margin: 'auto', marginBottom: '100px', marginTop: '100px' }}>
               Danh sách trống
             </h2>

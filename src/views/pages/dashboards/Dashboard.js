@@ -51,6 +51,7 @@ function Dashboard() {
       const path = 'api/v1/competition-activities/top4-process';
       const data = `clubId=${clubId}`;
       const res = await getDataByPath(`${path}`, accessToken, data);
+      console.log(res);
       if (res !== null && res.status === 200) {
         setClubActivity(res.data);
       }

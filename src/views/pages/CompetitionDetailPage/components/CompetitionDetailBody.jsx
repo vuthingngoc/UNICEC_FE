@@ -99,6 +99,36 @@ export default function CompetitionDetailBody(data) {
                   </Row>
                 </CardHeader>
                 <CardBody>
+                  <CardTitle className="mb-0">
+                    <h3>Các câu lạc bộ tham gia và tổ chức</h3>
+                  </CardTitle>
+                  {data.data.clubs_in_competition && data.data.clubs_in_competition.length > 0 ? (
+                    <Row className="align-items-center mb-3">
+                      {data.data.clubs_in_competition.map((e, value) => {
+                        return (
+                          <Col className="col-auto" key={`sponsor-${value}`}>
+                            <a href="/" onClick={(e) => e.preventDefault()} id={`tooltip-${value}`} rel="noreferrer">
+                              <img
+                                alt="..."
+                                className="img-fluid rounded-circle md"
+                                src={
+                                  e.image
+                                    ? e.image
+                                    : 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/1024px-No_image_available.svg.png'
+                                }
+                                style={{ backgroundColor: 'white', width: '60px', height: '60px' }}
+                              />
+                            </a>
+                            <UncontrolledTooltip delay={0} target={`tooltip-${value}`}>
+                              {e.is_owner === true ? `Câu lạc bộ tạo: ${e.name}` : `${e.name}`}
+                            </UncontrolledTooltip>
+                          </Col>
+                        );
+                      })}
+                    </Row>
+                  ) : (
+                    <></>
+                  )}
                   {data.data.fee ? (
                     <CardTitle className="mb-0">
                       <h3>

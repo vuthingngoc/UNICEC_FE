@@ -1,5 +1,4 @@
 // react library for routing
-import classNames from 'classnames';
 import React from 'react';
 import { Link } from 'react-router-dom';
 // reactstrap components
@@ -8,24 +7,9 @@ import { useHistory } from 'react-router';
 
 function LoginNavbar() {
   const history = useHistory();
-  const [navbarColor, setNavbarColor] = React.useState('bg-transparent');
-  React.useEffect(() => {
-    const updateNavbarColor = () => {
-      if (document.documentElement.scrollTop > 30 || document.body.scrollTop > 30) {
-        setNavbarColor('bg-neutral');
-      } else if (document.documentElement.scrollTop < 30 || document.body.scrollTop < 30) {
-        setNavbarColor('bg-transparent');
-      }
-    };
-
-    window.addEventListener('scroll', updateNavbarColor);
-    return function cleanup() {
-      window.removeEventListener('scroll', updateNavbarColor);
-    };
-  });
   return (
     <>
-      <Navbar className={classNames('fixed-top navbar-horizontal', navbarColor)} expand="lg" id="navbar-main">
+      <Navbar className="fixed-top navbar-horizontal bg-white" expand="lg" id="navbar-main">
         <Container>
           <NavbarBrand to="/" tag={Link}>
             <img alt="..." src={require('assets/img/brand/Logo.png').default} style={{ height: '50px', width: '50px' }} />
@@ -137,25 +121,6 @@ function LoginNavbar() {
               </NavItem>
             </Nav>
             <hr className="d-lg-none" />
-            {/* <Nav className="align-items-lg-center ml-lg-4" navbar>
-              <NavItem>
-                <NavLink className="nav-link-icon" href="https://www.facebook.com/" id="tooltip601201423" target="_blank">
-                  <i className="fab fa-facebook-square fa-2x" />
-                  <span className="nav-link-inner--text d-lg-none">Facebook</span>
-                </NavLink>
-                <UncontrolledTooltip delay={0} target="tooltip601201423">
-                  Trang Fanpage
-                </UncontrolledTooltip>
-              </NavItem>
-              <NavItem className="d-none d-lg-block ml-lg-4">
-                <Button className="btn-neutral btn-icon" color="default" href="/auth/login">
-                  <span className="btn-inner--icon">
-                    <i className="fas fa-sign-in-alt mr-2" />
-                  </span>
-                  <span className="nav-link-inner--text">Đăng nhập</span>
-                </Button>
-              </NavItem>
-            </Nav> */}
           </UncontrolledCollapse>
         </Container>
       </Navbar>
