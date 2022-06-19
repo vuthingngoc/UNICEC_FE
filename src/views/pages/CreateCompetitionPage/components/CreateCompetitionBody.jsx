@@ -21,6 +21,7 @@ import {
 } from 'reactstrap';
 import { getDataByPath } from 'services/data.service';
 import { createDataByPath } from 'services/data.service';
+import { useHistory } from 'react-router';
 
 const CompetitionScopes = [
   { id: 0, text: 'Liên Trường' },
@@ -55,6 +56,7 @@ export default function CreateCompetitionBody() {
   const [departmentList, setDepartmentList] = useState([]);
   const [competitionTypeList, setCompetitionTypeList] = useState([]);
   const [alert, setalert] = React.useState(false);
+  const history = useHistory();
 
   const toolbarOptions = [
     [{ size: [] }],
@@ -246,6 +248,21 @@ export default function CreateCompetitionBody() {
     );
   };
 
+  const successAlert = (message) => {
+    setalert(
+      <ReactBSAlert
+        success
+        style={{ display: 'block', marginTop: '-100px' }}
+        title={message}
+        onConfirm={() => setalert(null)}
+        onCancel={() => setalert(null)}
+        showCancel={false}
+        showConfirm={false}
+        btnSize=""
+      ></ReactBSAlert>
+    );
+  };
+
   const checkValidation = () => {
     if (title.trim() === '') {
       warningAlert('Vui lòng điền tiêu đề');
@@ -336,6 +353,10 @@ export default function CreateCompetitionBody() {
           const res = await createDataByPath(path, accessToken, data);
           console.log(res);
           if (res !== null && res.status === 200) {
+            successAlert('Tạo cuộc thi thành công');
+            setTimeout(() => {
+              history.push(`/admin/cuoc-thi/chi-tiet/${res.data.competition_id}`);
+            }, 2000);
           } else if (res !== null && res.status === 400) {
             if (res.data === 'Date not suitable') {
               warningAlert('Ngày tháng không phù hợp');
@@ -975,7 +996,13 @@ export default function CreateCompetitionBody() {
                   >
                     Hoàn tất
                   </Button>
-                  <Button color="info" style={{ margin: 'auto' }}>
+                  <Button
+                    color="info"
+                    style={{ margin: 'auto' }}
+                    onClick={() => {
+                      successAlert('Tạo cuộc thi thành công');
+                    }}
+                  >
                     Xem trước
                   </Button>
                 </Row>

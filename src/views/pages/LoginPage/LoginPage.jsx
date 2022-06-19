@@ -86,6 +86,8 @@ export default function Login() {
         title="Đăng nhập thành công"
         onConfirm={() => setalert(null)}
         onCancel={() => setalert(null)}
+        showCancel={false}
+        showConfirm={false}
       >
         Chào mừng bạn đến với hệ thống.
       </ReactBSAlert>
@@ -95,7 +97,7 @@ export default function Login() {
   async function loginWithAccessToken(accessTokenFirebase) {
     setIsSubmitting(true);
     const res = await loginByPath('api/v1/firebase', accessTokenFirebase);
-    if (res.status === 200) {
+    if (res && res.status === 200) {
       if (localStorage) {
         localStorage.setItem('accessToken', res.data.token);
         localStorage.setItem('roleID', jwtDecode(res.data.token).RoleId);
@@ -110,7 +112,7 @@ export default function Login() {
 
   async function getClubAndUniversity(accessToken, studentID) {
     const res = await getDataByPath(`api/v1/clubs/user/${studentID}`, accessToken, '');
-    if (res.status === 200) {
+    if (res && res.status === 200) {
       if (res.data.length > 0) {
         localStorage.setItem('clubID', res.data[0].id);
         setIsSubmitting(false);
@@ -122,7 +124,7 @@ export default function Login() {
     successAlert();
     setTimeout(function () {
       history.push('/admin/thong-tin-clb');
-    }, 2000);
+    }, 1500);
   }
 
   const handleErrorLogin = (request) => {
@@ -146,7 +148,7 @@ export default function Login() {
             <Card className="bg-secondary border-0 mb-0">
               <CardHeader className="bg-transparent pb-5">
                 <div className="text-muted text-center mt-2 mb-3">
-                  <small>Đăng nhập với</small>
+                  <span>Đăng nhập với</span>
                 </div>
                 <div className="btn-wrapper text-center">
                   <Button
@@ -178,7 +180,7 @@ export default function Login() {
               </CardHeader>
               <CardBody className="px-lg-5 py-lg-5">
                 <div className="text-center text-muted mb-4">
-                  <small>Đăng nhập với tài khoản</small>
+                  <span>Đăng nhập với tài khoản</span>
                 </div>
                 <Form role="form">
                   <FormGroup
