@@ -1,7 +1,7 @@
 import Alternative from 'views/pages/dashboards/Alternative.js';
 
 import Dashboard from 'views/pages/dashboards/Dashboard.js';
-import Lock from 'views/pages/examples/Lock.js';
+// import Lock from 'views/pages/examples/Lock.js';
 //LoginPagef
 //import LoginPage from 'views/pages/LoginPage/LoginPage.jsx';
 
@@ -11,6 +11,8 @@ import CreateClubActivity from 'views/pages/CreateClubActivity/CreateClubActivit
 
 import ShowCompetition from 'views/pages/ShowCompetitionPage/CompetitionPage.jsx';
 import CreateCompetionPage from 'views/pages/CreateCompetitionPage';
+
+import ShowlistTeamPage from 'views/pages/ShowListTeamPage/index.jsx';
 
 const routes = [
   {
@@ -29,14 +31,21 @@ const routes = [
       {
         path: '/hoat-dong-clb',
         name: 'Hoạt động',
-        miniName: 'H',
+        miniName: 'HĐ',
         component: Alternative,
+        layout: '/admin',
+      },
+      {
+        path: '/tao-hoat-dong',
+        name: 'Tạo Hoạt động',
+        miniName: 'THĐ',
+        component: CreateClubActivity,
         layout: '/admin',
       },
       {
         path: '/thanh-vien',
         name: 'Thành viên',
-        miniName: 'T',
+        miniName: 'TV',
         component: Alternative,
         layout: '/admin',
       },
@@ -51,21 +60,21 @@ const routes = [
       {
         path: '/cuoc-thi',
         name: 'Cuộc thi',
-        miniName: 'C',
+        miniName: 'CT',
         component: ShowCompetition,
         layout: '/admin',
       },
       {
         path: '/su-kien',
         name: 'Sự kiện',
-        miniName: 'S',
-        component: CreateClubActivity,
+        miniName: 'SK',
+        component: ShowCompetition,
         layout: '/admin',
       },
       {
         path: '/tao-cuoc-thi',
         name: 'Tạo cuộc thi',
-        miniName: 'TC',
+        miniName: 'TCT',
         component: CreateCompetionPage,
         layout: '/admin',
       },
@@ -73,7 +82,7 @@ const routes = [
         path: '/tao-su-kien',
         name: 'Tạo sự kiện',
         miniName: 'TS',
-        component: Lock,
+        component: ShowlistTeamPage,
         layout: '/admin',
       },
     ],
