@@ -1,9 +1,12 @@
 import moment from 'moment';
 import React from 'react';
 import ReactQuill from 'react-quill';
+import { useHistory } from 'react-router';
 import { Badge, Button, Card, CardBody, CardHeader, CardImg, CardTitle, Col, Container, Row, UncontrolledTooltip } from 'reactstrap';
 
 export default function CompetitionDetailBody(data) {
+  const history = useHistory();
+
   const convertDateFormat = (date) => {
     const arr = date.split('T');
     const day = arr[0].split('-');
@@ -111,11 +114,7 @@ export default function CompetitionDetailBody(data) {
                               <img
                                 alt="..."
                                 className="img-fluid rounded-circle md"
-                                src={
-                                  e.image
-                                    ? e.image
-                                    : 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/1024px-No_image_available.svg.png'
-                                }
+                                src={e.image ? e.image : require('assets/img/icons/avatar/No_image_available.png').default}
                                 style={{ backgroundColor: 'white', width: '60px', height: '60px' }}
                               />
                             </a>
@@ -129,10 +128,19 @@ export default function CompetitionDetailBody(data) {
                   ) : (
                     <></>
                   )}
-                  {data.data.fee ? (
+                  {data.data.fee !== 0 ? (
                     <CardTitle className="mb-0">
                       <h3>
                         Phí tham gia: <span className="text-success">{convertFee(data.data.fee)}</span>
+                      </h3>
+                    </CardTitle>
+                  ) : (
+                    <></>
+                  )}
+                  {data.data.seeds_point !== 0 ? (
+                    <CardTitle className="mb-0">
+                      <h3>
+                        Hạt giống thưởng: <span className="text-success">{convertFee(data.data.seeds_point)}</span>
                       </h3>
                     </CardTitle>
                   ) : (
@@ -146,30 +154,32 @@ export default function CompetitionDetailBody(data) {
                       </span>
                     </h3>
                   </CardTitle>
-                  <CardTitle className="mb-0">
-                    <h3>Ban giám khảo:</h3>
-                  </CardTitle>
                   {data.data.influencers_in_competition && data.data.influencers_in_competition.length > 0 ? (
-                    <Row className="align-items-center mb-3">
-                      {data.data.influencers_in_competition.map((ele, value) => {
-                        return (
-                          <Col className="col-auto mb-1" key={`influ-${value}`}>
-                            <a
-                              href="/"
-                              id={`tooltip-${value}`}
-                              onClick={(e) => {
-                                e.preventDefault(e);
-                              }}
-                            >
-                              <img style={{ width: '50px', height: '50px' }} alt="..." className="img-fluid rounded-circle" src={ele.image_url} />
-                            </a>
-                            <UncontrolledTooltip delay={0} target={`tooltip-${value}`}>
-                              {ele.name} <br />
-                            </UncontrolledTooltip>
-                          </Col>
-                        );
-                      })}
-                    </Row>
+                    <>
+                      <CardTitle className="mb-0">
+                        <h3>Ban giám khảo:</h3>
+                      </CardTitle>
+                      <Row className="align-items-center mb-3">
+                        {data.data.influencers_in_competition.map((ele, value) => {
+                          return (
+                            <Col className="col-auto mb-1" key={`influ-${value}`}>
+                              <a
+                                href="/"
+                                id={`tooltip-influ${value}`}
+                                onClick={(e) => {
+                                  e.preventDefault(e);
+                                }}
+                              >
+                                <img style={{ width: '50px', height: '50px' }} alt="..." className="img-fluid rounded-circle" src={ele.image_url} />
+                              </a>
+                              <UncontrolledTooltip delay={0} target={`tooltip-influ${value}`}>
+                                {ele.name} <br />
+                              </UncontrolledTooltip>
+                            </Col>
+                          );
+                        })}
+                      </Row>
+                    </>
                   ) : (
                     <></>
                   )}
@@ -183,7 +193,14 @@ export default function CompetitionDetailBody(data) {
                       <span className="btn-inner--icon mr-1">
                         <i className="fas fa-users" />
                       </span>
-                      <span className="btn-inner--text">Quản lý nhóm</span>
+                      <span
+                        className="btn-inner--text"
+                        onClick={() => {
+                          history.push(`/admin/cuoc-thi/chi-tiet/quan-ly-nhom/${data.data.competition_id}`);
+                        }}
+                      >
+                        Quản lý nhóm
+                      </span>
                     </Button>
                   </Row>
                 </CardBody>

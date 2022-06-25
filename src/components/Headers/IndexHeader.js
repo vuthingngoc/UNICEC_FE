@@ -17,7 +17,7 @@ function IndexHeader() {
             <Row className="align-items-center">
               <Col lg="8">
                 <div className="pr-5">
-                  <h1 className="display-2 mb-0 text-warning" style={{ fontWeight: '900', fontFamily: 'sans-serif' }}>
+                  <h1 className="display-2 mb-0 text-warning mt-4" style={{ fontWeight: '900', fontFamily: 'sans-serif' }}>
                     UNICEC
                   </h1>
                   <p className="lead font-weight-bold text-neutral">

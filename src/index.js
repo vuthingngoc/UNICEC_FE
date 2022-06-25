@@ -19,14 +19,13 @@ import 'assets/vendor/nucleo/css/nucleo.css';
 import 'assets/scss/argon-dashboard-pro-react.scss?v1.2.0';
 
 import AdminLayout from 'layouts/Admin.js';
-import RTLLayout from 'layouts/RTL.js';
 import AuthLayout from 'layouts/Auth.js';
 import Homepage from 'views/pages/homepage/index';
 import AuthContextProvider from 'contexts/AuthContext';
-import MemberPage from 'views/pages/MemberPage/index';
 import LoginPage from 'views/pages/LoginPage/LoginPage';
 import CompetitionDetailPage from 'views/pages/CompetitionDetailPage';
 import ShowListTeamPage from 'views/pages/ShowListTeamPage';
+import ActivityDetailPage from 'views/pages/ActivityDetailPage';
 
 ReactDOM.render(
   <AuthContextProvider>
@@ -34,10 +33,9 @@ ReactDOM.render(
       <Switch>
         <Route path="/admin/cuoc-thi/chi-tiet/quan-ly-nhom/:id" render={(props) => <ShowListTeamPage {...props} />} />
         <Route path="/admin/cuoc-thi/chi-tiet/:id" render={(props) => <CompetitionDetailPage {...props} />} />
+        <Route path="/admin/hoat-dong/chi-tiet/:id" render={(props) => <ActivityDetailPage {...props} />} />
         <Route path="/admin" render={(props) => <AdminLayout {...props} />} />
-        <Route path="/rtl" render={(props) => <RTLLayout {...props} />} />
         <Route path="/auth" render={(props) => <AuthLayout {...props} />} />
-        <Route path="/clubMember" render={(props) => <MemberPage {...props} />} />
         <Route path="/login" render={(props) => <LoginPage {...props} />} />
         <Route path="/" render={(props) => <Homepage {...props} />} />
         <Redirect from="*" to="/" />

@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Button, Card, CardHeader, CardBody, ListGroupItem, ListGroup, Progress, Table, Container, Row, Col } from 'reactstrap';
+import ReactBSAlert from 'react-bootstrap-sweetalert';
 
 // core components
 import CardsHeader from 'components/Headers/CardsHeader.js';
@@ -11,14 +12,34 @@ function Dashboard() {
   const [clubEventCompetitions, setClubEventCompetitions] = useState(null);
   const [clubActivity, setClubActivity] = useState(null);
   const [clubMembers, setClubMembers] = useState(null);
+  const [alert, setalert] = useState(null);
   const history = useHistory();
+
+  const warningAlert = (message) => {
+    setalert(
+      <ReactBSAlert
+        warning
+        style={{ display: 'block', marginTop: '-100px' }}
+        title="Cảnh báo"
+        onConfirm={() => setalert(null)}
+        onCancel={() => setalert(null)}
+        confirmBtnBsStyle="warning"
+        confirmBtnText="Ok"
+        btnSize=""
+      >
+        {message}
+      </ReactBSAlert>
+    );
+  };
 
   async function loadDataHeadmasters(id, accessToken) {
     if (id !== 0) {
       const path = 'api/v1/members/leaders/club';
       const res = await getDataByPath(`${path}/${id}`, accessToken, '');
-      if (res !== null && res.status === 200) {
+      if (res && res.status === 200) {
         setClubHeadmasters(res.data);
+      } else {
+        warningAlert('Kết nối tới máy chủ quá hạn');
       }
     }
   }
@@ -27,33 +48,73 @@ function Dashboard() {
     if (clubId !== 0) {
       const path = 'api/v1/members/club';
       const res = await getDataByPath(`${path}/${clubId}`, accessToken, '');
-      if (res !== null && res.status === 200) {
+      if (res && res.status === 200) {
         setClubMembers(res.data);
+      } else {
+        warningAlert('Kết nối tới máy chủ quá hạn');
       }
     }
   }
+
+  const checkContainCompetitionID = (array, id) => {
+    if (array.length === 0) {
+      return false;
+    }
+    for (let i = 0; i < array.length; i++) {
+      const element = array[i];
+      if (element.competition_id === id) {
+        return i;
+      }
+    }
+    return false;
+  };
 
   async function loadDataEventCompetition(club_id, accessToken) {
     if (club_id !== null) {
       const path = 'api/v1/competitions/top3';
       const data = `clubId=${club_id}`;
       const res = await getDataByPath(`${path}`, accessToken, data);
-      if (res !== null && res.status === 200) {
+      if (res && res.status === 200) {
         setClubEventCompetitions(res.data);
-      } else if (res !== null && res.status === 204) {
+      } else if (res && res.status === 204) {
         setClubEventCompetitions([]);
+      } else {
+        warningAlert('Kết nối tới máy chủ quá hạn');
       }
     }
   }
 
   async function loadClubActivity(clubId, accessToken) {
     if (clubId !== 0) {
-      const path = 'api/v1/competition-activities/top4-process';
+      const path = 'api/v1/competition-activities/top3-process';
       const data = `clubId=${clubId}`;
       const res = await getDataByPath(`${path}`, accessToken, data);
-      console.log(res);
-      if (res !== null && res.status === 200) {
-        setClubActivity(res.data);
+      if (res && res.status === 200) {
+        let items = [];
+        if (res.data.length > 0) {
+          res.data.forEach((element) => {
+            if (element.status !== 2) {
+              const check = checkContainCompetitionID(items, element.competition_id);
+              if (check !== false) {
+                items[check].total_activity++;
+                if (element.process_status === 1) {
+                  items[check].finish_activity++;
+                }
+              } else {
+                console.log(2);
+                if (element.process_status === 1) {
+                  items.push({ competition_id: element.competition_id, name: element.competition_name, total_activity: 1, finish_activity: 1 });
+                } else {
+                  console.log(3);
+                  items.push({ competition_id: element.competition_id, name: element.competition_name, total_activity: 1, finish_activity: 0 });
+                }
+              }
+            }
+          });
+        }
+        setClubActivity(items);
+      } else {
+        warningAlert('Kết nối tới máy chủ quá hạn');
       }
     }
   }
@@ -78,6 +139,7 @@ function Dashboard() {
 
   return (
     <>
+      {alert}
       <CardsHeader name="Default" parentName="Dashboards" />
       <Container className="mt--6" fluid>
         <Row>
@@ -95,7 +157,7 @@ function Dashboard() {
                           <Row className="align-items-center">
                             <Col className="col-auto">
                               <a className="avatar rounded-circle" href="#pablo" onClick={(e) => e.preventDefault()}>
-                                <img alt="..." src={ele.avatar} />
+                                <img alt="..." src={ele.avatar ? ele.avatar : require('assets/img/icons/avatar/No_image_available.png').default} />
                               </a>
                             </Col>
                             <div className="col ml--2">
@@ -103,10 +165,10 @@ function Dashboard() {
                                 <a href="#pablo" onClick={(e) => e.preventDefault()}>
                                   {ele.name}
                                 </a>
-                                <span className="text-muted">{`   (${ele.club_role_name})`}</span>
+                                <span className="text-muted ml-2">{`(${ele.club_role_name})`}</span>
                               </h4>
-                              <span className={`${ele.isOnline === true ? 'text-success' : 'text-danger'}`}>●</span>{' '}
-                              <small>{ele.isOnline === true ? 'Online' : 'Offline'}</small>
+                              <span className={`${ele.is_online === true ? 'text-success' : 'text-danger'}`}>●</span>{' '}
+                              <small>{ele.is_online === true ? 'Online' : 'Offline'}</small>
                             </div>
                           </Row>
                         </ListGroupItem>
@@ -128,7 +190,23 @@ function Dashboard() {
           <Col xl="4">
             <Card style={{ height: '90%', paddingBottom: '10px' }}>
               <CardHeader>
-                <h5 className="h3 mb-0">Sự kiện và cuộc thi</h5>
+                <Row>
+                  <Col md="8">
+                    <h5 className="h3 mb-0">Sự kiện và cuộc thi</h5>
+                  </Col>
+                  <Col md="4" className="text-right">
+                    <Button
+                      color="primary"
+                      size="sm"
+                      type="button"
+                      onClick={() => {
+                        history.push(`/admin/cuoc-thi`);
+                      }}
+                    >
+                      Xem tất cả
+                    </Button>
+                  </Col>
+                </Row>
               </CardHeader>
               <CardBody className="p-0">
                 <ListGroup data-toggle="checklist" flush>
@@ -137,7 +215,7 @@ function Dashboard() {
                       clubEventCompetitions.map((e, value) => {
                         return (
                           <ListGroupItem className="checklist-entry flex-column align-items-start py-4 px-4" key={`Event-${value}`}>
-                            <div className={`${e.type === 'Sự kiện' ? 'checklist-item-success' : 'checklist-item-info'} checklist-item`}>
+                            <div className="checklist-item-info checklist-item">
                               <div className="checklist-info">
                                 <h5 className="checklist-title mb-0" style={{ fontWeight: '700' }}>
                                   {e.name}
@@ -192,7 +270,23 @@ function Dashboard() {
           <Col xl="4">
             <Card style={{ height: '90%', paddingBottom: '10px' }}>
               <CardHeader>
-                <h5 className="h3 mb-0">Tiến độ hoạt động</h5>
+                <Row>
+                  <Col md="8">
+                    <h5 className="h3 mb-0">Tiến độ hoạt động</h5>
+                  </Col>
+                  <Col md="4" className="text-right">
+                    <Button
+                      color="primary"
+                      size="sm"
+                      type="button"
+                      onClick={() => {
+                        history.push(`/admin/hoat-dong`);
+                      }}
+                    >
+                      Xem tất cả
+                    </Button>
+                  </Col>
+                </Row>
               </CardHeader>
               <CardBody>
                 <ListGroup className="list my--3" flush>
@@ -202,14 +296,27 @@ function Dashboard() {
                         return (
                           <ListGroupItem className="px-0" key={`activity-${value}`}>
                             <Row className="align-items-center">
-                              <div className="col">
-                                <h5>{e.name}</h5>
-                                <Progress
-                                  className="progress-xs mb-0"
-                                  color={`${e.process / e.require === 1 ? 'green' : e.process / e.require >= 0.5 ? 'blue' : 'orange'}`}
-                                  max={e.num_of_member_join}
-                                  value={e.num_member_done_task}
-                                />
+                              <div className="checklist-item-warning checklist-item">
+                                <div className="checklist-warning">
+                                  <div className="col">
+                                    <h5 style={{ fontWeight: '700' }}>{e.name}</h5>
+                                    <Progress
+                                      className="progress-xs mb-0"
+                                      color={`${
+                                        e.finish_activity / e.total_activity === 1
+                                          ? 'green'
+                                          : e.finish_activity / e.total_activity >= 0.5
+                                          ? 'blue'
+                                          : 'orange'
+                                      }`}
+                                      max={e.total_activity}
+                                      value={e.finish_activity}
+                                    />
+                                    <h5>
+                                      Tiến độ: {e.finish_activity}/{e.total_activity}{' '}
+                                    </h5>
+                                  </div>
+                                </div>
                               </div>
                             </Row>
                           </ListGroupItem>
@@ -264,7 +371,7 @@ function Dashboard() {
                           <td> {value + 1} </td>
                           <td> {e.name} </td>
                           <td> {e.club_role_name} </td>
-                          <td> {e.isOnline === true ? 'Online' : 'Offline'} </td>
+                          <td> {e.is_online === true ? 'Online' : 'Offline'} </td>
                         </tr>
                       );
                     })}

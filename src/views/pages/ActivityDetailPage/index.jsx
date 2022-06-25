@@ -1,14 +1,37 @@
-import AdminFooter from 'components/Footers/AdminFooter';
-import AdminNavbar from 'components/Navbars/AdminNavbar';
-import Sidebar from 'components/Sidebar/Sidebar';
-import React, { useState } from 'react';
+/*eslint-disable*/
+import React, { useEffect, useState } from 'react';
+import { useLocation } from 'react-router';
+import ReactBSAlert from 'react-bootstrap-sweetalert';
 import routes from 'routes.js';
-import ShowListTeamBody from './components/ShowListTeamBody';
-import ShowListTeamHeader from './components/ShowListTeamHeader';
+import ActivityDetailBody from './components/ActivityDetailBody';
+import Sidebar from 'components/Sidebar/Sidebar';
+import AdminNavbar from 'components/Navbars/AdminNavbar';
+import AdminFooter from 'components/Footers/AdminFooter';
+import ActivityDetailHeader from './components/ActivityDetailHeader';
 
-export default function ShowListTeamPage() {
+export default function ActivityDetailPage(props) {
   const [sidenavOpen, setSidenavOpen] = useState(true);
+  const [alert, setalert] = useState(false);
+  const location = useLocation();
   const mainContentRef = React.useRef(null);
+
+  const warningAlert = (message) => {
+    setalert(
+      <ReactBSAlert
+        warning
+        style={{ display: 'block', marginTop: '-100px' }}
+        title="Cảnh báo"
+        onConfirm={() => setalert(null)}
+        onCancel={() => setalert(null)}
+        confirmBtnBsStyle="warning"
+        confirmBtnText="Ok"
+        btnSize=""
+      >
+        {message}
+      </ReactBSAlert>
+    );
+  };
+
   const getBrandText = () => {
     for (let i = 0; i < routes.length; i++) {
       if (location.pathname.indexOf(routes[i].layout + routes[i].path) !== -1) {
@@ -31,8 +54,14 @@ export default function ShowListTeamPage() {
   const getNavbarTheme = () => {
     return location.pathname.indexOf('admin/alternative-dashboard') === -1 ? 'dark' : 'light';
   };
+
+  useEffect(() => {
+    console.log(props);
+  }, []);
+
   return (
     <>
+      {alert}
       <Sidebar
         routes={routes}
         toggleSidenav={toggleSidenav}
@@ -45,8 +74,8 @@ export default function ShowListTeamPage() {
       />
       <div className="main-content" ref={mainContentRef}>
         <AdminNavbar theme={getNavbarTheme()} toggleSidenav={toggleSidenav} sidenavOpen={sidenavOpen} brandText={getBrandText(location.pathname)} />
-        <ShowListTeamHeader />
-        <ShowListTeamBody />
+        <ActivityDetailHeader />
+        <ActivityDetailBody />
         <AdminFooter />
       </div>
       {sidenavOpen ? <div className="backdrop d-xl-none" onClick={toggleSidenav} /> : null}

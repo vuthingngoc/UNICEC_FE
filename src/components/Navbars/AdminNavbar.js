@@ -174,6 +174,9 @@ function AdminNavbar({ theme, sidenavOpen, toggleSidenav }) {
                         logout();
                         if (localStorage) {
                           localStorage.clear('accessToken');
+                          localStorage.clear('clubID');
+                          localStorage.clear('universityID');
+                          localStorage.clear('studentID');
                           history.push('/login');
                         }
                       }}

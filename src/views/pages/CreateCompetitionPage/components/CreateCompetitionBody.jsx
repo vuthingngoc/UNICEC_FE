@@ -22,6 +22,10 @@ import {
 import { getDataByPath } from 'services/data.service';
 import { createDataByPath } from 'services/data.service';
 import { useHistory } from 'react-router';
+import { formatTitle } from 'services/formatData';
+import { dateConvertToShow } from 'services/formatData';
+import { toBase64 } from 'services/formatData';
+import Loading from 'views/pages/components/Loading';
 
 const CompetitionScopes = [
   { id: 0, text: 'Liên Trường' },
@@ -55,6 +59,7 @@ export default function CreateCompetitionBody() {
   const [minMemberInTeam, setMinMemberInTeam] = useState(4);
   const [departmentList, setDepartmentList] = useState([]);
   const [competitionTypeList, setCompetitionTypeList] = useState([]);
+  const [formModal, setFormModal] = useState(false);
   const [alert, setalert] = React.useState(false);
   const history = useHistory();
 
@@ -128,14 +133,6 @@ export default function CreateCompetitionBody() {
     return newCompetitionTypes;
   };
 
-  const toBase64 = (file) =>
-    new Promise((resolve, reject) => {
-      const reader = new FileReader();
-      reader.readAsDataURL(file);
-      reader.onload = () => resolve(reader.result);
-      reader.onerror = (error) => reject(error);
-    });
-
   const handleImageInfluencerChange = (e) => {
     e.preventDefault();
     if (e.target.files[0]) {
@@ -164,32 +161,6 @@ export default function CreateCompetitionBody() {
     setInfluencer(newInfluencer);
     setFullnameInfluencer('');
     setImgBase64Influencer('https://i.pinimg.com/originals/ff/a0/9a/ffa09aec412db3f54deadf1b3781de2a.png');
-  };
-
-  const formatTitle = (title) => {
-    if (title.trim() !== '') {
-      let arr = title.split(' ');
-      arr = arr.filter((e) => e !== '');
-      for (var i = 0; i < arr.length; i++) {
-        arr[i] = arr[i].charAt(0).toUpperCase() + arr[i].slice(1);
-      }
-      const formated = arr.join(' ');
-      setTitle(formated);
-    }
-  };
-
-  const dateConvertToShow = (date) => {
-    const yyyy = date.getFullYear();
-    const mm = date.getMonth() + 1;
-    const dd = date.getDate();
-    const hh = date.getHours();
-    const mi = date.getMinutes();
-    const ss = date.getSeconds();
-
-    const newDate = `${yyyy}-${mm < 10 ? '0' + mm : mm}-${dd < 10 ? '0' + dd : dd}T${hh < 10 ? '0' + hh : hh}:${mi < 10 ? '0' + mi : mi}:${
-      ss < 10 ? '0' + ss : ss
-    }`;
-    return newDate;
   };
 
   const addDepartment = (id) => {
@@ -361,15 +332,17 @@ export default function CreateCompetitionBody() {
             if (res.data === 'Date not suitable') {
               warningAlert('Ngày tháng không phù hợp');
             }
+          } else {
+            warningAlert('Kết nối tới máy chủ quá hạn');
           }
         }
+        setFormModal(false);
       }
     }
   }
 
   useEffect(() => {
     let currentSingleFile = undefined;
-    console.log(1);
 
     // single dropzone file - accepts only images
     new Dropzone(document.getElementById('dropzone-single'), {
@@ -379,7 +352,7 @@ export default function CreateCompetitionBody() {
       autoDiscover: false,
       previewsContainer: document.getElementsByClassName('dz-preview-single')[0],
       previewTemplate: document.getElementsByClassName('dz-preview-single')[0].innerHTML,
-      dictDefaultMessage: 'Bạn có thể kéo ảnh hoặc click để chọn',
+      dictDefaultMessage: 'Thả ảnh vào đây hoặc click để chọn',
       maxFiles: 1,
       acceptedFiles: 'image/*',
       init: function () {
@@ -431,19 +404,23 @@ export default function CreateCompetitionBody() {
                       </span>
                     </h3>
                   </Col>
-                  <Col className="col-auto" style={{ width: '200px' }}>
-                    <Select2
-                      className="form-control"
-                      defaultValue={competitionTypeId}
-                      options={{
-                        placeholder: 'Tìm kiếm',
-                      }}
-                      data={competitionTypeList}
-                      onChange={(e) => {
-                        setCompetitionTypeId(e.target.value);
-                      }}
-                    />
-                  </Col>
+                  {competitionTypeList.length > 0 ? (
+                    <Col className="col-auto" style={{ width: '200px' }}>
+                      <Select2
+                        className="form-control"
+                        value={competitionTypeId}
+                        options={{
+                          placeholder: 'Tìm kiếm',
+                        }}
+                        data={competitionTypeList}
+                        onChange={(e) => {
+                          setCompetitionTypeId(e.target.value);
+                        }}
+                      />
+                    </Col>
+                  ) : (
+                    <></>
+                  )}
                 </Row>
               </CardHeader>
               <CardBody>
@@ -468,7 +445,7 @@ export default function CreateCompetitionBody() {
                           outline
                           type="button"
                           onClick={() => {
-                            formatTitle(title);
+                            setTitle(formatTitle(title));
                           }}
                         >
                           Format
@@ -489,6 +466,7 @@ export default function CreateCompetitionBody() {
                       onChange={(e) => {
                         setStartTime(e.target.value);
                       }}
+                      min={dateConvertToShow(new Date())}
                     />
                   </Col>
                   <Col md="6">
@@ -502,6 +480,7 @@ export default function CreateCompetitionBody() {
                       onChange={(e) => {
                         setEndTime(e.target.value);
                       }}
+                      min={dateConvertToShow(new Date())}
                     />
                   </Col>
                 </Row>
@@ -517,16 +496,18 @@ export default function CreateCompetitionBody() {
                       onChange={(e) => {
                         setEndTimeRegister(e.target.value);
                       }}
+                      min={dateConvertToShow(new Date())}
                     />
                   </Col>
                 </Row>
                 <Row className="mb-3">
                   <Col md="6">
-                    <label className="form-control-label" htmlFor="location">
+                    <label className="text-default" htmlFor="location">
                       Địa chỉ <span className="text-warning">*</span>
                     </label>
                     <InputGroup>
                       <Input
+                        className="text-default"
                         value={address}
                         type="text"
                         id="location"
@@ -542,11 +523,12 @@ export default function CreateCompetitionBody() {
                     </InputGroup>
                   </Col>
                   <Col md="6">
-                    <label className="form-control-label" htmlFor="locationname">
+                    <label className="text-default" htmlFor="locationname">
                       Tên địa điểm <span className="text-warning">*</span>
                     </label>
                     <InputGroup>
                       <Input
+                        className="text-default"
                         value={addressName}
                         type="text"
                         id="locationname"
@@ -599,7 +581,7 @@ export default function CreateCompetitionBody() {
                     <div className="dropzone dropzone-single mb-3" id="dropzone-single">
                       <div className="fallback">
                         <div className="custom-file">
-                          <input className="custom-file-input" id="projectCoverUploads" type="file" onDrop={(e) => console.log(e)} />
+                          <input className="custom-file-input" id="projectCoverUploads" type="file" />
                           <label className="custom-file-label" htmlFor="projectCoverUploads">
                             Choose file
                           </label>
@@ -992,6 +974,7 @@ export default function CreateCompetitionBody() {
                     style={{ margin: 'auto' }}
                     onClick={() => {
                       createCompetition();
+                      setFormModal(true);
                     }}
                   >
                     Hoàn tất
@@ -1011,6 +994,11 @@ export default function CreateCompetitionBody() {
           </Col>
         </Row>
       </Container>
+      <Modal className="modal-dialog-centered" size="sm" isOpen={formModal}>
+        <div className="modal-body p-0 bg-transparent">
+          <Loading style={{ margin: 'auto' }} />
+        </div>
+      </Modal>
     </>
   );
 }
