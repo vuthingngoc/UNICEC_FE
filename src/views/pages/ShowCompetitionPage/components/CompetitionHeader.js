@@ -1,16 +1,16 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 // reactstrap components
-import { Container, Row, Col, Card } from 'reactstrap';
+import { Container, Row, Col, Card, CardBody, CardTitle } from 'reactstrap';
 
 function CompetitionHeader(props) {
   return (
     <>
       {props.clubData ? (
-        <div className="header bg-grey pb-5">
+        <div className="header bg-grey pb-6">
           <Container fluid>
-            <div className="header-body">
-              <Card className="pl-4 pr-4">
+            <Card className="pl-4 pr-4 mb-1">
+              <div className="header-body">
                 <Row className="align-items-center py-4">
                   <Col lg="9" xs="10">
                     <Row>
@@ -18,11 +18,7 @@ function CompetitionHeader(props) {
                         <a className="avatar rounded-circle" href={props.clubData.club_fanpage} target="blank">
                           <img
                             alt="..."
-                            src={
-                              props.clubData.image
-                                ? props.clubData
-                                : 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/1024px-No_image_available.svg.png'
-                            }
+                            src={props.clubData.image ? props.clubData : require('assets/img/icons/avatar/No_image_available.png').default}
                           />
                         </a>
                       </Col>
@@ -42,8 +38,66 @@ function CompetitionHeader(props) {
                     </p>
                   </Col>
                 </Row>
-              </Card>
-            </div>
+              </div>
+              <Row>
+                <Col md="6" xl="3">
+                  <Card style={{ height: '80%' }} className="bg-gradient-primary border-0">
+                    <CardBody>
+                      <Row>
+                        <div className="col">
+                          <CardTitle tag="h5" className="text-uppercase text-muted mb-0 text-white">
+                            Các cuộc thi mở đăng ký
+                          </CardTitle>
+                          <span className="h2 font-weight-bold mb-0 text-white">{props.competitionList1.length}</span>
+                        </div>
+                      </Row>
+                    </CardBody>
+                  </Card>
+                </Col>
+                <Col md="6" xl="3">
+                  <Card style={{ height: '80%' }} className="bg-gradient-info border-0">
+                    <CardBody>
+                      <Row>
+                        <div className="col">
+                          <CardTitle tag="h5" className="text-uppercase text-muted mb-0 text-white">
+                            Các cuộc thi đóng đăng ký
+                          </CardTitle>
+                          <span className="h2 font-weight-bold mb-0 text-white">{props.competitionList2.length}</span>
+                        </div>
+                      </Row>
+                    </CardBody>
+                  </Card>
+                </Col>
+                <Col md="6" xl="3">
+                  <Card style={{ height: '80%' }} className="bg-gradient-danger border-0">
+                    <CardBody>
+                      <Row>
+                        <div className="col">
+                          <CardTitle tag="h5" className="text-uppercase text-muted mb-0 text-white">
+                            Các cuộc thi đang diễn ra
+                          </CardTitle>
+                          <span className="h2 font-weight-bold mb-0 text-white">{props.competitionList3.length}</span>
+                        </div>
+                      </Row>
+                    </CardBody>
+                  </Card>
+                </Col>
+                <Col md="6" xl="3">
+                  <Card style={{ height: '80%' }} className="bg-gradient-default border-0">
+                    <CardBody>
+                      <Row>
+                        <div className="col">
+                          <CardTitle tag="h5" className="text-uppercase text-muted mb-0 text-white">
+                            Các cuộc thi đã hoàn thành
+                          </CardTitle>
+                          <span className="h2 font-weight-bold mb-0 text-white">{props.competitionList4.length}</span>
+                        </div>
+                      </Row>
+                    </CardBody>
+                  </Card>
+                </Col>
+              </Row>
+            </Card>
           </Container>
         </div>
       ) : (

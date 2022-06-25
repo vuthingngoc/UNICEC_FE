@@ -1,5 +1,5 @@
 /*eslint-disable*/
-import React from 'react';
+import React, { useEffect } from 'react';
 // nodejs library that concatenates classes
 import classnames from 'classnames';
 import LoginNavbar from './component/LoginNavbar.js';
@@ -44,11 +44,11 @@ export default function Login() {
 
   const [alert, setalert] = React.useState(false);
 
-  const warningAlert = () => {
+  const warningAlert = (message) => {
     setalert(
       <ReactBSAlert
         warning
-        style={{ display: 'block', marginTop: '-100px' }}
+        style={{ display: 'block', marginTop: '-200px' }}
         title="Đăng nhập không thành công"
         onConfirm={() => setalert(null)}
         onCancel={() => setalert(null)}
@@ -56,24 +56,7 @@ export default function Login() {
         confirmBtnText="xác nhận"
         btnSize=""
       >
-        Tài khoản chưa được đăng ký. vui lòng đăng ký!
-      </ReactBSAlert>
-    );
-  };
-
-  const warningAlertSystem = () => {
-    setalert(
-      <ReactBSAlert
-        warning
-        style={{ display: 'block', marginTop: '-100px' }}
-        title="Đăng nhập không thành công"
-        onConfirm={() => setalert(null)}
-        onCancel={() => setalert(null)}
-        confirmBtnBsStyle="warning"
-        confirmBtnText="Ok"
-        btnSize=""
-      >
-        Đã có lỗi xảy ra trong quá trình xác thực. Vui lòng thử lại sau!
+        {message}
       </ReactBSAlert>
     );
   };
@@ -82,7 +65,7 @@ export default function Login() {
     setalert(
       <ReactBSAlert
         success
-        style={{ display: 'block', marginTop: '-100px' }}
+        style={{ display: 'block', marginTop: '-200px' }}
         title="Đăng nhập thành công"
         onConfirm={() => setalert(null)}
         onCancel={() => setalert(null)}
@@ -97,6 +80,7 @@ export default function Login() {
   async function loginWithAccessToken(accessTokenFirebase) {
     setIsSubmitting(true);
     const res = await loginByPath('api/v1/firebase', accessTokenFirebase);
+    console.log(res);
     if (res && res.status === 200) {
       if (localStorage) {
         localStorage.setItem('accessToken', res.data.token);
@@ -106,36 +90,45 @@ export default function Login() {
         getClubAndUniversity(res.data.token, jwtDecode(res.data.token).Id);
       }
     } else {
-      warningAlert();
+      warningAlert('Kết nối tới máy chủ quá hạn');
     }
   }
 
   async function getClubAndUniversity(accessToken, studentID) {
     const res = await getDataByPath(`api/v1/clubs/user/${studentID}`, accessToken, '');
+    console.log(res, 'club');
     if (res && res.status === 200) {
       if (res.data.length > 0) {
         localStorage.setItem('clubID', res.data[0].id);
-        setIsSubmitting(false);
+        successAlert();
+        setTimeout(function () {
+          history.push('/admin/thong-tin-clb');
+        }, 1500);
       }
+    } else if (res && res.status === 401) {
+      warningAlert('Tài khoản không có trong hệ thống');
     } else {
-      localStorage.setItem('clubID', '0');
+      warningAlert('Kết nối máy chủ quá hạn');
     }
+    setIsSubmitting(false);
     setformModal(false);
-    successAlert();
-    setTimeout(function () {
-      history.push('/admin/thong-tin-clb');
-    }, 1500);
   }
 
   const handleErrorLogin = (request) => {
     switch (request) {
       case 'Firebase: Error (auth/user-not-found).':
-        warningAlert();
+        warningAlert('Tài khoản chưa được đăng ký. vui lòng đăng ký!');
         break;
       default:
-        warningAlertSystem();
+        warningAlert('Đã có lỗi xảy ra trong quá trình xác thực. Vui lòng thử lại sau!');
     }
   };
+
+  useEffect(() => {
+    if (localStorage.getItem('accessToken') && localStorage.getItem('clubID')) {
+      history.push('/admin/thong-tin-clb');
+    }
+  }, []);
 
   return (
     <>

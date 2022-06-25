@@ -99,7 +99,13 @@ function CompetitionPage() {
       {alert}
       {competitionList1 ? (
         <>
-          <CompetitionHeader clubData={clubData} />
+          <CompetitionHeader
+            clubData={clubData}
+            competitionList1={competitionList1}
+            competitionList2={competitionList2}
+            competitionList3={competitionList3}
+            competitionList4={competitionList4}
+          />
           <CompetitionPageBody
             competitionList1={competitionList1}
             competitionList2={competitionList2}

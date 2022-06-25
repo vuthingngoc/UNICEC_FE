@@ -1,13 +1,8 @@
-/*eslint-disable*/
 import {
   Badge,
   Card,
   CardHeader,
   CardFooter,
-  DropdownMenu,
-  DropdownItem,
-  DropdownToggle,
-  UncontrolledDropdown,
   Media,
   Pagination,
   PaginationItem,
@@ -29,35 +24,35 @@ const ListTeam = [
     img: 'https://i.guim.co.uk/img/media/26392d05302e02f7bf4eb143bb84c8097d09144b/446_167_3683_2210/master/3683.jpg?width=1200&height=1200&quality=85&auto=format&fit=crop&s=49ed3252c0b2ffb49cf8b508892e452d',
     name: 'Team 1',
     numberOfParticipants: '4',
-    status: 'Pending',
+    status: true,
     createDate: '10-05-2022',
   },
   {
     img: 'https://i.guim.co.uk/img/media/26392d05302e02f7bf4eb143bb84c8097d09144b/446_167_3683_2210/master/3683.jpg?width=1200&height=1200&quality=85&auto=format&fit=crop&s=49ed3252c0b2ffb49cf8b508892e452d',
     name: 'Team 1',
     numberOfParticipants: '4',
-    status: 'Pending',
+    status: true,
     createDate: '10-05-2022',
   },
   {
     img: 'https://i.guim.co.uk/img/media/26392d05302e02f7bf4eb143bb84c8097d09144b/446_167_3683_2210/master/3683.jpg?width=1200&height=1200&quality=85&auto=format&fit=crop&s=49ed3252c0b2ffb49cf8b508892e452d',
     name: 'Team 1',
     numberOfParticipants: '4',
-    status: 'Pending',
+    status: true,
     createDate: '10-05-2022',
   },
   {
     img: 'https://i.guim.co.uk/img/media/26392d05302e02f7bf4eb143bb84c8097d09144b/446_167_3683_2210/master/3683.jpg?width=1200&height=1200&quality=85&auto=format&fit=crop&s=49ed3252c0b2ffb49cf8b508892e452d',
     name: 'Team 1',
     numberOfParticipants: '4',
-    status: 'Pending',
+    status: false,
     createDate: '10-05-2022',
   },
   {
     img: 'https://i.guim.co.uk/img/media/26392d05302e02f7bf4eb143bb84c8097d09144b/446_167_3683_2210/master/3683.jpg?width=1200&height=1200&quality=85&auto=format&fit=crop&s=49ed3252c0b2ffb49cf8b508892e452d',
     name: 'Team 1',
     numberOfParticipants: '4',
-    status: 'Pending',
+    status: false,
     createDate: '10-05-2022',
   },
 ];
@@ -65,19 +60,19 @@ const ListTeam = [
 const ParticipantsInTeam = [
   {
     parName: 'Ryan Tompson',
-    parImg: 'assets/img/theme/team-1.jpg',
+    parImg: 'https://i.pinimg.com/originals/7c/c7/a6/7cc7a630624d20f7797cb4c8e93c09c1.png',
   },
   {
     parName: 'Romina Hadid',
-    parImg: 'assets/img/theme/team-2.jpg',
+    parImg: 'https://i.pinimg.com/originals/7c/c7/a6/7cc7a630624d20f7797cb4c8e93c09c1.png',
   },
   {
     parName: 'Alexander Smith',
-    parImg: 'assets/img/theme/team-3.jpg',
+    parImg: 'https://i.pinimg.com/originals/7c/c7/a6/7cc7a630624d20f7797cb4c8e93c09c1.png',
   },
   {
     parName: 'Jessica Doe',
-    parImg: 'assets/img/theme/team-4.jpg',
+    parImg: 'https://i.pinimg.com/originals/7c/c7/a6/7cc7a630624d20f7797cb4c8e93c09c1.png',
   },
 ];
 
@@ -138,7 +133,7 @@ export default function ShowListTeamBody() {
                       Tên
                     </th>
                     <th className="sort" data-sort="budget" scope="col">
-                      Số lượng
+                      Số thành viên
                     </th>
                     <th className="sort" data-sort="status" scope="col">
                       Trạng thái
@@ -155,12 +150,9 @@ export default function ShowListTeamBody() {
                   {ListTeam ? (
                     ListTeam.map((e, value) => {
                       return (
-                        <tr>
+                        <tr key={`team-${value}`}>
                           <th scope="row">
                             <Media className="align-items-center">
-                              <a className="avatar rounded-circle mr-3" href="#pablo" onClick={(e) => e.preventDefault()}>
-                                <img alt="..." src={e.img} />
-                              </a>
                               <Media>
                                 <span className="name mb-0 text-sm">{e.name}</span>
                               </Media>
@@ -168,9 +160,9 @@ export default function ShowListTeamBody() {
                           </th>
                           <td>{e.numberOfParticipants}</td>
                           <td>
-                            <Badge color="" className="badge-dot mr-4">
-                              <i className="bg-warning" />
-                              <span className="status">{e.status}</span>
+                            <Badge color="" className="badge-dot mr-4 font-weight-bold">
+                              <i className={e.status === true ? 'bg-warning' : 'bg-success'} />
+                              <span className="status">{e.status === true ? 'Đóng' : 'Mở'}</span>
                             </Badge>
                           </td>
                           <td>
@@ -178,19 +170,19 @@ export default function ShowListTeamBody() {
                               {ParticipantsInTeam ? (
                                 ParticipantsInTeam.map((parInTeam, value) => {
                                   return (
-                                    <>
+                                    <React.Fragment key={`member-${value}`}>
                                       <a
                                         className="avatar avatar-sm rounded-circle"
                                         href="#pablo"
-                                        id="tooltip160923422"
+                                        id={`tooltip${value}`}
                                         onClick={(e) => e.preventDefault()}
                                       >
                                         <img alt="..." src={parInTeam.parImg}></img>
                                       </a>
-                                      <UncontrolledTooltip delay={0} target="tooltip160923422">
+                                      <UncontrolledTooltip delay={0} target={`tooltip${value}`}>
                                         {parInTeam.parName}
                                       </UncontrolledTooltip>
-                                    </>
+                                    </React.Fragment>
                                   );
                                 })
                               ) : (
@@ -201,23 +193,20 @@ export default function ShowListTeamBody() {
                           <td>
                             <div className="d-flex align-items-center">
                               <span className="completion mr-2"> {e.createDate} </span>
-                              {/* <div>
-                                <Progress max="100" value="60" color="warning" />
-                              </div> */}
                             </div>
                           </td>
                           <td>
                             <a
                               className="table-action table-action-delete"
                               href="#pablo"
-                              id="tooltip601065234"
+                              id={`tooltipteam-${value}`}
                               onClick={() => {
                                 setTeamDetailModal(true);
                               }}
                             >
                               <i className="fas fa-eye" />
                             </a>
-                            <UncontrolledTooltip delay={0} target="tooltip601065234">
+                            <UncontrolledTooltip delay={0} target={`tooltipteam-${value}`}>
                               Xem chi tiết thành viên nhóm
                             </UncontrolledTooltip>
                             <a className="table-action table-action-delete" href="#pablo" id="deleteTeam" onClick={(e) => e.preventDefault()}>
@@ -227,24 +216,6 @@ export default function ShowListTeamBody() {
                               Xóa tài khoản khỏi team
                             </UncontrolledTooltip>
                           </td>
-                          {/* <td className="text-right">
-                            <UncontrolledDropdown>
-                              <DropdownToggle className="btn-icon-only text-light" color="" role="button" size="sm">
-                                <i className="fas fa-ellipsis-v" />
-                              </DropdownToggle>
-                              <DropdownMenu className="dropdown-menu-arrow" right>
-                                <DropdownItem href="#pablo" onClick={(e) => e.preventDefault()}>
-                                  Action
-                                </DropdownItem>
-                                <DropdownItem href="#pablo" onClick={(e) => e.preventDefault()}>
-                                  Another action
-                                </DropdownItem>
-                                <DropdownItem href="#pablo" onClick={(e) => e.preventDefault()}>
-                                  Something else here
-                                </DropdownItem>
-                              </DropdownMenu>
-                            </UncontrolledDropdown>
-                          </td> */}
                         </tr>
                       );
                     })
@@ -262,15 +233,21 @@ export default function ShowListTeamBody() {
                         <h3>Thông tin các thành viên trong nhóm:</h3>
                       </div>
                       <Form>
-                        <Row style={{ marginLeft: '0px' }}>
-                          <label className="form-control-label mr-3" htmlFor="max-participant">
-                            Khóa nhóm <span className="text-warning">*</span>
-                          </label>
-                          <label style={{ marginLeft: '10px' }} className="custom-toggle mr-1">
-                            <input type="checkbox" />
-                            <span className="custom-toggle-slider rounded-circle" />
-                          </label>{' '}
-                          
+                        <Row>
+                          <Col md="8">
+                            <label className="form-control-label mr-3" htmlFor="max-participant">
+                              Khóa nhóm
+                            </label>
+                            <label style={{ marginLeft: '10px' }} className="custom-toggle mr-1">
+                              <input type="checkbox" />
+                              <span className="custom-toggle-slider rounded-circle" />
+                            </label>
+                          </Col>
+                          <Col md="4">
+                            <label className="form-control-label mt-3" htmlFor="max-participant">
+                              Mã nhóm: DWD16GH
+                            </label>
+                          </Col>
                         </Row>
                         <Button class="btn btn-default">Thêm thành viên</Button>
                       </Form>
