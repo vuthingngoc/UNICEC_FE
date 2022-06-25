@@ -17,6 +17,7 @@ import {
   Row,
   UncontrolledDropdown,
 } from 'reactstrap';
+import { convertDateToShow } from 'services/formatData';
 
 const CardHover = styled.div`
   :hover {
@@ -31,17 +32,15 @@ export default function CompetitionPageBody(data) {
     return ago;
   };
 
-  const convertDateToShow = (date) => {
-    const arr = date.split('T');
-    const day = arr[0].split('-');
-    return `${day[2]}/${day[1]}/${day[0]}`;
-  };
+  React.useEffect(() => {
+    console.log(data.competitionList1);
+  }, []);
 
   return (
     <Container className="mt--6 bg-white" fluid>
       <Card className="pl-4">
         <h2 className="display-2 text-warning text-center mb-0" style={{ fontFamily: 'sans-serif', paddingTop: '20px' }}>
-          Cuộc thi của câu lạc bộ
+          Cuộc Thi Của Câu Lạc Bộ
         </h2>
         <Row className="align-items-center mb-0" style={{ width: '50%', margin: 'auto' }}>
           <Col className="mb-0">
@@ -82,7 +81,7 @@ export default function CompetitionPageBody(data) {
                               src={
                                 e.clubs_in_competition[0].image
                                   ? e.clubs_in_competition[0].image
-                                  : 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/1024px-No_image_available.svg.png'
+                                  : require('assets/img/icons/avatar/No_image_available.png').default
                               }
                             />
                           </span>
@@ -113,7 +112,14 @@ export default function CompetitionPageBody(data) {
                       </Row>
                     </CardHeader>
                     <a href={`/admin/cuoc-thi/chi-tiet/${e.competition_id}`}>
-                      <CardImg alt="..." src={require('assets/img/theme/img-1-1000x900.jpg').default} />
+                      <CardImg
+                        alt="..."
+                        src={
+                          e.competition_entities.length > 0
+                            ? e.competition_entities[0].image_url
+                            : 'https://vnpi-hcm.vn/wp-content/uploads/2018/01/no-image-800x600.png'
+                        }
+                      />
                       <CardBody>
                         <Row>
                           <Col className="text-left" xl="6" md="6" xs="6">
@@ -124,7 +130,7 @@ export default function CompetitionPageBody(data) {
                               className="text-neutral mb-0 font-weight-bold text-sm"
                               style={{ backgroundColor: 'red', borderRadius: '5px', padding: '2px 5px', fontFamily: 'cursive' }}
                             >
-                              {convertDateToShow(e.create_time)}
+                              {convertDateToShow(e.start_time)}
                             </label>
                           </Col>
                         </Row>
@@ -199,7 +205,7 @@ export default function CompetitionPageBody(data) {
                               src={
                                 e.clubs_in_competition[0].image
                                   ? e.clubs_in_competition[0].image
-                                  : 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/1024px-No_image_available.svg.png'
+                                  : require('assets/img/icons/avatar/No_image_available.png').default
                               }
                             />
                           </span>
@@ -230,7 +236,14 @@ export default function CompetitionPageBody(data) {
                       </Row>
                     </CardHeader>
                     <a href={`/admin/cuoc-thi/chi-tiet/${e.competition_id}`}>
-                      <CardImg alt="..." src={require('assets/img/theme/img-1-1000x900.jpg').default} />
+                      <CardImg
+                        alt="..."
+                        src={
+                          e.competition_entities.length > 0
+                            ? e.competition_entities[0].image_url
+                            : 'https://vnpi-hcm.vn/wp-content/uploads/2018/01/no-image-800x600.png'
+                        }
+                      />
                       <CardBody>
                         <Row>
                           <Col className="text-left" xl="6" md="6" xs="6">
@@ -241,7 +254,7 @@ export default function CompetitionPageBody(data) {
                               className="text-neutral mb-0 font-weight-bold text-sm"
                               style={{ backgroundColor: 'red', borderRadius: '5px', padding: '2px 5px', fontFamily: 'cursive' }}
                             >
-                              {convertDateToShow(e.create_time)}
+                              {convertDateToShow(e.start_time)}
                             </label>
                           </Col>
                         </Row>
@@ -316,7 +329,7 @@ export default function CompetitionPageBody(data) {
                               src={
                                 e.clubs_in_competition[0].image
                                   ? e.clubs_in_competition[0].image
-                                  : 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/1024px-No_image_available.svg.png'
+                                  : require('assets/img/icons/avatar/No_image_available.png').default
                               }
                             />
                           </span>
@@ -347,7 +360,14 @@ export default function CompetitionPageBody(data) {
                       </Row>
                     </CardHeader>
                     <a href={`/admin/cuoc-thi/chi-tiet/${e.competition_id}`}>
-                      <CardImg alt="..." src={require('assets/img/theme/img-1-1000x900.jpg').default} />
+                      <CardImg
+                        alt="..."
+                        src={
+                          e.competition_entities.length > 0
+                            ? e.competition_entities[0].image_url
+                            : 'https://vnpi-hcm.vn/wp-content/uploads/2018/01/no-image-800x600.png'
+                        }
+                      />
                       <CardBody>
                         <Row>
                           <Col className="text-left" xl="6" md="6" xs="6">
@@ -358,7 +378,7 @@ export default function CompetitionPageBody(data) {
                               className="text-neutral mb-0 font-weight-bold text-sm"
                               style={{ backgroundColor: 'red', borderRadius: '5px', padding: '2px 5px', fontFamily: 'cursive' }}
                             >
-                              {convertDateToShow(e.create_time)}
+                              {convertDateToShow(e.start_time)}
                             </label>
                           </Col>
                         </Row>
@@ -433,7 +453,7 @@ export default function CompetitionPageBody(data) {
                               src={
                                 e.clubs_in_competition[0].image
                                   ? e.clubs_in_competition[0].image
-                                  : 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/1024px-No_image_available.svg.png'
+                                  : require('assets/img/icons/avatar/No_image_available.png').default
                               }
                             />
                           </span>
@@ -464,7 +484,14 @@ export default function CompetitionPageBody(data) {
                       </Row>
                     </CardHeader>
                     <a href={`/admin/cuoc-thi/chi-tiet/${e.competition_id}`}>
-                      <CardImg alt="..." src={require('assets/img/theme/img-1-1000x900.jpg').default} />
+                      <CardImg
+                        alt="..."
+                        src={
+                          e.competition_entities.length > 0
+                            ? e.competition_entities[0].image_url
+                            : 'https://vnpi-hcm.vn/wp-content/uploads/2018/01/no-image-800x600.png'
+                        }
+                      />
                       <CardBody>
                         <Row>
                           <Col className="text-left" xl="6" md="6" xs="6">
@@ -475,7 +502,7 @@ export default function CompetitionPageBody(data) {
                               className="text-neutral mb-0 font-weight-bold text-sm"
                               style={{ backgroundColor: 'red', borderRadius: '5px', padding: '2px 5px', fontFamily: 'cursive' }}
                             >
-                              {convertDateToShow(e.create_time)}
+                              {convertDateToShow(e.start_time)}
                             </label>
                           </Col>
                         </Row>
@@ -550,7 +577,7 @@ export default function CompetitionPageBody(data) {
                               src={
                                 e.clubs_in_competition[0].image
                                   ? e.clubs_in_competition[0].image
-                                  : 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/1024px-No_image_available.svg.png'
+                                  : require('assets/img/icons/avatar/No_image_available.png').default
                               }
                             />
                           </span>
@@ -581,7 +608,14 @@ export default function CompetitionPageBody(data) {
                       </Row>
                     </CardHeader>
                     <a href={`/admin/cuoc-thi/chi-tiet/${e.competition_id}`}>
-                      <CardImg alt="..." src={require('assets/img/theme/img-1-1000x900.jpg').default} />
+                      <CardImg
+                        alt="..."
+                        src={
+                          e.competition_entities.length > 0
+                            ? e.competition_entities[0].image_url
+                            : 'https://vnpi-hcm.vn/wp-content/uploads/2018/01/no-image-800x600.png'
+                        }
+                      />
                       <CardBody>
                         <Row>
                           <Col className="text-left" xl="6" md="6" xs="6">
@@ -592,7 +626,7 @@ export default function CompetitionPageBody(data) {
                               className="text-neutral mb-0 font-weight-bold text-sm"
                               style={{ backgroundColor: 'red', borderRadius: '5px', padding: '2px 5px', fontFamily: 'cursive' }}
                             >
-                              {convertDateToShow(e.create_time)}
+                              {convertDateToShow(e.start_time)}
                             </label>
                           </Col>
                         </Row>

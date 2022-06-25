@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import moment from 'moment';
 import 'moment/locale/vi';
+import no_image from 'assets/img/icons/avatar/No_image_available.png';
 
 // reactstrap components
 import {
@@ -130,14 +131,7 @@ export default function CompetitionDetailHeader(data) {
                               <Row className="align-items-center">
                                 <Col className="col-auto mb-0" style={{ padding: '0px 0px 0px 0px' }}>
                                   <span className="avatar avatar-lg rounded-circle">
-                                    <img
-                                      alt="..."
-                                      src={
-                                        e.image
-                                          ? e.image
-                                          : 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/1024px-No_image_available.svg.png'
-                                      }
-                                    />
+                                    <img alt="..." src={e.image ? e.image : no_image} />
                                   </span>
                                 </Col>
                                 <Col className="col-auto mb-0">
@@ -163,7 +157,7 @@ export default function CompetitionDetailHeader(data) {
                           data.data.departments_in_competition.map((ele, value) => {
                             return (
                               <Col className="col-auto" key={`major-${value}`}>
-                                <Badge className="font-weight-bold" color="warning" pill style={{ marginLeft: '10px', fontFamily: 'sans-serif' }}>
+                                <Badge className="font-weight-bold" color="warning" pill style={{ fontFamily: 'sans-serif' }}>
                                   {ele.name}
                                 </Badge>
                               </Col>
@@ -181,18 +175,18 @@ export default function CompetitionDetailHeader(data) {
                         <>
                           <CardTitle className="font-weight-bold text-default text-lg">Tài trợ bởi</CardTitle>
                           <Row className="align-items-center mb-0">
-                            {data.data.sponsor.map((ele, value) => {
+                            {data.data.sponsors_in_competition.map((ele, value) => {
                               return (
                                 <Col className="col-auto" key={`sponsor-${value}`}>
-                                  <a href="/" onClick={(e) => e.preventDefault()} id="tooltip374813717" rel="noreferrer">
+                                  <a href="/" onClick={(e) => e.preventDefault()} id={`tooltip-sponsor${value}`} rel="noreferrer">
                                     <img
                                       alt="..."
                                       className="img-fluid rounded-circle md"
-                                      src={ele.logo}
+                                      src={ele.logo ? ele.logo : no_image}
                                       style={{ backgroundColor: 'white', width: '80px', height: '80px' }}
                                     />
                                   </a>
-                                  <UncontrolledTooltip delay={0} target="tooltip374813717">
+                                  <UncontrolledTooltip delay={0} target={`tooltip-sponsor${value}`}>
                                     {ele.name}
                                   </UncontrolledTooltip>
                                 </Col>

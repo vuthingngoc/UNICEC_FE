@@ -66,12 +66,7 @@ function LoginNavbar() {
                 <NavLink
                   onClick={(e) => {
                     e.preventDefault();
-                    history.push('/admin#UNICEC');
-                    document.getElementById('UNICEC').scrollIntoView({
-                      behavior: 'smooth',
-                      block: 'start',
-                      inline: 'nearest',
-                    });
+                    history.push('/', 'UNICEC');
                   }}
                   to="#UNICEC"
                   data-number="1"
@@ -84,7 +79,7 @@ function LoginNavbar() {
                 <NavLink
                   onClick={(e) => {
                     e.preventDefault();
-                    history.push('/home#gioi-thieu');
+                    history.push('/', 'gioi-thieu');
                   }}
                   to="#gioi-thieu"
                   data-number="2"
@@ -97,7 +92,7 @@ function LoginNavbar() {
                 <NavLink
                   onClick={(e) => {
                     e.preventDefault();
-                    history.push('/home#tinh-nang');
+                    history.push('/', 'tinh-nang');
                   }}
                   to="#tinh-nang"
                   data-number="3"
@@ -110,7 +105,7 @@ function LoginNavbar() {
                 <NavLink
                   onClick={(e) => {
                     e.preventDefault();
-                    history.push('/home#lien-he');
+                    history.push('/', 'lien-he');
                   }}
                   to="#lien-he"
                   data-number="4"

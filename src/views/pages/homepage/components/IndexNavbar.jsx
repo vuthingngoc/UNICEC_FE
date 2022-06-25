@@ -1,23 +1,31 @@
 // react library for routing
+/*eslint-disable*/
 import classNames from 'classnames';
 import React from 'react';
 import { Link } from 'react-router-dom';
 // reactstrap components
 import { UncontrolledCollapse, NavbarBrand, Navbar, NavItem, NavLink, Nav, Container, Row, Col, UncontrolledTooltip, Button } from 'reactstrap';
 
-function AdminNavbar() {
+function AdminNavbar(props) {
   const [navbarColor, setNavbarColor] = React.useState('bg-transparent');
+  const [textColor, setTextColor] = React.useState('text-neutral');
   React.useEffect(() => {
     const updateNavbarColor = () => {
       if (document.documentElement.scrollTop > 30 || document.body.scrollTop > 30) {
         setNavbarColor('bg-neutral');
+        setTextColor('text-defalut');
       } else if (document.documentElement.scrollTop < 30 || document.body.scrollTop < 30) {
         setNavbarColor('bg-transparent');
+        setTextColor('text-neutral');
       }
     };
 
     var href = window.location.href.substring(window.location.href.lastIndexOf('#/') + 2);
     var hrefId = href.substring(href.lastIndexOf('#') + 1);
+    if (props.location.state) {
+      href = `home#${props.location.state}`;
+      hrefId = props.location.state;
+    }
     if (href.lastIndexOf('#') > 0) {
       document.getElementById(hrefId).scrollIntoView({
         behavior: 'smooth',
@@ -93,12 +101,21 @@ function AdminNavbar() {
               </Row>
               <Row style={{ marginTop: '25px' }}>
                 <Col className="collapse-brand" xs="6">
-                  <Button className="btn-default btn-icon" href="/login">
-                    <span className="btn-inner--icon">
-                      <i className="fas fa-sign-in-alt mr-2" />
-                    </span>
-                    <span className="nav-link-inner--text">Đăng nhập</span>
-                  </Button>
+                  {localStorage.getItem('accessToken') && localStorage.getItem('clubID') ? (
+                    <Button className="btn-default btn-icon" href="/admin/thong-tin-clb">
+                      <span className="btn-inner--icon">
+                        <i className="fas fa-sign-in-alt mr-2" />
+                      </span>
+                      <span className="nav-link-inner--text">Trang quản lý</span>
+                    </Button>
+                  ) : (
+                    <Button className="btn-default btn-icon" href="/login">
+                      <span className="btn-inner--icon">
+                        <i className="fas fa-sign-in-alt mr-2" />
+                      </span>
+                      <span className="nav-link-inner--text">Đăng nhập</span>
+                    </Button>
+                  )}
                 </Col>
               </Row>
             </div>
@@ -117,7 +134,9 @@ function AdminNavbar() {
                   data-number="1"
                   tag={Link}
                 >
-                  <span style={{ fontSize: '20px', fontWeight: '900' }}>UNICEC</span>
+                  <span className={textColor} style={{ fontSize: '20px', fontWeight: '900' }}>
+                    UNICEC
+                  </span>
                 </NavLink>
               </NavItem>
               <NavItem>
@@ -134,7 +153,9 @@ function AdminNavbar() {
                   data-number="2"
                   tag={Link}
                 >
-                  <span style={{ fontSize: '20px', fontWeight: '900' }}>Giới thiệu</span>
+                  <span className={textColor} style={{ fontSize: '20px', fontWeight: '900' }}>
+                    Giới thiệu
+                  </span>
                 </NavLink>
               </NavItem>
               <NavItem>
@@ -151,24 +172,23 @@ function AdminNavbar() {
                   data-number="3"
                   tag={Link}
                 >
-                  <span style={{ fontSize: '20px', fontWeight: '900' }}>Tính năng</span>
+                  <span className={textColor} style={{ fontSize: '20px', fontWeight: '900' }}>
+                    Tính năng
+                  </span>
                 </NavLink>
               </NavItem>
               <NavItem>
                 <NavLink
                   onClick={(e) => {
                     e.preventDefault();
-                    document.getElementById('lien-he').scrollIntoView({
-                      behavior: 'smooth',
-                      block: 'start',
-                      inline: 'nearest',
-                    });
                   }}
-                  to="#lien-he"
-                  data-number="4"
                   tag={Link}
+                  data-number="4"
+                  to="cuoc-thi-va-su-kien"
                 >
-                  <span style={{ fontSize: '20px', fontWeight: '900' }}>Liên hệ</span>
+                  <span className={textColor} style={{ fontSize: '20px', fontWeight: '900' }}>
+                    Cuộc thi và sự kiện
+                  </span>
                 </NavLink>
               </NavItem>
             </Nav>
@@ -176,7 +196,7 @@ function AdminNavbar() {
             <Nav className="align-items-lg-center ml-lg-4" navbar>
               <NavItem>
                 <NavLink className="nav-link-icon" href="https://www.facebook.com/" id="tooltip601201423" target="_blank">
-                  <i className="fab fa-facebook-square fa-2x" />
+                  <i className={classNames('fab fa-facebook-square fa-2x', textColor)} />
                   <span className="nav-link-inner--text d-lg-none">Facebook</span>
                 </NavLink>
                 <UncontrolledTooltip delay={0} target="tooltip601201423">
@@ -184,12 +204,21 @@ function AdminNavbar() {
                 </UncontrolledTooltip>
               </NavItem>
               <NavItem className="d-none d-lg-block ml-lg-4">
-                <Button className="btn-neutral btn-icon" color="default" href="/login">
-                  <span className="btn-inner--icon">
-                    <i className="fas fa-sign-in-alt mr-2" />
-                  </span>
-                  <span className="nav-link-inner--text">Đăng nhập</span>
-                </Button>
+                {localStorage.getItem('accessToken') && localStorage.getItem('clubID') ? (
+                  <Button className="btn-neutral btn-icon" color="default" href="/admin/thong-tin-clb">
+                    <span className="btn-inner--icon">
+                      <i className="fas fa-sign-in-alt mr-2" />
+                    </span>
+                    <span className="nav-link-inner--text">Trang quản lý</span>
+                  </Button>
+                ) : (
+                  <Button className="btn-neutral btn-icon" color="default" href="/login">
+                    <span className="btn-inner--icon">
+                      <i className="fas fa-sign-in-alt mr-2" />
+                    </span>
+                    <span className="nav-link-inner--text">Đăng nhập</span>
+                  </Button>
+                )}
               </NavItem>
             </Nav>
           </UncontrolledCollapse>

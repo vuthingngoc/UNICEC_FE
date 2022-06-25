@@ -5,10 +5,14 @@ import AuthFooter from 'components/Footers/AuthFooter.js';
 import HomepageBody from './components';
 import './css/styled.css';
 
-function Homepage() {
+function Homepage(props) {
+  React.useEffect(() => {
+    console.log(props);
+  }, []);
+
   return (
     <>
-      <IndexNavbar />
+      <IndexNavbar {...props} />
       <div className="main-content">
         <IndexHeader />
         <HomepageBody />

@@ -1,5 +1,3 @@
-import Alternative from 'views/pages/dashboards/Alternative.js';
-
 import Dashboard from 'views/pages/dashboards/Dashboard.js';
 // import Lock from 'views/pages/examples/Lock.js';
 //LoginPagef
@@ -13,6 +11,8 @@ import ShowCompetition from 'views/pages/ShowCompetitionPage/CompetitionPage.jsx
 import CreateCompetionPage from 'views/pages/CreateCompetitionPage';
 
 import ShowlistTeamPage from 'views/pages/ShowListTeamPage/index.jsx';
+import MemberPage from 'views/pages/MemberPage';
+import ActivityPage from 'views/pages/ActivityPage';
 
 const routes = [
   {
@@ -29,10 +29,10 @@ const routes = [
         layout: '/admin',
       },
       {
-        path: '/hoat-dong-clb',
+        path: '/hoat-dong',
         name: 'Hoạt động',
         miniName: 'HĐ',
-        component: Alternative,
+        component: ActivityPage,
         layout: '/admin',
       },
       {
@@ -46,7 +46,7 @@ const routes = [
         path: '/thanh-vien',
         name: 'Thành viên',
         miniName: 'TV',
-        component: Alternative,
+        component: MemberPage,
         layout: '/admin',
       },
     ],

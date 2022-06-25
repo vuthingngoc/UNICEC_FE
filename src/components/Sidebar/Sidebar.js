@@ -174,7 +174,7 @@ function Sidebar({ toggleSidenav, sidenavOpen, routes, logo, rtlActive }) {
           <hr className="my-3" />
           <h6 className="navbar-heading p-0 text-muted">
             <span className="docs-normal">Liên hệ</span>
-            <span className="docs-mini">D</span>
+            <span className="docs-mini">LH</span>
           </h6>
           <Nav className="mb-md-3" navbar>
             <NavItem>

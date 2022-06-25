@@ -41,11 +41,7 @@ function CardsHeader() {
                         <a className="avatar rounded-circle" href="/" onClick={(e) => e.preventDefault()}>
                           <img
                             alt="..."
-                            src={`${
-                              clubDatas.image !== null
-                                ? clubDatas.image
-                                : 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/1024px-No_image_available.svg.png'
-                            } `}
+                            src={`${clubDatas.image !== null ? clubDatas.image : require('assets/img/icons/avatar/No_image_available.png').default} `}
                           />
                         </a>
                       </Col>
