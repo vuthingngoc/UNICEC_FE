@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import moment from 'moment';
 import 'moment/locale/vi';
 import no_image from 'assets/img/icons/avatar/No_image_available.png';
@@ -25,10 +25,6 @@ export default function CompetitionDetailHeader(data) {
     const ago = moment(date, 'YYYY-MM-DDThh:mm:ss').fromNow();
     return ago;
   };
-
-  useEffect(() => {
-    console.log(data);
-  }, []);
 
   return (
     <>
@@ -147,8 +143,8 @@ export default function CompetitionDetailHeader(data) {
                     <CardBody>
                       <CardTitle className="font-weight-bold text-default text-lg">Chuyên ngành:</CardTitle>
                       <Row className="align-items-center" style={{ marginBlock: '20px' }}>
-                        {data.data.departments_in_competition.length > 0 ? (
-                          data.data.departments_in_competition.map((ele, value) => {
+                        {data.data.majors_in_competition.length > 0 ? (
+                          data.data.majors_in_competition.map((ele, value) => {
                             return (
                               <Col className="col-auto" key={`major-${value}`}>
                                 <Badge className="font-weight-bold" color="warning" pill style={{ fontFamily: 'sans-serif' }}>
@@ -165,23 +161,30 @@ export default function CompetitionDetailHeader(data) {
                           </Col>
                         )}
                       </Row>
-                      {data.data.sponsors_in_competition && data.data.sponsors_in_competition.length > 0 ? (
+                      {data.sponsor && data.sponsor.length > 0 ? (
                         <>
                           <CardTitle className="font-weight-bold text-default text-lg">Đơn vị tài trợ</CardTitle>
                           <Row className="align-items-center mb-0">
-                            {data.data.sponsors_in_competition.map((ele, value) => {
+                            {data.sponsor.map((ele, value) => {
                               return (
                                 <Col className="col-auto" key={`sponsor-${value}`}>
-                                  <a href="/" onClick={(e) => e.preventDefault()} id={`tooltip-sponsor${value}`} rel="noreferrer">
+                                  <a
+                                    href={ele.website.includes('http') ? ele.website : `https://${ele.website}`}
+                                    target="_blank"
+                                    id={`tooltip-sponsor${value}`}
+                                    rel="noreferrer"
+                                  >
                                     <img
                                       alt="..."
                                       className="img-fluid rounded-circle md"
-                                      src={ele.logo ? ele.logo : no_image}
+                                      src={ele.image_url ? ele.image_url : no_image}
                                       style={{ backgroundColor: 'white', width: '80px', height: '80px' }}
                                     />
                                   </a>
                                   <UncontrolledTooltip delay={0} target={`tooltip-sponsor${value}`}>
                                     {ele.name}
+                                    <br />
+                                    {ele.email}
                                   </UncontrolledTooltip>
                                 </Col>
                               );

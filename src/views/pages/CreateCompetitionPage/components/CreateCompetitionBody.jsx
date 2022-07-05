@@ -116,7 +116,7 @@ export default function CreateCompetitionBody() {
       if (res !== null && res !== undefined && res.status === 200) {
         setMajorsList(handleConvertDataMajor(res.data.items));
       } else {
-        warningAlert('Kết nối tới máy chủ quá hạn');
+        warningAlert(warningAlert.timeout);
       }
     }
   }
@@ -128,7 +128,7 @@ export default function CreateCompetitionBody() {
       if (res !== null && res !== undefined && res.status === 200) {
         setCompetitionTypeList(handleConvertDataCompetitionTypes(res.data.items));
       } else {
-        warningAlert('Kết nối tới máy chủ quá hạn');
+        warningAlert(warningAlert.timeout);
       }
     }
   }
@@ -306,19 +306,19 @@ export default function CreateCompetitionBody() {
 
   const checkValidation = () => {
     if (title.trim() === '') {
-      warningAlert('Vui lòng điền tiêu đề');
+      warningAlert(warningAlert.titleValidation);
       return false;
     } else if (address.trim() === '') {
-      warningAlert('Vui lòng điền địa chỉ');
+      warningAlert(warningAlert.addressValidation);
       return false;
     } else if (addressName.trim() === '') {
-      warningAlert('Vui lòng điền tên địa điểm');
+      warningAlert(warningAlert.addressNameValidation);
       return false;
     } else if (reactQuillText.trim() === '') {
-      warningAlert('Vui lòng điền nội dung bài viết');
+      warningAlert(warningAlert.contentsValidation);
       return false;
     } else if (banner === '') {
-      warningAlert('Vui lòng thêm ảnh');
+      warningAlert(warningAlert.imageValidation);
       return false;
     }
     return true;
@@ -410,16 +410,16 @@ export default function CreateCompetitionBody() {
           const res = await createDataByPath(path, accessToken, data);
           console.log(res);
           if (res !== null && res.status === 200) {
-            successAlert('Tạo cuộc thi thành công');
+            successAlert(successAlert.createCompetition);
             setTimeout(() => {
-              history.push(`/admin/cuoc-thi/chi-tiet/${res.data.competition_id}`);
+              history.push(`/admin/cuoc-thi/chi-tiet/${res.data.id}`);
             }, 2000);
           } else if (res !== null && res.status === 400) {
             if (res.data === 'Date not suitable') {
-              warningAlert('Ngày tháng không phù hợp');
+              warningAlert(warningAlert.dateTimeValidation);
             }
           } else {
-            warningAlert('Kết nối tới máy chủ quá hạn');
+            warningAlert(warningAlert.timeout);
           }
         }
       }
@@ -1024,7 +1024,7 @@ export default function CreateCompetitionBody() {
                                 if (minMemberInTeam > 0 || numberOfParticipations > 0) {
                                   setTeamModal(false);
                                 } else {
-                                  warningAlert('Các thông số phải lớn hơn 0');
+                                  warningAlert(warningAlert.minNumber);
                                 }
                               }}
                             >
@@ -1062,7 +1062,7 @@ export default function CreateCompetitionBody() {
                     color="info"
                     style={{ margin: 'auto' }}
                     onClick={() => {
-                      successAlert('Tạo cuộc thi thành công');
+                      successAlert(successAlert.createCompetition);
                     }}
                   >
                     Xem trước
@@ -1161,10 +1161,10 @@ export default function CreateCompetitionBody() {
                         setSponsorForm(false);
                         addSponsor(sponsorName, imgBase64Sponsor, sponsorWebsite, sponsorEmail, sponsorDescription);
                       } else {
-                        warningAlert('Email không đúng định dạng.');
+                        warningAlert(warningAlert.emailValidation);
                       }
                     } else {
-                      warningAlert('Vui lòng điền đầy đủ thông tin.');
+                      warningAlert(warningAlert.informationValidation);
                     }
                   }}
                 >
@@ -1285,7 +1285,7 @@ export default function CreateCompetitionBody() {
                       setinfluencerModal(false);
                       addInfluencer(fullnameInfluencer, imgBase64Influencer);
                     } else {
-                      warningAlert('Vui lòng điền đầy đủ thông tin.');
+                      warningAlert(warningAlert.informationValidation);
                     }
                   }}
                 >

@@ -39,7 +39,7 @@ function MemberPage() {
       if (res !== null && res !== undefined && res.status === 200) {
         setMembers(res.data);
       } else {
-        warningAlert('Kết nối tới máy chủ quá hạn');
+        warningAlert(warningAlert.timeout);
       }
     }
   }
@@ -52,7 +52,7 @@ function MemberPage() {
       if (res !== null && res !== undefined && res.status === 200) {
         setMemberDetail(res.data);
       } else {
-        warningAlert('Kết nối tới máy chủ quá hạn');
+        warningAlert(warningAlert.timeout);
       }
     }
   }

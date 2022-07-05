@@ -12,6 +12,7 @@ function CompetitionPage() {
   const [competitionList3, setCompetitionList3] = useState(null);
   const [competitionList4, setCompetitionList4] = useState(null);
   const [competitionList5, setCompetitionList5] = useState(null);
+  const [competitionList6, setCompetitionList6] = useState(null);
   const [clubData, setClubData] = useState(null);
 
   async function loadDataListCompetition(accessToken, clubId, status) {
@@ -40,9 +41,12 @@ function CompetitionPage() {
           case 5:
             setCompetitionList5(newData);
             break;
+          case 6:
+            setCompetitionList6(newData);
+            break;
         }
       } else {
-        warningAlert('Kết nối tới máy chủ quá hạn');
+        warningAlert(warningAlert.timeout);
       }
     }
   }
@@ -54,7 +58,7 @@ function CompetitionPage() {
       if (res !== null && res.status === 200) {
         setClubData(res.data[0]);
       } else {
-        warningAlert('Kết nối tới máy chủ quá hạn');
+        warningAlert(warningAlert.timeout);
       }
     }
   }
@@ -87,6 +91,7 @@ function CompetitionPage() {
         loadDataListCompetition(accessToken, clubId, 3);
         loadDataListCompetition(accessToken, clubId, 4);
         loadDataListCompetition(accessToken, clubId, 5);
+        loadDataListCompetition(accessToken, clubId, 6);
       }
       if (clubData === null) {
         loadDataClubs(accessToken, studentID);
@@ -112,6 +117,7 @@ function CompetitionPage() {
             competitionList3={competitionList3}
             competitionList4={competitionList4}
             competitionList5={competitionList5}
+            competitionList6={competitionList6}
           />
         </>
       ) : (
