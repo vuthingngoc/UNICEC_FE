@@ -104,6 +104,8 @@ export default function Login() {
         setTimeout(function () {
           history.push('/admin/thong-tin-clb');
         }, 1500);
+      } else {
+        warningAlert('Tài khoản không có trong hệ thống');
       }
     } else if (res && res.status === 401) {
       warningAlert('Tài khoản không có trong hệ thống');

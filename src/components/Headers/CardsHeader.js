@@ -7,12 +7,21 @@ import { getDataByPath } from 'services/data.service';
 function CardsHeader() {
   const [clubDatas, setClubDatas] = useState(null);
 
-  async function loadDataClubs(accessToken, studentID) {
+  async function loadDataClubs(accessToken, studentID, clubID) {
     if (accessToken !== null) {
       const path = `api/v1/clubs/user/${studentID}`;
       const res = await getDataByPath(`${path}`, accessToken, '');
+      console.log(res, 'club');
       if (res !== null && res.status === 200) {
-        setClubDatas(res.data[0]);
+        if (res.data.length > 1) {
+          res.data.forEach((e) => {
+            if (e.id === clubID) {
+              setClubDatas(e);
+            }
+          });
+        } else {
+          setClubDatas(res.data[0]);
+        }
       }
     }
   }
@@ -21,8 +30,9 @@ function CardsHeader() {
     if (localStorage && localStorage.getItem('accessToken')) {
       const accessToken = localStorage.getItem('accessToken');
       const studentID = localStorage.getItem('studentID');
+      const clubID = localStorage.getItem('clubID');
       if (clubDatas === null) {
-        loadDataClubs(accessToken, studentID);
+        loadDataClubs(accessToken, studentID, parseInt(clubID));
       }
     }
   }, []);

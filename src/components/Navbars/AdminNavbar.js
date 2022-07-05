@@ -154,19 +154,11 @@ function AdminNavbar({ theme, sidenavOpen, toggleSidenav }) {
                     </DropdownItem>
                     <DropdownItem href="#pablo" onClick={(e) => e.preventDefault()}>
                       <i className="ni ni-single-02" />
-                      <span>My profile</span>
+                      <span>Thông tin</span>
                     </DropdownItem>
-                    <DropdownItem href="#pablo" onClick={(e) => e.preventDefault()}>
+                    <DropdownItem href="/admin/tuy-chinh">
                       <i className="ni ni-settings-gear-65" />
-                      <span>Settings</span>
-                    </DropdownItem>
-                    <DropdownItem href="#pablo" onClick={(e) => e.preventDefault()}>
-                      <i className="ni ni-calendar-grid-58" />
-                      <span>Activity</span>
-                    </DropdownItem>
-                    <DropdownItem href="#pablo" onClick={(e) => e.preventDefault()}>
-                      <i className="ni ni-support-16" />
-                      <span>Support</span>
+                      <span>Tùy chỉnh</span>
                     </DropdownItem>
                     <DropdownItem divider />
                     <DropdownItem
