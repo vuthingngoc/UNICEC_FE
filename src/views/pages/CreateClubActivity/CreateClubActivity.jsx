@@ -25,6 +25,8 @@ import { createDataByPath } from 'services/data.service';
 import SimpleHeader from 'components/Headers/SimpleHeader';
 import Loading from '../components/Loading';
 import { useHistory } from 'react-router';
+import { warningAlertConstants } from 'constants/alert.constants';
+import { successAlertConstants } from 'constants/alert.constants';
 // core components
 function CreateClubActivity() {
   const [reactQuillText, setReactQuillText] = useState('');
@@ -103,7 +105,7 @@ function CreateClubActivity() {
         }
         setCompetitionList(newData);
       } else {
-        warningAlert(warningAlert.timeout);
+        warningAlert(warningAlertConstants.timeout);
       }
     }
   }
@@ -125,10 +127,10 @@ function CreateClubActivity() {
 
   const checkValidation = () => {
     if (title.trim() === '') {
-      warningAlert(warningAlert.titleValidation);
+      warningAlert(warningAlertConstants.titleValidation);
       return false;
     } else if (reactQuillText.trim() === '') {
-      warningAlert(warningAlert.contentsValidation);
+      warningAlert(warningAlertConstants.contentsValidation);
       return false;
     }
     return true;
@@ -167,16 +169,16 @@ function CreateClubActivity() {
           const res = await createDataByPath(path, accessToken, data);
           console.log(res);
           if (res !== null && res.status === 200) {
-            successAlert(successAlert.createActivity);
+            successAlert(successAlertConstants.createActivity);
             setformModal(false);
             setReactQuillText('');
             setTitle('');
           } else if (res !== null && res.status === 400) {
             if (res.data === 'Date not suitable') {
-              warningAlert(warningAlert.dateTimeValidation);
+              warningAlert(warningAlertConstants.dateTimeValidation);
             }
           } else {
-            warningAlert(warningAlert.timeout);
+            warningAlert(warningAlertConstants.timeout);
           }
           setformModal(false);
         }

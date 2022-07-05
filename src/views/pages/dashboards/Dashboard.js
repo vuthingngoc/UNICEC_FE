@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Button, Card, CardHeader, CardBody, ListGroupItem, ListGroup, Progress, Table, Container, Row, Col } from 'reactstrap';
 import ReactBSAlert from 'react-bootstrap-sweetalert';
+import { warningAlertConstants } from 'constants/alert.constants';
 
 // core components
 import CardsHeader from 'components/Headers/CardsHeader.js';
@@ -40,7 +41,7 @@ function Dashboard() {
       if (res && res.status === 200) {
         setClubHeadmasters(res.data);
       } else {
-        warningAlert(warningAlert.timeout);
+        warningAlert(warningAlertConstants.timeout);
       }
     }
   }
@@ -53,7 +54,7 @@ function Dashboard() {
       if (res && res.status === 200) {
         setClubMembers(res.data);
       } else {
-        warningAlert(warningAlert.timeout);
+        warningAlert(warningAlertConstants.timeout);
       }
     }
   }
@@ -81,7 +82,7 @@ function Dashboard() {
       } else if (res && res.status === 204) {
         setClubEventCompetitions([]);
       } else {
-        warningAlert(warningAlert.timeout);
+        warningAlert(warningAlertConstants.timeout);
       }
     }
   }
@@ -116,7 +117,7 @@ function Dashboard() {
         }
         setClubActivity(items);
       } else {
-        warningAlert(warningAlert.timeout);
+        warningAlert(warningAlertConstants.timeout);
       }
     }
   }

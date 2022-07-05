@@ -4,6 +4,7 @@ import CompetitionHeader from './components/CompetitionHeader.js';
 import CompetitionPageBody from './components/CompetitionPageBody.jsx';
 import ReactBSAlert from 'react-bootstrap-sweetalert';
 import { Row } from 'reactstrap';
+import { warningAlertConstants } from 'constants/alert.constants.js';
 
 function CompetitionPage() {
   const [alert, setalert] = React.useState(false);
@@ -46,7 +47,7 @@ function CompetitionPage() {
             break;
         }
       } else {
-        warningAlert(warningAlert.timeout);
+        warningAlert(warningAlertConstants.timeout);
       }
     }
   }
@@ -58,7 +59,7 @@ function CompetitionPage() {
       if (res !== null && res.status === 200) {
         setClubData(res.data[0]);
       } else {
-        warningAlert(warningAlert.timeout);
+        warningAlert(warningAlertConstants.timeout);
       }
     }
   }

@@ -5,6 +5,7 @@ import ReactBSAlert from 'react-bootstrap-sweetalert';
 import SimpleHeader from 'components/Headers/SimpleHeader';
 import { Modal } from 'reactstrap';
 import ClubMemberDetail from './components/ClubMemberDetail.jsx';
+import { warningAlertConstants } from 'constants/alert.constants.js';
 
 function MemberPage() {
   const [alert, setAlert] = useState(null);
@@ -39,7 +40,7 @@ function MemberPage() {
       if (res !== null && res !== undefined && res.status === 200) {
         setMembers(res.data);
       } else {
-        warningAlert(warningAlert.timeout);
+        warningAlert(warningAlertConstants.timeout);
       }
     }
   }
@@ -52,7 +53,7 @@ function MemberPage() {
       if (res !== null && res !== undefined && res.status === 200) {
         setMemberDetail(res.data);
       } else {
-        warningAlert(warningAlert.timeout);
+        warningAlert(warningAlertConstants.timeout);
       }
     }
   }

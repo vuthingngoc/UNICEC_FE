@@ -4,6 +4,7 @@ import ActivityPageHeader from './components/AcitivityPageHeader';
 import AcitivityPageBody from './components/ActivityPageBody';
 import ReactBSAlert from 'react-bootstrap-sweetalert';
 import { Row } from 'reactstrap';
+import { warningAlertConstants } from 'constants/alert.constants';
 
 export default function ActivityPage() {
   const [competitionData, setCompetitionData] = useState(null);
@@ -21,7 +22,7 @@ export default function ActivityPage() {
           items = res.data.items.filter((ele) => ele.status !== 5);
         }
       } else {
-        warningAlert(warningAlert.timeout);
+        warningAlert(warningAlertConstants.timeout);
         return false;
       }
       path = 'api/v1/competition-activities';
