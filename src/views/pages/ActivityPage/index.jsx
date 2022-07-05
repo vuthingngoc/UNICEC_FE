@@ -21,14 +21,14 @@ export default function ActivityPage() {
           items = res.data.items.filter((ele) => ele.status !== 5);
         }
       } else {
-        warningAlert('Kết nối tới máy chủ quá hạn');
+        warningAlert(warningAlert.timeout);
         return false;
       }
       path = 'api/v1/competition-activities';
       if (items.length > 0) {
         for (let i = 0; i < items.length; i++) {
           const ele = items[i];
-          data = `clubId=${clubID}&competitionId=${ele.competition_id}`;
+          data = `clubId=${clubID}&competitionId=${ele.id}`;
           const res = await getDataByPath(`${path}`, accessToken, data);
           if (res && res.data.items && res.data.items.length > 0) {
             if (!items[i].finish_activity) {

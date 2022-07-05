@@ -72,7 +72,7 @@ export default function Login() {
         showCancel={false}
         showConfirm={false}
       >
-        Chào mừng bạn đến với hệ thống.
+        {successAlert.loginSuccess}
       </ReactBSAlert>
     );
   };
@@ -90,7 +90,7 @@ export default function Login() {
         getClubAndUniversity(res.data.token, jwtDecode(res.data.token).Id);
       }
     } else {
-      warningAlert('Kết nối tới máy chủ quá hạn');
+      warningAlert(warningAlert.timeout);
     }
   }
 
@@ -105,12 +105,12 @@ export default function Login() {
           history.push('/admin/thong-tin-clb');
         }, 1500);
       } else {
-        warningAlert('Tài khoản không có trong hệ thống');
+        warningAlert(warningAlert.accountNotFound);
       }
     } else if (res && res.status === 401) {
-      warningAlert('Tài khoản không có trong hệ thống');
+      warningAlert(warningAlert.accountNotFound);
     } else {
-      warningAlert('Kết nối máy chủ quá hạn');
+      warningAlert(warningAlert.timeout);
     }
     setIsSubmitting(false);
     setformModal(false);
@@ -119,10 +119,10 @@ export default function Login() {
   const handleErrorLogin = (request) => {
     switch (request) {
       case 'Firebase: Error (auth/user-not-found).':
-        warningAlert('Tài khoản chưa được đăng ký. vui lòng đăng ký!');
+        warningAlert(warningAlert.accountNotFound);
         break;
       default:
-        warningAlert('Đã có lỗi xảy ra trong quá trình xác thực. Vui lòng thử lại sau!');
+        warningAlert(warningAlert.loginFail);
     }
   };
 

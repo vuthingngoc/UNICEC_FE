@@ -32,9 +32,9 @@ export default function SettingPageBody() {
         setClubs(res.data);
       }
     } else if (res && res.status === 401) {
-      warningAlert('Lỗi tài khoản');
+      warningAlert(warningAlert.accountError);
     } else {
-      warningAlert('Kết nối máy chủ quá hạn');
+      warningAlert(warningAlert.timeout);
     }
   }
 
