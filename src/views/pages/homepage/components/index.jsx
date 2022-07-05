@@ -1,13 +1,24 @@
+import React from 'react';
 import { Link } from 'react-router-dom';
 // reactstrap components
 import { Badge, Card, CardBody, Container, Row, Col, UncontrolledTooltip } from 'reactstrap';
+import ScrollReveal from 'scrollreveal';
 
 function HomepageBody() {
+  React.useEffect(() => {
+    ScrollReveal().reveal('.gioithieu', { origin: 'bottom' });
+    ScrollReveal().reveal('.thetinhnang', { origin: 'bottom' });
+    ScrollReveal().reveal('.caulacbo', { origin: 'left' });
+    ScrollReveal().reveal('.cuocthi', { origin: 'right' });
+    ScrollReveal().reveal('.thanhvien', { origin: 'left' });
+    ScrollReveal().reveal('.nentang', { origin: 'top' });
+  }, []);
+
   return (
     <>
       <div className="cd-index" id="gioi-thieu">
         <section className="py-6 pb-9 bg-warning">
-          <Container fluid style={{ paddingTop: '50px' }}>
+          <Container className="gioithieu" fluid style={{ paddingTop: '50px' }}>
             <Row className="justify-content-center text-center">
               <Col md="8">
                 <h2 className="display-4 text-white font-weight-bold" style={{}}>
@@ -25,7 +36,7 @@ function HomepageBody() {
         <section className="section section-lg pt-lg-0 mt--7">
           <Container>
             <Row className="justify-content-center">
-              <Col lg="12">
+              <Col lg="12" className="thetinhnang">
                 <Row>
                   <Col lg="4">
                     <Card className="card-lift--hover shadow border-0">
@@ -95,7 +106,7 @@ function HomepageBody() {
       </div>
       <div className="cd-index" id="tinh-nang">
         <section className="py-6">
-          <Container>
+          <Container className="caulacbo">
             <Row className="row-grid align-items-center">
               <Col className="order-md-2" md="6">
                 <img alt="..." className="img-fluid" src={require('assets/img/theme/landing-1.png').default} />
@@ -148,7 +159,7 @@ function HomepageBody() {
           </Container>
         </section>
         <section className="py-6">
-          <Container>
+          <Container className="cuocthi">
             <Row className="row-grid align-items-center">
               <Col md="6">
                 <img alt="..." className="img-fluid" src={require('assets/img/theme/landing-2.png').default} />
@@ -166,7 +177,7 @@ function HomepageBody() {
           </Container>
         </section>
         <section className="py-6">
-          <Container>
+          <Container className="thanhvien">
             <Row className="row-grid align-items-center">
               <Col className="order-md-2" md="6">
                 <img alt="..." className="img-fluid" src={require('assets/img/theme/landing-3.png').default} />
@@ -186,7 +197,7 @@ function HomepageBody() {
       </div>
 
       <section className="py-7">
-        <Container>
+        <Container className="nentang">
           <Row className="row-grid justify-content-center">
             <Col className="text-center" lg="10">
               <h2 className="display-3" style={{ color: '#fc4b2cc0' }}>

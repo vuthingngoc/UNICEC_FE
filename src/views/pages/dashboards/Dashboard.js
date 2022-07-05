@@ -36,6 +36,7 @@ function Dashboard() {
     if (id !== 0) {
       const path = 'api/v1/members/leaders/club';
       const res = await getDataByPath(`${path}/${id}`, accessToken, '');
+      console.log(res);
       if (res && res.status === 200) {
         setClubHeadmasters(res.data);
       } else {
@@ -252,7 +253,12 @@ function Dashboard() {
                         );
                       })
                     ) : (
-                      <h2 style={{ margin: 'auto' }}>Danh sách trống</h2>
+                      <Col md="12" className="text-center">
+                        <h2 className="display-4" style={{ margin: 'auto' }}>
+                          Danh sách trống
+                        </h2>
+                        <img alt="..." src={require('assets/img/icons/empty.jpg').default} style={{ width: '200px', height: '200px' }} />
+                      </Col>
                     )
                   ) : (
                     <Row>
@@ -323,7 +329,12 @@ function Dashboard() {
                         );
                       })
                     ) : (
-                      <h2 style={{ margin: 'auto' }}>Danh sách trống</h2>
+                      <Col md="12" className="text-center">
+                        <h2 className="display-4" style={{ margin: 'auto' }}>
+                          Danh sách trống
+                        </h2>
+                        <img alt="..." src={require('assets/img/icons/empty.jpg').default} style={{ width: '200px', height: '200px' }} />
+                      </Col>
                     )
                   ) : (
                     <Row>
@@ -348,7 +359,7 @@ function Dashboard() {
                     <h3 className="mb-0">Thành viên</h3>
                   </div>
                   <div className="col text-right">
-                    <Button color="primary" href="/clubMember" size="sm">
+                    <Button color="primary" href="/admin/thanh-vien" size="sm">
                       Xem tất cả
                     </Button>
                   </div>

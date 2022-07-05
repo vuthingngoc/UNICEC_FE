@@ -42,6 +42,7 @@
     "react-select2-wrapper": "1.0.4-beta6",
     "react-to-print": "2.12.6",
     "reactstrap": "8.9.0",
+    "scrollreveal": "^4.0.9",
     "select2": "4.0.13",
     "styled-components": "^5.3.5",
     "sweetalert2": "11.0.18"

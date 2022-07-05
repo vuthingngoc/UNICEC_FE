@@ -97,7 +97,7 @@ function CompetitionPage() {
   return (
     <>
       {alert}
-      {competitionList1 ? (
+      {clubData && competitionList1 ? (
         <>
           <CompetitionHeader
             clubData={clubData}

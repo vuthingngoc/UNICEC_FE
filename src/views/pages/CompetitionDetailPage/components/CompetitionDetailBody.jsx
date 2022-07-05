@@ -3,16 +3,10 @@ import React from 'react';
 import ReactQuill from 'react-quill';
 import { useHistory } from 'react-router';
 import { Badge, Button, Card, CardBody, CardHeader, CardImg, CardTitle, Col, Container, Row, UncontrolledTooltip } from 'reactstrap';
+import { convertDateFormat } from 'services/formatData';
 
 export default function CompetitionDetailBody(data) {
   const history = useHistory();
-
-  const convertDateFormat = (date) => {
-    const arr = date.split('T');
-    const day = arr[0].split('-');
-    const time = arr[1].split(':');
-    return `${day[2]}-${day[1]}-${day[0]} ${time[0]}:${time[1]}:${time[2]}`;
-  };
 
   const covertDatePassed = (date) => {
     const ago = moment(date, 'YYYY-MM-DDThh:mm:ss').fromNow();
@@ -188,20 +182,38 @@ export default function CompetitionDetailBody(data) {
                       Số thành viên đã đăng ký: <span className="text-warning">{data.data.number_of_participant_join} người</span>
                     </h3>
                   </CardTitle>
-                  <Row className="align-items-center justify-content-lg-between" style={{ marginTop: '20px' }}>
-                    <Button className="btn-icon" color="warning" type="button" style={{ margin: 'auto' }}>
-                      <span className="btn-inner--icon mr-1">
-                        <i className="fas fa-users" />
-                      </span>
-                      <span
-                        className="btn-inner--text"
-                        onClick={() => {
-                          history.push(`/admin/cuoc-thi/chi-tiet/quan-ly-nhom/${data.data.competition_id}`);
-                        }}
-                      >
-                        Quản lý nhóm
-                      </span>
-                    </Button>
+                  <Row className="align-items-center justify-content-lg-between mt-3 ml-3">
+                    <Col md="6">
+                      <Button className="btn-icon" color="warning" type="button" style={{ margin: 'auto' }}>
+                        <span className="btn-inner--icon mr-1">
+                          <i className="fas fa-users" />
+                        </span>
+                        <span
+                          className="btn-inner--text"
+                          onClick={() => {
+                            history.push(`/admin/cuoc-thi/chi-tiet/quan-ly-nhom/${data.data.competition_id}`);
+                          }}
+                        >
+                          Quản lý nhóm
+                        </span>
+                      </Button>
+                    </Col>
+
+                    <Col md="6">
+                      <Button className="btn-icon" color="success" type="button" style={{ margin: 'auto' }}>
+                        <span className="btn-inner--icon mr-1">
+                          <i className="fas fa-flag" />
+                        </span>
+                        <span
+                          className="btn-inner--text"
+                          onClick={() => {
+                            history.push(`/admin/cuoc-thi/chi-tiet/vong-thi/${data.data.competition_id}`);
+                          }}
+                        >
+                          Quản lý vòng thi
+                        </span>
+                      </Button>
+                    </Col>
                   </Row>
                 </CardBody>
               </Card>

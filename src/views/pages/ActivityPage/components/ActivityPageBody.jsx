@@ -107,9 +107,12 @@ export default function AcitivityPageBody(props) {
               );
             })
           ) : props.data && props.data.length === 0 ? (
-            <h2 className="display-3" style={{ margin: 'auto', marginBottom: '100px', marginTop: '100px' }}>
-              Danh sách trống
-            </h2>
+            <Col md="12" className="text-center">
+              <h2 className="display-4" style={{ margin: 'auto' }}>
+                Danh sách trống
+              </h2>
+              <img alt="..." src={require('assets/img/icons/empty.jpg').default} style={{ width: '500px', height: '500px' }} />
+            </Col>
           ) : (
             <Row>
               <img

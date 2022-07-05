@@ -18,15 +18,9 @@ import {
   UncontrolledTooltip,
   Badge,
 } from 'reactstrap';
+import { convertDateFormat } from 'services/formatData';
 
 export default function CompetitionDetailHeader(data) {
-  const convertDateFormat = (date) => {
-    const arr = date.split('T');
-    const day = arr[0].split('-');
-    const time = arr[1].split(':');
-    return `${day[2]}-${day[1]}-${day[0]} ${time[0]}:${time[1]}:${time[2]}`;
-  };
-
   const covertDatePassed = (date) => {
     const ago = moment(date, 'YYYY-MM-DDThh:mm:ss').fromNow();
     return ago;
@@ -69,8 +63,8 @@ export default function CompetitionDetailHeader(data) {
               </Col>
             </Row>
             {data.data ? (
-              <Row className="align-items-center">
-                <Col md="8" className="text-left" style={{ height: '100%' }}>
+              <Row>
+                <Col md="8" className="text-left">
                   <Card style={{ padding: '25px 25px', height: '100%' }}>
                     <Row>
                       <Col md="9" lg="9" sm="9">
@@ -121,7 +115,7 @@ export default function CompetitionDetailHeader(data) {
                     </Row>
                   </Card>
                 </Col>
-                <Col className="text-left" md="4" style={{ height: '100%' }}>
+                <Col className="text-left" md="4">
                   <Card style={{ height: '100%' }}>
                     {data.data.clubs_in_competition && data.data.clubs_in_competition.length > 0 ? (
                       data.data.clubs_in_competition.map((e, value) => {
@@ -173,7 +167,7 @@ export default function CompetitionDetailHeader(data) {
                       </Row>
                       {data.data.sponsors_in_competition && data.data.sponsors_in_competition.length > 0 ? (
                         <>
-                          <CardTitle className="font-weight-bold text-default text-lg">Tài trợ bởi</CardTitle>
+                          <CardTitle className="font-weight-bold text-default text-lg">Đơn vị tài trợ</CardTitle>
                           <Row className="align-items-center mb-0">
                             {data.data.sponsors_in_competition.map((ele, value) => {
                               return (
