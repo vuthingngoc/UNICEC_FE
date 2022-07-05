@@ -1,4 +1,4 @@
-const warningAlert = {
+const warningAlertConstants = {
   timeout: 'Kết nối tới máy chủ quá hạn',
   titleValidation: 'Vui lòng điền tiêu đề',
   contentsValidation: 'Vui lòng điền nội dung bài đăng',
@@ -15,10 +15,10 @@ const warningAlert = {
   minNumber: 'Các thông số phải lớn hơn 0',
 };
 
-const successAlert = {
+const successAlertConstants = {
   createActivity: 'Tạo hoạt động thành công',
   createCompetition: 'Tạo cuộc thi thành công',
   loginSuccess: 'Chào mừng bạn đến với hệ thống.',
 };
 
-export { warningAlert, successAlert };
+export { warningAlertConstants, successAlertConstants };

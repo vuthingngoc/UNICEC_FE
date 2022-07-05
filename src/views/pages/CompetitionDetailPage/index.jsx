@@ -9,6 +9,7 @@ import CompetitionDetailBody from './components/CompetitionDetailBody';
 import ReactBSAlert from 'react-bootstrap-sweetalert';
 import { getDataByPath } from 'services/data.service';
 import { Row } from 'reactstrap';
+import { warningAlertConstants } from 'constants/alert.constants';
 
 export default function CompetitionDetailPage(props) {
   const [sidenavOpen, setSidenavOpen] = useState(true);
@@ -28,7 +29,7 @@ export default function CompetitionDetailPage(props) {
       if (res !== null && res !== undefined && res.status === 200) {
         convertCompetitionEntities(res.data);
       } else {
-        warningAlert(warningAlert.timeout);
+        warningAlert(warningAlertConstants.timeout);
       }
     }
   }

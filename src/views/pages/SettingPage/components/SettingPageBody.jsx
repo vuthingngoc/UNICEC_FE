@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Button, Card, CardBody, CardHeader, CardTitle, Col, Container, Row } from 'reactstrap';
 import ReactBSAlert from 'react-bootstrap-sweetalert';
 import { getDataByPath } from 'services/data.service';
+import { warningAlertConstants } from 'constants/alert.constants';
 
 export default function SettingPageBody() {
   const [clubs, setClubs] = useState(null);
@@ -32,9 +33,9 @@ export default function SettingPageBody() {
         setClubs(res.data);
       }
     } else if (res && res.status === 401) {
-      warningAlert(warningAlert.accountError);
+      warningAlert(warningAlertConstants.accountError);
     } else {
-      warningAlert(warningAlert.timeout);
+      warningAlert(warningAlertConstants.timeout);
     }
   }
 
