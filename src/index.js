@@ -27,6 +27,7 @@ import CompetitionDetailPage from 'views/pages/CompetitionDetailPage';
 import ShowListTeamPage from 'views/pages/ShowListTeamPage';
 import ActivityDetailPage from 'views/pages/ActivityDetailPage';
 import CompetitionRoundPage from 'views/pages/CompetitionRoundPage';
+import SettingPage from 'views/pages/SettingPage';
 
 ReactDOM.render(
   <AuthContextProvider>
@@ -36,6 +37,7 @@ ReactDOM.render(
         <Route path="/admin/cuoc-thi/chi-tiet/vong-thi/:id" render={(props) => <CompetitionRoundPage {...props} />} />
         <Route path="/admin/cuoc-thi/chi-tiet/:id" render={(props) => <CompetitionDetailPage {...props} />} />
         <Route path="/admin/hoat-dong/chi-tiet/:id" render={(props) => <ActivityDetailPage {...props} />} />
+        <Route path="/admin/tuy-chinh" render={(props) => <SettingPage {...props} />} />
         <Route path="/admin" render={(props) => <AdminLayout {...props} />} />
         <Route path="/auth" render={(props) => <AuthLayout {...props} />} />
         <Route path="/login" render={(props) => <LoginPage {...props} />} />

@@ -47,8 +47,9 @@ function Dashboard() {
 
   async function loadDataMembers(clubId, accessToken) {
     if (clubId !== 0) {
-      const path = 'api/v1/members/club';
-      const res = await getDataByPath(`${path}/${clubId}`, accessToken, '');
+      const path = 'api/v1/members/search';
+      const data = `clubId=${clubId}&status=1&pageSize=${10}`;
+      const res = await getDataByPath(`${path}`, accessToken, data);
       if (res && res.status === 200) {
         setClubMembers(res.data);
       } else {

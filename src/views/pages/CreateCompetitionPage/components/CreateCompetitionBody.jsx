@@ -349,7 +349,7 @@ export default function CreateCompetitionBody() {
       const seed_point = parseInt(seedPoint);
       const list_major_id = major;
       const bannerBase64 = banner.split(',');
-      const list_image = { name: '', base64_string_img: bannerBase64[1] };
+      const list_image = [{ name: '', base64_string_img: bannerBase64[1] }];
       const list_influencer = [];
       if (Influencer.length > 0) {
         for (let i = 0; i < Influencer.length; i++) {
