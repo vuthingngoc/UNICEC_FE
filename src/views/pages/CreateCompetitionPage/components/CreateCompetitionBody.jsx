@@ -27,6 +27,8 @@ import { dateConvertToShow } from 'services/formatData';
 import { toBase64 } from 'services/formatData';
 import Loading from 'views/pages/components/Loading';
 import { ValidateEmail } from 'services/formatData';
+import { warningAlertConstants } from 'constants/alert.constants';
+import { successAlertConstants } from 'constants/alert.constants';
 
 const CompetitionScopes = [
   { id: 0, text: 'Liên Trường' },
@@ -116,7 +118,7 @@ export default function CreateCompetitionBody() {
       if (res !== null && res !== undefined && res.status === 200) {
         setMajorsList(handleConvertDataMajor(res.data.items));
       } else {
-        warningAlert(warningAlert.timeout);
+        warningAlert(warningAlertConstants.timeout);
       }
     }
   }
@@ -128,7 +130,7 @@ export default function CreateCompetitionBody() {
       if (res !== null && res !== undefined && res.status === 200) {
         setCompetitionTypeList(handleConvertDataCompetitionTypes(res.data.items));
       } else {
-        warningAlert(warningAlert.timeout);
+        warningAlert(warningAlertConstants.timeout);
       }
     }
   }
@@ -306,19 +308,19 @@ export default function CreateCompetitionBody() {
 
   const checkValidation = () => {
     if (title.trim() === '') {
-      warningAlert(warningAlert.titleValidation);
+      warningAlert(warningAlertConstants.titleValidation);
       return false;
     } else if (address.trim() === '') {
-      warningAlert(warningAlert.addressValidation);
+      warningAlert(warningAlertConstants.addressValidation);
       return false;
     } else if (addressName.trim() === '') {
-      warningAlert(warningAlert.addressNameValidation);
+      warningAlert(warningAlertConstants.addressNameValidation);
       return false;
     } else if (reactQuillText.trim() === '') {
-      warningAlert(warningAlert.contentsValidation);
+      warningAlert(warningAlertConstants.contentsValidation);
       return false;
     } else if (banner === '') {
-      warningAlert(warningAlert.imageValidation);
+      warningAlert(warningAlertConstants.imageValidation);
       return false;
     }
     return true;
@@ -410,16 +412,16 @@ export default function CreateCompetitionBody() {
           const res = await createDataByPath(path, accessToken, data);
           console.log(res);
           if (res !== null && res.status === 200) {
-            successAlert(successAlert.createCompetition);
+            successAlert(successAlertConstants.createCompetition);
             setTimeout(() => {
               history.push(`/admin/cuoc-thi/chi-tiet/${res.data.id}`);
             }, 2000);
           } else if (res !== null && res.status === 400) {
             if (res.data === 'Date not suitable') {
-              warningAlert(warningAlert.dateTimeValidation);
+              warningAlert(warningAlertConstants.dateTimeValidation);
             }
           } else {
-            warningAlert(warningAlert.timeout);
+            warningAlert(warningAlertConstants.timeout);
           }
         }
       }
@@ -1024,7 +1026,7 @@ export default function CreateCompetitionBody() {
                                 if (minMemberInTeam > 0 || numberOfParticipations > 0) {
                                   setTeamModal(false);
                                 } else {
-                                  warningAlert(warningAlert.minNumber);
+                                  warningAlert(warningAlertConstants.minNumber);
                                 }
                               }}
                             >
@@ -1062,7 +1064,7 @@ export default function CreateCompetitionBody() {
                     color="info"
                     style={{ margin: 'auto' }}
                     onClick={() => {
-                      successAlert(successAlert.createCompetition);
+                      successAlert(successAlertConstants.createCompetition);
                     }}
                   >
                     Xem trước
@@ -1161,10 +1163,10 @@ export default function CreateCompetitionBody() {
                         setSponsorForm(false);
                         addSponsor(sponsorName, imgBase64Sponsor, sponsorWebsite, sponsorEmail, sponsorDescription);
                       } else {
-                        warningAlert(warningAlert.emailValidation);
+                        warningAlert(warningAlertConstants.emailValidation);
                       }
                     } else {
-                      warningAlert(warningAlert.informationValidation);
+                      warningAlert(warningAlertConstants.informationValidation);
                     }
                   }}
                 >
@@ -1285,7 +1287,7 @@ export default function CreateCompetitionBody() {
                       setinfluencerModal(false);
                       addInfluencer(fullnameInfluencer, imgBase64Influencer);
                     } else {
-                      warningAlert(warningAlert.informationValidation);
+                      warningAlert(warningAlertConstants.informationValidation);
                     }
                   }}
                 >

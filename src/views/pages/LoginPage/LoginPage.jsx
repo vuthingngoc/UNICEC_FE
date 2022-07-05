@@ -32,6 +32,7 @@ import { loginByPath } from 'services/auth.service';
 import jwtDecode from 'jwt-decode';
 import { getDataByPath } from 'services/data.service';
 import { useHistory } from 'react-router';
+import { warningAlertConstants } from 'constants/alert.constants.js';
 
 export default function Login() {
   const [focusedEmail, setfocusedEmail] = React.useState(false);
@@ -90,7 +91,7 @@ export default function Login() {
         getClubAndUniversity(res.data.token, jwtDecode(res.data.token).Id);
       }
     } else {
-      warningAlert(warningAlert.timeout);
+      warningAlert(warningAlertConstants.timeout);
     }
   }
 
@@ -105,12 +106,12 @@ export default function Login() {
           history.push('/admin/thong-tin-clb');
         }, 1500);
       } else {
-        warningAlert(warningAlert.accountNotFound);
+        warningAlert(warningAlertConstants.accountNotFound);
       }
     } else if (res && res.status === 401) {
-      warningAlert(warningAlert.accountNotFound);
+      warningAlert(warningAlertConstants.accountNotFound);
     } else {
-      warningAlert(warningAlert.timeout);
+      warningAlert(warningAlertConstants.timeout);
     }
     setIsSubmitting(false);
     setformModal(false);
@@ -119,10 +120,10 @@ export default function Login() {
   const handleErrorLogin = (request) => {
     switch (request) {
       case 'Firebase: Error (auth/user-not-found).':
-        warningAlert(warningAlert.accountNotFound);
+        warningAlert(warningAlertConstants.accountNotFound);
         break;
       default:
-        warningAlert(warningAlert.loginFail);
+        warningAlert(warningAlertConstants.loginFail);
     }
   };
 
