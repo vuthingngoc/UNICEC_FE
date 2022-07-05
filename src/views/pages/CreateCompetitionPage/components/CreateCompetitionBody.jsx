@@ -26,13 +26,14 @@ import { formatTitle } from 'services/formatData';
 import { dateConvertToShow } from 'services/formatData';
 import { toBase64 } from 'services/formatData';
 import Loading from 'views/pages/components/Loading';
+import { ValidateEmail } from 'services/formatData';
 
 const CompetitionScopes = [
   { id: 0, text: 'Liên Trường' },
   { id: 1, text: 'Trong Trường' },
   { id: 2, text: 'Trong Câu Lạc Bộ' },
 ];
-
+/*eslint disable*/
 export default function CreateCompetitionBody() {
   const [reactQuillText, setReactQuillText] = useState('');
   const [feeCheckbox, setFeeCheckbox] = useState(false);
@@ -40,24 +41,41 @@ export default function CreateCompetitionBody() {
   const [influencerModal, setinfluencerModal] = useState(false);
   const [teamModal, setTeamModal] = useState(false);
   const [imgBase64Influencer, setImgBase64Influencer] = useState('https://i.pinimg.com/originals/ff/a0/9a/ffa09aec412db3f54deadf1b3781de2a.png');
+  const [imgBase64Sponsor, setImgBase64Sponsor] = useState('https://i.pinimg.com/originals/ff/a0/9a/ffa09aec412db3f54deadf1b3781de2a.png');
   const [fullnameInfluencer, setFullnameInfluencer] = useState('');
   const [competitionTypeId, setCompetitionTypeId] = useState(1);
   const [startTime, setStartTime] = useState('');
   const [endTime, setEndTime] = useState('');
   const [endTimeRegister, setEndTimeRegister] = useState('');
-  const [department, setDepartment] = useState([]);
+  const [startTimeRegister, setStartTimeRegister] = useState('');
+  const [major, setMajor] = useState([]);
   const [scopes, setScopes] = useState(0);
   const [address, setAddress] = useState('');
   const [addressName, setAddressName] = useState('');
   const [fees, setFees] = useState(1000);
   const [title, setTitle] = useState('');
   const [Influencer, setInfluencer] = useState([]);
+  const [sponsor, setSponsor] = useState([]);
+  const [sponsorName, setSponsorName] = useState('');
+  const [sponsorWebsite, setSponsorWebsite] = useState('');
+  const [sponsorEmail, setSponsorEmail] = useState('');
+  const [sponsorDescription, setSponsorDescription] = useState('');
+  const [sponsorForm, setSponsorForm] = useState(false);
+  const [sponsorDetailForm, setSponsorDetailForm] = useState(false);
+  const [sponsorDetail, setSponsorDetail] = useState({
+    index: 0,
+    name: '',
+    url: 'https://i.pinimg.com/originals/ff/a0/9a/ffa09aec412db3f54deadf1b3781de2a.png',
+    website: '',
+    email: '',
+    description: '',
+  });
   const [banner, setBanner] = useState('');
   const [seedPoint, setSeedPoint] = useState(0);
   const [numberOfParticipations, setNumberOfParticipations] = useState(100);
   const [maxMemberInTeam, setMaxMemberInTeam] = useState(5);
   const [minMemberInTeam, setMinMemberInTeam] = useState(4);
-  const [departmentList, setDepartmentList] = useState([]);
+  const [majorsList, setMajorsList] = useState([]);
   const [competitionTypeList, setCompetitionTypeList] = useState([]);
   const [formModal, setFormModal] = useState(false);
   const [alert, setalert] = React.useState(false);
@@ -90,13 +108,13 @@ export default function CreateCompetitionBody() {
     'video',
   ];
 
-  async function loadDataDepartments(accessToken) {
+  async function loadDataMajors(accessToken) {
     if (accessToken) {
-      const path = 'api/v1/departments/search';
+      const path = 'api/v1/majors/search';
       const data = 'status=true';
       const res = await getDataByPath(`${path}`, accessToken, data);
       if (res !== null && res !== undefined && res.status === 200) {
-        setDepartmentList(handleConvertDataDepartments(res.data.items));
+        setMajorsList(handleConvertDataMajor(res.data.items));
       } else {
         warningAlert('Kết nối tới máy chủ quá hạn');
       }
@@ -115,13 +133,13 @@ export default function CreateCompetitionBody() {
     }
   }
 
-  const handleConvertDataDepartments = (items) => {
-    const newDepartment = [];
+  const handleConvertDataMajor = (items) => {
+    const newMajor = [];
     for (let index = 0; index < items.length; index++) {
       const element = { id: items[index].id, text: items[index].name };
-      newDepartment.push(element);
+      newMajor.push(element);
     }
-    return newDepartment;
+    return newMajor;
   };
 
   const handleConvertDataCompetitionTypes = (items) => {
@@ -131,6 +149,58 @@ export default function CreateCompetitionBody() {
       newCompetitionTypes.push(element);
     }
     return newCompetitionTypes;
+  };
+
+  const handleImageSponsorChange = (e) => {
+    e.preventDefault();
+    if (e.target.files[0]) {
+      let _convertImageToBase64 = toBase64(e.target.files[0]);
+      Promise.all([_convertImageToBase64]).then((values) => {
+        setImgBase64Sponsor(values[0]);
+      });
+    }
+  };
+
+  const handleShowSponsorDetail = (index) => {
+    let newSponsor = [...sponsor];
+    newSponsor = { ...newSponsor[index], index: index };
+    setSponsorDetail(newSponsor);
+    setSponsorDetailForm(true);
+  };
+
+  const addSponsor = (name, base64, website, email, description) => {
+    const newSponsor = [...sponsor];
+    if (base64 !== undefined) {
+      newSponsor.push({ name: name, url: base64, website: website, email: email, description: description });
+    } else {
+      newSponsor.push({
+        name: name,
+        url: 'https://i.pinimg.com/originals/ff/a0/9a/ffa09aec412db3f54deadf1b3781de2a.png',
+        website: website,
+        email: email,
+        description: description,
+      });
+    }
+    setSponsor(newSponsor);
+    setSponsorName('');
+    setImgBase64Sponsor('https://i.pinimg.com/originals/ff/a0/9a/ffa09aec412db3f54deadf1b3781de2a.png');
+    setSponsorEmail('');
+    setSponsorWebsite('');
+    setSponsorDescription('');
+  };
+
+  const removeSponsor = (index) => {
+    setSponsorDetail({
+      index: 0,
+      name: '',
+      url: 'https://i.pinimg.com/originals/ff/a0/9a/ffa09aec412db3f54deadf1b3781de2a.png',
+      website: '',
+      email: '',
+      description: '',
+    });
+    const newSponsor = [...sponsor];
+    newSponsor.splice(index, 1);
+    setSponsor(newSponsor);
   };
 
   const handleImageInfluencerChange = (e) => {
@@ -163,24 +233,24 @@ export default function CreateCompetitionBody() {
     setImgBase64Influencer('https://i.pinimg.com/originals/ff/a0/9a/ffa09aec412db3f54deadf1b3781de2a.png');
   };
 
-  const addDepartment = (id) => {
+  const addMajor = (id) => {
     if (id) {
-      const newDepartment = department;
-      const index = newDepartment.indexOf(id);
+      const newMajor = major;
+      const index = newMajor.indexOf(id);
       if (index === -1) {
-        newDepartment.push(parseInt(id));
+        newMajor.push(parseInt(id));
       }
     }
   };
 
-  const removeDepartment = (id) => {
+  const removeMajor = (id) => {
     if (id) {
-      const newDepartment = department;
-      const index = newDepartment.indexOf(id);
+      const newMajor = major;
+      const index = newMajor.indexOf(parseInt(id));
       if (index > -1) {
-        newDepartment.splice(index, 1);
+        newMajor.splice(index, 1);
       }
-      setDepartment(newDepartment);
+      setMajor(newMajor);
     }
   };
 
@@ -265,6 +335,7 @@ export default function CreateCompetitionBody() {
         max_number_member_in_team = parseInt(minMemberInTeam);
       }
       const end_time_register = endTimeRegister;
+      const start_time_register = startTimeRegister;
       const start_time = startTime;
       const end_time = endTime;
       const content = reactQuillText;
@@ -276,14 +347,27 @@ export default function CreateCompetitionBody() {
       const is_event = false;
       const address_name = addressName;
       const seed_point = parseInt(seedPoint);
-      const list_department_id = department;
+      const list_major_id = major;
       const bannerBase64 = banner.split(',');
-      const competitionEntity = { name_entity: '', base64_string_entity: bannerBase64[1] };
+      const list_image = { name: '', base64_string_img: bannerBase64[1] };
       const list_influencer = [];
       if (Influencer.length > 0) {
         for (let i = 0; i < Influencer.length; i++) {
           const InfluencerBase64 = Influencer[i].url.split(',');
-          list_influencer.push({ name: Influencer[i].name, url: InfluencerBase64[1] });
+          list_influencer.push({ name: Influencer[i].name, base64_string_img: InfluencerBase64[1] });
+        }
+      }
+      const list_sponsor = [];
+      if (sponsor.length > 0) {
+        for (let i = 0; i < sponsor.length; i++) {
+          const SponsorBase64 = sponsor[i].url.split(',');
+          list_sponsor.push({
+            name: sponsor[i].name,
+            base64_string_img: SponsorBase64[1],
+            website: sponsor[i].website,
+            email: sponsor[i].email,
+            description: sponsor[i].description,
+          });
         }
       }
       const club_id = parseInt(clubId);
@@ -293,6 +377,7 @@ export default function CreateCompetitionBody() {
         number_of_participations: number_of_participations,
         min_number_member_in_team: min_number_member_in_team,
         max_number_member_in_team: max_number_member_in_team,
+        start_time_register: start_time_register,
         end_time_register: end_time_register,
         start_time: start_time,
         end_time: end_time,
@@ -303,9 +388,10 @@ export default function CreateCompetitionBody() {
         address_name: address_name,
         address: address,
         seed_point: seed_point,
-        list_department_id: list_department_id,
-        competitionEntity: competitionEntity,
+        list_major_id: list_major_id,
+        list_image: list_image,
         list_influencer: list_influencer,
+        list_sponsor: list_sponsor,
         club_id: club_id,
       };
     }
@@ -336,9 +422,9 @@ export default function CreateCompetitionBody() {
             warningAlert('Kết nối tới máy chủ quá hạn');
           }
         }
-        setFormModal(false);
       }
     }
+    setFormModal(false);
   }
 
   useEffect(() => {
@@ -378,8 +464,9 @@ export default function CreateCompetitionBody() {
       setStartTime(dateConvertToShow(new Date()));
       setEndTime(dateConvertToShow(new Date()));
       setEndTimeRegister(dateConvertToShow(new Date()));
-      if (departmentList.length === 0) {
-        loadDataDepartments(accessToken);
+      setStartTimeRegister(dateConvertToShow(new Date()));
+      if (majorsList.length === 0) {
+        loadDataMajors(accessToken);
       }
       if (competitionTypeList.length === 0) {
         loadDataCompetitionTypes(accessToken);
@@ -455,7 +542,7 @@ export default function CreateCompetitionBody() {
                   </Col>
                 </Row>
                 <Row className="mb-3">
-                  <Col md="6">
+                  <Col lg="6" md="12">
                     <label className="form-control-label" htmlFor="startdaytime">
                       Thời gian bắt đầu cuộc thi <span className="text-warning">*</span>
                     </label>
@@ -469,7 +556,7 @@ export default function CreateCompetitionBody() {
                       min={dateConvertToShow(new Date())}
                     />
                   </Col>
-                  <Col md="6">
+                  <Col lg="6" md="12">
                     <label className="form-control-label" htmlFor="enddaytime">
                       Thời gian kết thúc cuộc thi <span className="text-warning">*</span>
                     </label>
@@ -485,7 +572,22 @@ export default function CreateCompetitionBody() {
                   </Col>
                 </Row>
                 <Row className="mb-3">
-                  <Col md="12">
+                  <Col lg="6" md="12">
+                    <label className="form-control-label" htmlFor="startregisterdaytime">
+                      Thời gian mở đăng ký <span className="text-warning">*</span>
+                    </label>
+                    <Input
+                      defaultValue={dateConvertToShow(new Date())}
+                      id="startregisterdaytime"
+                      type="datetime-local"
+                      onChange={(e) => {
+                        setStartTimeRegister(e.target.value);
+                      }}
+                      min={dateConvertToShow(new Date())}
+                    />
+                  </Col>
+
+                  <Col lg="6" md="12">
                     <label className="form-control-label" htmlFor="endregisterdaytime">
                       Thời gian kết thúc đăng ký <span className="text-warning">*</span>
                     </label>
@@ -623,10 +725,12 @@ export default function CreateCompetitionBody() {
                       options={{
                         placeholder: 'Tìm kiếm',
                       }}
-                      value={department}
-                      data={departmentList}
-                      onSelect={(e) => addDepartment(e.params.data.id)}
-                      onUnselect={(e) => removeDepartment(e.params.data.id)}
+                      value={major}
+                      data={majorsList}
+                      onSelect={(e) => addMajor(e.params.data.id)}
+                      onUnselect={(e) => {
+                        removeMajor(e.params.data.id);
+                      }}
                     />
                   </Col>
                 </Row>
@@ -650,6 +754,7 @@ export default function CreateCompetitionBody() {
                     </InputGroup>
                   </Col>
                 </Row>
+
                 <Row className="mb-4">
                   <Col className="col-auto">
                     <h3>Giám khảo và khách mời:</h3>
@@ -688,76 +793,50 @@ export default function CreateCompetitionBody() {
                     >
                       Thêm danh sách
                     </Button>
-                    {/*Influents add form*/}
-                    <Modal className="modal-dialog-centered" size="md" isOpen={influencerModal} toggle={() => setinfluencerModal(false)}>
-                      <div className="modal-body p-0">
-                        <Card className="bg-secondary border-0 mb-0" lg="9">
-                          <CardHeader className="bg-transparent pb-5">
-                            <div className="text-center">
-                              <h3>Thông tin giám khảo hoặc khách mời</h3>
-                            </div>
-                          </CardHeader>
-                          <CardBody className="px-lg-5 py-lg-5">
-                            <div className="text-center mb-3">
-                              <img
-                                className="rounded-circle img-center img-fluid shadow shadow-lg--hover"
-                                style={{ width: '140px', height: '140px' }}
-                                alt="..."
-                                src={imgBase64Influencer}
-                              />
-                            </div>
-                            <label className="form-control-label" htmlFor="startdaytime">
-                              Họ và tên <span className="text-warning">*</span>
-                            </label>
-                            <Input
-                              value={fullnameInfluencer}
-                              valid={fullnameInfluencer !== ''}
-                              invalid={fullnameInfluencer === ''}
-                              type="text"
-                              placeholder="Tên đầy đủ"
-                              onChange={(e) => {
-                                setFullnameInfluencer(e.target.value);
-                              }}
-                            />
-                            <div className="custom-file">
-                              <input
-                                className="custom-file-input"
-                                id="customFileLang"
-                                lang="en"
-                                type="file"
-                                accept="image/*"
-                                onChange={(e) => handleImageInfluencerChange(e)}
-                              />
-                              <label className="custom-file-label" htmlFor="customFileLang">
-                                Select file
-                              </label>
-                            </div>
-                            <div className="text-center">
-                              <Button
-                                className="my-4"
-                                color="primary"
-                                type="button"
-                                onClick={() => {
-                                  if (fullnameInfluencer.trim() !== '') {
-                                    setinfluencerModal(false);
-                                    addInfluencer(fullnameInfluencer, imgBase64Influencer);
-                                  } else {
-                                    warningAlert('Vui lòng điền đầy đủ thông tin.');
-                                  }
-                                }}
-                              >
-                                Thêm mới +
-                              </Button>
-                              <Button className="my-4" color="danger" type="button" onClick={() => setinfluencerModal(false)}>
-                                Đóng
-                              </Button>
-                            </div>
-                          </CardBody>
-                        </Card>
-                      </div>
-                    </Modal>
                   </Col>
                 </Row>
+
+                <Row className="mb-4">
+                  <Col className="col-auto">
+                    <h3>Nhà tài trợ:</h3>
+                    {sponsor.length > 0 ? (
+                      <Row className="align-items-center mb-3">
+                        {sponsor.map((ele, value) => {
+                          return (
+                            <Col className="col-auto mb-1" key={`sponsor-${value}`}>
+                              <a
+                                href="/"
+                                id={`tooltip-sponsor${value}`}
+                                onClick={(e) => {
+                                  handleShowSponsorDetail(value);
+                                  e.preventDefault(e);
+                                }}
+                              >
+                                <img style={{ width: '50px', height: '50px' }} alt="..." className="img-fluid rounded-circle" src={ele.url} />
+                              </a>
+                              <UncontrolledTooltip delay={0} target={`tooltip-sponsor${value}`}>
+                                {ele.name} <br />
+                                {ele.email}
+                              </UncontrolledTooltip>
+                            </Col>
+                          );
+                        })}
+                      </Row>
+                    ) : (
+                      <></>
+                    )}
+                    <Button
+                      outline
+                      color="success"
+                      onClick={() => {
+                        setSponsorForm(true);
+                      }}
+                    >
+                      Thêm nhà tài trợ
+                    </Button>
+                  </Col>
+                </Row>
+
                 <Row className="mb-4">
                   <Col className="col-auto">
                     <Row style={{ marginLeft: '5px' }}>
@@ -994,6 +1073,233 @@ export default function CreateCompetitionBody() {
           </Col>
         </Row>
       </Container>
+
+      {/*Sponsor add form*/}
+      <Modal className="modal-dialog-centered" size="md" isOpen={sponsorForm} toggle={() => setSponsorForm(false)}>
+        <div className="modal-body p-0">
+          <Card className="bg-secondary border-0 mb-0" lg="9">
+            <CardHeader className="bg-transparent pb-5">
+              <div className="text-center">
+                <h3>Thông tin nhà tài trợ</h3>
+              </div>
+            </CardHeader>
+            <CardBody className="px-lg-5 py-lg-5">
+              <div className="text-center mb-3">
+                <img
+                  className="rounded-circle img-center img-fluid shadow shadow-lg--hover"
+                  style={{ width: '140px', height: '140px' }}
+                  alt="..."
+                  src={imgBase64Sponsor}
+                />
+              </div>
+              <label className="form-control-label">
+                Họ và tên <span className="text-warning">*</span>
+              </label>
+              <Input
+                value={sponsorName}
+                valid={sponsorName !== ''}
+                invalid={sponsorName === ''}
+                type="text"
+                placeholder="Tên nhà tài trợ"
+                onChange={(e) => {
+                  setSponsorName(e.target.value);
+                }}
+              />
+              <label className="form-control-label">
+                Email <span className="text-warning">*</span>
+              </label>
+              <Input
+                value={sponsorEmail}
+                valid={sponsorEmail !== '' && ValidateEmail(sponsorEmail)}
+                invalid={sponsorEmail === '' || !ValidateEmail(sponsorEmail)}
+                type="email"
+                placeholder="Địa chỉ email"
+                onChange={(e) => {
+                  setSponsorEmail(e.target.value);
+                }}
+              />
+              <label className="form-control-label">Website</label>
+              <Input
+                value={sponsorWebsite}
+                type="text"
+                placeholder="Địa chỉ website"
+                onChange={(e) => {
+                  setSponsorWebsite(e.target.value);
+                }}
+              />
+              <label className="form-control-label">Mô tả</label>
+              <Input
+                value={sponsorDescription}
+                type="text"
+                placeholder="Tên nhà tài trợ"
+                onChange={(e) => {
+                  setSponsorDescription(e.target.value);
+                }}
+              />
+              <label className="form-control-label">Ảnh</label>
+              <div className="custom-file">
+                <input
+                  className="custom-file-input"
+                  id="customFileLang"
+                  lang="en"
+                  type="file"
+                  accept="image/*"
+                  onChange={(e) => handleImageSponsorChange(e)}
+                />
+                <label className="custom-file-label" htmlFor="customFileLang">
+                  Select file
+                </label>
+              </div>
+              <div className="text-center">
+                <Button
+                  className="my-4"
+                  color="primary"
+                  type="button"
+                  onClick={() => {
+                    if (sponsorName.trim() !== '' && sponsorEmail.trim() !== '') {
+                      if (ValidateEmail(sponsorEmail)) {
+                        setSponsorForm(false);
+                        addSponsor(sponsorName, imgBase64Sponsor, sponsorWebsite, sponsorEmail, sponsorDescription);
+                      } else {
+                        warningAlert('Email không đúng định dạng.');
+                      }
+                    } else {
+                      warningAlert('Vui lòng điền đầy đủ thông tin.');
+                    }
+                  }}
+                >
+                  Thêm mới +
+                </Button>
+                <Button className="my-4" color="danger" type="button" onClick={() => setSponsorForm(false)}>
+                  Đóng
+                </Button>
+              </div>
+            </CardBody>
+          </Card>
+        </div>
+      </Modal>
+
+      {/*sponsor detail*/}
+      <Modal className="modal-dialog-centered" size="md" isOpen={sponsorDetailForm} toggle={() => setSponsorDetailForm(false)}>
+        <div className="modal-body p-0">
+          <Card className="bg-secondary border-0 mb-0" lg="9">
+            <CardHeader className="bg-transparent pb-5">
+              <div className="text-center">
+                <h3>Thông tin nhà tài trợ</h3>
+              </div>
+            </CardHeader>
+            <CardBody className="px-lg-5 py-lg-5">
+              <div className="text-center mb-3">
+                <img
+                  className="rounded-circle img-center img-fluid shadow shadow-lg--hover"
+                  style={{ width: '140px', height: '140px' }}
+                  alt="..."
+                  src={sponsorDetail.url}
+                />
+              </div>
+              <label className="form-control-label">
+                Họ và tên <span className="text-warning">*</span>
+              </label>
+              <Input value={sponsorDetail.name} type="text" disabled />
+              <label className="form-control-label">
+                Email <span className="text-warning">*</span>
+              </label>
+              <Input value={sponsorDetail.email} type="email" disabled />
+              <label className="form-control-label">Website</label>
+              <Input value={sponsorDetail.website} type="text" disabled />
+              <label className="form-control-label">Mô tả</label>
+              <Input value={sponsorDetail.description} type="text" disabled />
+              <div className="text-center">
+                <Button
+                  className="my-4"
+                  outline
+                  color="danger"
+                  type="button"
+                  onClick={() => {
+                    setSponsorDetailForm(false);
+                    removeSponsor(sponsorDetail.index);
+                  }}
+                >
+                  Xóa
+                </Button>
+                <Button className="my-4" color="danger" type="button" onClick={() => setSponsorDetailForm(false)}>
+                  Đóng
+                </Button>
+              </div>
+            </CardBody>
+          </Card>
+        </div>
+      </Modal>
+
+      {/*influent form*/}
+      <Modal className="modal-dialog-centered" size="md" isOpen={influencerModal} toggle={() => setInfluencer(false)}>
+        <div className="modal-body p-0">
+          <Card className="bg-secondary border-0 mb-0" lg="9">
+            <CardHeader className="bg-transparent pb-5">
+              <div className="text-center">
+                <h3>Thông tin giám khảo và khách mời</h3>
+              </div>
+            </CardHeader>
+            <CardBody className="px-lg-5 py-lg-5">
+              <div className="text-center mb-3">
+                <img
+                  className="rounded-circle img-center img-fluid shadow shadow-lg--hover"
+                  style={{ width: '140px', height: '140px' }}
+                  alt="..."
+                  src={imgBase64Influencer}
+                />
+              </div>
+              <label className="form-control-label" htmlFor="startdaytime">
+                Họ và tên <span className="text-warning">*</span>
+              </label>
+              <Input
+                value={fullnameInfluencer}
+                valid={fullnameInfluencer !== ''}
+                invalid={fullnameInfluencer === ''}
+                type="text"
+                placeholder="Tên đầy đủ"
+                onChange={(e) => {
+                  setFullnameInfluencer(e.target.value);
+                }}
+              />
+              <div className="custom-file">
+                <input
+                  className="custom-file-input"
+                  id="customFileLang"
+                  lang="en"
+                  type="file"
+                  accept="image/*"
+                  onChange={(e) => handleImageInfluencerChange(e)}
+                />
+                <label className="custom-file-label" htmlFor="customFileLang">
+                  Select file
+                </label>
+              </div>
+              <div className="text-center">
+                <Button
+                  className="my-4"
+                  color="primary"
+                  type="button"
+                  onClick={() => {
+                    if (fullnameInfluencer.trim() !== '') {
+                      setinfluencerModal(false);
+                      addInfluencer(fullnameInfluencer, imgBase64Influencer);
+                    } else {
+                      warningAlert('Vui lòng điền đầy đủ thông tin.');
+                    }
+                  }}
+                >
+                  Thêm mới +
+                </Button>
+                <Button className="my-4" color="danger" type="button" onClick={() => setinfluencerModal(false)}>
+                  Đóng
+                </Button>
+              </div>
+            </CardBody>
+          </Card>
+        </div>
+      </Modal>
+
       <Modal className="modal-dialog-centered" size="sm" isOpen={formModal}>
         <div className="modal-body p-0 bg-transparent">
           <Loading style={{ margin: 'auto' }} />

@@ -1,14 +1,30 @@
 import React, { useEffect, useState } from 'react';
-import { Card, CardHeader, CardBody, Label, FormGroup, Form, Input, Col, Row, Button, InputGroup, InputGroupAddon, Modal } from 'reactstrap';
+import {
+  Card,
+  CardHeader,
+  CardBody,
+  Label,
+  FormGroup,
+  Form,
+  Input,
+  Col,
+  Row,
+  Button,
+  InputGroup,
+  InputGroupAddon,
+  Modal,
+  Container,
+} from 'reactstrap';
 import ReactQuill from 'react-quill';
 import Dropzone from 'dropzone';
 import Select2 from 'react-select2-wrapper';
 import ReactBSAlert from 'react-bootstrap-sweetalert';
 import { getDataByPath } from 'services/data.service';
-import { dateConvertToShow } from 'services/formatData';
-import { formatTitle } from 'services/formatData';
+import { dateConvertToShow, formatTitle } from 'services/formatData';
 import { createDataByPath } from 'services/data.service';
+import SimpleHeader from 'components/Headers/SimpleHeader';
 import Loading from '../components/Loading';
+import { useHistory } from 'react-router';
 // core components
 function CreateClubActivity() {
   const [reactQuillText, setReactQuillText] = useState('');
@@ -21,6 +37,7 @@ function CreateClubActivity() {
   const [seed, setSeed] = useState(0);
   const [priority, setPriority] = useState(1);
   const [formModal, setformModal] = useState(false);
+  const history = useHistory();
 
   const toolbarOptions = [
     [{ size: [] }],
@@ -83,8 +100,8 @@ function CreateClubActivity() {
           if (newData.length > 0) {
             setCompetitionId(newData[0].id);
           }
-          setCompetitionList(newData);
         }
+        setCompetitionList(newData);
       } else {
         warningAlert('Kết nối tới máy chủ quá hạn');
       }
@@ -180,7 +197,7 @@ function CreateClubActivity() {
     setEndTime(dateConvertToShow(new Date()));
 
     // single dropzone file - accepts only images
-    if (competitionList) {
+    if (competitionList && competitionList.length > 0) {
       new Dropzone(document.getElementById('dropzone-single'), {
         url: '/',
         thumbnailWidth: null,
@@ -212,210 +229,235 @@ function CreateClubActivity() {
   return (
     <>
       {alert}
-      {competitionList ? (
-        <Card>
-          <CardHeader>
-            <h3 className="mb-0">Tạo mới hoạt động</h3>
-          </CardHeader>
-          <CardBody>
-            <Row>
-              <Col md="8">
-                {competitionList ? (
-                  <FormGroup className="row">
-                    <Label className="form-control-label" md="2">
-                      Chọn cuộc thi hoặc sự kiện
-                    </Label>
-                    <Col md="10">
-                      <Form>
-                        <Select2
-                          className="form-control"
-                          defaultValue={competitionId}
-                          value={competitionId}
-                          options={{
-                            placeholder: 'Select',
-                          }}
-                          data={competitionList}
-                        />
-                      </Form>
-                    </Col>
-                  </FormGroup>
-                ) : (
-                  <></>
-                )}
-                <FormGroup className="row">
-                  <Label className="form-control-label" md="2">
-                    Tên hoạt động
-                  </Label>
-                  <Col md="10">
-                    <InputGroup>
-                      <Input
-                        className="text-default"
-                        id="title"
-                        placeholder="Nhập tên hoạt động"
-                        type="text"
-                        value={title}
-                        onChange={(e) => {
-                          setTitle(e.target.value);
-                        }}
-                      />
-                      <InputGroupAddon addonType="append">
-                        <Button
-                          color="default"
-                          outline
-                          type="button"
-                          onClick={() => {
-                            setTitle(formatTitle(title));
-                          }}
-                        >
-                          Format
-                        </Button>
-                      </InputGroupAddon>
-                    </InputGroup>
-                  </Col>
-                </FormGroup>
-
-                <FormGroup className="row">
-                  <Label className="form-control-label" htmlFor="example-search-input" md="2">
-                    Miêu tả chi tiết
-                  </Label>
-                  <Col md="10">
-                    <Form>
-                      <div data-quill-placeholder="Quill WYSIWYG" data-toggle="quill" />
-                      <ReactQuill
-                        style={{ display: 'block', borderTopLeftRadius: '0.5rem', borderTopRightRadius: '0.5rem' }}
-                        value={reactQuillText}
-                        clipboard={{
-                          matchVisual: false,
-                        }}
-                        onChange={(value) => setReactQuillText(value)}
-                        theme="snow"
-                        modules={{
-                          toolbar: toolbarOptions,
-                        }}
-                        formats={formats}
-                      />
-                    </Form>
-                  </Col>
-                </FormGroup>
-                <FormGroup className="row">
-                  <Label className="form-control-label" htmlFor="example-color-input" md="2">
-                    Ảnh minh họa
-                  </Label>
-                  <Col md="10">
-                    <div className="dropzone dropzone-single mb-3" id="dropzone-single">
-                      <div className="fallback">
-                        <div className="custom-file">
-                          <input className="custom-file-input" id="projectCoverUploads" type="file" />
-                          <label className="custom-file-label" htmlFor="projectCoverUploads">
-                            Chọn Ảnh
-                          </label>
-                        </div>
-                      </div>
-                      <div className="dz-preview dz-preview-single">
-                        <div className="dz-preview-cover">
-                          <img alt="..." className="dz-preview-img" data-dz-thumbnail="" />
-                        </div>
-                      </div>
-                    </div>
-                  </Col>
-                </FormGroup>
-              </Col>
-              <Col md="4">
-                <Row className="align-items-center justify-content-lg-between mb-3">
-                  <Col md="12">
+      <SimpleHeader name="Tạo hoạt động" parentName="Câu lạc bộ" linkParent="/" />
+      <Container className="mt--6 bg-neutral" fluid>
+        {competitionList && competitionList.length > 0 ? (
+          <Card>
+            <CardHeader>
+              <h3 className="mb-0">Tạo mới hoạt động</h3>
+            </CardHeader>
+            <CardBody>
+              <Row>
+                <Col md="8">
+                  {competitionList ? (
                     <FormGroup className="row">
-                      <Label className="form-control-label" htmlFor="example-datetime-local-input" md="4">
-                        Thời gian kết thúc
+                      <Label className="form-control-label" md="2">
+                        Chọn cuộc thi hoặc sự kiện
                       </Label>
-                      <Col md="8">
-                        <Input
-                          defaultValue={dateConvertToShow(new Date())}
-                          id="enddaytime"
-                          type="datetime-local"
-                          onChange={(e) => {
-                            setEndTime(e.target.value);
-                          }}
-                          min={dateConvertToShow(new Date())}
-                        />
-                      </Col>
-                    </FormGroup>
-                  </Col>
-                </Row>
-                <Row className="align-items-center mb-3">
-                  <Col md="12">
-                    <FormGroup className="row">
-                      <Label className="form-control-label" md="4">
-                        Mức độ ưu tiên
-                      </Label>
-                      <Col md="8">
+                      <Col md="10">
                         <Form>
                           <Select2
                             className="form-control"
-                            defaultValue={priority}
-                            value={priority}
-                            onChange={(e) => {
-                              setPriority(e.target.value);
+                            defaultValue={competitionId}
+                            value={competitionId}
+                            options={{
+                              placeholder: 'Select',
                             }}
-                            data={[
-                              { id: '0', text: 'Cao' },
-                              { id: '1', text: 'Trung Bình' },
-                              { id: '2', text: 'Thấp' },
-                            ]}
+                            data={competitionList}
                           />
                         </Form>
                       </Col>
                     </FormGroup>
-                  </Col>
-                </Row>
-                <Row className="align-items-center mb-3">
-                  <Col md="12">
-                    <FormGroup className="row">
-                      <Label className="form-control-label" htmlFor="example-time-input" md="4">
-                        Điểm thưởng
-                      </Label>
-                      <Col md="8">
+                  ) : (
+                    <></>
+                  )}
+                  <FormGroup className="row">
+                    <Label className="form-control-label" md="2">
+                      Tên hoạt động
+                    </Label>
+                    <Col md="10">
+                      <InputGroup>
                         <Input
-                          placeholder="Nhập số seeds"
-                          id="example-time-input"
-                          type="number"
-                          min="0"
-                          value={seed}
+                          className="text-default"
+                          id="title"
+                          placeholder="Nhập tên hoạt động"
+                          type="text"
+                          value={title}
                           onChange={(e) => {
-                            setSeed(e.target.value);
+                            setTitle(e.target.value);
                           }}
                         />
-                      </Col>
-                    </FormGroup>
-                  </Col>
-                </Row>
-                <Row className="align-items-center">
-                  <Col className="text-center">
-                    <Button
-                      color="primary"
-                      type="button"
-                      onClick={() => {
-                        setformModal(true);
-                        createActivity();
-                      }}
-                    >
-                      Tạo hoạt động
-                    </Button>
-                  </Col>
-                </Row>
-              </Col>
-            </Row>
-          </CardBody>
-        </Card>
-      ) : (
-        <Row>
-          <img alt="..." src={require('assets/img/icons/Curve-Loading.gif').default} style={{ margin: 'auto' }} />
-        </Row>
-      )}
-      <Modal className="modal-dialog-centered" size="sm" isOpen={formModal}>
-        <div className="modal-body p-0 bg-transparent">
-          <Loading style={{ margin: 'auto' }} />
-        </div>
-      </Modal>
+                        <InputGroupAddon addonType="append">
+                          <Button
+                            color="default"
+                            outline
+                            type="button"
+                            onClick={() => {
+                              setTitle(formatTitle(title));
+                            }}
+                          >
+                            Format
+                          </Button>
+                        </InputGroupAddon>
+                      </InputGroup>
+                    </Col>
+                  </FormGroup>
+
+                  <FormGroup className="row">
+                    <Label className="form-control-label" htmlFor="example-search-input" md="2">
+                      Miêu tả chi tiết
+                    </Label>
+                    <Col md="10">
+                      <Form>
+                        <div data-quill-placeholder="Quill WYSIWYG" data-toggle="quill" />
+                        <ReactQuill
+                          style={{ display: 'block', borderTopLeftRadius: '0.5rem', borderTopRightRadius: '0.5rem' }}
+                          value={reactQuillText}
+                          clipboard={{
+                            matchVisual: false,
+                          }}
+                          onChange={(value) => setReactQuillText(value)}
+                          theme="snow"
+                          modules={{
+                            toolbar: toolbarOptions,
+                          }}
+                          formats={formats}
+                        />
+                      </Form>
+                    </Col>
+                  </FormGroup>
+                  <FormGroup className="row">
+                    <Label className="form-control-label" htmlFor="example-color-input" md="2">
+                      Ảnh minh họa
+                    </Label>
+                    <Col md="10">
+                      <div className="dropzone dropzone-single mb-3" id="dropzone-single">
+                        <div className="fallback">
+                          <div className="custom-file">
+                            <input className="custom-file-input" id="projectCoverUploads" type="file" />
+                            <label className="custom-file-label" htmlFor="projectCoverUploads">
+                              Chọn Ảnh
+                            </label>
+                          </div>
+                        </div>
+                        <div className="dz-preview dz-preview-single">
+                          <div className="dz-preview-cover">
+                            <img alt="..." className="dz-preview-img" data-dz-thumbnail="" />
+                          </div>
+                        </div>
+                      </div>
+                    </Col>
+                  </FormGroup>
+                </Col>
+                <Col md="4">
+                  <Row className="align-items-center justify-content-lg-between mb-3">
+                    <Col md="12">
+                      <FormGroup className="row">
+                        <Label className="form-control-label" htmlFor="example-datetime-local-input" md="4">
+                          Thời gian kết thúc
+                        </Label>
+                        <Col md="8">
+                          <Input
+                            defaultValue={dateConvertToShow(new Date())}
+                            id="enddaytime"
+                            type="datetime-local"
+                            onChange={(e) => {
+                              setEndTime(e.target.value);
+                            }}
+                            min={dateConvertToShow(new Date())}
+                          />
+                        </Col>
+                      </FormGroup>
+                    </Col>
+                  </Row>
+                  <Row className="align-items-center mb-3">
+                    <Col md="12">
+                      <FormGroup className="row">
+                        <Label className="form-control-label" md="4">
+                          Mức độ ưu tiên
+                        </Label>
+                        <Col md="8">
+                          <Form>
+                            <Select2
+                              className="form-control"
+                              defaultValue={priority}
+                              value={priority}
+                              onChange={(e) => {
+                                setPriority(e.target.value);
+                              }}
+                              data={[
+                                { id: '0', text: 'Cao' },
+                                { id: '1', text: 'Trung Bình' },
+                                { id: '2', text: 'Thấp' },
+                              ]}
+                            />
+                          </Form>
+                        </Col>
+                      </FormGroup>
+                    </Col>
+                  </Row>
+                  <Row className="align-items-center mb-3">
+                    <Col md="12">
+                      <FormGroup className="row">
+                        <Label className="form-control-label" htmlFor="example-time-input" md="4">
+                          Điểm thưởng
+                        </Label>
+                        <Col md="8">
+                          <Input
+                            placeholder="Nhập số seeds"
+                            id="example-time-input"
+                            type="number"
+                            min="0"
+                            value={seed}
+                            onChange={(e) => {
+                              setSeed(e.target.value);
+                            }}
+                          />
+                        </Col>
+                      </FormGroup>
+                    </Col>
+                  </Row>
+                  <Row className="align-items-center">
+                    <Col className="text-center">
+                      <Button
+                        color="primary"
+                        type="button"
+                        onClick={() => {
+                          setformModal(true);
+                          createActivity();
+                        }}
+                      >
+                        Tạo hoạt động
+                      </Button>
+                    </Col>
+                  </Row>
+                </Col>
+              </Row>
+            </CardBody>
+          </Card>
+        ) : competitionList && competitionList.length === 0 ? (
+          <Card>
+            <CardBody>
+              <Row className="align-items-center">
+                <Col lg="12" className="text-center text-default">
+                  <h2>Danh sách cuộc thi trống</h2>
+                  <h3>Vui lòng tạo cuộc thi trước</h3>
+                  <img alt="..." src={require('assets/img/icons/empty.jpg').default} />
+                  <br />
+                  <Button
+                    color="primary"
+                    type="button"
+                    onClick={() => {
+                      history.push('/admin/tao-cuoc-thi');
+                    }}
+                  >
+                    Tạo cuộc thi
+                  </Button>
+                </Col>
+              </Row>
+            </CardBody>
+          </Card>
+        ) : (
+          <Row>
+            <img alt="..." src={require('assets/img/icons/Curve-Loading.gif').default} style={{ margin: 'auto' }} />
+          </Row>
+        )}
+        <Modal className="modal-dialog-centered" size="sm" isOpen={formModal}>
+          <div className="modal-body p-0 bg-transparent">
+            <Loading style={{ margin: 'auto' }} />
+          </div>
+        </Modal>
+      </Container>
     </>
   );
 }

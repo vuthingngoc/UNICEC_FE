@@ -1,3 +1,6 @@
+import React, { useState } from 'react';
+import List from 'list.js';
+
 import {
   Badge,
   Card,
@@ -17,7 +20,6 @@ import {
   CardBody,
   Form,
 } from 'reactstrap';
-import React, { useState } from 'react';
 
 const ListTeam = [
   {
@@ -25,32 +27,32 @@ const ListTeam = [
     name: 'Team 1',
     numberOfParticipants: '4',
     status: true,
-    createDate: '10-05-2022',
+    createDate: '09-05-2022',
   },
   {
     img: 'https://i.guim.co.uk/img/media/26392d05302e02f7bf4eb143bb84c8097d09144b/446_167_3683_2210/master/3683.jpg?width=1200&height=1200&quality=85&auto=format&fit=crop&s=49ed3252c0b2ffb49cf8b508892e452d',
-    name: 'Team 1',
+    name: 'Team 2',
     numberOfParticipants: '4',
     status: true,
     createDate: '10-05-2022',
   },
   {
     img: 'https://i.guim.co.uk/img/media/26392d05302e02f7bf4eb143bb84c8097d09144b/446_167_3683_2210/master/3683.jpg?width=1200&height=1200&quality=85&auto=format&fit=crop&s=49ed3252c0b2ffb49cf8b508892e452d',
-    name: 'Team 1',
+    name: 'Team 3',
     numberOfParticipants: '4',
     status: true,
-    createDate: '10-05-2022',
+    createDate: '10-06-2022',
   },
   {
     img: 'https://i.guim.co.uk/img/media/26392d05302e02f7bf4eb143bb84c8097d09144b/446_167_3683_2210/master/3683.jpg?width=1200&height=1200&quality=85&auto=format&fit=crop&s=49ed3252c0b2ffb49cf8b508892e452d',
-    name: 'Team 1',
+    name: 'Team 4',
     numberOfParticipants: '4',
     status: false,
-    createDate: '10-05-2022',
+    createDate: '10-02-2022',
   },
   {
     img: 'https://i.guim.co.uk/img/media/26392d05302e02f7bf4eb143bb84c8097d09144b/446_167_3683_2210/master/3683.jpg?width=1200&height=1200&quality=85&auto=format&fit=crop&s=49ed3252c0b2ffb49cf8b508892e452d',
-    name: 'Team 1',
+    name: 'Team 5',
     numberOfParticipants: '4',
     status: false,
     createDate: '10-05-2022',
@@ -116,6 +118,14 @@ const clubMember = [
 
 export default function ShowListTeamBody() {
   const [teamDetailModal, setTeamDetailModal] = useState(false);
+  const firstListRef = React.useRef(null);
+  React.useEffect(() => {
+    new List(firstListRef.current, {
+      valueNames: ['name', 'member', 'status', 'createtime'],
+      listClass: 'list',
+    });
+  }, []);
+
   return (
     <>
       <Container className="mt--6" fluid>
@@ -125,105 +135,103 @@ export default function ShowListTeamBody() {
               <CardHeader className="border-0">
                 <h3 className="mb-0">Danh sách các đội dự thi</h3>
               </CardHeader>
-
-              <Table className="align-items-center table-flush" responsive>
-                <thead className="thead-light">
-                  <tr>
-                    <th className="sort" data-sort="name" scope="col">
-                      Tên
-                    </th>
-                    <th className="sort" data-sort="budget" scope="col">
-                      Số thành viên
-                    </th>
-                    <th className="sort" data-sort="status" scope="col">
-                      Trạng thái
-                    </th>
-                    <th scope="col">Thành viên</th>
-                    <th className="sort" data-sort="completion" scope="col">
-                      Ngày thành lập
-                    </th>
-                    <th scope="col">Hành động</th>
-                    <th scope="col" />
-                  </tr>
-                </thead>
-                <tbody className="list">
-                  {ListTeam ? (
-                    ListTeam.map((e, value) => {
-                      return (
-                        <tr key={`team-${value}`}>
-                          <th scope="row">
-                            <Media className="align-items-center">
-                              <Media>
-                                <span className="name mb-0 text-sm">{e.name}</span>
-                              </Media>
-                            </Media>
-                          </th>
-                          <td>{e.numberOfParticipants}</td>
-                          <td>
-                            <Badge color="" className="badge-dot mr-4 font-weight-bold">
-                              <i className={e.status === true ? 'bg-warning' : 'bg-success'} />
-                              <span className="status">{e.status === true ? 'Đóng' : 'Mở'}</span>
-                            </Badge>
-                          </td>
-                          <td>
-                            <div className="avatar-group">
-                              {ParticipantsInTeam ? (
-                                ParticipantsInTeam.map((parInTeam, value) => {
-                                  return (
-                                    <React.Fragment key={`member-${value}`}>
-                                      <a
-                                        className="avatar avatar-sm rounded-circle"
-                                        href="#pablo"
-                                        id={`tooltip${value}`}
-                                        onClick={(e) => e.preventDefault()}
-                                      >
-                                        <img alt="..." src={parInTeam.parImg}></img>
-                                      </a>
-                                      <UncontrolledTooltip delay={0} target={`tooltip${value}`}>
-                                        {parInTeam.parName}
-                                      </UncontrolledTooltip>
-                                    </React.Fragment>
-                                  );
-                                })
-                              ) : (
-                                <h2></h2>
-                              )}
-                            </div>
-                          </td>
-                          <td>
-                            <div className="d-flex align-items-center">
-                              <span className="completion mr-2"> {e.createDate} </span>
-                            </div>
-                          </td>
-                          <td>
-                            <a
-                              className="table-action table-action-delete"
-                              href="#pablo"
-                              id={`tooltipteam-${value}`}
-                              onClick={() => {
-                                setTeamDetailModal(true);
-                              }}
-                            >
-                              <i className="fas fa-eye" />
-                            </a>
-                            <UncontrolledTooltip delay={0} target={`tooltipteam-${value}`}>
-                              Xem chi tiết thành viên nhóm
-                            </UncontrolledTooltip>
-                            <a className="table-action table-action-delete" href="#pablo" id="deleteTeam" onClick={(e) => e.preventDefault()}>
-                              <i className="fas fa-trash" />
-                            </a>
-                            <UncontrolledTooltip delay={0} target="deleteTeam">
-                              Xóa tài khoản khỏi team
-                            </UncontrolledTooltip>
-                          </td>
-                        </tr>
-                      );
-                    })
-                  ) : (
-                    <h2> Chưa có dữ liệu </h2>
-                  )}
-                </tbody>
-              </Table>
+              <div className="table-responsive" ref={firstListRef}>
+                <Table className="align-items-center table-flush" responsive>
+                  <thead className="thead-light">
+                    <tr>
+                      <th className="sort" data-sort="name" scope="col">
+                        Tên
+                      </th>
+                      <th className="sort text-center" data-sort="member" scope="col">
+                        Số thành viên
+                      </th>
+                      <th className="sort" data-sort="status" scope="col">
+                        Trạng thái
+                      </th>
+                      <th scope="col">Thành viên</th>
+                      <th className="sort text-center" data-sort="createtime" scope="col">
+                        Ngày thành lập
+                      </th>
+                      <th scope="col">Hành động</th>
+                    </tr>
+                  </thead>
+                  <tbody className="list">
+                    {ListTeam ? (
+                      ListTeam.map((e, value) => {
+                        return (
+                          <tr key={`team-${value}`}>
+                            <td className="text-default">
+                              <span className="name" style={{ fontWeight: '700' }}>
+                                {e.name}
+                              </span>
+                            </td>
+                            <td className="text-center">
+                              <span className="member">{e.numberOfParticipants}</span>
+                            </td>
+                            <td>
+                              <Badge color="" className="badge-dot mr-4 font-weight-bold">
+                                <i className={e.status === true ? 'bg-warning' : 'bg-success'} />
+                                <span className="status">{e.status === true ? 'Đóng' : 'Mở'}</span>
+                              </Badge>
+                            </td>
+                            <td>
+                              <div className="avatar-group">
+                                {ParticipantsInTeam ? (
+                                  ParticipantsInTeam.map((parInTeam, value) => {
+                                    return (
+                                      <React.Fragment key={`member-${value}`}>
+                                        <a
+                                          className="avatar avatar-sm rounded-circle"
+                                          href="#pablo"
+                                          id={`tooltip${value}`}
+                                          onClick={(e) => e.preventDefault()}
+                                        >
+                                          <img alt="..." src={parInTeam.parImg}></img>
+                                        </a>
+                                        <UncontrolledTooltip delay={0} target={`tooltip${value}`}>
+                                          {parInTeam.parName}
+                                        </UncontrolledTooltip>
+                                      </React.Fragment>
+                                    );
+                                  })
+                                ) : (
+                                  <></>
+                                )}
+                              </div>
+                            </td>
+                            <td className="text-center">
+                              <span className="createtime">{e.createDate}</span>
+                            </td>
+                            <td>
+                              <a
+                                className="table-action table-action-delete"
+                                href="#pablo"
+                                id={`tooltipteam-${value}`}
+                                onClick={() => {
+                                  setTeamDetailModal(true);
+                                }}
+                              >
+                                <i className="fas fa-eye" />
+                              </a>
+                              <UncontrolledTooltip delay={0} target={`tooltipteam-${value}`}>
+                                Xem chi tiết
+                              </UncontrolledTooltip>
+                              <a className="table-action table-action-delete" href="#pablo" id="deleteTeam" onClick={(e) => e.preventDefault()}>
+                                <i className="fas fa-trash" />
+                              </a>
+                              <UncontrolledTooltip delay={0} target="deleteTeam">
+                                Xóa nhóm
+                              </UncontrolledTooltip>
+                            </td>
+                          </tr>
+                        );
+                      })
+                    ) : (
+                      <h2> Chưa có dữ liệu </h2>
+                    )}
+                  </tbody>
+                </Table>
+              </div>
 
               <Modal className="modal-dialog-centered" size="lg" isOpen={teamDetailModal} toggle={() => setTeamDetailModal(false)}>
                 <div className="modal-body p-0">
@@ -249,7 +257,7 @@ export default function ShowListTeamBody() {
                             </label>
                           </Col>
                         </Row>
-                        <Button class="btn btn-default">Thêm thành viên</Button>
+                        <Button className="btn btn-default">Thêm thành viên</Button>
                       </Form>
                     </CardHeader>
                     <CardBody>
@@ -262,16 +270,7 @@ export default function ShowListTeamBody() {
                             <th scope="col">Hành động</th>
                           </tr>
                         </thead>
-                        <tbody bootstrap4={true}>
-                          {/* <tr>
-                    <th scope="row">/argon/</th>
-                    <td>4,569</td>
-                    <td>340</td>
-                    <td>
-                      <i className="fas fa-arrow-up text-success mr-3" />
-                      46,53%
-                    </td>
-                  </tr> */}
+                        <tbody>
                           {clubMember ? (
                             clubMember.map((e, value) => {
                               return (
