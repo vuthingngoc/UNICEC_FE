@@ -17,7 +17,9 @@ export default function ActivityPage() {
       let items = [];
       if (res !== null && res !== undefined && res.status === 200) {
         //lọc competition đã bị hủy status === 5
-        items = res.data.items.filter((ele) => ele.status !== 5);
+        if (res.data.items) {
+          items = res.data.items.filter((ele) => ele.status !== 5);
+        }
       } else {
         warningAlert('Kết nối tới máy chủ quá hạn');
         return false;

@@ -26,12 +26,14 @@ import LoginPage from 'views/pages/LoginPage/LoginPage';
 import CompetitionDetailPage from 'views/pages/CompetitionDetailPage';
 import ShowListTeamPage from 'views/pages/ShowListTeamPage';
 import ActivityDetailPage from 'views/pages/ActivityDetailPage';
+import CompetitionRoundPage from 'views/pages/CompetitionRoundPage';
 
 ReactDOM.render(
   <AuthContextProvider>
     <BrowserRouter>
       <Switch>
         <Route path="/admin/cuoc-thi/chi-tiet/quan-ly-nhom/:id" render={(props) => <ShowListTeamPage {...props} />} />
+        <Route path="/admin/cuoc-thi/chi-tiet/vong-thi/:id" render={(props) => <CompetitionRoundPage {...props} />} />
         <Route path="/admin/cuoc-thi/chi-tiet/:id" render={(props) => <CompetitionDetailPage {...props} />} />
         <Route path="/admin/hoat-dong/chi-tiet/:id" render={(props) => <ActivityDetailPage {...props} />} />
         <Route path="/admin" render={(props) => <AdminLayout {...props} />} />
