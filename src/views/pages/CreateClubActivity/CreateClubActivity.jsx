@@ -91,10 +91,10 @@ function CreateClubActivity() {
       if (res !== null && res !== undefined && res.status === 200) {
         let newData = [];
         if (res.data.items && res.data.items.length > 0) {
-          setCompetitionId(res.data.items[0].competition_id);
+          setCompetitionId(res.data.items[0].id);
           res.data.items.forEach((ele) => {
             if (ele.status === 1 || (ele.status === 2) | (ele.status === 3)) {
-              newData.push({ id: ele.competition_id, text: ele.name });
+              newData.push({ id: ele.id, text: ele.name });
             }
           });
           if (newData.length > 0) {
@@ -103,7 +103,7 @@ function CreateClubActivity() {
         }
         setCompetitionList(newData);
       } else {
-        warningAlert('Kết nối tới máy chủ quá hạn');
+        warningAlert(warningAlert.timeout);
       }
     }
   }
@@ -125,10 +125,10 @@ function CreateClubActivity() {
 
   const checkValidation = () => {
     if (title.trim() === '') {
-      warningAlert('Vui lòng điền tiêu đề');
+      warningAlert(warningAlert.titleValidation);
       return false;
     } else if (reactQuillText.trim() === '') {
-      warningAlert('Vui lòng điền nội dung bài viết');
+      warningAlert(warningAlert.contentsValidation);
       return false;
     }
     return true;
@@ -142,7 +142,7 @@ function CreateClubActivity() {
         activitiesEntity = { name_entity: '', base64_string_entity: bannerBase64[1] };
       }
       return {
-        competition_id: parseInt(competitionId),
+        id: parseInt(competitionId),
         name: title,
         description: reactQuillText,
         seeds_point: parseInt(seed),
@@ -167,16 +167,16 @@ function CreateClubActivity() {
           const res = await createDataByPath(path, accessToken, data);
           console.log(res);
           if (res !== null && res.status === 200) {
-            successAlert('Tạo hoạt động thành công');
+            successAlert(successAlert.createActivity);
             setformModal(false);
             setReactQuillText('');
             setTitle('');
           } else if (res !== null && res.status === 400) {
             if (res.data === 'Date not suitable') {
-              warningAlert('Ngày tháng không phù hợp');
+              warningAlert(warningAlert.dateTimeValidation);
             }
           } else {
-            warningAlert('Kết nối tới máy chủ quá hạn');
+            warningAlert(warningAlert.timeout);
           }
           setformModal(false);
         }

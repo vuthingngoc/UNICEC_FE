@@ -40,19 +40,20 @@ function Dashboard() {
       if (res && res.status === 200) {
         setClubHeadmasters(res.data);
       } else {
-        warningAlert('Kết nối tới máy chủ quá hạn');
+        warningAlert(warningAlert.timeout);
       }
     }
   }
 
   async function loadDataMembers(clubId, accessToken) {
     if (clubId !== 0) {
-      const path = 'api/v1/members/club';
-      const res = await getDataByPath(`${path}/${clubId}`, accessToken, '');
+      const path = 'api/v1/members/search';
+      const data = `clubId=${clubId}&status=1&pageSize=${10}`;
+      const res = await getDataByPath(`${path}`, accessToken, data);
       if (res && res.status === 200) {
         setClubMembers(res.data);
       } else {
-        warningAlert('Kết nối tới máy chủ quá hạn');
+        warningAlert(warningAlert.timeout);
       }
     }
   }
@@ -63,7 +64,7 @@ function Dashboard() {
     }
     for (let i = 0; i < array.length; i++) {
       const element = array[i];
-      if (element.competition_id === id) {
+      if (element.id === id) {
         return i;
       }
     }
@@ -72,15 +73,15 @@ function Dashboard() {
 
   async function loadDataEventCompetition(club_id, accessToken) {
     if (club_id !== null) {
-      const path = 'api/v1/competitions/top3';
-      const data = `clubId=${club_id}`;
+      const path = 'api/v1/competitions/top';
+      const data = `clubId=${club_id}&top=3`;
       const res = await getDataByPath(`${path}`, accessToken, data);
       if (res && res.status === 200) {
         setClubEventCompetitions(res.data);
       } else if (res && res.status === 204) {
         setClubEventCompetitions([]);
       } else {
-        warningAlert('Kết nối tới máy chủ quá hạn');
+        warningAlert(warningAlert.timeout);
       }
     }
   }
@@ -95,7 +96,7 @@ function Dashboard() {
         if (res.data.length > 0) {
           res.data.forEach((element) => {
             if (element.status !== 2) {
-              const check = checkContainCompetitionID(items, element.competition_id);
+              const check = checkContainCompetitionID(items, element.id);
               if (check !== false) {
                 items[check].total_activity++;
                 if (element.process_status === 1) {
@@ -104,10 +105,10 @@ function Dashboard() {
               } else {
                 console.log(2);
                 if (element.process_status === 1) {
-                  items.push({ competition_id: element.competition_id, name: element.competition_name, total_activity: 1, finish_activity: 1 });
+                  items.push({ id: element.id, name: element.competition_name, total_activity: 1, finish_activity: 1 });
                 } else {
                   console.log(3);
-                  items.push({ competition_id: element.competition_id, name: element.competition_name, total_activity: 1, finish_activity: 0 });
+                  items.push({ id: element.id, name: element.competition_name, total_activity: 1, finish_activity: 0 });
                 }
               }
             }
@@ -115,7 +116,7 @@ function Dashboard() {
         }
         setClubActivity(items);
       } else {
-        warningAlert('Kết nối tới máy chủ quá hạn');
+        warningAlert(warningAlert.timeout);
       }
     }
   }
@@ -241,7 +242,7 @@ function Dashboard() {
                                     size="sm"
                                     type="button"
                                     onClick={() => {
-                                      history.push(`/admin/cuoc-thi/chi-tiet/${e.competition_id}`);
+                                      history.push(`/admin/cuoc-thi/chi-tiet/${e.id}`);
                                     }}
                                   >
                                     Xem

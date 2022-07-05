@@ -16,6 +16,11 @@ export default function CompetitionDetailBody(data) {
   const convertFee = (fee) => {
     return new Intl.NumberFormat('vi-VN', { style: 'currency', currency: 'VND' }).format(fee);
   };
+
+  React.useEffect(() => {
+    console.log(data);
+  }, []);
+
   return (
     <>
       <Container className="mt--6" fluid>
@@ -38,7 +43,7 @@ export default function CompetitionDetailBody(data) {
                     </Col>
                   </Row>
                 </CardHeader>
-                {data.data.competition_entities.length > 0 ? <CardImg alt="..." src={data.data.competition_entities[0].image_url} /> : <></>}
+                {data.banner.length > 0 ? <CardImg alt="..." src={data.banner[0].image_url} /> : <></>}
                 <CardBody>
                   <Row>
                     <Col md="12">
@@ -103,7 +108,7 @@ export default function CompetitionDetailBody(data) {
                     <Row className="align-items-center mb-3">
                       {data.data.clubs_in_competition.map((e, value) => {
                         return (
-                          <Col className="col-auto" key={`sponsor-${value}`}>
+                          <Col className="col-auto" key={`club-${value}`}>
                             <a href="/" onClick={(e) => e.preventDefault()} id={`tooltip-${value}`} rel="noreferrer">
                               <img
                                 alt="..."
@@ -148,13 +153,13 @@ export default function CompetitionDetailBody(data) {
                       </span>
                     </h3>
                   </CardTitle>
-                  {data.data.influencers_in_competition && data.data.influencers_in_competition.length > 0 ? (
+                  {data.influencer && data.influencer.length > 0 ? (
                     <>
                       <CardTitle className="mb-0">
                         <h3>Ban giám khảo:</h3>
                       </CardTitle>
                       <Row className="align-items-center mb-3">
-                        {data.data.influencers_in_competition.map((ele, value) => {
+                        {data.influencer.map((ele, value) => {
                           return (
                             <Col className="col-auto mb-1" key={`influ-${value}`}>
                               <a
@@ -191,7 +196,7 @@ export default function CompetitionDetailBody(data) {
                         <span
                           className="btn-inner--text"
                           onClick={() => {
-                            history.push(`/admin/cuoc-thi/chi-tiet/quan-ly-nhom/${data.data.competition_id}`);
+                            history.push(`/admin/cuoc-thi/chi-tiet/quan-ly-nhom/${data.data.id}`);
                           }}
                         >
                           Quản lý nhóm
@@ -207,7 +212,7 @@ export default function CompetitionDetailBody(data) {
                         <span
                           className="btn-inner--text"
                           onClick={() => {
-                            history.push(`/admin/cuoc-thi/chi-tiet/vong-thi/${data.data.competition_id}`);
+                            history.push(`/admin/cuoc-thi/chi-tiet/vong-thi/${data.data.id}`);
                           }}
                         >
                           Quản lý vòng thi

@@ -49,7 +49,7 @@ export default function AcitivityPageBody(props) {
               return (
                 <Col xl="3" md="6" key={`ShowCompetition-${value}`}>
                   <CardHover className="card" style={{ height: '95%' }}>
-                    <a href={`/admin/hoat-dong/chi-tiet/${e.competition_id}`}>
+                    <a href={`/admin/hoat-dong/chi-tiet/${e.id}`}>
                       <CardImg
                         alt="..."
                         src={

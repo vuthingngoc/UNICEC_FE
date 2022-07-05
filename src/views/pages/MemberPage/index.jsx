@@ -15,7 +15,7 @@ function MemberPage() {
   const warningAlert = (message) => {
     setAlert(
       <ReactBSAlert
-        success
+        danger
         style={{ display: 'block', marginTop: '-100px' }}
         title="Good job!"
         onConfirm={() => setAlert(null)}
@@ -32,14 +32,14 @@ function MemberPage() {
       setMembers(null);
       const accessToken = localStorage.getItem('accessToken');
       const clubId = localStorage.getItem('clubID');
-      const path = `api/v1/members/club/${clubId}`;
-      const data = `status=1&currentPage=${page}`;
+      const path = `api/v1/members/search`;
+      const data = `status=1&clubId=${clubId}&pageSize=10&currentPage=${page}`;
       const res = await getDataByPath(`${path}`, accessToken, data);
       console.log(res);
       if (res !== null && res !== undefined && res.status === 200) {
         setMembers(res.data);
       } else {
-        warningAlert('Kết nối tới máy chủ quá hạn');
+        warningAlert(warningAlert.timeout);
       }
     }
   }
@@ -52,7 +52,7 @@ function MemberPage() {
       if (res !== null && res !== undefined && res.status === 200) {
         setMemberDetail(res.data);
       } else {
-        warningAlert('Kết nối tới máy chủ quá hạn');
+        warningAlert(warningAlert.timeout);
       }
     }
   }

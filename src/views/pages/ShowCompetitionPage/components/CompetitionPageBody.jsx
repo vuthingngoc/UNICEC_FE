@@ -54,6 +54,135 @@ export default function CompetitionPageBody(data) {
               <hr style={{ borderTop: '1px solid black', width: '80%' }} />
             </Col>
           </Row>
+          {/*status 6*/}
+          <Row>
+            <Col>
+              <h2 className="mb-0 display-4" style={{ fontFamily: 'sans-serif' }}>
+                Bảng thảo
+              </h2>
+            </Col>
+          </Row>
+          <Row className="mb-3">
+            <Col>
+              <span style={{ fontFamily: 'sans-serif' }}>Danh sách các cuộc thi vừa tạo</span>
+            </Col>
+          </Row>
+          <Row className="mb-5">
+            {data.competitionList6 && data.competitionList6.length > 0 ? (
+              data.competitionList6.map((e, value) => {
+                return (
+                  <Col xl="3" md="3" sm="3" key={`ShowCompetition-${value}`}>
+                    <CardHover className="card" style={{ height: '95%' }}>
+                      <CardHeader style={{ fontFamily: 'inherit' }}>
+                        <Row className="align-items-center mb-0">
+                          <Col className="col-auto mb-0" style={{ padding: '0px 0px 0px 0px' }}>
+                            <span className="avatar avatar-sm rounded-circle">
+                              <img
+                                alt="..."
+                                src={
+                                  e.clubs_in_competition[0].image
+                                    ? e.clubs_in_competition[0].image
+                                    : require('assets/img/icons/avatar/No_image_available.png').default
+                                }
+                              />
+                            </span>
+                          </Col>
+                          <div className="col mb-0">
+                            <h6 className="text-sm font-weight-bold" style={{ margin: 'auto', color: 'black' }}>
+                              {e.clubs_in_competition[0].name} ·{' '}
+                              <span className="text-sm" style={{ fontWeight: 'lighter', color: 'darkgrey' }}>
+                                {covertDatePassed(e.create_time)}
+                              </span>
+                            </h6>
+                          </div>
+                          <Col className="text-right col-auto mb-0">
+                            <UncontrolledDropdown>
+                              <DropdownToggle className="text-default font-weight-bold" size="sm" tag="a">
+                                <i className="fas fa-ellipsis-h" />
+                              </DropdownToggle>
+                              <DropdownMenu right>
+                                <DropdownItem href="#pablo" onClick={(e) => e.preventDefault()}>
+                                  <span>Chỉnh sửa</span>
+                                </DropdownItem>
+                                <DropdownItem href="#pablo" onClick={(e) => e.preventDefault()}>
+                                  <span>Xóa</span>
+                                </DropdownItem>
+                              </DropdownMenu>
+                            </UncontrolledDropdown>
+                          </Col>
+                        </Row>
+                      </CardHeader>
+                      <a href={`/admin/cuoc-thi/chi-tiet/${e.id}`}>
+                        <CardImg
+                          alt="..."
+                          src={
+                            e.competition_entities.length > 0
+                              ? e.competition_entities[0].image_url
+                              : 'https://vnpi-hcm.vn/wp-content/uploads/2018/01/no-image-800x600.png'
+                          }
+                        />
+                        <CardBody>
+                          <Row>
+                            <Col className="text-left" xl="6" md="6" xs="6">
+                              <span style={{ fontFamily: 'cursive', color: 'lightsalmon' }}>@ {e.competition_type_name}</span>
+                            </Col>
+                            <Col className="text-right" xl="6" md="6" xs="6">
+                              <label
+                                className="text-neutral mb-0 font-weight-bold text-sm"
+                                style={{ backgroundColor: 'red', borderRadius: '5px', padding: '2px 5px', fontFamily: 'cursive' }}
+                              >
+                                {convertDateToShow(e.start_time)}
+                              </label>
+                            </Col>
+                          </Row>
+
+                          <CardTitle className="h4 mb-2">{e.name}</CardTitle>
+                          <Row>
+                            <Col className="col-auto">
+                              <Badge
+                                className="font-weight-bold"
+                                color={e.scope === 0 ? 'info' : e.scope === 1 ? 'warning' : 'success'}
+                                pill
+                                style={{ fontFamily: 'sans-serif' }}
+                              >
+                                {e.scope === 0 ? 'Liên Trường' : e.scope === 1 ? 'Trong Trường' : 'Trong Câu Lạc Bộ'}
+                              </Badge>
+                            </Col>
+                            {e.is_sponsor === true ? (
+                              <Col className="col-auto" key={`major-${value}`}>
+                                <Badge className="font-weight-bold" color="success" pill style={{ fontFamily: 'sans-serif' }}>
+                                  Được tài trợ
+                                </Badge>
+                              </Col>
+                            ) : (
+                              <></>
+                            )}
+                          </Row>
+                        </CardBody>
+                      </a>
+                    </CardHover>
+                  </Col>
+                );
+              })
+            ) : data.competitionList6 && data.competitionList6.length === 0 ? (
+              <Col md="12" className="text-center">
+                <h2 className="display-4" style={{ margin: 'auto' }}>
+                  Danh sách trống
+                </h2>
+                <img alt="..." src={require('assets/img/icons/empty.jpg').default} style={{ width: '300px', height: '300px' }} />
+              </Col>
+            ) : (
+              <Row>
+                <Col className="text-center" lg="12" md="12">
+                  <img
+                    alt="..."
+                    src={require('assets/img/icons/Curve-Loading.gif').default}
+                    style={{ margin: 'auto', weight: '200px', height: '200px' }}
+                  />
+                </Col>
+              </Row>
+            )}
+          </Row>
           {/*status 1*/}
           <Row>
             <Col>
@@ -112,7 +241,7 @@ export default function CompetitionPageBody(data) {
                           </Col>
                         </Row>
                       </CardHeader>
-                      <a href={`/admin/cuoc-thi/chi-tiet/${e.competition_id}`}>
+                      <a href={`/admin/cuoc-thi/chi-tiet/${e.id}`}>
                         <CardImg
                           alt="..."
                           src={
@@ -239,7 +368,7 @@ export default function CompetitionPageBody(data) {
                           </Col>
                         </Row>
                       </CardHeader>
-                      <a href={`/admin/cuoc-thi/chi-tiet/${e.competition_id}`}>
+                      <a href={`/admin/cuoc-thi/chi-tiet/${e.id}`}>
                         <CardImg
                           alt="..."
                           src={
@@ -366,7 +495,7 @@ export default function CompetitionPageBody(data) {
                           </Col>
                         </Row>
                       </CardHeader>
-                      <a href={`/admin/cuoc-thi/chi-tiet/${e.competition_id}`}>
+                      <a href={`/admin/cuoc-thi/chi-tiet/${e.id}`}>
                         <CardImg
                           alt="..."
                           src={
@@ -493,7 +622,7 @@ export default function CompetitionPageBody(data) {
                           </Col>
                         </Row>
                       </CardHeader>
-                      <a href={`/admin/cuoc-thi/chi-tiet/${e.competition_id}`}>
+                      <a href={`/admin/cuoc-thi/chi-tiet/${e.id}`}>
                         <CardImg
                           alt="..."
                           src={
@@ -620,7 +749,7 @@ export default function CompetitionPageBody(data) {
                           </Col>
                         </Row>
                       </CardHeader>
-                      <a href={`/admin/cuoc-thi/chi-tiet/${e.competition_id}`}>
+                      <a href={`/admin/cuoc-thi/chi-tiet/${e.id}`}>
                         <CardImg
                           alt="..."
                           src={
