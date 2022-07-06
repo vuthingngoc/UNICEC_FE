@@ -431,6 +431,7 @@ export default function CreateCompetitionBody() {
 
   useEffect(() => {
     let currentSingleFile = undefined;
+    Dropzone.autoDiscover = false;
 
     // single dropzone file - accepts only images
     new Dropzone(document.getElementById('dropzone-single'), {

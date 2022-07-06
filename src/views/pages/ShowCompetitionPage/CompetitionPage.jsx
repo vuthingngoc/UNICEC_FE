@@ -14,19 +14,44 @@ function CompetitionPage() {
   const [competitionList4, setCompetitionList4] = useState(null);
   const [competitionList5, setCompetitionList5] = useState(null);
   const [competitionList6, setCompetitionList6] = useState(null);
+  const [competitionList7, setCompetitionList7] = useState(null);
   const [clubData, setClubData] = useState(null);
 
-  async function loadDataListCompetition(accessToken, clubId, status) {
+  async function loadDataListCompetition(accessToken, clubId, currentPage, cases) {
+    let statusString = '';
+    switch (cases) {
+      case 1:
+        statusString = '&statuses=6&statuses=9';
+        break;
+      case 2:
+        statusString = '&statuses=7';
+        break;
+      case 3:
+        statusString = '&statuses=8';
+        break;
+      case 4:
+        statusString = '&statuses=0&statuses=1&statuses=5';
+        break;
+      case 5:
+        statusString = '&statuses=2&statuses=3&statuses=4&statuses=10&statuses=11';
+        break;
+      case 6:
+        statusString = '&statuses=12';
+        break;
+      case 7:
+        statusString = '&statuses=13';
+        break;
+    }
     if (accessToken) {
       const path = 'api/v1/competitions';
-      const data = `clubId=${clubId}&event=false&status=${status}`;
+      const data = `clubId=${clubId}&event=false&pageSize=4&currentPage=${currentPage}${statusString}`;
       const res = await getDataByPath(`${path}`, accessToken, data);
-      if (res !== null && res !== undefined && res.status === 200) {
+      if (res !== null && res !== undefined && (res.status === 200 || res.status === 204)) {
         let newData = [];
         if (res.data.items && res.data.items.length > 0) {
           newData = res.data.items;
         }
-        switch (status) {
+        switch (cases) {
           case 1:
             setCompetitionList1(newData);
             break;
@@ -44,6 +69,9 @@ function CompetitionPage() {
             break;
           case 6:
             setCompetitionList6(newData);
+            break;
+          case 7:
+            setCompetitionList7(newData);
             break;
         }
       } else {
@@ -87,12 +115,13 @@ function CompetitionPage() {
       const clubId = localStorage.getItem('clubID');
       const studentID = localStorage.getItem('studentID');
       if (competitionList1 === null) {
-        loadDataListCompetition(accessToken, clubId, 1);
-        loadDataListCompetition(accessToken, clubId, 2);
-        loadDataListCompetition(accessToken, clubId, 3);
-        loadDataListCompetition(accessToken, clubId, 4);
-        loadDataListCompetition(accessToken, clubId, 5);
-        loadDataListCompetition(accessToken, clubId, 6);
+        loadDataListCompetition(accessToken, clubId, 1, 1);
+        loadDataListCompetition(accessToken, clubId, 1, 2);
+        loadDataListCompetition(accessToken, clubId, 1, 3);
+        loadDataListCompetition(accessToken, clubId, 1, 4);
+        loadDataListCompetition(accessToken, clubId, 1, 5);
+        loadDataListCompetition(accessToken, clubId, 1, 6);
+        loadDataListCompetition(accessToken, clubId, 1, 7);
       }
       if (clubData === null) {
         loadDataClubs(accessToken, studentID);
@@ -119,6 +148,7 @@ function CompetitionPage() {
             competitionList4={competitionList4}
             competitionList5={competitionList5}
             competitionList6={competitionList6}
+            competitionList7={competitionList7}
           />
         </>
       ) : (
