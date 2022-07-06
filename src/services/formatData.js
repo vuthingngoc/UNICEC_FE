@@ -1,3 +1,5 @@
+import moment from 'moment';
+
 export const dateConvertToShow = (date) => {
   const yyyy = date.getFullYear();
   const mm = date.getMonth() + 1;
@@ -53,4 +55,9 @@ export const ValidateEmail = (email) => {
   } else {
     return false;
   }
+};
+
+export const covertDatePassed = (date) => {
+  const ago = moment(date, 'YYYY-MM-DDThh:mm:ss').fromNow();
+  return ago;
 };

@@ -79,7 +79,7 @@ export default function ClubMember(props) {
             <Table className="align-items-center table-flush" responsive>
               <thead className="thead-light">
                 <tr>
-                  <th scope="col">Student ID</th>
+                  <th scope="col">Mã sinh viên</th>
                   <th scope="col">Họ và tên</th>
                   <th scope="col">Chức vụ</th>
                   <th className="text-center" scope="col">
@@ -94,7 +94,7 @@ export default function ClubMember(props) {
                     return (
                       <tr key={`${value}`}>
                         <td>
-                          <span>{e.id}</span>
+                          <span>{e.student_code}</span>
                         </td>
                         <td>
                           <span>{e.name}</span>
