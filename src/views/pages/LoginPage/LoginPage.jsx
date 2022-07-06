@@ -85,6 +85,7 @@ export default function Login() {
     if (res && res.status === 200) {
       if (localStorage) {
         localStorage.setItem('accessToken', res.data.token);
+        console.log(jwtDecode(res.data.token));
         localStorage.setItem('roleID', jwtDecode(res.data.token).RoleId);
         localStorage.setItem('universityID', jwtDecode(res.data.token).UniversityId);
         localStorage.setItem('studentID', jwtDecode(res.data.token).Id);

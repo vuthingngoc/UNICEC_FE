@@ -90,12 +90,13 @@ function CreateClubActivity() {
       const path = 'api/v1/competitions';
       const data = `clubId=${clubId}`;
       const res = await getDataByPath(`${path}`, accessToken, data);
+      console.log(res);
       if (res !== null && res !== undefined && res.status === 200) {
         let newData = [];
         if (res.data.items && res.data.items.length > 0) {
           setCompetitionId(res.data.items[0].id);
           res.data.items.forEach((ele) => {
-            if (ele.status === 1 || (ele.status === 2) | (ele.status === 3)) {
+            if (ele.status === 1 || ele.status === 2 || ele.status === 3 || ele.status === 6) {
               newData.push({ id: ele.id, text: ele.name });
             }
           });
@@ -138,19 +139,19 @@ function CreateClubActivity() {
 
   const convertDataToCreate = (clubId) => {
     if (clubId) {
-      let activitiesEntity = { name_entity: '', base64_string_entity: null };
+      let activitiesEntity = [{ name: '', base64_string_entity: null }];
       if (banner && banner !== '') {
         const bannerBase64 = banner.split(',');
-        activitiesEntity = { name_entity: '', base64_string_entity: bannerBase64[1] };
+        activitiesEntity = [{ name: '', base64_string_img: bannerBase64[1] }];
       }
       return {
-        id: parseInt(competitionId),
+        competition_id: parseInt(competitionId),
         name: title,
         description: reactQuillText,
         seeds_point: parseInt(seed),
         ending: endTime,
         priority: parseInt(priority),
-        activitiesEntity: activitiesEntity,
+        list_activities_entities: activitiesEntity,
         club_id: parseInt(clubId),
       };
     }
@@ -188,6 +189,7 @@ function CreateClubActivity() {
 
   useEffect(() => {
     let currentSingleFile = undefined;
+    Dropzone.autoDiscover = false;
     //load API first time
     if (localStorage && localStorage.getItem('accessToken')) {
       const accessToken = localStorage.getItem('accessToken');
