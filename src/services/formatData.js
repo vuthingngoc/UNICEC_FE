@@ -1,6 +1,6 @@
 import moment from 'moment';
 
-export const dateConvertToShow = (date) => {
+export const newDateConvertToFormat = (date) => {
   const yyyy = date.getFullYear();
   const mm = date.getMonth() + 1;
   const dd = date.getDate();
@@ -40,7 +40,7 @@ export const convertDateToShow = (date) => {
   return `${day[2]}/${day[1]}/${day[0]}`;
 };
 
-export const convertDateFormat = (date) => {
+export const convertDateToShowWithTime = (date) => {
   const arr = date.split('T');
   const day = arr[0].split('-');
   const time = arr[1].split(':');

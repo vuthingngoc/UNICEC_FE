@@ -19,7 +19,6 @@ import 'assets/vendor/nucleo/css/nucleo.css';
 import 'assets/scss/argon-dashboard-pro-react.scss?v1.2.0';
 
 import AdminLayout from 'layouts/Admin.js';
-import AuthLayout from 'layouts/Auth.js';
 import Homepage from 'views/pages/homepage/index';
 import AuthContextProvider from 'contexts/AuthContext';
 import LoginPage from 'views/pages/LoginPage/LoginPage';
@@ -28,6 +27,7 @@ import ShowListTeamPage from 'views/pages/ShowListTeamPage';
 import ActivityDetailPage from 'views/pages/ActivityDetailPage';
 import CompetitionRoundPage from 'views/pages/CompetitionRoundPage';
 import SettingPage from 'views/pages/SettingPage';
+import CompetitionPublic from 'views/pages/CompetitionPublicPage';
 
 ReactDOM.render(
   <AuthContextProvider>
@@ -39,8 +39,8 @@ ReactDOM.render(
         <Route path="/admin/hoat-dong/chi-tiet/:id" render={(props) => <ActivityDetailPage {...props} />} />
         <Route path="/admin/tuy-chinh" render={(props) => <SettingPage {...props} />} />
         <Route path="/admin" render={(props) => <AdminLayout {...props} />} />
-        <Route path="/auth" render={(props) => <AuthLayout {...props} />} />
         <Route path="/login" render={(props) => <LoginPage {...props} />} />
+        <Route path="/cuoc-thi-va-su-kien" render={(props) => <CompetitionPublic {...props} />} />
         <Route path="/" render={(props) => <Homepage {...props} />} />
         <Redirect from="*" to="/" />
       </Switch>

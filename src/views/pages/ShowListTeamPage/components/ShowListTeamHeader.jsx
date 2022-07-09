@@ -1,7 +1,7 @@
 import React from 'react';
 import { Breadcrumb, BreadcrumbItem, Container, Row, Col } from 'reactstrap';
 
-export default function ShowListTeamHeader() {
+export default function ShowListTeamHeader(props) {
   return (
     <div className="header header-dark bg-neutral pb-6 content__title content__title--calendar">
       <Container fluid>
@@ -20,7 +20,7 @@ export default function ShowListTeamHeader() {
                   </a>
                 </BreadcrumbItem>
                 <BreadcrumbItem aria-current="page" className="active" style={{ color: 'grey' }}>
-                  <a className="text-default" href="/admin/cuoc-thi/chi-tiet/22">
+                  <a className="text-default" href={`/admin/cuoc-thi/chi-tiet/${props.match.params.id}`}>
                     Chi tiết
                   </a>
                 </BreadcrumbItem>
