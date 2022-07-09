@@ -6,7 +6,7 @@ import routes from 'routes.js';
 import ShowListTeamBody from './components/ShowListTeamBody';
 import ShowListTeamHeader from './components/ShowListTeamHeader';
 
-export default function ShowListTeamPage() {
+export default function ShowListTeamPage(props) {
   const [sidenavOpen, setSidenavOpen] = useState(true);
   const mainContentRef = React.useRef(null);
   const getBrandText = () => {
@@ -45,7 +45,7 @@ export default function ShowListTeamPage() {
       />
       <div className="main-content" ref={mainContentRef}>
         <AdminNavbar theme={getNavbarTheme()} toggleSidenav={toggleSidenav} sidenavOpen={sidenavOpen} brandText={getBrandText(location.pathname)} />
-        <ShowListTeamHeader />
+        <ShowListTeamHeader {...props} />
         <ShowListTeamBody />
         <AdminFooter />
       </div>

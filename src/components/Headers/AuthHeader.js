@@ -8,11 +8,11 @@ function AuthHeader({ title, lead }) {
     <>
       <div className="header bg-gradient-warning py-7 py-lg-8 pt-lg-9">
         <Container>
-          <div className="header-body text-center mb-7">
+          <div className="header-body text-center mb-5">
             <Row className="justify-content-center">
-              <Col className="px-5" lg="10" md="10" xl="10">
-                {title ? <h1 className="text-white display-2">{title}</h1> : null}
-                {lead ? <p className="text-lead text-white display-3">{lead}</p> : null}
+              <Col className="px-5" lg="12" md="12" xl="12">
+                {title ? <h1 className="text-white display-3">{title}</h1> : null}
+                {lead ? <p className="text-lead text-white display-4">{lead}</p> : null}
               </Col>
             </Row>
           </div>

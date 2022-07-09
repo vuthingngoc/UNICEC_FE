@@ -3,7 +3,7 @@ import React from 'react';
 import ReactQuill from 'react-quill';
 import { useHistory } from 'react-router';
 import { Badge, Button, Card, CardBody, CardHeader, CardImg, CardTitle, Col, Container, Row, UncontrolledTooltip } from 'reactstrap';
-import { convertDateFormat } from 'services/formatData';
+import { convertDateToShowWithTime } from 'services/formatData';
 
 export default function CompetitionDetailBody(data) {
   const history = useHistory();
@@ -38,7 +38,7 @@ export default function CompetitionDetailBody(data) {
                         className="text-neutral mb-0 font-weight-bold text-sm"
                         style={{ backgroundColor: 'red', borderRadius: '5px', padding: '2px 5px', fontFamily: 'sans-serif' }}
                       >
-                        Hạn cuối đăng ký: {convertDateFormat(data.data.end_time_register)}
+                        Hạn cuối đăng ký: {convertDateToShowWithTime(data.data.end_time_register)}
                       </label>
                     </Col>
                   </Row>
@@ -78,7 +78,7 @@ export default function CompetitionDetailBody(data) {
                     </Col>
                     <Col className="col-auto">
                       <Row>
-                        <span style={{ fontWeight: '900', fontFamily: 'sans-serif' }}>{convertDateFormat(data.data.start_time)}</span>
+                        <span style={{ fontWeight: '900', fontFamily: 'sans-serif' }}>{convertDateToShowWithTime(data.data.start_time)}</span>
 
                         <Badge className="font-weight-bold" color="info" pill style={{ marginLeft: '10px', fontFamily: 'sans-serif' }}>
                           {covertDatePassed(data.data.start_time)}
@@ -189,34 +189,36 @@ export default function CompetitionDetailBody(data) {
                   </CardTitle>
                   <Row className="align-items-center justify-content-lg-between mt-3 ml-3">
                     <Col md="6">
-                      <Button className="btn-icon" color="warning" type="button" style={{ margin: 'auto' }}>
+                      <Button
+                        className="btn-icon mb-2"
+                        color="warning"
+                        type="button"
+                        style={{ margin: 'auto' }}
+                        onClick={() => {
+                          history.push(`/admin/cuoc-thi/chi-tiet/quan-ly-nhom/${data.data.id}`);
+                        }}
+                      >
                         <span className="btn-inner--icon mr-1">
                           <i className="fas fa-users" />
                         </span>
-                        <span
-                          className="btn-inner--text"
-                          onClick={() => {
-                            history.push(`/admin/cuoc-thi/chi-tiet/quan-ly-nhom/${data.data.id}`);
-                          }}
-                        >
-                          Quản lý nhóm
-                        </span>
+                        Quản lý nhóm
                       </Button>
                     </Col>
 
                     <Col md="6">
-                      <Button className="btn-icon" color="success" type="button" style={{ margin: 'auto' }}>
+                      <Button
+                        className="btn-icon mb-2"
+                        color="success"
+                        type="button"
+                        style={{ margin: 'auto' }}
+                        onClick={() => {
+                          history.push(`/admin/cuoc-thi/chi-tiet/vong-thi/${data.data.id}`);
+                        }}
+                      >
                         <span className="btn-inner--icon mr-1">
                           <i className="fas fa-flag" />
                         </span>
-                        <span
-                          className="btn-inner--text"
-                          onClick={() => {
-                            history.push(`/admin/cuoc-thi/chi-tiet/vong-thi/${data.data.id}`);
-                          }}
-                        >
-                          Quản lý vòng thi
-                        </span>
+                        Quản lý vòng thi
                       </Button>
                     </Col>
                   </Row>

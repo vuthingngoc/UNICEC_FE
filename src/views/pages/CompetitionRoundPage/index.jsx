@@ -1,22 +1,50 @@
 import AdminFooter from 'components/Footers/AdminFooter';
 import AdminNavbar from 'components/Navbars/AdminNavbar';
 import Sidebar from 'components/Sidebar/Sidebar';
+import { statusCode } from 'constants/status.constants';
 import React, { useState } from 'react';
 import { useLocation } from 'react-router';
+import { Col, Row } from 'reactstrap';
 import routes from 'routes.js';
-import CompetitionRoundBod from './components/CompetitionRoundBody';
+import { getDataByPath } from 'services/data.service';
+import CompetitionRoundBody from './components/CompetitionRoundBody';
 import CompetitionRoundHeader from './components/CompetitionRoundHeader';
-
-const CompetitionRound = [
-  { title: 'Vòng 1', description: 'Khởi động', start_time: '2022-06-27T14:33:07.639Z', end_time: '2022-06-27T15:33:07.639Z', seeds_point: 100 },
-  { title: 'Vòng 2', description: 'Tăng tốc', start_time: '2022-06-27T16:33:07.639Z', end_time: '2022-06-27T17:33:07.639Z', seeds_point: 150 },
-  { title: 'Vòng 3', description: 'Về đích', start_time: '2022-06-27T18:33:07.639Z', end_time: '2022-06-27T19:33:07.639Z', seeds_point: 200 },
-];
 
 export default function CompetitionRoundPage(props) {
   const [sidenavOpen, setSidenavOpen] = useState(true);
   const location = useLocation();
   const mainContentRef = React.useRef(null);
+  const [competitionRound, setCompetitionRound] = useState(null);
+  const [competitionData, setCompetitionData] = useState(null);
+
+  async function loadCompetitionRound(competitionId) {
+    if (competitionId && localStorage && localStorage.getItem('accessToken')) {
+      const accessToken = localStorage.getItem('accessToken');
+      const path = `api/v1/competition-rounds/search`;
+      const data = `competitionId=${competitionId}&pageSize=20&statuses=1&statuses=2&statuses=3`;
+      const res = await getDataByPath(path, accessToken, data);
+      console.log(res);
+      if (res && res.status === statusCode.success) {
+        if (res.data.items && res.data.items.length > 0) {
+          setCompetitionRound(res.data.items);
+        } else {
+          setCompetitionRound([]);
+        }
+      }
+    }
+  }
+
+  async function loadCompetitionDetail(competitionId) {
+    if (competitionId && localStorage && localStorage.getItem('accessToken')) {
+      const accessToken = localStorage.getItem('accessToken');
+      const path = `api/v1/competitions/${competitionId}`;
+      const res = await getDataByPath(path, accessToken, '');
+      console.log(res);
+      if (res && res.status === statusCode.success) {
+        setCompetitionData(res.data);
+      }
+    }
+  }
 
   const getBrandText = () => {
     for (let i = 0; i < routes.length; i++) {
@@ -40,6 +68,16 @@ export default function CompetitionRoundPage(props) {
   const getNavbarTheme = () => {
     return location.pathname.indexOf('admin/alternative-dashboard') === -1 ? 'dark' : 'light';
   };
+
+  React.useEffect(() => {
+    if (competitionRound === null) {
+      loadCompetitionRound(props.match.params.id);
+    }
+    if (competitionData === null) {
+      loadCompetitionDetail(props.match.params.id);
+    }
+  }, []);
+
   return (
     <>
       <Sidebar
@@ -55,7 +93,20 @@ export default function CompetitionRoundPage(props) {
       <div className="main-content" ref={mainContentRef}>
         <AdminNavbar theme={getNavbarTheme()} toggleSidenav={toggleSidenav} sidenavOpen={sidenavOpen} brandText={getBrandText(location.pathname)} />
         <CompetitionRoundHeader {...props} />
-        <CompetitionRoundBod CompetitionRounds={CompetitionRound} />
+        {competitionRound && competitionData ? (
+          <CompetitionRoundBody
+            CompetitionId={props.match.params.id}
+            CompetitionRounds={competitionRound}
+            loadCompetitionRound={loadCompetitionRound}
+            CompetitionData={competitionData}
+          />
+        ) : (
+          <Row>
+            <Col className="text-center" lg="12" md="12">
+              <img alt="..." src={require('assets/img/icons/Curve-Loading.gif').default} style={{ margin: 'auto' }} />
+            </Col>
+          </Row>
+        )}
         <AdminFooter />
       </div>
       {sidenavOpen ? <div className="backdrop d-xl-none" onClick={toggleSidenav} /> : null}

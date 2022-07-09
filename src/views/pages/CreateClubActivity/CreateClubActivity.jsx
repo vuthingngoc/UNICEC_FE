@@ -20,7 +20,7 @@ import Dropzone from 'dropzone';
 import Select2 from 'react-select2-wrapper';
 import ReactBSAlert from 'react-bootstrap-sweetalert';
 import { getDataByPath } from 'services/data.service';
-import { dateConvertToShow, formatTitle } from 'services/formatData';
+import { newDateConvertToFormat, formatTitle } from 'services/formatData';
 import { createDataByPath } from 'services/data.service';
 import SimpleHeader from 'components/Headers/SimpleHeader';
 import Loading from '../components/Loading';
@@ -198,7 +198,7 @@ function CreateClubActivity() {
         loadCompetitionList(accessToken, clubId);
       }
     }
-    setEndTime(dateConvertToShow(new Date()));
+    setEndTime(newDateConvertToFormat(new Date()));
 
     // single dropzone file - accepts only images
     if (competitionList && competitionList.length > 0) {
@@ -352,13 +352,13 @@ function CreateClubActivity() {
                         </Label>
                         <Col md="8">
                           <Input
-                            defaultValue={dateConvertToShow(new Date())}
+                            defaultValue={newDateConvertToFormat(new Date())}
                             id="enddaytime"
                             type="datetime-local"
                             onChange={(e) => {
                               setEndTime(e.target.value);
                             }}
-                            min={dateConvertToShow(new Date())}
+                            min={newDateConvertToFormat(new Date())}
                           />
                         </Col>
                       </FormGroup>

@@ -1,63 +1,17 @@
 // react library for routing
-/*eslint-disable*/
-import classNames from 'classnames';
 import React from 'react';
 import { Link } from 'react-router-dom';
 // reactstrap components
-import { UncontrolledCollapse, NavbarBrand, Navbar, NavItem, NavLink, Nav, Container, Row, Col, UncontrolledTooltip, Button } from 'reactstrap';
+import { UncontrolledCollapse, NavbarBrand, Navbar, NavItem, NavLink, Nav, Container, Row, Col, Button, UncontrolledTooltip } from 'reactstrap';
+import { useHistory } from 'react-router';
 
-function AdminNavbar(props) {
-  const [navbarColor, setNavbarColor] = React.useState('bg-transparent');
-  React.useEffect(() => {
-    const updateNavbarColor = () => {
-      if (document.documentElement.scrollTop > 30 || document.body.scrollTop > 30) {
-        setNavbarColor('bg-neutral');
-      } else if (document.documentElement.scrollTop < 30 || document.body.scrollTop < 30) {
-        setNavbarColor('bg-transparent');
-      }
-    };
-
-    var href = window.location.href.substring(window.location.href.lastIndexOf('#/') + 2);
-    var hrefId = href.substring(href.lastIndexOf('#') + 1);
-    if (props.location.state) {
-      href = `home#${props.location.state}`;
-      hrefId = props.location.state;
-    }
-    if (href.lastIndexOf('#') > 0) {
-      document.getElementById(hrefId).scrollIntoView({
-        behavior: 'smooth',
-        block: 'start',
-        inline: 'nearest',
-      });
-    }
-    const updateView = () => {
-      var contentSections = document.getElementsByClassName('cd-index');
-      var navigationItems = document.getElementById('cd-index-nav').getElementsByTagName('a');
-      for (let i = 0; i < contentSections.length; i++) {
-        var activeSection = parseInt(navigationItems[i].getAttribute('data-number'), 10) - 1;
-        if (
-          contentSections[i].offsetTop - window.innerHeight / 2 < window.pageYOffset &&
-          contentSections[i].offsetTop + contentSections[i].scrollHeight - window.innerHeight / 2 > window.pageYOffset
-        ) {
-          navigationItems[activeSection].classList.add('text-blue');
-        } else {
-          navigationItems[activeSection].classList.remove('text-blue');
-        }
-      }
-    };
-
-    window.addEventListener('scroll', updateNavbarColor);
-    window.addEventListener('scroll', updateView);
-    return function cleanup() {
-      window.removeEventListener('scroll', updateNavbarColor);
-      window.removeEventListener('scroll', updateView);
-    };
-  });
+function CompetitionPublicNavbar() {
+  const history = useHistory();
   return (
     <>
-      <Navbar className={classNames('fixed-top navbar-horizontal', navbarColor)} expand="lg" id="navbar-main">
+      <Navbar className="fixed-top navbar-horizontal bg-white" expand="lg" id="navbar-main">
         <Container>
-          <NavbarBrand to="/admin/thong-tin-clb" tag={Link}>
+          <NavbarBrand to="/" tag={Link}>
             <img alt="..." src={require('assets/img/brand/Logo.png').default} style={{ height: '50px', width: '50px' }} />
           </NavbarBrand>
           <button
@@ -98,21 +52,12 @@ function AdminNavbar(props) {
               </Row>
               <Row style={{ marginTop: '25px' }}>
                 <Col className="collapse-brand" xs="6">
-                  {localStorage.getItem('accessToken') && localStorage.getItem('clubID') ? (
-                    <Button className="btn-default btn-icon" href="/admin/thong-tin-clb">
-                      <span className="btn-inner--icon">
-                        <i className="fas fa-sign-in-alt mr-2" />
-                      </span>
-                      <span className="nav-link-inner--text">Trang quản lý</span>
-                    </Button>
-                  ) : (
-                    <Button className="btn-default btn-icon" href="/login">
-                      <span className="btn-inner--icon">
-                        <i className="fas fa-sign-in-alt mr-2" />
-                      </span>
-                      <span className="nav-link-inner--text">Đăng nhập</span>
-                    </Button>
-                  )}
+                  <Button className="btn-default btn-icon" href="/auth/login">
+                    <span className="btn-inner--icon">
+                      <i className="fas fa-sign-in-alt mr-2" />
+                    </span>
+                    <span className="nav-link-inner--text">Đăng nhập</span>
+                  </Button>
                 </Col>
               </Row>
             </div>
@@ -121,11 +66,7 @@ function AdminNavbar(props) {
                 <NavLink
                   onClick={(e) => {
                     e.preventDefault();
-                    document.getElementById('UNICEC').scrollIntoView({
-                      behavior: 'smooth',
-                      block: 'start',
-                      inline: 'nearest',
-                    });
+                    history.push('/', 'UNICEC');
                   }}
                   to="#UNICEC"
                   data-number="1"
@@ -138,11 +79,7 @@ function AdminNavbar(props) {
                 <NavLink
                   onClick={(e) => {
                     e.preventDefault();
-                    document.getElementById('gioi-thieu').scrollIntoView({
-                      behavior: 'smooth',
-                      block: 'start',
-                      inline: 'nearest',
-                    });
+                    history.push('/', 'gioi-thieu');
                   }}
                   to="#gioi-thieu"
                   data-number="2"
@@ -155,11 +92,7 @@ function AdminNavbar(props) {
                 <NavLink
                   onClick={(e) => {
                     e.preventDefault();
-                    document.getElementById('tinh-nang').scrollIntoView({
-                      behavior: 'smooth',
-                      block: 'start',
-                      inline: 'nearest',
-                    });
+                    history.push('/', 'tinh-nang');
                   }}
                   to="#tinh-nang"
                   data-number="3"
@@ -178,7 +111,7 @@ function AdminNavbar(props) {
             <Nav className="align-items-lg-center ml-lg-4" navbar>
               <NavItem>
                 <NavLink className="nav-link-icon" href="https://www.facebook.com/" id="tooltip601201423" target="_blank">
-                  <i className="fab fa-facebook-square fa-2x" />
+                  <i className={'fab fa-facebook-square fa-2x'} />
                   <span className="nav-link-inner--text d-lg-none">Facebook</span>
                 </NavLink>
                 <UncontrolledTooltip delay={0} target="tooltip601201423">
@@ -210,4 +143,4 @@ function AdminNavbar(props) {
   );
 }
 
-export default AdminNavbar;
+export default CompetitionPublicNavbar;

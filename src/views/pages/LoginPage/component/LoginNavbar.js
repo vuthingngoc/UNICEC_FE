@@ -102,16 +102,8 @@ function LoginNavbar() {
                 </NavLink>
               </NavItem>
               <NavItem>
-                <NavLink
-                  onClick={(e) => {
-                    e.preventDefault();
-                    history.push('/', 'lien-he');
-                  }}
-                  to="#lien-he"
-                  data-number="4"
-                  tag={Link}
-                >
-                  <span style={{ fontSize: '20px', fontWeight: '900' }}>Liên hệ</span>
+                <NavLink tag={Link} data-number="4" to="/cuoc-thi-va-su-kien">
+                  <span style={{ fontSize: '20px', fontWeight: '900' }}>Cuộc thi và sự kiện</span>
                 </NavLink>
               </NavItem>
             </Nav>

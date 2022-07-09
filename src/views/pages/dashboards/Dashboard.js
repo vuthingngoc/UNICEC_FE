@@ -353,7 +353,7 @@ function Dashboard() {
           </Col>
         </Row>
         <Row>
-          <Col xl="12">
+          <Col lg="12" md="12">
             <Card style={{ paddingBottom: '10px' }}>
               <CardHeader className="border-0">
                 <Row className="align-items-center">
@@ -368,7 +368,7 @@ function Dashboard() {
                 </Row>
               </CardHeader>
               {clubMembers ? (
-                <Table className="align-items-center table-flush">
+                <Table className="align-items-center table-flush" responsive>
                   <thead className="thead-light">
                     <tr>
                       <th scope="col">STT</th>
