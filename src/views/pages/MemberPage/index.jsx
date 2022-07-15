@@ -28,13 +28,13 @@ function MemberPage() {
       </ReactBSAlert>
     );
   };
-  async function loadDataMember(page) {
+  async function loadDataMember(page, search) {
     if (page && localStorage && localStorage.getItem('accessToken')) {
       setMembers(null);
       const accessToken = localStorage.getItem('accessToken');
       const clubId = localStorage.getItem('clubID');
       const path = `api/v1/members/search`;
-      const data = `status=1&clubId=${clubId}&pageSize=10&currentPage=${page}`;
+      const data = `status=1&clubId=${clubId}&pageSize=10&currentPage=${page}&searchString=${search}`;
       const res = await getDataByPath(`${path}`, accessToken, data);
       console.log(res);
       if (res !== null && res !== undefined && res.status === 200) {
@@ -72,7 +72,7 @@ function MemberPage() {
   useEffect(() => {
     if (localStorage && localStorage.getItem('accessToken')) {
       if (members === null) {
-        loadDataMember(1);
+        loadDataMember(1, '');
       }
     }
   }, []);

@@ -89,8 +89,8 @@ function Dashboard() {
 
   async function loadClubActivity(clubId, accessToken) {
     if (clubId !== 0) {
-      const path = 'api/v1/competition-activities/top3-process';
-      const data = `clubId=${clubId}`;
+      const path = 'api/v1/competition-activities/top-process';
+      const data = `clubId=${clubId}&topCompetition=3&topCompetitionActivity=100`;
       const res = await getDataByPath(`${path}`, accessToken, data);
       if (res && res.status === 200) {
         let items = [];
@@ -353,7 +353,7 @@ function Dashboard() {
           </Col>
         </Row>
         <Row>
-          <Col xl="12">
+          <Col lg="12" md="12">
             <Card style={{ paddingBottom: '10px' }}>
               <CardHeader className="border-0">
                 <Row className="align-items-center">
@@ -368,7 +368,7 @@ function Dashboard() {
                 </Row>
               </CardHeader>
               {clubMembers ? (
-                <Table className="align-items-center table-flush">
+                <Table className="align-items-center table-flush" responsive>
                   <thead className="thead-light">
                     <tr>
                       <th scope="col">STT</th>

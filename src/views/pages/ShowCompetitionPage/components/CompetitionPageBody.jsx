@@ -1,7 +1,7 @@
 import React from 'react';
 import 'moment/locale/vi';
 import { Card, Col, Container, Row } from 'reactstrap';
-import CompetitionCard from './CompetitionCard';
+import CompetitionCard from 'components/Cards/CompetitionCard';
 
 export default function CompetitionPageBody(data) {
   React.useEffect(() => {

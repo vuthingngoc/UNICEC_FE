@@ -5,7 +5,8 @@ import { NavLink, Container, Row, Col, Card } from 'reactstrap';
 function AuthFooter() {
   return (
     <>
-      <Card>
+      <Card className="mb-0">
+        <span className="mask bg-gradient-warning opacity-3" />
         <footer className="py-5 cd-index" id="lien-he">
           <Container>
             <Row className="justify-content-xl-between">

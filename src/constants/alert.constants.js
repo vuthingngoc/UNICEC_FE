@@ -13,6 +13,7 @@ const warningAlertConstants = {
   loginFail: 'Đã có lỗi xảy ra trong quá trình đăng nhập',
   accountError: 'Lỗi tài khoản',
   minNumber: 'Các thông số phải lớn hơn 0',
+  seedValidation: 'Điểm thưởng phải lớn hơn hoặc bằng 0',
 };
 
 const successAlertConstants = {

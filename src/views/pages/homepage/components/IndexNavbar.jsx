@@ -8,15 +8,12 @@ import { UncontrolledCollapse, NavbarBrand, Navbar, NavItem, NavLink, Nav, Conta
 
 function AdminNavbar(props) {
   const [navbarColor, setNavbarColor] = React.useState('bg-transparent');
-  const [textColor, setTextColor] = React.useState('text-neutral');
   React.useEffect(() => {
     const updateNavbarColor = () => {
       if (document.documentElement.scrollTop > 30 || document.body.scrollTop > 30) {
         setNavbarColor('bg-neutral');
-        setTextColor('text-defalut');
       } else if (document.documentElement.scrollTop < 30 || document.body.scrollTop < 30) {
         setNavbarColor('bg-transparent');
-        setTextColor('text-neutral');
       }
     };
 
@@ -56,6 +53,12 @@ function AdminNavbar(props) {
       window.removeEventListener('scroll', updateView);
     };
   });
+
+  React.useEffect(() => {
+    const navigationItems = document.getElementById('cd-index-nav').getElementsByTagName('a');
+    navigationItems[0].classList.add('text-blue');
+  }, []);
+
   return (
     <>
       <Navbar className={classNames('fixed-top navbar-horizontal', navbarColor)} expand="lg" id="navbar-main">
@@ -134,9 +137,7 @@ function AdminNavbar(props) {
                   data-number="1"
                   tag={Link}
                 >
-                  <span className={textColor} style={{ fontSize: '20px', fontWeight: '900' }}>
-                    UNICEC
-                  </span>
+                  <span style={{ fontSize: '20px', fontWeight: '900' }}>UNICEC</span>
                 </NavLink>
               </NavItem>
               <NavItem>
@@ -153,9 +154,7 @@ function AdminNavbar(props) {
                   data-number="2"
                   tag={Link}
                 >
-                  <span className={textColor} style={{ fontSize: '20px', fontWeight: '900' }}>
-                    Giới thiệu
-                  </span>
+                  <span style={{ fontSize: '20px', fontWeight: '900' }}>Giới thiệu</span>
                 </NavLink>
               </NavItem>
               <NavItem>
@@ -172,23 +171,12 @@ function AdminNavbar(props) {
                   data-number="3"
                   tag={Link}
                 >
-                  <span className={textColor} style={{ fontSize: '20px', fontWeight: '900' }}>
-                    Tính năng
-                  </span>
+                  <span style={{ fontSize: '20px', fontWeight: '900' }}>Tính năng</span>
                 </NavLink>
               </NavItem>
               <NavItem>
-                <NavLink
-                  onClick={(e) => {
-                    e.preventDefault();
-                  }}
-                  tag={Link}
-                  data-number="4"
-                  to="cuoc-thi-va-su-kien"
-                >
-                  <span className={textColor} style={{ fontSize: '20px', fontWeight: '900' }}>
-                    Cuộc thi và sự kiện
-                  </span>
+                <NavLink tag={Link} data-number="4" to="/cuoc-thi-va-su-kien">
+                  <span style={{ fontSize: '20px', fontWeight: '900' }}>Cuộc thi và sự kiện</span>
                 </NavLink>
               </NavItem>
             </Nav>
@@ -196,7 +184,7 @@ function AdminNavbar(props) {
             <Nav className="align-items-lg-center ml-lg-4" navbar>
               <NavItem>
                 <NavLink className="nav-link-icon" href="https://www.facebook.com/" id="tooltip601201423" target="_blank">
-                  <i className={classNames('fab fa-facebook-square fa-2x', textColor)} />
+                  <i className="fab fa-facebook-square fa-2x" />
                   <span className="nav-link-inner--text d-lg-none">Facebook</span>
                 </NavLink>
                 <UncontrolledTooltip delay={0} target="tooltip601201423">

@@ -1,21 +1,24 @@
 import React from 'react';
 // react library for routing
-import { useLocation, Route, Switch, Redirect } from 'react-router-dom';
+import { useLocation, Route, Switch, Redirect, useHistory } from 'react-router-dom';
 // core components
 import AdminNavbar from 'components/Navbars/AdminNavbar.js';
 import AdminFooter from 'components/Footers/AdminFooter.js';
 import Sidebar from 'components/Sidebar/Sidebar.js';
 
-import routes from 'routes.js';
+import routes from 'routes/routes.js';
 
 function Admin() {
   const [sidenavOpen, setSidenavOpen] = React.useState(true);
   const location = useLocation();
+  const history = useHistory();
   const mainContentRef = React.useRef(null);
   React.useEffect(() => {
-    document.documentElement.scrollTop = 0;
-    document.scrollingElement.scrollTop = 0;
-    mainContentRef.current.scrollTop = 0;
+    if (checkRole()) {
+      document.documentElement.scrollTop = 0;
+      document.scrollingElement.scrollTop = 0;
+      mainContentRef.current.scrollTop = 0;
+    }
   }, [location]);
   const getRoutes = (routes) => {
     return routes.map((prop, key) => {
@@ -52,27 +55,55 @@ function Admin() {
     return location.pathname.indexOf('admin/alternative-dashboard') === -1 ? 'dark' : 'light';
   };
 
+  const checkRole = () => {
+    if (localStorage && localStorage.getItem('accessToken') && localStorage.getItem('roleID')) {
+      const roleID = localStorage.getItem('roleID');
+      switch (parseInt(roleID)) {
+        case 1:
+          history.push('/university/quan-ly-clb');
+          return false;
+        case 3:
+          return true;
+        default:
+          return false;
+      }
+    }
+    history.push('/404-not-found');
+    return false;
+  };
+
   return (
     <>
-      <Sidebar
-        routes={routes}
-        toggleSidenav={toggleSidenav}
-        sidenavOpen={sidenavOpen}
-        logo={{
-          innerLink: '/',
-          imgSrc: require('assets/img/brand/Logo text ngang.png').default,
-          imgAlt: '...',
-        }}
-      />
-      <div className="main-content" ref={mainContentRef}>
-        <AdminNavbar theme={getNavbarTheme()} toggleSidenav={toggleSidenav} sidenavOpen={sidenavOpen} brandText={getBrandText(location.pathname)} />
-        <Switch>
-          {getRoutes(routes)}
-          <Redirect from="*" to="/admin/thong-tin-clb" />
-        </Switch>
-        <AdminFooter />
-      </div>
-      {sidenavOpen ? <div className="backdrop d-xl-none" onClick={toggleSidenav} /> : null}
+      {checkRole() ? (
+        <>
+          <Sidebar
+            routes={routes}
+            toggleSidenav={toggleSidenav}
+            sidenavOpen={sidenavOpen}
+            logo={{
+              innerLink: '/',
+              imgSrc: require('assets/img/brand/Logo text ngang.png').default,
+              imgAlt: '...',
+            }}
+          />
+          <div className="main-content" ref={mainContentRef}>
+            <AdminNavbar
+              theme={getNavbarTheme()}
+              toggleSidenav={toggleSidenav}
+              sidenavOpen={sidenavOpen}
+              brandText={getBrandText(location.pathname)}
+            />
+            <Switch>
+              {getRoutes(routes)}
+              <Redirect from="*" to="/admin/thong-tin-clb" />
+            </Switch>
+            <AdminFooter />
+          </div>
+          {sidenavOpen ? <div className="backdrop d-xl-none" onClick={toggleSidenav} /> : null}
+        </>
+      ) : (
+        <></>
+      )}
     </>
   );
 }

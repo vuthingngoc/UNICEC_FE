@@ -23,7 +23,7 @@ import { getDataByPath } from 'services/data.service';
 import { createDataByPath } from 'services/data.service';
 import { useHistory } from 'react-router';
 import { formatTitle } from 'services/formatData';
-import { dateConvertToShow } from 'services/formatData';
+import { newDateConvertToFormat } from 'services/formatData';
 import { toBase64 } from 'services/formatData';
 import Loading from 'views/pages/components/Loading';
 import { ValidateEmail } from 'services/formatData';
@@ -464,10 +464,10 @@ export default function CreateCompetitionBody() {
     //First Load API
     if (localStorage && localStorage.getItem('accessToken')) {
       const accessToken = localStorage.getItem('accessToken');
-      setStartTime(dateConvertToShow(new Date()));
-      setEndTime(dateConvertToShow(new Date()));
-      setEndTimeRegister(dateConvertToShow(new Date()));
-      setStartTimeRegister(dateConvertToShow(new Date()));
+      setStartTime(newDateConvertToFormat(new Date()));
+      setEndTime(newDateConvertToFormat(new Date()));
+      setEndTimeRegister(newDateConvertToFormat(new Date()));
+      setStartTimeRegister(newDateConvertToFormat(new Date()));
       if (majorsList.length === 0) {
         loadDataMajors(accessToken);
       }
@@ -550,13 +550,13 @@ export default function CreateCompetitionBody() {
                       Thời gian bắt đầu cuộc thi <span className="text-warning">*</span>
                     </label>
                     <Input
-                      defaultValue={dateConvertToShow(new Date())}
+                      defaultValue={newDateConvertToFormat(new Date())}
                       id="startdaytime"
                       type="datetime-local"
                       onChange={(e) => {
                         setStartTime(e.target.value);
                       }}
-                      min={dateConvertToShow(new Date())}
+                      min={newDateConvertToFormat(new Date())}
                     />
                   </Col>
                   <Col lg="6" md="12">
@@ -564,13 +564,13 @@ export default function CreateCompetitionBody() {
                       Thời gian kết thúc cuộc thi <span className="text-warning">*</span>
                     </label>
                     <Input
-                      defaultValue={dateConvertToShow(new Date())}
+                      defaultValue={newDateConvertToFormat(new Date())}
                       id="enddaytime"
                       type="datetime-local"
                       onChange={(e) => {
                         setEndTime(e.target.value);
                       }}
-                      min={dateConvertToShow(new Date())}
+                      min={newDateConvertToFormat(new Date())}
                     />
                   </Col>
                 </Row>
@@ -580,13 +580,13 @@ export default function CreateCompetitionBody() {
                       Thời gian mở đăng ký <span className="text-warning">*</span>
                     </label>
                     <Input
-                      defaultValue={dateConvertToShow(new Date())}
+                      defaultValue={newDateConvertToFormat(new Date())}
                       id="startregisterdaytime"
                       type="datetime-local"
                       onChange={(e) => {
                         setStartTimeRegister(e.target.value);
                       }}
-                      min={dateConvertToShow(new Date())}
+                      min={newDateConvertToFormat(new Date())}
                     />
                   </Col>
 
@@ -595,13 +595,13 @@ export default function CreateCompetitionBody() {
                       Thời gian kết thúc đăng ký <span className="text-warning">*</span>
                     </label>
                     <Input
-                      defaultValue={dateConvertToShow(new Date())}
+                      defaultValue={newDateConvertToFormat(new Date())}
                       id="endregisterdaytime"
                       type="datetime-local"
                       onChange={(e) => {
                         setEndTimeRegister(e.target.value);
                       }}
-                      min={dateConvertToShow(new Date())}
+                      min={newDateConvertToFormat(new Date())}
                     />
                   </Col>
                 </Row>

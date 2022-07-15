@@ -85,14 +85,32 @@ export default function Login() {
     if (res && res.status === 200) {
       if (localStorage) {
         localStorage.setItem('accessToken', res.data.token);
-        console.log(jwtDecode(res.data.token));
-        localStorage.setItem('roleID', jwtDecode(res.data.token).RoleId);
+        console.log(jwtDecode(res.data.token), 'jwt');
+        const roleID = jwtDecode(res.data.token).RoleId;
+        localStorage.setItem('roleID', roleID);
         localStorage.setItem('universityID', jwtDecode(res.data.token).UniversityId);
         localStorage.setItem('studentID', jwtDecode(res.data.token).Id);
-        getClubAndUniversity(res.data.token, jwtDecode(res.data.token).Id);
+        switch (parseInt(roleID)) {
+          case 1:
+            successAlert();
+            setTimeout(function () {
+              history.push('/university/quan-ly-clb');
+            }, 1500);
+            break;
+          case 3:
+            getClubAndUniversity(res.data.token, jwtDecode(res.data.token).Id);
+            break;
+          default:
+            warningAlert(warningAlertConstants.accountNotFound);
+            setIsSubmitting(false);
+            setformModal(false);
+            break;
+        }
       }
     } else {
       warningAlert(warningAlertConstants.timeout);
+      setIsSubmitting(false);
+      setformModal(false);
     }
   }
 
@@ -130,7 +148,7 @@ export default function Login() {
 
   useEffect(() => {
     if (localStorage.getItem('accessToken') && localStorage.getItem('clubID')) {
-      history.push('/admin/thong-tin-clb');
+      if (parseInt(localStorage.getItem('clubID')) === 3) history.push('/admin/thong-tin-clb');
     }
   }, []);
 
@@ -138,7 +156,7 @@ export default function Login() {
     <>
       {alert}
       <LoginNavbar />
-      <AuthHeader title="Chào mừng bạn đến với" lead="Nền tảng quản lý thông tin sự kiện và cuộc thi của Câu Lạc Bộ Sinh viên." />
+      <AuthHeader title="Chào mừng bạn đến với" lead="Nền tảng quản lý thông tin sự kiện và cuộc thi của Câu Lạc Bộ Sinh Viên." />
       <Container className="mt--8 pb-5">
         <Row className="justify-content-center">
           <Col lg="5" md="7">

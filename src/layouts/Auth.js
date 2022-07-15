@@ -6,7 +6,7 @@ import { useLocation, Route, Switch, Redirect } from 'react-router-dom';
 import AuthNavbar from 'components/Navbars/AuthNavbar.js';
 import AuthFooter from 'components/Footers/AuthFooter.js';
 
-import routes from 'routes.js';
+import routes from 'routes/routes.js';
 
 function Auth() {
   const location = useLocation();

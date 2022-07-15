@@ -1,17 +1,13 @@
-import moment from 'moment';
-import React from 'react';
+import React, { useState } from 'react';
 import ReactQuill from 'react-quill';
 import { useHistory } from 'react-router';
-import { Badge, Button, Card, CardBody, CardHeader, CardImg, CardTitle, Col, Container, Row, UncontrolledTooltip } from 'reactstrap';
-import { convertDateFormat } from 'services/formatData';
+import { Badge, Button, Card, CardBody, CardHeader, CardImg, CardTitle, Col, Container, Modal, Row, UncontrolledTooltip } from 'reactstrap';
+import { covertDatePassed } from 'services/formatData';
+import { convertDateToShowWithTime } from 'services/formatData';
 
 export default function CompetitionDetailBody(data) {
+  const [clubModal, setClubModal] = useState(false);
   const history = useHistory();
-
-  const covertDatePassed = (date) => {
-    const ago = moment(date, 'YYYY-MM-DDThh:mm:ss').fromNow();
-    return ago;
-  };
 
   const convertFee = (fee) => {
     return new Intl.NumberFormat('vi-VN', { style: 'currency', currency: 'VND' }).format(fee);
@@ -38,7 +34,7 @@ export default function CompetitionDetailBody(data) {
                         className="text-neutral mb-0 font-weight-bold text-sm"
                         style={{ backgroundColor: 'red', borderRadius: '5px', padding: '2px 5px', fontFamily: 'sans-serif' }}
                       >
-                        Hạn cuối đăng ký: {convertDateFormat(data.data.end_time_register)}
+                        Hạn cuối đăng ký: {convertDateToShowWithTime(data.data.end_time_register)}
                       </label>
                     </Col>
                   </Row>
@@ -78,7 +74,7 @@ export default function CompetitionDetailBody(data) {
                     </Col>
                     <Col className="col-auto">
                       <Row>
-                        <span style={{ fontWeight: '900', fontFamily: 'sans-serif' }}>{convertDateFormat(data.data.start_time)}</span>
+                        <span style={{ fontWeight: '900', fontFamily: 'sans-serif' }}>{convertDateToShowWithTime(data.data.start_time)}</span>
 
                         <Badge className="font-weight-bold" color="info" pill style={{ marginLeft: '10px', fontFamily: 'sans-serif' }}>
                           {covertDatePassed(data.data.start_time)}
@@ -127,6 +123,9 @@ export default function CompetitionDetailBody(data) {
                   ) : (
                     <></>
                   )}
+                  <Button className="mb-2" color="info" size="sm" onClick={() => setClubModal(true)}>
+                    Thêm câu lạc bộ
+                  </Button>
                   {data.data.fee !== 0 ? (
                     <CardTitle className="mb-0">
                       <h3>
@@ -189,37 +188,71 @@ export default function CompetitionDetailBody(data) {
                   </CardTitle>
                   <Row className="align-items-center justify-content-lg-between mt-3 ml-3">
                     <Col md="6">
-                      <Button className="btn-icon" color="warning" type="button" style={{ margin: 'auto' }}>
+                      <Button
+                        className="btn-icon mb-2"
+                        color="warning"
+                        type="button"
+                        style={{ margin: 'auto' }}
+                        onClick={() => {
+                          history.push(`/admin/cuoc-thi/chi-tiet/quan-ly-nhom/${data.data.id}`);
+                        }}
+                      >
                         <span className="btn-inner--icon mr-1">
                           <i className="fas fa-users" />
                         </span>
-                        <span
-                          className="btn-inner--text"
-                          onClick={() => {
-                            history.push(`/admin/cuoc-thi/chi-tiet/quan-ly-nhom/${data.data.id}`);
-                          }}
-                        >
-                          Quản lý nhóm
-                        </span>
+                        Quản lý nhóm
                       </Button>
                     </Col>
 
                     <Col md="6">
-                      <Button className="btn-icon" color="success" type="button" style={{ margin: 'auto' }}>
+                      <Button
+                        className="btn-icon mb-2"
+                        color="success"
+                        type="button"
+                        style={{ margin: 'auto' }}
+                        onClick={() => {
+                          history.push(`/admin/cuoc-thi/chi-tiet/vong-thi/${data.data.id}`);
+                        }}
+                      >
                         <span className="btn-inner--icon mr-1">
                           <i className="fas fa-flag" />
                         </span>
-                        <span
-                          className="btn-inner--text"
-                          onClick={() => {
-                            history.push(`/admin/cuoc-thi/chi-tiet/vong-thi/${data.data.id}`);
-                          }}
-                        >
-                          Quản lý vòng thi
-                        </span>
+                        Quản lý vòng thi
                       </Button>
                     </Col>
                   </Row>
+                  {data.data && parseInt(data.data.status) === 6 ? (
+                    <>
+                      <CardTitle className="mb-0" style={{ marginTop: '10px' }}>
+                        <h3>Yêu cầu xét duyệt</h3>
+                      </CardTitle>
+                      <Row className="align-items-center justify-content-lg-between mt-3 ml-3">
+                        <Col className="text-center">
+                          <Button
+                            className="btn-icon mb-2"
+                            color="success"
+                            type="button"
+                            style={{ margin: 'auto' }}
+                            onClick={() => {
+                              if (localStorage && localStorage.getItem('accessToken')) {
+                                const accessToken = localStorage.getItem('accessToken');
+                                const clubID = localStorage.getItem('clubID');
+                                data.updatePendingCompetition(accessToken, clubID);
+                                data.loadDataCompetitionDetail(accessToken, data.data.id);
+                              }
+                            }}
+                          >
+                            <span className="btn-inner--icon mr-1">
+                              <i className="fas fa-share" />
+                            </span>
+                            Yêu cầu xét duyệt
+                          </Button>
+                        </Col>
+                      </Row>
+                    </>
+                  ) : (
+                    <></>
+                  )}
                 </CardBody>
               </Card>
             </Col>
@@ -228,6 +261,9 @@ export default function CompetitionDetailBody(data) {
           <></>
         )}
       </Container>
+      <Modal className="modal-dialog-centered" size="lg" isOpen={clubModal} toggle={() => setClubModal(false)}>
+        <div className="modal-body p-0">a</div>
+      </Modal>
     </>
   );
 }
