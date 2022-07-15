@@ -6,9 +6,9 @@ import AdminNavbar from 'components/Navbars/AdminNavbar.js';
 import AdminFooter from 'components/Footers/AdminFooter.js';
 import Sidebar from 'components/Sidebar/Sidebar.js';
 
-import routes from 'routes/routes.js';
+import routes from 'routes/routes_admin.js';
 
-function Admin() {
+function University() {
   const [sidenavOpen, setSidenavOpen] = React.useState(true);
   const location = useLocation();
   const history = useHistory();
@@ -25,7 +25,7 @@ function Admin() {
       if (prop.collapse) {
         return getRoutes(prop.views);
       }
-      if (prop.layout === '/admin') {
+      if (prop.layout === '/university') {
         return <Route path={prop.layout + prop.path} component={prop.component} key={key} />;
       } else {
         return null;
@@ -51,19 +51,16 @@ function Admin() {
     }
     setSidenavOpen(!sidenavOpen);
   };
-  const getNavbarTheme = () => {
-    return location.pathname.indexOf('admin/alternative-dashboard') === -1 ? 'dark' : 'light';
-  };
 
   const checkRole = () => {
     if (localStorage && localStorage.getItem('accessToken') && localStorage.getItem('roleID')) {
       const roleID = localStorage.getItem('roleID');
       switch (parseInt(roleID)) {
         case 1:
-          history.push('/university/quan-ly-clb');
-          return false;
-        case 3:
           return true;
+        case 3:
+          history.push('/admin/thong-tin-clb');
+          return false;
         default:
           return false;
       }
@@ -87,15 +84,10 @@ function Admin() {
             }}
           />
           <div className="main-content" ref={mainContentRef}>
-            <AdminNavbar
-              theme={getNavbarTheme()}
-              toggleSidenav={toggleSidenav}
-              sidenavOpen={sidenavOpen}
-              brandText={getBrandText(location.pathname)}
-            />
+            <AdminNavbar toggleSidenav={toggleSidenav} sidenavOpen={sidenavOpen} brandText={getBrandText(location.pathname)} />
             <Switch>
               {getRoutes(routes)}
-              <Redirect from="*" to="/admin/thong-tin-clb" />
+              <Redirect from="*" to="/university/quan-ly-clb" />
             </Switch>
             <AdminFooter />
           </div>
@@ -108,4 +100,4 @@ function Admin() {
   );
 }
 
-export default Admin;
+export default University;

@@ -3,13 +3,15 @@ import AdminFooter from 'components/Footers/AdminFooter.js';
 import AdminNavbar from 'components/Navbars/AdminNavbar.js';
 import Sidebar from 'components/Sidebar/Sidebar.js';
 import { useLocation } from 'react-router-dom';
-import routes from 'routes.js';
+import routes from 'routes/routes.js';
 import CompetitionDetailHeader from './components/CompetitionDetailHeader';
 import CompetitionDetailBody from './components/CompetitionDetailBody';
 import ReactBSAlert from 'react-bootstrap-sweetalert';
 import { getDataByPath } from 'services/data.service';
 import { Row } from 'reactstrap';
 import { warningAlertConstants } from 'constants/alert.constants';
+import { updateDataByPath } from 'services/data.service';
+import { statusCode } from 'constants/status.constants';
 
 export default function CompetitionDetailPage(props) {
   const [sidenavOpen, setSidenavOpen] = useState(true);
@@ -26,8 +28,26 @@ export default function CompetitionDetailPage(props) {
       const path = `api/v1/competitions/${competition_id}`;
       const res = await getDataByPath(`${path}`, accessToken, '');
       console.log(res);
-      if (res !== null && res !== undefined && res.status === 200) {
+      if (res && res.status === statusCode.success) {
         convertCompetitionEntities(res.data);
+      } else {
+        warningAlert(warningAlertConstants.timeout);
+      }
+    }
+  }
+
+  async function updatePendingCompetition(accessToken, clubID) {
+    if (accessToken) {
+      const path = `api/v1/competitions/status`;
+      const data = {
+        id: parseInt(props.match.params.id),
+        status: 7,
+        club_id: parseInt(clubID),
+      };
+      const res = await updateDataByPath(`${path}`, accessToken, data);
+      console.log(res);
+      if (res && res.status === statusCode.success) {
+        successAlert('Nộp đơn xét duyệt thành công');
       } else {
         warningAlert(warningAlertConstants.timeout);
       }
@@ -71,6 +91,30 @@ export default function CompetitionDetailPage(props) {
       >
         {message}
       </ReactBSAlert>
+    );
+  };
+
+  const successAlert = (message) => {
+    setalert(
+      <ReactBSAlert
+        success
+        style={{ display: 'block', marginTop: '-100px' }}
+        title={message}
+        onConfirm={() => {
+          if (localStorage && localStorage.getItem('accessToken')) {
+            const accessToken = localStorage.getItem('accessToken');
+            if (competitionDetail === null) {
+              loadDataCompetitionDetail(accessToken, props.match.params.id);
+            }
+          }
+          setalert(null);
+        }}
+        onCancel={() => setalert(null)}
+        showCancel={false}
+        confirmBtnBsStyle="warning"
+        confirmBtnText="Ok"
+        btnSize=""
+      ></ReactBSAlert>
     );
   };
 
@@ -123,7 +167,13 @@ export default function CompetitionDetailPage(props) {
         {competitionDetail ? (
           <>
             <CompetitionDetailHeader data={competitionDetail} sponsor={sponsor} />
-            <CompetitionDetailBody data={competitionDetail} banner={banner} influencer={influencer} />
+            <CompetitionDetailBody
+              data={competitionDetail}
+              banner={banner}
+              influencer={influencer}
+              updatePendingCompetition={updatePendingCompetition}
+              loadDataCompetitionDetail={loadDataCompetitionDetail}
+            />
           </>
         ) : (
           <Row>

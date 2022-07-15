@@ -5,7 +5,7 @@ import { statusCode } from 'constants/status.constants';
 import React, { useState } from 'react';
 import { useLocation } from 'react-router';
 import { Col, Row } from 'reactstrap';
-import routes from 'routes.js';
+import routes from 'routes/routes.js';
 import { getDataByPath } from 'services/data.service';
 import CompetitionRoundBody from './components/CompetitionRoundBody';
 import CompetitionRoundHeader from './components/CompetitionRoundHeader';

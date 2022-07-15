@@ -2,7 +2,7 @@ import AdminFooter from 'components/Footers/AdminFooter';
 import AdminNavbar from 'components/Navbars/AdminNavbar';
 import Sidebar from 'components/Sidebar/Sidebar';
 import React, { useState } from 'react';
-import routes from 'routes.js';
+import routes from 'routes/routes.js';
 import ShowListTeamBody from './components/ShowListTeamBody';
 import ShowListTeamHeader from './components/ShowListTeamHeader';
 

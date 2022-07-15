@@ -33,13 +33,13 @@ function CompetitionPage() {
         statusString = '&statuses=0&statuses=1&statuses=5';
         break;
       case 5:
-        statusString = '&statuses=2&statuses=3&statuses=4&statuses=10&statuses=11';
+        statusString = '&statuses=2&statuses=3&statuses=4&statuses=10';
         break;
       case 6:
-        statusString = '&statuses=12';
+        statusString = '&statuses=11';
         break;
       case 7:
-        statusString = '&statuses=13';
+        statusString = '&statuses=12';
         break;
     }
     if (accessToken) {
@@ -132,7 +132,14 @@ function CompetitionPage() {
   return (
     <>
       {alert}
-      {clubData && competitionList1 ? (
+      {clubData &&
+      competitionList1 &&
+      competitionList2 &&
+      competitionList3 &&
+      competitionList4 &&
+      competitionList5 &&
+      competitionList6 &&
+      competitionList7 ? (
         <>
           <CompetitionHeader
             clubData={clubData}

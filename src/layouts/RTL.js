@@ -6,7 +6,7 @@ import AdminNavbar from 'components/Navbars/AdminNavbar.js';
 import AdminFooter from 'components/Footers/AdminFooter.js';
 import Sidebar from 'components/Sidebar/Sidebar.js';
 
-import routes from 'routes.js';
+import routes from 'routes/routes.js';
 
 function RTL() {
   const [sidenavOpen, setSidenavOpen] = React.useState(true);
