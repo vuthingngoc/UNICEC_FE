@@ -1,5 +1,4 @@
 /*eslint-disable*/
-// reactstrap components
 import { NavItem, NavLink, Nav, Container, Row, Col } from 'reactstrap';
 
 function AdminFooter() {

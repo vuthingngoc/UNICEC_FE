@@ -53,6 +53,12 @@ function AdminNavbar(props) {
       window.removeEventListener('scroll', updateView);
     };
   });
+
+  React.useEffect(() => {
+    const navigationItems = document.getElementById('cd-index-nav').getElementsByTagName('a');
+    navigationItems[0].classList.add('text-blue');
+  }, []);
+
   return (
     <>
       <Navbar className={classNames('fixed-top navbar-horizontal', navbarColor)} expand="lg" id="navbar-main">

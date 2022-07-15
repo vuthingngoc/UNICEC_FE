@@ -58,7 +58,7 @@ export default function CompetitionPublicHeader() {
 
         <Container fluid className="mt-6">
           <Row className="justify-content-center">
-            <Col lg="10" md="10" className="text-center mt-4">
+            <Col lg="12" md="12" className="text-center mt-4">
               <CarouselControl directionText="Previous" direction="prev" onClickHandler={previous} style={{ position: 'relative' }} />
               <Carousel previous={previous} next={next} activeIndex={activeIndex}>
                 <CarouselIndicators

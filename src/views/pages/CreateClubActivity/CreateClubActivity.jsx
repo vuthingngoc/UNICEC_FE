@@ -37,7 +37,7 @@ function CreateClubActivity() {
   const [banner, setBanner] = useState(null);
   const [endTime, setEndTime] = useState('');
   const [seed, setSeed] = useState(0);
-  const [priority, setPriority] = useState(1);
+  const [priority, setPriority] = useState(2);
   const [formModal, setformModal] = useState(false);
   const history = useHistory();
 
@@ -88,7 +88,7 @@ function CreateClubActivity() {
   async function loadCompetitionList(accessToken, clubId) {
     if (accessToken) {
       const path = 'api/v1/competitions';
-      const data = `clubId=${clubId}`;
+      const data = `clubId=${clubId}&statuses=0&statuses=1&statuses=2&statuses=3&statuses=4&statuses=5&statuses=6&statuses=7&statuses=8&statuses=9`;
       const res = await getDataByPath(`${path}`, accessToken, data);
       console.log(res);
       if (res !== null && res !== undefined && res.status === 200) {

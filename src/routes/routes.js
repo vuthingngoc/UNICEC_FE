@@ -1,15 +1,7 @@
 import Dashboard from 'views/pages/dashboards/Dashboard.js';
-// import Lock from 'views/pages/examples/Lock.js';
-//LoginPagef
-//import LoginPage from 'views/pages/LoginPage/LoginPage.jsx';
-
-//import CreateClubActivityIndex from 'views/pages/CreateClubActivity';
-
 import CreateClubActivity from 'views/pages/CreateClubActivity/CreateClubActivity';
-
 import ShowCompetition from 'views/pages/ShowCompetitionPage/CompetitionPage.jsx';
 import CreateCompetionPage from 'views/pages/CreateCompetitionPage';
-
 import ShowlistTeamPage from 'views/pages/ShowListTeamPage/index.jsx';
 import MemberPage from 'views/pages/MemberPage';
 import ActivityPage from 'views/pages/ActivityPage';

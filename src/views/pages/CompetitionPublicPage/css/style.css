@@ -15,3 +15,7 @@
     max-width: 1200px;
     max-height: 500px;
 }
+.carousel-control-prev,
+.carousel-control-next {
+    width: 5%;
+}

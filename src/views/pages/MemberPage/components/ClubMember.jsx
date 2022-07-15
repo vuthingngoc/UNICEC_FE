@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
   Card,
   CardHeader,
@@ -19,7 +19,8 @@ import { convertDateToShow } from 'services/formatData';
 import List from 'list.js';
 
 export default function ClubMember(props) {
-  const [pageNavigate, setPageNavigate] = React.useState([]);
+  const [pageNavigate, setPageNavigate] = useState([]);
+  const [search, setSearch] = useState('');
   const firstListRef = React.useRef(null);
   React.useEffect(() => {
     new List(firstListRef.current, {
@@ -37,7 +38,7 @@ export default function ClubMember(props) {
             href="#page"
             onClick={(e) => {
               e.preventDefault();
-              props.loadDataMember(i);
+              props.loadDataMember(i, '');
             }}
           >
             {i}
@@ -67,11 +68,11 @@ export default function ClubMember(props) {
               <Col className="col-auto">
                 <div id="datatable-basic_filter" className="dataTables_filter px-4 pb-1">
                   <label>Tìm kiếm:</label>
-                  <Input className="form-control-md" placeholder="Tìm theo tên" />
+                  <Input className="form-control-md" placeholder="Tìm theo tên và mã" value={search} onChange={(e) => setSearch(e.target.value)} />
                 </div>
               </Col>
               <Col lg="4" md="12">
-                <Button outline color="info">
+                <Button outline color="info" onClick={() => props.loadDataMember(1, search)}>
                   Tìm kiếm
                 </Button>
               </Col>
@@ -136,16 +137,20 @@ export default function ClubMember(props) {
                     );
                   })
                 ) : props && props.data && props.data.length === 0 ? (
-                  <Col md="12" className="text-center">
-                    <tr>
-                      <td colSpan="5">
-                        <h2 className="display-4" style={{ margin: 'auto' }}>
-                          Danh sách trống
-                        </h2>
-                        <img alt="..." src={require('assets/img/icons/empty.jpg').default} style={{ width: '500px', height: '500px' }} />
-                      </td>
-                    </tr>
-                  </Col>
+                  <tr>
+                    <td colSpan="5">
+                      <Row>
+                        <Col className="text-center" md="12">
+                          <h2 className="display-4 mb-0">Danh sách trống</h2>
+                          <img
+                            alt="..."
+                            src={require('assets/img/icons/empty.jpg').default}
+                            style={{ width: '30%', margin: 'auto', maxHeight: '450px' }}
+                          />
+                        </Col>
+                      </Row>
+                    </td>
+                  </tr>
                 ) : (
                   <tr>
                     <td colSpan="5">
@@ -167,7 +172,7 @@ export default function ClubMember(props) {
                       href="#previous"
                       onClick={(e) => {
                         e.preventDefault();
-                        props.loadDataMember(props.data.current_page - 1);
+                        props.loadDataMember(props.data.current_page - 1, '');
                       }}
                     >
                       <i className="fas fa-angle-left" />
@@ -181,7 +186,7 @@ export default function ClubMember(props) {
                       href="#next"
                       onClick={(e) => {
                         e.preventDefault();
-                        props.loadDataMember(props.data.current_page + 1);
+                        props.loadDataMember(props.data.current_page + 1, '');
                       }}
                     >
                       <i className="fas fa-angle-right" />

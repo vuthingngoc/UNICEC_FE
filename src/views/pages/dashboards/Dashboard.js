@@ -89,8 +89,8 @@ function Dashboard() {
 
   async function loadClubActivity(clubId, accessToken) {
     if (clubId !== 0) {
-      const path = 'api/v1/competition-activities/top3-process';
-      const data = `clubId=${clubId}`;
+      const path = 'api/v1/competition-activities/top-process';
+      const data = `clubId=${clubId}&topCompetition=3&topCompetitionActivity=100`;
       const res = await getDataByPath(`${path}`, accessToken, data);
       if (res && res.status === 200) {
         let items = [];

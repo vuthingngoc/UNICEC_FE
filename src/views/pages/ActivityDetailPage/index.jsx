@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from 'react';
 import { useLocation } from 'react-router';
 import ReactBSAlert from 'react-bootstrap-sweetalert';
-import routes from 'routes.js';
+import routes from 'routes/routes.js';
 import ActivityDetailBody from './components/ActivityDetailBody';
 import Sidebar from 'components/Sidebar/Sidebar';
 import AdminNavbar from 'components/Navbars/AdminNavbar';

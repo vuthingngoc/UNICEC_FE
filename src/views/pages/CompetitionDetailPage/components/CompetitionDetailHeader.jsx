@@ -143,7 +143,7 @@ export default function CompetitionDetailHeader(data) {
                     <CardBody>
                       <CardTitle className="font-weight-bold text-default text-lg">Chuyên ngành:</CardTitle>
                       <Row className="align-items-center" style={{ marginBlock: '20px' }}>
-                        {data.data.majors_in_competition.length > 0 ? (
+                        {data.data.majors_in_competition && data.data.majors_in_competition.length > 0 ? (
                           data.data.majors_in_competition.map((ele, value) => {
                             return (
                               <Col className="col-auto" key={`major-${value}`}>

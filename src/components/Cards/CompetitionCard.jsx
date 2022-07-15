@@ -24,8 +24,20 @@ const CardHover = styled.div`
 `;
 
 export default function CompetitionCard(props) {
+  const checkCompetitionInClub = (clubID) => {
+    if (clubID && props.data && props.data.clubs_in_competition.length > 0) {
+      for (let i = 0; i < props.data.clubs_in_competition.length; i++) {
+        const element = props.data.clubs_in_competition[i];
+        if (parseInt(element.id) === parseInt(clubID)) {
+          return true;
+        }
+      }
+    }
+    return false;
+  };
+
   return (
-    <Col xl="3" md="6" sm="12">
+    <Col xl="3" lg="4" md="6" sm="12">
       <CardHover className="card" style={{ height: '95%' }}>
         <CardHeader style={{ fontFamily: 'inherit' }}>
           <Row className="align-items-center mb-0">
@@ -49,28 +61,32 @@ export default function CompetitionCard(props) {
                 </span>
               </h6>
             </div>
-            <Col className="text-right col-auto mb-0">
-              <UncontrolledDropdown>
-                <DropdownToggle className="text-default font-weight-bold" size="sm" tag="a">
-                  <i className="fas fa-ellipsis-h" />
-                </DropdownToggle>
-                <DropdownMenu right>
-                  <DropdownItem href="#pablo" onClick={(e) => e.preventDefault()}>
-                    <span>Chỉnh sửa</span>
-                  </DropdownItem>
-                  <DropdownItem href="#pablo" onClick={(e) => e.preventDefault()}>
-                    <span>Xóa</span>
-                  </DropdownItem>
-                </DropdownMenu>
-              </UncontrolledDropdown>
-            </Col>
+            {localStorage && props.data.clubs_in_competition && checkCompetitionInClub(localStorage.getItem('clubID')) ? (
+              <Col className="text-right col-auto mb-0">
+                <UncontrolledDropdown>
+                  <DropdownToggle className="text-default font-weight-bold" size="sm" tag="a">
+                    <i className="fas fa-ellipsis-h" />
+                  </DropdownToggle>
+                  <DropdownMenu right>
+                    <DropdownItem href="#pablo" onClick={(e) => e.preventDefault()}>
+                      <span>Chỉnh sửa</span>
+                    </DropdownItem>
+                    <DropdownItem href="#pablo" onClick={(e) => e.preventDefault()}>
+                      <span>Xóa</span>
+                    </DropdownItem>
+                  </DropdownMenu>
+                </UncontrolledDropdown>
+              </Col>
+            ) : (
+              <></>
+            )}
           </Row>
         </CardHeader>
         <a href={`/admin/cuoc-thi/chi-tiet/${props.data.id}`}>
           <CardImg
             alt="..."
             src={
-              props.data.competition_entities.length > 0
+              props.data.competition_entities && props.data.competition_entities.length > 0
                 ? props.data.competition_entities[0].image_url
                 : require('assets/img/icons/avatar/No_image_available.png').default
             }

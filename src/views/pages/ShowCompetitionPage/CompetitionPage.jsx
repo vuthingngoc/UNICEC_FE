@@ -33,20 +33,20 @@ function CompetitionPage() {
         statusString = '&statuses=0&statuses=1&statuses=5';
         break;
       case 5:
-        statusString = '&statuses=2&statuses=3&statuses=4&statuses=10&statuses=11';
+        statusString = '&statuses=2&statuses=3&statuses=4&statuses=10';
         break;
       case 6:
-        statusString = '&statuses=12';
+        statusString = '&statuses=11';
         break;
       case 7:
-        statusString = '&statuses=13';
+        statusString = '&statuses=12';
         break;
     }
     if (accessToken) {
       const path = 'api/v1/competitions';
       const data = `clubId=${clubId}&event=false&pageSize=4&currentPage=${currentPage}${statusString}`;
       const res = await getDataByPath(`${path}`, accessToken, data);
-      if (res !== null && res !== undefined && (res.status === 200 || res.status === 204)) {
+      if (res && (res.status === 200 || res.status === 204)) {
         let newData = [];
         if (res.data.items && res.data.items.length > 0) {
           newData = res.data.items;
@@ -84,7 +84,7 @@ function CompetitionPage() {
     if (accessToken !== null) {
       const path = `api/v1/clubs/user/${studentID}`;
       const res = await getDataByPath(`${path}`, accessToken, '');
-      if (res !== null && res.status === 200) {
+      if (res && res.status === 200) {
         setClubData(res.data[0]);
       } else {
         warningAlert(warningAlertConstants.timeout);
@@ -132,7 +132,14 @@ function CompetitionPage() {
   return (
     <>
       {alert}
-      {clubData && competitionList1 ? (
+      {clubData &&
+      competitionList1 &&
+      competitionList2 &&
+      competitionList3 &&
+      competitionList4 &&
+      competitionList5 &&
+      competitionList6 &&
+      competitionList7 ? (
         <>
           <CompetitionHeader
             clubData={clubData}
