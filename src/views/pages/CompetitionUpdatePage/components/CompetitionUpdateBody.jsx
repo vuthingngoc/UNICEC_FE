@@ -1,4 +1,3 @@
-/*eslint-disable*/
 import Dropzone from 'dropzone';
 import React, { useEffect, useState } from 'react';
 import ReactQuill from 'react-quill';
@@ -19,9 +18,7 @@ import {
   Row,
   UncontrolledTooltip,
 } from 'reactstrap';
-import { noAvatarBase64 } from 'assets/img/icons/avatar/NoAvatarBase64';
 import { getDataByPath } from 'services/data.service';
-import { createDataByPath } from 'services/data.service';
 import { useHistory } from 'react-router';
 import { formatTitle } from 'services/formatData';
 import { newDateConvertToFormat } from 'services/formatData';
@@ -30,14 +27,17 @@ import Loading from 'views/pages/components/Loading';
 import { ValidateEmail } from 'services/formatData';
 import { warningAlertConstants } from 'constants/alert.constants';
 import { successAlertConstants } from 'constants/alert.constants';
+import { noAvatarBase64 } from 'assets/img/icons/avatar/NoAvatarBase64';
+import { updateDataByPath } from 'services/data.service';
+import { createDataByPath } from 'services/data.service';
+import { deleteDataByPathWithParam } from 'services/data.service';
 
 const CompetitionScopes = [
   { id: 0, text: 'Liên Trường' },
   { id: 1, text: 'Trong Trường' },
   { id: 2, text: 'Trong Câu Lạc Bộ' },
 ];
-/*eslint disable*/
-export default function CreateCompetitionBody() {
+export default function CompetitionUpdateBody(props) {
   const [reactQuillText, setReactQuillText] = useState('');
   const [feeCheckbox, setFeeCheckbox] = useState(false);
   const [groupLimit, setGroupLimit] = useState(false);
@@ -327,7 +327,7 @@ export default function CreateCompetitionBody() {
     return true;
   };
 
-  const convertDataToCreate = (clubId) => {
+  const convertDataToUpdate = (clubId) => {
     if (clubId) {
       const name = title;
       const competition_type_id = parseInt(competitionTypeId);
@@ -347,39 +347,17 @@ export default function CreateCompetitionBody() {
         fee = 0;
       }
       const scope = parseInt(scopes);
-      const is_event = false;
       const address_name = addressName;
       const seed_point = parseInt(seedPoint);
       const list_major_id = major;
-      const bannerBase64 = banner.split(',');
-      const list_image = [{ name: '', base64_string_img: bannerBase64[1] }];
-      const list_influencer = [];
-      if (Influencer.length > 0) {
-        for (let i = 0; i < Influencer.length; i++) {
-          const InfluencerBase64 = Influencer[i].url.split(',');
-          list_influencer.push({ name: Influencer[i].name, base64_string_img: InfluencerBase64[1] });
-        }
-      }
-      const list_sponsor = [];
-      if (sponsor.length > 0) {
-        for (let i = 0; i < sponsor.length; i++) {
-          const SponsorBase64 = sponsor[i].url.split(',');
-          list_sponsor.push({
-            name: sponsor[i].name,
-            base64_string_img: SponsorBase64[1],
-            website: sponsor[i].website,
-            email: sponsor[i].email,
-            description: sponsor[i].description,
-          });
-        }
-      }
       const club_id = parseInt(clubId);
       return {
+        id: parseInt(props.competitionDetail.id),
         name: name,
         competition_type_id: competition_type_id,
-        number_of_participations: number_of_participations,
-        min_number_member_in_team: min_number_member_in_team,
-        max_number_member_in_team: max_number_member_in_team,
+        number_of_participant: number_of_participations,
+        min_number: min_number_member_in_team,
+        max_number: max_number_member_in_team,
         start_time_register: start_time_register,
         end_time_register: end_time_register,
         start_time: start_time,
@@ -387,38 +365,38 @@ export default function CreateCompetitionBody() {
         content: content,
         fee: fee,
         scope: scope,
-        is_event: is_event,
         address_name: address_name,
         address: address,
         seed_point: seed_point,
         list_major_id: list_major_id,
-        list_image: list_image,
-        list_influencer: list_influencer,
-        list_sponsor: list_sponsor,
         club_id: club_id,
       };
     }
     return null;
   };
 
-  async function createCompetition() {
+  async function updateCompetition() {
     if (checkValidation()) {
       if (localStorage && localStorage.getItem('accessToken')) {
         const accessToken = localStorage.getItem('accessToken');
         const club_id = localStorage.getItem('clubID');
         const path = 'api/v1/competitions';
-        const data = convertDataToCreate(club_id);
+        const data = convertDataToUpdate(club_id);
         console.log(data);
         if (data) {
-          const res = await createDataByPath(path, accessToken, data);
+          const res = await updateDataByPath(path, accessToken, data);
           console.log(res);
           if (res !== null && res.status === 200) {
-            successAlert(successAlertConstants.createCompetition);
-            setTimeout(() => {
-              history.push(`/admin/cuoc-thi/chi-tiet/${res.data.id}`);
-            }, 2000);
+            if (!checkEditStatus()) {
+              deleteCompetitionEntity();
+            } else {
+              successAlert(successAlertConstants.updateCompetition);
+              setTimeout(() => {
+                history.push(`/admin/cuoc-thi/chi-tiet/${props.competitionDetail.id}`);
+              }, 2000);
+            }
           } else if (res !== null && res.status === 400) {
-            if (res.data === 'Date not suitable') {
+            if (res.data === 'Date not suitable must be Present < STR < ETR < ST < ET') {
               warningAlert(warningAlertConstants.dateTimeValidation);
             }
           } else {
@@ -426,14 +404,166 @@ export default function CreateCompetitionBody() {
           }
         }
       }
+    } else {
+      setFormModal(false);
     }
     setFormModal(false);
+  }
+  const checkIsBase64 = (string) => {
+    if (string.includes('https')) {
+      return false;
+    }
+    return true;
+  };
+
+  const convertDataBanner = (club_id) => {
+    if (club_id) {
+      let bannerBase64 = banner;
+      if (checkIsBase64(bannerBase64)) {
+        bannerBase64 = banner.split(',')[1];
+      }
+      const list_image = [{ name: '', base64_string_img: bannerBase64 }];
+      return {
+        competition_id: parseInt(props.competitionDetail.id),
+        club_id: parseInt(club_id),
+        images: list_image,
+      };
+    }
+    return null;
+  };
+
+  const convertDataSponsor = (club_id) => {
+    if (club_id) {
+      const list_sponsor = [];
+      if (sponsor.length > 0) {
+        for (let i = 0; i < sponsor.length; i++) {
+          let SponsorBase64 = sponsor[i].url;
+          if (checkIsBase64(SponsorBase64)) {
+            SponsorBase64 = sponsor[i].url.split(',')[1];
+          }
+          list_sponsor.push({
+            name: sponsor[i].name,
+            base64_string_img: SponsorBase64,
+            website: sponsor[i].website,
+            email: sponsor[i].email,
+            description: sponsor[i].description,
+          });
+        }
+      }
+      return {
+        competition_id: parseInt(props.competitionDetail.id),
+        club_id: parseInt(club_id),
+        sponsors: list_sponsor,
+      };
+    }
+    return null;
+  };
+
+  const convertDataInflueners = (club_id) => {
+    if (club_id) {
+      const list_influencer = [];
+      if (Influencer.length > 0) {
+        for (let i = 0; i < Influencer.length; i++) {
+          let InfluencerBase64 = Influencer[i].url;
+          if (checkIsBase64(InfluencerBase64)) {
+            InfluencerBase64 = Influencer[i].url.split(',')[1];
+          }
+          list_influencer.push({ name: Influencer[i].name, base64_string_img: InfluencerBase64 });
+        }
+      }
+      return {
+        competition_id: parseInt(props.competitionDetail.id),
+        club_id: parseInt(club_id),
+        influencers: list_influencer,
+      };
+    }
+    return null;
+  };
+
+  async function deleteCompetitionEntity() {
+    if (localStorage && localStorage.getItem('accessToken')) {
+      const accessToken = localStorage.getItem('accessToken');
+      const club_id = localStorage.getItem('clubID');
+      const pathDelete = 'api/v1/competition-entities';
+      const data = `competitionId=${parseInt(props.competitionDetail.id)}&clubId=${parseInt(club_id)}`;
+      console.log(data);
+      if (data) {
+        const res = await deleteDataByPathWithParam(pathDelete, accessToken, data);
+        console.log(res, 'Delete');
+        if (res !== null && res.status === 200) {
+          const result1 = await updateCompetitionImage(accessToken, club_id);
+          const result2 = await updateCompetitionSponsor(accessToken, club_id);
+          const result3 = await updateCompetitionSInfluencer(accessToken, club_id);
+          if (result1 && result2 && result3) {
+            successAlert(successAlertConstants.updateCompetition);
+            setTimeout(() => {
+              history.push(`/admin/cuoc-thi/chi-tiet/${props.competitionDetail.id}`);
+            }, 2000);
+          }
+        } else {
+          warningAlert(warningAlertConstants.timeout);
+        }
+      }
+    }
+  }
+
+  async function updateCompetitionImage(accessToken, club_id) {
+    const data = convertDataBanner(club_id);
+    if (data) {
+      if (accessToken) {
+        const path = 'api/v1/competition-entities/images';
+        console.log(data, 'Banner Data');
+        const res = await createDataByPath(path, accessToken, data);
+        console.log(res, 'Banner');
+        if (res && res.status === 200) {
+          return true;
+        } else {
+          return false;
+        }
+      }
+    }
+    return false;
+  }
+
+  async function updateCompetitionSponsor(accessToken, club_id) {
+    const data = convertDataSponsor(club_id);
+    if (data) {
+      if (accessToken) {
+        const path = 'api/v1/competition-entities/sponsors';
+        console.log(data, 'Sponsor Data');
+        const res = await createDataByPath(path, accessToken, data);
+        console.log(res, 'Sponsor');
+        if (res && (res.status === 200 || res.status === 204)) {
+          return true;
+        } else {
+          return false;
+        }
+      }
+    }
+    return false;
+  }
+
+  async function updateCompetitionSInfluencer(accessToken, club_id) {
+    const data = convertDataInflueners(club_id);
+    if (data) {
+      if (accessToken) {
+        const path = 'api/v1/competition-entities/influencers';
+        console.log(data, 'Influencer Data');
+        const res = await createDataByPath(path, accessToken, data);
+        console.log(res, 'Influencer');
+        if (res && (res.status === 200 || res.status === 204)) {
+          return true;
+        } else {
+          return false;
+        }
+      }
+    }
+    return false;
   }
 
   useEffect(() => {
     let currentSingleFile = undefined;
     Dropzone.autoDiscover = false;
-
     // single dropzone file - accepts only images
     new Dropzone(document.getElementById('dropzone-single'), {
       url: '/',
@@ -454,7 +584,7 @@ export default function CreateCompetitionBody() {
           const reader = new FileReader();
           reader.onload = function (event) {
             const base64String = event.target.result;
-            setBanner(base64String);
+            if (base64String) setBanner(base64String);
           };
           reader.readAsDataURL(file);
         });
@@ -465,10 +595,6 @@ export default function CreateCompetitionBody() {
     //First Load API
     if (localStorage && localStorage.getItem('accessToken')) {
       const accessToken = localStorage.getItem('accessToken');
-      setStartTime(newDateConvertToFormat(new Date()));
-      setEndTime(newDateConvertToFormat(new Date()));
-      setEndTimeRegister(newDateConvertToFormat(new Date()));
-      setStartTimeRegister(newDateConvertToFormat(new Date()));
       if (majorsList.length === 0) {
         loadDataMajors(accessToken);
       }
@@ -477,6 +603,78 @@ export default function CreateCompetitionBody() {
       }
     }
   }, []);
+
+  const convertDataCompetitionDetail = (data) => {
+    setTitle(data.name);
+    setCompetitionTypeId(data.competition_type_id);
+    setStartTime(data.start_time);
+    setEndTime(data.end_time);
+    setStartTimeRegister(data.start_time_register);
+    setEndTimeRegister(data.end_time_register);
+    setAddress(data.address);
+    setAddressName(data.address_name);
+    setReactQuillText(data.content);
+    const major = [];
+    if (data.majors_in_competition?.length > 0) {
+      data.majors_in_competition.forEach((e) => {
+        major.push(e.id);
+      });
+    }
+    setMajor(major);
+    setSeedPoint(data.seeds_point);
+    if (data.fee !== 0) {
+      setFeeCheckbox(true);
+      setFees(data.fee);
+    }
+    setScopes(data.scope);
+    setNumberOfParticipations(data.number_of_participations);
+    if (data.min_number !== data.max_number) {
+      setGroupLimit(true);
+    }
+    setMaxMemberInTeam(data.max_number);
+    setMinMemberInTeam(data.min_number);
+  };
+
+  const convertBanner = (data) => {
+    setBanner(data[0]?.image_url);
+  };
+
+  const convertSponsor = (data) => {
+    if (data.length > 0) {
+      const sponsorList = [];
+      data.forEach((e) => {
+        const sponsor = { name: e.name, url: e.image_url, website: e.website, email: e.email, description: e.description };
+        sponsorList.push(sponsor);
+      });
+      setSponsor(sponsorList);
+    }
+  };
+
+  const convertInfluencer = (data) => {
+    if (data.length > 0) {
+      const influencerList = [];
+      data.forEach((e) => {
+        influencerList.push({ name: e.name, url: e.image_url });
+      });
+      setInfluencer(influencerList);
+    }
+  };
+
+  const checkEditStatus = () => {
+    const status = parseInt(props.competitionDetail.status);
+    if (status === 6 || status === 8 || status === 7) {
+      return false;
+    }
+    return true;
+  };
+
+  React.useEffect(() => {
+    console.log(props);
+    convertDataCompetitionDetail(props.competitionDetail);
+    convertBanner(props.banner);
+    convertSponsor(props.sponsor);
+    convertInfluencer(props.influencer);
+  }, [props]);
 
   return (
     <>
@@ -489,7 +687,7 @@ export default function CreateCompetitionBody() {
                 <Row>
                   <Col className="col-auto">
                     <h3 className="mb-0" style={{ marginTop: '10px' }}>
-                      Tạo cuộc thi của bạn:
+                      Chỉnh sửa cuộc thi:
                       <span className="text-success" style={{ marginLeft: '10px' }}>
                         Thể loại cuộc thi
                       </span>
@@ -507,6 +705,7 @@ export default function CreateCompetitionBody() {
                         onChange={(e) => {
                           setCompetitionTypeId(e.target.value);
                         }}
+                        disabled={checkEditStatus()}
                       />
                     </Col>
                   ) : (
@@ -529,6 +728,7 @@ export default function CreateCompetitionBody() {
                         onChange={(e) => {
                           setTitle(e.target.value);
                         }}
+                        disabled={checkEditStatus()}
                       />
                       <InputGroupAddon addonType="append">
                         <Button
@@ -552,7 +752,7 @@ export default function CreateCompetitionBody() {
                       Thời gian mở đăng ký <span className="text-warning">*</span>
                     </label>
                     <Input
-                      defaultValue={newDateConvertToFormat(new Date())}
+                      defaultValue={startTimeRegister}
                       id="startregisterdaytime"
                       type="datetime-local"
                       onChange={(e) => {
@@ -567,7 +767,7 @@ export default function CreateCompetitionBody() {
                       Thời gian kết thúc đăng ký <span className="text-warning">*</span>
                     </label>
                     <Input
-                      defaultValue={newDateConvertToFormat(new Date())}
+                      defaultValue={endTimeRegister}
                       id="endregisterdaytime"
                       type="datetime-local"
                       onChange={(e) => {
@@ -584,7 +784,7 @@ export default function CreateCompetitionBody() {
                       Thời gian bắt đầu cuộc thi <span className="text-warning">*</span>
                     </label>
                     <Input
-                      defaultValue={newDateConvertToFormat(new Date())}
+                      defaultValue={startTime}
                       id="startdaytime"
                       type="datetime-local"
                       onChange={(e) => {
@@ -598,7 +798,7 @@ export default function CreateCompetitionBody() {
                       Thời gian kết thúc cuộc thi <span className="text-warning">*</span>
                     </label>
                     <Input
-                      defaultValue={newDateConvertToFormat(new Date())}
+                      defaultValue={endTime}
                       id="enddaytime"
                       type="datetime-local"
                       onChange={(e) => {
@@ -608,6 +808,7 @@ export default function CreateCompetitionBody() {
                     />
                   </Col>
                 </Row>
+
                 <Row className="mb-3">
                   <Col md="6">
                     <label className="text-default" htmlFor="location">
@@ -655,7 +856,8 @@ export default function CreateCompetitionBody() {
                 <Row className="mb-3">
                   <Col md="12">
                     <label className="form-control-label" htmlFor="startdaytime">
-                      Bài viết <span className="text-warning">*</span>
+                      Bài viết <span className="text-warning">*</span>{' '}
+                      {parseInt(props.competitionDetail.status) === 8 ? '(Nếu bạn chỉnh nội dung bài đăng sẽ cần phải xét duyệt lại)' : ''}
                     </label>
                     <ReactQuill
                       style={{ display: 'block', borderTopLeftRadius: '0.5rem', borderTopRightRadius: '0.5rem' }}
@@ -669,6 +871,7 @@ export default function CreateCompetitionBody() {
                         toolbar: toolbarOptions,
                       }}
                       formats={formats}
+                      readOnly={checkEditStatus()}
                     />
                   </Col>
                 </Row>
@@ -681,11 +884,19 @@ export default function CreateCompetitionBody() {
                     <small className="mb-3" style={{ color: 'gray' }}>
                       Ảnh có dung lượng dưới 200kb và kích cỡ tiêu chuẩn 700x400px. Các ảnh kích cỡ lớn hơn đều có thể gây chậm hoặc không tải được.
                       Hỗ trợ các định dạng ảnh JPG, PNG, GIF, JPEG. Bạn có thể vào{' '}
-                      <a target="_blank" href="https://tool.ybox.vn/resize-image?s=ybox">
+                      <a target="blank" href="https://tool.ybox.vn/resize-image?s=ybox">
                         đây
                       </a>{' '}
                       để giảm kích thước ảnh
                     </small>
+                    <br />
+                    <img
+                      alt="..."
+                      className="dz-preview-img"
+                      data-dz-thumbnail=""
+                      src={banner}
+                      style={{ maxHeight: '400px', width: '100%', height: '100%' }}
+                    />
                     <div className="dropzone dropzone-single mb-3" id="dropzone-single">
                       <div className="fallback">
                         <div className="custom-file">
@@ -697,7 +908,7 @@ export default function CreateCompetitionBody() {
                       </div>
                       <div className="dz-preview dz-preview-single">
                         <div className="dz-preview-cover">
-                          <img alt="..." className="dz-preview-img" data-dz-thumbnail="" />
+                          <img alt="..." className="dz-preview-img" data-dz-thumbnail="" src={banner} />
                         </div>
                       </div>
                     </div>
@@ -737,6 +948,7 @@ export default function CreateCompetitionBody() {
                       onUnselect={(e) => {
                         removeMajor(e.params.data.id);
                       }}
+                      disabled={checkEditStatus()}
                     />
                   </Col>
                 </Row>
@@ -751,7 +963,7 @@ export default function CreateCompetitionBody() {
                 <Row className="mb-4">
                   <Col>
                     <InputGroup>
-                      <Input type="number" min={0} value={seedPoint} onChange={(e) => setSeedPoint(e.target.value)} />
+                      <Input type="number" disabled={checkEditStatus()} min={0} value={seedPoint} onChange={(e) => setSeedPoint(e.target.value)} />
                       <InputGroupAddon addonType="append">
                         <InputGroupText>
                           <i className="fas fa-seedling" />
@@ -773,7 +985,9 @@ export default function CreateCompetitionBody() {
                                 href="/"
                                 id={`tooltip-${value}`}
                                 onClick={(e) => {
-                                  removeInfluencer(value);
+                                  if (!checkEditStatus()) {
+                                    removeInfluencer(value);
+                                  }
                                   e.preventDefault(e);
                                 }}
                               >
@@ -781,7 +995,7 @@ export default function CreateCompetitionBody() {
                               </a>
                               <UncontrolledTooltip delay={0} target={`tooltip-${value}`}>
                                 {ele.name} <br />
-                                Click to Remove
+                                {!checkEditStatus() ? 'Click to Remove' : ''}
                               </UncontrolledTooltip>
                             </Col>
                           );
@@ -790,15 +1004,19 @@ export default function CreateCompetitionBody() {
                     ) : (
                       <></>
                     )}
-                    <Button
-                      outline
-                      color="info"
-                      onClick={() => {
-                        setinfluencerModal(true);
-                      }}
-                    >
-                      Thêm danh sách
-                    </Button>
+                    {!checkEditStatus() ? (
+                      <Button
+                        outline
+                        color="info"
+                        onClick={() => {
+                          setinfluencerModal(true);
+                        }}
+                      >
+                        Thêm danh sách
+                      </Button>
+                    ) : (
+                      <></>
+                    )}
                   </Col>
                 </Row>
 
@@ -831,15 +1049,19 @@ export default function CreateCompetitionBody() {
                     ) : (
                       <></>
                     )}
-                    <Button
-                      outline
-                      color="success"
-                      onClick={() => {
-                        setSponsorForm(true);
-                      }}
-                    >
-                      Thêm nhà tài trợ
-                    </Button>
+                    {!checkEditStatus() ? (
+                      <Button
+                        outline
+                        color="success"
+                        onClick={() => {
+                          setSponsorForm(true);
+                        }}
+                      >
+                        Thêm nhà tài trợ
+                      </Button>
+                    ) : (
+                      <></>
+                    )}
                   </Col>
                 </Row>
 
@@ -854,6 +1076,7 @@ export default function CreateCompetitionBody() {
                           onChange={() => {
                             setFeeCheckbox(!feeCheckbox);
                           }}
+                          disabled={checkEditStatus()}
                         />
                         <span className="custom-toggle-slider rounded-circle" data-label-on="Có" />
                       </label>
@@ -867,6 +1090,7 @@ export default function CreateCompetitionBody() {
                         onChange={(e) => {
                           setFees(e.target.value);
                         }}
+                        disabled={checkEditStatus()}
                       />
                       <InputGroupAddon addonType="append">
                         <InputGroupText>vnđ</InputGroupText>
@@ -887,6 +1111,7 @@ export default function CreateCompetitionBody() {
                       onChange={(e) => {
                         setScopes(e.target.value);
                       }}
+                      disabled={checkEditStatus()}
                     >
                       {CompetitionScopes.map((ele) => {
                         return (
@@ -1058,20 +1283,11 @@ export default function CreateCompetitionBody() {
                     color="success"
                     style={{ margin: 'auto' }}
                     onClick={() => {
-                      createCompetition();
                       setFormModal(true);
+                      updateCompetition();
                     }}
                   >
-                    Hoàn tất
-                  </Button>
-                  <Button
-                    color="info"
-                    style={{ margin: 'auto' }}
-                    onClick={() => {
-                      successAlert(successAlertConstants.createCompetition);
-                    }}
-                  >
-                    Xem trước
+                    Cập nhật
                   </Button>
                 </Row>
               </CardBody>
@@ -1216,18 +1432,22 @@ export default function CreateCompetitionBody() {
               <label className="form-control-label">Mô tả</label>
               <Input value={sponsorDetail.description} type="text" disabled />
               <div className="text-center">
-                <Button
-                  className="my-4"
-                  outline
-                  color="danger"
-                  type="button"
-                  onClick={() => {
-                    setSponsorDetailForm(false);
-                    removeSponsor(sponsorDetail.index);
-                  }}
-                >
-                  Xóa
-                </Button>
+                {!checkEditStatus() ? (
+                  <Button
+                    className="my-4"
+                    outline
+                    color="danger"
+                    type="button"
+                    onClick={() => {
+                      setSponsorDetailForm(false);
+                      removeSponsor(sponsorDetail.index);
+                    }}
+                  >
+                    Xóa
+                  </Button>
+                ) : (
+                  <></>
+                )}
                 <Button className="my-4" color="danger" type="button" onClick={() => setSponsorDetailForm(false)}>
                   Đóng
                 </Button>

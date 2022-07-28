@@ -37,7 +37,7 @@ function MemberPage() {
       const data = `status=1&clubId=${clubId}&pageSize=10&currentPage=${page}&searchString=${search}`;
       const res = await getDataByPath(`${path}`, accessToken, data);
       console.log(res);
-      if (res !== null && res !== undefined && res.status === 200) {
+      if (res && res.status === 200) {
         setMembers(res.data);
       } else {
         warningAlert(warningAlertConstants.timeout);

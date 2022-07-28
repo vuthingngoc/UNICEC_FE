@@ -2,43 +2,43 @@ import UniversityHeader from 'components/Headers/UnicersityHeader';
 import { statusCode } from 'constants/status.constants';
 import React, { useEffect, useState } from 'react';
 import { getDataByPath } from 'services/data.service';
-import UniversityClubBody from './components/UniversityClubBody';
 import ReactBSAlert from 'react-bootstrap-sweetalert';
 import { warningAlertConstants } from 'constants/alert.constants';
 import { Modal } from 'reactstrap';
-import UniversityClubDetail from './components/UniversityClubDetail';
+import UniversityDepartmentBody from './components/UniversityDepartmentBody';
+import UniversityDepartmentDetail from './components/UniversityDepartmentDetail';
 
-export default function UniversityClubManager() {
-  const [clubs, setClubs] = useState(null);
-  const [clubDetail, setClubDetail] = useState(null);
-  const [clubModal, setClubModal] = useState(false);
+export default function UniversityDepartmentManager() {
+  const [departments, setDepartments] = useState(null);
   const [alert, setalert] = useState(false);
+  const [departmentModal, setDepartmentModal] = useState(false);
+  const [departmentDetail, setDepartmentDetail] = useState(null);
 
-  async function loadListClub(search, currentPage) {
+  async function loadListDepartment(search, currentPage) {
     if (currentPage && localStorage && localStorage.getItem('accessToken')) {
       const accessToken = localStorage.getItem('accessToken');
       const universityID = localStorage.getItem('universityID');
-      const path = 'api/v1/clubs/search';
+      const path = 'api/v1/departments/search';
       const data = `universityId=${universityID}&name=${search}&status=true&currentPage=${currentPage}&pageSize=10`;
       const res = await getDataByPath(path, accessToken, data);
       console.log(res);
       if (res && res.status === statusCode.success) {
-        setClubs(res.data);
+        setDepartments(res.data);
       } else {
         warningAlert(warningAlertConstants.timeout);
       }
     }
   }
 
-  async function loadClubDetail(id) {
+  async function loadDepartmentDetail(id) {
     if (id && localStorage && localStorage.getItem('accessToken')) {
       const accessToken = localStorage.getItem('accessToken');
-      const path = `api/v1/clubs/${id}`;
+      const path = `api/v1/departments/${id}`;
       const res = await getDataByPath(path, accessToken, '');
       console.log(res);
       if (res && res.status === statusCode.success) {
-        setClubDetail(res.data);
-        setClubModal(true);
+        setDepartmentDetail(res.data);
+        setDepartmentModal(true);
       }
     }
   }
@@ -75,8 +75,8 @@ export default function UniversityClubManager() {
   // };
 
   useEffect(() => {
-    if (clubs === null) {
-      loadListClub('', 1);
+    if (departments === null) {
+      loadListDepartment('', 1);
     }
   }, []);
 
@@ -84,10 +84,10 @@ export default function UniversityClubManager() {
     <>
       {alert}
       <UniversityHeader />
-      <UniversityClubBody clubs={clubs} loadListClub={loadListClub} loadClubDetail={loadClubDetail} />
-      <Modal className="modal-dialog-centered" size="lg" isOpen={clubModal} toggle={() => setClubModal(false)}>
+      <UniversityDepartmentBody data={departments} loadListDepartment={loadListDepartment} loadDepartmentDetail={loadDepartmentDetail} />
+      <Modal className="modal-dialog-centered" size="md" isOpen={departmentModal} toggle={() => setDepartmentModal(false)}>
         <div className="modal-body p-0">
-          <UniversityClubDetail data={clubDetail} setClubModal={setClubModal} />
+          <UniversityDepartmentDetail data={departmentDetail} setDepartmentModal={setDepartmentModal} />
         </div>
       </Modal>
     </>

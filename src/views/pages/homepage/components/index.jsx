@@ -8,10 +8,10 @@ function HomepageBody() {
   React.useEffect(() => {
     ScrollReveal().reveal('.gioithieu', { origin: 'bottom' });
     ScrollReveal().reveal('.thetinhnang', { origin: 'bottom' });
-    ScrollReveal().reveal('.caulacbo', { origin: 'left' });
-    ScrollReveal().reveal('.cuocthi', { origin: 'right' });
-    ScrollReveal().reveal('.thanhvien', { origin: 'left' });
-    ScrollReveal().reveal('.nentang', { origin: 'top' });
+    ScrollReveal().reveal('.caulacbo', { origin: 'bottom' });
+    ScrollReveal().reveal('.cuocthi', { origin: 'bottom' });
+    ScrollReveal().reveal('.thanhvien', { origin: 'bottom' });
+    ScrollReveal().reveal('.nentang', { origin: 'bottom' });
   }, []);
 
   return (

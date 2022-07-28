@@ -30,6 +30,7 @@ import CompetitionRoundPage from 'views/pages/CompetitionRoundPage';
 import SettingPage from 'views/pages/SettingPage';
 import CompetitionPublic from 'views/pages/CompetitionPublicPage';
 import NotfoundPage from 'views/pages/NotfoundPage';
+import CompetitionUpdatePage from 'views/pages/CompetitionUpdatePage';
 
 ReactDOM.render(
   <AuthContextProvider>
@@ -37,6 +38,7 @@ ReactDOM.render(
       <Switch>
         <Route path="/admin/cuoc-thi/chi-tiet/quan-ly-nhom/:id" render={(props) => <ShowListTeamPage {...props} />} />
         <Route path="/admin/cuoc-thi/chi-tiet/vong-thi/:id" render={(props) => <CompetitionRoundPage {...props} />} />
+        <Route path="/admin/cuoc-thi/chi-tiet/chinh-sua/:id" render={(props) => <CompetitionUpdatePage {...props} />} />
         <Route path="/admin/cuoc-thi/chi-tiet/:id" render={(props) => <CompetitionDetailPage {...props} />} />
         <Route path="/admin/hoat-dong/chi-tiet/:id" render={(props) => <ActivityDetailPage {...props} />} />
         <Route exact path="/admin/tuy-chinh" render={(props) => <SettingPage {...props} />} />

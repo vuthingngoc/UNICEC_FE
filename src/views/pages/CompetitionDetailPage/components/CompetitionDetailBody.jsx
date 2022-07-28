@@ -4,18 +4,60 @@ import { useHistory } from 'react-router';
 import { Badge, Button, Card, CardBody, CardHeader, CardImg, CardTitle, Col, Container, Modal, Row, UncontrolledTooltip } from 'reactstrap';
 import { covertDatePassed } from 'services/formatData';
 import { convertDateToShowWithTime } from 'services/formatData';
+import AddClubModal from './AddClubModal';
 
 export default function CompetitionDetailBody(data) {
   const [clubModal, setClubModal] = useState(false);
+  const [status, setStatus] = useState(null);
+  const [clubInCompetition, setClubInCompetition] = useState(null);
   const history = useHistory();
 
   const convertFee = (fee) => {
     return new Intl.NumberFormat('vi-VN', { style: 'currency', currency: 'VND' }).format(fee);
   };
 
+  const checkEditStatus = () => {
+    if (status === 6 || status === 8 || status === 7) {
+      return false;
+    }
+    return true;
+  };
+
+  const convertStatusOutput = (status) => {
+    let output = { text: '', status: 0 };
+    switch (status) {
+      case 4:
+        output.text = 'Kết thúc vào thi cuối';
+        output.status = 10;
+        break;
+      case 6:
+        output.text = 'Yêu cầu xét duyệt';
+        output.status = 7;
+        break;
+      case 8:
+        output.text = 'Công khai';
+        output.status = 5;
+        break;
+      case 10:
+        output.text = 'Hoàn tất cuộc thi';
+        output.status = 11;
+        break;
+      case 12:
+        output.text = 'Khôi phục cuộc thi';
+        output.status = 6;
+        break;
+    }
+    return output;
+  };
+
   React.useEffect(() => {
-    console.log(data);
-  }, []);
+    setStatus(data.competitionStatus);
+  }, [data.competitionStatus]);
+
+  React.useEffect(() => {
+    setClubInCompetition(data.competitionClubs);
+    console.log(data.competitionClubs);
+  }, [data.competitionClubs]);
 
   return (
     <>
@@ -100,9 +142,9 @@ export default function CompetitionDetailBody(data) {
                   <CardTitle className="mb-0">
                     <h3>Các câu lạc bộ tham gia và tổ chức</h3>
                   </CardTitle>
-                  {data.data.clubs_in_competition && data.data.clubs_in_competition.length > 0 ? (
+                  {clubInCompetition && clubInCompetition.length > 0 ? (
                     <Row className="align-items-center mb-3">
-                      {data.data.clubs_in_competition.map((e, value) => {
+                      {clubInCompetition.map((e, value) => {
                         return (
                           <Col className="col-auto" key={`club-${value}`}>
                             <a href="/" onClick={(e) => e.preventDefault()} id={`tooltip-${value}`} rel="noreferrer">
@@ -123,9 +165,13 @@ export default function CompetitionDetailBody(data) {
                   ) : (
                     <></>
                   )}
-                  <Button className="mb-2" color="info" size="sm" onClick={() => setClubModal(true)}>
-                    Thêm câu lạc bộ
-                  </Button>
+                  {status && !checkEditStatus() ? (
+                    <Button className="mb-2" color="info" size="sm" onClick={() => setClubModal(true)}>
+                      Quản lý câu lạc bộ
+                    </Button>
+                  ) : (
+                    <></>
+                  )}
                   {data.data.fee !== 0 ? (
                     <CardTitle className="mb-0">
                       <h3>
@@ -221,10 +267,15 @@ export default function CompetitionDetailBody(data) {
                       </Button>
                     </Col>
                   </Row>
-                  {data.data && parseInt(data.data.status) === 6 ? (
+                  {status &&
+                  (parseInt(status) === 6 ||
+                    parseInt(status) === 4 ||
+                    parseInt(status) === 8 ||
+                    parseInt(status) === 10 ||
+                    parseInt(status) === 12) ? (
                     <>
                       <CardTitle className="mb-0" style={{ marginTop: '10px' }}>
-                        <h3>Yêu cầu xét duyệt</h3>
+                        <h3>Tiến trình</h3>
                       </CardTitle>
                       <Row className="align-items-center justify-content-lg-between mt-3 ml-3">
                         <Col className="text-center">
@@ -237,15 +288,14 @@ export default function CompetitionDetailBody(data) {
                               if (localStorage && localStorage.getItem('accessToken')) {
                                 const accessToken = localStorage.getItem('accessToken');
                                 const clubID = localStorage.getItem('clubID');
-                                data.updatePendingCompetition(accessToken, clubID);
-                                data.loadDataCompetitionDetail(accessToken, data.data.id);
+                                data.updatePendingCompetition(accessToken, clubID, convertStatusOutput(status).status);
                               }
                             }}
                           >
                             <span className="btn-inner--icon mr-1">
                               <i className="fas fa-share" />
                             </span>
-                            Yêu cầu xét duyệt
+                            {convertStatusOutput(status).text}
                           </Button>
                         </Col>
                       </Row>
@@ -262,7 +312,14 @@ export default function CompetitionDetailBody(data) {
         )}
       </Container>
       <Modal className="modal-dialog-centered" size="lg" isOpen={clubModal} toggle={() => setClubModal(false)}>
-        <div className="modal-body p-0">a</div>
+        <div className="modal-body p-0">
+          <AddClubModal
+            handleRemoveClub={data.handleRemoveClub}
+            clubInCompetition={clubInCompetition}
+            setClubModal={setClubModal}
+            addClubToCompetition={data.addClubToCompetition}
+          />
+        </div>
       </Modal>
     </>
   );

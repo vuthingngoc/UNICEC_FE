@@ -68,7 +68,13 @@ export default function ClubMember(props) {
               <Col className="col-auto">
                 <div id="datatable-basic_filter" className="dataTables_filter px-4 pb-1">
                   <label>Tìm kiếm:</label>
-                  <Input className="form-control-md" placeholder="Tìm theo tên và mã" value={search} onChange={(e) => setSearch(e.target.value)} />
+                  <Input
+                    style={{ borderRadius: '20px' }}
+                    className="form-control-md"
+                    placeholder="Tìm theo tên và mã"
+                    value={search}
+                    onChange={(e) => setSearch(e.target.value)}
+                  />
                 </div>
               </Col>
               <Col lg="4" md="12">
@@ -180,9 +186,8 @@ export default function ClubMember(props) {
                     </PaginationLink>
                   </PaginationItem>
                   {pageNavigate.length > 0 ? pageNavigate : <></>}
-                  <PaginationItem>
+                  <PaginationItem className={props.data.has_next === false ? 'disabled' : ''}>
                     <PaginationLink
-                      className={props.data.has_next === false ? 'disable' : ''}
                       href="#next"
                       onClick={(e) => {
                         e.preventDefault();

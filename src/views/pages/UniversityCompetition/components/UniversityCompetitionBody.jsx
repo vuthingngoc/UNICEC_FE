@@ -69,51 +69,68 @@ export default function UniversityCompetitionBody(props) {
                     </tr>
                   </thead>
                   <tbody>
-                    {props.competitions.map((e, value) => {
-                      return (
-                        <tr key={`member-${value}`}>
-                          <td> {value + 1} </td>
-                          <th scope="row">
-                            <span className="name mb-0 text-sm">{e.name}</span>
-                          </th>
-                          <td className="text-center"> {e.competition_type_name} </td>
-                          <td className={`text-center font-weight-bold ${e.is_sponsor ? 'text-success' : 'text-info'}`}>
-                            {e.is_sponsor ? 'Có tài trợ' : 'Không tài trợ'}{' '}
-                          </td>
-                          <td className="text-center"> {e.scope === 0 ? 'Liên trường' : e.scope === 1 ? 'Trong trường' : 'Trong câu lạc bộ'} </td>
-                          <td className="text-center">
-                            <UncontrolledDropdown>
-                              <DropdownToggle className="text-default font-weight-bold" size="md" tag="a">
-                                <i className="fa fa-caret-down fa-2x" />
-                              </DropdownToggle>
-                              <DropdownMenu right>
-                                <DropdownItem href="#detail" onClick={(e) => e.preventDefault()}>
-                                  <span>Xem chi tiết</span>
-                                </DropdownItem>
-                                <DropdownItem
-                                  href="#approve"
-                                  onClick={(ele) => {
-                                    props.updateCompetitionsStatus(e.id, 1);
-                                    ele.preventDefault();
-                                  }}
-                                >
-                                  <span>Chấp thuận</span>
-                                </DropdownItem>
-                                <DropdownItem
-                                  href="#deny"
-                                  onClick={(ele) => {
-                                    props.updateCompetitionsStatus(e.id, 0);
-                                    ele.preventDefault();
-                                  }}
-                                >
-                                  <span>Xóa</span>
-                                </DropdownItem>
-                              </DropdownMenu>
-                            </UncontrolledDropdown>
-                          </td>
-                        </tr>
-                      );
-                    })}
+                    {props.competitions.length > 0 ? (
+                      props.competitions.map((e, value) => {
+                        return (
+                          <tr key={`member-${value}`}>
+                            <td> {(props.data.current_page - 1) * 10 + value + 1} </td>
+                            <th scope="row">
+                              <span className="name mb-0 text-sm">{e.name}</span>
+                            </th>
+                            <td className="text-center"> {e.competition_type_name} </td>
+                            <td className={`text-center font-weight-bold ${e.is_sponsor ? 'text-success' : 'text-info'}`}>
+                              {e.is_sponsor ? 'Có tài trợ' : 'Không tài trợ'}{' '}
+                            </td>
+                            <td className="text-center"> {e.scope === 0 ? 'Liên trường' : e.scope === 1 ? 'Trong trường' : 'Trong câu lạc bộ'} </td>
+                            <td className="text-center">
+                              <UncontrolledDropdown>
+                                <DropdownToggle className="text-default font-weight-bold" size="md" tag="a">
+                                  <i className="fa fa-caret-down fa-2x" />
+                                </DropdownToggle>
+                                <DropdownMenu right>
+                                  <DropdownItem href="#detail" onClick={(e) => e.preventDefault()}>
+                                    <span>Xem chi tiết</span>
+                                  </DropdownItem>
+                                  <DropdownItem
+                                    href="#approve"
+                                    onClick={(ele) => {
+                                      props.updateCompetitionsStatus(e.id, 1);
+                                      ele.preventDefault();
+                                    }}
+                                  >
+                                    <span>Chấp thuận</span>
+                                  </DropdownItem>
+                                  <DropdownItem
+                                    href="#deny"
+                                    onClick={(ele) => {
+                                      props.updateCompetitionsStatus(e.id, 0);
+                                      ele.preventDefault();
+                                    }}
+                                  >
+                                    <span>Từ chối</span>
+                                  </DropdownItem>
+                                </DropdownMenu>
+                              </UncontrolledDropdown>
+                            </td>
+                          </tr>
+                        );
+                      })
+                    ) : (
+                      <tr>
+                        <td colSpan="6">
+                          <Row>
+                            <Col className="text-center" md="12">
+                              <h2 className="display-4 mb-0">Danh sách trống</h2>
+                              <img
+                                alt="..."
+                                src={require('assets/img/icons/empty.jpg').default}
+                                style={{ width: '30%', margin: 'auto', maxHeight: '450px' }}
+                              />
+                            </Col>
+                          </Row>
+                        </td>
+                      </tr>
+                    )}
                   </tbody>
                 </Table>
               ) : (
