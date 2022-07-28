@@ -12,6 +12,8 @@ import { Row } from 'reactstrap';
 import { warningAlertConstants } from 'constants/alert.constants';
 import { updateDataByPath } from 'services/data.service';
 import { statusCode } from 'constants/status.constants';
+import { createDataByPath } from 'services/data.service';
+import { deleteDataByPathWithParam } from 'services/data.service';
 
 export default function CompetitionDetailPage(props) {
   const [sidenavOpen, setSidenavOpen] = useState(true);
@@ -20,34 +22,110 @@ export default function CompetitionDetailPage(props) {
   const [banner, setBanner] = useState([]);
   const [sponsor, setSponsor] = useState([]);
   const [influencer, setInfluencer] = useState([]);
+  const [competitionStatus, setCompetitionStatus] = useState(null);
+  const [competitionClubs, setCompetitionClubs] = useState(null);
   const location = useLocation();
   const mainContentRef = React.useRef(null);
 
   async function loadDataCompetitionDetail(accessToken, competition_id) {
+    setCompetitionStatus(null);
+    setCompetitionClubs(null);
     if (accessToken) {
       const path = `api/v1/competitions/${competition_id}`;
       const res = await getDataByPath(`${path}`, accessToken, '');
-      console.log(res);
       if (res && res.status === statusCode.success) {
         convertCompetitionEntities(res.data);
+        setCompetitionStatus(res.data.status);
+        setCompetitionClubs(res.data.clubs_in_competition);
       } else {
         warningAlert(warningAlertConstants.timeout);
       }
     }
   }
 
-  async function updatePendingCompetition(accessToken, clubID) {
+  async function updatePendingCompetition(accessToken, clubID, status) {
     if (accessToken) {
       const path = `api/v1/competitions/status`;
       const data = {
         id: parseInt(props.match.params.id),
-        status: 7,
+        status: parseInt(status),
         club_id: parseInt(clubID),
       };
       const res = await updateDataByPath(`${path}`, accessToken, data);
       console.log(res);
       if (res && res.status === statusCode.success) {
-        successAlert('Nộp đơn xét duyệt thành công');
+        if (status === 7) successAlert('Nộp đơn xét duyệt thành công');
+        else successAlert('Thao tác thành công');
+        loadDataCompetitionDetail(accessToken, parseInt(props.match.params.id));
+      } else if (res && res.status === statusCode.badrequest && res.data === 'Date Now < Time Register < Time Start < Time End') {
+        warningAlert('Các cột mốc thời gian đã quá hạn vui lòng cập nhật lại');
+      } else {
+        warningAlert(warningAlertConstants.timeout);
+      }
+    }
+  }
+
+  async function addClubToCompetition(id) {
+    if (localStorage && localStorage.getItem('accessToken') && id) {
+      const accessToken = localStorage.getItem('accessToken');
+      const clubId = localStorage.getItem('clubID');
+      const path = 'api/v1/competitions/club';
+      const data = {
+        club_id_collaborate: parseInt(id),
+        competition_id: parseInt(props.match.params.id),
+        club_id: parseInt(clubId),
+      };
+      console.log(data);
+      const res = await createDataByPath(path, accessToken, data);
+      console.log(res);
+      if (res && res.status === 200) {
+        successAlert('Thêm câu lạc bộ thành công');
+        loadDataCompetitionDetail(accessToken, parseInt(props.match.params.id));
+      } else if (res && res.status === 400 && res.data === 'Club has join in Competition') {
+        warningAlert('Câu lạc bộ đã có trong Cuộc thi hoặc sự kiện');
+      } else {
+        warningAlert(warningAlertConstants.timeout);
+      }
+    }
+  }
+
+  async function removeClubToCompetition(id) {
+    if (localStorage && localStorage.getItem('accessToken') && id) {
+      const accessToken = localStorage.getItem('accessToken');
+      const clubId = localStorage.getItem('clubID');
+      const path = 'api/v1/competitions/club';
+      const data = `competitionInClubId=${id}&clubId=${clubId}`;
+      console.log(data);
+      const res = await deleteDataByPathWithParam(path, accessToken, data);
+      console.log(res);
+      if (res && res.status === 200) {
+        successAlert('Xóa câu lạc bộ khỏi cuộc thi hoặc sự kiện thành công');
+        loadDataCompetitionDetail(accessToken, parseInt(props.match.params.id));
+      } else if (res && res.status === 400 && res.data === "Can't delete Club Owner Competition") {
+        warningAlert('Không thể xóa câu lạc bộ tạo cuộc thi hoặc sự kiện');
+      } else {
+        warningAlert(warningAlertConstants.timeout);
+      }
+    }
+  }
+
+  async function cancelCompetition(id) {
+    if (localStorage && localStorage.getItem('accessToken') && id) {
+      const accessToken = localStorage.getItem('accessToken');
+      const clubId = localStorage.getItem('clubID');
+      const path = 'api/v1/competitions/status';
+      const data = {
+        id: parseInt(id),
+        status: 12,
+        club_id: parseInt(clubId),
+      };
+      const res = await updateDataByPath(path, accessToken, data);
+      console.log(res);
+      if (res && res.status === statusCode.success) {
+        successAlert('Hủy cuộc thi thành công');
+        setTimeout(() => {
+          history.push('/admin/cuoc-thi');
+        }, 2000);
       } else {
         warningAlert(warningAlertConstants.timeout);
       }
@@ -94,21 +172,52 @@ export default function CompetitionDetailPage(props) {
     );
   };
 
+  const handleRemoveClub = (id) => {
+    console.log(id);
+    setalert(
+      <ReactBSAlert
+        info
+        style={{ display: 'block', marginTop: '-100px' }}
+        title="Cảnh báo"
+        onConfirm={() => removeClubToCompetition(id)}
+        onCancel={() => setalert(null)}
+        confirmBtnBsStyle="warning"
+        cancelBtnBsStyle="default"
+        confirmBtnText="Có"
+        cancelBtnText="Không"
+        showCancel={true}
+        btnSize=""
+      >
+        Bạn có chắc sẽ loại bỏ câu lạc bộ này khỏi cuộc thi không
+      </ReactBSAlert>
+    );
+  };
+
+  const handleRemoveCompetition = (id) => {
+    setalert(
+      <ReactBSAlert
+        info
+        style={{ display: 'block', marginTop: '-100px' }}
+        title="Bạn có chắc hủy cuộc thi hoặc sự kiện này không"
+        onConfirm={() => cancelCompetition(id)}
+        onCancel={() => setalert(null)}
+        confirmBtnBsStyle="warning"
+        cancelBtnBsStyle="default"
+        confirmBtnText="Có"
+        cancelBtnText="Không"
+        showCancel={true}
+        btnSize=""
+      ></ReactBSAlert>
+    );
+  };
+
   const successAlert = (message) => {
     setalert(
       <ReactBSAlert
         success
         style={{ display: 'block', marginTop: '-100px' }}
         title={message}
-        onConfirm={() => {
-          if (localStorage && localStorage.getItem('accessToken')) {
-            const accessToken = localStorage.getItem('accessToken');
-            if (competitionDetail === null) {
-              loadDataCompetitionDetail(accessToken, props.match.params.id);
-            }
-          }
-          setalert(null);
-        }}
+        onConfirm={() => setalert(null)}
         onCancel={() => setalert(null)}
         showCancel={false}
         confirmBtnBsStyle="warning"
@@ -166,13 +275,16 @@ export default function CompetitionDetailPage(props) {
         <AdminNavbar theme={getNavbarTheme()} toggleSidenav={toggleSidenav} sidenavOpen={sidenavOpen} brandText={getBrandText(location.pathname)} />
         {competitionDetail ? (
           <>
-            <CompetitionDetailHeader data={competitionDetail} sponsor={sponsor} />
+            <CompetitionDetailHeader data={competitionDetail} sponsor={sponsor} handleRemoveCompetition={handleRemoveCompetition} />
             <CompetitionDetailBody
               data={competitionDetail}
               banner={banner}
               influencer={influencer}
               updatePendingCompetition={updatePendingCompetition}
-              loadDataCompetitionDetail={loadDataCompetitionDetail}
+              competitionStatus={competitionStatus}
+              addClubToCompetition={addClubToCompetition}
+              competitionClubs={competitionClubs}
+              handleRemoveClub={handleRemoveClub}
             />
           </>
         ) : (

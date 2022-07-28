@@ -11,7 +11,6 @@ function UniversityHeader() {
     if (accessToken !== null) {
       const path = `api/v1/universities/${universityID}`;
       const res = await getDataByPath(`${path}`, accessToken, '');
-      console.log(res, 'univer');
       if (res !== null && res.status === statusCode.success) {
         setUniversity(res.data);
       }

@@ -11,7 +11,6 @@ import {
   DropdownMenu,
   DropdownToggle,
   Input,
-  Media,
   Pagination,
   PaginationItem,
   PaginationLink,
@@ -20,20 +19,20 @@ import {
   UncontrolledDropdown,
 } from 'reactstrap';
 
-export default function UniversityClubBody(props) {
+export default function UniversityDepartmentBody(props) {
   const [search, setSearch] = useState('');
   const [pageNavigate, setPageNavigate] = useState([]);
 
   const renderPage = () => {
     const pageRender = [];
-    for (let i = 1; i <= props.clubs.total_pages; i++) {
+    for (let i = 1; i <= props.data.total_pages; i++) {
       pageRender.push(
-        <PaginationItem className={i === props.clubs.current_page ? 'active' : ''} key={`page-${i}`}>
+        <PaginationItem className={i === props.data.current_page ? 'active' : ''} key={`page-${i}`}>
           <PaginationLink
             href="#page"
             onClick={(e) => {
               e.preventDefault();
-              props.loadListClub(search, i);
+              props.loadListDepartment(search, i);
             }}
           >
             {i}
@@ -45,7 +44,7 @@ export default function UniversityClubBody(props) {
   };
 
   React.useEffect(() => {
-    if (props.clubs && props.clubs.items) {
+    if (props.data && props.data.items) {
       renderPage();
     }
   }, [props]);
@@ -59,7 +58,7 @@ export default function UniversityClubBody(props) {
               <CardHeader className="border-0">
                 <Row className="align-items-center">
                   <div className="col">
-                    <h3 className="mb-0">Câu lạc bộ</h3>
+                    <h3 className="mb-0">Ngành học</h3>
                   </div>
                   <Col className="text-right">
                     <Button color="success">Thêm mới</Button>
@@ -79,21 +78,22 @@ export default function UniversityClubBody(props) {
                     </div>
                   </Col>
                   <Col lg="4" md="12">
-                    <Button outline color="info" onClick={() => props.loadListClub(search, 1)}>
+                    <Button outline color="info" onClick={() => props.loadListDepartment(search, 1)}>
                       Tìm kiếm
                     </Button>
                   </Col>
                 </Row>
               </CardHeader>
               <CardBody>
-                {props.clubs ? (
+                {props.data ? (
                   <Table className="align-items-center table-flush" responsive>
                     <thead className="thead-light">
                       <tr>
                         <th scope="col">STT</th>
-                        <th scope="col">Tên câu lạc bộ</th>
+                        <th scope="col">Mã</th>
+                        <th scope="col">Tên ngành học</th>
                         <th scope="col" className="text-center">
-                          Thành viên
+                          Chuyên ngành
                         </th>
                         <th scope="col" className="text-center">
                           Hành động
@@ -101,22 +101,14 @@ export default function UniversityClubBody(props) {
                       </tr>
                     </thead>
                     <tbody>
-                      {props.clubs.items ? (
-                        props.clubs.items.map((e, value) => {
+                      {props.data.items ? (
+                        props.data.items.map((e, value) => {
                           return (
-                            <tr key={`member-${value}`}>
-                              <td> {(props.clubs.current_page - 1) * 10 + value + 1} </td>
-                              <th scope="row">
-                                <Media className="align-items-center">
-                                  <a className="avatar rounded-circle mr-3" href="#pablo" onClick={(e) => e.preventDefault()}>
-                                    <img alt="..." src={e.image ?? require('assets/img/icons/avatar/No_image_available.png').default} />
-                                  </a>
-                                  <Media>
-                                    <span className="name mb-0 text-sm">{e.name}</span>
-                                  </Media>
-                                </Media>
-                              </th>
-                              <td className="text-center"> {e.total_member} </td>
+                            <tr key={`department-${value}`}>
+                              <td> {(props.data.current_page - 1) * 10 + value + 1} </td>
+                              <td className="text-uppercase"> {e.department_code}</td>
+                              <th> {e.name}</th>
+                              <td className="text-center"> {e.major_code} </td>
                               <td className="text-center">
                                 <UncontrolledDropdown>
                                   <DropdownToggle className="text-default font-weight-bold" size="md" tag="a">
@@ -127,7 +119,7 @@ export default function UniversityClubBody(props) {
                                       href="#pablo"
                                       onClick={(ele) => {
                                         ele.preventDefault();
-                                        props.loadClubDetail(e.id);
+                                        props.loadDepartmentDetail(e.id);
                                       }}
                                     >
                                       <span>Xem chi tiết</span>
@@ -169,16 +161,16 @@ export default function UniversityClubBody(props) {
                   </Row>
                 )}
               </CardBody>
-              {props.clubs && props.clubs.items ? (
+              {props.data && props.data.items ? (
                 <CardFooter className="py-4">
                   <nav aria-label="...">
                     <Pagination className="pagination justify-content-end mb-0" listClassName="justify-content-end mb-0">
-                      <PaginationItem className={props.clubs.has_previous === false ? 'disabled' : ''}>
+                      <PaginationItem className={props.data.has_previous === false ? 'disabled' : ''}>
                         <PaginationLink
                           href="#previous"
                           onClick={(e) => {
                             e.preventDefault();
-                            props.loadListClub(search, props.clubs.current_page - 1);
+                            props.loadListDepartment(search, props.data.current_page - 1);
                           }}
                         >
                           <i className="fas fa-angle-left" />
@@ -186,12 +178,12 @@ export default function UniversityClubBody(props) {
                         </PaginationLink>
                       </PaginationItem>
                       {pageNavigate.length > 0 ? pageNavigate : <></>}
-                      <PaginationItem className={props.clubs.has_next === false ? 'disabled' : ''}>
+                      <PaginationItem className={props.data.has_next === false ? 'disabled' : ''}>
                         <PaginationLink
                           href="#next"
                           onClick={(e) => {
                             e.preventDefault();
-                            props.loadListClub(search, props.clubs.current_page + 1);
+                            props.loadListDepartment(search, props.data.current_page + 1);
                           }}
                         >
                           <i className="fas fa-angle-right" />

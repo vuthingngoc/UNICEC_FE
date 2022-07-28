@@ -104,15 +104,19 @@ function AdminNavbar(props) {
               </Row>
               <Row style={{ marginTop: '25px' }}>
                 <Col className="collapse-brand" xs="6">
-                  {localStorage.getItem('accessToken') && localStorage.getItem('clubID') ? (
-                    <Button className="btn-default btn-icon" href="/admin/thong-tin-clb">
+                  {localStorage.getItem('accessToken') && (localStorage.getItem('clubID') || parseInt(localStorage.getItem('roleID')) === 1) ? (
+                    <Button
+                      className="btn-neutral btn-icon"
+                      color="default"
+                      href={parseInt(localStorage.getItem('roleID')) === 1 ? 'university/quan-ly-clb' : '/admin/thong-tin-clb'}
+                    >
                       <span className="btn-inner--icon">
                         <i className="fas fa-sign-in-alt mr-2" />
                       </span>
                       <span className="nav-link-inner--text">Trang quản lý</span>
                     </Button>
                   ) : (
-                    <Button className="btn-default btn-icon" href="/login">
+                    <Button className="btn-neutral btn-icon" color="default" href="/login">
                       <span className="btn-inner--icon">
                         <i className="fas fa-sign-in-alt mr-2" />
                       </span>
@@ -192,8 +196,12 @@ function AdminNavbar(props) {
                 </UncontrolledTooltip>
               </NavItem>
               <NavItem className="d-none d-lg-block ml-lg-4">
-                {localStorage.getItem('accessToken') && localStorage.getItem('clubID') ? (
-                  <Button className="btn-neutral btn-icon" color="default" href="/admin/thong-tin-clb">
+                {localStorage.getItem('accessToken') && (localStorage.getItem('clubID') || parseInt(localStorage.getItem('roleID')) === 1) ? (
+                  <Button
+                    className="btn-neutral btn-icon"
+                    color="default"
+                    href={parseInt(localStorage.getItem('roleID')) === 1 ? 'university/quan-ly-clb' : '/admin/thong-tin-clb'}
+                  >
                     <span className="btn-inner--icon">
                       <i className="fas fa-sign-in-alt mr-2" />
                     </span>

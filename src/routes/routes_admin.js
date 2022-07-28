@@ -1,5 +1,6 @@
 import UniversityClubManager from 'views/pages/UniversityClubManager';
 import UniversityCompetition from 'views/pages/UniversityCompetition';
+import UniversityDepartmentManager from 'views/pages/UniversityDepartmentPage';
 const routes = [
   {
     collapse: true,
@@ -18,12 +19,12 @@ const routes = [
         path: '/quan-ly-chuyen-nganh',
         name: 'Quản lý chuyên ngành',
         miniName: 'CN',
-        component: UniversityClubManager,
+        component: UniversityDepartmentManager,
         layout: '/university',
       },
       {
         path: '/quan-ly-tai-khoan',
-        name: 'Quản lý tài khoảng',
+        name: 'Quản lý tài khoản',
         miniName: 'TK',
         component: UniversityClubManager,
         layout: '/university',

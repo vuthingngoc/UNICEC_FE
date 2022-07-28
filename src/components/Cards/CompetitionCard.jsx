@@ -1,4 +1,5 @@
 import React from 'react';
+import { useHistory } from 'react-router';
 import {
   Badge,
   CardBody,
@@ -24,6 +25,7 @@ const CardHover = styled.div`
 `;
 
 export default function CompetitionCard(props) {
+  const history = useHistory();
   const checkCompetitionInClub = (clubID) => {
     if (clubID && props.data && props.data.clubs_in_competition.length > 0) {
       for (let i = 0; i < props.data.clubs_in_competition.length; i++) {
@@ -35,6 +37,20 @@ export default function CompetitionCard(props) {
     }
     return false;
   };
+
+  const findCompetitionBanner = (array) => {
+    for (let index = 0; index < array.length; index++) {
+      const e = array[index];
+      if (parseInt(e.entity_type_id) === 1) {
+        return e.image_url;
+      }
+    }
+    return '';
+  };
+
+  React.useEffect(() => {
+    console.log(props.data);
+  }, []);
 
   return (
     <Col xl="3" lg="4" md="6" sm="12">
@@ -68,11 +84,14 @@ export default function CompetitionCard(props) {
                     <i className="fas fa-ellipsis-h" />
                   </DropdownToggle>
                   <DropdownMenu right>
-                    <DropdownItem href="#pablo" onClick={(e) => e.preventDefault()}>
+                    <DropdownItem
+                      href="#pablo"
+                      onClick={(e) => {
+                        e.preventDefault();
+                        history.push(`/admin/cuoc-thi/chi-tiet/chinh-sua/${props.data.id}`);
+                      }}
+                    >
                       <span>Chỉnh sửa</span>
-                    </DropdownItem>
-                    <DropdownItem href="#pablo" onClick={(e) => e.preventDefault()}>
-                      <span>Xóa</span>
                     </DropdownItem>
                   </DropdownMenu>
                 </UncontrolledDropdown>
@@ -87,7 +106,7 @@ export default function CompetitionCard(props) {
             alt="..."
             src={
               props.data.competition_entities && props.data.competition_entities.length > 0
-                ? props.data.competition_entities[0].image_url
+                ? findCompetitionBanner(props.data.competition_entities)
                 : require('assets/img/icons/avatar/No_image_available.png').default
             }
           />
@@ -108,7 +127,7 @@ export default function CompetitionCard(props) {
 
             <CardTitle className="h4 mb-2">{props.data.name}</CardTitle>
             <Row>
-              <Col className="col-auto">
+              <Col className="col-auto pl-0">
                 <Badge
                   className="font-weight-bold"
                   color={props.data.scope === 0 ? 'info' : props.data.scope === 1 ? 'warning' : 'success'}
@@ -119,9 +138,18 @@ export default function CompetitionCard(props) {
                 </Badge>
               </Col>
               {props.data.is_sponsor === true ? (
-                <Col className="col-auto">
+                <Col className="col-auto pl-0">
                   <Badge className="font-weight-bold" color="success" pill style={{ fontFamily: 'sans-serif' }}>
                     Được tài trợ
+                  </Badge>
+                </Col>
+              ) : (
+                <></>
+              )}
+              {props.data.status === 0 ? (
+                <Col className="col-auto pl-0">
+                  <Badge className="font-weight-bold" color="success" pill style={{ fontFamily: 'sans-serif' }}>
+                    Mở đăng ký
                   </Badge>
                 </Col>
               ) : (

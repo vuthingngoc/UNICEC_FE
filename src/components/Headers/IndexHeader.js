@@ -9,7 +9,7 @@ function IndexHeader() {
     ScrollReveal().reveal('.title', { delay: 500, origin: 'bottom' });
     ScrollReveal().reveal('.des', { delay: 600, origin: 'bottom' });
     ScrollReveal().reveal('.download', { delay: 700, origin: 'bottom' });
-    ScrollReveal().reveal('.phone', { delay: 1000, origin: 'right' });
+    ScrollReveal().reveal('.phone', { delay: 1000, origin: 'left' });
   }, []);
   return (
     <>
