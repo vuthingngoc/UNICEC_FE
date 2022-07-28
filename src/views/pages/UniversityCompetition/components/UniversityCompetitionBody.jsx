@@ -49,7 +49,7 @@ export default function UniversityCompetitionBody(props) {
                 </Row>
               </CardHeader>
               {props.competitions ? (
-                <Table className="align-items-center table-flush" responsive>
+                <Table className="align-items-center table-flush" responsive style={{ minHeight: '150px' }}>
                   <thead className="thead-light">
                     <tr>
                       <th scope="col">STT</th>
@@ -73,7 +73,7 @@ export default function UniversityCompetitionBody(props) {
                       props.competitions.map((e, value) => {
                         return (
                           <tr key={`member-${value}`}>
-                            <td> {(props.data.current_page - 1) * 10 + value + 1} </td>
+                            <td> {value + 1} </td>
                             <th scope="row">
                               <span className="name mb-0 text-sm">{e.name}</span>
                             </th>
