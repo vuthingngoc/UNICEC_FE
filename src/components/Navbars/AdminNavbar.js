@@ -7,12 +7,28 @@ import { useAuth } from 'contexts/AuthContext.js';
 // reactstrap components
 import { Collapse, DropdownMenu, DropdownItem, UncontrolledDropdown, DropdownToggle, Media, Navbar, NavItem, Nav, Container } from 'reactstrap';
 import { useHistory } from 'react-router';
+import { updateDataByPath } from 'services/data.service';
+import { statusCode } from 'constants/status.constants';
 
 function AdminNavbar({ theme, sidenavOpen, toggleSidenav }) {
   const [fullname, setFullname] = useState(null);
   const [avatar, setAvatar] = useState(null);
   const { currentUser, logout } = useAuth();
   const history = useHistory();
+
+  async function logoutBackEnd() {
+    if (localStorage && localStorage.getItem('accessToken')) {
+      const accessToken = localStorage.getItem('accessToken');
+      const path = 'api/v1/users/logout';
+      const res = await updateDataByPath(path, accessToken, '');
+      console.log(res);
+      if (res && res.status === statusCode.success) {
+        return true;
+      }
+      return false;
+    }
+    return false;
+  }
 
   const checkRole = () => {
     if (localStorage && localStorage.getItem('accessToken') && localStorage.getItem('roleID')) {
@@ -98,6 +114,7 @@ function AdminNavbar({ theme, sidenavOpen, toggleSidenav }) {
                       onClick={async () => {
                         logout();
                         if (localStorage) {
+                          logoutBackEnd();
                           localStorage.clear('accessToken');
                           localStorage.clear('clubID');
                           localStorage.clear('universityID');

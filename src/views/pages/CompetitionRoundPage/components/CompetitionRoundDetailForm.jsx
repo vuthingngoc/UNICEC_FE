@@ -64,7 +64,7 @@ export default function CompetitionRoundDetailForm(props) {
       const path = `api/v1/competition-rounds`;
       const id = props.data.id;
       const res = await deleteDataByPath(path, accessToken, id);
-      if (res && res.status === statusCode.success) {
+      if (res && res.status === statusCode.successRemove) {
         props.successAlert('Xóa vòng thi thành công');
         props.loadCompetitionRound(props.CompetitionId);
         props.setDetailModal(false);
@@ -207,7 +207,7 @@ export default function CompetitionRoundDetailForm(props) {
                 Bắt đầu <span className="text-warning">*</span>
               </label>
               <Input
-                defaultValue={startTime}
+                value={startTime}
                 id="starttime"
                 type="datetime-local"
                 min={newDateConvertToFormat(new Date())}
@@ -222,7 +222,7 @@ export default function CompetitionRoundDetailForm(props) {
                 Kết thúc <span className="text-warning">*</span>
               </label>
               <Input
-                defaultValue={endTime}
+                value={endTime}
                 id="endtime"
                 type="datetime-local"
                 min={newDateConvertToFormat(new Date())}

@@ -208,7 +208,7 @@ export default function CompetitionRoundBody(props) {
               </span>{' '}
               tới{' '}
               <span className="text-warning" style={{ fontWeight: '700' }}>
-                {convertDateToShowWithTime(props.CompetitionData.start_time)}
+                {convertDateToShowWithTime(props.CompetitionData.end_time)}
               </span>
             </span>
           </Col>
@@ -444,6 +444,7 @@ export default function CompetitionRoundBody(props) {
             warningAlert={warningAlert}
             successAlert={successAlert}
             setalert={setalert}
+            loadCompetitionRound={props.loadCompetitionRound}
           />
         </div>
       </Modal>

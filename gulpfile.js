@@ -9,13 +9,10 @@ gulp.task('licenses', function (done) {
       gap.prependText(`/*!
 
 =========================================================
-* Argon Dashboard PRO React - v1.2.1
+* UNICEC
 =========================================================
 
-* Product Page: https://www.creative-tim.com/product/argon-dashboard-pro-react
-* Copyright 2021 Creative Tim (http://www.creative-tim.com)
-
-* Coded by Creative Tim
+* Coded by Trung Nguyen
 
 =========================================================
 
@@ -30,19 +27,15 @@ gulp.task('licenses', function (done) {
     .src('build/index.html', { base: './' })
     .pipe(
       gap.prependText(`<!--
-
-=========================================================
-* Argon Dashboard PRO React - v1.2.1
-=========================================================
-
-* Product Page: https://www.creative-tim.com/product/argon-dashboard-pro-react
-* Copyright 2021 Creative Tim (http://www.creative-tim.com)
-
-* Coded by Creative Tim
-
-=========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+      =========================================================
+      * UNICEC
+      =========================================================
+      
+      * Coded by Trung Nguyen
+      
+      =========================================================
+      
+      * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 
 -->`)
     )
@@ -54,18 +47,15 @@ gulp.task('licenses', function (done) {
     .pipe(
       gap.prependText(`/*!
 
-=========================================================
-* Argon Dashboard PRO React - v1.2.1
-=========================================================
-
-* Product Page: https://www.creative-tim.com/product/argon-dashboard-pro-react
-* Copyright 2021 Creative Tim (http://www.creative-tim.com)
-
-* Coded by Creative Tim
-
-=========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+      =========================================================
+      * UNICEC
+      =========================================================
+      
+      * Coded by Trung Nguyen
+      
+      =========================================================
+      
+      * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 
 */`)
     )

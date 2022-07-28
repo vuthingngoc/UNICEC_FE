@@ -61,3 +61,18 @@ export const covertDatePassed = (date) => {
   const ago = moment(date, 'YYYY-MM-DDThh:mm:ss').fromNow();
   return ago;
 };
+
+export const convertURLImageToBase64 = (url) => {
+  const img = new Image();
+  img.setAttribute('crossOrigin', 'anonymous');
+  img.onload = () => {
+    const canvas = document.createElement('canvas');
+    canvas.width = img.width;
+    canvas.height = img.height;
+    const ctx = canvas.getContext('2d');
+    ctx.drawImage(img, 0, 0);
+    const dataURL = canvas.toDataURL('image/png');
+    return dataURL;
+  };
+  img.src = url;
+};

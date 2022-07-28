@@ -88,15 +88,24 @@ function CreateClubActivity() {
   async function loadCompetitionList(accessToken, clubId) {
     if (accessToken) {
       const path = 'api/v1/competitions';
-      const data = `clubId=${clubId}&statuses=0&statuses=1&statuses=2&statuses=3&statuses=4&statuses=5&statuses=6&statuses=7&statuses=8&statuses=9`;
+      const data = `clubId=${clubId}&statuses=0&statuses=1&statuses=2&statuses=3&statuses=4&statuses=5&statuses=10&statuses=7&statuses=8&statuses=9`;
       const res = await getDataByPath(`${path}`, accessToken, data);
       console.log(res);
       if (res !== null && res !== undefined && res.status === 200) {
         let newData = [];
         if (res.data.items && res.data.items.length > 0) {
-          setCompetitionId(res.data.items[0].id);
           res.data.items.forEach((ele) => {
-            if (ele.status === 1 || ele.status === 2 || ele.status === 3 || ele.status === 6) {
+            if (
+              ele.status === 1 ||
+              ele.status === 2 ||
+              ele.status === 3 ||
+              ele.status === 4 ||
+              ele.status === 5 ||
+              ele.status === 7 ||
+              ele.status === 8 ||
+              ele.status === 9 ||
+              ele.status === 10
+            ) {
               newData.push({ id: ele.id, text: ele.name });
             }
           });

@@ -19,8 +19,11 @@ import {
   Badge,
 } from 'reactstrap';
 import { convertDateToShowWithTime } from 'services/formatData';
+import { useHistory } from 'react-router';
+import { CompetitionStatus } from 'constants/competition.status';
 
 export default function CompetitionDetailHeader(data) {
+  const history = useHistory();
   const covertDatePassed = (date) => {
     const ago = moment(date, 'YYYY-MM-DDThh:mm:ss').fromNow();
     return ago;
@@ -47,13 +50,21 @@ export default function CompetitionDetailHeader(data) {
                   <BreadcrumbItem aria-current="page" className="active" style={{ color: 'grey' }}>
                     Chi tiết
                   </BreadcrumbItem>
+                  <BreadcrumbItem aria-current="page" className="active">
+                    <Badge color="success">{CompetitionStatus[data.data.status]}</Badge>
+                  </BreadcrumbItem>
                 </Breadcrumb>
               </Col>
               <Col className="mt-3 mt-md-0 text-md-right" lg="6" xs="5">
-                <Button className="btn-success" color="success" size="sm">
+                <Button
+                  className="btn-success"
+                  color="success"
+                  size="sm"
+                  onClick={() => history.push(`/admin/cuoc-thi/chi-tiet/chinh-sua/${data.data.id}`)}
+                >
                   Chỉnh sửa
                 </Button>
-                <Button className="btn-warning" color="warning" size="sm">
+                <Button className="btn-warning" color="warning" size="sm" onClick={() => data.handleRemoveCompetition(data.data.id)}>
                   Xóa
                 </Button>
               </Col>
@@ -84,11 +95,35 @@ export default function CompetitionDetailHeader(data) {
                     </Row>
                     <Row className="text-left" style={{ marginBottom: '10px' }}>
                       <Col className="col-auto">
+                        <i className="far fa-flag text-danger" style={{ marginTop: '3px' }} />
+                      </Col>
+                      <Col className="col-auto">
+                        <Row>
+                          <span style={{ fontWeight: '900' }}>Mở đăng ký: </span>
+                          <span className="ml-1" style={{ fontWeight: '900', fontFamily: 'sans-serif' }}>
+                            {convertDateToShowWithTime(data.data.start_time_register)}
+                          </span>
+
+                          <Badge
+                            color="success"
+                            pill
+                            style={{ marginLeft: '10px', fontFamily: 'revert-layer', fontWeight: '800', paddingTop: '7px' }}
+                          >
+                            {covertDatePassed(data.data.start_time_register)}
+                          </Badge>
+                        </Row>
+                      </Col>
+                    </Row>
+                    <Row className="text-left" style={{ marginBottom: '10px' }}>
+                      <Col className="col-auto">
                         <i className="ni ni-calendar-grid-58 text-danger" style={{ marginTop: '3px' }} />
                       </Col>
                       <Col className="col-auto">
                         <Row>
-                          <span style={{ fontWeight: '900', fontFamily: 'sans-serif' }}>{convertDateToShowWithTime(data.data.start_time)}</span>
+                          <span style={{ fontWeight: '900' }}>Bắt đầu: </span>
+                          <span className="ml-1" style={{ fontWeight: '900', fontFamily: 'sans-serif' }}>
+                            {convertDateToShowWithTime(data.data.start_time)}
+                          </span>
 
                           <Badge color="info" pill style={{ marginLeft: '10px', fontFamily: 'revert-layer', fontWeight: '800', paddingTop: '7px' }}>
                             {covertDatePassed(data.data.start_time)}

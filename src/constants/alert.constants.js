@@ -19,6 +19,7 @@ const warningAlertConstants = {
 const successAlertConstants = {
   createActivity: 'Tạo hoạt động thành công',
   createCompetition: 'Tạo cuộc thi thành công',
+  updateCompetition: 'Cập nhật cuộc thi thành công',
   loginSuccess: 'Chào mừng bạn đến với hệ thống.',
 };
 
